@@ -1,0 +1,14 @@
+
+{
+name		Gargoyle
+model		gargoyle
+aifile	bots/default_c.c
+}
+
+
+{
+name		Grism
+model		sarge
+aifile	bots/default_c.c
+}
+
