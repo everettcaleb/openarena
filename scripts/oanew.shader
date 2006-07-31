@@ -45,6 +45,7 @@ textures/base_trim/tinfx
 	{
 		map $lightmap 
 		blendfunc filter
+		tcGen lightmap 
 	}
 }
 
@@ -57,6 +58,24 @@ textures/base_light/ceil1_4
 		map textures/base_light/ceil1_34.blend.tga
 		blendfunc add
 		rgbGen wave noise 0.8 0.2 0 1 
+	}
+}
+
+models/players/gargoyle/morphedgarg
+{
+	{
+		map models/players/gargoyle/morphedgarg.tga
+	}
+	{
+		map models/players/gargoyle/morphedshader.tga
+		blendfunc add
+		tcMod scroll -0.2 0.3
+		tcGen environment 
+	}
+	{
+		map models/players/gargoyle/morphedgarg.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 }
 
