@@ -1,0 +1,118 @@
+Index: code/server/sv_ccmds.c
+===================================================================
+--- code/server/sv_ccmds.c	(revision 833)
++++ code/server/sv_ccmds.c	(working copy)
+@@ -430,6 +430,12 @@
+ 		return;
+ 	}
+ 
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+@@ -484,6 +490,12 @@
+ 		return;
+ 	}
+ 
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+Index: code/server/sv_client.c
+===================================================================
+--- code/server/sv_client.c	(revision 833)
++++ code/server/sv_client.c	(working copy)
+@@ -88,6 +88,15 @@
+ 		return;
+ 	}
+ 
++	// if there's no authorize server defined, just let them in
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Not authorizing client due to lack of auth server\n");
++		challenge->pingTime = svs.time;
++		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+Index: code/qcommon/files.c
+===================================================================
+--- code/qcommon/files.c	(revision 833)
++++ code/qcommon/files.c	(working copy)
+@@ -2907,6 +2907,7 @@
+ */
+ static void FS_CheckPak0( void )
+ {
++/*
+ 	searchpath_t	*path;
+ 	qboolean			foundPak0 = qfalse;
+ 
+@@ -2941,6 +2942,7 @@
+ 				"executable is in the correct place and that every file\n"
+ 				"in the %s directory is present and readable.", BASEGAME);
+ 	}
++*/
+ }
+ 
+ /*
+@@ -3352,7 +3354,7 @@
+ 	// try to start up normally
+ 	FS_Startup( BASEGAME );
+ 
+-	FS_CheckPak0( );
++	// FS_CheckPak0( );
+ 
+ 	// if we can't find default.cfg, assume that the paths are
+ 	// busted and error out now, rather than getting an unreadable
+Index: code/qcommon/qcommon.h
+===================================================================
+--- code/qcommon/qcommon.h	(revision 833)
++++ code/qcommon/qcommon.h	(working copy)
+@@ -236,10 +236,10 @@
+ #define	UPDATE_SERVER_NAME	"update.quake3arena.com"
+ // override on command line, config files etc.
+ #ifndef MASTER_SERVER_NAME
+-#define MASTER_SERVER_NAME	"master.quake3arena.com"
++#define MASTER_SERVER_NAME	"dpmaster.deathmask.net"
+ #endif
+ #ifndef AUTHORIZE_SERVER_NAME
+-#define	AUTHORIZE_SERVER_NAME	"authorize.quake3arena.com"
++#define	AUTHORIZE_SERVER_NAME	""
+ #endif
+ 
+ #define	PORT_MASTER			27950
+Index: code/client/cl_main.c
+===================================================================
+--- code/client/cl_main.c	(revision 833)
++++ code/client/cl_main.c	(working copy)
+@@ -3416,6 +3416,7 @@
+ =================
+ */
+ qboolean CL_CDKeyValidate( const char *key, const char *checksum ) {
++	/*
+ 	char	ch;
+ 	byte	sum;
+ 	char	chs[3];
+@@ -3472,6 +3473,9 @@
+ 	}
+ 
+ 	return qfalse;
++	*/
++
++	return qtrue;
+ }
+ 
+ 

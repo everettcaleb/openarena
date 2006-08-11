@@ -1,0 +1,5 @@
+OpenArena uses icculus.org/quake3 as an engine base now. The diff file for the changes needed is provided. The engine source can be obtained from here:
+
+http://svn.icculus.org/quake3/trunk/
+
+The binaries are compiled at revision 833
