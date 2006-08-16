@@ -354,6 +354,27 @@ smokePuff
 	}
 }
 
+smokePuffRagePro
+{
+	cull disable
+	{
+		map gfx/misc/smokepuffragepro.tga
+		blendfunc blend
+		alphaGen Vertex
+	}
+}
+
+hasteSmokePuff
+{
+	cull disable
+	{
+		map gfx/misc/hastesmoke.tga
+		blendfunc blend
+		tcMod rotate 64
+		alphaGen Vertex
+	}
+}
+
 shotgunSmokePuff
 {
 	cull disable
