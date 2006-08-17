@@ -87,6 +87,16 @@ railgunFlash
 	}
 }
 
+railDisc
+{
+	cull disable
+	{
+		map models/weapons2/railgun/f_railgun2.tga
+		blendfunc add
+		rgbGen entity
+	}
+}
+
 railCore
 {
 	sort nearest

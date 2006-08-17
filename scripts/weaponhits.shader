@@ -1,4 +1,4 @@
-railDisc
+railDic
 {
 	cull disable
 	deformVertexes autosprite

@@ -120,9 +120,9 @@ models/players/gargoyle/red
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/detail/d_conc.tga
+		map textures/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 4
+		tcMod scale 10 10
 		detail
 	}
 }
@@ -134,9 +134,15 @@ models/players/gargoyle/blue
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/detail/d_conc.tga
+		map $whiteimage 
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+	}
+	{
+		map textures/detail/d_scale.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 4
+		tcMod scale 24 24
 		detail
 	}
 }
@@ -148,9 +154,9 @@ models/players/gargoyle/bared
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/detail/d_conc.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 6 6
+		tcMod scale 8 8
 		detail
 	}
 }
@@ -388,16 +394,15 @@ shotgunSmokePuff
 
 sprites/plasma1
 {
-	cull disable
 	{
 		clampmap sprites/plasmaa.tga
 		blendfunc gl_src_alpha gl_one
 		tcMod rotate -145
 	}
 	{
-		clampmap sprites/plasmaa.tga
+		clampmap sprites/plasmaa2.tga
 		blendfunc gl_src_alpha gl_one
-		tcMod rotate 145
+		tcMod rotate 177
 	}
 }
 
@@ -463,6 +468,199 @@ bfgsho
 		clampmap textures/oafx/bfgfx3.tga
 		blendfunc add
 		tcMod rotate 64
+	}
+}
+
+// STUPID explosion thing introduced in q3's 1.30 patch
+explode11
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0000.tga
+		blendfunc add
+	}
+}
+
+explode12
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0001.tga
+		blendfunc add
+	}
+}
+
+explode13
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0002.tga
+		blendfunc add
+	}
+}
+
+explode14
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0003.tga
+		blendfunc add
+	}
+}
+
+explode15
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0004.tga
+		blendfunc add
+	}
+}
+
+explode16
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0005.tga
+		blendfunc add
+	}
+}
+
+explode17
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0006.tga
+		blendfunc add
+	}
+}
+
+explode18
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0007.tga
+		blendfunc add
+	}
+}
+
+explode19
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0008.tga
+		blendfunc add
+	}
+}
+
+explode110
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0009.tga
+		blendfunc add
+	}
+}
+
+explode111
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0010.tga
+		blendfunc add
+	}
+}
+
+explode112
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0011.tga
+		blendfunc add
+	}
+}
+
+explode113
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0012.tga
+		blendfunc add
+	}
+}
+
+explode114
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0013.tga
+		blendfunc add
+	}
+}
+
+explode115
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0014.tga
+		blendfunc add
+	}
+}
+
+explode116
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0015.tga
+		blendfunc add
+	}
+}
+
+explode117
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0016.tga
+		blendfunc add
+	}
+}
+
+explode118
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0017.tga
+		blendfunc add
+	}
+}
+
+explode119
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0018.tga
+		blendfunc add
+	}
+}
+
+explode120
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0019.tga
+		blendfunc add
+	}
+}
+
+explode121
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0020.tga
+		blendfunc add
+	}
+}
+
+explode122
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0021.tga
+		blendfunc add
+	}
+}
+
+explode123
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0022.tga
+		blendfunc add
+	}
+}
+
+explode124
+{
+	{
+		map textures/sfx/130boom/dpexplosion4_0023.tga
+		blendfunc add
 	}
 }
 
