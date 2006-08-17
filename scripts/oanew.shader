@@ -1,3 +1,96 @@
+textures/effects/jumpcirc
+{
+	q3map_lightimage textures/effects/jumpcirc.tga
+	q3map_surfacelight 466
+	{
+		clampmap textures/effects/jumpcirc.tga
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate 75
+	}
+	{
+		clampmap textures/effects/jumpcirc.tga
+		blendfunc add
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate -120
+	}
+}
+
+textures/effects/jumpcircblue
+{
+	q3map_lightimage textures/effects/jumpcircblue.tga
+	q3map_surfacelight 466
+	{
+		clampmap textures/effects/jumpcircblue.tga
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate 75
+	}
+	{
+		clampmap textures/effects/jumpcircblue.tga
+		blendfunc add
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate -120
+	}
+}
+
+textures/effects/jumpcircred
+{
+	q3map_lightimage textures/effects/jumpcircred.tga
+	q3map_surfacelight 466
+	{
+		clampmap textures/effects/jumpcircred.tga
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate 75
+	}
+	{
+		clampmap textures/effects/jumpcircred.tga
+		blendfunc add
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate -120
+	}
+}
+
+textures/ctf_unified/floor_decal_blue
+{
+	cull disable
+	{
+		map textures/symbols/blueteam.tga
+		blendfunc add
+	}
+}
+
+textures/ctf_unified/floor_decal_red
+{
+	cull disable
+	{
+		map textures/symbols/redteam.tga
+		blendfunc add
+	}
+}
+
+textures/base_wall/glass01
+{
+	surfaceparm trans
+	cull disable
+	{
+		map textures/effects/tinfx.tga
+		blendfunc add
+		rgbGen identity
+		tcGen environment 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 4
+		detail
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+}
+
 textures/sfx/flame2
 {
 	qer_editorimage textures/sfx/flame5.tga
@@ -107,6 +200,10 @@ models/players/gargoyle/morphedgarg
 		tcGen environment 
 	}
 	{
+		map models/players/gargoyle/blue.tga
+		rgbGen lightingDiffuse
+	}
+	{
 		map models/players/gargoyle/morphedgarg.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
@@ -120,9 +217,9 @@ models/players/gargoyle/red
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/detail/d_met.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 10 10
+		tcMod scale 24 24
 		detail
 	}
 }
@@ -134,15 +231,20 @@ models/players/gargoyle/blue
 		rgbGen lightingDiffuse
 	}
 	{
-		map $whiteimage 
+		map textures/effects/shinyskin.tga
 		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
-		alphaGen lightingSpecular
+		tcGen environment 
+	}
+	{
+		map models/players/gargoyle/blue.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map textures/detail/d_scale.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 24 24
+		tcMod scale 16 16
 		detail
 	}
 }
