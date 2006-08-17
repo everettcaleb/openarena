@@ -221,11 +221,11 @@ static void Main_MenuDraw( void ) {
 		Menu_Draw( &s_main.menu );		
 	}
 
-		UI_DrawProportionalString( 320, 372, "ALPHA 4", UI_CENTER|UI_SMALLFONT, color );
+		UI_DrawProportionalString( 320, 372, "", UI_CENTER|UI_SMALLFONT, color );
 		UI_DrawString( 320, 400, "OpenArena(c) 2005-2006 OpenArena Team", UI_CENTER|UI_SMALLFONT, color );
 		UI_DrawString( 320, 414, "OpenArena comes with ABSOLUTELY NO WARRANTY; this is free software", UI_CENTER|UI_SMALLFONT, color );
 		UI_DrawString( 320, 428, "and you are welcome to redistribute it under certain conditions;", UI_CENTER|UI_SMALLFONT, color );
-		UI_DrawString( 320, 440, "read COPYING for details.", UI_CENTER|UI_SMALLFONT, color );
+		UI_DrawString( 320, 444, "read COPYING for details.", UI_CENTER|UI_SMALLFONT, color );
 }
 
 
