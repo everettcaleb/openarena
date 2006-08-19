@@ -67,6 +67,22 @@ textures/ctf_unified/floor_decal_red
 	}
 }
 
+textures/ctf_unified/monologo_flash_blue
+{
+	cull disable
+	{
+		map textures/symbols/blueteam.tga
+	}
+}
+
+textures/ctf_unified/monologo_flash_red
+{
+	cull disable
+	{
+		map textures/symbols/redteam.tga
+	}
+}
+
 textures/base_wall/glass01
 {
 	surfaceparm trans
@@ -198,10 +214,6 @@ models/players/gargoyle/morphedgarg
 		blendfunc add
 		tcMod scroll -0.2 0.3
 		tcGen environment 
-	}
-	{
-		map models/players/gargoyle/blue.tga
-		rgbGen lightingDiffuse
 	}
 	{
 		map models/players/gargoyle/morphedgarg.tga
