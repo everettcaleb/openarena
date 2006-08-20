@@ -17,6 +17,14 @@ type		"single ffa tourney team sp"
 }
 
 
+{
+map			"oa_bubctf1"
+bots		"tux"
+longname	"The Fast and the Vurious"
+fraglimit	30
+type		"single ffa tourney team sp ctf"
+}
+
 
 {
 map			"dm4ish"
@@ -65,4 +73,5 @@ type		"single ffa tourney team sp"
 //fraglimit	30
 //type		"ctf"
 //}
+
 
