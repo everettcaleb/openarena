@@ -64,9 +64,8 @@ models/weapons2/machinegun/flare
 models/weapons2/machinegun/skin
 {
 	{
-		map models/weapons2/machinegun/blueechrome.tga
+		map models/weapons2/machinegun/mgun.tga
 		rgbGen lightingDiffuse
-		tcGen environment 
 	}
 }
 
