@@ -1,3 +1,67 @@
+lowShotgunFlash
+{
+	deformVertexes autosprite
+	{
+		map models/weapons2/shotgun/shotgun_flash.tga
+		blendfunc add
+	}
+}
+
+lowMachgunFlash
+{
+	deformVertexes autosprite
+	{
+		map models/weapons2/machinegun/f_machinegun.tga
+		blendfunc add
+	}
+}
+
+lowPlasmaaFlash
+{
+	deformVertexes autosprite
+	{
+		map models/weapons2/plasma/f_plasma.tga
+		blendfunc add
+	}
+}
+
+lowRocketlFlash
+{
+	deformVertexes autosprite
+	{
+		map models/weapons2/rocketl/f_rocketl.tga
+		blendfunc add
+	}
+}
+
+lowGrenadeFlash
+{
+	deformVertexes autosprite
+	{
+		map models/weapons2/grenadel/f_grenadel.tga
+		blendfunc add
+	}
+}
+
+lowRailgunFlash
+{
+	deformVertexes autosprite
+	{
+		map models/weapons2/railgun/f_railgun2.tga
+		blendfunc add
+		rgbGen Vertex
+	}
+}
+
+lowLightnnFlash
+{
+	deformVertexes autosprite
+	{
+		map models/weapons2/lightning/f_lightning.tga
+		blendfunc add
+	}
+}
+
 textures/effects/jumpcirc
 {
 	q3map_lightimage textures/effects/jumpcirc.tga
@@ -514,7 +578,7 @@ sprites/plasma1
 		tcMod rotate -145
 	}
 	{
-		clampmap sprites/plasmaa.tga
+		clampmap sprites/plasmaa2.tga
 		blendfunc gl_src_alpha gl_one
 		tcMod rotate 177
 	}
