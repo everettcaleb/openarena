@@ -578,7 +578,7 @@ sprites/plasma1
 		tcMod rotate -145
 	}
 	{
-		clampmap sprites/plasmaa2.tga
+		clampmap sprites/plasmaa.tga
 		blendfunc gl_src_alpha gl_one
 		tcMod rotate 177
 	}
