@@ -268,6 +268,45 @@ textures/base_light/ceil1_4
 	}
 }
 
+models/players/gargoyle/morphedwings
+{
+	cull disable
+	{
+		map models/players/gargoyle/morphedwings.tga
+		blendfunc add
+	}
+}
+
+models/players/gargoyle/membranecray
+{
+	cull disable
+	{
+		map models/players/gargoyle/wings.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/gargoyle/membranecrayyellow
+{
+	cull disable
+	{
+		map models/players/gargoyle/wings-yellow.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/gargoyle/membranecrayblue
+{
+	cull disable
+	{
+		map models/players/gargoyle/wings-blue.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+
 models/players/gargoyle/morphedgarg
 {
 	{
@@ -286,7 +325,7 @@ models/players/gargoyle/morphedgarg
 	}
 }
 
-models/players/gargoyle/red
+models/players/gargoyle/redg
 {
 	{
 		map models/players/gargoyle/red.tga
@@ -300,7 +339,7 @@ models/players/gargoyle/red
 	}
 }
 
-models/players/gargoyle/blue
+models/players/gargoyle/blueg
 {
 	{
 		map models/players/gargoyle/blue.tga
@@ -325,7 +364,38 @@ models/players/gargoyle/blue
 	}
 }
 
-models/players/gargoyle/bared
+models/players/gargoyle/skingargo
+{
+	{
+		map models/players/gargoyle/skingargoyle.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/specular.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+	{
+		map models/players/gargoyle/skingargoyle.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/gargoyle/skingargoylerr
+{
+	{
+		map models/players/gargoyle/skingargoyle.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/gargoyle/specgarg.tga
+		blendfunc gl_dst_color gl_src_color
+	}
+}
+
+models/players/gargoyle/baredold
 {
 	{
 		map models/players/gargoyle/bared.tga
@@ -578,7 +648,7 @@ sprites/plasma1
 		tcMod rotate -145
 	}
 	{
-		clampmap sprites/plasmaa.tga
+		clampmap sprites/plasmaa2.tga
 		blendfunc gl_src_alpha gl_one
 		tcMod rotate 177
 	}
