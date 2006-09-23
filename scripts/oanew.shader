@@ -62,6 +62,15 @@ lowLightnnFlash
 	}
 }
 
+LightnnFlash
+{
+	cull disable
+	{
+		animmap 45 models/weapons2/lightning/muzzle1.tga models/weapons2/lightning/muzzle2.tga models/weapons2/lightning/muzzle3.tga 
+		blendfunc add
+	}
+}
+
 textures/effects/jumpcirc
 {
 	q3map_lightimage textures/effects/jumpcirc.tga
