@@ -17,6 +17,7 @@ type		"single ffa tourney team sp"
 }
 
 
+
 {
 map			"oa_bubctf1"
 bots		"tux"
@@ -24,6 +25,16 @@ longname	"The Fast and the Vurious"
 fraglimit	30
 type		"single ffa tourney team sp ctf"
 }
+
+{
+map			"cbctf1"
+bots		"sarge gargoyle"
+longname	"Capture the Space"
+fraglimit	30
+type		"single ffa tourney team sp ctf"
+}
+
+
 
 
 {
@@ -63,15 +74,4 @@ type		"single ffa tourney team sp"
 //fraglimit	30
 //type		"ctf"
 //}
-
-
-//
-//{
-//map			"towarz2"
-//bots		"tux"
-//longname	"Towers of Doom"
-//fraglimit	30
-//type		"ctf"
-//}
-
 

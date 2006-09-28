@@ -43,6 +43,16 @@ lowGrenadeFlash
 	}
 }
 
+models/players/hoppy/hair
+{
+	cull disable
+	{
+		map models/players/hoppy/hair.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+
 lowRailgunFlash
 {
 	deformVertexes autosprite
@@ -274,6 +284,31 @@ textures/base_light/ceil1_4
 		map textures/base_light/ceil1_34.blend.tga
 		blendfunc add
 		rgbGen wave noise 0.8 0.2 0 1 
+	}
+}
+
+models/players/hoppy/skin
+{
+	{
+		map models/players/hoppy/skin.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/skinspec.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+	{
+		map textures/effects/skinspec.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+	{
+		map models/players/hoppy/skin.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 }
 

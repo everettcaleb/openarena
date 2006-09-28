@@ -11,8 +11,6 @@ flagPole
 blueFlag
 {
 	cull disable
-	deformVertexes wave 100 sin 4 3 0 0.3 
-	deformVertexes wave 30 sin 0 3 0 0.8 
 	tessSize 32
 	{
 		map textures/oafx/quadshell.tga
@@ -31,8 +29,6 @@ blueFlag
 redFlag
 {
 	cull disable
-	deformVertexes wave 100 sin 4 3 0 0.3 
-	deformVertexes wave 30 sin 0 3 0 0.8 
 	tessSize 32
 	{
 		map textures/oa/bloodbg.tga

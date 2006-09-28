@@ -1,0 +1,17 @@
+// Created by QuArK
+// No shader in this map
+common
+common2
+oasky
+oafx
+beams
+liquid_lavas
+liquid_water
+oalite
+oaflares
+oanew
+oa_fogs
+kaznexctf2
+quark
+el3dm1
+evil8

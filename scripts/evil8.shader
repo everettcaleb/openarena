@@ -7,7 +7,7 @@ textures/bubctf1/bubctf1_skybox
 	q3map_lightsubdivide 256
 	q3map_surfacelight 42
 	q3map_globaltexture
-	q3map_sun 0.788235 0.752941 0.647059 210 217 75
+	q3map_sun 0.419608 0.34902 0.270588 210 42 33
 	skyParms env/bubctf1/bubctf1 128 -
 }
 
@@ -147,13 +147,14 @@ textures/evil8_lights/e8btrimlight
 	}
 }
 
-textures/ctf/blue_telep 
+textures/ctf/blue_telep
 {
 	q3map_lightimage textures/effects/jumpcircblue.tga
 	surfaceparm noimpact
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm trans
+	cull disable
 	q3map_surfacelight 455
 	{
 		clampmap textures/effects/jumpcircblue.tga
@@ -174,13 +175,14 @@ textures/ctf/blue_telep
 	}
 }
 
-textures/ctf/red_telep 
+textures/ctf/red_telep
 {
 	q3map_lightimage textures/effects/jumpcircred.tga
 	surfaceparm noimpact
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm trans
+	cull disable
 	q3map_surfacelight 455
 	{
 		clampmap textures/effects/jumpcircred.tga

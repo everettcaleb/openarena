@@ -131,3 +131,46 @@ textures/skies/toxicskytim_dm8
 	}
 }
 
+textures/skies/toxicskytim_dm8
+{
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_lightsubdivide 256
+	q3map_surfacelight 400
+	q3map_globaltexture
+	q3map_sun 1 1 0.5 150 30 60
+	skyParms full 700 -
+	{
+		map textures/skies/dimclouds.tga
+		tcMod scroll -0.013 0.04
+	}
+	{
+		map textures/skies/dimclouds.tga
+		blendfunc add
+		tcMod scroll 0.02 0.07
+	}
+}
+
+textures/space1_skybox
+{
+	qer_editorimage textures/bubctf1/bubctf1_view.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_lightsubdivide 1024
+	q3map_surfacelight 33
+	q3map_globaltexture
+	q3map_sun 0.5 0.5 0.5 66 105 78
+	skyParms env/space1 128 -
+}
+
+textures/common/sky_space
+{
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_surfacelight 50
+	skyParms env/space1 128 -
+}
+
