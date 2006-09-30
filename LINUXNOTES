@@ -1,0 +1,5 @@
+Since I zipped this in Windows, you may need to run "chmod u+x" on the binaries.
+
+Sorry :(
+
+oh also if it doesn't start up at all, you may need libopenal installed.
