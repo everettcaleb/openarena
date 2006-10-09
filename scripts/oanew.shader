@@ -43,16 +43,6 @@ lowGrenadeFlash
 	}
 }
 
-models/players/hoppy/hair
-{
-	cull disable
-	{
-		map models/players/hoppy/hair.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-}
-
 lowRailgunFlash
 {
 	deformVertexes autosprite
@@ -78,6 +68,13 @@ LightnnFlash
 	{
 		animmap 45 models/weapons2/lightning/muzzle1.tga models/weapons2/lightning/muzzle2.tga models/weapons2/lightning/muzzle3.tga 
 		blendfunc add
+	}
+}
+
+default
+{
+	{
+		map textures/stone/pjrock1.tga
 	}
 }
 
@@ -262,6 +259,31 @@ yellowArmor
 	}
 }
 
+textures/base_floor/metfloor1
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_floor/metfloor1.tga
+		rgbGen const ( 1 1 1 )
+	}
+	{
+		clampmap textures/base_wall/chrome_env2.tga
+		blendfunc add
+		rgbGen const ( 0.188235 0.188235 0.188235 )
+		tcGen environment 
+	}
+	{
+		map textures/base_floor/metfloor1.tga
+		blendfunc filter
+		rgbGen const ( 0.737255 0.737255 0.737255 )
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+}
+
 textures/base_trim/tinfx
 {
 	{
@@ -287,171 +309,6 @@ textures/base_light/ceil1_4
 	}
 }
 
-models/players/hoppy/skin
-{
-	{
-		map models/players/hoppy/skin.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/effects/skinspec.tga
-		blendfunc add
-		rgbGen lightingDiffuse
-		tcGen environment 
-	}
-	{
-		map textures/effects/skinspec.tga
-		blendfunc add
-		rgbGen lightingDiffuse
-		tcGen environment 
-	}
-	{
-		map models/players/hoppy/skin.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-}
-
-models/players/gargoyle/morphedwings
-{
-	cull disable
-	{
-		map models/players/gargoyle/morphedwings.tga
-		blendfunc add
-	}
-}
-
-models/players/gargoyle/membranecray
-{
-	cull disable
-	{
-		map models/players/gargoyle/wings.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-}
-
-models/players/gargoyle/membranecrayyellow
-{
-	cull disable
-	{
-		map models/players/gargoyle/wings-yellow.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-}
-
-models/players/gargoyle/membranecrayblue
-{
-	cull disable
-	{
-		map models/players/gargoyle/wings-blue.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-}
-
-models/players/gargoyle/morphedgarg
-{
-	{
-		map models/players/gargoyle/morphedgarg.tga
-	}
-	{
-		map models/players/gargoyle/morphedshader.tga
-		blendfunc add
-		tcMod scroll -0.2 0.3
-		tcGen environment 
-	}
-	{
-		map models/players/gargoyle/morphedgarg.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-}
-
-models/players/gargoyle/redg
-{
-	{
-		map models/players/gargoyle/red.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 24 24
-		detail
-	}
-}
-
-models/players/gargoyle/blueg
-{
-	{
-		map models/players/gargoyle/blue.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/effects/shinyskin.tga
-		blendfunc gl_src_alpha gl_one
-		rgbGen lightingDiffuse
-		tcGen environment 
-	}
-	{
-		map models/players/gargoyle/blue.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/detail/d_scale.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 16 16
-		detail
-	}
-}
-
-models/players/gargoyle/skingargo
-{
-	{
-		map models/players/gargoyle/skingargoyle.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/effects/specular.tga
-		blendfunc add
-		rgbGen lightingDiffuse
-		tcGen environment 
-	}
-	{
-		map models/players/gargoyle/skingargoyle.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-}
-
-models/players/gargoyle/skingargoylerr
-{
-	{
-		map models/players/gargoyle/skingargoyle.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map models/players/gargoyle/specgarg.tga
-		blendfunc gl_dst_color gl_src_color
-	}
-}
-
-models/players/gargoyle/baredold
-{
-	{
-		map models/players/gargoyle/bared.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-}
 
 console
 {
