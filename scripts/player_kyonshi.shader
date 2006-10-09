@@ -1,17 +1,17 @@
-models/players/hoppy/hair
+models/players/kyonshi/hair
 {
 	cull disable
 	{
-		map models/players/hoppy/hair.tga
+		map models/players/kyonshi/hair.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
 }
 
-models/players/hoppy/torso
+models/players/kyonshi/torso
 {
 	{
-		map models/players/hoppy/torso.tga
+		map models/players/kyonshi/torso.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -21,16 +21,16 @@ models/players/hoppy/torso
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/torso.tga
+		map models/players/kyonshi/torso.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 }
 
-models/players/hoppy/lower
+models/players/kyonshi/lower
 {
 	{
-		map models/players/hoppy/lower.tga
+		map models/players/kyonshi/lower.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -40,16 +40,16 @@ models/players/hoppy/lower
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/lower.tga
+		map models/players/kyonshi/lower.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 }
 
-models/players/hoppy/eyes
+models/players/kyonshi/eyes
 {
 	{
-		map models/players/hoppy/eyes.tga
+		map models/players/kyonshi/eyes.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -59,10 +59,10 @@ models/players/hoppy/eyes
 	}
 }
 
-models/players/hoppy/eyeserr
+models/players/kyonshi/eyeserr
 {
 	{
-		map models/players/hoppy/eyes.tga
+		map models/players/kyonshi/eyes.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -73,10 +73,10 @@ models/players/hoppy/eyeserr
 	}
 }
 
-models/players/hoppy/skin
+models/players/kyonshi/skin
 {
 	{
-		map models/players/hoppy/skin.tga
+		map models/players/kyonshi/skin.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -85,16 +85,16 @@ models/players/hoppy/skin
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/skin.tga
+		map models/players/kyonshi/skin.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 }
 
-models/players/hoppy/skinde
+models/players/kyonshi/skinde
 {
 	{
-		map models/players/hoppy/skin.tga
+		map models/players/kyonshi/skin.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -104,20 +104,20 @@ models/players/hoppy/skinde
 		alphaGen lightingSpecular
 	}
 	{
-		map models/players/hoppy/skin.tga
+		map models/players/kyonshi/skin.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 }
 
-models/players/hoppy/skincrap
+models/players/kyonshi/skincrap
 {
 	{
 		map $whiteimage 
 		rgbGen lightingDiffuse
 	}
 	{
-		map models/players/hoppy/skin.tga
+		map models/players/kyonshi/skin.tga
 		blendfunc gl_dst_color gl_one_minus_src_alpha
 		rgbGen identity
 		alphaGen lightingSpecular
@@ -127,20 +127,20 @@ models/players/hoppy/skincrap
 // -----------------------------------------------------------
 // RED SKIN!
 // -----------------------------------------------------------
-models/players/hoppy/hairred
+models/players/kyonshi/hairred
 {
 	cull disable
 	{
-		map models/players/hoppy/hairred.tga
+		map models/players/kyonshi/hairred.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
 }
 
-models/players/hoppy/torsored
+models/players/kyonshi/torsored
 {
 	{
-		map models/players/hoppy/torsored.tga
+		map models/players/kyonshi/torsored.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -150,16 +150,16 @@ models/players/hoppy/torsored
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/torsored.tga
+		map models/players/kyonshi/torsored.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 }
 
-models/players/hoppy/lowerred
+models/players/kyonshi/lowerred
 {
 	{
-		map models/players/hoppy/lowerred.tga
+		map models/players/kyonshi/lowerred.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -169,16 +169,16 @@ models/players/hoppy/lowerred
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/lowerred.tga
+		map models/players/kyonshi/lowerred.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 }
 
-models/players/hoppy/eyesred
+models/players/kyonshi/eyesred
 {
 	{
-		map models/players/hoppy/eyesred.tga
+		map models/players/kyonshi/eyesred.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -198,10 +198,10 @@ models/players/hoppy/eyesred
 	}
 }
 
-models/players/hoppy/skinred
+models/players/kyonshi/skinred
 {
 	{
-		map models/players/hoppy/skinred.tga
+		map models/players/kyonshi/skinred.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -220,7 +220,7 @@ models/players/hoppy/skinred
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/skinred.tga
+		map models/players/kyonshi/skinred.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
@@ -229,20 +229,20 @@ models/players/hoppy/skinred
 // ---------------------------------------------------------
 // BLUE SKIN !!!!
 // ---------------------------------------------------------
-models/players/hoppy/hairblue
+models/players/kyonshi/hairblue
 {
 	cull disable
 	{
-		map models/players/hoppy/hairblue.tga
+		map models/players/kyonshi/hairblue.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
 }
 
-models/players/hoppy/torsoblue
+models/players/kyonshi/torsoblue
 {
 	{
-		map models/players/hoppy/torsoblue.tga
+		map models/players/kyonshi/torsoblue.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -252,16 +252,16 @@ models/players/hoppy/torsoblue
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/torsoblue.tga
+		map models/players/kyonshi/torsoblue.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 }
 
-models/players/hoppy/lowerblue
+models/players/kyonshi/lowerblue
 {
 	{
-		map models/players/hoppy/lowerblue.tga
+		map models/players/kyonshi/lowerblue.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -271,16 +271,16 @@ models/players/hoppy/lowerblue
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/lowerblue.tga
+		map models/players/kyonshi/lowerblue.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 }
 
-models/players/hoppy/eyesblue
+models/players/kyonshi/eyesblue
 {
 	{
-		map models/players/hoppy/eyesblue.tga
+		map models/players/kyonshi/eyesblue.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -300,10 +300,10 @@ models/players/hoppy/eyesblue
 	}
 }
 
-models/players/hoppy/skinblue
+models/players/kyonshi/skinblue
 {
 	{
-		map models/players/hoppy/skinblue.tga
+		map models/players/kyonshi/skinblue.tga
 		rgbGen lightingDiffuse
 	}
 	{
@@ -322,7 +322,7 @@ models/players/hoppy/skinblue
 		tcGen environment 
 	}
 	{
-		map models/players/hoppy/skinblue.tga
+		map models/players/kyonshi/skinblue.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
