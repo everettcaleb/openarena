@@ -1,3 +1,12 @@
+0.6.0 (10/13/2006)
+- New player model : Kyonshi! She's based on the Chinese jiang-shi (hopping corpse) mythology. Created by enki and leileilol
+- New lightning gun skin from enki
+- New LODs for: Lightning Gun
+- New lightning gun effects
+- C.Brutail's cbctf1 converted over
+- Gargoyle is reskinned by enki
+- Gargoyle's wings are finally fixed and added.
+
 0.5.1 (8/26/2006)
 - Removed Fox_DF's sounds due to possible copyright issues
 - "Mouth" weapon sounds take the old weapon sounds place
@@ -43,14 +52,14 @@ Alpha 0.4.1 (6/6/2006)
 
 Alpha 4 (5/7/2006)
 - New shotgun skin and uvs from BlackThief.
-- New railgun by CheapAlert. Crap skin unfortunately
-- New gauntlet by CheapAlert. no skin yet
-- New gargoyle player model by CheapAlert, however wings are broken so they are not exported.
-- New flag by CheapAlert (very simple and small though)
-- New remodeled low poly plasma gun by CheapAlert
-- Chaingun muzzleflash by CheapAlert (made ahead of time for the future Team edition)
+- New railgun by leileilol. Crap skin unfortunately
+- New gauntlet by leileilol. no skin yet
+- New gargoyle player model by leileilol, however wings are broken so they are not exported.
+- New flag by leileilol (very simple and small though)
+- New remodeled low poly plasma gun by leileilol
+- Chaingun muzzleflash by leileilol (made ahead of time for the future Team edition)
 - New explosion sprites (sampled from a public domain "explosion" found on wikimedia commons)
-- New CTF ditties by CheapAlert (corny and quickly tracked)
+- New CTF ditties by leileilol (corny and quickly tracked)
 - New ambient sounds
 - New "Sarge" sounds 
 - New banner5.md3 (The title logo)
@@ -67,7 +76,7 @@ Alpha 3 DM Test (2-25-2006)
 - Removed tux as it's a small cheating model. Don't worry tux fans, he will be remodeled at proper size again surely :)
 - DM4ish added, along with .MAP
 - Q3DM6ish added, along with .MAP (Quick conversions of Aardappel's q1 maps of the same name)
-- GRiSM player model animated, exported and available! Replaces the sarge gargoyle (there is no default "sarge" model yet) Model by Chris Holden, skins by Morphed, and rig/anims by CheapAlert.
+- GRiSM player model animated, exported and available! Replaces the sarge gargoyle (there is no default "sarge" model yet) Model by Chris Holden, skins by Morphed, and rig/anims by leileilol.
 - VMs seperated from content
 - New machinegun, similar to the original (as it spins). UVW'd, but not skinned, so for now it is chromed.
 - new temporary grenade launcher, with grenade model
