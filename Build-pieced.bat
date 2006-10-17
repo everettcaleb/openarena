@@ -95,3 +95,4 @@ zip -9r pak6-misc.pk3 sound/feedback/*.* -x *svn*
 zip -9r pak6-misc.pk3 sound/teamplay/*.* -x *svn*
 zip -9r pak6-misc.pk3 scripts/bots.txt -x *svn*
 zip -9r pak6-misc.pk3 maps/*.aas -x *svn*
+zip -9r pak6-misc.pk3 demos/*.* -x *svn*
