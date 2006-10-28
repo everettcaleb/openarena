@@ -12,6 +12,7 @@ models/powerups/ammo/machammo
 	{
 		map models/powerups/ammo/ammobox.tga
 		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga
@@ -40,6 +41,7 @@ models/powerups/ammo/shotammo
 	{
 		map models/powerups/ammo/ammobox.tga
 		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga
@@ -68,6 +70,7 @@ models/powerups/ammo/grenammo
 	{
 		map models/powerups/ammo/ammobox.tga
 		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga
@@ -96,6 +99,7 @@ models/powerups/ammo/lighammo
 	{
 		map models/powerups/ammo/ammobox.tga
 		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga
@@ -124,6 +128,7 @@ models/powerups/ammo/plasammo
 	{
 		map models/powerups/ammo/ammobox.tga
 		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga
@@ -152,6 +157,7 @@ models/powerups/ammo/rockammo
 	{
 		map models/powerups/ammo/ammobox.tga
 		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga
@@ -180,6 +186,7 @@ models/powerups/ammo/railammo
 	{
 		map models/powerups/ammo/ammobox.tga
 		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga
@@ -209,6 +216,7 @@ models/powerups/ammo/bfgammo
 	{
 		map models/powerups/ammo/ammobox.tga
 		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga

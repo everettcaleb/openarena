@@ -10,24 +10,13 @@ models/weapons2/plasma/blackchrome
 models/weapons2/plasma/skin
 {
 	{
-		map models/weapons2/plasma/f_plasma.tga
-		tcMod rotate 567
-	}
-	{
-		map models/weapons2/plasma/f_plasma.tga
-		blendfunc add
-		tcMod rotate -430
+		map models/weapons2/plasma/skin.tga
+		rgbGen lightingDiffuse
 	}
 	{
 		map models/weapons2/plasma/skin.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
-	}
-	{
-		map models/weapons2/plasma/blackchrome.tga
-		blendfunc add
-		rgbGen lightingDiffuse
-		tcGen environment 
+		blendfunc gl_one_minus_src_alpha gl_one
+		rgbGen wave sin 0.5 0.5 0 0.2 
 	}
 }
 
@@ -70,7 +59,6 @@ models/weapons2/plasma/flare
 	{
 		map models/weapons2/plasma/flare.tga
 		blendfunc add
-		rgbGen wave noise 0.5 0.5 0 1 
 	}
 }
 
