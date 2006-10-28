@@ -16,7 +16,6 @@ models/weapons2/plasma/skin
 	{
 		map models/weapons2/plasma/skin.tga
 		blendfunc gl_one_minus_src_alpha gl_one
-		rgbGen wave sin 0.5 0.5 0 0.2 
 	}
 }
 

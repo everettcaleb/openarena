@@ -26,7 +26,7 @@ oldbulletExplosion
 	}
 }
 
-bulletExplosion
+bitoutofdatebulletExplosion
 {
 	cull disable
 	{
@@ -40,6 +40,31 @@ bulletExplosion
 		blendfunc gl_one gl_src_alpha
 		rgbGen wave inversesawtooth 0 1 0 2.8 
 		tcMod scroll -1.5 0
+	}
+}
+
+bulletExplosion
+{
+	cull disable
+	{
+		clampmap textures/oafx/spark2.tga
+		blendfunc gl_one gl_src_alpha
+		rgbGen wave inversesawtooth 0 1 0 1.6 
+		tcMod rotate 757
+		tcMod stretch sawtooth 0.3 1 0 1.6 
+	}
+	{
+		map textures/oafx/spark1.tga
+		blendfunc gl_one gl_src_alpha
+		rgbGen wave inversesawtooth 0 1 0 2.8 
+		tcMod scroll -1.5 0
+	}
+	{
+		map textures/oafx/spark3.tga
+		blendfunc gl_src_alpha gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcMod scroll 0 -0.7
+		alphaGen wave sawtooth 1 -1 0 1.6 
 	}
 }
 
