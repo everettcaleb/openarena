@@ -13,6 +13,21 @@ smallCross
 	}
 }
 
+mediumCross
+{
+	{
+		map textures/effects/envmapligh.tga
+		tcMod rotate -76
+		tcGen environment 
+	}
+	{
+		map textures/effects/envmapyel.tga
+		blendfunc add
+		tcMod rotate 54
+		tcGen environment 
+	}
+}
+
 largeCross
 {
 	{
@@ -22,6 +37,21 @@ largeCross
 	}
 	{
 		map textures/oafx/orangechrm.tga
+		blendfunc add
+		tcMod rotate 54
+		tcGen environment 
+	}
+}
+
+megaCross
+{
+	{
+		map textures/effects/envmapblue2.tga
+		tcMod rotate -76
+		tcGen environment 
+	}
+	{
+		map textures/effects/megahelth.tga
 		blendfunc add
 		tcMod rotate 54
 		tcGen environment 
@@ -45,7 +75,7 @@ smallCrossFlare
 	}
 }
 
-flare
+oldflare
 {
 	deformVertexes autosprite
 	{
@@ -60,7 +90,7 @@ flare
 	}
 }
 
-sunFlare
+oldysunFlare
 {
 	deformVertexes autosprite
 	{
