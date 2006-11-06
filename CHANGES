@@ -3,6 +3,7 @@
 - New lightning gun skin from enki
 - New plasma gun skin from enki
 - New LODs for: Lightning Gun
+- New machinegun skin from slyus
 - New lightning gun effects
 - C.Brutail's cbctf1 converted over.
 - Gargoyle is reskinned by enki
@@ -14,6 +15,8 @@
 - More 2D icons
 - Health items reworked; they all have spheres with LODs and shaders
 - Mega health model
+- Machinegun repositioned
+- Machinegun flash rotated (to be a bit like q3's)
 
 0.5.1 (8/26/2006)
 - Removed Fox_DF's sounds due to possible copyright issues
