@@ -47,11 +47,11 @@ bulletExplosion
 {
 	cull disable
 	{
-		clampmap textures/oafx/spark2.tga
+		clampmap models/weaphits/bullet2.tga
 		blendfunc gl_one gl_src_alpha
-		rgbGen wave inversesawtooth 0 1 0 1.6 
-		tcMod rotate 757
-		tcMod stretch sawtooth 0.3 1 0 1.6 
+		rgbGen wave inversesawtooth 0 1 0 1.65 
+		tcMod rotate 67
+		tcMod stretch sawtooth 0.1 1.4 0 1.5 
 	}
 	{
 		map textures/oafx/spark1.tga
@@ -107,20 +107,15 @@ bfgExplosion
 		clampmap textures/oa/bfgfiar.tga
 		blendfunc add
 		rgbGen wave inversesawtooth 0 1 0 1.6 
-		tcMod rotate 33
-		tcMod stretch sin 0.8 -0.4 0 0.1 
-	}
-	{
-		clampmap textures/oa/bfgfiar.tga
-		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.6 
 		tcMod rotate -17
+		tcMod stretch sin 0 1 0 0.6 
 	}
 	{
 		clampmap textures/oa/bfgfiar.tga
 		blendfunc add
 		rgbGen wave inversesawtooth 0 1 0 1.6 
 		tcMod rotate -77
+		tcMod stretch sawtooth 0 1 0 0.5 
 	}
 }
 
@@ -165,8 +160,8 @@ railExplosion
 	}
 	{
 		clampmap models/weaphits/spark.tga
-		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.65 
+		blendfunc gl_src_alpha gl_one
+		rgbGen Vertex
 		tcMod stretch sawtooth 1.5 -3.5 0 1.1 
 		tcMod rotate -80
 		alphaGen wave inversesawtooth 0 1 0 1.65 

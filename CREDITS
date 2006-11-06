@@ -2,6 +2,7 @@ Aardappel	- Maps (Converted with permission)
 leileilol 	- Leads, gfx, models, anim, sound 
 				     and textures
 Multiplex 	- Models, textures
+crayon 		- Skins, models
 Democritus	- Textures
 jzero 		- Models, textures, 2D
 Mancubus	- The Announcer
@@ -18,9 +19,15 @@ DarkThief 	- Skins
 SavageX		- Maps
 ButterB		- Map (oa_bubctf1)
 
+
 Thanks to Nexuiz team, Alien Arena, QuakeSRC.org,
 modDB, mancubus.net, Quake3World, Doomworld, 
 Polycount, Gna!, id software, Galbraith
 Games, Linux Game Tome, Inside3D.com, 
 deathz0r, Wudan, ibrown, Tr3b, MilesTeg,
 jitspoe, and Willis
+
+a BIG HUGE THANKS goes to John Carmack and
+id software for Quake III Arena and its source
+code. Without them, OpenArena obviously would
+not exist :o)
