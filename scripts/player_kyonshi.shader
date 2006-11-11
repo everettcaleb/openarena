@@ -137,6 +137,72 @@ models/players/kyonshi/hairred
 	}
 }
 
+models/players/kyonshi/sleevered
+{
+	cull disable
+	{
+		map models/players/kyonshi/torsored.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+		alphaGen wave sin 0.8 0 0 0 
+	}
+}
+
+models/players/kyonshi/sleeve
+{
+	cull disable
+	{
+		map models/players/kyonshi/torso.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+		alphaGen wave sin 0.8 0 0 0 
+	}
+}
+
+models/players/kyonshi/sleeveblue
+{
+	cull disable
+	{
+		map models/players/kyonshi/torsoblue.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+		alphaGen wave sin 0.8 0 0 0 
+	}
+}
+
+models/players/kyonshi/dress
+{
+	cull disable
+	{
+		map models/players/kyonshi/lower.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+		alphaGen wave sin 0.8 0 0 0 
+	}
+}
+
+models/players/kyonshi/dressblue
+{
+	cull disable
+	{
+		map models/players/kyonshi/lowerblue.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+		alphaGen wave sin 0.8 0 0 0 
+	}
+}
+
+models/players/kyonshi/dressred
+{
+	cull disable
+	{
+		map models/players/kyonshi/lowerred.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+		alphaGen wave sin 0.8 0 0 0 
+	}
+}
+
 models/players/kyonshi/torsored
 {
 	{
