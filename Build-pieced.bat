@@ -91,6 +91,7 @@ zip pak4-textures.pk3 -d textures/detail/*.*
 zip -9r pak5-TA.pk3 models/weapons/*.* -x *svn*
 
 zip -9r pak6-misc.pk3 video/*.* -x *svn*
+zip -9r pak6-misc.pk3 botfiles/*.* -x *svn*
 zip -9r pak6-misc.pk3 sound/feedback/*.* -x *svn*
 zip -9r pak6-misc.pk3 sound/teamplay/*.* -x *svn*
 zip -9r pak6-misc.pk3 scripts/bots.txt -x *svn*

@@ -2,13 +2,19 @@
 {
 name		Gargoyle
 model		gargoyle
-aifile	bots/default_c.c
+aifile	bots/gargoyle_c.c
 }
 
 
 {
 name		Grism
 model		sarge
-aifile	bots/default_c.c
+aifile	bots/grism_c.c
+}
+
+{
+name		Kyonshi
+model		kyonshi
+aifile	bots/kyonshi_c.c
 }
 

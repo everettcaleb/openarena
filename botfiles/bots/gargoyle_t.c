@@ -1,0 +1,172 @@
+
+chat "gargoyle"
+{
+	#include "teamplay.h"
+
+	type "game_enter"
+	{
+		"I hope that you are all ready to die, because you will.";
+	}
+
+	type "game_exit"
+	{
+		"~It's been real and ~it's been fun...";
+	}
+
+	type "level_start"
+	{
+		4, "was a great place before they screwed it up.";
+	}
+
+	type "level_end"
+	{
+		"Yawn... thought it would never end.";
+	}
+
+	type "level_end_victory"
+	{
+		"As usual... ~You still suck.";
+	}
+
+	type "level_end_lose"
+	{
+		"Ya Basta!";
+	}
+
+	type "hit_talking"
+	{
+		"Look asshole I was trying to hold a conversation!";
+	}
+
+	type "hit_nodeath"
+	{
+		TAUNT4;
+		TAUNT6;
+		TAUNT8;
+	}
+
+	type "hit_nokill"
+	{
+		HIT_NOKILL0;
+		HIT_NOKILL1;
+		HIT_NOKILL1;
+	}
+
+	type "death_telefrag"
+	{
+		DEATH_TELEFRAGGED0;
+		DEATH_TELEFRAGGED0;
+		DEATH_TELEFRAGGED0;
+	}
+
+	type "death_cratered"
+	{
+		DEATH_FALLING;
+		DEATH_FALLING;
+		DEATH_FALLING;
+	}
+
+	type "death_lava"
+	{
+		"Anyone got any marshmallows?";
+	}
+
+	type "death_slime"
+	{
+		"Well it looked safer than that...";
+	}
+
+	type "death_drown"
+	{
+		"Ahh... sweet oblivion.";
+	}
+
+	type "death_suicide"
+	{
+		DEATH_SUICIDE5;
+		DEATH_SUICIDE3;
+		DEATH_SUICIDE3;
+	}
+
+	type "death_gauntlet"
+	{
+		DEATH_GAUNTLET0;
+		DEATH_GAUNTLET2;
+		DEATH_GAUNTLET2;
+	}
+
+	type "death_rail"
+	{
+		DEATH_RAIL2;
+		DEATH_RAIL2;
+		DEATH_RAIL0;
+		 0, ", I invented the railgun!";
+	}
+
+	type "death_bfg"
+	{
+		DEATH_BFG1;
+		 0, ", I invented the BFG!";
+	}
+
+	type "death_insult"
+	{
+		"took you long enough...";
+		"Is that all you've got?";
+	}
+
+	type "death_praise"
+	{
+		 "You are better than I thought, ", 0, ".";
+	}
+
+	type "kill_rail"
+	{
+		DEATH_RAIL1;
+		DEATH_RAIL1;
+		DEATH_RAIL1;
+	}
+
+	type "kill_gauntlet"
+	{
+		KILL_GAUNTLET0;
+		KILL_GAUNTLET1;
+		KILL_GAUNTLET2;
+	}
+
+	type "kill_telefrag"
+	{
+		TELEFRAGGED0;
+		TELEFRAGGED3;
+		TELEFRAGGED6;
+	}
+
+	type "kill_suicide"
+	{
+		TAUNT9;
+		TAUNT1;
+		TAUNT3;
+	}
+
+	type "kill_insult"
+	{
+		"Pathetic";
+		"looser";
+	}
+
+	type "kill_praise"
+	{
+		"watch it, ", 0, ", i used to hypnotize chickens!";
+	}
+
+	type "random_insult"
+	{
+		 "I've seen bacteria with a better chance of getting a frag than ~you, ", 0, ".";
+	}
+
+	type "random_misc"
+	{
+		"Ever have an itch that you just can't scratch?";
+		"You know, I really do want to be anarchy... how do I go about that?";
+	}
+}
