@@ -161,7 +161,7 @@ railExplosion
 	{
 		clampmap models/weaphits/spark.tga
 		blendfunc gl_src_alpha gl_one
-		rgbGen Vertex
+		rgbGen Entity
 		tcMod stretch sawtooth 1.5 -3.5 0 1.1 
 		tcMod rotate -80
 		alphaGen wave inversesawtooth 0 1 0 1.65 

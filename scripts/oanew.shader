@@ -1,3 +1,30 @@
+models/powerups/armor/shard
+{
+	{
+		map models/powerups/armor/shard.tga
+		tcMod rotate 12
+		tcMod scroll 0.1 0
+		tcGen environment 
+	}
+	{
+		map models/powerups/armor/shard2.tga
+		blendfunc add
+		rgbGen wave sin 0 1 0 1 
+		tcMod rotate -64
+		tcMod scroll 1 0.1
+		tcGen environment 
+	}
+	{
+		map models/powerups/armor/shard2.tga
+		blendfunc add
+		rgbGen wave sin 0 1 0 1 
+		tcMod rotate 35
+		tcMod scroll -2 -0.4
+		tcGen environment 
+	}
+}
+
+
 lowShotgunFlash
 {
 	deformVertexes autosprite
@@ -49,7 +76,20 @@ lowRailgunFlash
 	{
 		map models/weapons2/railgun/f_railgun2.tga
 		blendfunc add
-		rgbGen Vertex
+		rgbGen entity
+	}
+}
+
+lapscrn
+{
+	tessSize 64
+	{
+		map models/mapobjects/laptop/lapscrn.tga
+	}
+	{
+		map models/mapobjects/laptop/invert.tga
+		blendfunc gl_one_minus_dst_color gl_one_minus_src_color
+		tcGen environment 
 	}
 }
 
@@ -59,6 +99,7 @@ lowLightnnFlash
 	{
 		map models/weapons2/lightning/f_lightning.tga
 		blendfunc add
+		tcMod rotate 675756
 	}
 }
 
@@ -308,7 +349,6 @@ textures/base_light/ceil1_4
 		rgbGen wave noise 0.8 0.2 0 1 
 	}
 }
-
 
 console
 {

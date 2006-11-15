@@ -18,3 +18,23 @@ model		kyonshi
 aifile	bots/kyonshi_c.c
 }
 
+// for the sake of the ctf menu
+
+{
+name		Major
+model		kyonshi/red
+aifile	bots/kyonshi_c.c
+}
+
+{
+name		Sarge
+model		sarge
+aifile	bots/grism_c.c
+}
+
+{
+name		Grunt
+model		gargoyle/tech
+aifile	bots/gargoyle_c.c
+}
+

@@ -53,20 +53,39 @@ models/weapons2/railgun/flare
 models/weapons2/railgun/skin
 {
 	{
+		map models/weapons2/railgun/skin.tga
+		rgbGen lightingDiffuse
+	}
+}
+
+models/weapons2/railgun/energy
+{
+	{
 		map models/weapons2/railgun/scrolly.tga
 		rgbGen entity
-		tcMod scroll -1.2 0
+		tcMod scroll -2 0
 	}
 	{
 		map models/weapons2/railgun/scrolly.tga
 		blendfunc add
 		rgbGen entity
-		tcMod scroll 0.3 0
+		tcMod scroll -1 0
 	}
 	{
-		map models/weapons2/railgun/skin.tga
-		blendfunc blend
+		map gfx/damage/shadow.tga
+		blendfunc filter
+		tcMod scale 1.1 1
+	}
+}
+
+models/weapons2/railgun/glass
+{
+	cull disable
+	{
+		map textures/effects/tinfx2.tga
+		blendfunc add
 		rgbGen lightingDiffuse
+		tcGen environment 
 	}
 }
 
@@ -74,13 +93,13 @@ railgunFlash
 {
 	cull disable
 	{
-		map models/weapons2/railgun/f_railgun2.tga
+		clampmap models/weapons2/railgun/f_railgun2.tga
 		blendfunc add
 		rgbGen entity
 		tcMod rotate -74
 	}
 	{
-		map models/weapons2/railgun/f_railgun2.tga
+		clampmap models/weapons2/railgun/f_railgun2.tga
 		blendfunc add
 		rgbGen entity
 		tcMod rotate 53
