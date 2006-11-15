@@ -1,7 +1,19 @@
+invisItem
+{
+	cull disable
+	{
+		map textures/effects/tinfx.tga
+		blendfunc add
+		rgbGen wave sin 0.3 0.4 0 0.5 
+		tcGen environment 
+	}
+}
+
 quadDamage
 {
 	{
 		map textures/oafx/quadshell.tga
+		tcMod scroll 0.5 0.5
 		tcGen environment 
 	}
 	{
