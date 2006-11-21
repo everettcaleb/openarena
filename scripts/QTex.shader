@@ -1,3 +1,4 @@
+// Quake texture subsitutions for easy converting
 textures/water
 {
 	surfaceparm nomarks
@@ -159,6 +160,151 @@ textures/water1
 		map $lightmap 
 		blendfunc filter
 		tcGen lightmap 
+	}
+}
+
+textures/ecop1_1
+{
+	surfaceparm metalsteps
+	{
+		map textures/gothic_floor/blocks17floor.tga
+		rgbGen const ( 0.615686 0.533333 0.490196 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/ecop1_4
+{
+	surfaceparm metalsteps
+	{
+		map textures/gothic_floor/blocks17floor.tga
+		rgbGen const ( 0.615686 0.533333 0.490196 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/ecop1_6
+{
+	surfaceparm metalsteps
+	{
+		map textures/gothic_floor/blocks17floor.tga
+		rgbGen const ( 0.615686 0.533333 0.490196 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/ecop1_7
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/metal2_2.tga
+		rgbGen const ( 0.67451 0.494118 0.435294 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/ecop1_8
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_wall/patch10_beatup4.tga
+		rgbGen const ( 1 1 1 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/ground1_2
+{
+	{
+		map textures/stone/pjrock6.tga
+		rgbGen const ( 0.678431 0.52549 0.427451 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/ground1_6
+{
+	{
+		map textures/stone/pjrock6.tga
+		rgbGen const ( 0.611765 0.788235 0.560784 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -342,6 +488,552 @@ textures/sfloor4_4
 		map $lightmap 
 		blendfunc filter
 		tcGen lightmap 
+	}
+}
+
+textures/tech01_1
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_support/cable.tga
+		rgbGen const ( 0.619608 0.541176 0.372549 )
+		tcMod scale 2 4
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech01_2
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_support/cable.tga
+		rgbGen const ( 0.803922 0.760784 0.670588 )
+		tcMod scale 2 3
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech01_3
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_support/cable.tga
+		rgbGen const ( 0.803922 0.760784 0.670588 )
+		tcMod scale 4 3
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech01_5
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_support/cable.tga
+		rgbGen const ( 0.647059 0.505882 0.294118 )
+		tcMod scale 6 6
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech01_6
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_support/cable.tga
+		rgbGen const ( 0.74902 0.627451 0.45098 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech01_7
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_support/cable.tga
+		rgbGen const ( 0.752941 0.537255 0.447059 )
+		tcMod scale 6 6
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech01_9
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_floor/clanggrate2.tga
+		rgbGen const ( 0.862745 0.380392 0.239216 )
+		tcMod scale 6 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech02_1
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_support/cable.tga
+		rgbGen const ( 0.858824 0.823529 0.756863 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech02_2
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_ceiling/metceil1d.tga
+		rgbGen const ( 0.862745 0.380392 0.239216 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech02_3
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_ceiling/metceil1d.tga
+		rgbGen const ( 0.862745 0.380392 0.239216 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech02_5
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_ceiling/metceil1d.tga
+		rgbGen const ( 0.862745 0.380392 0.239216 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech02_6
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_ceiling/metceil1d.tga
+		rgbGen const ( 0.862745 0.380392 0.239216 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech02_7
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_ceiling/metceil1d.tga
+		rgbGen const ( 0.862745 0.380392 0.239216 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech03_1
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_wall/qbasewall.tga
+		rgbGen const ( 1 1 1 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech03_2
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_wall/qbasewall.tga
+		rgbGen const ( 1 1 1 )
+		tcMod scale 0.5 0.5
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech04_1
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/tin.tga
+		rgbGen const ( 0.670588 0.517647 0.313726 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/tech04_2
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/tin.tga
+		rgbGen const ( 0.670588 0.517647 0.313726 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/tech04_3
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/tin.tga
+		rgbGen const ( 0.670588 0.517647 0.313726 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/tech04_4
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/tin.tga
+		rgbGen const ( 0.670588 0.517647 0.313726 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/tech04_5
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/tin.tga
+		rgbGen const ( 0.670588 0.517647 0.313726 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/tech04_6
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/tin.tga
+		rgbGen const ( 0.670588 0.517647 0.313726 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/tech04_7
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/tin.tga
+		rgbGen const ( 0.670588 0.517647 0.313726 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/tech04_8
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_trim/tin.tga
+		rgbGen const ( 0.670588 0.517647 0.313726 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/tech05_1
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_wall/qbasewall.tga
+		rgbGen const ( 0.803922 0.478431 0.321569 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech06_1
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_wall/qbasewall.tga
+		rgbGen const ( 0.803922 0.478431 0.321569 )
+		tcMod scale 2 2
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
+	}
+}
+
+textures/tech08_1
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_wall/qbasewall.tga
+		rgbGen const ( 1 1 1 )
+		tcMod scale 0.5 0.5
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 32 32
+		detail
 	}
 }
 

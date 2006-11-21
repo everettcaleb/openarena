@@ -7,18 +7,21 @@
 - New gauntlet skin from slyus
 - New machinegun skin from slyus
 - New lightning gun effects
-- C.Brutail's cbctf1 converted over.
+- Vondur's Kaos map converted over. (GPL v2)
+- C.Brutail's cbctf1 converted over. (GPL v2 also)
 - Gargoyle is reskinned by enki
 - Gargoyle's wings are finally fixed and added.
 - Decals are slightly more polished.
+- A lot of sounds are polished. 
 - New flesh footsteps
-- paks are component split again.
+- Pk3 files are now split into components again
 - New win32 icon!
 - More 2D icons
 - Health items reworked; they all have spheres with LODs and shaders
 - Mega health model
 - Machinegun repositioned
 - Machinegun flash rotated (to be a bit like q3's)
+- New splash video. (Should be a bit less crappy)
 
 0.5.1 (8/26/2006)
 - Removed Fox_DF's sounds due to possible copyright issues

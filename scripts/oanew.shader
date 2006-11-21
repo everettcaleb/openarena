@@ -24,7 +24,6 @@ models/powerups/armor/shard
 	}
 }
 
-
 lowShotgunFlash
 {
 	deformVertexes autosprite
@@ -107,8 +106,14 @@ LightnnFlash
 {
 	cull disable
 	{
-		animmap 45 models/weapons2/lightning/muzzle1.tga models/weapons2/lightning/muzzle2.tga models/weapons2/lightning/muzzle3.tga 
-		blendfunc add
+		animmap 20 models/weapons2/lightning/muzzle1.tga models/weapons2/lightning/muzzle2.tga models/weapons2/lightning/muzzle3.tga 
+		blendfunc gl_one gl_src_alpha
+		rgbGen wave inversesawtooth 0 1 0 20 
+	}
+	{
+		animmap 20 models/weapons2/lightning/muzzle2.tga models/weapons2/lightning/muzzle3.tga models/weapons2/lightning/muzzle1.tga 
+		blendfunc gl_one gl_src_alpha
+		rgbGen wave sawtooth 0 1 0 20 
 	}
 }
 
@@ -116,6 +121,48 @@ default
 {
 	{
 		map textures/stone/pjrock1.tga
+	}
+}
+
+textures/sfx/bouncepad01block18b
+{
+	q3map_lightimage textures/effects/jumpcirc.tga
+	q3map_surfacelight 466
+	{
+		map textures/gothic_block/blocks18b.tga
+	}
+	{
+		clampmap textures/effects/jumpcirc.tga
+		blendfunc add
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate 75
+	}
+	{
+		clampmap textures/effects/jumpcirc.tga
+		blendfunc add
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate -120
+	}
+}
+
+textures/sfx/metalbridge06_bounce
+{
+	q3map_lightimage textures/effects/jumpcirc.tga
+	q3map_surfacelight 466
+	{
+		map textures/gothic_floor/metalbridge06.tga
+	}
+	{
+		clampmap textures/effects/jumpcirc.tga
+		blendfunc add
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate 75
+	}
+	{
+		clampmap textures/effects/jumpcirc.tga
+		blendfunc add
+		tcMod stretch sawtooth 0 1 0 1 
+		tcMod rotate -120
 	}
 }
 
@@ -237,8 +284,14 @@ textures/sfx/flame2
 	q3map_surfacelight 3787
 	q3map_flare textures/sfx/flameflare
 	{
-		animmap 25 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
+		animmap 8 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
 		blendfunc gl_src_alpha gl_one
+		rgbGen wave inversesawtooth 0 1 0 8 
+	}
+	{
+		animmap 8 textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga textures/sfx/flame1.tga 
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave sawtooth 0 1 0 8 
 	}
 }
 
@@ -345,6 +398,131 @@ textures/base_light/ceil1_4
 	}
 	{
 		map textures/base_light/ceil1_34.blend.tga
+		blendfunc add
+		rgbGen wave noise 0.8 0.2 0 1 
+	}
+}
+
+textures/gothic_light/pentagram_light1_3k
+{
+	qer_editorimage textures/gothic_light/pentagram_light1_3k.tga
+	q3map_lightimage textures/gothic_light/pentagram_light1_3k_blend.tga
+	surfaceparm nomarks
+	q3map_surfacelight 3000
+	q3map_flare flareShader
+	{
+		map textures/gothic_light/pentagram_light1_3k.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/gothic_light/pentagram_light1_3k_blend.tga
+		blendfunc add
+		rgbGen wave noise 0.8 0.2 0 1 
+	}
+}
+
+textures/base_light/wsupprt1_12
+{
+	qer_editorimage textures/base_light/wsupprt1_12.tga
+	q3map_lightimage textures/base_light/wsupprt1_12.tga
+	surfaceparm nomarks
+	q3map_surfacelight 3000
+	q3map_flare flareShader
+	{
+		map textures/base_light/wsupprt1_12.tga
+		rgbGen identity
+	}
+}
+
+base_light/wsupprt1_12
+{
+	q3map_lightimage textures/base_light/wsupprt1_12.tga
+	q3map_surfacelight 600
+	q3map_flare flareShader
+	{
+		map textures/base_light/wsupprt1_12.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/wsupprt1_12.tga
+		blendfunc add
+		rgbGen wave noise 0.8 0.2 0 1 
+	}
+}
+
+textures/gothic_light/ironcrosslt2_1000
+{
+	qer_editorimage textures/gothic_light/ironcrosslt2_1000.tga
+	q3map_lightimage textures/gothic_light/ironcrosslt2_1000_blend.tga
+	surfaceparm nomarks
+	q3map_surfacelight 1000
+	q3map_flare flareShader
+	{
+		map textures/gothic_light/ironcrosslt2_1000.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/gothic_light/ironcrosslt2_1000_blend.tga
+		blendfunc add
+		rgbGen wave noise 0.8 0.2 0 1 
+	}
+}
+
+textures/gothic_light/ironcrosslt2_10000
+{
+	qer_editorimage textures/gothic_light/ironcrosslt2_10000.tga
+	q3map_lightimage textures/gothic_light/ironcrosslt2_10000_blend.tga
+	surfaceparm nomarks
+	q3map_surfacelight 10000
+	q3map_flare flareShader
+	{
+		map textures/gothic_light/ironcrosslt2_10000.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/gothic_light/ironcrosslt2_10000_blend.tga
+		blendfunc add
+		rgbGen wave noise 0.8 0.2 0 1 
+	}
+}
+
+textures/gothic_light/ironcrosslt2_5000
+{
+	qer_editorimage textures/gothic_light/ironcrosslt2_10000.tga
+	q3map_lightimage textures/gothic_light/ironcrosslt2_5000_blend.tga
+	q3map_surfacelight 5000
+	q3map_flare flareShader
+	{
+		map textures/gothic_light/ironcrosslt2_5000.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/gothic_light/ironcrosslt2_5000_blend.tga
 		blendfunc add
 		rgbGen wave noise 0.8 0.2 0 1 
 	}
@@ -505,6 +683,16 @@ boomzor
 {
 	deformVertexes autosprite
 	{
+		animmap 8 models/weaphits/rlboom/rlboom_1.tga models/weaphits/rlboom/rlboom_2.tga models/weaphits/rlboom/rlboom_3.tga models/weaphits/rlboom/rlboom_4.tga models/weaphits/rlboom/rlboom_5.tga models/weaphits/rlboom/rlboom_6.tga models/weaphits/rlboom/rlboom_7.tga models/weaphits/rlboom/rlboom_8.tga 
+		blendfunc gl_one gl_src_alpha
+		rgbGen wave inversesawtooth 0 1 0 8 
+	}
+	{
+		animmap 8 models/weaphits/rlboom/rlboom_2.tga models/weaphits/rlboom/rlboom_3.tga models/weaphits/rlboom/rlboom_4.tga models/weaphits/rlboom/rlboom_5.tga models/weaphits/rlboom/rlboom_6.tga models/weaphits/rlboom/rlboom_7.tga models/weaphits/rlboom/rlboom_8.tga models/weaphits/rlboom/rlboom_8.tga 
+		blendfunc gl_one gl_src_alpha
+		rgbGen wave sawtooth 0 1 0 8 
+	}
+	{
 		clampmap textures/oa/fiar.tga
 		blendfunc add
 		rgbGen wave inversesawtooth 0 1 0 1 
@@ -523,6 +711,7 @@ boomzor
 		blendfunc add
 		rgbGen wave inversesawtooth 0 1 0 1 
 		tcMod rotate -17
+		tcMod stretch sawtooth 0 1.2 0 0.5 
 	}
 	{
 		clampmap textures/oa/fiar2.tga

@@ -5,16 +5,16 @@ textures/gothic_block/blocks11b
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_stone.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -25,16 +25,16 @@ textures/gothic_block/blocks17
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_stone.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -45,16 +45,16 @@ textures/gothic_block/blocks17e
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_stone.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -65,16 +65,16 @@ textures/gothic_block/blocks15
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_stone.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -85,16 +85,16 @@ textures/gothic_block/blocks11d
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_stone.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -105,16 +105,16 @@ textures/gothic_block/blocks18b
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_stone.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -125,16 +125,16 @@ textures/gothic_block/blocks18d
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_stone.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -145,16 +145,16 @@ textures/gothic_floor/q1metal7_99
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_conc.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -165,16 +165,16 @@ textures/gothic_floor/largerblock3b3dim
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_stone.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 12 12
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 12 12
+		detail
 	}
 }
 
@@ -185,16 +185,16 @@ textures/gothic_trim/pitted_rust3
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_met.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -205,16 +205,16 @@ textures/gothic_block/killblock
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
-		detail
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 }
 
@@ -225,15 +225,15 @@ textures/base_wall/concrete
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_conc.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 4
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
 	}
 }
 
@@ -244,15 +244,15 @@ textures/bahse_wall/concrete_dark
 		rgbGen identity
 	}
 	{
-		map textures/detail/d_conc.tga
-		blendfunc gl_dst_color gl_src_color
-		tcGen vector ( 2 0 0 ) ( 0 2 0 ) 
-	}
-	{
 		map $lightmap 
 		blendfunc filter
 		rgbGen identity
 		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
 	}
 }
 

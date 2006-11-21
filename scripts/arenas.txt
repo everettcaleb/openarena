@@ -3,23 +3,37 @@ map             "oa_rpg3dm2"
 longname        "Trial by Error"
 bots            "sarge gargoyle"
 timelimit       10
-type            "tourney ffa"
+type            "single tourney ffa"
 }
 {
 map			"dm6ish"
-bots		"gargoyle grism kyonshi"
+bots		"gargoyle grism major"
 longname	"DM6ish"
 fraglimit	20
 type		"single ffa tourney team sp"
 }
 
+{
+map			"kaos"
+bots		"gargoyle kyonshi grism major"
+longname	"Kaooos"
+fraglimit	20
+type		"single ffa tourney team sp"
+}
 
+{
+map			"dm4ish"
+bots		"gargoyle"
+longname	"DM4ishish"
+fraglimit	30
+type		"single ffa tourney team sp"
+}
 
 {
 map			"oa_bubctf1"
 bots		"gargoyle grism kyonshi"
 longname	"The Fast and the Vurious"
-fraglimit	30
+fraglimit	15
 type		"single ffa tourney team sp ctf"
 }
 
@@ -31,16 +45,6 @@ fraglimit	30
 type		"single ffa tourney team sp ctf"
 }
 
-
-
-
-{
-map			"dm4ish"
-bots		"gargoyle"
-longname	"DM4ishish"
-fraglimit	30
-type		"single ffa tourney team sp"
-}
 
 // commented out due to very ugly texturing
 //{
