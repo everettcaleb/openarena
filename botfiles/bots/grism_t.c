@@ -13,7 +13,7 @@ chat "grism"
 	{
 		GOODBYE1;
 		GOODBYE4;
-		GOODBYE1;
+		GOODBYE3;
 	}
 
 	type "level_start"
@@ -46,9 +46,9 @@ chat "grism"
 
 	type "hit_nodeath"
 	{
-		TAUNT4;
-		TAUNT6;
-		TAUNT8;
+		TAUNT0;
+		TAUNT1;
+		TAUNT2;
 	}
 
 	type "hit_nokill"
@@ -67,9 +67,9 @@ chat "grism"
 
 	type "death_cratered"
 	{
-		DEATH_FALLING;
-		DEATH_FALLING;
-		DEATH_FALLING;
+		DEATH_FALLING0;
+		DEATH_FALLING0;
+		DEATH_FALLING0;
 	}
 
 	type "death_lava"
@@ -89,22 +89,22 @@ chat "grism"
 
 	type "death_suicide"
 	{
-		DEATH_SUICIDE5;
-		DEATH_SUICIDE3;
-		DEATH_SUICIDE3;
+		DEATH_SUICIDE0;
+		DEATH_SUICIDE1;
+		DEATH_SUICIDE1;
 	}
 
 	type "death_gauntlet"
 	{
 		DEATH_GAUNTLET0;
-		DEATH_GAUNTLET2;
-		DEATH_GAUNTLET2;
+		DEATH_GAUNTLET1;
+		DEATH_GAUNTLET1;
 	}
 
 	type "death_rail"
 	{
-		DEATH_RAIL2;
-		DEATH_RAIL2;
+		DEATH_RAIL1;
+		DEATH_RAIL1;
 		DEATH_RAIL0;
 		
 	}
@@ -128,30 +128,27 @@ chat "grism"
 
 	type "kill_rail"
 	{
-		DEATH_RAIL1;
-		DEATH_RAIL1;
-		DEATH_RAIL1;
+		KILL_RAIL0;
+		KILL_RAIL1;
 	}
 
 	type "kill_gauntlet"
 	{
 		KILL_GAUNTLET0;
 		KILL_GAUNTLET1;
-		KILL_GAUNTLET2;
+		
 	}
 
 	type "kill_telefrag"
 	{
 		TELEFRAGGED0;
-		TELEFRAGGED3;
-		TELEFRAGGED6;
+		TELEFRAGGED1;
 	}
 
 	type "kill_suicide"
 	{
-		TAUNT9;
+		TAUNT0;
 		TAUNT1;
-		TAUNT3;
 	}
 
 	type "kill_insult"
@@ -170,7 +167,7 @@ chat "grism"
 	type "random_insult"
 	{
 		 0, ", ~you suck!";
-		 random_fighter, " needs to stop calling my mom.";
+		 malebot, " needs to stop calling my mom.";
 	}
 
 	type "random_misc"

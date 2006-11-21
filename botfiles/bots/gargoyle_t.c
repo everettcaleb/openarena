@@ -40,9 +40,9 @@ chat "gargoyle"
 
 	type "hit_nodeath"
 	{
-		TAUNT4;
-		TAUNT6;
-		TAUNT8;
+		TAUNT0;
+		TAUNT1;
+		TAUNT2;
 	}
 
 	type "hit_nokill"
@@ -61,9 +61,9 @@ chat "gargoyle"
 
 	type "death_cratered"
 	{
-		DEATH_FALLING;
-		DEATH_FALLING;
-		DEATH_FALLING;
+		DEATH_FALLING0;
+		DEATH_FALLING0;
+		DEATH_FALLING0;
 	}
 
 	type "death_lava"
@@ -83,22 +83,22 @@ chat "gargoyle"
 
 	type "death_suicide"
 	{
-		DEATH_SUICIDE5;
-		DEATH_SUICIDE3;
-		DEATH_SUICIDE3;
+		DEATH_SUICIDE0;
+		DEATH_SUICIDE1;
+		DEATH_SUICIDE2;
 	}
 
 	type "death_gauntlet"
 	{
 		DEATH_GAUNTLET0;
-		DEATH_GAUNTLET2;
-		DEATH_GAUNTLET2;
+		DEATH_GAUNTLET1;
+		DEATH_GAUNTLET1;
 	}
 
 	type "death_rail"
 	{
-		DEATH_RAIL2;
-		DEATH_RAIL2;
+		DEATH_RAIL1;
+		DEATH_RAIL1;
 		DEATH_RAIL0;
 		 0, ", I invented the railgun!";
 	}
@@ -113,6 +113,7 @@ chat "gargoyle"
 	{
 		"took you long enough...";
 		"Is that all you've got?";
+		curse;
 	}
 
 	type "death_praise"
@@ -123,7 +124,7 @@ chat "gargoyle"
 	type "kill_rail"
 	{
 		DEATH_RAIL1;
-		DEATH_RAIL1;
+		DEATH_RAIL0;
 		DEATH_RAIL1;
 	}
 
@@ -131,32 +132,36 @@ chat "gargoyle"
 	{
 		KILL_GAUNTLET0;
 		KILL_GAUNTLET1;
-		KILL_GAUNTLET2;
+		KILL_GAUNTLET0;
 	}
 
 	type "kill_telefrag"
 	{
 		TELEFRAGGED0;
-		TELEFRAGGED3;
-		TELEFRAGGED6;
+		TELEFRAGGED1;
+		
 	}
 
 	type "kill_suicide"
 	{
-		TAUNT9;
+		
 		TAUNT1;
-		TAUNT3;
+		TAUNT0;
 	}
 
 	type "kill_insult"
 	{
 		"Pathetic";
 		"looser";
+		KILL_EXTREME_INSULT;
+		curse;
 	}
 
 	type "kill_praise"
 	{
-		"watch it, ", 0, ", i used to hypnotize chickens!";
+		D_PRAISE;
+		D_PRAISE1;
+		D_PRAISE3;
 	}
 
 	type "random_insult"
