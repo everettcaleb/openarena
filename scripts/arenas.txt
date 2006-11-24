@@ -5,6 +5,15 @@ bots            "sarge gargoyle"
 timelimit       10
 type            "single tourney ffa"
 }
+
+{
+map			"aggressor"
+bots		"gargoyle"
+longname	"Aggressor"
+fraglimit	20
+type		"single ffa tourney team sp"
+}
+
 {
 map			"dm6ish"
 bots		"gargoyle grism major"

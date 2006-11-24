@@ -406,6 +406,7 @@ textures/evil8_lights/e8_rlightb2
 	q3map_lightimage textures/evil8_lights/e8_rlightb2.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 450
+	q3map_flare flareShader
 	{
 		map textures/evil8_lights/e8_rlightb2.tga
 	}
