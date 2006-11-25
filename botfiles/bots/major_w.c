@@ -21,54 +21,35 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
+/*weapon defines    		weights 10-500
+			    try to keep it balanced*/
+
 #include "inv.h"
-
-#define FPH				5
-#define FPA				3
-
-#define SGW				200
-#define MGW				100
-#define GLW				150
-#define RLW				350
+//gauntlet
+#define GTW				90
+//shotgun
+#define SGW				290
+//machinegun
+#define MGW				130
+//grenade launcher
+#define GLW				175
+//rocket launcher
+#define RLW				300
+//railgun
 #define RGW				500
-#define BFW				450
-#define LGW				200
-#define PGW				250
-#define PXW				350
-#define NGW				150
-#define CGW				200
+//bfg10k
+#define BFW				200
+//lightninggun
+#define LGW				190
+//plasmagun
+#define PGW				200
+//grapplinghook
+#define GRW				50
+//prox-launcher
+#define PXW				175
+//nailgun
+#define NGW				200
+//chaingun
+#define CGW				260
 
-#define GSGW				150
-#define GMGW				150
-#define GGLW				200
-#define GRLW				300
-#define GRGW				400
-#define GBFW				100
-#define GLGW				250
-#define GPGW				100
-#define GPXW				200
-#define GNGW				100
-#define GCGW				125
-
-#define TELW				190
-#define MEDW				50
-#define QW				500
-#define ENVW				50
-#define HAW				50
-#define INW				400
-#define REGW				50
-#define FLW				0.0
-#define KAMW				200
-#define IBW				150
-#define PORW				300
-#define SCW				100
-#define GUW				200
-#define DUBW				100
-#define AMRW				400
-#define REDCW				200
-#define BLCW				200
-
-#define FGW				400
-
-//
-#include "fuzi.c"
+#include "fuzw.c"

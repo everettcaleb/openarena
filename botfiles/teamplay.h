@@ -26,10 +26,12 @@ type "whois"
 {
 "Ok, so who is ", 0, "?";
 "Who in their right mind uses the name ", 0, "?";
-"There is a teammate called ", 0, ", that is news to me.";
+"Who in the hell is ", 0, "?";
 "Is ", 0, " a friend of yours?";
 "Who the bloodyhell is ",0," .";
-0, "!?! Who dat?", neutral;
+0, "!?! Who dat?";
+"How can I kill ", 0, " when I haven't the foggiest idea who ", 0, " is?";
+
 }
 
 	//the bot doesn't know where someone is hanging out
@@ -59,13 +61,14 @@ type "cannotfind"
 "Where would that be ", 0, "?";
 "Where the hell is a ", 0, "?";
 "Where is a ", 0, " in this level?";
-"Is there a, ", 0, " in this level? I sure can't find it.";
+"Is there a, ", 0, " in this level? I sure can't find it, I must be blind.";
 } 
 
 	//bot tells where he/she is
 type "location"
 {
 "By the ", 0," what are you blind?";
+"I am at the ", 0;
 } 
 
 //bot tells where he/she is and near which base
@@ -100,7 +103,8 @@ type "accompany_stop"
 	//cannot find companion
 type "accompany_cannotfind"
 {
-"Where the hell are you ", 0, "? ", teamchat_02;
+"Where the hell are you ", 0, "?";
+"Where are you hiding ", 0, "?";
 
 } 
 
@@ -153,12 +157,23 @@ type "getitem_gotit"
 type "kill_start"
 {
 "I'm going to kill ", 0,", wish me luck.";
-
+0, " will be toast.";
+0, " is a goner.";
+0, " will be given a pair of cement shoes.";
+"Ok";
+"What ever you say";
+"Finally some fun!";
 }
 	//killed the person
 type "kill_done"
 {
 "Well that was easy. ", 0, " is dead.";
+0, " has been wacked.";
+0, " was given cement shoes.";
+0, " kicked the bucket.";
+0, " was taken out.";
+0, " just bought the farm.";
+0, " is now just dust in the wind.";
 }
 
 	//start camping
@@ -213,6 +228,8 @@ type "attackenemybase_start"
 type "harvest_start"
 {
 "Death to the infidels!  Their skulls will be mine!";
+"Death to the infidels!";
+"The infidels shall die!";
 }
 
 	//bot is dismissed
@@ -245,7 +262,7 @@ type "noteam"
 {
 "I work better alone.";
 "No one wanted me on their team :-(";
-"I have no friends. My ", random_counselor, " tells me this is bad.";
+"I have no friends. My ", counselor, " tells me this is bad.";
 }
 
 	//the checkpoint is invalid
@@ -347,22 +364,27 @@ type "harvesting"
 type "roaming"
 {
 "Rambling around, fragging at whim.";
+"Mindlessly roaming around, like I was told.";
+"~Wacking fools piece-meal";
 }
 
 type "wantoffence"
 {
-"Let me go on offence.";
+"Let me go on offense.";
+"Can I be on offense?";
 }
 
 type "wantdefence"
 {
 "I think I can handle the big D.";
+"Can I be on defense?";
 }
 
 	//the bot will keep the team preference in mind
 type "keepinmind"
 {
 "A'ight, ", 0," I'll keep it in mind.";
+
 }
 
 	//==========================
@@ -438,7 +460,9 @@ type "cmd_defendbase"
 	//get the enemy flag command
 type "cmd_getflag"
 {
-"Yo, ", 0, " get our flag!";
+"Yo, ", 0, " get the flag!";
+0, " get their flag.";
+0, " get the flag.";
 }
 	//accompany someone command
 type "cmd_accompany"
@@ -460,6 +484,7 @@ type "cmd_attackenemybase"
 type "cmd_returnflag"
 {
 0, " return our flag, dammit!";
+0, " get our flag back, ASAP!";
 }
 	//go harvesting
 type "cmd_harvest"

@@ -1,3 +1,25 @@
+/*
+===========================================================================
+Copyright (C) 2006 Dmn_clown (aka: Bob Isaac (rjisaac@gmail.com))
+
+This file is part of Open Arena and is based upon Mr. Elusive's fuzzy logic
+system found in Quake 3 Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
 
 chat "grism"
 {
@@ -40,8 +62,7 @@ chat "grism"
 	type "hit_talking"
 	{
 		DEATH_TALKING;
-		DEATH_TALKING;
-		DEATH_TALKING;
+		
 	}
 
 	type "hit_nodeath"
@@ -75,6 +96,7 @@ chat "grism"
 	type "death_lava"
 	{
 		"Well it was getting a bit nippy...";
+		"mmm... toasty!";
 	}
 
 	type "death_slime"
@@ -112,6 +134,7 @@ chat "grism"
 	type "death_bfg"
 	{
 		DEATH_BFG1;
+		DEATH_BFG0;
 		 
 	}
 
@@ -155,7 +178,7 @@ chat "grism"
 	{
 		"Pathetic.";
 		"tsk";
-		"My grandmother could do better.";
+		"My ", family_member, " could do better.";
 	}
 
 	type "kill_praise"
@@ -167,13 +190,13 @@ chat "grism"
 	type "random_insult"
 	{
 		 0, ", ~you suck!";
-		 malebot, " needs to stop calling my mom.";
+		 0, " needs to stop calling my mom.";
 	}
 
 	type "random_misc"
 	{
-		"Dmn_clown gave my mom crabs.";
-		"Is it true that dmn_clown is a bot?";
+		0, " gave my ~mom ", disease, ".";
+		"Is it true that ", peeps, " is a bot?";
 		
 	}
 }

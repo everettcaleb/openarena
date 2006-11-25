@@ -438,7 +438,7 @@ GRRLTALK1 = {
 	"I'm thinking about getting implants, any thoughts?";
 	"So ", 0, " when are you going to say something about my hair?";
 	"I wouldn't date ", femalebot, " if she paid me.";
-	0, "do you douche?";
+	0, ", do you douche?";
 }
 
 PRAISE0 = {
@@ -705,7 +705,7 @@ weapon = {
 	"railgun";
 	"plasmagun";
 	"BFG";
-	"BFG 10K";
+	"BFG10K";
 	"lightning gun";
 }
 
@@ -716,6 +716,7 @@ ponder = {
 	"Universal harmony, will it ever happen?  Discuss."; //taoist response
 	"Jesus died for my sins?"; //sceptical response
 	"If evolution is happening, why are people so stupid?";
+	"Ever do any fishing?";
 }
 
 response_insult = {
@@ -810,6 +811,7 @@ fighter = {
 
 femalebot = {
 	"Kyonshi";
+	"Major";
 }
 
 malebot = {
@@ -821,6 +823,7 @@ botnames = {
 	"Grism";
 	"Gargoyle";
 	"Kyonshi";
+	"Major";
 }
 
 negative = { 
@@ -854,6 +857,7 @@ confused_response = {
 	"Are you sure?";
 	"I don't have an inkling about what you just said.";
 	"Say what?";
+	"Sorry, I do not speak ", language, ".";
 	
 }
 
@@ -868,20 +872,20 @@ number = {
 	"~eight";
 	"~nine";
 	"~ten";
-	"11";
-	"12";
-	"13";
-	"14";
-	"15";
-	"16";
-	"17";
-	"18";
-	"19";
-	"20";
-	"100";
-	"150";
-	"200";
-	"1000";
+	"~11";
+	"~12";
+	"~13";
+	"~14";
+	"~15";
+	"~16";
+	"~17";
+	"~18";
+	"~19";
+	"~20";
+	"~100";
+	"~150";
+	"~200";
+	"~1000";
 	"a gagillion";
 	"a googleplex";
 }
@@ -924,6 +928,8 @@ peeps = {
 	"Carmen Elektra";
 	"Dick Cheney";
 	"Bill Frist";
+	"dmn_clown";
+	
 }
 
 immaturity01 = {
@@ -942,6 +948,7 @@ proposition01 = {
 	"No, I don't swing that way.";
 	"I'm not into pimples";
 	"Sorry, I'm not ready for a relationship yet, but thanks for the offer.";
+	"I'd rather go fishing";
 
 }
 
@@ -1051,6 +1058,7 @@ animal = {
 	"duck-billed platypus";
 	"spider";
 	"small child";
+	"beluga whale";
 }
 
 weather = { 
@@ -1098,4 +1106,17 @@ curse = {
 	"May your first born child be born with the intelligence of Pat Robertson.";
 	"May you dream of Tammy Faye Baker for the rest of your rotten life!";
 	"hum kah chan!";
+}
+
+vicious_insult = {
+	"asshole";
+	"jackass";
+	"bigot";
+	"worthless sack of shit";
+	"waste of human space";
+	"moron";
+	"idiot";
+	"bastard";
+	"ho bag";
+	"douche bag";
 }

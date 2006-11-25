@@ -1,16 +1,40 @@
+/*
+===========================================================================
+Copyright (C) 2006 Dmn_clown (aka: Bob Isaac (rjisaac@gmail.com))
+
+This file is part of Open Arena and is based upon Mr. Elusive's fuzzy logic
+system found in Quake 3 Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
 chat "kyonshi"
 {
 	#include "teamplay.h"
 
 	type "game_enter"
 	{
-		"Hello, my name is Indigo Montoya, you killed my ~father, prepare to die.";
+		"Ahh, there is so much chi here... I will feed well!";
 	}
 
 	type "game_exit"
 	{
 		"It's not easy being dead... so much to do so little time";
 		"Toodles";
+		"My hunger grows, I am off to find better chi.";
 		GOODBYE4;
 		GOODBYE2;
 	}
@@ -22,12 +46,13 @@ chat "kyonshi"
 
 	type "level_end"
 	{
-		"Not bad... I like ", 4, " fast, clean and deadly.";
+		"Not bad... I like ", 4, " fast, clean, deadly, and filled with chi.";
 	}
 
 	type "level_end_victory"
 	{
 		"You cannot kill what is already dead.";
+		"Thank you for your chi.";
 	}
 
 	type "level_end_lose"
@@ -178,6 +203,7 @@ chat "kyonshi"
 		GRRLTALK0;
 		GRRLTALK1;
 		"Do you ever get that not so fresh feeling?  I do, but I am a corpse.";
+		0, " die already so I can feast on your chi!";
 		"~They're out there watching you as we speak.";
 		"Shh... ~they're listening.";
 		
