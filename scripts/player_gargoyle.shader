@@ -69,6 +69,33 @@ models/players/gargoyle/redg
 	}
 }
 
+models/players/gargoyle/buh
+{
+	{
+		map models/players/gargoyle/blue.tga
+		rgbGen const ( 0.960784 0.776471 0.686275 )
+	}
+	{
+		map models/players/gargoyle/red.tga
+		blendfunc gl_src_alpha gl_dst_color
+		rgbGen const ( 0.670588 0.694118 0.996078 )
+	}
+	{
+		map models/players/gargoyle/bared.tga
+		blendfunc gl_src_alpha gl_dst_color
+		rgbGen const ( 0.368627 0.380392 0.843137 )
+	}
+	{
+		map textures/effects/skinspecmult.tga
+		blendfunc gl_dst_color gl_src_color
+		tcGen environment 
+	}
+	{
+		map $whiteimage 
+		blendfunc filter
+	}
+}
+
 models/players/gargoyle/blueg
 {
 	{
@@ -138,3 +165,4 @@ models/players/gargoyle/baredold
 		detail
 	}
 }
+

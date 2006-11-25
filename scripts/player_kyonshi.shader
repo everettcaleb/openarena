@@ -394,3 +394,118 @@ models/players/kyonshi/skinblue
 	}
 }
 
+
+// Hidden skin of recolor experiments.
+
+models/players/kyonshi/skinbeh
+{
+	{
+		map models/players/kyonshi/skinblue.tga
+		rgbGen const ( 0.607843 0.788235 0.882353 )
+	}
+	{
+		map textures/effects/skinspecmult2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcGen environment 
+	}
+	{
+		map textures/effects/skinspecmult.tga
+		blendfunc gl_dst_color gl_src_color
+		tcGen environment 
+	}
+	{
+		map textures/effects/skinspecmulttin.tga
+		blendfunc gl_dst_color gl_src_color
+		tcGen environment 
+	}
+	{
+		map models/players/kyonshi/skinred.tga
+		blendfunc blend
+		rgbGen const ( 0.411765 0.45098 0.796079 )
+	}
+	{
+		map $whiteimage 
+		blendfunc filter
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/kyonshi/torsobeh
+{
+	{
+		map textures/oafx/suitshell.tga
+		rgbGen identity
+		tcGen environment 
+	}
+	{
+		map models/players/kyonshi/torso.tga
+		blendfunc blend
+		rgbGen const ( 0.705882 0.0862745 0.972549 )
+	}
+	{
+		map $whiteimage 
+		blendfunc filter
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/kyonshi/lowerbeh
+{
+	{
+		map textures/oafx/suitshell.tga
+		rgbGen identity
+		tcGen environment 
+	}
+	{
+		map models/players/kyonshi/lower.tga
+		blendfunc blend
+		rgbGen const ( 0.643137 0.0862745 0.972549 )
+	}
+	{
+		map $whiteimage 
+		blendfunc filter
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/kyonshi/cuffbeh
+{
+	cull disable
+	{
+		map textures/oafx/suitshell.tga
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+}
+
+models/players/kyonshi/eyesbeh
+{
+	{
+		map models/players/kyonshi/eyes.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		clampmap textures/effects/skinspec.tga
+		blendfunc add
+		tcGen environment 
+	}
+	{
+		map models/players/kyonshi/eyes.tga
+		blendfunc filter
+	}
+	{
+		map models/players/kyonshi/eyes.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/kyonshi/hairbeh
+{
+	cull disable
+	{
+		map models/players/kyonshi/hair.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
