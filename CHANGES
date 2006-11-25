@@ -1,28 +1,32 @@
-0.6.0 (11/2/2006)
+0.6.0 (11/25/2006)
 - Botfiles code from dmn_clown!
+- Binaries updated to ioquake3 revision 982
+- Engine now uses "baseoa" as a base folder as well as its own local user settings folder 
+- Pk3 files are now split into components again
+- New splash video. 
 - New player model : Kyonshi! She's based on the Chinese jiang-shi (hopping corpse) mythology. Created by enki and leileilol
+- New player model : Major! Created by JKM Makowka, animated and exported by leileilol
+- Vondur's Kaos map converted over. (GPL v2)
+- Tyrann's Aggressor map converted over. (GPL v2)
+- C.Brutail's cbctf1 converted over. (GPL v2 also)
+- Gargoyle is reskinned by enki
+- Gargoyle's wings are finally fixed and added.
 - New lightning gun skin from enki
 - New plasma gun skin from enki
 - New railgun skin from enki
 - New gauntlet skin from slyus
 - New machinegun skin from slyus
 - New lightning gun effects
-- Vondur's Kaos map converted over. (GPL v2)
-- Tyrann's Aggressor map converted over. (GPL v2)
-- C.Brutail's cbctf1 converted over. (GPL v2 also)
-- Gargoyle is reskinned by enki
-- Gargoyle's wings are finally fixed and added.
+- Health items reworked; they all have spheres with LODs and shaders
 - Decals are slightly more polished.
 - A lot of sounds are polished. 
 - New flesh footsteps
-- Pk3 files are now split into components again
-- New win32 icon!
+- New win32 icon
 - More 2D icons
-- Health items reworked; they all have spheres with LODs and shaders
 - Mega health model
 - Machinegun repositioned
 - Machinegun flash rotated (to be a bit like q3's)
-- New splash video. (Should be a bit less crappy)
+- Other little things I might have forgotten
 
 0.5.1 (8/26/2006)
 - Removed Fox_DF's sounds due to possible copyright issues

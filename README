@@ -1,38 +1,33 @@
-OPENARENA Readme -	  8/26/2006
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==OPENARENA Readme -	  8/20/2006==
+
 cheapy.deathmask.net
 
-	Thank you for downloading OpenArena!
+:Thank you for downloading OpenArena!
 
-
-MINIMUM SYSTEM REQUIREMENTS:
+===SYSTEM REQUIREMENTS===
 * Pentium II 233MHz / AMD K6-2 300MHz or equally powerful processor
 * 64MB of system memory
 * OpenGL supported video card with 16MB of video memory. (Voodoo Banshee, TNT and up)
 * 50MB of hard drive space
 
-OTHER NOTES:
+===OTHER NOTES===
+This is ioq3 based now, so some changes and weirdities have been introduced. Your config and screenshots (And probably downloaded maps) may appear in a folder where your user profile data is kept. 
 
-This is ioq3 based now, so some changes and weirdities have been introduced. Gargoyle player for example won't have any sound, and your config and screenshots (And probably downloaded maps) may appear in a folder where your user profile data's kept. 
-
-CREDITS:
+===CREDITS===
 For credits, read the CREDITS file.
 
-FAQ:
+==FAQ==
+===There's some missing textures===
+Yeah :(
 
-Q: Where did Tux go? :(
-A: He's removed mainly because
-   1. I have lost the original source files
-   2. He's small
-   3. it's a crappy model
-  He'll be remade eventually
-UPDATE: I have recovered the source .ms3d files of the Tux model :) but it's a piece of crap :(
+===Where did OA_BASES3 (The CTF level) go?===
+I couldn't solve its spawnpoint bug problem which give the red team a huge advantage so I left it out in arenas.txt. It's back to DM only OA i guess.
 
-Q: There's some missing textures
-A: Yeah :(
+===Where did q3dm6ish go?===
+The texturing was pretty bad, and since I finally realized the original textures that Aardappel made used for it were in Public Domain so i'll just reimport the old map structures with old textures and convert that later.
 
-Q: Where did OA_BASES3 (The CTF level) go?
-A: I couldn't solve its spawnpoint bug problem which give the red team a huge advantage so I left it out in arenas.txt. It's back to DM only OA i guess.
+===Where did void4 go?===
+Textures mysteriously broke :\
 
 For more and up to date information, visit the wiki:
 
