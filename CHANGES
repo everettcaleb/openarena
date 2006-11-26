@@ -4,6 +4,7 @@
 - Engine now uses "baseoa" as a base folder as well as its own local user settings folder 
 - Pk3 files are now split into components again
 - New splash video. 
+- Ogg support enabled.
 - New player model : Kyonshi! She's based on the Chinese jiang-shi (hopping corpse) mythology. Created by enki and leileilol
 - New player model : Major! Created by JKM Makowka, animated and exported by leileilol
 - Vondur's Kaos map converted over. (GPL v2)

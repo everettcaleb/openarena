@@ -2,7 +2,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"music" "music/cube.wav"
+"music" "music/cube"
 "ambient" "40"
 "_color" "0.99 1 1"
 "message" "q3dm6ish by aardappel"

@@ -7,7 +7,7 @@
 {
  "classname" "worldspawn"
  "message" "Aggressor - by Tyrann"
- "music" "music/sonic3.wav"
+ "music" "music/sonic3"
 // Brush 0
 // Map structure:g[2] -> poly:p[1]
  {

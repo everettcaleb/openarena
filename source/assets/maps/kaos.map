@@ -7,7 +7,7 @@
 {
  "classname" "worldspawn"
  "message" "Khaooohs -- by Vondur"
- "music" "music/fla22k_05.wav"
+ "music" "music/fla22k_05"
 // Brush 0
 // Map structure:g[2] -> poly:p[1]
  {

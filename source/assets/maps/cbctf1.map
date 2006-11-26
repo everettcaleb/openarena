@@ -7,7 +7,7 @@
 {
  "classname" "worldspawn"
  "target" "red_away"
- "music" "music/sonic5.wav"
+ "music" "music/sonic5"
  "message" "Capture the space"
  "_color" "0.75 0.94 1"
  "ambient" "20"

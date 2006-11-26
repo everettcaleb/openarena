@@ -3,7 +3,7 @@
 {
 "classname" "worldspawn"
 "message" "DM4ish by aardappel"
-"music" "music/cube2.wav"
+"music" "music/cube2"
 "ambient" "10"
 "_color" "1 0.20 0.20"
 // brush 0

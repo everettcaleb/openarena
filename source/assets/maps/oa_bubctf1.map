@@ -8,7 +8,7 @@
  "classname" "worldspawn"
  "spawnflags" "12"
  "message" "The Fast and Vurious"
- "music" "music/sonic2.wav"
+ "music" "music/sonic2"
  "ambient" "24"
  "_color" "1 0.94 0.81"
 // Brush 0

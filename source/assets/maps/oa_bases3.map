@@ -9,7 +9,7 @@
  "message" "some bases"
  "_color" "1 1 1"
  "ambient" "35"
- "music" "music/lah.wav"
+ "music" "music/lah"
 // Brush 0
 // Map structure:g[2] -> poly:p[1]
  {
