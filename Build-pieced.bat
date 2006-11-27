@@ -12,8 +12,8 @@ zip -9r pak0.pk3 models/flags/*.* -x *svn*
 zip -9r pak0.pk3 models/gibs/*.* -x *svn*
 zip -9r pak0.pk3 models/mapobjects/*.* -x *svn*
 zip -9r pak0.pk3 models/misc/*.* -x *svn*
-zip -9r pak0.pk3 models/players/grism/*.* -x *svn*
-zip -9r pak0.pk3 models/players/sarge/*.* -x *svn*
+rem zip -9r pak0.pk3 models/players/grism/*.* -x *svn*
+rem zip -9r pak0.pk3 models/players/sarge/*.* -x *svn*
 zip -9r pak0.pk3 models/powerups/*.* -x *svn*
 zip -9r pak0.pk3 models/weaphits/*.* -x *svn*
 zip -9r pak0.pk3 models/weapons2/*.* -x *svn*
@@ -59,8 +59,8 @@ zip -9r pak2-players.pk3 models/players/*.* -x *svn*
 zip -9r pak2-players.pk3 sound/player/*.* -x *svn*
 zip -9r pak2-players.pk3 scripts/player_*.* -x *svn*
 
-zip pak2-players.pk3 -d models/players/grism/*.*
-zip pak2-players.pk3 -d models/players/sarge/*.*
+rem zip pak2-players.pk3 -d models/players/grism/*.*
+rem zip pak2-players.pk3 -d models/players/sarge/*.*
 
 zip pak2-players.pk3 -d sound/player/announcer/*.*
 zip pak2-players.pk3 -d sound/player/fry.wav
