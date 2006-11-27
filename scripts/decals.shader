@@ -1,5 +1,14 @@
 wake
 {
+	cull disable
+	{
+		animmap 30 sprites/multwake1.tga sprites/multwake2.tga sprites/multwake3.tga sprites/multwake4.tga sprites/multwake5.tga sprites/multwake6.tga sprites/multwake7.tga sprites/multwake8.tga 
+		blendfunc gl_dst_color gl_src_color
+	}
+}
+
+newishwake
+{
 	{
 		animmap 8 sprites/splash6.tga sprites/splash5.tga sprites/splash4.tga sprites/splash3.tga sprites/splash2.tga 
 		blendfunc gl_src_alpha gl_one
