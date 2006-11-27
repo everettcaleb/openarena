@@ -182,7 +182,7 @@ chat "gargoyle"
 
 	type "kill_praise"
 	{
-		D_PRAISE;
+		D_PRAISE0;
 		D_PRAISE1;
 		D_PRAISE3;
 	}
