@@ -1,3 +1,17 @@
+wake
+{
+	{
+		animmap 8 sprites/splash6.tga sprites/splash5.tga sprites/splash4.tga sprites/splash3.tga sprites/splash2.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 8 
+	}
+	{
+		animmap 8 sprites/splash5.tga sprites/splash4.tga sprites/splash3.tga sprites/splash2.tga sprites/splash6.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 8 
+	}
+}
+
 gfx/misc/tracer
 {
 	cull disable
@@ -98,7 +112,7 @@ projectionShadow
 	}
 }
 
-wake
+oldwake
 {
 	{
 		clampmap sprites/splash.tga
