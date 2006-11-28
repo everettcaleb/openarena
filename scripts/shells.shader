@@ -1,6 +1,18 @@
 powerups/invisibility
 {
 	cull disable
+	{
+		animmap 30 sprites/multwake1.tga sprites/multwake2.tga sprites/multwake3.tga sprites/multwake4.tga sprites/multwake5.tga sprites/multwake6.tga sprites/multwake7.tga sprites/multwake8.tga 
+		blendfunc gl_dst_color gl_src_color
+		tcMod rotate 86
+		tcGen environment 
+	}
+}
+
+//too invisible
+powerups/invisibilityOLD
+{
+	cull disable
 	deformVertexes wave 64 sin 0 1 0 1 
 	{
 		map textures/oafx/inviso.tga
@@ -31,7 +43,6 @@ smallcrossEnv
 		map textures/effects/envmaprail.tga
 		blendfunc add
 		tcMod scroll 1 0.1
-		tcMod scale 0.5 0.5
 		tcGen environment 
 	}
 }
