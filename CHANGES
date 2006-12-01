@@ -1,4 +1,4 @@
-0.6.0 (11/25/2006)
+0.6.0 (11/30/2006)
 - Botfiles code from dmn_clown!
 - Binaries updated to ioquake3 revision 982
 - Engine now uses "baseoa" as a base folder as well as its own local user settings folder 
