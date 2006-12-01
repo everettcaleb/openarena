@@ -39,14 +39,6 @@ type		"single ffa tourney team sp"
 }
 
 {
-map			"oa_bubctf1"
-bots		"gargoyle grism kyonshi"
-longname	"The Fast and the Vurious"
-fraglimit	15
-type		"single ffa tourney team sp ctf"
-}
-
-{
 map			"cbctf1"
 bots		"sarge gargoyle"
 longname	"Capture the Space"
