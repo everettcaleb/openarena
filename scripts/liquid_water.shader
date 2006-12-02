@@ -44,6 +44,35 @@ textures/liquids/vorwater
 	}
 }
 
+textures/savdm6ish/#teleport
+{
+	q3map_lightimage textures/liquids/pool3d_3.tga
+	surfaceparm nomarks
+	surfaceparm trans
+	surfaceparm water
+	cull disable
+	q3map_surfacelight 900
+	q3map_flare flareShader-portal
+	{
+		map textures/liquids/pool3d_5e.tga
+		rgbGen const ( 0.478431 0.294118 0.172549 )
+		tcMod scroll 0.05 0.05
+	}
+	{
+		map textures/liquids/pool3d_3e.tga
+		blendfunc add
+		rgbGen const ( 0.517647 0.305882 0.2 )
+		tcMod rotate 8
+		tcMod turb 0 1 0 0.04
+	}
+	{
+		map textures/liquids/pool3d_5.tga
+		blendfunc add
+		rgbGen const ( 0.584314 0.376471 0.25098 )
+		tcMod scroll 0.07 0.01
+	}
+}
+
 textures/liquids/tele
 {
 	q3map_lightimage textures/liquids/pool3d_3.tga

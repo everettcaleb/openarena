@@ -1146,6 +1146,126 @@ textures/e7/e7panelwood2
 	}
 }
 
+textures/e8/e8_base1
+{
+	{
+		map textures/e8/e8_base1.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/e8/e8_base1broke
+{
+	{
+		map textures/e8/e8_base1broke.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/evil1_trims/crude_warn
+{
+	{
+		map textures/evil1_trims/crude_warn.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 2
+		detail
+	}
+}
+
+textures/evil1_trims/trim_cementwall_wrn
+{
+	{
+		map textures/evil1_trims/trim_cementwall_wrn.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 2
+		detail
+	}
+}
+
+textures/evil1_trims/trim_wallpaper
+{
+	{
+		map textures/evil1_trims/trim_wallpaper.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 2
+		detail
+	}
+}
+
+textures/evil3_floors/cemdrk
+{
+	{
+		map textures/evil3_floors/cemdrk.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
 textures/evil4_walls/drk_brnbrick
 {
 	{
@@ -1222,6 +1342,26 @@ textures/evil6_floors/e6l_stepedge
 		map textures/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 2 4
+		detail
+	}
+}
+
+textures/evil8_wall/e8crete03c
+{
+	{
+		map textures/evil8_wall/e8crete03c.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map textures/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
 		detail
 	}
 }

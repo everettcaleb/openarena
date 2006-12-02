@@ -8,7 +8,7 @@ type            "single tourney ffa"
 
 {
 map			"aggressor"
-bots		"gargoyle"
+bots		"gargoyle kyonshi major"
 longname	"Aggressor"
 fraglimit	20
 type		"single ffa tourney team sp"
@@ -29,6 +29,15 @@ longname	"Kaooos"
 fraglimit	20
 type		"single ffa tourney team sp"
 }
+
+{
+map             "ce1m7"
+longname        "House of Cheethon"
+bots            "gargoyle"
+fraglimit	20
+type            "single tourney ffa sp"
+}
+
 
 {
 map			"dm4ish"
