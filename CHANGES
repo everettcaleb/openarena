@@ -1,12 +1,12 @@
-0.6.0 (11/30/2006)
+0.6.0 (12/2/2006)
 - Botfiles code from dmn_clown!
 - Binaries updated to ioquake3 revision 982
 - Engine now uses "baseoa" as a base folder as well as its own local user settings folder 
 - Pk3 files are now split into components again
 - New splash video. 
 - Ogg support enabled.
-- New player model : Kyonshi! She's based on the Chinese jiang-shi (hopping corpse) mythology. Created by enki and leileilol
-- New player model : Major! Created by JKM Makowka, animated and exported by leileilol
+- New player model : Kyonshi! She's based on the Chinese jiang-shi (hopping corpse) mythology. Created by enki and leileilol. Voice provided by pixie.
+- New player model : Major! Created by JKM Makowka, animated and exported by leileilol. Voice also provided by pixie.
 - Ed's conversion of Quake's E1M7 converted over (GPL v2)
 - Vondur's Kaos map converted over. (GPL v2)
 - Tyrann's Aggressor map converted over. (GPL v2)
