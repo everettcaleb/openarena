@@ -1,0 +1,4 @@
+- Added a thin "donotenter" brush over all the lava pits
+- compiled in Q3Map2 with the added switches in the light phase of:
+	-light -fast -dirty -dirtscale 1.5 -shade -samples 3 -bouncegrid -super 2
+(Bots are less suicidal)
