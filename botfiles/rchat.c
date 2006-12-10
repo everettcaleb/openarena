@@ -33,7 +33,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	ponder;
 }
 
-["no", "Nada", "nope", !"no place"] = 5
+["no", "not", "Nada", "nope", !"no place", !"no feeling."] = 5
 {
 	"are you sure about that?";
 	"You sound so sure of yourself";
@@ -41,9 +41,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"Don't be so certain";
 }
 
-
-//will never be called as it is a multi-player command...
-["nigger", "nigr", "wop", "kyke", "sandnigger", "sand-nigger", "sand nigger", "beanpicker", "wetback", "raghead", "macaca", "monkey", "irish pig", "redskin", "red-skin", "red skin", "rag head", "camel jockey", "cml jky", "diaper head", "bean picker", "cml-jky", "camel-jockey", "ngr"] = 1
+["nigger", "nigr", "wop", "kyke", "sandnigger", "sand-nigger", "beanpicker", "wetback", "raghead", "macaca", "monkey", "irish pig", "redskin", "red-skin", "red skin", "diaper head", "bean picker", "cml-jky", "camel-jockey", "ngr", "niggers", "wops", "jews", "sandniggers", "sand-niggers", "beanpickers", "wetbacks", "camel jockeys", "cml jkys", "cml jocky", "dyke", "homo", "queer", "faggot", "fag", "kyke", "kike", "dike", "dyk", "kyk"] = 1
 {
 	"shut the hell up you ", vicious_insult,".";
 	"bigot";
@@ -52,6 +50,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"All colors explode the same, ", vicious_insult, ".";
 	"People are people, unfortunately you are an idiot, ", vicious_insult, ".";
 	"This is an equal opportunity frag fest, bigots are not welcome.";
+	"Who taught you to be ignorant?";
+	"Bigotry is learned behavior, please unlearn it.";
+	"Who taught you to hate?";
+	"Why do you hate?";
 	immaturity01;
 	vicious_insult;
 	response_insult;
@@ -69,10 +71,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	peeps, " said so.";
 }
 
-["what is happening"] = 1
+["what is happening?"] = 1
 {
 	"dork";
-	"HA HA, what a dweeb";
+	"dweeb";
 	"putz";
 	"schmuck";
 }
@@ -151,10 +153,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ["Jesus"] = 1
 {
 	"Jesus hates me.";
-	"Why do you need a human sacrifice to be saved, sounds canibalistic to me...";
+	"Why do you need a human sacrifice to be saved, sounds cannibalistic to me...";
 	"Jesus loves you, but I don't.";
 	"I worship ", peeps, ".";
 	"I bow my head to the holy ", animal, " but only after smoking ", substance, ".";
+	"Religion is business and there is money in sin.";
+	"You want to talk about religion HERE?!?!? Some people...";
+	"Quite a few attrocities have been performed in his name.";
 }
 
 ["addiction", "addicted to"] = 4
@@ -186,4 +191,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"The most heroic word in all languages is revolution.";
 	"Intelligent discontent is the mainspring of civilization. Progress is born of agitation. It is agitation or stagnation.";
 	"How pseudo revolutionary of you...";
+}
+
+["bots", "bot", !"stupid bot"] = 2
+{
+	"Heh... right!";
+	"Bah!  Humbug...";
+	"The politically correct term is 'human exterminator'";
+	"What is that about?";
+	"I frag, therefore I am.";
+}
+
+["sex", "coitis", "sexual intercourse"] = 2
+{
+	"Now?!?";
+	"No thanks, I have a headache.";
 }

@@ -43,7 +43,7 @@ chat "gargoyle"
 
 	type "level_end"
 	{
-		"Yawn... thought it would never end.";
+		"*Yawn*... thought it would never end.";
 	}
 
 	type "level_end_victory"
@@ -59,6 +59,8 @@ chat "gargoyle"
 	type "hit_talking"
 	{
 		"Look asshole I was trying to hold a conversation!";
+		"Do that again and ~I'll sell your genitals on EBay.";
+		
 	}
 
 	type "hit_nodeath"

@@ -24,6 +24,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "match.h"
 
 #define PURE_CRAP	2
+#define MORE_CRAP	2
+
 
 
 // this is rare but people can always fuckup
@@ -89,7 +91,7 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "capture ", "the "|"", "blue "|"red "|"enemy "|"their "|"", "flag" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the "|"", "blue "|"red "|"enemy "|"their"|"", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag carrier" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "kill the flag" = (MSG_GETFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " kill the flag carrier" = (MSG_GETFLAG, ST_ADDRESSED);
 
 	//attack the enemy base
@@ -107,11 +109,13 @@ MTCONTEXT_INITIALTEAMCHAT
 	//kill someone (NOTE: make sure these are after the get flag match templates because of the "kill"
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill ", ENEMY = (MSG_KILL, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " kill ", ENEMY = (MSG_KILL, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " wack ", ENEMY = (MSG_KILL, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " take out ", ENEMY = (MSG_KILL, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": hunt down ", ENEMY = (MSG_KILL, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill ", ENEMY = (MSG_KILL, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "wack ", ENEMY = (MSG_KILL, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "take out ", ENEMY = (MSG_KILL, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "death to ", ENEMY = (MSG_KILL, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": wack ", ENEMY = (MSG_KILL, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": take out ", ENEMY = (MSG_KILL, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": death to ", ENEMY = (MSG_KILL, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " hunt down ", ENEMY = (MSG_KILL, ST_ADDRESSED);
 
 	//get item
@@ -140,7 +144,7 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go to ", "the "|"checkpoint "|"waypoint "|"", KEYAREA = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_NEARITEM));
 
 	//rush to the base in CTF
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " rush ", "to "|"to the "|"", "base" = (MSG_RUSHBASE, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " rush ", "to "|"to the "|"the "|"", "base" = (MSG_RUSHBASE, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go ", "to"|"to the", " base" = (MSG_RUSHBASE, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "rush base" = (MSG_RUSHBASE, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "return to base" = (MSG_RUSHBASE, 0);
@@ -229,49 +233,52 @@ MTCONTEXT_INITIALTEAMCHAT
 	
 	//lead the way
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": lead the way" = (MSG_LEADTHEWAY, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I'll follow" = (MSG_LEADTHEWAY, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": lead the way ", ADDRESSEE = (MSG_LEADTHEWAY, $evalint(ST_ADDRESSED));
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I'll follow ", ADDRESSEE = (MSG_LEADTHEWAY, $evalint(ST_ADDRESSED));
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " lead the way" = (MSG_LEADTHEWAY, $evalint(ST_ADDRESSED));
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": lead ", TEAMMATE, " the way ", ADDRESSEE = (MSG_LEADTHEWAY, $evalint(ST_ADDRESSED|ST_SOMEONE));
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " lead ", TEAMMATE, " the way" = (MSG_LEADTHEWAY, $evalint(ST_ADDRESSED|ST_SOMEONE));
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": lead ", TEAMMATE, " around ", ADDRESSEE = (MSG_LEADTHEWAY, $evalint(ST_ADDRESSED|ST_SOMEONE));
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " lead ", TEAMMATE, "" = (MSG_LEADTHEWAY, $evalint(ST_ADDRESSED|ST_SOMEONE));
 
 	// suicide
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": suicide" = (MSG_SUICIDE, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " suicide" = (MSG_SUICIDE, $evalint(ST_ADDRESSED));
 	
 	//anti-bigot bot suicide code (I hope I am not acting as the thought police...)
-	// the netname lines kill the single player and ffa responses to bigoted sayings looking for a workaround 
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "nigger"|"nigr"|"ngr"|"niger", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "nigger"|"nigr"|"ngr"|"niger", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "kyke"|"kykes"|"kike"|"kikes"|"jewish pig"|"judan"|"jews"|"jew"|"jew lover"|"ex-slaves"|"slaves"|"slave"|"ex-slave"|"xslave"|"xslaves"|"red sea pedestrians"|"red sea pedestrian", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "kyke"|"kykes"|"kike"|"kikes"|"jewish pig"|"judan"|"jew"|"jews"|"jew lover"|"ex-slaves"|"slaves"|"slave"|"ex-slave"|"xslave"|"xslaves"|"red sea pedestrians"|"red sea pedestrian", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "niggers"|"nigrs"|"nigers"|"ngrs", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "niggers"|"nigrs"|"nigers"|"ngrs", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "rag head"|"raghead"|"rag-head"|"camel jockey"|"cml jky"|"cmljky", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "rag heads"|"ragheads"|"rag-heads"|"camel jokeys"|"cml jkys"|"cmljkys", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "towel head"|"towel heads"|"towel-head"|"towel-heads"|"towelhead"|"towelheads", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "rag head"|"raghead"|"rag-head"|"camel jockey"|"cml jky"|"cmljky", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "rag heads"|"ragheads"|"rag-heads"|"camel jokeys"|"cml jkys"|"cmljkys", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "towel head"|"towel heads"|"towel-head"|"towel-heads"|"towelhead"|"towelheads", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "homo"|"gay"|"gaygrrl"|"gaygirl"|"faggit"|"gay-girl"|"gay-grrl", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "faggot"|"fagit"|"fagot"|"queer"|"gayboy"|"gayboi", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "dyke"|"dike"|"lez"|"les"|"lezbo"|"lesbo"|"fags"|"fagz", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "homos"|"dykes"|"dikes"|"lesbos"|"lezbos"|"fagots"|"faggots"|"faggits"|"fagits", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "homo"|"gay"|"gaygrrl"|"gaygirl"|"gay-girl"|"gay-grrl"|"faggit", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "faggot"|"fagit"|"fagot"|"queer"|"gayboy"|"gayboi", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "dyke"|"dike"|"lez"|"les"|"lezbo"|"lesbo"|"fags"|"fagz", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "homos"|"dykes"|"dikes"|"lesbos"|"lezbos"|"faggots"|"fagots"|"faggits"|"fagits", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE,  "sand-nigger"|"sand-niger"|"sndngr"|"sand-niggers"|"sand-nigers"|"sndngrs", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "red skins"|"red-skins"|"braves"|"chiefs"|"red skin"|"red-skin"|"chief", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "bean-picker"|"bean picker"|"beanpicker"|"wet back"|"wetback"|"wet-back", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", "bean-pickers"|"beanpickers"|"bean pickers"|"wet backs"|"wetbacks"|"wet-backs", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "spook"|"gook"|"slant"|"mamasan", PURE_CRAP = (MSG_SUICIDE, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "spooks"|"gooks"|"slants"|"mamasans", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE,  "sand-nigger"|"sand-niger"|"sndngr"|"sand-niggers"|"sand-nigers"|"sndngrs", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "red skins"|"red-skins"|"braves"|"chiefs"|"red skin"|"red-skin"|"chief", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "bean-picker"|"bean picker"|"beanpicker"|"wet back"|"wetback"|"wet-back", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "bean-pickers"|"beanpickers"|"bean pickers"|"wet backs"|"wetbacks"|"wet-backs", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "spook"|"gook"|"slant"|"mamasan", PURE_CRAP = (MSG_SUICIDE, 0);
-	NETNAME, EC": ", MESSAGE, "spooks"|"gooks"|"slants"|"mamasans", PURE_CRAP = (MSG_SUICIDE, 0);
+	
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, " nigger "|" nigr "|" niger "|"wop"|"macaca"|"monkey", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "kyke"|"kykes"|"kike"|"kikes"|"jewish pig"|"judan"|"jews"|"jew"|"jew lover"|"ex-slaves"|"slaves"|"slave"|"ex-slave"|"xslave"|"xslaves"|"red sea pedestrians"|"red sea pedestrian", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "niggers"|"nigrs"|"nigers"|"ngrs"|"wops"|"macacas", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "rag head"|"raghead"|"rag-head"|"camel jockey"|"cml jky"|"cmljky", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "rag heads"|"ragheads"|"rag-heads"|"camel jokeys"|"cml jkys"|"cmljkys", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "towel head"|"towel heads"|"towel-head"|"towel-heads"|"towelhead"|"towelheads", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "homo"|"gay"|"gaygrrl"|"gaygirl"|"faggit"|"gay-girl"|"gay-grrl", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "faggot"|"fagit"|"fagot"|"queer"|"gayboy"|"gayboi", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "dyke"|"dike"|"lez"|"les"|"lezbo"|"lesbo"|"fags"|"fagz", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "homos"|"dykes"|"dikes"|"lesbos"|"lezbos"|"fagots"|"faggots"|"faggits"|"fagits", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE,  "sand-nigger"|"sand-niger"|"sndngr"|"sand-niggers"|"sand-nigers"|"sndngrs", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "red skins"|"red-skins"|"braves"|"chiefs"|"red skin"|"red-skin"|"chief", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "bean-picker"|"bean picker"|"beanpicker"|"wet back"|"wetback"|"wet-back", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", "bean-pickers"|"beanpickers"|"bean pickers"|"wet backs"|"wetbacks"|"wet-backs", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "spook"|"gook"|"slant"|"mamasan", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "spooks"|"gooks"|"slants"|"mamasans", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	// not a good solution but it does work in certain situations...
+	NETNAME, EC": ", MORE_CRAP,  "sand-nigger"|"sand-niger"|"sndngr"|"sand-niggers"|"sand-nigers"|" sndngrs ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, "red skins"|"red-skins"|" braves "|" chiefs "|"red skin"|" red-skin "|" chief ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " bean-picker "|" bean picker "|" beanpicker "|"wet back"|" wetback "|"wet-back", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " bean-pickers "|" beanpickers "|"bean pickers"|"wet backs"|" wetbacks "|"wet-backs", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " spook "|" gook "|" slant "|" mamasan ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " spooks "|" gooks "|" slants "|" mamasans ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " homo "|" gay "|" gaygrrl "|" gaygirl "|" gay-girl "|" gay-grrl "|" faggit ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " faggot "|" fagit "|" fagot "|" queer "|" gayboy "|" gayboi ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " dyke "|" dike "|" lez "|" les "|" lezbo "|" lesbo "|" fags "|" fagz ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " homos "|" dykes "|" dikes "|" lesbos "|" lezbos "|" faggots "|" fagots "|" faggits "|" fagits ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " rag head"|" raghead"|" rag-head"|" camel jockey"|" cml jky"|" cmljky", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " rag heads"|" ragheads "|" rag-heads"|" camel jokeys"|" cml jkys", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " towel head"|" towel heads"|" towel-head"|" towel-heads"|" towelhead"|" towelheads", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " nigrs "|" nigers "|"wops"|" macacas ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " kyke "|" kykes "|" kike "|" kikes "|"jewish pig"|"judan"|" jew "|" jews "|"jew lover"|"ex-slaves"|"slaves"|"slave"|"ex-slave"|"xslave"|"xslaves"|"red sea pedestrians"|"red sea pedestrian", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " nigger"|" nigr "|" niger "|"wop"|" macaca "|" monkey", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 
 } 
 
@@ -315,6 +322,9 @@ MTCONTEXT_ADDRESSEE
 
 MTCONTEXT_REPLYCHAT
 {
+	EC"(", NETNAME, EC")", PLACE, EC": ", MESSAGE = (MSG_CHATTEAM, 0);
+	EC"[", NETNAME, EC"]", PLACE, EC": ", MESSAGE = (MSG_CHATTELL, 0);
+	// included for peace of mind
 	NETNAME, EC": ", MESSAGE = (MSG_CHATALL, 0);
-	
-} 
+}
+

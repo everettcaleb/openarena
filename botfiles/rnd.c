@@ -256,7 +256,7 @@ GOODBYE0 = {
 	"Aww crap, I have an appointment with my ", counselor, " in ~15 minutes, gtg.  Bye.";
 	"Aww man... my ", animal, " just peed on the carpet, gtg bye.";
 	"Holy crap!  ", peeps, " is at my door... ttfn.";
-	peeps, " has showed up, finally... later peeps!";
+	peeps, " has showed up, finally... later ~peeps!";
 }
 
 GOODBYE1 = {
@@ -298,7 +298,7 @@ HELLO1 = {
 	"Hey! Hey! Kids!";
 	"What's shaking mi amigos?";
 	"What's crack'a'lackin'?";
-	"Hey ", fighters, " time to get your groove on!";
+	"Hey ", fighter, "s time to get your groove on!";
 }
 
 HELLO2 = {
@@ -929,7 +929,12 @@ peeps = {
 	"Dick Cheney";
 	"Bill Frist";
 	"dmn_clown";
-	
+	"Noam Chomsky";
+	"Leo Tolstoy";
+	"Trotsky";
+	"Lao Tzu";
+	"M. K. Ghandhi";
+	"Tsun Tzu";
 }
 
 immaturity01 = {
@@ -946,7 +951,7 @@ proposition01 = {
 	"Sorry I've got a headache.";
 	"No, your ", family_member, " told me that you have ", disease, ".";
 	"No, I don't swing that way.";
-	"I'm not into pimples";
+	"I'm not into pimples.";
 	"Sorry, I'm not ready for a relationship yet, but thanks for the offer.";
 	"I'd rather go fishing";
 
@@ -1040,7 +1045,7 @@ food = {
 
 animal = { 
 	"goat";
-	"monkey";
+	"simian";
 	"mongoose";
 	"pit-viper";
 	"skunk";
