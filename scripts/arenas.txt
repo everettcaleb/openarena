@@ -55,6 +55,14 @@ fraglimit	30
 type		"single ffa tourney team sp ctf"
 }
 
+{
+	map "oa_ctf2"
+	bots "kyonshi"
+	longname "OA_CTF2"
+	fraglimit 20
+	type "single tourney ctf sp"
+}
+
 
 // commented out due to very ugly texturing
 //{

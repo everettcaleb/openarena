@@ -1,3 +1,4 @@
+//12-12-06 removed redundant nodrop
 //need this or maps FTBFS
 //for the idiot bots out there ;( use instead of botclip!!!!
 textures/common/donotenter
@@ -115,12 +116,3 @@ textures/common/weapclip
 	surfaceparm nomarks
 }
 
-textures/common/nodrop
-{
-	surfaceparm 	trans
-	surfaceparm	nonsolid
-	surfaceparm	nomarks
-	surfaceparm     nodrop
-	surfaceparm 	nolightmap
-	surfaceparm 	nodraw
-}

@@ -122,3 +122,28 @@ textures/clown/portal
 		
 	}
 }
+
+//silly jet flame
+textures/sfx/xflame3
+{
+	qer_editorimage textures/clown/flame8.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_surfacelight 3787
+	deformVertexes autosprite
+	tessSize 64
+	
+	{
+		animmap 10 textures/clown/flame1.tga textures/clown/flame2.tga textures/clown/flame3.tga textures/clown/flame4.tga textures/clown/flame5.tga textures/clown/flame6.tga textures/clown/flame7.tga textures/clown/flame8.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 3 5 2 10
+		
+	}
+	{
+		animmap 10 textures/clown/flame2.tga textures/clown/flame3.tga textures/clown/flame4.tga textures/clown/flame5.tga textures/clown/flame6.tga textures/clown/flame7.tga textures/clown/flame8.tga textures/clown/flame1.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 3 5 2 10 
+		
+	}
+}
