@@ -1,4 +1,8 @@
-- Added a thin "donotenter" brush over all the lava pits
-- compiled in Q3Map2 with the added switches in the light phase of:
-	-light -fast -dirty -dirtscale 1.5 -shade -samples 3 -bouncegrid -super 2
-(Bots are less suicidal)
+12-14-2006
+- added a shotgun to each base
+- changed the team_CTF_*player to team_CTF_*spawn
+- moved the info_player_deathmatch spawnpoints to the middle of the map
+- added 150 points of health to each base
+- added the OA logo banners detail
+- added the OpenArena banners
+- enabled phong shading + dirt map + flares
