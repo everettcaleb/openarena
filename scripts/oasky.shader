@@ -1,3 +1,31 @@
+skyMoon
+{
+	{
+		map textures/skies/topclouds.tga
+		tcMod scroll -0.02 0.02
+		tcMod scale 2 2
+	}
+	{
+		map textures/skies/topclouds.tga
+		blendfunc add
+		tcMod scroll 0.01 0.01
+		tcMod scale 0.7 0.7
+	}
+	{
+		map textures/skies/multsky2.tga
+		blendfunc filter
+	}
+}
+
+skyClouds
+{
+	deformVertexes autosprite
+	{
+		map textures/skies/moonspr.tga
+		blendfunc add
+	}
+}
+
 textures/skies/industrysky
 {
 	surfaceparm noimpact
@@ -7,7 +35,7 @@ textures/skies/industrysky
 	q3map_surfacelight 400
 	q3map_globaltexture
 	q3map_sun 0.882353 0.921569 0.941177 150 45 55
-	skyParms full 688 -
+	skyParms full 800 -
 	{
 		map $whiteimage 
 		rgbGen const ( 0.137255 0.172549 0.227451 )
@@ -18,13 +46,6 @@ textures/skies/industrysky
 		rgbGen const ( 0.219608 0.396078 0.588235 )
 		tcMod scroll -0.004 0.004
 		tcMod scale 2 2
-	}
-	{
-		map textures/skies/topclouds.tga
-		blendfunc add
-		rgbGen const ( 0.529412 0.729412 0.803922 )
-		tcMod scroll 0.002 0.003
-		tcMod scale 0.7 0.7
 	}
 }
 
@@ -37,10 +58,7 @@ textures/skies/moonsky
 	q3map_surfacelight 400
 	q3map_globaltexture
 	q3map_sun 0.901961 0.92549 0.92549 150 294 65
-	skyParms full 688 -
-	{
-		map textures/skies/moon.tga
-	}
+	skyParms full 800 -
 	{
 		map textures/skies/stars.tga
 		blendfunc add
@@ -62,10 +80,129 @@ textures/skies/moonsky
 		tcMod scroll 0.002 0.003
 		tcMod scale 0.7 0.7
 	}
+}
+
+// SKY ROOM SHADER
+//-- for models/sky/skyisland.md3 --
+skyIsland
+{
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_lightsubdivide 256
+	q3map_surfacelight 400
+	q3map_globaltexture
+	q3map_sun 0.901961 0.552941 0.407843 121 149 33
+	skyParms full 700 -
 	{
-		map textures/skies/moonglow.tga
+		map $whiteimage 
+		rgbGen const ( 0.588235 0.235294 0.129412 )
+	}
+}
+
+textures/skyIsland
+{
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_lightsubdivide 256
+	q3map_surfacelight 212
+	q3map_globaltexture
+	q3map_sun 0.901961 0.552941 0.407843 121 149 26
+	skyParms full 700 -
+	{
+		map $whiteimage 
+		rgbGen const ( 0.588235 0.235294 0.129412 )
+	}
+}
+
+skyIsland_cloud
+{
+	surfaceparm nolightmap
+	sort sky
+	{
+		map textures/skies/justgradient.tga
+		blendfunc blend
+		rgbGen const ( 0.733333 0.360784 0.184314 )
+	}
+	{
+		map textures/skies/islandclouds.tga
 		blendfunc add
-		rgbGen const ( 0.380392 0.380392 0.380392 )
+		tcMod scroll -0.01 0
+	}
+	{
+		map textures/skies/islandclouds.tga
+		blendfunc add
+		tcMod scroll -0.007 0
+	}
+}
+
+skyIsland_water
+{
+	surfaceparm nolightmap
+	cull disable
+	{
+		map $whiteimage 
+		rgbGen const ( 0.294118 0.105882 0.0705882 )
+	}
+}
+
+skyIsland_waterwave
+{
+	surfaceparm nolightmap
+	{
+		map $whiteimage 
+		blendfunc blend
+		rgbGen const ( 0.294118 0.105882 0.0705882 )
+		alphaGen wave sin 0.7 0 0 0.2 
+	}
+	{
+		map textures/skies/skywater.tga
+		rgbGen const ( 0.294118 0.105882 0.0705882 )
+		tcMod scale 8 4
+		tcMod scroll -0.4 0
+		alphaFunc GE128
+		alphaGen wave sin 0.6 0 0 0.2 
+	}
+	{
+		map textures/skies/skywater.tga
+		rgbGen const ( 0.294118 0.105882 0.0705882 )
+		tcMod scale 4 8
+		tcMod scroll 0.1 0
+		alphaFunc GE128
+	}
+}
+
+skyIsland_islands
+{
+	surfaceparm nolightmap
+	sort 10
+	{
+		map textures/skies/islandys.tga
+		rgbGen const ( 0.588235 0.235294 0.129412 )
+		alphaFunc GE128
+	}
+}
+
+skyIsland_sun
+{
+	surfaceparm nolightmap
+	sort 11
+	{
+		map textures/skies/sun.tga
+		blendfunc add
+	}
+	{
+		clampmap textures/flares/newflare.tga
+		blendfunc add
+		rgbGen const ( 0.560784 0.376471 0.203922 )
+		tcMod rotate 4
+	}
+	{
+		clampmap textures/flares/newflare.tga
+		blendfunc add
+		rgbGen const ( 0.560784 0.0862745 0.0862745 )
+		tcMod rotate -7
 	}
 }
 
