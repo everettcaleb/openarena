@@ -1,3 +1,35 @@
+textures/liquids/hydrowater
+{
+	surfaceparm nomarks
+	surfaceparm trans
+	surfaceparm water
+	cull disable
+	tessSize 32
+	fogparms ( 0.215686 0.278431 0.333333 ) 1024
+	{
+		map textures/liquids/pool2.tga
+		blendfunc filter
+		tcMod scroll 0.05 0.05
+	}
+	{
+		map textures/liquids/pool3d_4b2.tga
+		blendfunc add
+		rgbGen const ( 0.501961 0.501961 0.501961 )
+		tcMod scroll -0.03 -0.06
+	}
+	{
+		map textures/liquids/pool3d_4b2.tga
+		blendfunc add
+		rgbGen const ( 0.501961 0.501961 0.501961 )
+		tcGen environment 
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+	}
+}
+
 textures/ice/coldwater
 {
 	qer_editorimage textures/ice/coldwater.tga

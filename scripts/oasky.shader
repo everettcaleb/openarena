@@ -55,13 +55,12 @@ textures/skies/moonsky
 	surfaceparm nolightmap
 	surfaceparm sky
 	q3map_lightsubdivide 256
-	q3map_surfacelight 400
+	q3map_surfacelight 19
 	q3map_globaltexture
-	q3map_sun 0.901961 0.92549 0.92549 150 294 65
+	q3map_sun 0.901961 0.92549 0.92549 150 297 90
 	skyParms full 800 -
 	{
 		map textures/skies/stars.tga
-		blendfunc add
 		rgbGen const ( 0.407843 0.392157 0.356863 )
 		tcMod scale 5 5
 		detail
@@ -69,16 +68,9 @@ textures/skies/moonsky
 	{
 		map textures/skies/topclouds.tga
 		blendfunc add
-		rgbGen const ( 0.133333 0.152941 0.156863 )
-		tcMod scroll -0.004 0.004
+		rgbGen const ( 0.262745 0.301961 0.313726 )
+		tcMod scroll -0.008 0.008
 		tcMod scale 2 2
-	}
-	{
-		map textures/skies/topclouds.tga
-		blendfunc add
-		rgbGen const ( 0.12549 0.14902 0.156863 )
-		tcMod scroll 0.002 0.003
-		tcMod scale 0.7 0.7
 	}
 }
 

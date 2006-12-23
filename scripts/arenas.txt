@@ -60,9 +60,17 @@ type		"single ffa tourney team sp ctf"
 	bots "kyonshi"
 	longname "OA_CTF2"
 	fraglimit 20
-	type "single tourney ctf sp"
+	type "tourney ctf"
 }
 
+
+{
+map		"hydroctf"
+bots		"sarge gargoyle"
+longname	"Hydrocapture"
+fraglimit	30
+type		"ctf"
+}
 
 // commented out due to very ugly texturing
 //{
