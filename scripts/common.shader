@@ -1,4 +1,5 @@
 //12-12-06 removed redundant nodrop
+//12-23-06 fixed the b0rked invisible shader
 //need this or maps FTBFS
 //for the idiot bots out there ;( use instead of botclip!!!!
 textures/common/donotenter
@@ -32,9 +33,12 @@ textures/common/invisible
 {
 	surfaceparm nolightmap			
                         
-        alphaFunc GE128
-	depthWrite
-	rgbGen vertex
+        {
+		map textures/common/invisible.tga
+		alphaFunc GE128
+		depthWrite
+		rgbGen vertex
+	}
         
 }
 
