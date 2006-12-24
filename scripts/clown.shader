@@ -414,3 +414,44 @@ textures/clown/dark_sky
 	
 	
 }
+
+textures/clown/r_edge
+{
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	cull none
+	
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ONE
+		depthFunc equal
+	}
+	{
+		map textures/clown/r_edge.tga
+		blendFunc GL_DST_COLOR GL_ZERO
+		alphaGen lightingSpecular
+		tcMod turb 3 .3 3 .3
+	}
+}
+
+textures/clown/b_edge
+{
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	cull none
+	
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ONE
+		depthFunc equal
+	}
+	{
+		map textures/clown/b_edge.tga
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		alphaGen lightingSpecular
+		tcMod turb 3 .3 3 .3
+	}
+}
