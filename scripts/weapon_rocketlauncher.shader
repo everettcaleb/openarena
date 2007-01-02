@@ -40,6 +40,42 @@ rocketFlash
 	}
 }
 
+rocketFlare
+{
+	deformVertexes autosprite
+	{
+		clampmap textures/flares/wide.tga
+		blendfunc add
+		rgbGen const ( 0.980392 0.882353 0.737255 )
+		tcMod stretch inversesawtooth 0.6 0.4 0 4 
+	}
+}
+
+rocketThrust
+{
+	cull disable
+	{
+		clampmap textures/flares/flarey.tga
+		blendfunc add
+		rgbGen const ( 0.988235 0.760784 0.560784 )
+		tcMod rotate -96
+		tcMod stretch sin 0.3 0.7 0 8 
+	}
+	{
+		clampmap textures/flares/wide.tga
+		blendfunc add
+		rgbGen const ( 0.988235 0.745098 0.478431 )
+		tcMod rotate 12
+	}
+	{
+		clampmap textures/flares/newflare.tga
+		blendfunc add
+		rgbGen const ( 1 0.439216 0.27451 )
+		tcMod rotate 46
+		tcMod stretch inversesawtooth 0.6 0.4 0 4 
+	}
+}
+
 models/weapons2/rocketl/flare
 {
 	deformVertexes autosprite
