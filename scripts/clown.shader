@@ -310,7 +310,7 @@ textures/common/portal
 	portal
 	{
 		map textures/common/invisible.tga
-		blendfunc GL_ONE GL_SRC_ALPHA
+		blendfunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
 		depthWrite
 
 	}
@@ -453,5 +453,66 @@ textures/clown/b_edge
 		rgbGen identity
 		alphaGen lightingSpecular
 		tcMod turb 3 .3 3 .3
+	}
+}
+
+textures/clown/ankh_light
+{
+	qer_editorimage textures/clown/ankh_light.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 3000
+	
+	
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/clown/ankh_light.jpg
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+	}
+	{
+		map textures/clown/ankh_light.jpg
+		blendfunc GL_ONE GL_ONE
+	}
+}
+
+textures/clown/grate_1
+{
+	surfaceparm nomarks
+	cull none
+	{
+		map textures/clown/grate_1.tga
+		blendFunc GL_ONE GL_ZERO
+		rgbGen identity
+		alphaFunc GT0
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ONE
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/clown/grate_2
+{
+	
+	surfaceparm nomarks
+	cull none
+	{
+		map textures/clown/grate_2.tga
+		blendFunc GL_ONE GL_ZERO	
+		rgbGen identity
+		alphaFunc GT0
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ONE
+		rgbGen identity
+		depthFunc equal
 	}
 }
