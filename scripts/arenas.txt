@@ -31,6 +31,14 @@ type		"single ffa tourney team sp"
 }
 
 {
+map			"czest1dm"
+bots		"gargoyle kyonshi"
+longname	"Monastery"
+fraglimit	20
+type		"single ffa tourney team sp"
+}
+
+{
 map             "ce1m7"
 longname        "House of Cheethon"
 bots            "gargoyle"
@@ -94,12 +102,11 @@ type		"ctf"
 
 
 // ctf maps
-// Commented out due to balance issues with spawnpoints
-//{
-//map			"oa_bases3"
-//bots		"tux"
-//longname	"Some Bases"
-//fraglimit	30
-//type		"ctf"
-//}
+{
+map			"oa_bases3"
+bots		"tux"
+longname	"Some Bases"
+fraglimit	30
+type		"ctf"
+}
 
