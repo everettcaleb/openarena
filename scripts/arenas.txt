@@ -62,7 +62,13 @@ longname	"Capture the Space"
 fraglimit	30
 type		"single ffa tourney team sp ctf"
 }
-
+{
+map             "fan"
+longname        "Fan"
+bots            "kyonshi gargoyle"
+fraglimit	20
+type            "single tourney ffa sp"
+}
 {
 	map "oa_ctf2"
 	bots "kyonshi"
