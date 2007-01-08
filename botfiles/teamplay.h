@@ -98,6 +98,8 @@ affirmative, "... what else have I got planned?";
 type "accompany_stop"
 {
 "It's been real, but I'm off on my own, ", 0,".";
+"I'm on my own now.";
+"Good luck, I'm off on my own.";
 }
 
 	//cannot find companion
@@ -105,6 +107,7 @@ type "accompany_cannotfind"
 {
 "Where the hell are you ", 0, "?";
 "Where are you hiding ", 0, "?";
+0, "... come out, come out wherever you are...";
 
 } 
 
@@ -112,19 +115,24 @@ type "accompany_cannotfind"
 type "accompany_arrive"
 {
 "At your disposal ", 0, ".";
+"Finally, I've found ", 0, ".";
+"Better late than never, eh?";
 
 }
 	//bot decides to accompany flag or skull carrier
 type "accompany_flagcarrier"
 {
 "I've got your back ", 0, ".";
+"They'll have to get through me to get to you, ", 0, ".";
+"Following.";
+
 }
 
 	//start defending a key area
 type "defend_start"
 {
 "I'll defend the ", 0, ".";
-
+"I'm defending the ", 0, ".";
 
 }
 
@@ -132,6 +140,8 @@ type "defend_start"
 type "defend_stop"
 {
 "That's it, I'll stop defending the ", 0, ".";
+"I am not defending the ", 0, ".";
+"I am not going to defend the ", 0, " anymore.";
 
 }
 
@@ -139,17 +149,21 @@ type "defend_stop"
 type "getitem_start"
 {
 "I'll get the ", 0, ".";
+"I'm off to get the ", 0, ".";
 
 }
 	//item is not there
 type "getitem_notthere"
 {
 "the ", 0, " ain't there";
+"The ", 0, " seems to be missing.";
+"Where is the ", 0, "?";
 }
 	//picked up the item
 type "getitem_gotit"
 {
 "I got the ", 0, "!";
+"The ", 0, " is mine!";
 
 }
 
@@ -179,25 +193,31 @@ type "kill_done"
 	//start camping
 type "camp_start"
 {
-"This is a good sniping position.";
+"That is a good sniping position.";
+"Off to pitch my tent.";
+"Sounds like a plan.";
 }
 
 	//stop camping
 type "camp_stop"
 {
 "Time to move on.";
+"Sniping isn't so good here, moving on.";
 }
 
 	//in camp position
 type "camp_arrive" //0 = one that ordered the bot to camp
 {
 "I'm there. ", 0, ", time to snipe.";
+"Tent pitched, sniping at will.";
+
 }
 
 	//start patrolling
 type "patrol_start" //0 = locations
 {
-"I'll patrol from here, ", 0, ".";
+"Patrolling ", 0, ".";
+
 }
 
 	//stop patrolling
@@ -210,18 +230,28 @@ type "patrol_stop"
 type "captureflag_start"
 {
 "Their flag will be ours.";
+"Sounds like a plan.";
+"I'm off to get the flag.";
+"Enemy flag here I come.";
+
 }
 
 	//return the flag
 type "returnflag_start"
 {
 "I'll get our flag back.";
+"I'll get the flag back.";
+"I will return the flag.";
+
 }
 
 	//attack enemy base
 type "attackenemybase_start"
 {
 "Got it, their base is toast.";
+"I'm off to destroy their base and frag a few fools.";
+"Death to the infidels!";
+
 }
 
 	//harvest
@@ -232,91 +262,69 @@ type "harvest_start"
 "The infidels shall die!";
 }
 
-	//bot is dismissed
-type "dismissed"
-{
-"A'ight, I'm off.";
-}
-
-	//the bot joined a sub-team
-type "joinedteam"
-{
-"Ok, I'm on the ", 0, " team now.";
-}
-
-	//bot leaves a sub team
-type "leftteam" //0 = team name
-{
-"I just left the ", 0, " team.";
-}
-
-	//bot is in a team
-type "inteam"
-{
-"Hey, I'm on the ", 0, " team now.";
-
-}
-
-	//bot is in no team
-type "noteam"
-{
-"I work better alone.";
-"No one wanted me on their team :-(";
-"I have no friends. My ", counselor, " tells me this is bad.";
-}
-
 	//the checkpoint is invalid
 type "checkpoint_invalid"
 {
 "That checkpoint does not exist.";
+"Quit fooling around, that is not a checkpoint.";
 }
 
 	//confirm the checkpoint
 type "checkpoint_confirm" //0 = name, 1 = gps
 {
 affirmative, " Yep ", 0, " at ", 1, " is there.";
+"It looks like ", 0, " at ", 1, " is there.";
 }
 
 	//follow me
 type "followme"
 {
 "What the hell are you waiting for ", 0, "? Get over here!";
+"Hey!  ", 0, " follow me and be quick about it.";
 }
 
 	//stop leading
 type "lead_stop"
 {
 "That's it find someone else who wants the responsibility.";
+"I refuse to lead anymore.";
+"I do not want to lead anymore, find someone else.";
 }
 
 	//the bot is helping someone
 type "helping"
 {
 "I'm trying to help, ", 0, ".";
+"Helping ", 0, ", care to join me?";
 }
 
 	//the bot is accompanying someone
 type "accompanying"
 {
 "I'm shadowing ", 0, ".  Is that alright?";
+"Following ", 0, ", trying not to get shot.";
 }
 
 	//the bot is defending something
 type "defending"
 {
 "I'm defending ", 0, ".";
+
 }
 
 	//the bot is going for an item
 type "gettingitem"
 {
 "I'm off to get the ", 0, ".";
+"The ", 0, " is going to be mine.";
+"Dibs on the ", 0, ".";
 }
 
 	//trying to kill someone
 type "killing"
 {
 "I've been trying to kill ", 0, ".";
+"Trying to wack ", 0, ".";
 }
 
 	//the bot is camping
@@ -324,6 +332,7 @@ type "camping"
 {
 "Toasting marshmallows and sniping scum.";
 "Where I am supposed to be, camping.";
+"Sniping, just like you told me.";
 }
 
 	//the bot is patrolling
@@ -347,12 +356,13 @@ type "rushingbase"
 	//trying to return the flag
 type "returningflag"
 {
-"Getting the flag.";
+"Getting the flag back.";
 }
 
 type "attackingenemybase"
 {
 "I'm destroying their base!  Care to help?";
+"Wreaking havok in their base.";
 }
 
 type "harvesting"
@@ -365,13 +375,14 @@ type "roaming"
 {
 "Rambling around, fragging at whim.";
 "Mindlessly roaming around, like I was told.";
-"~Wacking fools piece-meal";
+"~Wacking fools piece-meal.";
 }
 
 type "wantoffence"
 {
 "Let me go on offense.";
 "Can I be on offense?";
+
 }
 
 type "wantdefence"
@@ -395,12 +406,14 @@ type "death_teammate"
 {
 "Same team, dumbass!";
 "Hey ", 0," I'm on your team... idiot!";
+"Why did you kill me?";
 }
 	//killed by a team mate
 type "kill_teammate"
 {
 "hehe... oops.";
 "Sorry!";
+"Oops, won't happen again.";
 }
 
 	//==========================
@@ -444,36 +457,42 @@ type "ctf_flagcarrierkill"
 	//ask who the team leader is
 type "whoisteamleader"
 {
-"Who's the leader?";
+"Who's the leader of this rag-tag bunch?";
 }
 
 	//I am the team leader
 type "iamteamleader"
 {
-"I am the leader.";
+"I am.";
+"Me.";
+"You can say that I am the leader.";
 }
 	//defend the base command
 type "cmd_defendbase"
 {
 0, " defend our base.";
+
+0, " you should defend our base.";
 }
 	//get the enemy flag command
 type "cmd_getflag"
 {
 "Yo, ", 0, " get the flag!";
 0, " get their flag.";
-0, " get the flag.";
+0, " capture the other team's flag.";
 }
 	//accompany someone command
 type "cmd_accompany"
 {
 "Hey, ", 0, " shadow ", 1;
+0, " follow ", 1, ", ", 1, " needs the help.";
 
 }
 	//accompany me command
 type "cmd_accompanyme"
 {
 0, " you should follow me.";
+"Follow me please, ", 0, ".";
 }
 	//attack enemy base command
 type "cmd_attackenemybase"
@@ -483,8 +502,8 @@ type "cmd_attackenemybase"
 	//return the flag command
 type "cmd_returnflag"
 {
-0, " return our flag, dammit!";
-0, " get our flag back, ASAP!";
+0, " please return our flag!";
+0, " please get our flag back, ASAP!";
 }
 	//go harvesting
 type "cmd_harvest"

@@ -24,6 +24,12 @@ model		major
 aifile	bots/major_c.c
 }
 
+{
+name		Merman
+model		merman
+aifile	bots/merman_c.c
+}
+
 // for the sake of the ctf menu
 
 

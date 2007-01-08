@@ -79,12 +79,22 @@ type            "single tourney ffa sp"
 
 
 {
-map		"hydroctf"
+map		"hydronex"
 bots		"sarge gargoyle"
 longname	"Hydrocapture"
 fraglimit	30
 type		"ctf"
 }
+
+
+//commented out until it is finished
+//{
+//map		"delta"
+//bots		"merman major"
+//longname	"mission to mars"
+//fraglimit	"20"
+//type		"ctf"
+//}
 
 // commented out due to very ugly texturing
 //{

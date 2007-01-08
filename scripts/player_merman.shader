@@ -1,3 +1,6 @@
+//*******************************
+//DEFAULT_SKIN:
+//*******************************
 models/players/merman/fins
 {
 	cull disable
@@ -14,28 +17,85 @@ models/players/merman/skin
 		rgbGen lightingDiffuse
 		
 	}
-	// {
-		// map models/players/merman/skin.tga
-		// blendfunc gl_dst_color gl_src_color
-		// rgbGen lightingDiffuse
-	// }
-	// {
-		// map textures/effects/scalenoise2.tga
-		// blendfunc gl_dst_color gl_src_color
-		// tcMod scale 4 4
-		// detail
-	// }
-	// {
-		// map models/players/merman/skin.tga
-		// blendfunc blend
-		// rgbGen lightingDiffuse
-	// }
 }
 models/players/merman/brac
 {
 	cull disable
 	{
-		map models/players/merman/fins.tga
+		map models/players/merman/brac.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/specular.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+	// {
+		// map models/players/merman/brac.tga
+		// blendfunc blend
+		// rgbGen lightingDiffuse
+	// }
+}
+//*******************************
+//RED_SKIN:
+//*******************************
+models/players/merman/finsred
+{
+	cull disable
+	{
+		map models/players/merman/finsred.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+models/players/merman/skinred
+{
+	{
+		map models/players/merman/skinred.tga
+		rgbGen lightingDiffuse
+		
+	}
+}
+models/players/merman/bracred
+{
+	cull disable
+	{
+		map models/players/merman/bracred.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/specular.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+}
+//*******************************
+//BLUE_SKIN:
+//*******************************
+models/players/merman/finsblue
+{
+	cull disable
+	{
+		map models/players/merman/finsblue.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+models/players/merman/skinblue
+{
+	{
+		map models/players/merman/skinblue.tga
+		rgbGen lightingDiffuse
+		
+	}
+}
+models/players/merman/bracblue
+{
+	cull disable
+	{
+		map models/players/merman/bracblue.tga
 		rgbGen lightingDiffuse
 	}
 	{

@@ -679,7 +679,6 @@ DEATH_TALKING = {
 
 
 language = {
-	"English";
 	"gibberish";
 	"baby-talk";
 	"Spanish";
@@ -694,6 +693,7 @@ language = {
 	"Lakota";
 	"Dineh";
 	"Sanskrit";
+	"Swahili";
 }
 
 weapon = {
@@ -803,8 +803,7 @@ fighter = {
 	"asshole";
 	"vomit-sucking ass licker";
 	"blood sucker";
-	"lawyer";
-	"politician";
+	
 }
 
 
@@ -817,6 +816,7 @@ femalebot = {
 malebot = {
 	"Grism";
 	"Gargoyle";
+	"Merman";
 }
 
 botnames = {
@@ -824,6 +824,7 @@ botnames = {
 	"Gargoyle";
 	"Kyonshi";
 	"Major";
+	"Merman";
 }
 
 negative = { 
@@ -935,6 +936,7 @@ peeps = {
 	"Lao Tzu";
 	"M. K. Ghandhi";
 	"Tsun Tzu";
+	
 }
 
 immaturity01 = {
@@ -1106,10 +1108,10 @@ substance = {
 
 
 curse = {
-	"I hope your testicles fall off in a freak fishing accident.";
+	"I hope your genitals fall off in a freak fishing accident.";
 	"May your first born child be born a politician...";
 	"May your first born child be born with the intelligence of Pat Robertson.";
-	"May you dream of Tammy Faye Baker for the rest of your rotten life!";
+	"May you dream of dmn_clown's ~mother for the rest of your rotten life!";
 	"hum kah chan!";
 }
 

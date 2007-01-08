@@ -54,9 +54,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"Bigotry is learned behavior, please unlearn it.";
 	"Who taught you to hate?";
 	"Why do you hate?";
+	"Has anything you have ever done made your life better?";
 	immaturity01;
 	vicious_insult;
-	response_insult;
 	curse;
 	
 }
@@ -170,9 +170,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"That can be tough on the people around you.";
 }
 
-[(0, " is a bitch") &name, !"Grism", !"Gargoyle"] = 4
+[(1, " is a ", 0) &name, !"Grism", !"Gargoyle"] = 4
 {
-	"That is Mizz Bitch to you, ", fighter, ".";
+	"That is Mizz ", 0, " to you, ", fighter, ".";
 	"I'm only rude to ", fighter, "s like you.";
 	"You should see me out of the Arena...";
 	"That isn't what your ", family_member, " said last night";
@@ -202,8 +202,45 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"I frag, therefore I am.";
 }
 
+["stupid bot"] = 5
+{
+	"Yeah, bots are stupid.";
+	"Man, why do they even bother with ai, it never works?";
+	"Hey!  Blame the person that programmed me!";
+}
+
 ["sex", "coitis", "sexual intercourse"] = 2
 {
 	"Now?!?";
 	"No thanks, I have a headache.";
+	"You want to talk about that here?";
+	"This is not a chat room!";
+	proposition01;
+	"perv";
+}
+
+[(1, " is a ", 0) &name, !"Kyonshi", !"Major"] = 4
+{
+	"That is Mr. ", 0, " to you, ", fighter, ".";
+	"I'm only rude to ", fighter, "s like you.";
+	"You should see me out of the Arena...";
+	"That isn't what your ", family_member, " said last night";
+}
+
+["meaning of it all"] = 5
+{
+	"Only what you give it.";
+	"It?  It has no meaning, it just is.";
+	"You think too much, shut up and frag.";
+	"Has anyone ever told you to shut the hell up?";
+}
+
+["Aardappel", "leileilol", "Multiplex", "crayon", "JK Makowka", "Democritus", "jzero", "Mancubus", "mewse", "div0", "MilesTeg", "evillair", "Shadowdragon", "mightypea", "Morphed", "toddd", "Psymong", "DarkThief", "slyus", "SavageX", "Kaz", "pixie", "Vondur", "Tyrann", "Ed", "Czestmyr"] = 1
+{
+	"Why do you think you have the right to utter that name, you ", fighter, "?";
+	"Speak that name with respect.";
+	"You would be wise to respect the name you just uttered.";
+	"Shh... The Arena Lords may be listening.";
+	"I am not worthy to even think that name.";
+	"Silence, Mortal!  You are not worthy of uttering an Arena Lord's name.";
 }
