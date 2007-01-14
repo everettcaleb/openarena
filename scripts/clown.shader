@@ -347,7 +347,7 @@ textures/clown/glass
 		map textures/clown/glass.tga
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen identity
-		alphaFunc GT128
+		alphaFunc GT0
 		depthWrite
 	}
 	{
@@ -369,30 +369,32 @@ textures/clown/portal_1r
 	cull disable
 
 	{
-		map textures/clown/portal_1r.tga
-		blendfunc gl_src_alpha gl_one
-		rgbGen wave inversesawtooth .3 2 0 1
-		
-		
+		map $lightmap
+		blendFunc gl_dst_color gl_one_minus_src_alpha
+		rgbGen identity
 	}
 	{
-		map $lightmap
-		blendFunc GL_DST_COLOR GL_ONE
-		rgbGen identity
-		depthFunc equal
+		map textures/clown/portal_1r.tga
+		blendfunc gl_one gl_one
+		rgbGen wave inversesawtooth .3 .01 0 .2
 	}
 	{
 		clampmap textures/clown/portal_2r.tga
 		blendFunc GL_ONE GL_ONE
 		tcMod stretch sin 1.2 .3 0 1.2
-		tcmod turb .2 .03 .2 .03
+	}
+	{
+		clampmap textures/clown/portal_4r.tga
+		blendFunc GL_ONE GL_ONE
+		tcMod stretch sin -1.2 .3 0 1.2
 	}
 	{
 		clampmap textures/clown/portal_3r.tga
-		blendfunc gl_one gl_one
+		blendfunc GL_ONE GL_ONE
 		tcmod rotate 10
 	}
 }
+
 
 textures/clown/dark_sky
 {
@@ -429,8 +431,7 @@ textures/clown/r_edge
 	}
 	{
 		map textures/clown/r_edge.tga
-		blendFunc GL_DST_COLOR GL_ZERO
-		alphaGen lightingSpecular
+		blendFunc GL_ONE GL_ONE
 		tcMod turb 3 .3 3 .3
 	}
 }
@@ -449,9 +450,7 @@ textures/clown/b_edge
 	}
 	{
 		map textures/clown/b_edge.tga
-		blendFunc GL_DST_COLOR GL_ZERO
-		rgbGen identity
-		alphaGen lightingSpecular
+		blendFunc GL_ONE GL_ONE
 		tcMod turb 3 .3 3 .3
 	}
 }
@@ -514,5 +513,163 @@ textures/clown/grate_2
 		blendFunc GL_DST_COLOR GL_ONE
 		rgbGen identity
 		depthFunc equal
+	}
+}
+
+textures/base_wall/main_q3abanner
+{
+	q3map_lightimage textures/base_wall/main_q3abanner.jpg
+        q3map_surfacelight 100
+
+
+	{
+		map textures/base_wall/main_q3abanner.jpg
+	        rgbGen wave square 0 1 0 .5
+	}
+
+	{
+		map textures/base_wall/comp3textb.jpg
+		blendfunc add
+	        rgbGen identity
+		tcmod scroll 2 2
+		
+	}
+
+	{
+		map textures/base_wall/comp3text.jpg
+		blendfunc add
+	        rgbGen identity
+		tcmod scroll 3 3
+	}
+
+
+	{
+		map $lightmap
+	        rgbGen identity
+		blendfunc gl_dst_color gl_zero
+	}
+
+	{
+		map $lightmap
+		tcgen environment
+		tcmod scale .5 .5
+	        rgbGen wave sin .25 0 0 0
+		blendfunc add
+	}	          		
+}   
+
+textures/base_wall/main_q3abanner_r
+{
+	q3map_lightimage textures/base_wall/main_q3abanner.jpg
+        q3map_surfacelight 100
+
+
+	{
+		map textures/base_wall/main_q3abanner_r.jpg
+	        rgbGen wave square 0 1 0 .5
+	}
+
+	{
+		map textures/base_wall/comp3textb.jpg
+		blendfunc add
+	        rgbGen identity
+		tcmod scroll -2 2
+	}
+
+	{
+		map textures/base_wall/comp3text.jpg
+		blendfunc add
+	        rgbGen identity
+		tcmod scroll 3 3
+	}
+
+
+	{
+		map $lightmap
+	        rgbGen identity
+		blendfunc gl_dst_color gl_zero
+	}
+
+	{
+		map $lightmap
+		tcgen environment
+		tcmod scale .5 .5
+	        rgbGen wave sin .25 0 0 0
+		blendfunc add
+	}	          		
+}   
+
+textures/clown/steel_b_shine
+{
+	qer_editorimage textures/clown/steel_b.jpg
+	{
+		map textures/clown/steel_b.jpg
+		rgbGen identity
+	}
+	{
+		clampmap textures/base_wall/chrome_env.jpg
+		blendfunc add
+		rgbGen const ( 0.188235 0.188235 0.407843 )
+		tcGen environment 
+	}
+	{
+		map textures/clown/steel_b.jpg
+		blendfunc filter
+		
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/clown/steel_r_shine
+{
+	qer_editorimage textures/clown/steel_r.jpg
+	{
+		map textures/clown/steel_r.jpg
+		rgbGen identity
+	}
+	{
+		clampmap textures/base_wall/chrome_env.jpg
+		blendfunc add
+		rgbGen const ( 0.188235 0.188235 0.407843 )
+		tcGen environment 
+	}
+	{
+		map textures/clown/steel_r.jpg
+		blendfunc filter
+		
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/clown/steel_rust_shine
+{
+	qer_editorimage textures/clown/steel_rust.jpg
+	{
+		map textures/clown/steel_rust.jpg
+		rgbGen identity
+	}
+	{
+		clampmap textures/base_wall/chrome_env.jpg
+		blendfunc add
+		rgbGen const ( 0.188235 0.188235 0.407843 )
+		tcGen environment 
+	}
+	{
+		map textures/clown/steel_r.jpg
+		blendfunc filter
+		
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
 	}
 }

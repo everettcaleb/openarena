@@ -86,6 +86,13 @@ fraglimit	30
 type		"ctf"
 }
 
+{
+map		"oa_bases5"
+bots		"sarge gargoyle"
+longname	"Some better bases"
+fraglimit	30
+type		"ctf"
+}
 
 //commented out until it is finished
 //{
