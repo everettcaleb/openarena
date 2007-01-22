@@ -94,14 +94,14 @@ fraglimit	30
 type		"ctf"
 }
 
-//commented out until it is finished
-//{
-//map		"delta"
-//bots		"merman major"
-//longname	"mission to mars"
-//fraglimit	"20"
-//type		"ctf"
-//}
+
+{
+map		"delta"
+bots		"merman major"
+longname	"mission over mars"
+fraglimit	"20"
+type		"ctf"
+}
 
 // commented out due to very ugly texturing
 //{

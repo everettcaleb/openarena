@@ -386,7 +386,7 @@ textures/clown/portal_1r
 	{
 		clampmap textures/clown/portal_4r.tga
 		blendFunc GL_ONE GL_ONE
-		tcMod stretch sin -1.2 .3 0 1.2
+		tcMod stretch sin 1.2 .2 0.5 1.2
 	}
 	{
 		clampmap textures/clown/portal_3r.tga
@@ -672,4 +672,55 @@ textures/clown/steel_rust_shine
 		blendfunc gl_dst_color gl_one_minus_src_alpha
 		tcGen lightmap 
 	}
+}
+
+textures/clown/burn_ow
+{
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	q3map_surfacelight 30
+	cull none	
+	
+	{
+		map textures/clown/burn_ow.tga
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		alphaFunc GT0
+		depthWrite
+		
+	}
+	{
+		map $lightmap
+		blendFunc gl_dst_color gl_one_minus_src_alpha
+		rgbGen identity
+		depthFunc equal
+	}
+	
+}
+
+textures/skies/moons1
+{
+	qer_editorimage textures/skies/moons1.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/intelredclouds.jpg
+	q3map_sun	.5 .1 .1  50  65  35
+	q3map_surfacelight 150
+	skyParms env/moon1/moon1 1024 -
+	{
+		map textures/skies/killsky_1.jpg
+		blendFunc add
+		tcMod scale 3 2
+		tcMod scroll 0.15 0.15
+	}
+	{
+		map textures/skies/intelredclouds.jpg
+		blendFunc filter
+		tcMod scale 3 3
+		tcMod scroll 0.05 0.05
+	}
+	
 }
