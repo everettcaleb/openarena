@@ -1,5 +1,7 @@
 //12-12-06 removed redundant nodrop
 //12-23-06 fixed the b0rked invisible shader
+//01-25-07 removed redundant clip + added nodrawnonsolid, clusterportal
+//01-27-07 moved portal from clown.shader to here
 //need this or maps FTBFS
 //for the idiot bots out there ;( use instead of botclip!!!!
 textures/common/donotenter
@@ -102,16 +104,6 @@ textures/common/cushion
 	surfaceparm trans
 }
 
-textures/common/clip
-{
-	surfaceparm nolightmap
-	surfaceparm nodraw
-	surfaceparm nomarks
-	surfaceparm nonsolid
-	surfaceparm noimpact
-	surfaceparm playerclip
-}
-
 //to keep certain textures from being shot up
 textures/common/weapclip
 {
@@ -120,3 +112,34 @@ textures/common/weapclip
 	surfaceparm nomarks
 }
 
+//for every stupid q3dm17 remake
+textures/common/nodrawnonsolid
+{
+	surfaceparm	nonsolid
+	surfaceparm	nodraw
+}
+
+//hint for the bots
+textures/common/clusterportal
+{
+	qer_nocarve
+	surfaceparm nodraw
+	surfaceparm nonsolid
+	surfaceparm trans
+	surfaceparm nomarks
+	surfaceparm clusterportal
+}
+
+//can also be used as a mirror
+textures/common/portal
+{
+	qer_editorimage textures/common/invisible.tga
+	surfaceparm nolightmap
+	portal
+	{
+		map textures/common/invisible.tga
+		blendfunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
+		depthWrite
+
+	}
+}

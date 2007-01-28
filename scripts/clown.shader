@@ -302,20 +302,6 @@ textures/clown/blue_3
 	}
 }
 
-//can also be used as a mirror
-textures/common/portal
-{
-	qer_editorimage textures/common/invisible.tga
-	surfaceparm nolightmap
-	portal
-	{
-		map textures/common/invisible.tga
-		blendfunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
-		depthWrite
-
-	}
-}
-
 textures/sfx/xflame4
 {
 	q3map_lightimage textures/clown/fleshy.tga
