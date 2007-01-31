@@ -374,7 +374,7 @@ textures/base_light/ceil1_39
 	q3map_surfacelight 300
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_39.jpg
+		map textures/base_light/ceil1_39.tga
 		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
@@ -386,5 +386,28 @@ textures/base_light/ceil1_39
 	{
 		map textures/base_light/ceil1_39.blend.jpg
 		blendfunc add
+	}
+}
+
+textures/gothic_light/skulllight01
+{
+	qer_editorimage textures/gothic_light/skulllight01.jpg
+	q3map_lightimage textures/gothic_light/s_light2_blend.tga
+	surfaceparm nomarks
+	q3map_surfacelight 300
+	{
+		map textures/gothic_light/skulllight01.jpg
+		blendfunc gl_one gl_zero
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		tcgen lightmap
+	}
+	{
+		map textures/gothic_light/s_light2_blend.tga
+		blendfunc add
+		rgbGen wave sin 0.25 0.25 0 .5
 	}
 }

@@ -2,6 +2,7 @@
 //12-23-06 fixed the b0rked invisible shader
 //01-25-07 removed redundant clip + added nodrawnonsolid, clusterportal
 //01-27-07 moved portal from clown.shader to here
+//01-31-07 added mirror shader doesnt work, gave other shaders transparency in map editor.-kit89 
 //need this or maps FTBFS
 //for the idiot bots out there ;( use instead of botclip!!!!
 textures/common/donotenter
@@ -142,4 +143,17 @@ textures/common/portal
 		depthWrite
 
 	}
+}
+
+//Added for Mirrors
+textures/common/mirror
+{
+	qer_editorimage	textures/common/editor_images/qer_mirror
+	portal
+	q3map_nolightmap
+    {
+        map textures/common/mirror.tga
+        blendFunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
+        depthWrite
+    }
 }

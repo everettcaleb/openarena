@@ -378,3 +378,41 @@ textures/common/sky_space
 	skyParms env/space1 128 -
 }
 
+//01-30-07 dmn_clown
+textures/skies/blacksky
+{
+	qer_editorimage textures/sfx/blakk.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_surfacelight 50
+	q3map_sun	1 1 1 32 90 90
+	{
+		map	textures/sfx/blakk.tga
+	}
+}
+
+textures/skies/xblacksky_dm7
+{
+	qer_editorimage textures/sfx/blakk.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_surfacelight 50
+	q3map_sun	1 1 1 32 60 90
+	{
+		map	textures/sfx/blakk.tga
+	}
+}
+
+textures/sfx/blackness
+{	
+	qer_editorimage textures/sfx/blakk.tga
+	surfaceparm nolightmap
+	surfaceparm noimpact
+	surfaceparm nomarks
+	{
+		map textures/sfx/blakk.tga
+	}
+}
+

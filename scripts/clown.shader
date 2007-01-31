@@ -710,3 +710,103 @@ textures/skies/moons1
 	}
 	
 }
+
+textures/sfx/beam
+{
+        surfaceparm trans	
+        surfaceparm nomarks	
+        surfaceparm nonsolid
+	surfaceparm nolightmap
+	cull none
+	
+	{
+		map textures/sfx/beam.jpg
+                tcMod Scroll .3 0
+                blendFunc GL_ONE GL_ONE
+        }
+}
+
+textures/sfx/beam_dusty2
+{
+        surfaceparm trans	
+        surfaceparm nomarks	
+        surfaceparm nonsolid
+	surfaceparm nolightmap
+	cull none
+	
+	{
+		map textures/sfx/beam.jpg
+                tcMod Scroll .3 0
+                blendFunc GL_ONE GL_ONE
+        }
+	{
+		map textures/sfx/beam.jpg
+                tcMod Scroll -10 0
+                blendFunc GL_ONE GL_ONE
+        }
+}
+
+textures/sfx/beam_blue
+{
+	surfaceparm trans	
+        surfaceparm nomarks	
+        surfaceparm nonsolid
+	surfaceparm nolightmap
+	cull none
+	
+	{
+		map textures/sfx/beam_blue4.jpg
+                tcMod Scroll .3 0
+                blendFunc GL_ONE GL_ONE
+        }
+}
+
+textures/sfx/beam_red
+{
+	surfaceparm trans	
+        surfaceparm nomarks	
+        surfaceparm nonsolid
+	surfaceparm nolightmap
+	cull none
+	
+	{
+		map textures/sfx/beamred.jpg
+                tcMod Scroll .3 0
+                blendFunc GL_ONE GL_ONE
+        }
+}
+
+textures/sfx/beam_waterlight2
+
+{
+	surfaceparm trans	
+        surfaceparm nomarks	
+        surfaceparm nonsolid
+	surfaceparm nolightmap
+	cull none
+	
+	{
+		map textures/sfx/beam_waterlight.jpg
+                tcMod Scroll .3 0
+                blendFunc GL_ONE GL_ONE
+        }
+	
+}
+
+textures/sfx/lavabeam
+
+{
+	surfaceparm trans	
+        surfaceparm nomarks	
+        surfaceparm nonsolid
+	surfaceparm nolightmap
+	cull none
+	
+	{
+		map textures/sfx/lavabeam.jpg
+                tcMod Scroll 5 0
+                blendFunc GL_ONE GL_ONE
+        }
+	
+}
+
