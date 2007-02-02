@@ -810,3 +810,82 @@ textures/sfx/lavabeam
 	
 }
 
+textures/gothic_block/mkc_evil_e3window
+{
+	qer_editorimage textures/gothic_block/windowevil2c_block18c.jpg
+	q3map_lightimage textures/gothic_block/evil2cglow.jpg
+	q3map_surfacelight 200
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/gothic_block/windowevil2c_block18c.jpg
+		blendFunc filter
+		rgbGen identity
+	}
+	{
+		map textures/gothic_block/evil2cglow.jpg
+		blendfunc add
+	}
+}
+
+textures/gothic_block/evil_e3bwindow
+{
+	qer_editorimage textures/gothic_block/windowevil2c_killblock.jpg
+	q3map_lightimage textures/gothic_block/evil2ckillblockglow.jpg
+	q3map_surfacelight 200
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/gothic_block/windowevil2c_killblock.jpg
+		blendFunc filter
+		rgbGen identity
+	}
+	{
+		map textures/gothic_block/evil2ckillblockglow.jpg
+		blendfunc add
+	}
+}
+
+textures/gothic_block/evil_e3window
+{
+	qer_editorimage textures/gothic_block/windowevil2c_block18c.jpg
+	q3map_lightimage textures/gothic_block/evil2cglow.jpg
+	q3map_surfacelight 900
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/gothic_block/windowevil2c_block18c.jpg
+		blendFunc filter
+		rgbGen identity
+	}
+	{
+		map textures/gothic_block/evil2cglow.jpg
+		blendfunc add
+	}
+}
+
+textures/gothic_block/evil_e3window_dark
+{
+	qer_editorimage textures/gothic_block/windowevil2c_block18c.jpg
+	q3map_lightimage textures/gothic_block/evil2cglow.jpg
+	q3map_surfacelight 100
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/gothic_block/windowevil2c_block18c.jpg
+		blendFunc filter
+		rgbGen identity
+	}
+	{
+		map textures/gothic_block/evil2cglow.jpg
+		blendfunc add
+	}
+}
