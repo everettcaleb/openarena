@@ -127,3 +127,22 @@ textures/liquids/softlava
 	}
 }
 
+textures/liquids/lavahell_simple
+{
+	q3map_lightimage textures/liquids/lavahell.tga
+	qer_editorimage textures/liquids/lavahell
+	surfaceparm lava
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm trans
+	surfaceparm water
+	surfaceparm lightfilter
+	cull disable
+	q3map_surfacelight 666
+	q3map_globaltexture
+	q3map_flare flareShader-lava
+	{
+		map textures/liquids/lavahell.tga
+		tcMod turb 1 -0.3 0 0.07
+	}
+}

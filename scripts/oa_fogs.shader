@@ -564,3 +564,20 @@ textures/sfx/xlightgreyfog
         cull disable
         fogparms ( 0.4784 0.4784 0.4784 ) 1000
 }
+
+
+textures/fogs/fog_orange
+{
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm fog
+	surfaceparm nolightmap
+	cull disable
+	fogparms ( 0.5 0.2 0.0 ) 512
+	{
+		map textures/liquids/kc_fogcloud3.tga
+		blendfunc filter
+		tcMod turb 1 -0.3 0 0.07
+		tcMod scale 0.2 0.2
+	}
+}
