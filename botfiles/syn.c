@@ -173,7 +173,7 @@ CONTEXT_NORMAL
 	[("picture", 1), ("pic", 1)]
 	[("pictures", 1), ("pics", 1), ("pix", 0)]
 	[("see you", 1), ("cya", 0), ("c u", 0)]
-	[("father", 1), ("dad", 1), ("daddy", 0.6), ("pappy", 0.5)]
+	[("father", 1), ("dad", 1), ("daddy", 0.6), ("pappy", 0.5), ("pa", 0.2)]
 	[("mother", 1), ("mom", 1), ("mommy", 1), ("mama", 1), ("momma", 1)]
 	[("brother", 1), ("bro", 0.2)]
 	[("sister", 1), ("sis", 0.4)]
@@ -218,6 +218,6 @@ CONTEXT_NAMES
 	[("Grism", 1),		("psycho", 0.1), ("Mr. War", 0.3), ("Goat Boy", 0.5)]
 	[("Kyonshi", 1),	("dead girl", 0.4), ("chi drinker", 0.5), ("rocket queen", 0.3)]
 	[("Major", 1),		("Lara", 0.4),  ("Rail Queen", 0.6), ("Sniper Queen", 0.6)]
-	[("Merman", 1)		("fish breath", 0.1), ("Arial's brother", 0.4), ("Fish Eater", 0.5)]
-//	[("Orb", 1)		("Psycod the Magnificant", 0.5), ("Slayer of the 19 cats of Doom", 0.5)]
+	[("Merman", 1),		("fish breath", 0.1), ("Arial's brother", 0.4), ("Fish Eater", 0.5)]
+//	[("Orb", 1),		("Psycod the Magnificant", 0.5), ("Slayer of the 19 cats of Doom", 0.5)]
 }

@@ -889,3 +889,28 @@ textures/gothic_block/evil_e3window_dark
 		blendfunc add
 	}
 }
+
+textures/gothic_block/wetwall
+{
+	
+        {
+	        map textures/gothic_block/wetwall.tga
+	        rgbGen identity
+	}
+        {
+		map textures/gothic_block/wetwall_fx.tga
+                tcmod scroll 0 -.1
+                blendFunc add
+                rgbGen identity
+	}
+	{
+	        map textures/gothic_block/wetwall.tga
+		blendFunc filter
+		rgbGen identity
+	}
+        {
+		map $lightmap
+                blendFunc GL_DST_COLOR GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+	}
+}

@@ -57,20 +57,19 @@ rocketThrust
 	{
 		clampmap textures/flares/flarey.tga
 		blendfunc add
-		rgbGen const ( 0.988235 0.760784 0.560784 )
+		rgbGen const ( 0.541176 0.341176 0.156863 )
 		tcMod rotate -96
 		tcMod stretch sin 0.3 0.7 0 8 
 	}
 	{
 		clampmap textures/flares/wide.tga
 		blendfunc add
-		rgbGen const ( 0.988235 0.745098 0.478431 )
-		tcMod rotate 12
+		rgbGen const ( 0.843137 0.588235 0.4 )
 	}
 	{
 		clampmap textures/flares/newflare.tga
 		blendfunc add
-		rgbGen const ( 1 0.439216 0.27451 )
+		rgbGen const ( 0.713726 0.270588 0.121569 )
 		tcMod rotate 46
 		tcMod stretch inversesawtooth 0.6 0.4 0 4 
 	}

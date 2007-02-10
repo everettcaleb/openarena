@@ -86,16 +86,16 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "I want to roam" = (MSG_TASKPREFERENCE, 0);
 
 	//get the flag
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", "the "|"", "blue "|"red "|"enemy "|"their "|"", "flag" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "get ", "the "|"", "blue "|"red "|"enemy "|"their "|"", "flag" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "capture ", "the "|"", "blue "|"red "|"enemy "|"their "|"", "flag" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the "|"", "blue "|"red "|"enemy "|"their"|"", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", " the blue "|"the red "|"the enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "get ", "the blue "|"the red "|"the enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "capture ", "the blue "|"the red "|"the enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the blue "|"the red "|"the enemy "|"their", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag carrier" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " kill the flag carrier" = (MSG_GETFLAG, ST_ADDRESSED);
 
 	//attack the enemy base
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " attack ", "the "|"", "enemy "|"red "|"blue "|"their "|"", "base"|"flag"|"obelisk"|"" = (MSG_ATTACKENEMYBASE, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " attack ", "the enemy "|"the red "|"the blue "|"their ", "base"|"flag"|"obelisk" = (MSG_ATTACKENEMYBASE, ST_ADDRESSED);
 
 	//go harvesting
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " harvest" = (MSG_HARVEST, ST_ADDRESSED);
@@ -119,32 +119,32 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " hunt down ", ENEMY = (MSG_KILL, ST_ADDRESSED);
 
 	//get item
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", "the "|"", ITEM = (MSG_GETITEM, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "get ", "the "|"", ITEM = (MSG_GETITEM, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": go get ", "the "|"", ITEM = (MSG_GETITEM, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the "|"", ITEM = (MSG_GETITEM, ST_ADDRESSED);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go get ", "the "|"", ITEM = (MSG_GETITEM, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", "the ", ITEM = (MSG_GETITEM, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "get ", "the ", ITEM = (MSG_GETITEM, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": go get ", "the ", ITEM = (MSG_GETITEM, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the ", ITEM = (MSG_GETITEM, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go get ", "the ", ITEM = (MSG_GETITEM, ST_ADDRESSED);
 
 	//defend/guard a key area
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "defend "|"guard ", "the "|"checkpoint "|"waypoint "|"", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, ST_TIME);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "defend "|"guard ", "the "|"checkpoint "|"waypoint "|"", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, ST_TIME);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "defend "|"guard ", "the "|"checkpoint "|"waypoint "|"", KEYAREA = (MSG_DEFENDKEYAREA, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "defend "|"guard ", "the "|"checkpoint "|"waypoint "|"", KEYAREA = (MSG_DEFENDKEYAREA, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " defend "|" guard ", "the "|"checkpoint "|"waypoint "|"", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, $evalint(ST_ADDRESSED|ST_TIME));
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " defend "|" guard ", "the "|"checkpoint "|"waypoint "|"", KEYAREA = (MSG_DEFENDKEYAREA, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "defend "|"guard ", "the checkpoint "|"the waypoint ", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, ST_TIME);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "defend "|"guard ", "the checkpoint "|"the waypoint ", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, ST_TIME);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "defend "|"guard ", "the checkpoint "|"the waypoint ", KEYAREA = (MSG_DEFENDKEYAREA, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "defend "|"guard ", "the "|"checkpoint "|"waypoint ", KEYAREA = (MSG_DEFENDKEYAREA, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " defend "|" guard ", "the ", "checkpoint "|"waypoint ", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, $evalint(ST_ADDRESSED|ST_TIME));
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " defend "|" guard ", "the checkpoint "|"the waypoint ", KEYAREA = (MSG_DEFENDKEYAREA, ST_ADDRESSED);
 
 	//camp somewhere ("hunk camp here", "hunk camp there", "hunk camp near the rl", etc.)
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "there "|"over there ", " for", TIME = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_TIME|ST_THERE));
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "there"|"over there" = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_THERE));
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "here"|"over here ", " for", TIME = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_TIME|ST_HERE));
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "here"|"over here" = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_HERE));
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "near "|"at "|"", "the "|"checkpoint "|"waypoint "|"", KEYAREA, " for", TIME = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_NEARITEM|ST_TIME));
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "near "|"at "|"", "the "|"checkpoint "|"waypoint "|"", KEYAREA = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_NEARITEM));
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "near "|"at "|"", "the "|"checkpoint "|"waypoint ", KEYAREA, " for", TIME = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_NEARITEM|ST_TIME));
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "near "|"at ", "the checkpoint "|"the waypoint ", KEYAREA = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_NEARITEM));
 	//go to (same as camp)
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go to ", "the "|"checkpoint "|"waypoint "|"", KEYAREA = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_NEARITEM));
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go to ", "the "|"checkpoint "|"waypoint ", KEYAREA = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_NEARITEM));
 
 	//rush to the base in CTF
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " rush ", "to "|"to the "|"the "|"", "base" = (MSG_RUSHBASE, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " rush ", "to "|"to the "|"the ", "base" = (MSG_RUSHBASE, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go ", "to"|"to the", " base" = (MSG_RUSHBASE, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "rush base" = (MSG_RUSHBASE, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "return to base" = (MSG_RUSHBASE, 0);
@@ -157,8 +157,8 @@ MTCONTEXT_INITIALTEAMCHAT
 
 
 	//who is the team leader
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": who ", "leads"|"is ", "the leader"|"the team leader"|"team leader"|"leader","?"|"" = (MSG_WHOISTEAMLAEDER, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": is there a ", "leader"|"team leader","?"|"" = (MSG_WHOISTEAMLAEDER, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": who ", "is ", "the leader"|"the team leader"|"team leader"|"leader", "?"|"" = (MSG_WHOISTEAMLAEDER, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": is there a ", "leader"|"team leader", "?"|"" = (MSG_WHOISTEAMLAEDER, 0);
 
 	//become the team leader
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", TEAMMATE, " will be ", THE_TEAM, "leader" = (MSG_STARTTEAMLEADERSHIP, 0);
@@ -205,7 +205,7 @@ MTCONTEXT_INITIALTEAMCHAT
 	//join a sub team
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " create squad ", TEAMNAME = (MSG_JOINSUBTEAM, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " join squad ", TEAMNAME = (MSG_JOINSUBTEAM, ST_ADDRESSED);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " you"|" we", " are", " in"|"", " squad ", TEAMNAME = (MSG_JOINSUBTEAM, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " you"|" we", " are in", " squad ", TEAMNAME = (MSG_JOINSUBTEAM, ST_ADDRESSED);
 
 	//leave a sub team
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " leave your squad" = (MSG_LEAVESUBTEAM, ST_ADDRESSED);
@@ -248,7 +248,7 @@ MTCONTEXT_INITIALTEAMCHAT
 	
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, " nigger "|" nigr "|" niger "|"wop"|"macaca"|"monkey", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "kyke"|"kykes"|"kike"|"kikes"|"jewish pig"|"judan"|"jews"|"jew"|"jew lover"|"ex-slaves"|"slaves"|"slave"|"ex-slave"|"xslave"|"xslaves"|"red sea pedestrians"|"red sea pedestrian", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "niggers"|"nigrs"|"nigers"|"ngrs"|"wops"|"macacas", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "niggers"|"nigrs"|"nigers"|"wops"|"macacas", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "rag head"|"raghead"|"rag-head"|"camel jockey"|"cml jky"|"cmljky", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "rag heads"|"ragheads"|"rag-heads"|"camel jokeys"|"cml jkys"|"cmljkys", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "towel head"|"towel heads"|"towel-head"|"towel-heads"|"towelhead"|"towelheads", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
@@ -261,7 +261,7 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "bean-picker"|"bean picker"|"beanpicker"|"wet back"|"wetback"|"wet-back", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", "bean-pickers"|"beanpickers"|"bean pickers"|"wet backs"|"wetbacks"|"wet-backs", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "spook"|"gook"|"slant"|"mamasan", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "spooks"|"gooks"|"slants"|"mamasans", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "spooks"|"gooks"|"slants"|"mamasans"|"hitler", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	// not a good solution but it does work in certain situations...
 	NETNAME, EC": ", MORE_CRAP,  "sand-nigger"|"sand-niger"|"sndngr"|"sand-niggers"|"sand-nigers"|" sndngrs ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	NETNAME, EC": ", MORE_CRAP, "red skins"|"red-skins"|" braves "|" chiefs "|"red skin"|" red-skin "|" chief ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
@@ -278,7 +278,7 @@ MTCONTEXT_INITIALTEAMCHAT
 	NETNAME, EC": ", MORE_CRAP, " towel head"|" towel heads"|" towel-head"|" towel-heads"|" towelhead"|" towelheads", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	NETNAME, EC": ", MORE_CRAP, " nigrs "|" nigers "|"wops"|" macacas ", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 	NETNAME, EC": ", MORE_CRAP, " kyke "|" kykes "|" kike "|" kikes "|"jewish pig"|"judan"|" jew "|" jews "|"jew lover"|"ex-slaves"|"slaves"|"slave"|"ex-slave"|"xslave"|"xslaves"|"red sea pedestrians"|"red sea pedestrian", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
-	NETNAME, EC": ", MORE_CRAP, " nigger"|" nigr "|" niger "|"wop"|" macaca "|" monkey", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
+	NETNAME, EC": ", MORE_CRAP, " nigger"|" nigr "|" niger "|"wop"|" macaca "|" monkey"|" hitler", PURE_CRAP = (MSG_SUICIDE, ST_TEAM);
 
 } 
 
