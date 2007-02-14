@@ -728,7 +728,8 @@ textures/sfx/beam
 
 textures/sfx/beam_dusty2
 {
-        surfaceparm trans	
+        qer_editorimage textures/sfx/beam.jpg
+	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
 	surfaceparm nolightmap
@@ -748,6 +749,7 @@ textures/sfx/beam_dusty2
 
 textures/sfx/beam_blue
 {
+	qer_editorimage textures/sfx/beam_blue4.jpg
 	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -779,6 +781,7 @@ textures/sfx/beam_red
 textures/sfx/beam_waterlight2
 
 {
+	qer_editorimage textures/sfx/beam_waterlight.jpg
 	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
