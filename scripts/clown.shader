@@ -728,8 +728,7 @@ textures/sfx/beam
 
 textures/sfx/beam_dusty2
 {
-        qer_editorimage textures/sfx/beam.jpg
-	surfaceparm trans	
+        surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
 	surfaceparm nolightmap
@@ -749,7 +748,6 @@ textures/sfx/beam_dusty2
 
 textures/sfx/beam_blue
 {
-	qer_editorimage textures/sfx/beam_blue4.jpg
 	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -781,7 +779,6 @@ textures/sfx/beam_red
 textures/sfx/beam_waterlight2
 
 {
-	qer_editorimage textures/sfx/beam_waterlight.jpg
 	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -917,3 +914,397 @@ textures/gothic_block/wetwall
 		rgbGen identity
 	}
 }
+
+textures/ctf/blue_telep2
+{
+	qer_editorimage textures/effects/jumpcircblue.tga
+	q3map_lightimage textures/effects/jumpcircblue.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm trans
+	cull disable
+	q3map_surfacelight 455
+	{
+		clampmap textures/effects/jumpcircblue.tga
+		blendfunc add
+		tcMod rotate 46
+	}
+	{
+		clampmap textures/sfx/jcb2.tga
+		blendfunc add
+		tcMod rotate -80
+		tcMod stretch sin 0.9 -0.3 0 0.5 
+	}
+	{
+		clampmap textures/sfx/jcb2.tga
+		blendfunc add
+		tcMod rotate -80
+		tcMod stretch sin 0.5 0.3 0 0.5 
+	}
+}
+
+textures/ctf/red_telep2
+{
+	qer_editorimage textures/effects/jumpcircred.tga
+	q3map_lightimage textures/effects/jumpcircred.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm trans
+	cull disable
+	q3map_surfacelight 455
+	{
+		clampmap textures/effects/jumpcircred.tga
+		blendfunc add
+		tcMod rotate 46
+	}
+	{
+		clampmap textures/sfx/jcr2.tga
+		blendfunc add
+		tcMod rotate -80
+		tcMod stretch sin 0.9 -0.3 0 0.5 
+	}
+	{
+		clampmap textures/sfx/jcr2.tga
+		blendfunc add
+		tcMod rotate -80
+		tcMod stretch sin 0.5 0.3 0 0.5 
+	}
+}
+
+textures/gothic_block/blocks18b_ow
+{
+	qer_editorimage textures/gothic_block/blocks18b_ow.tga
+	surfaceparm nomarks
+	
+	{
+		map textures/sfx/fireswirl2.jpg
+		tcmod rotate 1
+		tcmod turb 1 .4 0 .5
+		blendfunc add
+	}
+	{
+		map textures/gothic_block/blocks18b_ow.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}
+
+textures/base_floor/proto_rustygrate
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/base_floor/proto_rustygrate.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GT0
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/sfx/portal_sfx
+{
+	deformVertexes wave 25 sin 3 2 .5 3
+	portal
+	surfaceparm nolightmap
+	
+	{
+		map textures/sfx/portal_sfx3.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		depthWrite
+	}
+	{
+		map textures/sfx/portal_sfx1.tga
+		blendfunc add
+		tcMod rotate -360
+		rgbgen wave inversesawtooth 0 .5 .2 .5
+	}
+	{
+		map textures/oa_fogs/kc_fogcloud3.jpg
+		blendfunc gl_src_alpha gl_one_minus_src_alpha
+		alphagen portal 512
+		rgbGen identity	
+		tcmod rotate .1 
+		tcmod scroll .04 .01
+	}
+}
+
+textures/base_floor/proto_grate
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/base_floor/proto_grate.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GT0
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/base_floor/proto_grate4
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/base_floor/proto_grate4.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GT0
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/base_floor/cybergrate2
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/sfx/portal_sfx_ring_electric.tga
+		tcmod scroll 1 -1
+		blendfunc add
+	}
+	{
+		map textures/base_floor/cybergrate2.tga
+		blendFunc blend	
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/base_floor/cybergrate3
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/sfx/portal_sfx_ring_electric.tga
+		tcmod scroll 1 -1
+		blendfunc add
+	}
+	{
+		map textures/base_floor/cybergrate3.tga
+		blendFunc blend	
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/base_trim/dark_tin2
+{
+	qer_editorimage textures/base_trim/dark_tin2.jpg
+	{
+		//mapped first so it looks good while vertex lit
+		map textures/base_trim/dark_tin2.jpg
+		rgbGen Identity
+	}
+	{
+		map textures/base_wall/chrome_metal.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+	}
+	{
+		map textures/base_trim/dark_tin2.jpg
+		blendfunc add
+	}
+	
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/base_trim/pewter_shiney
+{
+	qer_editorimage textures/base_trim/pewter_shiney.jpg
+	{
+		//mapped first so it looks good while vertex lit
+		map textures/base_trim/pewter_shiney.jpg
+		rgbGen Identity
+	}
+	{
+		map textures/base_wall/chrome_env2.jpg
+		tcGen environment 
+		rgbGen vertex
+	}
+	{
+		map textures/base_trim/pewter_shiney.jpg
+		blendfunc add
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/base_trim/tin
+{
+	qer_editorimage textures/base_trim/tin.tga
+	{
+		//mapped first so it looks good while vertex lit
+		map textures/base_trim/tin.tga
+		rgbGen Identity
+	}
+	{
+		map textures/base_trim/tinfx.jpg
+		tcGen environment 
+		rgbGen vertex
+	}
+	{
+		map textures/base_trim/tin.tga
+		blendfunc add
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/base_floor/hfloor3
+{
+	qer_editorimage textures/base_floor/hfloor3.jpg
+	{
+		//mapped first so it looks good while vertex lit
+		map textures/base_floor/hfloor3.jpg
+		rgbGen Identity
+	}
+	{
+		map textures/base_trim/tinfx.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+	}
+	{
+		map textures/base_floor/hfloor3.jpg
+		blendfunc add
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/base_wall/comp3b_dark
+{
+	q3map_lightimage textures/base_wall/comp3env.jpg
+        q3map_surfacelight 10
+
+
+	{
+		map textures/base_wall/comp3textb.tga
+	        rgbGen identity
+		tcmod scroll -3 3
+	}
+	{
+		map textures/base_wall/comp3text.jpg
+		blendfunc add
+	        rgbGen identity
+		tcmod scroll -3 3
+	}
+	{
+		map textures/base_wall/comp3env.jpg
+		tcGen environment
+	        blendfunc add
+		rgbGen oneminusvertex
+	}
+
+
+	{
+		map $lightmap
+	        tcGen environment
+		blendfunc gl_dst_color gl_one
+	}
+	{
+		map textures/base_wall/comp3b.tga
+        	blendFunc blend 
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+                blendFunc GL_DST_COLOR GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+	}
+
+}   
+
+textures/base_wall/comp3b
+{
+	q3map_lightimage textures/base_wall/comp3env.jpg
+        q3map_surfacelight 900
+
+
+	{
+		map textures/base_wall/comp3text.jpg
+		blendfunc add
+	        rgbGen identity
+		tcmod scroll 3 3
+	}
+	{
+		map textures/base_wall/comp3env.jpg
+		tcGen environment
+	        blendfunc add
+		rgbGen oneminusvertex
+	}
+
+
+	{
+		map $lightmap
+	        tcGen environment
+		blendfunc gl_dst_color gl_one
+	}
+	{
+		map textures/base_wall/comp3b.tga
+        	blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+                blendFunc GL_DST_COLOR GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+	}
+
+}  
