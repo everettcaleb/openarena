@@ -3,6 +3,7 @@
 //01-25-07 removed redundant clip + added nodrawnonsolid, clusterportal
 //01-27-07 moved portal from clown.shader to here
 //01-31-07 added mirror shader doesnt work, gave other shaders transparency in map editor.-kit89 
+//02-14-07 added timportal + mirror1, mirror 2, terrain, terrain 2, metalclip 
 //need this or maps FTBFS
 //for the idiot bots out there ;( use instead of botclip!!!!
 textures/common/donotenter
@@ -156,4 +157,94 @@ textures/common/mirror
         blendFunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
         depthWrite
     }
+}
+
+textures/common/timportal
+{
+	qer_editorimage textures/common/invisible.tga
+	surfaceparm nolightmap
+	portal
+	{
+		map textures/common/invisible.tga
+		blendfunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
+		depthWrite
+
+	}
+	{
+		map textures/oa_fogs/kc_fogcloud3.jpg
+		blendfunc gl_src_alpha gl_one_minus_src_alpha
+		alphagen portal 256
+		rgbGen identity	
+		tcmod rotate .1 
+		tcmod scroll .04 .01
+	}
+}
+
+//nicked from nexuiz for backwards compat 
+textures/common/mirror1
+{
+	qer_editorimage textures/common/mirror1.tga
+	surfaceparm nolightmap
+	portal
+  
+	{
+		map textures/common/invisible.tga
+		blendfunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
+		depthWrite
+	}
+       
+        
+
+}
+
+//nicked from nexuiz w/added turb. for backwards compat 
+textures/common/mirror2
+{
+	qer_editorimage textures/common/qer_mirror.tga
+	surfaceparm nolightmap
+	portal
+	{
+		map textures/common/mirror.tga
+		blendfunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
+		depthWrite
+	}
+        {
+               map textures/sfx/mirror.tga
+	       tcMod turb 0 0.25 0 0.05
+	       blendFunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+        }
+
+}
+
+//nicked from nexuiz
+textures/common/terrain
+{
+	q3map_terrain
+	surfaceparm nodraw
+        surfaceparm nolightmap
+	surfaceparm nomarks
+}
+
+//nicked from nexuiz
+textures/common/terrain2
+{
+	q3map_terrain
+	qer_editorimage textures/common/slick.tga
+	surfaceparm dust
+	surfaceparm nodraw
+	surfaceparm nomarks
+	surfaceparm nolightmap
+}
+
+//nicked from nexuiz
+textures/common/metalclip
+{
+	surfaceparm nodraw
+	surfaceparm nolightmap
+	surfaceparm nonsolid
+	surfaceparm trans
+	surfaceparm nomarks
+	surfaceparm noimpact
+	surfaceparm playerclip
+	surfaceparm metalsteps
 }

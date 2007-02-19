@@ -165,6 +165,7 @@ textures/liquids/refwater
 	}
 }
 
+//updated for current textures 02-15-07 dmn_clown
 textures/liquids/waveywater
 {
 	surfaceparm nomarks
@@ -172,25 +173,25 @@ textures/liquids/waveywater
 	surfaceparm water
 	cull disable
 	{
-		map textures/liquids/bluwater.tga
+		map textures/liquids/pool2.jpg
 		blendfunc filter
 		rgbGen const ( 1 1 1 )
 		tcMod scroll 0.05 0.05
 	}
 	{
-		map textures/liquids/rippleness2.tga
+		map textures/liquids/ripple.jpg
 		blendfunc gl_dst_color gl_one
 		rgbGen const ( 1 1 1 )
 		tcMod scroll -0.03 -0.06
 	}
 	{
-		map textures/liquids/rippleness2.tga
+		map textures/liquids/ripple.jpg
 		blendfunc gl_dst_color gl_one
 		rgbGen const ( 1 1 1 )
 		tcMod scroll -0.02 -0.08
 	}
 }
-
+//updated for current textures 02-15-07 dmn_clown
 textures/liquids/justwater
 {
 	surfaceparm nomarks
@@ -198,26 +199,27 @@ textures/liquids/justwater
 	surfaceparm water
 	cull disable
 	{
-		map textures/liquids/bluwater.tga
+		map textures/liquids/pool3d_4b2.jpg
 		blendfunc blend
 		rgbGen const ( 0.384314 0.501961 0.568627 )
 		tcMod scroll 0.05 -0.05
 		alphaGen wave inversesawtooth 0.5 0 0 1 
 	}
 	{
-		map textures/liquids/bluwater.tga
+		map textures/liquids/pool3d_3.jpg
 		blendfunc gl_dst_color gl_one
 		rgbGen const ( 1 1 1 )
 		tcMod scroll 0.09 0.06
 	}
 	{
-		map textures/liquids/bluwater.tga
+		map textures/liquids/pool3d_5.tga
 		blendfunc gl_dst_color gl_one
 		rgbGen const ( 1 1 1 )
 		tcMod scroll -0.04 -0.08
 	}
 }
 
+//updated for current textures 02-15-07 dmn_clown
 textures/liquids/rapidwater
 {
 	surfaceparm nomarks
@@ -225,12 +227,12 @@ textures/liquids/rapidwater
 	surfaceparm water
 	cull disable
 	{
-		map textures/cheapalert/ripple.tga
+		map textures/liquids/ripple.jpg
 		blendfunc gl_dst_color gl_src_color
 		tcMod scroll -0.2 -0.4
 	}
 	{
-		map textures/cheapalert/ripple.tga
+		map textures/liquids/ripple.jpg
 		blendfunc gl_dst_color gl_src_color
 		tcMod scroll -0.2 -0.5
 	}
@@ -328,3 +330,147 @@ textures/liquids/oldacid
 	}
 }
 
+//added for backwards compat
+//02-15-07 dmn_clown
+
+textures/liquids/clear_ripple3
+{
+	qer_editorimage textures/liquids/pool3d_3.jpg
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull disable
+	deformVertexes wave 32 sin .25 .25 0 .5	
+		
+	{ 
+		map textures/liquids/pool3d_5.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll -.05 .001
+	}
+
+	{ 
+		map textures/liquids/pool3d_6.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .025 -.001
+	}
+	{ 
+		map textures/liquids/pool3d_5e.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .001 .025
+	}
+	{
+		map $lightmap
+		blendFunc gl_dst_color gl_zero
+		rgbgen identity		
+	}
+	
+
+}
+
+textures/liquids/clear_ripple1
+{
+	qer_editorimage textures/liquids/pool3d_3.jpg
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull disable
+	deformVertexes wave 64 sin .5 .5 0 .5	
+		
+	{ 
+		map textures/liquids/pool3d_5.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll -.05 .001
+	}
+
+	{ 
+		map textures/liquids/pool3d_6.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .025 -.001
+	}
+	{
+		map $lightmap
+		blendFunc gl_dst_color gl_zero
+		rgbgen identity		
+	}
+	
+
+}
+
+textures/liquids/clear_ripple2
+{
+	qer_editorimage textures/liquids/pool3d_3.jpg
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull disable
+	deformVertexes wave 24 sin .25 .25 0 .5	
+		
+	{ 
+		map textures/liquids/pool3d_5.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll -.025 .001
+	}
+
+	{ 
+		map textures/liquids/pool3d_6.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .03 -.001
+	}
+	{ 
+		map textures/liquids/pool3d_5e.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .001 .025
+	}
+	{
+		map $lightmap
+		blendFunc gl_dst_color gl_zero
+		rgbgen identity		
+	}
+	
+
+}
+
+textures/liquids/clear_calm1
+{
+	qer_editorimage textures/liquids/pool3d_5e.jpg
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull none
+	
+		
+	{ 
+		map textures/liquids/pool3d_5e.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod turb .04 .01 .5 .03
+	}
+
+	{ 
+		map textures/liquids/pool3d_6.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .025 -.001
+	}
+	{ 
+		map textures/liquids/pool3d_5.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .001 .025
+	}
+	{
+		map $lightmap
+		blendFunc gl_dst_color gl_zero
+		rgbgen identity		
+	}
+	
+
+}

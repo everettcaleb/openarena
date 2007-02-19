@@ -581,3 +581,15 @@ textures/fogs/fog_orange
 		tcMod scale 0.2 0.2
 	}
 }
+
+textures/sfx/fog_intel
+{
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm fog
+	surfaceparm nolightmap
+	cull disable
+	fogparms ( 0.65098 0.07451 0.11372 ) 300
+	
+	
+}

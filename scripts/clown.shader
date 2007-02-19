@@ -1308,3 +1308,287 @@ textures/base_wall/comp3b
 	}
 
 }  
+
+textures/base_support/x_support
+{
+	
+	surfaceparm metalsteps
+	surfaceparm nomarks
+	cull none
+	{
+		map textures/base_support/x_support.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GT0
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/base_support/x_support2
+{
+	surfaceparm metalsteps
+	surfaceparm nomarks
+	cull none
+	{
+		map textures/base_support/x_support2.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GT0
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/base_wall/bluemetal1b_chrome
+{
+	qer_editorimage textures/base_wall/bluemetal1b_shiny.jpg
+	{
+		//mapped first so it looks good while vertex lit
+		map textures/base_wall/bluemetal1b_shiny.jpg
+		rgbGen Identity
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen vertex
+	}
+	{
+		map textures/base_wall/bluemetal1b_shiny.jpg
+		blendfunc add
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/base_wall/bluemetalsupport2fline
+{
+	qer_editorimage textures/base_wall/bluemetalsupport2fline.tga
+	q3map_lightimage textures/clown/bms2fglow.tga
+	surfaceparm nomarks
+	surfaceparm metalsteps
+	q3map_surfacelight 400
+	{
+		//mapped first so it looks good while vertex lit
+		map textures/base_wall/bluemetalsupport2fline.tga
+		rgbGen Identity
+	}
+	{
+		map textures/base_wall/bms2fglow.tga
+		rgbGen wave sin .4 .3 .5 1.5
+		blendfunc filter
+	}
+	{
+		map textures/base_wall/bluemetalsupport2fline.tga
+		blendfunc add
+		alphaGen lightingSpecular
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+		blendfunc add
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/tim/redmetalsupport2fline
+{
+	qer_editorimage textures/clown/bms2fl_r.tga
+	q3map_lightimage textures/clown/bms2fl_rglow.tga
+	surfaceparm nomarks
+	surfaceparm metalsteps
+	q3map_surfacelight 400
+	{
+		//mapped first so it looks good while vertex lit
+		map textures/clown/bms2fl_r.tga
+		rgbGen Identity
+	}
+	{
+		map textures/clown/bms2fl_rglow.tga
+		rgbGen wave sin .4 .3 .5 1.5
+		blendfunc filter
+	}
+	{
+		map textures/clown/bms2fl_r.tga
+		blendfunc add
+		alphaGen lightingSpecular
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+		blendfunc add
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
+
+textures/base_wall/bluemetalsupport2ftv
+{
+	qer_editorimage textures/base_wall/bluemetalsupport2ftv.tga
+	q3map_lightimage textures/base_wall/bms2ftv_glow.tga
+	q3map_surfacelight 500
+	
+	{
+		map textures/base_wall/bluemetalsupport2ftv.tga
+		rgbGen identity
+		
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+	}
+	{
+		map textures/base_wall/bms2ftv_glow.tga
+		rgbGen wave sin .4 .3 0 1.1
+		blendfunc add
+	}
+	{
+		map textures/base_wall/bluemetalsupport2ftv.tga
+		blendFunc add
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/base_wall/bluemetalsupport2e
+{
+	qer_editorimage textures/base_wall/bluemetalsupport2e.tga
+		
+	{
+		map textures/base_wall/bluemetalsupport2e.tga
+		rgbGen identity
+		
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+	}
+	{
+		map textures/base_wall/bluemetalsupport2e.tga
+		blendFunc add
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/base_wall/bluemetalsupport2e2
+{
+	qer_editorimage textures/base_wall/bluemetalsupport2e2.tga
+		
+	{
+		map textures/base_wall/bluemetalsupport2e2.tga
+		rgbGen identity
+		
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+	}
+	{
+		map textures/base_wall/bluemetalsupport2e2.tga
+		blendFunc add
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/base_wall/bluemetalsupport2c_1
+{
+	qer_editorimage textures/base_wall/bluemetalsupport2c_1.jpg
+		
+	{
+		map textures/base_wall/bluemetalsupport2c_1.jpg
+		rgbGen identity
+		
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+	}
+	{
+		map textures/base_wall/bluemetalsupport2c_1.jpg
+		blendFunc add
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/base_wall/bluemetalsupport2c
+{
+	qer_editorimage textures/base_wall/bluemetalsupport2c.jpg
+		
+	{
+		map textures/base_wall/bluemetalsupport2c.jpg
+		rgbGen identity
+		
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+	}
+	{
+		map textures/base_wall/bluemetalsupport2c.jpg
+		blendFunc add
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
