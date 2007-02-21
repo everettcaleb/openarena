@@ -474,3 +474,116 @@ textures/liquids/clear_calm1
 	
 
 }
+
+textures/liquids/calm_poollight
+{
+	qer_editorimage textures/liquids/pool3d_3.jpg
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull disable
+	q3map_surfacelight 100
+	deformVertexes wave 32 sin .25 .25 0 .5	
+		
+	{ 
+		map textures/liquids/pool3d_5.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll -.05 .001
+	}
+
+	{ 
+		map textures/liquids/pool3d_6.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .025 -.001
+	}
+	{ 
+		map textures/liquids/pool3d_5e.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .001 .025
+	}
+	{
+		map $lightmap
+		blendFunc gl_dst_color gl_zero
+		rgbgen identity		
+	}
+	
+
+}
+
+textures/liquids/slime1
+{
+	qer_editorimage textures/liquids/slime8.jpg
+	q3map_lightimage textures/liquids/slime8.jpg
+	surfaceparm noimpact
+	surfaceparm slime
+	surfaceparm nolightmap
+	surfaceparm trans
+	q3map_surfacelight 150
+	deformVertexes wave 32 sin .25 .25 0 .5	
+	{
+		map textures/liquids/slime8.jpg
+		tcmod turb .05 -0.5 0 0.02
+		tcmod scroll .05 -.01
+	}
+	{
+		map textures/liquids/slime8.jpg
+		blendfunc filter
+		tcmod turb .012 -0.1 0 0.04
+		tcmod scroll .003 -.008
+	}
+}
+
+textures/liquids/slime1_2000
+{
+	qer_editorimage textures/liquids/slime8.jpg
+	q3map_lightimage textures/liquids/slime8.jpg
+	surfaceparm noimpact
+	surfaceparm slime
+	surfaceparm nolightmap
+	surfaceparm trans
+	q3map_surfacelight 150
+	deformVertexes wave 32 sin .25 .25 0 .5	
+	{
+		map textures/liquids/slime8.jpg
+		tcmod turb .05 -0.5 0 0.02
+		tcmod scroll .05 -.01
+	}
+	{
+		map textures/liquids/slime8.jpg
+		blendfunc filter
+		tcmod turb .012 -0.1 0 0.04
+		tcmod scroll .003 -.008
+	}
+}
+
+textures/liquids/proto_poolpass
+{
+	q3map_globaltexture
+	qer_editorimage textures/liquids/proto_gruel3.jpg
+	q3map_surfacelight 300
+	surfaceparm slime
+	{
+		map textures/liquids/proto_gruel3.jpg
+		tcmod turb .1 .3 .5 .1
+	}
+	{
+		map textures/liquids/proto_gruel2.jpg
+		blendfunc add
+		tcmod turb 012 -0.1 0 0.04
+	}
+	{
+	        map $lightmap
+		rgbgen identity
+		blendfunc filter
+        }
+	{
+		map textures/sfx/kenelectric.jpg
+		blendfunc add
+		tcmod scale .4 .4
+		tcmod scroll .4 -.4
+		tcmod rotate 500
+	}
+}

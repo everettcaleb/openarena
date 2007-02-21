@@ -1592,3 +1592,87 @@ textures/base_wall/bluemetalsupport2c
 		rgbGen identity
 	}
 }
+
+textures/base_floor/clangdark_spot
+{
+	qer_editorimage textures/base_floor/clangdark_spot.tga
+	surfaceparm metalsteps
+	
+	{
+		map textures/base_floor/clangdark_spot.tga
+		rgbGen identity
+	}
+	{
+		map textures/liquids/proto_gruel2.jpg
+		blendfunc gl_one gl_zero
+		tcmod scroll .01 .01
+		tcmod turb 0 0.01 0 .1
+		alphagen lightingspecular
+	}
+	{
+		map textures/base_floor/clangdark_spot.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/base_floor/diamond2cspot
+{
+	qer_editorimage textures/base_floor/diamond2cspot.tga
+	surfaceparm metalsteps
+	
+	{
+		map textures/base_floor/diamond2cspot.tga
+		rgbGen identity
+	}
+	{
+		map textures/liquids/proto_gruel3.jpg
+		blendfunc gl_one gl_zero
+		tcmod scroll .01 .01
+		tcmod turb 0 0.01 0 .1
+		alphagen lightingspecular
+	}
+	{
+		map textures/base_floor/diamond2cspot.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/gothic_floor/q1metal7_99spot
+{
+	qer_editorimage textures/gothic_floor/q1metal7_99spot.tga
+	surfaceparm metalsteps
+	
+	{
+		map textures/gothic_floor/q1metal7_99spot.tga
+		rgbGen identity
+	}
+	{
+		map textures/liquids/proto_gruel3.jpg
+		blendfunc gl_one gl_zero
+		tcmod scroll .01 .01
+		tcmod turb 0 0.01 0 .1
+		alphagen lightingspecular
+	}
+	{
+		map textures/gothic_floor/q1metal7_99spot.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendFunc filter 
+		rgbGen identity
+	}
+}
