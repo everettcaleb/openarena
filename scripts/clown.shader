@@ -770,7 +770,7 @@ textures/sfx/beam_red
 	cull none
 	
 	{
-		map textures/sfx/beamred.jpg
+		map textures/sfx/beam_red.jpg
                 tcMod Scroll .3 0
                 blendFunc GL_ONE GL_ONE
         }
@@ -1275,7 +1275,16 @@ textures/base_wall/comp3b
 	q3map_lightimage textures/base_wall/comp3env.jpg
         q3map_surfacelight 900
 
-
+	{
+		map textures/base_wall/comp3b.tga
+		rgbGen identity
+		
+	}
+	{
+		map textures/base_wall/comp3env.jpg
+		tcGen environment
+		rgbGen identity
+	}
 	{
 		map textures/base_wall/comp3text.jpg
 		blendfunc add
@@ -1283,21 +1292,13 @@ textures/base_wall/comp3b
 		tcmod scroll 3 3
 	}
 	{
-		map textures/base_wall/comp3env.jpg
-		tcGen environment
-	        blendfunc add
-		rgbGen oneminusvertex
-	}
-
-
-	{
 		map $lightmap
 	        tcGen environment
 		blendfunc gl_dst_color gl_one
 	}
 	{
 		map textures/base_wall/comp3b.tga
-        	blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+        	blendFunc blend
 		rgbGen identity
 		
 	}
@@ -1311,7 +1312,6 @@ textures/base_wall/comp3b
 
 textures/base_support/x_support
 {
-	
 	surfaceparm metalsteps
 	surfaceparm nomarks
 	cull none
@@ -1361,7 +1361,7 @@ textures/base_wall/bluemetal1b_chrome
 	{
 		map textures/base_wall/chrome_env.jpg
 		tcGen environment 
-		rgbGen vertex
+		rgbGen oneminusvertex
 	}
 	{
 		map textures/base_wall/bluemetal1b_shiny.jpg
@@ -1675,4 +1675,157 @@ textures/gothic_floor/q1metal7_99spot
 		blendFunc filter 
 		rgbGen identity
 	}
+}
+
+textures/sfx/teslacoil
+{
+	qer_editorimage textures/sfx/tesla1.jpg
+	q3map_lightimage textures/sfx/tesla1.jpg
+	q3map_surfacelight 300
+	cull none
+	{
+		map $lightmap
+		tcgen environment
+		blendfunc filter
+	}
+	{
+		map textures/sfx/tesla1.jpg
+		blendfunc add
+		rgbgen wave sawtooth 0 1 0 5
+		tcmod scale 4 .5
+		tcmod turb 0 .2 0 1
+		tcmod scroll -1 1
+	}
+	{
+		map textures/sfx/tesla1b.jpg
+		blendfunc add
+		rgbgen wave square 0.5 0.5 0.5 2.5
+		tcmod rotate 90
+		tcmod scale 4 .5
+		tcmod scroll -2 2
+	}
+	{
+		map textures/sfx/electricslime.jpg
+		blendfunc add
+		rgbgen wave sawtooth .25 1 0 5
+		tcmod scale 4 .5
+		tcmod turb 0 .2 0 1
+		tcmod scroll 2 -2
+	}
+	{
+		map textures/clown/cable.tga
+		blendfunc blend
+	}
+}
+
+textures/sfx/teslacoil3
+{
+	qer_editorimage textures/sfx/tesla1b.jpg
+	q3map_lightimage textures/sfx/electricslime.jpg
+	q3map_surfacelight 300
+	cull none
+	{
+		map $lightmap
+		tcgen environment
+		blendfunc filter
+	}
+	{
+		map textures/sfx/tesla1.jpg
+		blendfunc add
+		rgbgen wave sawtooth 0 1 0 5
+		tcmod scale 1 2
+		tcmod turb 0 .2 0 1
+		tcmod scroll 2 -2
+	}
+	{
+		map textures/sfx/electricslime.jpg
+		blendfunc add
+		rgbgen wave sawtooth .25 1 0 5
+		tcmod scale 1 2
+		tcmod turb 0 .2 0 1
+		tcmod scroll 2 -2
+	}
+	{
+		map textures/clown/cable.tga
+		blendfunc blend
+	}
+}
+
+textures/sfx/proto_zzztblu3
+{
+	surfaceparm nolightmap
+	surfaceparm nonsolid
+	cull none
+
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ONE
+		depthFunc equal
+	}
+
+	{
+		map textures/sfx/proto_zzztblu3.tga
+		tcgen environment
+		blendFunc GL_ONE GL_ONE
+		tcMod turb 3 .3 0 .3
+		tcmod scroll 2 2
+	}
+}
+
+textures/base_wall/patch10shiny
+{
+	qer_editorimage textures/base_wall/patch10.jpg
+		
+	{
+		map textures/base_wall/patch10.jpg
+		rgbGen identity
+		
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+	}
+	{
+		map textures/base_wall/patch10.jpg
+		blendFunc add
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/sfx/xian_dm3padwall
+{
+	qer_editorimage textures/sfx/xian_dm3padwall.jpg
+	q3map_lightimage textures/sfx/xian_dm3padwallglow.jpg
+	surfaceparm nomarks
+	surfaceparm metalsteps
+	q3map_surfacelight 400
+		
+	{
+		map textures/sfx/xian_dm3padwall.jpg
+		rgbgen identity
+		
+	}
+	{
+		map $lightmap 
+		rgbgen identity 
+		blendfunc filter
+		
+	}
+	{
+		map textures/sfx/xian_dm3padwallglow.jpg
+		tcmod scroll 0 1
+		rgbGen wave sin 0 2 .5 2
+		blendfunc add
+
+	}
+
+
 }
