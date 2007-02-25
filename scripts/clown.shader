@@ -728,6 +728,7 @@ textures/sfx/beam
 
 textures/sfx/beam_dusty2
 {
+	qer_editorimage textures/sfx/beam_1.jpg
         surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -748,6 +749,7 @@ textures/sfx/beam_dusty2
 
 textures/sfx/beam_blue
 {
+	qer_editorimage textures/sfx/beam_blue4.jpg
 	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -763,6 +765,7 @@ textures/sfx/beam_blue
 
 textures/sfx/beam_red
 {
+	qer_editorimage textures/sfx/beam_red.jpg
 	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -779,6 +782,7 @@ textures/sfx/beam_red
 textures/sfx/beam_waterlight2
 
 {
+	qer_editorimage textures/sfx/beam_waterlight.jpg
 	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -796,6 +800,7 @@ textures/sfx/beam_waterlight2
 textures/sfx/lavabeam
 
 {
+	qer_editorimage textures/sfx/lavabeam.jpg
 	surfaceparm trans	
         surfaceparm nomarks	
         surfaceparm nonsolid
@@ -1228,6 +1233,7 @@ textures/base_floor/hfloor3
 
 textures/base_wall/comp3b_dark
 {
+	qer_editorimage textures/base_wall/comp3b_dark.jpg
 	q3map_lightimage textures/base_wall/comp3env.jpg
         q3map_surfacelight 10
 
@@ -1272,6 +1278,7 @@ textures/base_wall/comp3b_dark
 
 textures/base_wall/comp3b
 {
+	qer_editorimage textures/base_wall/comp3b.tga
 	q3map_lightimage textures/base_wall/comp3env.jpg
         q3map_surfacelight 900
 
