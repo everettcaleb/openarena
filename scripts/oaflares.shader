@@ -143,3 +143,28 @@ flareShader-portal
 	}
 }
 
+flareShader-twilightflare
+{
+	{
+		clampmap textures/flares/twilightflare.tga
+		blendfunc add
+		rgbGen Vertex
+		tcMod rotate 12
+	}
+	{
+		clampmap textures/flares/twilightflare.tga
+		blendfunc add
+		rgbGen Vertex
+		tcMod rotate -5
+	}
+}
+
+flareShader-subtle
+{
+	{
+		clampmap textures/flares/twilightflare.tga
+		blendfunc add
+		rgbGen oneminusvertex
+		tcMod rotate 12
+	}
+}

@@ -544,7 +544,7 @@ textures/liquids/slime1_2000
 	surfaceparm slime
 	surfaceparm nolightmap
 	surfaceparm trans
-	q3map_surfacelight 150
+	q3map_surfacelight 2000
 	deformVertexes wave 32 sin .25 .25 0 .5	
 	{
 		map textures/liquids/slime8.jpg
@@ -585,5 +585,60 @@ textures/liquids/proto_poolpass
 		tcmod scale .4 .4
 		tcmod scroll .4 -.4
 		tcmod rotate 500
+	}
+}
+
+textures/liquids/slime2
+{
+	qer_editorimage textures/liquids/slime10.jpg
+	q3map_lightimage textures/liquids/slime8.jpg
+	surfaceparm noimpact
+	surfaceparm slime
+	surfaceparm nolightmap
+	surfaceparm trans
+	q3map_surfacelight 150
+	deformVertexes wave 32 sin .25 .25 0 .5	
+	{
+		map textures/liquids/slime8.jpg
+		tcmod turb .05 -0.5 0 0.02
+		tcmod scroll .05 -.01
+	}
+	{
+		map textures/liquids/slime10.jpg
+		blendfunc filter
+		tcmod scale .3 .3
+		tcmod turb .012 -0.1 0 0.04
+		tcmod scroll .003 -.008
+	}
+	{
+		map textures/liquids/proto_gruel3.jpg
+		blendfunc add
+		tcmod scale .9 .9
+		tcmod turb 012 -0.1 0 0.04
+	}
+}
+
+textures/liquids/slime3
+{
+	qer_editorimage textures/liquids/slime9.jpg
+	q3map_lightimage textures/liquids/slime9.jpg
+	surfaceparm noimpact
+	surfaceparm slime
+	surfaceparm nolightmap
+	surfaceparm trans
+	q3map_surfacelight 150
+	deformVertexes wave 32 sin .25 .25 0 .5	
+	{
+		map textures/liquids/slime9.jpg
+		tcmod scale .5 .5
+		tcmod turb .05 -0.5 0 0.02
+		tcmod scroll .05 -.01
+	}
+	{
+		map textures/liquids/slime9.jpg
+		blendfunc filter
+		tcmod scale .3 .3
+		tcmod turb .012 -0.1 0 0.04
+		tcmod scroll .003 -.008
 	}
 }

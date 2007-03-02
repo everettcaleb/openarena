@@ -37,7 +37,7 @@ aifile	bots/merman_c.c
 {
 name		Sarge
 model		sarge
-aifile	bots/grism_c.c
+aifile	bots/sarge_c.c
 }
 
 {

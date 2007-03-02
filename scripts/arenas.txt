@@ -103,6 +103,31 @@ fraglimit	"20"
 type		"ctf"
 }
 
+{
+map		"oa_dm5"
+bots		"merman major sarge grunt"
+longname	"The Cistern"
+fraglimit	"30"
+type		"single ffa sp team"
+}
+
+{
+map		"oa_dm6"
+bots		"merman"
+longname	"The Dark Zone"
+fraglimit	"10"
+type		"sp tourney"
+}
+
+{
+map		"oa_dm1"
+bots		"kyonshi major merman"
+longname	"Place of Two Deaths"
+fraglimit	"25"
+type		"single ffa sp team"
+}
+
+
 // commented out due to very ugly texturing
 //{
 //map		"q3dm6ish"

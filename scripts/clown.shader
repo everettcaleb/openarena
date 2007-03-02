@@ -1419,25 +1419,27 @@ textures/base_wall/bluemetalsupport2fline
 
 textures/tim/redmetalsupport2fline
 {
-	qer_editorimage textures/clown/bms2fl_r.tga
+	qer_editorimage textures/tim/redmetalsupport2fline.tga
 	q3map_lightimage textures/clown/bms2fl_rglow.tga
 	surfaceparm nomarks
 	surfaceparm metalsteps
 	q3map_surfacelight 400
 	{
 		//mapped first so it looks good while vertex lit
-		map textures/clown/bms2fl_r.tga
+		map textures/tim/redmetalsupport2fline.tga
 		rgbGen Identity
 	}
+	
 	{
 		map textures/clown/bms2fl_rglow.tga
-		rgbGen wave sin .4 .3 .5 1.5
-		blendfunc filter
+		tcmod scroll 1 0
+		rgbGen wave sin .4 .3 .5 2
+		blendfunc gl_dst_color gl_zero 
 	}
 	{
-		map textures/clown/bms2fl_r.tga
+		map textures/tim/redmetalsupport2fline.tga
 		blendfunc add
-		alphaGen lightingSpecular
+		
 	}
 	{
 		map textures/base_wall/chrome_env.jpg
@@ -1835,4 +1837,99 @@ textures/sfx/xian_dm3padwall
 	}
 
 
+}
+
+textures/base_wall/comp3
+{
+	qer_editorimage textures/base_wall/comp3.jpg
+	q3map_lightimage textures/base_wall/comp3env.jpg
+        q3map_surfacelight 100
+
+	{
+		map textures/base_wall/comp3b.tga
+		rgbGen identity
+		
+	}
+	{
+		map textures/clown/text3.tga
+	        rgbGen identity
+		tcmod scroll 0 0.5
+	}
+
+	{
+		map textures/clown/text4.tga
+		blendfunc add
+	        rgbGen identity 
+		tcMod scroll 0 0.5 
+	}
+	{
+		map textures/base_wall/comp3env.jpg
+		tcGen environment
+	        blendfunc add
+		rgbGen oneminusvertex
+	}
+
+	{
+		map $lightmap
+	        tcGen environment
+		blendfunc gl_dst_color gl_one
+	}
+	{
+		map textures/base_wall/comp3b.tga
+        	blendFunc blend
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+                blendFunc GL_DST_COLOR GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+	}
+
+}   
+
+textures/base_wall/concrete_ow
+{
+	qer_editorimage textures/base_wall/concrete_ow.tga
+
+	{
+		map textures/sfx/proto_zzztblu3.jpg
+		tcmod scale 1.5 1.5
+		tcmod rotate 1
+		tcmod turb 8 4 0 5
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/concrete_ow.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		rgbgen identity
+	}
+}
+
+textures/tim/rconcrete_ow
+{
+	qer_editorimage textures/tim/rconcrete_ow.tga
+
+	{
+		map textures/sfx/fireswirl2.jpg
+		tcmod scale 1.5 1.5
+		tcmod rotate 1
+		tcmod turb 8 4 0 5
+		rgbgen identity
+	}
+	{
+		map textures/tim/rconcrete_ow.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		rgbgen identity
+	}
 }

@@ -4,8 +4,9 @@
 //01-27-07 moved portal from clown.shader to here
 //01-31-07 added mirror shader doesnt work, gave other shaders transparency in map editor.-kit89 
 //02-14-07 added timportal + mirror1, mirror 2, terrain, terrain 2, metalclip 
+//02-27-07 added botclip, missleclip, remapped certain mirrors to point to invisible.tga
 //need this or maps FTBFS
-//for the idiot bots out there ;( use instead of botclip!!!!
+//for the idiot bots out there use instead of botclip!!!!
 textures/common/donotenter
 {
 	surfaceparm nodraw
@@ -15,14 +16,13 @@ textures/common/donotenter
 	surfaceparm donotenter
 }
 
-//the ladder in dm4ish will not compile properly without this
 textures/common/clip
 {
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm nodraw
 	surfaceparm nonsolid
-        surfaceparm playerclip
+	surfaceparm playerclip
 	surfaceparm noimpact
 }
 
@@ -153,7 +153,7 @@ textures/common/mirror
 	portal
 	q3map_nolightmap
     {
-        map textures/common/mirror.tga
+        map textures/common/invisible.tga
         blendFunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
         depthWrite
     }
@@ -173,7 +173,7 @@ textures/common/timportal
 	{
 		map textures/oa_fogs/kc_fogcloud3.jpg
 		blendfunc gl_src_alpha gl_one_minus_src_alpha
-		alphagen portal 256
+		alphagen portal 512
 		rgbGen identity	
 		tcmod rotate .1 
 		tcmod scroll .04 .01
@@ -204,7 +204,7 @@ textures/common/mirror2
 	surfaceparm nolightmap
 	portal
 	{
-		map textures/common/mirror.tga
+		map textures/common/invisible.tga
 		blendfunc GL_ONE GL_ONE_MINUS_SRC_ALPHA
 		depthWrite
 	}
@@ -247,4 +247,27 @@ textures/common/metalclip
 	surfaceparm noimpact
 	surfaceparm playerclip
 	surfaceparm metalsteps
+}
+
+// acts as player clip only for the bots
+// can keep them from being pushed into voids
+// do not use, use donotenter instead :-P
+textures/common/botclip
+{
+	surfaceparm nodraw
+	surfaceparm nolightmap
+	surfaceparm nonsolid
+	surfaceparm trans
+	surfaceparm nomarks
+	surfaceparm noimpact
+	surfaceparm botclip
+}
+
+textures/common/missileclip
+{
+	surfaceparm nodamage
+	surfaceparm nomarks
+	surfaceparm nodraw
+	surfaceparm playerclip
+	surfaceparm trans
 }

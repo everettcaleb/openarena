@@ -335,27 +335,6 @@ textures/skies/toxicskytim_dm8
 	}
 }
 
-textures/skies/toxicskytim_dm8
-{
-	surfaceparm noimpact
-	surfaceparm nolightmap
-	surfaceparm sky
-	q3map_lightsubdivide 256
-	q3map_surfacelight 400
-	q3map_globaltexture
-	q3map_sun 1 1 0.5 150 30 60
-	skyParms full 700 -
-	{
-		map textures/skies/dimclouds.tga
-		tcMod scroll -0.013 0.04
-	}
-	{
-		map textures/skies/dimclouds.tga
-		blendfunc add
-		tcMod scroll 0.02 0.07
-	}
-}
-
 textures/space1_skybox
 {
 	qer_editorimage textures/bubctf1/bubctf1_view.tga
@@ -386,7 +365,7 @@ textures/skies/blacksky
 	surfaceparm nolightmap
 	surfaceparm sky
 	q3map_surfacelight 50
-	q3map_sun	1 1 1 32 90 90
+	q3map_sun	1 1 1  32  90  90
 	{
 		map	textures/sfx/blakk.tga
 	}
@@ -399,7 +378,7 @@ textures/skies/xblacksky_dm7
 	surfaceparm nolightmap
 	surfaceparm sky
 	q3map_surfacelight 50
-	q3map_sun	1 1 1 32 60 90
+	q3map_sun	1 1 1  32  60  90
 	{
 		map	textures/sfx/blakk.tga
 	}
@@ -419,12 +398,16 @@ textures/sfx/blackness
 //02-21-07 dmn_clown
 textures/skies/q3dm0
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/dimclouds.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 90 90
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_lightimage textures/skies/skywater.tga
+	q3map_sun	1 1 1  32  90  90
+	skyParms full 512 -
 	{
 		map textures/skies/dimclouds.jpg
 		blendfunc add
@@ -441,12 +424,16 @@ textures/skies/q3dm0
 
 textures/skies/tim_hell
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/intelredclouds.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 60 90
-	skyparms - 1024 -
+	q3map_globaltexture
+	q3map_lightimage textures/skies/skywater.tga
+	q3map_sun	1 1 1  32  60  90
+	skyParms full 1024 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -463,14 +450,18 @@ textures/skies/tim_hell
 
 textures/skies/toxicskytim_dm5
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/dimclouds.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 60 90
-	skyparms - 756 -
+	q3map_globaltexture
+	q3map_lightimage textures/skies/skywater.tga
+	q3map_sun	1 1 1  32  60  90
+	skyParms full 756 -
 	{
-		map textures/skies/dimclouds.jpg
+	map textures/skies/dimclouds.jpg
 		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
@@ -485,12 +476,16 @@ textures/skies/toxicskytim_dm5
 
 textures/skies/killsky
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/killsky_1.jpg
+	q3map_lightimage textures/skies/skywater.tga
+	surfaceparm nomarks
 	surfaceparm noimpact
+	surfaceparm nolightmap
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 45 45
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  45  45
+	skyParms full 512 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -507,12 +502,16 @@ textures/skies/killsky
 
 textures/skies/xtoxicsky_dm9
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/intelredclouds.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 45 45
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  45  45
+	skyParms full 512 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -529,12 +528,16 @@ textures/skies/xtoxicsky_dm9
 
 textures/skies/toxicskytim_dm2
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/intelredclouds.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 60 90
-	skyparms - 756 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  60  90
+	skyParms full 756 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -551,12 +554,16 @@ textures/skies/toxicskytim_dm2
 
 textures/skies/xtoxicskytim_q3dm5
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/killsky_1.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 60 60
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  60  60
+	skyParms full 512 -
 	{
 		map textures/skies/killsky_1.jpg
 		blendfunc add
@@ -573,12 +580,16 @@ textures/skies/xtoxicskytim_q3dm5
 
 textures/skies/pj_arena4_sky
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/inteldimclouds.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 60 45
-	skyparms - 756 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  60  45
+	skyParms full 756 -
 	{
 		map textures/skies/inteldimclouds.jpg
 		blendfunc add
@@ -595,12 +606,16 @@ textures/skies/pj_arena4_sky
 
 textures/skies/toxicskytim_dm7
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/multsky1.tga
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 150
-	q3map_sun 1 1 1 32 60 35
-	skyparms - 1024 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  60  35
+	skyParms full 1024 -
 	{
 		map textures/skies/multsky1.tga
 		blendfunc add
@@ -617,12 +632,16 @@ textures/skies/toxicskytim_dm7
 
 textures/skies/skybox
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/moons1.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 60 90
-	skyparms env/space1 512 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  60  90
+	skyParms env/space1 512 -
 	{
 		map textures/skies/inteldimclouds.jpg
 		blendfunc add
@@ -639,12 +658,16 @@ textures/skies/skybox
 
 textures/skies/pj_dm9sky
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/intelredclouds.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 25 90
-	skyparms - 1024 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  25  90
+	skyParms full 1024 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -661,12 +684,16 @@ textures/skies/pj_dm9sky
 
 textures/skies/pj_dm10sky
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/bluedimclouds.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 50
-	q3map_sun 1 1 1 32 50 90
-	skyparms - 756 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  50  90
+	skyParms full 756 -
 	{
 		map textures/skies/bluedimclouds.jpg
 		blendfunc add
@@ -683,12 +710,16 @@ textures/skies/pj_dm10sky
 
 textures/skies/tim_dm3_red
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/killsky_1.jpg
+	q3map_lightimage textures/skies/killsky_1.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 150
-	q3map_sun 0.639 0.129 0.128 32 75 90
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	0.639 0.129 0.128  32  75  90
+	skyParms full 512 -
 	{
 		map textures/skies/killsky_1.jpg
 		blendfunc add
@@ -705,12 +736,16 @@ textures/skies/tim_dm3_red
 
 textures/skies/toxicskytim_dm9
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/intelredclouds.jpg
+	q3map_lightimage textures/skies/killsky_1.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 0.639 0.129 0.128 32 90 90
-	skyparms - 756 -
+	q3map_globaltexture
+	q3map_sun	0.639 0.129 0.128  32  90  90
+	skyParms full 756 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -727,12 +762,16 @@ textures/skies/toxicskytim_dm9
 
 textures/skies/tim_dm14red
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/killsky_1.jpg
+	q3map_lightimage textures/skies/killsky_1.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 150
-	q3map_sun 0.639 0.129 0.128 32 45 45
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	0.639 0.129 0.128  32  45  45
+	skyParms full 512 -
 	{
 		map textures/skies/killsky_1.jpg
 		blendfunc add
@@ -749,12 +788,16 @@ textures/skies/tim_dm14red
 
 textures/skies/nightsky_xian_dm1
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/pjbasesky.jpg
+	q3map_lightimage textures/skies/nitesky.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 40
-	q3map_sun 0.078 0.109 0.384 32 90 90
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	0.078 0.109 0.384  32  90  90
+	skyParms full 512 -
 	{
 		map textures/skies/pjbasesky.jpg
 		blendfunc add
@@ -771,12 +814,16 @@ textures/skies/nightsky_xian_dm1
 
 textures/skies/xtoxicsky_tourney
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/intelredclouds.jpg
+	q3map_lightimage textures/skies/intelredclouds.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 0.514 0.549 0.203 32 60 75
-	skyparms - 756 -
+	q3map_globaltexture
+	q3map_sun	0.514 0.549 0.203  32  60  75
+	skyParms full 756 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -793,12 +840,16 @@ textures/skies/xtoxicsky_tourney
 
 textures/skies/tim_km2
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/intelredclouds.jpg
+	q3map_lightimage textures/skies/intelredclouds.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 0.514 0.549 0.203 32 45 60
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	0.514 0.549 0.203  32  45  60
+	skyParms full 512 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -815,12 +866,16 @@ textures/skies/tim_km2
 
 textures/skies/pjbasesky_arena1_sky
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/killsky_1.jpg
+	q3map_lightimage textures/skies/intelredclouds.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 0.639 0.129 0.128 32 90 90
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	0.639 0.129 0.128  32  90  90
+	skyParms full 512 -
 	{
 		map textures/skies/killsky_1.jpg
 		blendfunc add
@@ -837,12 +892,16 @@ textures/skies/pjbasesky_arena1_sky
 
 textures/skies/toxicskydim
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/intelredclouds.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 15 15
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	1 1 1  32  15  15
+	skyParms full 512 -
 	{
 		map textures/skies/intelredclouds.jpg
 		blendfunc add
@@ -859,12 +918,16 @@ textures/skies/toxicskydim
 
 textures/skies/toxicskytim_blue
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/toxicskytim_blue.jpg
+	q3map_lightimage textures/skies/dimclouds.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 150
-	q3map_sun 0.145 0.113 0.752 32 90 90
-	skyparms - 512 -
+	q3map_globaltexture
+	q3map_sun	0.145 0.113 0.752  32  90  90
+	skyParms full 512 -
 	{
 		map textures/skies/dimclouds.jpg
 		blendfunc add
@@ -882,12 +945,16 @@ textures/skies/toxicskytim_blue
 
 textures/skies/pj_ctf2_sky
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/pj_ctf2_sky.jpg
+	q3map_lightimage textures/skies/skywater.tga
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
+	q3map_globaltexture
+	q3map_sun 	1 1 1  32  45  90
 	q3map_surfacelight 100
-	q3map_sun 1 1 1 32 45 90
-	skyparms - 1024 -
+	skyParms full 1024 -
 	{
 		map textures/skies/dimclouds.jpg
 		blendfunc add
@@ -904,12 +971,15 @@ textures/skies/pj_ctf2_sky
 
 textures/skies/xtoxicsky_q3ctf3
 {
-	surfaceparm nolightmap
+	qer_editorimage textures/skies/xtoxicsky_q3ctf3.jpg
 	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
+	q3map_lightimage textures/skies/intelredclouds.jpg
+	q3map_sun	0.4 0.5 0.3  50  90  90
 	q3map_surfacelight 100
-	q3map_sun 0.419 0.549 0.317 32 90 90
-	skyparms env/moon1/moon1 1024 -
+	skyParms env/moon1/moon1 1024 -
 	{
 		map textures/skies/dimclouds.jpg
 		blendfunc add
@@ -923,3 +993,4 @@ textures/skies/xtoxicsky_q3ctf3
 		tcmod scroll 0.05 -0.03
 	}
 }
+

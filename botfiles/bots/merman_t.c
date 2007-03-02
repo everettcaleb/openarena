@@ -29,7 +29,8 @@ chat "Merman"
 	//======================================================
 	type "game_enter" //initiated when the bot enters the game
 	{
-		HELLO0;
+		"Shutup!";
+		"Rectum?  It nearly killed him!";
 		HELLO1;
 		// 0 = bot name
 		// 1 = random opponent
@@ -45,7 +46,8 @@ chat "Merman"
 	} //end type
 	type "level_start" //initiated when a new level starts
 	{
-		HELLO3;
+		"Worst level ever!";
+		
 		HELLO2;
 		
 		// 0 = bot name
@@ -135,12 +137,18 @@ chat "Merman"
 	} //end type
 	type "death_drown" //initiated when the bot drowns
 	{
-		DEATH_DROWN0;
+		"The gills are vestigial...";
+		"Someone needs to explain this...";
+		"I should learn to use my gills...";
+		"I can't swim!";
+		
 		
 		// 0 = random opponent
 	} //end type
 	type "death_suicide" //initiated when bot blows self up with a weapon or craters
 	{
+		"Aww crap!";
+		"Shutup!";
 		DEATH_SUICIDE2;
 		DEATH_SUICIDE1;
 		
@@ -170,6 +178,7 @@ chat "Merman"
 	} //end type
 	type "death_insult" //insult initiated when the bot died
 	{
+		"Always look on the bright side of death.";
 		curse;
 		DEATH_INSULT2;
 		DEATH_INSULT0;
@@ -196,6 +205,9 @@ chat "Merman"
 	{
 		"LOL!";
 		"Too easy";
+		"Get whacked!";
+		"It's whack time!";
+		"I'm saving my best whack for ", 0, ".";
 		// 0 = enemy name
 	} //end type
 	type "kill_telefrag" //initiated when the bot telefragged someone
@@ -206,6 +218,7 @@ chat "Merman"
 	} //end type
 	type "kill_insult" //insult initiated when the bot killed someone
 	{
+		"I just made my perfect world, oops you're gone.";
 		KILL_INSULT4;
 		KILL_INSULT2;
 		
@@ -232,8 +245,13 @@ chat "Merman"
 	} //end type
 	type "random_misc" //miscellanous chats initiated randomly
 	{
-		MISC2;
-		MISC3;
+		"Has anyone found the chocolate bar yet?";
+		"Let's go to Denny's and watch the floor show, you're buying.";
+		"Love is the devil's toy.";
+		"Did you hear about ", 0, " in ", 4, "?  I'd be ashamed of myself if I did that.";
+		"Never trust a hippy.";
+		4, " Uber Alles!";
+		"I am all that is fish.";
 		GUYTALK1;
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
