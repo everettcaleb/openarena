@@ -93,11 +93,36 @@ textures/base_light/proto_light
 	}
 }
 
+//03-04-07 dmn_clown
+textures/base_light/proto_light_2k
+{
+	qer_editorimage textures/base_light/proto_light.tga
+	q3map_lightimage textures/base_light/proto_lightmap.tga
+	surfaceparm metalsteps
+	q3map_surfacelight 2000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/proto_light.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/proto_lightmap.tga
+		blendfunc add
+	}
+}
+
 //for backwards compatibility
 //01-27-07 dmn_clown
+//03-04-07 better looking texture dmn_clown
 textures/base_light/baslt4_1_2k
 {
-	qer_editorimage textures/clown/f_light2.tga
+	qer_editorimage textures/base_light/baslt4_1.jpg
+	q3map_lightimage textures/base_light/baslt4_1.blend.jpg
 	surfaceparm nomarks
 	q3map_surfacelight 2000
 	
@@ -107,19 +132,19 @@ textures/base_light/baslt4_1_2k
 		rgbGen identity
 	}
 	{
-		map textures/clown/f_light2.tga
-		blendFunc GL_DST_COLOR GL_ZERO
+		map textures/base_light/baslt4_1.jpg
+		blendFunc filter
 		rgbGen identity
 	}
 	{
-		map textures/clown/f_light2.tga
-		blendfunc GL_ONE GL_ONE
+		map textures/base_light/baslt4_1.blend.jpg
+		blendfunc add
 	}
 }
 
 textures/base_light/baslt4_1_4k
 {
-	qer_editorimage textures/clown/f_light2.tga
+	qer_editorimage textures/base_light/baslt4_1.jpg
 	surfaceparm nomarks
 	q3map_surfacelight 4000
 	
@@ -129,13 +154,13 @@ textures/base_light/baslt4_1_4k
 		rgbGen identity
 	}
 	{
-		map textures/clown/f_light2.tga
-		blendFunc GL_DST_COLOR GL_ZERO
+		map textures/base_light/baslt4_1.jpg
+		blendFunc filter
 		rgbGen identity
 	}
 	{
-		map textures/clown/f_light2.tga
-		blendfunc GL_ONE GL_ONE
+		map textures/base_light/baslt4_1.blend.jpg
+		blendfunc add
 	}
 }
 
@@ -1031,6 +1056,512 @@ textures/base_light/ceil1_4
 	}
 }
 
+//03-04-07 dmn_clown
+textures/base_light/ceil1_22a_8k
+{
+	qer_editorimage textures/base_light/ceil1_22a.tga
+	q3map_lightimage textures/base_light/ceil1_22a.blend.tga
+	surfaceparm nomarks
+	q3map_surfacelight 8000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_22a.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_22a.blend.tga
+		blendfunc add
+	}
+}
+
+textures/base_light/ceil1_22a_trans
+{
+	qer_editorimage textures/base_light/ceil1_22a.tga
+	q3map_lightimage textures/base_light/ceil1_22a.blend.tga
+	surfaceparm nomarks
+	surfaceparm nonsolid
+	q3map_surfacelight 300
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_22a.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_22a.blend.tga
+		blendfunc add
+	}
+}
+
+textures/base_light/ceil1_34_10k
+{
+	qer_editorimage textures/base_light/ceil1_34.tga
+	q3map_lightimage textures/base_light/ceil1_34.blend.tga
+	surfaceparm metalsteps
+	q3map_surfacelight 10000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_34.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_34.blend.tga
+		blendfunc add
+	}
+}
+
+textures/base_light/ceil1_34_1k
+{
+	qer_editorimage textures/base_light/ceil1_34.tga
+	q3map_lightimage textures/base_light/ceil1_34.blend.tga
+	surfaceparm metalsteps
+	q3map_surfacelight 1000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_34.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_34.blend.tga
+		blendfunc add
+	}
+}
+
+textures/base_light/ceil1_34_2k
+{
+	qer_editorimage textures/base_light/ceil1_34.tga
+	q3map_lightimage textures/base_light/ceil1_34.blend.tga
+	surfaceparm metalsteps
+	q3map_surfacelight 2000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_34.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_34.blend.tga
+		blendfunc add
+	}
+}
+
+textures/base_light/ceil1_34_5k
+{
+	qer_editorimage textures/base_light/ceil1_34.tga
+	q3map_lightimage textures/base_light/ceil1_34.blend.tga
+	surfaceparm metalsteps
+	q3map_surfacelight 5000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_34.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_34.blend.tga
+		blendfunc add
+	}
+}
+
+textures/base_light/ceil_white5k
+{
+	qer_editorimage textures/base_light/ceil1_38.jpg
+	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	surfaceparm metalsteps
+	q3map_surfacelight 5000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_38.jpg
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_38.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 300
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_1
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 1000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_10k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 10000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_110k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 110000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_15k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 15000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_20k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 20000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_2k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 2000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_30k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 30000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_500k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 500000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_50k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 50000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_5k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 5000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_70k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 70000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_90k
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 90000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_a
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 4000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
+textures/base_light/xceil1_39_b
+{
+	qer_editorimage textures/base_light/ceil1_39.tga
+	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 8000
+	q3map_flare flareShader-wide
+	{
+		map textures/base_light/ceil1_39.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		tcGen lightmap 
+	}
+	{
+		map textures/base_light/ceil1_39.blend.jpg
+		blendfunc add
+	}
+}
+
 textures/base_light/proto_lightred2_flare
 {
 	qer_editorimage textures/base_light/proto_lightred.jpg
@@ -1062,6 +1593,7 @@ textures/base_light/proto_lightred_flare
 	q3map_flare flareShader-twilightflare
 	
 	{
+	
 		map $lightmap
 		rgbGen identity
 	}
@@ -1073,9 +1605,77 @@ textures/base_light/proto_lightred_flare
 	{
 		map textures/base_light/proto_lightred.jpg
 		blendFunc GL_ONE GL_ONE
-		rgbGen wave square  1 1 .5 1
 	}
 }
+
+//03-04-07 dmn_clown
+textures/base_light/geolight
+{
+	qer_editorimage textures/base_light/geolight.tga
+	surfaceparm nomarks
+	q3map_surfacelight 3000
+	q3map_flare flareShader-wide
+	{
+		map $lightmap
+		rgbGen identity
+	}
+	{
+		map textures/base_light/geolight.tga
+		rgbgen identity
+	}
+	{
+		map textures/base_light/geolight_glow.jpg
+		blendfunc add
+		rgbgen wave sin .1 .1 0 2
+	}
+}
+
+textures/base_light/jaildr1_3
+{
+	qer_editorimage textures/base_light/jaildr1_3.jpg
+	q3map_lightimage textures/base_light/jaildr1_3.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 1500
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/base_light/jaildr1_3.jpg
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/base_light/jaildr1_3.blend.jpg
+		blendfunc add
+		rgbgen wave sin .1 .1 0 2
+	}
+}
+
+textures/base_light/jaildr03_2
+{
+	qer_editorimage textures/base_light/jaildr03_2.jpg
+	q3map_lightimage textures/base_light/jaildr03_2.blend.jpg
+	surfaceparm nomarks
+	q3map_surfacelight 2000
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/base_light/jaildr03_2.jpg
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/base_light/jaildr03_2.blend.jpg
+		blendfunc add
+		rgbgen wave sin .9 .9 .5 2
+	}
+}
+
 
 //moved from oanew to here
 //textures/base_light/ceil1_4
@@ -1256,5 +1856,486 @@ textures/gothic_light/ironcrosslt2_25000
 		map textures/gothic_light/icl_blend.jpg
 		blendfunc add
 		rgbGen wave sin .1 .1 0 .2
+	}
+}
+//03-04-07 dmn_clown
+textures/gothic_light/border7_ceil39_6k
+{
+	qer_editorimage textures/gothic_light/border7_ceil39.jpg
+	q3map_lightimage textures/gothic_light/border7_ceil39blend.jpg
+	q3map_surfacelight 6000
+	q3map_flare flareShader-wide
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/border7_ceil39.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/border7_ceil39blend.jpg
+		blendfunc add
+	}
+}
+
+textures/gothic_light/gothic_light2_1k
+{
+	qer_editorimage textures/gothic_light/gothic_light2.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 1000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light2.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light2_2k
+{
+	qer_editorimage textures/gothic_light/gothic_light2.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 2000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light2.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light2_4k
+{
+	qer_editorimage textures/gothic_light/gothic_light2.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 4000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light2.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/flicker_light15k
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 15000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen wave noise .4 .4 0 .9
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave noise .4 .4 0 .9
+	}
+}
+
+textures/gothic_light/gothic_light3_10K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 10000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_1K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 1000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_15K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 15000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_20K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 20000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_2K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 2000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_3K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 3000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_4K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 4000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_5K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 5000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_6K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 6000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_7K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 7000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light3_8K
+{
+	qer_editorimage textures/gothic_light/gothic_light3.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 8000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light3.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light2_lrg_1k
+{
+	qer_editorimage textures/gothic_light/gothic_light2.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 1000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light2.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light2_lrg_200
+{
+	qer_editorimage textures/gothic_light/gothic_light2.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 200
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light2.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light2_lrg_2k
+{
+	qer_editorimage textures/gothic_light/gothic_light2.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 2000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light2.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/goth_lt2_lrg2k
+{
+	qer_editorimage textures/gothic_light/gothic_light2.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 2000
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light2.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
+	}
+}
+
+textures/gothic_light/gothic_light2_lrg_500
+{
+	qer_editorimage textures/gothic_light/gothic_light2.jpg
+	q3map_lightimage textures/gothic_light/gothic_light2_blend.jpg
+	q3map_surfacelight 500
+	surfaceparm nomarks
+	q3map_flare flareShader
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_light/gothic_light2.jpg
+		rgbgen identity
+		blendfunc filter
+	}
+	{
+		map textures/gothic_light/gothic_light2_blend.jpg
+		blendfunc add
+		rgbgen wave sin .4 .4 0 .1
 	}
 }
