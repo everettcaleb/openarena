@@ -1933,3 +1933,148 @@ textures/tim/rconcrete_ow
 		rgbgen identity
 	}
 }
+
+textures/sfx/bugmirror
+{
+	qer_editorimage textures/sfx/mirror.tga
+	surfaceparm nolightmap
+	portal
+	{
+		map textures/common/invisible.tga
+		blendfunc gl_one gl_one_minus_src_alpha
+		depthWrite
+	}
+	{
+		map textures/sfx/mirrorkc.tga
+		blendfunc gl_src_alpha gl_one_minus_src_alpha
+		alphagen portal 1024
+		rgbgen identity
+	}
+}
+
+textures/gothic_block/blocks17bloody
+{
+	qer_editorimage textures/gothic_block/blocks17bloody.tga
+	{
+		map textures/gothic_block/blocks17bloody.tga
+	}
+	{
+		map textures/liquids/proto_gruel3.jpg
+		tcmod scroll .01 .01
+		tcmod turb 0 0.01 0 .1
+		alphagen lightingspecular
+	}
+	{
+		map textures/gothic_block/blocks17bloody.tga
+		blendFunc blend
+		rgbGen identity
+	}
+	{
+		map $lightmap
+		blendFunc filter 
+		rgbGen identity
+	}
+}
+
+textures/gothic_block/largerblock3blood
+{
+	qer_editorimage textures/gothic_block/largerblock3blood.tga
+	{
+		map textures/gothic_block/largerblock3blood.tga
+	}
+	{
+		map textures/liquids/proto_gruel3.jpg
+		tcmod scroll .01 .01
+		tcmod turb 0 0.01 0 .1
+		alphagen lightingspecular
+	}
+	{
+		map textures/gothic_block/largerblock3blood.tga
+		blendFunc blend
+		rgbGen identity
+	}
+	{
+		map $lightmap
+		blendFunc filter 
+		rgbGen identity
+	}
+}
+
+textures/gothic_floor/metalbridge06brokeb
+{
+	qer_editorimage textures/gothic_floor/metalbridge06brokeb.tga
+	{
+		map textures/gothic_floor/metalbridge06brokeb.tga
+		rgbgen identity
+	}
+	{
+		map textures/sfx/proto_zzztblu3.jpg
+		tcmod scale 1.5 1.5
+		tcmod rotate 1
+		tcmod turb 8 4 0 5
+		rgbgen identity
+	}
+	{
+		map textures/gothic_floor/metalbridge06brokeb.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		rgbgen identity
+	}
+}
+
+textures/base_wall/chrome_metal
+{
+	qer_editorimage textures/base_wall/chrome_metal.tga
+	{
+		map textures/base_wall/chrome_metal.tga
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/chrome_env.tga
+		tcGen environment
+		tcmod scale .5 .5 
+		rgbgen vertex
+		
+	}
+	{
+		map textures/base_wall/chrome_metal.tga
+		blendFunc add
+		tcmod scale 0.0693 0.0712
+		rgbGen identity
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/gothic_floor/largerblock3b_ow
+{
+	qer_editorimage textures/gothic_floor/largerblock3b_ow.tga
+	{
+		map textures/gothic_floor/largerblock3b_ow.tga
+		rgbgen identity
+	}
+	{
+		map textures/sfx/fireswirl2.jpg
+		tcmod scale 1.5 1.5
+		tcmod rotate 1
+		tcmod turb 8 4 0 5
+		rgbgen identity
+	}
+	{
+		map textures/gothic_floor/largerblock3b_ow.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		rgbgen identity
+	}
+}
