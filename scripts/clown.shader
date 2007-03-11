@@ -2078,3 +2078,216 @@ textures/gothic_floor/largerblock3b_ow
 		rgbgen identity
 	}
 }
+
+textures/base_trim/proto_fence
+{
+	qer_editorimage textures/base_trim/proto_fence.tga
+	surfaceparm trans
+	cull none
+	{
+		map textures/base_trim/proto_fence.tga
+		alphafunc GE128
+		depthwrite
+		tcmod scale 2 2
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		rgbgen identity
+		blendfunc filter
+		depthfunc equal
+	}
+}
+
+textures/sfx/flame1
+{
+	qer_editorimage textures/sfx/flame1.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_surfacelight 2000
+	q3map_flare flareShader-lava
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga textures/sfx/flame1.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/flame1dark
+{
+	qer_editorimage txtures/sfx/flame3.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_surfacelight 100
+	
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame3.tga textures/sfx/flame5.tga textures/sfx/flame7.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame4.tga textures/sfx/flame6.tga textures/sfx/flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/flame1km
+{
+	qer_editorimage textures/sfx/flame1.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_surfacelight 6000
+	q3map_flare flareShader-lava
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga textures/sfx/flame1.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/flame1side
+{
+	qer_editorimage textures/sfx/flame6.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga textures/sfx/flame1.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/flameanim_dimmer
+{
+	qer_editorimage textures/sfx/flame1.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_surfacelight 1000
+	q3map_flare flareShader-lava
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga textures/sfx/flame1.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/flameanim_blue
+{
+	qer_editorimage textures/sfx/b_flame1.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_surfacelight 2000
+	q3map_flare flareShader-lava
+	{
+		animmap 10 textures/sfx/b_flame1.tga textures/sfx/b_flame2.tga textures/sfx/b_flame3.tga textures/sfx/b_flame4.tga textures/sfx/b_flame5.tga textures/sfx/b_flame6.tga textures/sfx/b_flame7.tga textures/sfx/b_flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave sawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/b_flame2.tga textures/sfx/b_flame3.tga textures/sfx/b_flame4.tga textures/sfx/b_flame5.tga textures/sfx/b_flame6.tga textures/sfx/b_flame7.tga textures/sfx/b_flame8.tga textures/sfx/b_flame1.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		map textures/sfx/b_flameball.tga
+		blendfunc add
+		rgbgen wave sin .4 .1 .5 2
+	}
+}
+
+textures/sfx/flameanim_blue_nolight
+{
+	qer_editorimage textures/sfx/b_flame2.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+
+	{
+		animmap 10 textures/sfx/b_flame1.tga textures/sfx/b_flame2.tga textures/sfx/b_flame3.tga textures/sfx/b_flame4.tga textures/sfx/b_flame5.tga textures/sfx/b_flame6.tga textures/sfx/b_flame7.tga textures/sfx/b_flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave sawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/b_flame2.tga textures/sfx/b_flame3.tga textures/sfx/b_flame4.tga textures/sfx/b_flame5.tga textures/sfx/b_flame6.tga textures/sfx/b_flame7.tga textures/sfx/b_flame8.tga textures/sfx/b_flame1.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		map textures/sfx/b_flameball.tga
+		blendfunc add
+		rgbgen wave sin .4 .1 .5 2
+	}
+}
+
+textures/sfx/flameanim_blue_pj
+{
+	qer_editorimage textures/sfx/b_flame2.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_surfacelight 2000
+	q3map_flare flareShader-lava
+	{
+		animmap 10 textures/sfx/b_flame1.tga textures/sfx/b_flame3.tga textures/sfx/b_flame5.tga textures/sfx/b_flame7.tga 
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave sawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/b_flame2.tga textures/sfx/b_flame4.tga textures/sfx/b_flame6.tga textures/sfx/b_flame8.tga textures/sfx/b_flame1.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave inversesawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/flameanim_green_pj
+{
+	qer_editorimage textures/sfx/g_flame1.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_surfacelight 2000
+	q3map_flare flareShader-lava
+	{
+		animmap 10 textures/sfx/g_flame1.tga textures/sfx/g_flame3.tga textures/sfx/g_flame5.tga textures/sfx/g_flame7.tga 
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave sawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/g_flame2.tga textures/sfx/g_flame4.tga textures/sfx/g_flame6.tga textures/sfx/g_flame8.tga textures/sfx/b_flame1.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		map textures/sfx/g_flameball.tga
+		blendfunc add
+		rgbgen wave sin .4 .1 .5 2
+	}
+}
