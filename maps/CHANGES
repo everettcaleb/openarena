@@ -1,4 +1,4 @@
-12-14-2006
+12-14-2006 oa_bases3
 - added a shotgun to each base
 - changed the team_CTF_*player to team_CTF_*spawn
 - moved the info_player_deathmatch spawnpoints to the middle of the map
@@ -6,3 +6,9 @@
 - added the OA logo banners detail
 - added the OpenArena banners
 - enabled phong shading + dirt map + flares
+03-11-2007
+- added team_ctf*player spawn points to each base
+- totally retextured it
+- added a quad damage beneath the bridge
+- added lava + slime pits
+- moved the shotguns into the flag rooms
