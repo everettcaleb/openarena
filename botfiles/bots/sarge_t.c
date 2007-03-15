@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
-chat "grism"
+chat "sarge"
 {
 	#include "teamplay.h"
 
