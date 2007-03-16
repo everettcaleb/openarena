@@ -90,23 +90,24 @@ models/powerups/holdable/medkit_slime
 }
 
 //personal teleporter
-//models/powerups/holdable/teleport_center
-//{
-//	{
-//		map textures/liquids/lavafloor.jpg
-//		tcmod scroll .5 .5
-//		blendfunc add
-//	}
-//}
+models/powerups/holdable/teleport_center
+{
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcgen environment
+		rgbGen lightingdiffuse
+		tcmod scale .5 .5
+	}
+}
 
-//models/powerups/holdable/teleport_outer
-//{
-//	{
-//		map textures/effects/envmaproc.jpg
-//		tcgen environment
-//		blendfunc add
-//	}
-//}
+models/powerups/holdable/teleport_outer
+{
+	{
+		map textures/liquids/lavafloor.jpg
+		tcmod scroll .5 .5
+		blendfunc add
+	}
+}
 
 //enviro suit
 models/powerups/instant/ebase
