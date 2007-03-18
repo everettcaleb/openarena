@@ -115,6 +115,7 @@ models/powerups/instant/ebase
 	{
 		map textures/effects/envmapgold.jpg
 		tcgen environment
+		rgbGen vertex
 	}
 }
 
@@ -123,5 +124,62 @@ models/powerups/instant/ering
 	{
 		map textures/effects/envmapgold.jpg
 		tcgen environment
+		rgbgen vertex
+	}
+}
+//regeneration
+rcad
+{
+	{
+		map textures/effects/regenmap2.jpg
+		tcgen environment
+		rgbgen vertex
+	}
+}
+
+rring
+{
+	{
+		map textures/effects/regenmap2.jpg
+		tcgen environment
+		rgbgen vertex
+	}
+}
+
+//haste
+models/powerups/instant/h_center
+{
+	{
+		map textures/effects/hastenv.jpg
+		tcgen environment
+		rgbgen vertex
+	}
+}
+
+models/powerups/instant/h_ring
+{
+	{
+		map textures/effects/hastenv.jpg
+		tcgen environment
+		rgbgen vertex
+	}
+}
+
+//flight
+models/powerups/instant/flight_body
+{
+	{
+		map textures/effects/flightenv.jpg
+		tcgen environment
+		rgbgen vertex
+	}
+}
+
+models/powerups/instant/flight_ring
+{
+	{
+		map textures/effects/flightenv.jpg
+		tcgen environment
+		rgbgen vertex
 	}
 }
