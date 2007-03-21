@@ -183,3 +183,12 @@ models/powerups/instant/flight_ring
 		rgbgen vertex
 	}
 }
+
+//gibs ;-p
+models/gibs/heart
+{
+	deformvertexes wave 20 sin 1.4 .3 0 1.2
+	{
+		map models/gibs/heart.tga
+	}
+}
