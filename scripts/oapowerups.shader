@@ -192,3 +192,13 @@ models/gibs/heart
 		map models/gibs/heart.tga
 	}
 }
+
+models/gibs/veins
+{
+	{
+		map models/gibs/veins.tga
+		alphafunc GE128
+		depthwrite
+		
+	}
+}
