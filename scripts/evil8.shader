@@ -67,6 +67,9 @@ textures/bubctf1/e8_launchpad1r
 	}
 }
 
+//changed the order of the mapping
+// so it doesn't look like shit
+// in vertex lighting 2-20-2007 dmn_clown
 textures/bubctf1/e8_jumppad02
 {
 	q3map_lightimage textures/bubctf1/e8_jumppad02_fx.tga
@@ -74,15 +77,14 @@ textures/bubctf1/e8_jumppad02
 	polygonoffset
 	q3map_surfacelight 200
 	{
+		map textures/bubctf1/e8_jumppad02.tga
+		rgbGen identity
+	}
+	{
 		map textures/bubctf1/e8_jumppad02_fx.tga
 		blendfunc add
 		tcMod rotate 360
 		tcMod stretch sin 1 0.8 1 0.4 
-	}
-	{
-		map textures/bubctf1/e8_jumppad02.tga
-		blendfunc add
-		rgbGen identity
 	}
 	{
 		map textures/bubctf1/e8_jumppad02.tga
@@ -96,7 +98,9 @@ textures/bubctf1/e8_jumppad02
 		tcGen lightmap 
 	}
 }
-
+//changed the order of the mapping
+// so it doesn't look like shit
+// in vertex lighting 2-20-2007 dmn_clown
 textures/bubctf1/e8_jumppad02r
 {
 	q3map_lightimage textures/bubctf1/e8_jumppad02_fxr.tga
@@ -104,15 +108,14 @@ textures/bubctf1/e8_jumppad02r
 	polygonoffset
 	q3map_surfacelight 200
 	{
+		map textures/bubctf1/e8_jumppad02r.tga
+		rgbGen identity
+	}
+	{
 		map textures/bubctf1/e8_jumppad02_fxr.tga
 		blendfunc add
 		tcMod rotate 360
 		tcMod stretch sin 1 0.8 1 0.4 
-	}
-	{
-		map textures/bubctf1/e8_jumppad02r.tga
-		blendfunc add
-		rgbGen identity
 	}
 	{
 		map textures/bubctf1/e8_jumppad02r.tga
@@ -376,6 +379,12 @@ textures/evil8_fx/e8_jumppad02
 	q3map_lightimage textures/evil8_fx/e8_jumppad02_fx.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 100
+	
+	{
+		map textures/evil8_fx/e8_jumppad02.tga
+	//	blendfunc add
+		rgbGen identity
+	}
 	{
 		map textures/evil8_fx/e8_jumppad02_fx.tga
 		blendfunc add

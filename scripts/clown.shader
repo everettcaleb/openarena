@@ -922,7 +922,7 @@ textures/gothic_block/wetwall
 
 textures/ctf/blue_telep2
 {
-	qer_editorimage textures/effects/jumpcircblue.tga
+	qer_editorimage textures/ctf/blue_telep2.tga
 	q3map_lightimage textures/effects/jumpcircblue.tga
 	surfaceparm noimpact
 	surfaceparm nolightmap
@@ -951,7 +951,7 @@ textures/ctf/blue_telep2
 
 textures/ctf/red_telep2
 {
-	qer_editorimage textures/effects/jumpcircred.tga
+	qer_editorimage textures/effects/red_telep2.tga
 	q3map_lightimage textures/effects/jumpcircred.tga
 	surfaceparm noimpact
 	surfaceparm nolightmap

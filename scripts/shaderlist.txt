@@ -1,7 +1,4 @@
-// Created by QuArK
-// No shader in this map
 common
-common2
 oasky
 oafx
 beams
@@ -11,9 +8,9 @@ oalite
 oaflares
 oanew
 oa_fogs
-kaznexctf2
 quark
-el3dm1
 evil8
 clown
+mc-oa
+terrain
 
