@@ -10,7 +10,8 @@ Mancubus	- The Announcer
 mewse		- Engine compiling, tools, textures
 				       and testing
 div0		- Engine compiling, fixing
-dmn_clown	- Botfiles code, shaders, maps, textures
+dmn_clown	- Botfiles code, shaders, maps, textures, 
+			and making fun of leileilol
 MilesTeg	- 2D art and textures
 evillair 	- Textures (nicked from Nexuiz)
 Shadowdragon	- Models
@@ -28,6 +29,10 @@ RottKing	- Voices (Merman)
 Vondur		- Map (kaos)
 Tyrann		- Map (Aggressor)
 Ed		- Map (Conversion of ce1m7)
+tw3k		- Textures
+BaronOfHell	- Map (Suspended), texture, shaders
+Stjartmunnen	- Maps (Shine, Projectile Vomit), textures
+
 
 Thanks to Nexuiz team, Alien Arena, QuakeSRC.org,
 modDB, mancubus.net, Quake3World, Doomworld, 
@@ -35,7 +40,8 @@ Polycount, Gna!, id software, Galbraith
 Games, Linux Game Tome, Inside3D.com, 
 deathz0r, Wudan, ibrown, Tr3b, MilesTeg,
 John Romero, American McGee,
-jitspoe, Blender, modplug, freepats and Willis
+jitspoe, Blender, modplug, freepats, Willis, and
+The Church of the Subgenius
 
 a BIG HUGE THANKS goes to John Carmack and
 id software for Quake III Arena and its source

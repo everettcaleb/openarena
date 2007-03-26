@@ -149,7 +149,6 @@ textures/common/portal
 //Added for Mirrors
 textures/common/mirror
 {
-	qer_editorimage	textures/common/editor_images/qer_mirror
 	portal
 	q3map_nolightmap
     {
@@ -183,7 +182,7 @@ textures/common/timportal
 //nicked from nexuiz for backwards compat 
 textures/common/mirror1
 {
-	qer_editorimage textures/common/mirror1.tga
+	qer_editorimage textures/common/invisible.tga
 	surfaceparm nolightmap
 	portal
   
@@ -200,7 +199,7 @@ textures/common/mirror1
 //nicked from nexuiz w/added turb. for backwards compat 
 textures/common/mirror2
 {
-	qer_editorimage textures/common/qer_mirror.tga
+	qer_editorimage textures/common/invisible.tga
 	surfaceparm nolightmap
 	portal
 	{
@@ -229,7 +228,7 @@ textures/common/terrain
 textures/common/terrain2
 {
 	q3map_terrain
-	qer_editorimage textures/common/slick.tga
+	qer_editorimage textures/common/common.tga
 	surfaceparm dust
 	surfaceparm nodraw
 	surfaceparm nomarks

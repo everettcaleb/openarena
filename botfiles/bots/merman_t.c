@@ -31,6 +31,8 @@ chat "Merman"
 	{
 		"Shutup!";
 		"Rectum?  It nearly killed him!";
+		0, " is a loser!";
+		"Now that your mother is gone...";
 		HELLO1;
 		// 0 = bot name
 		// 1 = random opponent
@@ -38,6 +40,9 @@ chat "Merman"
 	} //end type
 	type "game_exit" //initiated when the bot exits the game
 	{
+		"Your mother is here, got to go.";
+		"Aurevoir mes amis.";
+		4, " is too slow for me, audios.";
 		GOODBYE1;
 		GOODBYE0;
 		// 0 = bot name
@@ -47,6 +52,7 @@ chat "Merman"
 	type "level_start" //initiated when a new level starts
 	{
 		"Worst level ever!";
+		0, " is gonna pay.";
 		
 		HELLO2;
 		
@@ -87,6 +93,11 @@ chat "Merman"
 	//======================================================
 	type "hit_talking" //bot is hit while chat balloon is visible; lecture attacker on poor sportsmanship
 	{
+		"Son of a... you shall pay for that!";
+		"Infidel!!!";
+		"Jerkwad";
+		"Schmuck";
+		"Tosser";
 		DEATH_TALKING;
 		// 0 = shooter
 		// 1 = weapon used by shooter
@@ -95,12 +106,14 @@ chat "Merman"
 	{
 		"Try harder next time.";
 		"Wuss";
+		"Heh, you suck.";
+		"Nice shooting Tex, you need to take lessons from Dick.";
 		// 0 = shooter
 		// 1 = weapon used by shooter
 	} //end type
 	type "hit_nokill" //bot hits an opponent but does not kill it
 	{
-		HITNOKILL0;
+		HIT_NOKILL0;
 		HIT_NOKILL1;
 		// 0 = opponent
 	} //end type
@@ -157,6 +170,8 @@ chat "Merman"
 	} //end type
 	type "death_gauntlet" //initiated when the bot is killed by a gauntlet attack
 	{
+		"Humiliating.";
+		"D'oh!";
 		DEATH_GAUNTLET0;
 		DEATH_GAUNTLET1;
 		// 0 = enemy name
@@ -252,6 +267,7 @@ chat "Merman"
 		"Never trust a hippy.";
 		4, " Uber Alles!";
 		"I am all that is fish.";
+		"Gamers are the whiniest bunch!";
 		GUYTALK1;
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot

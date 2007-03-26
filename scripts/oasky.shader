@@ -994,3 +994,13 @@ textures/skies/xtoxicsky_q3ctf3
 	}
 }
 
+textures/skies/earthsky01
+{
+	qer_editorimage textures/skies/earthsky01
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm sky
+	q3map_sun 0.933333 0.541176 03.13725 60 160 11
+	q3map_surfacelight 80 //Diffuse light
+	skyParms env/earthsky/earthsky 1024 -
+}

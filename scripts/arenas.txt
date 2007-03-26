@@ -127,6 +127,29 @@ fraglimit	"25"
 type		"single ffa sp team"
 }
 
+{
+map		"oa_pvomit"
+bots		"merman kyonshi gargoyle"
+longname	"Projectile Vomit"
+fraglimit	"25"
+type		"single ffa tourney sp"
+}
+
+{
+map		"oa_shine"
+bots		"major merman"
+longname	"Shine"
+fraglimit	"30"
+type		"single ffa sp"
+}
+
+{
+map		"suspended"
+bots		"merman major gargoyle"
+longname	"Suspended"
+fraglimit	"20"
+type		"single ffa tourney sp"
+}
 
 // commented out due to very ugly texturing
 //{
@@ -136,17 +159,6 @@ type		"single ffa sp team"
 //fraglimit	20
 //type		"single ffa tourney team sp"
 //}
-
-// openquartz maps
-// commented out due to broken textures
-//{
-//map			"void4"
-//bots		"tux"
-//longname	"The Outer Limits"
-//fraglimit	30
-//type		"single ffa tourney team sp"
-//}
-
 
 
 // ctf maps
