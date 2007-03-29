@@ -416,12 +416,12 @@ textures/base_light/ceil1_39
 
 textures/gothic_light/skulllight01
 {
-	qer_editorimage textures/gothic_light/skulllight01.jpg
+	qer_editorimage textures/gothic_light/skulllight01.tga
 	q3map_lightimage textures/gothic_light/s_light2_blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 300
 	{
-		map textures/gothic_light/skulllight01.jpg
+		map textures/gothic_light/skulllight01.tga
 		blendfunc gl_one gl_zero
 		rgbgen identity
 	}

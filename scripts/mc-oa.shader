@@ -860,6 +860,50 @@ blendfunc add
 }
 }
 
+textures/amph-dm01/bigflame_31
+{
+qer_editorimage textures/particle_studio/editor.tga
+surfaceparm noimpact
+surfaceparm nolightmap
+cull none
+surfaceparm trans
+surfaceparm nonsolid
+surfaceparm nodlight
+deformvertexes autosprite
+deformvertexes move 0.384862 25.995123 125.331978 sawtooth 0 1 0.451247 0.250000
+{
+clampmap textures/amph-dm01/flame.tga
+tcMod rotate 0.000000
+AlphaGen wave sawtooth 1.000000 0.000000 0.451247 0.250000
+rgbGen wave sawtooth 1.000000 -1.000000 0.451247 0.250000
+tcMod stretch sawtooth 0.500000 -0.200000 0.451247 0.250000
+blendfunc add
+}
+}
+
+textures/amph-dm01/bigflame_32
+{
+qer_editorimage textures/particle_studio/editor.tga
+surfaceparm noimpact
+surfaceparm nolightmap
+cull none
+surfaceparm trans
+surfaceparm nonsolid
+surfaceparm nodlight
+deformvertexes autosprite
+deformvertexes move -1.402318 -5.186944 127.887177 sawtooth 0 1 1.746940 0.250000
+{
+clampmap textures/amph-dm01/flame.tga
+tcMod rotate 0.000000
+AlphaGen wave sawtooth 1.000000 0.000000 1.746940 0.250000
+rgbGen wave sawtooth 1.000000 -1.000000 1.746940 0.250000
+tcMod stretch sawtooth 0.500000 -0.200000 1.746940 0.250000
+blendfunc add
+}
+}
+
+
+
 textures/amph-dm01/smoke_1
 {
 qer_editorimage textures/particle_studio/editor.tga
