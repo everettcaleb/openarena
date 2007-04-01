@@ -212,3 +212,13 @@ models/gibs/splurt
 		tcmod scroll 0 3
 	}
 }
+
+models/gibs/f_veins
+{
+	{
+		map models/gibs/f_veins.tga
+		alphafunc GE128
+		depthwrite
+		
+	}
+}

@@ -1821,3 +1821,45 @@ textures/skin/chapthroatooz
 		rgbgen identity
 	}
 }
+
+textures/clown/fence
+{
+	qer_editorimage textures/clown/fence.tga
+	surfaceparm nonsolid
+	surfaceparm trans
+	cull none
+	{
+		map textures/clown/fence.tga
+		alphafunc GE128
+		depthwrite
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		rgbgen identity
+		blendfunc filter
+		depthfunc equal
+	}
+}
+
+textures/clown/fence_shadow
+{
+	qer_editorimage textures/clown/fence_shadow.tga
+	polygonoffset
+	surfaceparm nolightmap
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	surfaceparm trans
+	cull none
+	{
+		map textures/clown/fence_shadow.tga
+		alphafunc GE128
+		depthwrite
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		rgbgen identity
+		blendfunc filter
+		depthfunc equal
+	}

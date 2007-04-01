@@ -151,6 +151,14 @@ fraglimit	"20"
 type		"single ffa tourney sp"
 }
 
+{
+map		"oa_shouse"
+bots		"merman dmo kyonshi"
+longname	"Strange House"
+fraglimit	"20"
+type		"single ffa sp"
+}
+
 // commented out due to very ugly texturing
 //{
 //map		"q3dm6ish"
