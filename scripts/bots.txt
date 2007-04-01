@@ -30,6 +30,12 @@ model		merman
 aifile	bots/merman_c.c
 }
 
+{
+name		Dmo
+model		dmo
+aifile	bots/dmo_c.c
+}
+
 // for the sake of the ctf menu
 
 

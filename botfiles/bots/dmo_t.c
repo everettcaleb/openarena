@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
-chat "Merman"
+chat "Dmo"
 {
 	//the teamplay.h file is included for all kinds of teamplay chats
 	#include "teamplay.h"
@@ -29,10 +29,10 @@ chat "Merman"
 	//======================================================
 	type "game_enter" //initiated when the bot enters the game
 	{
-		"Shutup!";
-		"Rectum?  It nearly killed him!";
-		0, " is a loser!";
-		"Now that your mother is gone...";
+		"Ever feel like you've been cheated?";
+		"Time to die!";
+		0, " is a tosser!";
+		"Now that your daddy is gone...";
 		HELLO1;
 		// 0 = bot name
 		// 1 = random opponent
@@ -40,9 +40,9 @@ chat "Merman"
 	} //end type
 	type "game_exit" //initiated when the bot exits the game
 	{
-		"Your mother is here, got to go.";
-		"Aurevoir mes amis.";
-		4, " is too slow for me, audios.";
+		"Your daddy is here, got to go.";
+		"Adios.";
+		4, " sucks, l8r.";
 		GOODBYE1;
 		GOODBYE0;
 		// 0 = bot name
@@ -51,8 +51,8 @@ chat "Merman"
 	} //end type
 	type "level_start" //initiated when a new level starts
 	{
-		"Worst level ever!";
-		0, " is gonna pay.";
+		"Wow this is worse than Oa_bases3!";
+		0, " is going down.";
 		
 		HELLO2;
 		
@@ -62,6 +62,7 @@ chat "Merman"
 	{
 		3, " sucks!";
 		2, ", I let you win.";
+		4, " worst level ever!  Let's play it again.";
 		
 		// 0 = bot name
 		// 1 = random opponent
@@ -81,8 +82,8 @@ chat "Merman"
 	} //end type
 	type "level_end_lose" //initiated when a level ends and the bot is last in the rankings
 	{
-		2, " must be an Arena Lord.";
-		1, " kept getting in my way.";
+		2, " got lucky.";
+		1, " kept spawn camping.";
 		4, " has never been good to me.";
 		// 0 = bot name
 		// 1 = random opponent
@@ -93,10 +94,10 @@ chat "Merman"
 	//======================================================
 	type "hit_talking" //bot is hit while chat balloon is visible; lecture attacker on poor sportsmanship
 	{
-		"Son of a... you shall pay for that!";
-		"Infidel!!!";
-		"Jerkwad";
-		"Schmuck";
+		"So much for sportsmanship...";
+		"Loser!";
+		"Wanker";
+		"Putz";
 		"Tosser";
 		DEATH_TALKING;
 		// 0 = shooter
@@ -104,10 +105,10 @@ chat "Merman"
 	} //end type
 	type "hit_nodeath" //bot is hit by an opponent's weapon attack but didn't die; either praise or insult
 	{
-		"Try harder next time.";
+		"Sissy";
 		"Wuss";
 		"Heh, you suck.";
-		"Nice shooting Tex, you need to take lessons from Dick.";
+		"Dick Cheney is a better shot than you!";
 		// 0 = shooter
 		// 1 = weapon used by shooter
 	} //end type
@@ -138,8 +139,7 @@ chat "Merman"
 	} //end type
 	type "death_lava" //initiated when the bot dies in lava
 	{
-		"It burns!";
-		"land conservation";
+		"Mmmm... toasted nuts!";
 		DEATH_SUICIDE0;
 		DEATH_SUICIDE1;
 		// 0 = random opponent
@@ -152,17 +152,17 @@ chat "Merman"
 	} //end type
 	type "death_drown" //initiated when the bot drowns
 	{
-		"The gills are vestigial...";
-		"Someone needs to explain this...";
-		"I should learn to use my gills...";
-		"I can't swim!";
+		"I need to spend some time at the Y.";
+		"All of that time in those swimming lessons for naught.";
+		"I should learn to grow some gills...";
+		"Dmn_clown should have taught me how to swim...";
 		
 		
 		// 0 = random opponent
 	} //end type
 	type "death_suicide" //initiated when bot blows self up with a weapon or craters
 	{
-		"Aww crap!";
+		"crap!";
 		"Shutup!";
 		DEATH_SUICIDE2;
 		DEATH_SUICIDE1;
@@ -172,8 +172,6 @@ chat "Merman"
 	} //end type
 	type "death_gauntlet" //initiated when the bot is killed by a gauntlet attack
 	{
-		"Humiliating.";
-		"D'oh!";
 		DEATH_GAUNTLET0;
 		DEATH_GAUNTLET1;
 		// 0 = enemy name
@@ -195,8 +193,6 @@ chat "Merman"
 	} //end type
 	type "death_insult" //insult initiated when the bot died
 	{
-		"Always look on the bright side of death.";
-		"pfff";
 		"Wuss";
 		"Sissy";
 		DEATH_INSULT2;
@@ -223,10 +219,7 @@ chat "Merman"
 	type "kill_gauntlet" //initiated when the bot kills someone with gauntlet
 	{
 		"LOL!";
-		"Too easy";
-		"Get whacked!";
-		"It's whack time!";
-		"I'm saving my best whack for ", 0, ".";
+
 		// 0 = enemy name
 	} //end type
 	type "kill_telefrag" //initiated when the bot telefragged someone
@@ -237,7 +230,6 @@ chat "Merman"
 	} //end type
 	type "kill_insult" //insult initiated when the bot killed someone
 	{
-		"I just made my perfect world, oops you're gone.";
 		KILL_INSULT4;
 		KILL_INSULT2;
 		
@@ -253,10 +245,6 @@ chat "Merman"
 	//======================================================
 	type "random_insult" //insult initiated randomly (just when the bot feels like it)
 	{
-		"Your breath stinks";
-		"Get a hair cut";
-		"Get a real job";
-		"Get a life";
 		TAUNT0;
 		TAUNT1;
 		
@@ -267,14 +255,6 @@ chat "Merman"
 	} //end type
 	type "random_misc" //miscellanous chats initiated randomly
 	{
-		"Has anyone found the chocolate bar yet?";
-		"Let's go to Denny's and watch the floor show, you're buying.";
-		"Love is the devil's toy.";
-		"Did you hear about ", 0, " in ", 4, "?  I'd be ashamed of myself if I did that.";
-		"Never trust a hippy.";
-		4, " Uber Alles!";
-		"I am all that is fish.";
-		"Gamers are the whiniest bunch!";
 		GUYTALK1;
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
