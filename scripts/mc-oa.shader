@@ -173,8 +173,8 @@ textures/anoice1/anoice1
 
 textures/e7/e7trimlight
 {
-	qer_editorimage textures/amph-dm01/e7trimlight.tga
-	q3map_lightimage textures/amph-dm01/e7trimlight.blend.tga
+	qer_editorimage textures/e7/e7trimlight.tga
+	q3map_lightimage textures/e7/e7trimlight.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 2000
 	q3map_flare flareShader-subtle
@@ -1441,7 +1441,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 31.612247 37.168587 316.258057 sawtooth 0 1 -0.545396 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.545396 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.545396 0.100000
@@ -1462,7 +1462,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 4.662729 13.519415 319.680298 sawtooth 0 1 0.613392 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.613392 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.613392 0.100000
@@ -1483,7 +1483,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 5.134696 -40.541519 317.379944 sawtooth 0 1 -0.967589 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.967589 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.967589 0.100000
@@ -1504,7 +1504,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 32.009045 11.956154 318.170502 sawtooth 0 1 -0.528123 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.528123 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.528123 0.100000
@@ -1525,7 +1525,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 5.528597 -8.680475 319.834473 sawtooth 0 1 -0.136509 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.136509 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.136509 0.100000
@@ -1546,7 +1546,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -8.774223 -15.174442 319.519562 sawtooth 0 1 -0.002411 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.002411 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.002411 0.100000
@@ -1567,7 +1567,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -15.742773 29.356747 318.261444 sawtooth 0 1 -0.110691 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.110691 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.110691 0.100000
@@ -1588,7 +1588,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -21.931385 4.030158 319.222137 sawtooth 0 1 0.817316 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.817316 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.817316 0.100000
@@ -1609,7 +1609,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -11.029301 32.350861 318.169434 sawtooth 0 1 0.043306 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.043306 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.043306 0.100000
@@ -1630,7 +1630,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -10.657458 17.467329 319.345123 sawtooth 0 1 0.939695 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.939695 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.939695 0.100000
@@ -1651,7 +1651,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -9.503635 14.395289 319.534760 sawtooth 0 1 0.851253 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.851253 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.851253 0.100000
@@ -1672,7 +1672,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -51.839466 14.864049 315.423096 sawtooth 0 1 0.954711 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.954711 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.954711 0.100000
@@ -1693,7 +1693,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -1.243763 -4.623316 319.964172 sawtooth 0 1 0.828242 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.828242 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.828242 0.100000
@@ -1714,7 +1714,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 11.227793 5.515512 319.755402 sawtooth 0 1 0.594714 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.594714 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.594714 0.100000
@@ -1735,7 +1735,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -6.854241 11.026029 319.736511 sawtooth 0 1 0.671560 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.671560 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.671560 0.100000
@@ -1756,7 +1756,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 49.911999 4.185029 316.055817 sawtooth 0 1 0.591906 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.591906 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.591906 0.100000
@@ -1777,7 +1777,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 32.961426 -17.873653 317.795654 sawtooth 0 1 0.282449 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.282449 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.282449 0.100000
@@ -1798,7 +1798,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 8.780898 -6.144862 319.820496 sawtooth 0 1 -0.651906 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.651906 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.651906 0.100000
@@ -1819,7 +1819,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 2.521881 -0.837303 319.988983 sawtooth 0 1 -0.157811 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.157811 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.157811 0.100000
@@ -1840,7 +1840,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -3.657408 -6.301523 319.917053 sawtooth 0 1 -0.453841 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.453841 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.453841 0.100000
@@ -1861,7 +1861,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -4.898691 36.754173 317.844513 sawtooth 0 1 -0.234779 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.234779 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.234779 0.100000
@@ -1882,7 +1882,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -35.161621 -4.592112 318.029205 sawtooth 0 1 -0.272988 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.272988 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.272988 0.100000
@@ -1903,7 +1903,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 7.775577 -51.699711 315.700317 sawtooth 0 1 -0.394269 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.394269 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.394269 0.100000
@@ -1924,7 +1924,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move -7.162114 -1.261538 319.917358 sawtooth 0 1 0.282205 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 0.282205 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 0.282205 0.100000
@@ -1945,7 +1945,7 @@ surfaceparm nodlight
 deformvertexes autosprite
 deformvertexes move 2.125360 -3.279844 319.976135 sawtooth 0 1 -0.844783 0.100000
 {
-clampmap textures/mc-sm19-amphetamine/smoke.tga
+clampmap textures/amph-dm01/smoke.tga
 tcMod rotate 0.000000
 AlphaGen wave sawtooth 0.900000 -0.900000 -0.844783 0.100000
 rgbGen wave sawtooth 1.000000 0.000000 -0.844783 0.100000
