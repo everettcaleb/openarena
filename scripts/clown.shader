@@ -1863,3 +1863,4 @@ textures/clown/fence_shadow
 		blendfunc filter
 		depthfunc equal
 	}
+}
