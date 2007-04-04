@@ -21,6 +21,8 @@ sprites/foe
 
 models/flags/b_flag
 {
+	deformvertexes wave 80 sin 4 8 0 3
+	cull none
 	{
 		map textures/sfx/proto_zzztblu3.jpg
 		tcgen environment
@@ -52,6 +54,8 @@ models/flags/pole
 
 models/flags/r_flag
 {
+	deformvertexes wave 80 sin 4 8 0 3
+	cull none
 	{
 		map textures/sfx/proto_zzzt.jpg
 		tcgen environment
