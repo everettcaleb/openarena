@@ -639,32 +639,6 @@ textures/clown/burn_ow
 	
 }
 
-textures/skies/moons1
-{
-	qer_editorimage textures/skies/moons1.jpg
-	surfaceparm noimpact
-	surfaceparm nolightmap
-	surfaceparm nomarks
-	surfaceparm sky
-	q3map_lightimage textures/skies/intelredclouds.jpg
-	q3map_sun	.5 .1 .1  50  65  35
-	q3map_surfacelight 150
-	skyParms env/moon1/moon1 1024 -
-	{
-		map textures/skies/killsky_1.jpg
-		blendFunc add
-		tcMod scale 3 2
-		tcMod scroll 0.15 0.15
-	}
-	{
-		map textures/skies/intelredclouds.jpg
-		blendFunc filter
-		tcMod scale 3 3
-		tcMod scroll 0.05 0.05
-	}
-	
-}
-
 textures/gothic_block/mkc_evil_e3window
 {
 	qer_editorimage textures/gothic_block/windowevil2c_block18c.jpg
@@ -1723,7 +1697,7 @@ textures/base_wall/chrome_metal
 	{
 		map textures/base_wall/chrome_metal.tga
 		blendFunc add
-		tcmod scale 0.0693 0.0712
+		tcmod scale 0.07 0.06
 		rgbGen identity
 	}
 	{
@@ -1862,5 +1836,31 @@ textures/clown/fence_shadow
 		rgbgen identity
 		blendfunc filter
 		depthfunc equal
+	}
+}
+
+textures/gothic_trim/metlsupport4i_shiney
+{
+	qer_editorimage textures/gothic_trim/metalsupport4i.tga
+	{
+		map textures/gothic_trim/metalsupport4i.tga
+		rgbgen environment
+	}
+	{
+		map textures/base_wall/chrome_env.tga
+		tcGen environment
+		tcmod scale .5 .5 
+		rgbgen vertex
+		
+	}
+	{
+		map textures/gothic_trim/metalsupport4i.tga
+		blendFunc add
+		rgbGen identity
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
 	}
 }

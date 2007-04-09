@@ -1004,3 +1004,29 @@ textures/skies/earthsky01
 	q3map_surfacelight 80 //Diffuse light
 	skyParms env/earthsky/earthsky 1024 -
 }
+
+textures/skies/moons1
+{
+	qer_editorimage textures/skies/moons1.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/intelredclouds.jpg
+	q3map_surfacelight 50
+	q3map_sun	.5 .1 .1  50  65  35
+	skyParms env/moon1/moon1 1024 -
+	{
+		map textures/skies/killsky_1.jpg
+		blendFunc add
+		tcMod scale 3 2
+		tcMod scroll 0.15 0.15
+	}
+	{
+		map textures/skies/intelredclouds.jpg
+		blendFunc filter
+		tcMod scale 3 3
+		tcMod scroll 0.05 0.05
+	}
+	
+}

@@ -21,7 +21,8 @@ sprites/foe
 
 models/flags/b_flag
 {
-	deformvertexes wave 80 sin 4 8 0 3
+	deformvertexes wave 80 sin 2 8 0 3
+	deformvertexes wave 20 square 0 2 0.5 .2
 	cull none
 	{
 		map textures/sfx/proto_zzztblu3.jpg
@@ -54,7 +55,8 @@ models/flags/pole
 
 models/flags/r_flag
 {
-	deformvertexes wave 80 sin 4 8 0 3
+	deformvertexes wave 80 sin 2 8 0 3
+	deformvertexes wave 20 square 0 2 0.5 .2
 	cull none
 	{
 		map textures/sfx/proto_zzzt.jpg

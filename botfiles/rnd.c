@@ -817,6 +817,7 @@ malebot = {
 	"Grism";
 	"Gargoyle";
 	"Merman";
+	"Dmo";
 }
 
 botnames = {
@@ -825,6 +826,7 @@ botnames = {
 	"Kyonshi";
 	"Major";
 	"Merman";
+	"Dmo";
 }
 
 negative = { 

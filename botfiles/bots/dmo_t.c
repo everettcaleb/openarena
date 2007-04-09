@@ -43,6 +43,7 @@ chat "Dmo"
 		"Your daddy is here, got to go.";
 		"Adios.";
 		4, " sucks, l8r.";
+		"I'm going to get drunk, l8r";
 		GOODBYE1;
 		GOODBYE0;
 		// 0 = bot name
@@ -51,7 +52,7 @@ chat "Dmo"
 	} //end type
 	type "level_start" //initiated when a new level starts
 	{
-		"Wow this is worse than Oa_bases3!";
+		"Wow this is worse than oa_bases3!";
 		0, " is going down.";
 		
 		HELLO2;
@@ -154,8 +155,8 @@ chat "Dmo"
 	{
 		"I need to spend some time at the Y.";
 		"All of that time in those swimming lessons for naught.";
-		"I should learn to grow some gills...";
-		"Dmn_clown should have taught me how to swim...";
+		"I should grow gills...";
+		"Crayon should have taught me how to swim...";
 		
 		
 		// 0 = random opponent
@@ -193,6 +194,7 @@ chat "Dmo"
 	} //end type
 	type "death_insult" //insult initiated when the bot died
 	{
+		"Das schlechteste setzt sich durch";
 		"Wuss";
 		"Sissy";
 		DEATH_INSULT2;
