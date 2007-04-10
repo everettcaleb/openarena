@@ -18,6 +18,25 @@ models/weapons2/grenadel/grenadel
 	}
 }
 
+models/weapons2/grenadel/newgren.tga
+{
+	{
+		map models/weapons2/grenadel/newgren.tga
+		rgbGen lightingDiffuse
+
+	}
+	{
+		map models/weapons2/grenadel/chromey.tga
+		rgbGen lightingDiffuse
+		tcGen environment 
+		blendfunc add
+	}
+	{
+		map models/weapons2/grenadel/newgren.tga
+		rgbGen lightingDiffuse
+		blendfunc blend
+	}
+}
 models/weapons2/grenadel/blackhandle
 {
 	{
