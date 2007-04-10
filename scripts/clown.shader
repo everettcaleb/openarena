@@ -1864,3 +1864,27 @@ textures/gothic_trim/metlsupport4i_shiney
 		rgbGen identity
 	}
 }
+
+textures/base_wall/shinybluemetal1
+{
+	qer_editorimage textures/base_wall/shinybluemetal1.jpg
+	{
+		//mapped first so it looks good while vertex lit
+		map textures/base_wall/shinybluemetal1.jpg
+		rgbGen Identity
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+	}
+	{
+		map textures/base_wall/shinybluemetal1.jpg
+		blendfunc add
+	}
+	{
+		map $lightmap 
+		blendfunc gl_dst_color gl_one_minus_src_alpha
+		tcGen lightmap 
+	}
+}
