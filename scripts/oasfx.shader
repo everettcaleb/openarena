@@ -835,3 +835,27 @@ textures/sfx/forcefield
 	}
 }
 
+textures/sfx/rain
+{
+	qer_editorimage textures/clown/rain.tga
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	deformvertexes  wave 25 sin 3 2 .1 3
+
+	
+	cull none
+	{
+		map textures/clown/rain.tga
+		tcmod scroll .3 -6
+		tcmod turb .08 .3 .5 -.3
+		blendfunc add
+	}
+	{
+		map textures/clown/rain.tga
+		tcmod scroll .04 -7
+		blendfunc add
+	}
+
+}
