@@ -101,7 +101,6 @@ textures/mc-oa-dm04/ano-trim2
 	surfaceparm nomarks
 	q3map_lightsubdivide 32
 	q3map_surfacelight 500
-	q3map_flare flareShader-twilightflare
 	{
 		map textures/mc-oa-dm04/ano-trim2.tga
 		rgbGen identity

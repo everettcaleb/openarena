@@ -209,7 +209,7 @@ textures/liquids/lavahellflat_400
 
 textures/liquids/lavahelldark
 {
-	qer_editorimage textures/liquids/lavahell2.tga
+	qer_editorimage textures/liquids/lavahell3.tga
 	q3map_lightimage textures/liquids/lavahell.tga
 	surfaceparm lava
 	surfaceparm nolightmap
@@ -220,7 +220,7 @@ textures/liquids/lavahelldark
 	deformvertexes wave 1 sin .01 .03 0 0.2 
 	q3map_flare textures/flares/lava
 	{
-		map textures/liquids/lavahell2.tga
+		map textures/liquids/lavahell3.tga
 		tcmod scroll -.005 .001
 		tcMod turb .2 -0.03 0 0.1
 	}
@@ -229,7 +229,7 @@ textures/liquids/lavahelldark
 
 textures/liquids/lavahell_1000
 {
-	qer_editorimage textures/liquids/lavahell2.tga
+	qer_editorimage textures/liquids/lavahell3.tga
 	q3map_lightimage textures/liquids/lavahell.tga
 	surfaceparm lava
 	surfaceparm nolightmap
@@ -240,7 +240,7 @@ textures/liquids/lavahell_1000
 	deformvertexes wave 50 sin 2 3 0.5 0.2 
 	q3map_flare textures/flares/lava
 	{
-		map textures/liquids/lavahell2.tga
+		map textures/liquids/lavahell3.tga
 		tcmod scroll -.1 .010
 		tcMod turb .1 -0.5 0.5 0.04
 	}
