@@ -41,7 +41,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"Don't be so certain";
 }
 
-["nigger", "nigr", "wop", "kyke", "sandnigger", "sand-nigger", "beanpicker", "wetback", "raghead", "macaca", "monkey", "irish pig", "redskin", "red-skin", "red skin", "diaper head", "bean picker", "cml-jky", "camel-jockey", "ngr", "niggers", "wops", "jews", "sandniggers", "sand-niggers", "beanpickers", "wetbacks", "camel jockeys", "cml jkys", "cml jocky", "dyke", "homo", "queer", "faggot", "fag", "kyke", "kike", "dike", "dyk", "kyk"] = 1
+["nigger", "nigr", "wop", "kyke", "sandnigger", "sand-nigger", "beanpicker", "wetback", "raghead", "macaca", "monkey", "irish pig", "redskin", "red-skin", "red skin", "diaper head", "bean picker", "cml-jky", "camel-jockey", "ngr", "niggers", "wops", "jews", "sandniggers", "sand-niggers", "beanpickers", "wetbacks", "camel jockeys", "cml jkys", "cml jocky", "dyke", "homo", "queer", "faggot", "fag", "kyke", "kike", "dike", "dyk", "kyk", "chink"] = 1
 {
 	"shut the hell up you ", vicious_insult,".";
 	"bigot";
