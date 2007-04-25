@@ -1888,3 +1888,32 @@ textures/base_wall/shinybluemetal1
 		tcGen lightmap 
 	}
 }
+
+textures/base_wall/metalfloor_wall_14_specular
+{
+	qer_editorimage textures/base_wall/metalfloor_wall_14.jpg
+	{
+		map textures/base_wall/metalfloor_wall_14.jpg
+		rgbgen identity
+	}
+	{
+		map textures/effects/tinfx.tga
+		tcgen environment
+		rgbgen vertex
+	}
+	{
+		map textures/base_wall/metalfloor_wall_14.jpg
+		blendfunc add
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/metalfloor_wall_14_glow.tga
+		blendfunc blend
+		rgbGen wave sin 0 1 0 1
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}
