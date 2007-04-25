@@ -565,6 +565,7 @@ textures/liquids/proto_poolpass
 	qer_editorimage textures/liquids/proto_gruel3.jpg
 	q3map_surfacelight 300
 	surfaceparm slime
+	surfaceparm trans
 	{
 		map textures/liquids/proto_gruel3.jpg
 		tcmod turb .1 .3 .5 .1

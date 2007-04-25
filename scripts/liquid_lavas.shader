@@ -156,6 +156,7 @@ textures/liquids/flatlavahell_1500
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm noimpact
+	surfaceparm trans
 	q3map_surfacelight 1500
 	cull none
 	deformvertexes wave 50 sin 2 3 0 0.2 
@@ -176,6 +177,7 @@ textures/liquids/lavahell2
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm noimpact
+	surfaceparm trans
 	q3map_surfacelight 2000
 	cull none
 	deformvertexes wave 50 sin 2 3 0.5 0.2 
@@ -196,6 +198,7 @@ textures/liquids/lavahellflat_400
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm noimpact
+	surfaceparm trans
 	q3map_surfacelight 400
 	cull none
 	q3map_flare textures/flares/lava
@@ -215,6 +218,7 @@ textures/liquids/lavahelldark
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm noimpact
+	surfaceparm trans
 	q3map_surfacelight 100
 	cull none
 	deformvertexes wave 1 sin .01 .03 0 0.2 
@@ -235,6 +239,7 @@ textures/liquids/lavahell_1000
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm noimpact
+	surfaceparm trans
 	q3map_surfacelight 1000
 	cull none
 	deformvertexes wave 50 sin 2 3 0.5 0.2 
@@ -255,6 +260,7 @@ textures/liquids/lavahell_xdm1
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm noimpact
+	surfaceparm trans
 	q3map_surfacelight 600
 	cull none
 	deformvertexes wave 1 sin .01 .03 0 0.2 
@@ -275,6 +281,7 @@ textures/liquids/lavahell_2000
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm noimpact
+	surfaceparm trans
 	q3map_surfacelight 2000
 	cull none
 	deformvertexes wave 50 sin 2 3 0.5 0.2 
