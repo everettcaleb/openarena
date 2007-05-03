@@ -11,6 +11,7 @@ oa_fogs
 quark
 evil8
 clown
+clown2
 mc-oa
 terrain
 oasfx
