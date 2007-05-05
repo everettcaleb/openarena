@@ -268,7 +268,7 @@ textures/liquids/lavahell_xdm1
 	{
 		map textures/liquids/lavahell2.tga
 		tcmod scroll -.01 .005
-		tcMod turb .2 -0.03 0.5 0.1
+		tcMod turb .5 -0.4 0.5 0.1
 	}
 
 }
