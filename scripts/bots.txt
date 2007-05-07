@@ -36,6 +36,20 @@ model		dmo
 aifile	bots/dmo_c.c
 }
 
+
+{
+name		Penguin
+model		penguin
+aifile	bots/penguin_c.c
+}
+
+
+{
+name		Hnt
+model		hnt
+aifile	bots/major_c.c
+}
+
 // for the sake of the ctf menu
 
 
@@ -50,10 +64,4 @@ aifile	bots/sarge_c.c
 name		Grunt
 model		gargoyle/tech
 aifile	bots/gargoyle_c.c
-}
-
-{
-name		Penguin
-model		penguin
-aifile	bots/penguin_c.c
 }
