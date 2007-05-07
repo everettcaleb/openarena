@@ -52,3 +52,8 @@ model		gargoyle/tech
 aifile	bots/gargoyle_c.c
 }
 
+{
+name		Penguin
+model		penguin
+aifile	bots/penguin_c.c
+}
