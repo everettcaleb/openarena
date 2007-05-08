@@ -220,5 +220,7 @@ CONTEXT_NAMES
 	[("Major", 1),		("Lara", 0.4),  ("Rail Queen", 0.6), ("Sniper Queen", 0.6)]
 	[("Merman", 1),		("fish breath", 0.1), ("Arial's brother", 0.4), ("Fish Eater", 0.5)]
 	[("Dmo", 1),		("punk boi", 0.1), ("Emo", 0.3), ("Johnny Rotten", 0.6), ("Elmo", 0.4)]
+	[("Penguin", 1),	("FLOSS freak", 0.3), ("windows error", 0.1), ("Geek", 0.6)]
+	[("Hnt", 1),		("Hot stuff", 0.1), ("Clothing Malfunction", 0.5), ("Sucubus", 0.3)]
 //	[("Orb", 1),		("Psycod the Magnificant", 0.5), ("Slayer of the 19 cats of Doom", 0.5)]
 }

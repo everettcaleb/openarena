@@ -811,6 +811,7 @@ fighter = {
 femalebot = {
 	"Kyonshi";
 	"Major";
+	"Hnt";
 }
 
 malebot = {
@@ -818,6 +819,7 @@ malebot = {
 	"Gargoyle";
 	"Merman";
 	"Dmo";
+	"Penguin";
 }
 
 botnames = {
@@ -827,6 +829,8 @@ botnames = {
 	"Major";
 	"Merman";
 	"Dmo";
+	"Hnt";
+	"Penguin";
 }
 
 negative = { 

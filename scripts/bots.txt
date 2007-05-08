@@ -47,7 +47,7 @@ aifile	bots/penguin_c.c
 {
 name		Hnt
 model		hnt
-aifile	bots/major_c.c
+aifile	bots/hnt_c.c
 }
 
 // for the sake of the ctf menu
