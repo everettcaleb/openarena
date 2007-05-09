@@ -129,7 +129,7 @@ type		"single ffa sp team"
 
 {
 map		"oa_dm2"
-bots		"dmo kyonshi major merman grunt sarge"
+bots		"dmo kyonshi major merman grunt hnt"
 longname	"Claustrophobopolis"
 fraglimit	"30"
 type		"single ffa sp team"
