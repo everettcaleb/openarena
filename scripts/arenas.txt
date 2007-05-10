@@ -60,7 +60,7 @@ map			"cbctf1"
 bots		"sarge gargoyle"
 longname	"Capture the Space"
 fraglimit	30
-type		"single ffa tourney team sp ctf"
+type		"ctf"
 }
 {
 map             "fan"
@@ -145,7 +145,7 @@ type		"single ffa tourney sp"
 
 {
 map		"oa_shine"
-bots		"major merman"
+bots		"major hnt kyonshi"
 longname	"Shine"
 fraglimit	"30"
 type		"single ffa sp"
@@ -153,7 +153,7 @@ type		"single ffa sp"
 
 {
 map		"suspended"
-bots		"merman major gargoyle"
+bots		"merman hnt gargoyle"
 longname	"Suspended"
 fraglimit	"20"
 type		"single ffa tourney sp"
