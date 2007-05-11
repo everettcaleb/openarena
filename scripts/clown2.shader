@@ -203,3 +203,18 @@ textures/gothic_button/timbutton
 		rgbgen identity
 	}
 }
+
+textures/proto2/steam01
+{
+	qer_editorimage textures/proto2/steam01.tga
+	cull none
+	surfaceparm trans
+	deformvertexes autosprite2
+	deformvertexes wave 30 sin 0.1 2 .5 .5
+	{
+		map textures/proto2/steam01.tga
+		tcmod scroll 0 0.4
+		blendfunc blend
+		rgbgen identity
+	}
+}
