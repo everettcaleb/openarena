@@ -85,7 +85,7 @@ textures/proto2/cheapfloor
 		rgbgen identity
 	}
 	{
-		map textures/effects/tinfx2b.tga
+		map textures/effects/tinfx.tga
 		tcgen environment
 		rgbgen vertex
 	}

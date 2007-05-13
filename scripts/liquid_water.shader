@@ -513,6 +513,49 @@ textures/liquids/calm_poollight
 
 }
 
+textures/liquids/clear_calm2
+{
+	qer_editorimage textures/liquids/pool3d_5e.jpg
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm water
+	cull none
+	
+	{
+		map textures/effects/sky.jpg
+		tcgen environment
+		blendfunc add
+		rgbgen vertex
+	}		
+	{ 
+		map textures/liquids/pool3d_5e.jpg
+		blendFunc add
+		rgbgen identity
+		tcmod turb .04 .01 .5 .03
+	}
+
+	{ 
+		map textures/liquids/pool3d_6.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .025 -.001
+	}
+	{ 
+		map textures/liquids/pool3d_5.jpg
+		blendFunc gl_dst_color gl_one
+		rgbgen identity
+		tcmod scroll .001 .025
+	}
+	{
+		map $lightmap
+		blendFunc gl_dst_color gl_zero
+		rgbgen identity		
+	}
+	
+
+}
+
+
 textures/liquids/slime1
 {
 	qer_editorimage textures/liquids/slime8.jpg
