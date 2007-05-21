@@ -1,4 +1,5 @@
-h_head,models/players/major/head.tga
-
+h_face,models/players/hnt/skin.tga
+h_hair,models/players/hnt/hair.tga
+h_clothes,models/players/hnt/clothes.tga
 
 tag_head
