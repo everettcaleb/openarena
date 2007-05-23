@@ -1256,7 +1256,7 @@ textures/base_wall/bluemetalsupport2ftv
 {
 	qer_editorimage textures/base_wall/bluemetalsupport2ftv.tga
 	q3map_lightimage textures/base_wall/bms2ftv_glow.tga
-	q3map_surfacelight 500
+	q3map_surfacelight 10
 	
 	{
 		map textures/base_wall/bluemetalsupport2ftv.tga
