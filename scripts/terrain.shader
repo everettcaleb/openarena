@@ -1,5 +1,3 @@
-
-
 textures/castle/terrain_0
 {
 	q3map_lightmapaxis z
@@ -12,9 +10,16 @@ textures/castle/terrain_0
 		blendFunc GL_DST_COLOR GL_ZERO
 	}
 	{
+		map textures/skies/clouds.tga
+		blendfunc filter
+		tcmod scale .2 .2
+		tcMod scroll -0.15 0.15
+	}
+	{
 		map $lightmap
 		rgbGen identity
 	}
+
 	q3map_styleMarker
 }
 
@@ -30,9 +35,16 @@ textures/castle/terrain_1
 		blendFunc GL_DST_COLOR GL_ZERO
 	}
 	{
+		map textures/skies/clouds.tga
+		blendfunc filter
+		tcmod scale .2 .2
+		tcMod scroll -0.15 0.15
+	}
+	{
 		map $lightmap
 		rgbGen identity
 	}
+
 	q3map_styleMarker
 
 }
@@ -49,9 +61,16 @@ textures/castle/terrain_2
 		blendFunc GL_DST_COLOR GL_ZERO
 	}
 	{
+		map textures/skies/clouds.tga
+		blendfunc filter
+		tcmod scale .2 .2
+		tcMod scroll -0.15 0.15
+	}
+	{
 		map $lightmap
 		rgbGen identity
 	}
+
 	q3map_styleMarker
 
 }
@@ -73,9 +92,16 @@ textures/castle/terrain_0to1
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 	{
+		map textures/skies/clouds.tga
+		blendfunc filter
+		tcmod scale .2 .2
+		tcMod scroll -0.15 0.15
+	}
+	{
 		map $lightmap
 		rgbGen identity
 	}
+
 	q3map_styleMarker
 
 }
@@ -97,9 +123,16 @@ textures/castle/terrain_0to2
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 	{
+		map textures/skies/clouds.tga
+		blendfunc filter
+		tcmod scale .2 .2
+		tcMod scroll -0.15 0.15
+	}
+	{
 		map $lightmap
 		rgbGen identity
 	}
+
 	q3map_styleMarker
 
 }
@@ -121,9 +154,16 @@ textures/castle/terrain_1to2
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 	{
+		map textures/skies/clouds.tga
+		blendfunc filter
+		tcmod scale .2 .2
+		tcMod scroll -0.15 0.15
+	}
+	{
 		map $lightmap
 		rgbGen identity
 	}
+
 	q3map_styleMarker
 
 }
@@ -156,6 +196,12 @@ textures/castle/ter_rock-mud
 		alphaFunc GE128
 		rgbGen identity
 		alphaGen vertex
+	}
+	{
+		map textures/skies/clouds.tga
+		blendfunc filter
+		tcmod scale .2 .2
+		tcMod scroll -0.15 0.15
 	}
 	{
 		map $lightmap

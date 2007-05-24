@@ -556,19 +556,6 @@ textures/liquids/clear_calm2
 	surfaceparm water
 	cull none
 	
-	{
-		map textures/effects/sky.jpg
-		tcgen environment
-		blendfunc add
-		rgbgen vertex
-	}		
-	{ 
-		map textures/liquids/pool3d_5e.jpg
-		blendFunc add
-		rgbgen identity
-		tcmod turb .04 .01 .5 .03
-	}
-
 	{ 
 		map textures/liquids/pool3d_6.jpg
 		blendFunc gl_dst_color gl_one
@@ -586,8 +573,17 @@ textures/liquids/clear_calm2
 		blendFunc gl_dst_color gl_zero
 		rgbgen identity		
 	}
-	
-
+	{
+		map textures/effects/sky.jpg
+		tcgen environment
+		blendfunc add
+		rgbgen vertex
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
 }
 
 
