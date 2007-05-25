@@ -218,3 +218,42 @@ textures/proto2/steam01
 		rgbgen identity
 	}
 }
+
+textures/gothic_trim/zinc_shiny
+{
+	qer_editorimage textures/gothic_trim/zinc_shiny.tga
+	{	
+		map textures/gothic_trim/zinc_shiny.tga
+		rgbgen identity
+	}
+	{
+		map textures/effects/tinfx.tga
+		tcgen environment
+		rgbgen identity
+	}
+	{
+		map textures/gothic_trim/zinc_shiny.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}
+
+textures/base_floor/skylight_spec
+{
+	qer_editorimage textures/base_floor/skylight_spec.tga
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/base_floor/skylight_spec.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen identity
+		alphagen lightingspecular
+	}
+}

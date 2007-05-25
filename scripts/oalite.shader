@@ -35,8 +35,7 @@ textures/base_light/ceil1_34
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
-		rgbGen identity
+		rgbgen identity
 	}
 	{
 		map $lightmap 
@@ -216,7 +215,6 @@ textures/base_light/ceil1_38
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -239,7 +237,6 @@ textures/base_light/ceil1_38_10k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -262,7 +259,6 @@ textures/base_light/ceil1_38_20k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -285,7 +281,6 @@ textures/base_light/ceil1_38_30k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -308,7 +303,6 @@ textures/base_light/ceil1_38_40k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -331,7 +325,6 @@ textures/base_light/ceil1_38_50k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -354,7 +347,6 @@ textures/base_light/ceil1_38_70k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -377,7 +369,6 @@ textures/base_light/ceil1_38_90k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -400,7 +391,6 @@ textures/base_light/ceil1_39
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -854,7 +844,6 @@ textures/base_light/ceil1_30
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_30.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -877,7 +866,6 @@ textures/base_light/ceil1_30_8k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_30.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -898,7 +886,7 @@ textures/base_light/ceil1_30_trans
 	q3map_lightimage textures/base_light/ceil1_30.blend.jpg
 	surfaceparm metalsteps
 	surfaceparm nomarks
-	surfaceparm nonsolid
+	surfaceparm trans
 	q3map_surfacelight 10000
 	q3map_flare flareShader-wide
 	{
@@ -926,7 +914,6 @@ textures/base_light/ceil1_34_10k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -949,7 +936,6 @@ textures/base_light/ceil1_34_1k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -972,7 +958,6 @@ textures/base_light/ceil1_34_2k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -995,7 +980,6 @@ textures/base_light/ceil1_34_5k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1018,7 +1002,6 @@ textures/base_light/ceil1_37
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_37.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1041,7 +1024,6 @@ textures/base_light/ceil1_4
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_4.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1084,11 +1066,12 @@ textures/base_light/ceil1_22a_trans
 	qer_editorimage textures/base_light/ceil1_22a.tga
 	q3map_lightimage textures/base_light/ceil1_22a.blend.tga
 	surfaceparm nomarks
-	surfaceparm nonsolid
+	surfaceparm trans
 	q3map_surfacelight 300
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_22a.tga
+		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1111,7 +1094,6 @@ textures/base_light/ceil1_34_10k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1134,7 +1116,6 @@ textures/base_light/ceil1_34_1k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1157,7 +1138,6 @@ textures/base_light/ceil1_34_2k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1180,7 +1160,6 @@ textures/base_light/ceil1_34_5k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_34.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1203,7 +1182,6 @@ textures/base_light/ceil_white5k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_38.jpg
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1226,7 +1204,6 @@ textures/base_light/xceil1_39
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1249,7 +1226,6 @@ textures/base_light/xceil1_39_1
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1272,7 +1248,6 @@ textures/base_light/xceil1_39_10k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1295,7 +1270,6 @@ textures/base_light/xceil1_39_110k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1318,7 +1292,6 @@ textures/base_light/xceil1_39_15k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1341,7 +1314,6 @@ textures/base_light/xceil1_39_20k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1364,7 +1336,6 @@ textures/base_light/xceil1_39_2k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1387,7 +1358,6 @@ textures/base_light/xceil1_39_30k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1410,7 +1380,6 @@ textures/base_light/xceil1_39_500k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1433,7 +1402,6 @@ textures/base_light/xceil1_39_50k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1456,7 +1424,6 @@ textures/base_light/xceil1_39_5k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1479,7 +1446,6 @@ textures/base_light/xceil1_39_70k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1502,7 +1468,6 @@ textures/base_light/xceil1_39_90k
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1525,7 +1490,7 @@ textures/base_light/xceil1_39_a
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
+
 		rgbGen identity
 	}
 	{
@@ -1548,7 +1513,6 @@ textures/base_light/xceil1_39_b
 	q3map_flare flareShader-wide
 	{
 		map textures/base_light/ceil1_39.tga
-		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
 	{
@@ -1676,6 +1640,32 @@ textures/base_light/jaildr03_2
 	}
 }
 
+textures/base_floor/skylight1
+{
+	qer_editorimage textures/base_floor/skylight1.tga
+	q3map_lightimage textures/base_floor/skylight1_lm.tga
+	q3map_surfacelight 150
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/base_floor/skylight1.tga
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/base_floor/skylight1_lm.tga
+		blendfunc add
+		rgbgen wave sin .5 6 0 3.2
+	}
+}
+
+
+///////////////////////////////////////
+// 	    Gothic Lights            //
+/////////////////////////////////////// 
+
 
 //moved from oanew to here
 //textures/base_light/ceil1_4
@@ -1746,6 +1736,7 @@ textures/base_light/wsupprt1_12
 		rgbGen wave noise 0.8 0.2 0 1 
 	}
 }
+
 
 textures/gothic_light/ironcrosslt2_1000
 {
