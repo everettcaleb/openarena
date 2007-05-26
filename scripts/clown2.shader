@@ -253,7 +253,7 @@ textures/base_floor/skylight_spec
 	{
 		map textures/base_floor/skylight_spec.tga
 		blendfunc gl_dst_color gl_src_alpha
-		rgbgen vertex
+		rgbgen identitylighting
 		alphagen lightingspecular
 	}
 }
@@ -268,7 +268,7 @@ textures/gothic_trim/metalsupport4h_shiny
 	{
 		map textures/gothic_trim/metalsupport4h_shiny.tga
 		blendfunc gl_dst_color gl_src_alpha
-		rgbgen vertex
+		rgbgen identitylighting
 		alphagen lightingspecular
 	}
 }
@@ -308,7 +308,7 @@ textures/base_wall/bluemetal2_shiny
 	{
 		map textures/base_wall/bluemetal2_shiny.tga
 		blendfunc gl_dst_color gl_src_alpha
-		rgbgen vertex
+		rgbgen identitylighting
 		alphagen lightingspecular
 	}
 }
@@ -323,7 +323,7 @@ textures/base_wall/bluemetal1b_shiny
 	{
 		map textures/base_wall/bluemetal1b_shiny.tga
 		blendfunc gl_dst_color gl_src_alpha
-		rgbgen vertex
+		rgbgen identitylighting
 		alphagen lightingspecular
 	}
 }
