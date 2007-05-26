@@ -253,7 +253,126 @@ textures/base_floor/skylight_spec
 	{
 		map textures/base_floor/skylight_spec.tga
 		blendfunc gl_dst_color gl_src_alpha
-		rgbgen identity
+		rgbgen vertex
 		alphagen lightingspecular
+	}
+}
+
+textures/gothic_trim/metalsupport4h_shiny
+{
+	qer_editorimage textures/gothic_trim/metalsupport4h_shiny.tga
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/gothic_trim/metalsupport4h_shiny.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen vertex
+		alphagen lightingspecular
+	}
+}
+
+textures/gothic_trim/metalsupport4h_trans
+{
+	qer_editorimage textures/gothic_trim/metalsupport4h_shiny.tga
+	surfaceparm nonsolid
+	{
+		map textures/gothic_trim/metalsupport4h_shiny.tga
+		rgbgen identity
+	}
+	{
+		map textures/effects/tinfx.tga
+		tcgen environment
+		rgbgen identity
+	}
+	{
+		map textures/gothic_trim/metalsupport4h_shiny.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}
+
+textures/base_wall/bluemetal2_shiny
+{
+	qer_editorimage textures/base_wall/bluemetal2_shiny.tga
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/bluemetal2_shiny.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen vertex
+		alphagen lightingspecular
+	}
+}
+
+textures/base_wall/bluemetal1b_shiny
+{
+	qer_editorimage textures/base_wall/bluemetal1b_shiny.tga
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/bluemetal1b_shiny.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen vertex
+		alphagen lightingspecular
+	}
+}
+
+textures/base_wall/bluemetal2_noisy
+{
+	qer_editorimage textures/base_wall/bluemetal2_shiny.tga
+	surfaceparm metalsteps
+	{
+		map textures/base_wall/bluemetal2_shiny.tga
+		rgbgen identity
+	}
+	{
+		map textures/effects/tinfx.tga
+		tcgen environment
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/bluemetal2_shiny.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}
+
+textures/base_wall/bluemetal2_shiny_trans
+{
+	qer_editorimage textures/base_wall/bluemetal2_shiny.tga
+	{
+		map textures/base_wall/bluemetal2_shiny.tga
+		rgbgen identity
+	}
+	{
+		map textures/effects/tinfx.tga
+		tcgen environment
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/bluemetal2_shiny.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
 	}
 }

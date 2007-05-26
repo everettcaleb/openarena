@@ -1169,11 +1169,12 @@ textures/base_wall/bluemetal1b_chrome
 	}
 	{
 		map textures/base_wall/bluemetal1b_shiny.jpg
-		blendfunc add
+		blendfunc blend
+		rgbgen identity
 	}
 	{
 		map $lightmap 
-		blendfunc gl_dst_color gl_one_minus_src_alpha
+		blendfunc filter
 		tcGen lightmap 
 	}
 }
@@ -1844,7 +1845,7 @@ textures/gothic_trim/metlsupport4i_shiney
 	qer_editorimage textures/gothic_trim/metalsupport4i.tga
 	{
 		map textures/gothic_trim/metalsupport4i.tga
-		rgbgen environment
+		rgbgen identity
 	}
 	{
 		map textures/base_wall/chrome_env.tga
