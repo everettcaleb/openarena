@@ -215,8 +215,7 @@ chat "Penguin"
 	} //end type
 	type "kill_insult" //insult initiated when the bot killed someone
 	{
-		"I just made my perfect world, oops you're gone.";
-		"p\/\/|\|3d";
+		"p0wn3d";
 		"you are not 1337";
 		KILL_INSULT4;
 		KILL_INSULT2;
