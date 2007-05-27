@@ -34,13 +34,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //machinegun
 #define MGW				50
 //grenadelauncher
-#define GLW				400
+#define GLW				300
 //rocket launcher
 #define RLW				400
 //rail gun
 #define RGW				260
 //bfg10k
-#define BFW				400
+#define BFW				350
 //lightninggun
 #define LGW				50
 //plasmagun
@@ -94,7 +94,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //regeneration
 #define REGW				50
 //flight
-#define FLW				0.0
+#define FLW				175
 //kamikaze
 #define KAMW				200
 //invulnerability

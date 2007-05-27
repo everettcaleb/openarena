@@ -29,6 +29,7 @@ chat "Penguin"
 	//======================================================
 	type "game_enter" //initiated when the bot enters the game
 	{
+		"Stop using winblows";
 		HELLO1;
 		// 0 = bot name
 		// 1 = random opponent
@@ -201,6 +202,8 @@ chat "Penguin"
 	{
 		"LOL!";
 		"Too easy";
+		"Try recompiling with -pipe -O12 -fweb -funswitch-loops -funroll-all-loops -funit-at-a-time -fsched2-use-superblocks -frename-registers -fprefetch-loop-arrays -finline-limit=32768 -ffast-math -fbranch-target-load-optimize2";
+
 	
 		// 0 = enemy name
 	} //end type
@@ -213,6 +216,8 @@ chat "Penguin"
 	type "kill_insult" //insult initiated when the bot killed someone
 	{
 		"I just made my perfect world, oops you're gone.";
+		"p\/\/|\|3d";
+		"you are not 1337";
 		KILL_INSULT4;
 		KILL_INSULT2;
 		
@@ -232,9 +237,8 @@ chat "Penguin"
 		"Get a hair cut";
 		"Get a real job";
 		"Get a life";
-		TAUNT0;
-		TAUNT1;
-		
+		"You need 1337 lessons";
+		"I kill children";
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
 		// 4 = level's title
@@ -242,6 +246,9 @@ chat "Penguin"
 	} //end type
 	type "random_misc" //miscellanous chats initiated randomly
 	{
+		"has anyone tried kernel 2.8.56-rc3-mm45, yet?";
+		"Binary packaging encourages sloppy design, contrast with the stochastic API unit testing which occurs naturally with all the building with different configurations.";
+		"It could be the purpose of your life is only to serve as a warning to others";
 		GUYTALK1;
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot

@@ -272,6 +272,7 @@ chat "Hnt"
 	type "random_misc" //miscellanous chats initiated randomly
 	{
 		"No, really... Who let the dogs out?";
+		"this one time, at band camp...";
 		GRRLTALK0;
 		MISC4;
 		"Has anyone tried out the new ", 5, "?  Is it worth the upgrade?";

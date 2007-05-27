@@ -94,7 +94,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //regeneration
 #define REGW				50
 //flight
-#define FLW				50
+#define FLW				160
 //kamikaze
 #define KAMW				290
 //invulnerability

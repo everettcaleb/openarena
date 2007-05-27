@@ -57,7 +57,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define HAW				50
 #define INW				400
 #define REGW				50
-#define FLW				0.0
+#define FLW				260
 #define KAMW				200
 #define IBW				150
 #define PORW				300
