@@ -152,23 +152,14 @@ textures/proto2/marble02b_s_green
 	qer_editorimage textures/proto2/marble02b_s.tga
 	surfaceparm metalsteps
 	{
-		map textures/proto2/marble02b_s.tga
-		rgbgen identity
-	}
-	{
-		map textures/effects/tinfx.tga
-		tcgen environment
-		rgbgen vertex
-	}
-	{
-		map textures/proto2/marble02b_s.tga
-		blendfunc blend
-		rgbgen identity
-	}
-	{
 		map $lightmap
-		blendfunc filter
 		rgbgen identity
+	}
+	{
+		map textures/proto2/marble02b_s.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen identitylighting
+		alphagen lightingspecular
 	}
 }
 
