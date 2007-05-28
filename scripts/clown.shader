@@ -729,12 +729,12 @@ textures/gothic_block/wetwall
         {
 		map textures/gothic_block/wetwall_fx.tga
                 tcmod scroll 0 -.1
+		tcmod scale .9 .1
                 blendFunc add
-                rgbGen identity
 	}
 	{
 	        map textures/gothic_block/wetwall.tga
-		blendFunc filter
+		blendFunc blend
 		rgbGen identity
 	}
         {
@@ -1156,10 +1156,10 @@ textures/base_support/x_support2
 
 textures/base_wall/bluemetal1b_chrome
 {
-	qer_editorimage textures/base_wall/bluemetal1b_shiny.jpg
+	qer_editorimage textures/base_wall/bluemetal1b_shiny.tga
 	{
 		//mapped first so it looks good while vertex lit
-		map textures/base_wall/bluemetal1b_shiny.jpg
+		map textures/base_wall/bluemetal1b_shiny.tga
 		rgbGen Identity
 	}
 	{
@@ -1168,7 +1168,7 @@ textures/base_wall/bluemetal1b_chrome
 		rgbGen oneminusvertex
 	}
 	{
-		map textures/base_wall/bluemetal1b_shiny.jpg
+		map textures/base_wall/bluemetal1b_shiny.tga
 		blendfunc blend
 		rgbgen identity
 	}
