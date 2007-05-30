@@ -367,3 +367,22 @@ textures/base_wall/bluemetal2_shiny_trans
 		rgbgen identity
 	}
 }
+
+textures/gothic_trim/gothgrate2
+{
+	surfaceparm metalsteps
+	cull none
+	{
+		map textures/gothic_trim/gothgrate2.tga
+		blendfunc blend
+		rgbgen identity
+		alphafunc GE128
+		depthwrite
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+		depthfunc equal
+	}
+}
