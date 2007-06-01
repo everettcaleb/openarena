@@ -748,6 +748,7 @@ textures/ctf/blue_telep2
 {
 	qer_editorimage textures/ctf/blue_telep2.tga
 	q3map_lightimage textures/effects/jumpcircblue.tga
+	surfaceparm nonsolid
 	surfaceparm noimpact
 	surfaceparm nolightmap
 	surfaceparm nomarks
@@ -777,6 +778,7 @@ textures/ctf/red_telep2
 {
 	qer_editorimage textures/effects/red_telep2.tga
 	q3map_lightimage textures/effects/jumpcircred.tga
+	surfaceparm nonsolid
 	surfaceparm noimpact
 	surfaceparm nolightmap
 	surfaceparm nomarks
