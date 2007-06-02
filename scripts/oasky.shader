@@ -362,6 +362,7 @@ textures/skies/blacksky
 {
 	qer_editorimage textures/sfx/blakk.tga
 	surfaceparm noimpact
+	surfaceparm nomarks
 	surfaceparm nolightmap
 	surfaceparm sky
 	q3map_surfacelight 50
@@ -376,6 +377,7 @@ textures/skies/xblacksky_dm7
 	qer_editorimage textures/sfx/blakk.tga
 	surfaceparm noimpact
 	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	q3map_surfacelight 50
 	q3map_sun	1 1 1  32  60  90
@@ -409,14 +411,13 @@ textures/skies/q3dm0
 	q3map_sun	1 1 1  32  90  90
 	skyParms full 512 -
 	{
-		map textures/skies/dimclouds.jpg
-		blendfunc add
+		map textures/skies/dimclouds.tga
 		tcmod scale 2 3
 		tcmod scroll -.03 .04
 	}
 	{
-		map textures/skies/killsky_1.jpg
-		blendfunc filter
+		map textures/skies/inteldimclouds.jpg
+		blendfunc add
 		tcmod scale 3 2
 		tcmod scroll 0.05 0.03
 	}
@@ -436,12 +437,11 @@ textures/skies/tim_hell
 	skyParms full 1024 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.03 .04
 	}
 	{
-		map textures/skies/intelredclouds.jpg
+		map textures/skies/topclouds.tga
 		blendfunc filter
 		tcmod scale 3 2
 		tcmod scroll 0.05 0.03
@@ -462,7 +462,6 @@ textures/skies/toxicskytim_dm5
 	skyParms full 756 -
 	{
 	map textures/skies/dimclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -488,7 +487,6 @@ textures/skies/killsky
 	skyParms full 512 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -514,7 +512,6 @@ textures/skies/xtoxicsky_dm9
 	skyParms full 512 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -540,12 +537,11 @@ textures/skies/toxicskytim_dm2
 	skyParms full 756 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
 	{
-		map textures/skies/intelredclouds.jpg
+		map textures/skies/topclouds.tga
 		blendfunc filter
 		tcmod scale 3 2
 		tcmod scroll 0.05 0.03
@@ -566,12 +562,11 @@ textures/skies/xtoxicskytim_q3dm5
 	skyParms full 512 -
 	{
 		map textures/skies/killsky_1.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
 	{
-		map textures/skies/intelredclouds.jpg
+		map textures/skies/topclouds.tga
 		blendfunc filter
 		tcmod scale 3 2
 		tcmod scroll 0.05 0.03
@@ -592,12 +587,11 @@ textures/skies/pj_arena4_sky
 	skyParms full 756 -
 	{
 		map textures/skies/inteldimclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
 	{
-		map textures/skies/intelredclouds.jpg
+		map textures/skies/topclouds.tga
 		blendfunc filter
 		tcmod scale 3 2
 		tcmod scroll 0.05 0.03
@@ -618,7 +612,6 @@ textures/skies/toxicskytim_dm7
 	skyParms full 1024 -
 	{
 		map textures/skies/multsky1.tga
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -670,7 +663,6 @@ textures/skies/pj_dm9sky
 	skyParms full 1024 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -696,7 +688,6 @@ textures/skies/pj_dm10sky
 	skyParms full 756 -
 	{
 		map textures/skies/bluedimclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -722,7 +713,6 @@ textures/skies/tim_dm3_red
 	skyParms full 512 -
 	{
 		map textures/skies/killsky_1.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -748,7 +738,6 @@ textures/skies/toxicskytim_dm9
 	skyParms full 756 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -774,7 +763,6 @@ textures/skies/tim_dm14red
 	skyParms full 512 -
 	{
 		map textures/skies/killsky_1.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -800,7 +788,6 @@ textures/skies/nightsky_xian_dm1
 	skyParms full 512 -
 	{
 		map textures/skies/pjbasesky.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -823,15 +810,14 @@ textures/skies/xtoxicsky_tourney
 	q3map_surfacelight 100
 	q3map_globaltexture
 	q3map_sun	0.514 0.549 0.203  32  60  75
-	skyParms full 756 -
+	skyParms - 756 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
 	{
-		map textures/skies/intelredclouds.jpg
+		map textures/skies/bluedimclouds.jpg
 		blendfunc filter
 		tcmod scale 3 2
 		tcmod scroll 0.05 0.03
@@ -852,7 +838,6 @@ textures/skies/tim_km2
 	skyParms full 512 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.01 .02
 	}
@@ -878,7 +863,6 @@ textures/skies/pjbasesky_arena1_sky
 	skyParms full 512 -
 	{
 		map textures/skies/killsky_1.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.03 .01
 	}
@@ -904,7 +888,6 @@ textures/skies/toxicskydim
 	skyParms full 512 -
 	{
 		map textures/skies/intelredclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.03 .01
 	}
@@ -930,7 +913,6 @@ textures/skies/toxicskytim_blue
 	skyParms full 512 -
 	{
 		map textures/skies/dimclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.03 .01
 	}
@@ -957,7 +939,6 @@ textures/skies/pj_ctf2_sky
 	skyParms full 1024 -
 	{
 		map textures/skies/dimclouds.jpg
-		blendfunc add
 		tcmod scale 2 3
 		tcmod scroll -.03 .01
 	}

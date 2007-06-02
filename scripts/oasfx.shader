@@ -359,7 +359,7 @@ textures/sfx/flame1
 
 textures/sfx/flame1dark
 {
-	qer_editorimage txtures/sfx/flame3.tga
+	qer_editorimage textures/sfx/flame3.tga
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	cull disable

@@ -142,7 +142,7 @@ textures/sfx/xlightgreyfog
 	surfaceparm fog
 	surfaceparm nolightmap
 	cull disable
-	fogparms ( 0.62745 0.62745 0.62745 ) 800
+	fogparms ( 0.62745 0.62745 0.62745 ) 3000
 	
 	{
 		map textures/liquids/kc_fogcloud3.tga
@@ -554,17 +554,6 @@ textures/sfx/xfinalfoginvert
         cull disable
         fogparms ( 0 0 0 ) 100
 }
-
-textures/sfx/xlightgreyfog
-{
-        surfaceparm trans
-        surfaceparm nonsolid
-	surfaceparm fog
-	surfaceparm nomarks
-        cull disable
-        fogparms ( 0.4784 0.4784 0.4784 ) 1000
-}
-
 
 textures/fogs/fog_orange
 {
