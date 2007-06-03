@@ -136,6 +136,14 @@ type		"single ffa sp team"
 }
 
 {
+map		"oa_dm7"
+bots		"hnt grunt kyonshi dmo"
+longname	"nameless"
+fraglimit	"15"
+type		"single ffa tourney sp"
+}
+
+{
 map		"oa_pvomit"
 bots		"merman kyonshi gargoyle"
 longname	"Projectile Vomit"
@@ -186,3 +194,9 @@ fraglimit	30
 type		"ctf"
 }
 
+{
+map		"oa_ctf4ish"
+bots		"dmo hnt kyonshi"
+longname	"Free Space"
+type		"ctf"
+}
