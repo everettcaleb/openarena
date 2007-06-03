@@ -1892,7 +1892,7 @@ textures/base_wall/shinybluemetal1
 	}
 }
 
-textures/base_wall/metalfloor_wall_14_specular
+textures/base_wall/metalfloor_wall_14
 {
 	qer_editorimage textures/base_wall/metalfloor_wall_14.jpg
 	{

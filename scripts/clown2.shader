@@ -386,3 +386,66 @@ textures/gothic_trim/gothgrate2
 		depthfunc equal
 	}
 }
+
+textures/base_wall/metalfloor_wall_14_specular
+{
+	qer_editorimage textures/base_wall/metalfloor_wall_14_specular.tga
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/metalfloor_wall_14_specular.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen identitylighting
+		alphagen lightingspecular
+	}
+}
+
+textures/clown/metalfloor_wall_14sr
+{
+	qer_editorimage textures/clown/metalfloor_wall_14sr.tga
+
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/clown/metalfloor_wall_14sr.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen identitylighting
+		alphagen lightingspecular
+	}
+}
+
+textures/base_wall/metalfloor_wall_15ow
+{
+	qer_editorimage textures/base_wall/metalfloor_wall_15ow.tga
+	{
+		map textures/base_wall/metalfloor_wall_15ow.tga
+		rgbgen identity
+	}
+	{
+		map textures/sfx/zap_scroll2.jpg
+		tcmod scale 2 .1
+		tcmod scroll -.4 1
+		blendfunc add
+		rgbgen identity
+	}
+	{
+		map textures/sfx/zap_scroll.jpg
+		tcmod scale 2 .1
+		tcmod scroll .4 -1
+		blendfunc add
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/metalfloor_wall_15ow.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+	}
+}
