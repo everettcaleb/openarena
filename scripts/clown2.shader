@@ -449,3 +449,32 @@ textures/base_wall/metalfloor_wall_15ow
 		blendfunc filter
 	}
 }
+
+textures/base_wall/metalfloor_wall_10
+{
+	qer_editorimage textures/base_wall/metalfloor_wall_10.jpg
+	{
+		map textures/base_wall/metalfloor_wall_10.jpg
+		rgbgen identity
+	}
+	{
+		map textures/effects/tinfx.tga
+		tcgen environment
+		rgbgen vertex
+	}
+	{
+		map textures/base_wall/metalfloor_wall_10.jpg
+		blendfunc add
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/metalfloor_wall_10_glow.tga
+		blendfunc blend
+		rgbGen wave sin 0 1 0 1
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}

@@ -860,72 +860,10 @@ textures/sfx/rain
 
 }
 
-textures/base_wall/metalfloor_wall_15ow
-{
-	qer_editorimage textures/base_wall/metalfloor_wall_15ow.tga
-	{
-		map textures/base_wall/metalfloor_wall_15ow.tga
-		rgbgen identity
-	}
-	{
-		map textures/sfx/zap_scroll2.jpg
-		tcmod scale 2 .1
-		tcmod scroll -.4 1
-		blendfunc add
-		rgbgen identity
-	}
-	{
-		map textures/sfx/zap_scroll.jpg
-		tcmod scale 2 .1
-		tcmod scroll .4 -1
-		blendfunc add
-		rgbgen identity
-	}
-	{
-		map textures/base_wall/metalfloor_wall_15ow.tga
-		blendfunc blend
-		rgbgen identity
-	}
-	{
-		map $lightmap
-		blendfunc filter
-	}
-}
-
-textures/base_wall/metalfloor_wall_10
-{
-	qer_editorimage textures/base_wall/metalfloor_wall_10.jpg
-	{
-		map textures/base_wall/metalfloor_wall_10.jpg
-		rgbgen identity
-	}
-	{
-		map textures/effects/tinfx.tga
-		tcgen environment
-		rgbgen vertex
-	}
-	{
-		map textures/base_wall/metalfloor_wall_10.jpg
-		blendfunc add
-		rgbgen identity
-	}
-	{
-		map textures/base_wall/metalfloor_wall_10_glow.tga
-		blendfunc blend
-		rgbGen wave sin 0 1 0 1
-	}
-	{
-		map $lightmap
-		blendfunc filter
-		rgbgen identity
-	}
-}
-
 textures/sfx/xmetalfloor_wall_14b
 {
 	qer_editorimage textures/sfx/metalfloor_wall_14b.tga
-	q3map_lightimage textures/sfx/mfw14b_glow.jpg
-	q3map_surfacelight 50
+	
 	{
 		map textures/sfx/metalfloor_wall_14b.tga
 		rgbgen identity
@@ -951,8 +889,7 @@ textures/sfx/xmetalfloor_wall_14b
 textures/sfx/xmetalfloor_wall_5b
 {
 	qer_editorimage textures/sfx/metalfloor_wall_7b.tga
-	q3map_lightimage textures/sfx/mfw7b_glow.jpg
-	q3map_surfacelight 50
+	
 	{
 		map textures/sfx/metalfloor_wall_7b.tga
 		rgbgen identity
@@ -978,8 +915,7 @@ textures/sfx/xmetalfloor_wall_5b
 textures/sfx/xmetalfloor_wall_9b
 {
 	qer_editorimage textures/sfx/metalfloor_wall_9b.tga
-	q3map_lightimage textures/sfx/mfw9b_glow.jpg
-	q3map_surfacelight 50
+	
 	{
 		map textures/sfx/metalfloor_wall_9b.tga
 		rgbgen identity
