@@ -890,7 +890,6 @@ textures/base_floor/proto_grate4
 textures/base_floor/cybergrate2
 {
 	surfaceparm metalsteps
-	surfaceparm nodamage
 	cull none
 	{
 		map textures/sfx/portal_sfx_ring_electric.tga
@@ -913,7 +912,6 @@ textures/base_floor/cybergrate2
 textures/base_floor/cybergrate3
 {
 	surfaceparm metalsteps
-	surfaceparm nodamage
 	cull none
 	{
 		map textures/sfx/portal_sfx_ring_electric.tga
