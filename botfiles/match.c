@@ -87,8 +87,7 @@ MTCONTEXT_INITIALTEAMCHAT
 
 	//get the flag
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", " the blue "|"the red "|"the enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "get ", "the blue "|"the red "|"the enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "capture ", "the blue "|"the red "|"the enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", "enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the blue "|"the red "|"the enemy "|"their", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag carrier" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag" = (MSG_GETFLAG, 0);
