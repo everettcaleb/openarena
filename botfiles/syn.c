@@ -157,6 +157,7 @@ CONTEXT_NORMAL
 	[("doing", 1), ("doin", 0)]
 	[("hanging", 1), ("hangin", 0)]
 	[("living", 1), ("livin", 0)]
+	[("chilling", 1), ("chillin", 0)]
 	
 	[("will", 1), ("shall", 1)]
 	[("all right", 1), ("a'ight", 1)]
@@ -172,7 +173,7 @@ CONTEXT_NORMAL
 	[("women", 1), ("girls", 0.1), ("gals", 0.2)]
 	[("picture", 1), ("pic", 1)]
 	[("pictures", 1), ("pics", 1), ("pix", 0)]
-	[("see you", 1), ("cya", 0), ("c u", 0)]
+	[("see you", 1), ("cya", 0), ("c u", 0), ("l8r", 0)]
 	[("father", 1), ("dad", 1), ("daddy", 0.6), ("pappy", 0.5), ("pa", 0.2)]
 	[("mother", 1), ("mom", 1), ("mommy", 1), ("mama", 1), ("momma", 1)]
 	[("brother", 1), ("bro", 0.2)]
@@ -220,7 +221,7 @@ CONTEXT_NAMES
 	[("Major", 1),		("Lara", 0.4),  ("Rail Queen", 0.6), ("Sniper Queen", 0.6)]
 	[("Merman", 1),		("fish breath", 0.1), ("Arial's brother", 0.4), ("Fish Eater", 0.5)]
 	[("Dmo", 1),		("punk boi", 0.1), ("Emo", 0.3), ("Johnny Rotten", 0.6), ("Elmo", 0.4)]
-	[("Penguin", 1),	("FLOSS freak", 0.3), ("windows error", 0.1), ("Geek", 0.6)]
-	[("Hnt", 1),		("Hot stuff", 0.1), ("Clothing Malfunction", 0.5), ("Sucubus", 0.3)]
+	[("Penguin", 1),	("FLOSS fr34k", 0.3), ("windows error", 0.1), ("nerd", 0.6)]
+	[("Hnt", 1),		("Sugar", 0.1), ("Clothing Malfunction", 0.5), ("Sucubus", 0.3)]
 //	[("Orb", 1),		("Psycod the Magnificant", 0.5), ("Slayer of the 19 cats of Doom", 0.5)]
 }

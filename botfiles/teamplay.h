@@ -463,15 +463,15 @@ type "whoisteamleader"
 	//I am the team leader
 type "iamteamleader"
 {
-"I am.";
-"Me.";
-"You can say that I am the leader.";
+"I am the leader.";
+"I lead.";
+"I shall lead.";
 }
 	//defend the base command
 type "cmd_defendbase"
 {
 0, " defend our base.";
-
+0, " set up some D.";
 0, " you should defend our base.";
 }
 	//get the enemy flag command

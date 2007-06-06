@@ -77,7 +77,7 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I want to ", "attack"|"assault", ""|" the "|"their ", "Red Flag"|"Blue Flag"|"Red Obelisk"|"Blue Obelisk"|"base"|"" = (MSG_TASKPREFERENCE, ST_ATTACKER);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I want to harvest", " skulls"|" cubes"|"" = (MSG_TASKPREFERENCE, ST_ATTACKER);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I want to be ", "on "|"", "offense" = (MSG_TASKPREFERENCE, ST_ATTACKER);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I will ","attack"|"assault", ""|" the "|"their ", "Red Obelisk"|"Blue Obelisk"|"base"|"" = (MSG_TASKPREFERENCE, ST_ATTACKER);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I will ", "attack"|"assault", ""|" the "|" their ", "Red Obelisk"|"Blue Obelisk"|"base"|"" = (MSG_TASKPREFERENCE, ST_ATTACKER);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I will be ", "on "|"", "offense" = (MSG_TASKPREFERENCE, ST_ATTACKER);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I will harvest", " skulls"|" cubes"|"" = (MSG_TASKPREFERENCE, ST_ATTACKER);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I am ", "on "|"", "offense" = (MSG_TASKPREFERENCE, ST_ATTACKER);
@@ -86,12 +86,13 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "I want to roam" = (MSG_TASKPREFERENCE, 0);
 
 	//get the flag
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", " the blue "|"the red "|"the enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", "enemy "|"their ", "flag" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the blue "|"the red "|"the enemy "|"their", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": capture "|"get ", "the blue "|"the red "|"the enemy "|"their "|"the "|"enemy ", "flag" = (MSG_GETFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " capture "|"get ", "the blue "|"the red "|"the enemy "|"their "|"the "|"enemy ", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", PURE_CRAP, " flag ", MORE_CRAP = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag carrier" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " kill the flag carrier" = (MSG_GETFLAG, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " kill the flag" = (MSG_GETFLAG, ST_ADDRESSED);
 
 	//attack the enemy base
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " attack ", "the enemy "|"the red "|"the blue "|"their ", "base"|"flag"|"obelisk" = (MSG_ATTACKENEMYBASE, ST_ADDRESSED);
@@ -118,19 +119,15 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " hunt down ", ENEMY = (MSG_KILL, ST_ADDRESSED);
 
 	//get item
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", "the ", ITEM = (MSG_GETITEM, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "get ", "the ", ITEM = (MSG_GETITEM, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": go get ", "the ", ITEM = (MSG_GETITEM, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the ", ITEM = (MSG_GETITEM, ST_ADDRESSED);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go get ", "the ", ITEM = (MSG_GETITEM, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " grab the "|" go grab the ", ITEM = (MSG_GETITEM, ST_ADDRESSED);
+	
 
 	//defend/guard a key area
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "defend "|"guard ", "the checkpoint "|"the waypoint ", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, ST_TIME);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "defend "|"guard ", "the checkpoint "|"the waypoint ", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, ST_TIME);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "defend "|"guard ", "the checkpoint "|"the waypoint ", KEYAREA = (MSG_DEFENDKEYAREA, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "defend "|"guard ", "the "|"checkpoint "|"waypoint ", KEYAREA = (MSG_DEFENDKEYAREA, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " defend "|" guard ", "the ", "checkpoint "|"waypoint ", KEYAREA, " for", TIME = (MSG_DEFENDKEYAREA, $evalint(ST_ADDRESSED|ST_TIME));
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " defend "|" guard ", "the checkpoint "|"the waypoint ", KEYAREA = (MSG_DEFENDKEYAREA, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " defend the "|" guard the ", KEYAREA = (MSG_DEFENDKEYAREA, ST_ADDRESSED);
 
 	//camp somewhere ("hunk camp here", "hunk camp there", "hunk camp near the rl", etc.)
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " camp ", "there "|"over there ", " for", TIME = (MSG_CAMP, $evalint(ST_ADDRESSED|ST_TIME|ST_THERE));
@@ -150,13 +147,13 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "go to base" = (MSG_RUSHBASE, 0);
 
 	//return the flag
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " return ", "our"|"the", " flag" = (MSG_RETURNFLAG, ST_ADDRESSED);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": return ", "our"|"the", " flag", PURE_CRAP = (MSG_RETURNFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " return ", PURE_CRAP, " flag" = (MSG_RETURNFLAG, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": return ", MORE_CRAP, " flag", PURE_CRAP = (MSG_RETURNFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": return the", MESSAGE, " flag", PURE_CRAP = (MSG_RETURNFLAG, 0);
 
 
 	//who is the team leader
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": who ", "is ", "the leader"|"the team leader"|"team leader"|"leader", "?"|"" = (MSG_WHOISTEAMLAEDER, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": who is ", "the leader"|"the team leader"|"team leader"|"leader", "?"|"" = (MSG_WHOISTEAMLAEDER, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": is there a ", "leader"|"team leader", "?"|"" = (MSG_WHOISTEAMLAEDER, 0);
 
 	//become the team leader
@@ -166,12 +163,12 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", TEAMMATE, " is ", THE_TEAM, "leader" = (MSG_STARTTEAMLEADERSHIP, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", TEAMMATE, " you are ", THE_TEAM, "leader" = (MSG_STARTTEAMLEADERSHIP, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", TEAMMATE, " will be ", THE_TEAM, "leader" = (MSG_STARTTEAMLEADERSHIP, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I ", "am "|"lead", "the leader"|"the team leader"|"team leader"|"leader"|"" = (MSG_STARTTEAMLEADERSHIP, ST_I);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I am ", "the leader"|"the team leader"|"team leader"|"leader" = (MSG_STARTTEAMLEADERSHIP, ST_I);
 	
 
 	//stop being the team leader
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", TEAMMATE, " is not ", THE_TEAM, "leader" = (MSG_STOPTEAMLEADERSHIP, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "I quit being leader"|"I no longer lead" = (MSG_STOPTEAMLEADERSHIP, ST_I);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", "I quit being leader"|"I no longer lead"|"i stop being the leader" = (MSG_STOPTEAMLEADERSHIP, ST_I);
 	
 
 	//wait for someone
@@ -314,7 +311,7 @@ MTCONTEXT_TEAMMATE
 
 MTCONTEXT_ADDRESSEE
 {
-	"everyone"|"everybody" = (MSG_EVERYONE, 0);
+	"Everyone"|"Everybody" = (MSG_EVERYONE, 0);
 	TEAMMATE, " and "|", "|","|" ,", MORE = (MSG_MULTIPLENAMES, 0);
 	TEAMMATE = (MSG_NAME, 0);
 } 
