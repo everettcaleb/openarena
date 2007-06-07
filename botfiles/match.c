@@ -83,11 +83,13 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I am ", "on "|"", "offense" = (MSG_TASKPREFERENCE, ST_ATTACKER);
 
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": I want to roam" = (MSG_TASKPREFERENCE, ST_ROAMER);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, "I want to roam" = (MSG_TASKPREFERENCE, 0);
+	
 
 	//get the flag
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": capture "|"get ", "the blue "|"the red "|"the enemy "|"their "|"the "|"enemy ", "flag" = (MSG_GETFLAG, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " capture "|"get ", "the blue "|"the red "|"the enemy "|"their "|"the "|"enemy ", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": capture ", "the blue "|"the enemy "|"the red "|"their "|"the "|"enemy ", "flag" = (MSG_GETFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", "the blue "|"the red "|"the enemy "|"their "|"the "|"enemy ", "flag" = (MSG_GETFLAG, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " capture ", "the blue "|"the enemy"|"the red "|"their "|"the "|"enemy ", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " get ", "the blue "|"the enemy"|"the red "|"their "|"the "|"enemy ", "flag" = (MSG_GETFLAG, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get ", PURE_CRAP, " flag ", MORE_CRAP = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag carrier" = (MSG_GETFLAG, 0);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": kill the flag" = (MSG_GETFLAG, 0);
@@ -95,7 +97,7 @@ MTCONTEXT_INITIALTEAMCHAT
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " kill the flag" = (MSG_GETFLAG, ST_ADDRESSED);
 
 	//attack the enemy base
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " attack ", "the enemy "|"the red "|"the blue "|"their ", "base"|"flag"|"obelisk" = (MSG_ATTACKENEMYBASE, ST_ADDRESSED);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " attack ", "enemy "|"the enemy "|"the red "|"the blue "|"their ", "base"|"flag"|"obelisk" = (MSG_ATTACKENEMYBASE, ST_ADDRESSED);
 
 	//go harvesting
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " harvest" = (MSG_HARVEST, ST_ADDRESSED);
