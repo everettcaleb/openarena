@@ -60,6 +60,7 @@ chat "Hnt"
 		2, ", I let you win.";
 		4, " has changed a lot, it is much faster now.";
 		"Is it over yet?";
+		"I can remember when ", 4, " didn't suck.";
 		// 0 = bot name
 		// 1 = random opponent
 		// 2 = opponent in first place
@@ -81,7 +82,6 @@ chat "Hnt"
 	{
 		2, " cheated.";
 		"I had a hang nail, so of course I lost.";
-		"Scheisse!";
 		"So much for my bluster...";
 		"I felt bad for you so I let you win.";
 		// 0 = bot name
@@ -95,7 +95,8 @@ chat "Hnt"
 	{
 		0, ", didn't your mother ever tell you it was rude to interrupt a conversation?";
 		"I am going to shove that ", 1, " down your throat if you do that again!";
-		"Hey asshole!  I was trying to hold a conversation here... do you mind?";
+		"Hey jerk!  I was trying to hold a conversation here... do you mind?";
+		"Jerk";
 		DEATH_TALKING;
 		// 0 = shooter
 		// 1 = weapon used by shooter
@@ -271,14 +272,14 @@ chat "Hnt"
 	} //end type
 	type "random_misc" //miscellanous chats initiated randomly
 	{
-		"No, really... Who let the dogs out?";
 		"this one time, at band camp...";
-		GRRLTALK0;
+		GRRLTALK1;
 		MISC4;
 		"Has anyone tried out the new ", 5, "?  Is it worth the upgrade?";
 		MISC1;
 		"You would be surprised what you can do with a ", animal, " a ", food, " and ", peeps, ".";
-		"Why doesn't Grism call me?";
+		"Next time you see Gargoyle tell him to call me, mmmkay?";
+		neuterbot, " is cute.";
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
 		// 4 = level's title

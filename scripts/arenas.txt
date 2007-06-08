@@ -94,13 +94,37 @@ fraglimit	30
 type		"ctf"
 }
 
+//for an even multiple of 4
+//{
+//map		"delta"
+//bots		"merman major"
+//longname	"mission over mars"
+//fraglimit	"20"
+//type		"ctf"
+//}
 
 {
-map		"delta"
-bots		"merman major"
-longname	"mission over mars"
-fraglimit	"20"
-type		"ctf"
+map		"oa_dm1"
+bots		"kyonshi major merman"
+longname	"Place of Two Deaths"
+fraglimit	"25"
+type		"single ffa sp team"
+}
+
+{
+map		"oa_dm2"
+bots		"dmo kyonshi major merman grunt hnt"
+longname	"Claustrophobopolis"
+fraglimit	"30"
+type		"single ffa sp team"
+}
+
+{
+map		"oa_dm3"
+bots		"dmo kyonshi major merman penguin"
+longname	"The Abondoned Base"
+fraglimit	"30"
+type		"single ffa sp team"
 }
 
 {
@@ -117,22 +141,6 @@ bots		"merman"
 longname	"The Dark Zone"
 fraglimit	"10"
 type		"sp tourney"
-}
-
-{
-map		"oa_dm1"
-bots		"kyonshi major merman"
-longname	"Place of Two Deaths"
-fraglimit	"25"
-type		"single ffa sp team"
-}
-
-{
-map		"oa_dm2"
-bots		"dmo kyonshi major merman grunt hnt"
-longname	"Claustrophobopolis"
-fraglimit	"30"
-type		"single ffa sp team"
 }
 
 {

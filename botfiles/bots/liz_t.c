@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
-chat "Penguin"
+chat "Liz"
 {
 	//the teamplay.h file is included for all kinds of teamplay chats
 	#include "teamplay.h"
@@ -29,9 +29,6 @@ chat "Penguin"
 	//======================================================
 	type "game_enter" //initiated when the bot enters the game
 	{
-		"Stop using winblows";
-		"GNU RU1Z3!";
-		"Linus told me to skin you alive, windoze users.";
 		HELLO1;
 		// 0 = bot name
 		// 1 = random opponent
@@ -39,8 +36,6 @@ chat "Penguin"
 	} //end type
 	type "game_exit" //initiated when the bot exits the game
 	{
-		"I need to recompile my qvms, l8r.";
-		"I need to go burn a Win98 CD";
 		GOODBYE1;
 		GOODBYE0;
 		// 0 = bot name
@@ -97,7 +92,6 @@ chat "Penguin"
 		"Try harder next time.";
 		"Wuss";
 		"Heh, you suck.";
-		"Nice shooting, not.";
 		// 0 = shooter
 		// 1 = weapon used by shooter
 	} //end type
@@ -151,6 +145,7 @@ chat "Penguin"
 	{
 		"Aww crap!";
 		"Shutup!";
+		"I meant to do that.";
 		DEATH_SUICIDE2;
 		DEATH_SUICIDE1;
 		
@@ -188,7 +183,7 @@ chat "Penguin"
 	} //end type
 	type "death_praise" //praise initiated when the bot died
 	{
-		"Linus, you are no longer my god, ", 0, " is.";
+		
 		D_PRAISE0;
 		D_PRAISE1;
 		// 0 = enemy name
@@ -206,7 +201,7 @@ chat "Penguin"
 	{
 		"LOL!";
 		"Too easy";
-		"Try recompiling with -pipe -O12 -fweb -funswitch-loops -funroll-all-loops -funit-at-a-time -fsched2-use-superblocks -frename-registers -fprefetch-loop-arrays -finline-limit=32768 -ffast-math -fbranch-target-load-optimize2";
+		
 
 	
 		// 0 = enemy name
@@ -219,9 +214,6 @@ chat "Penguin"
 	} //end type
 	type "kill_insult" //insult initiated when the bot killed someone
 	{
-		"p0wn3d";
-		"you are not 1337";
-		"Bi11 G473z owns you.";
 		KILL_INSULT4;
 		KILL_INSULT2;
 		
@@ -238,11 +230,8 @@ chat "Penguin"
 	type "random_insult" //insult initiated randomly (just when the bot feels like it)
 	{
 		"Your breath stinks";
-		"Get a hair cut";
-		"Get a real job";
-		"Get a life";
-		"You need 1337 lessons";
-		"I nailed your mom last night.";
+		"Get off your dead butt and something for a change.";
+		"Life got you down?  Give it up.";
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
 		// 4 = level's title
@@ -250,13 +239,9 @@ chat "Penguin"
 	} //end type
 	type "random_misc" //miscellanous chats initiated randomly
 	{
-		"Has anyone tried kernel 2.8.56-rc3-mm45, yet?";
-		"Binary packaging encourages sloppy design, contrast with the stochastic API unit testing which occurs naturally with all the building with different configurations.";
-		"It could be the purpose of your life is only to serve as a warning to others";
-		"Don't put that finger there, you don't know where's it been!";
-		"I miss Richard Nixon...";
-		"Viva la tux!";
+		
 		GUYTALK1;
+		GRRLTALK0;
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
 		// 4 = level's title

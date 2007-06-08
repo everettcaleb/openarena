@@ -1957,6 +1957,11 @@ textures/gothic_light/flicker_light15k
 		blendfunc filter
 	}
 	{
+		map textures/base_light/proto_light2.jpg
+		blendfunc add
+		rgbgen wave triangle 4 4 0 6
+	}
+	{
 		map textures/gothic_light/gothic_light2_blend.jpg
 		blendfunc add
 		rgbgen wave noise .4 .4 0 .9
