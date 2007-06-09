@@ -68,6 +68,9 @@ zip -9r pak4-textures.pk3 textures/* -x \*svn* -x textures/effects/* -x textures
 zip -9r pak4-textures.pk3 env/* -x \*svn*
 
 zip -9r pak5-TA.pk3 models/weapons/* -x \*svn*
+zip -9r pak5-TA.pk3 ui/* -x \*svn*
+zip -9r pak5-TA.pk3 gfx/ui/* -x \*svn*
+zip -9r pak5-TA.pk3 fonts/* -x \*svn*
 
 zip -9r pak6-misc.pk3 video/* -x \*svn*
 zip -9r pak6-misc.pk3 botfiles/* -x \*svn*
