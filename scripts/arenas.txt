@@ -69,13 +69,15 @@ bots            "kyonshi gargoyle"
 fraglimit	20
 type            "single tourney ffa sp"
 }
-{
-	map "oa_ctf2"
-	bots "kyonshi"
-	longname "OA_CTF2"
-	fraglimit 20
-	type "tourney ctf"
-}
+
+// for a multiple of 4
+//{
+//	map "oa_ctf2"
+//	bots "kyonshi"
+//	longname "OA_CTF2"
+//	fraglimit 20
+//	type "tourney ctf"
+//}
 
 
 {
@@ -94,7 +96,7 @@ fraglimit	30
 type		"ctf"
 }
 
-//for an even multiple of 4
+//for a multiple of 4
 //{
 //map		"delta"
 //bots		"merman major"
@@ -122,9 +124,17 @@ type		"single ffa sp team"
 {
 map		"oa_dm3"
 bots		"dmo kyonshi major merman penguin"
-longname	"The Abondoned Base"
+longname	"The Abandoned Base"
 fraglimit	"30"
 type		"single ffa sp team"
+}
+
+{
+map		"oa_dm4"
+bots		"dmo hnt gargoyle major"
+longname	"The Bad Place"
+fraglimit	"30"
+type		"single ffa sp tourney"
 }
 
 {
