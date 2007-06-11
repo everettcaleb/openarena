@@ -160,14 +160,14 @@ longname	"nameless"
 fraglimit	"15"
 type		"single ffa tourney sp"
 }
-
-{
-map		"oa_pvomit"
-bots		"merman kyonshi gargoyle"
-longname	"Projectile Vomit"
-fraglimit	"25"
-type		"single ffa tourney sp"
-}
+// non-free skybox used :(
+//{
+//map		"oa_pvomit"
+//bots		"merman kyonshi gargoyle"
+//longname	"Projectile Vomit"
+//fraglimit	"25"
+//type		"single ffa tourney sp"
+//}
 
 {
 map		"oa_shine"

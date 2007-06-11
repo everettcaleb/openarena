@@ -937,3 +937,23 @@ textures/sfx/xmetalfloor_wall_9b
 		rgbgen identity
 	}
 }
+
+textures/sfx/fan_grate
+{
+	surfaceparm metalsteps
+	surfaceparm nomarks
+	cull none
+	{
+		map textures/sfx/fan_grate.tga
+		blendfunc blend
+		rgbgen identity
+		alphafunc GE128
+		depthwrite
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+		depthfunc equal
+	}
+}
