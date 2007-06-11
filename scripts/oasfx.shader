@@ -957,3 +957,132 @@ textures/sfx/fan_grate
 		depthfunc equal
 	}
 }
+
+textures/sfx/launchpad_blocks17
+{
+	qer_editorimage textures/sfx/launchpad03.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx/tread.jpg
+		tcmod scroll 0 1
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch.jpg
+		blendfunc add
+		tcmod scroll 0 4
+		rgbgen wave square 0 .7 0 1.4
+	}
+	{
+		map textures/sfx/launchpad03.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch2.jpg
+		blendfunc add
+		rgbgen wave square 0 .7 0 1.4
+	}
+}
+
+textures/sfx/launchpad_blocks18d
+{
+	qer_editorimage textures/sfx/launchpad03.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx/tread.jpg
+		tcmod scroll 0 1
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch.jpg
+		blendfunc add
+		tcmod scroll 0 4
+		rgbgen wave square 0 .7 0 1.4
+	}
+	{
+		map textures/sfx/launchpad03.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch2.jpg
+		blendfunc add
+		rgbgen wave square 0 .7 0 1.4
+	}
+}
+
+textures/sfx/launchpad_diamond
+{
+	qer_editorimage textures/sfx/launchpad03.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx/tread.jpg
+		tcmod scroll 0 1
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch.jpg
+		blendfunc add
+		tcmod scroll 0 4
+		rgbgen wave square 0 .7 0 1.4
+	}
+	{
+		map textures/sfx/launchpad03.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch2.jpg
+		blendfunc add
+		rgbgen wave square 0 .7 0 1.4
+	}
+
+}
+
+textures/sfx/launchpad_metalbridge04d
+{
+	qer_editorimage textures/sfx/launchpad03.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx/tread.jpg
+		tcmod scroll 0 1
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch.jpg
+		blendfunc add
+		tcmod scroll 0 4
+		rgbgen wave square 0 .7 0 1.4
+	}
+	{
+		map textures/sfx/launchpad03.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch2.jpg
+		blendfunc add
+		rgbgen wave square 0 .7 0 1.4
+	}
+}
