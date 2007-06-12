@@ -80,4 +80,11 @@ zip -9r pak6-misc.pk3 scripts/bots.txt -x \*svn*
 zip -9r pak6-misc.pk3 maps/*.aas -x \*svn*
 #zip -9r pak6-misc.pk3 demos/* -x *svn*
 
+
+zip -9r mp-pak0.pk3 CREDITS
+zip -9r mp-pak0.pk3 COPYING
+cd missionpack
+zip -9r ../mp-pak0.pk3 vm/* -x \*svn*
+zip -9r ../mp-pak0.pk3 textures/* -x \*svn*
+
 exit 0
