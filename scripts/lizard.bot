@@ -1,0 +1,6 @@
+{
+name		Liz
+model		liz
+aifile	bots/liz_c.c
+}
+
