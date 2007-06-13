@@ -50,6 +50,12 @@ model		hnt
 aifile	bots/hnt_c.c
 }
 
+{
+name		Liz
+model		liz
+aifile	bots/liz_c.c
+}
+
 // for the sake of the ctf menu
 
 

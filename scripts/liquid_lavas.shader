@@ -270,7 +270,12 @@ textures/liquids/lavahell_xdm1
 		tcmod scroll -.01 .005
 		tcMod turb .5 -0.4 0.5 0.1
 	}
-
+	{
+		map textures/liquids/lavahell4.tga
+		blendfunc blend
+		tcmod scroll -.02 .006
+		tcmod turb .5 -0.4 0.5 0.1
+	}
 }
 
 textures/liquids/lavahell_2000
