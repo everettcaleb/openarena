@@ -76,6 +76,7 @@ models/players/slshish/skirt
 
 models/players/slshish/jettest
 {
+	cull disable
 	{
 		clampmap models/players/slshish/jet/jet1.tga
 		blendfunc add
@@ -110,6 +111,7 @@ models/players/slshish/jettest
 
 models/players/slshish/jet2
 {
+	cull disable
 	{
 		animmap 30 models/players/slshish/jet/jet3a.tga models/players/slshish/jet/jet3b.tga models/players/slshish/jet/jet3c.tga models/players/slshish/jet/jet3d.tga models/players/slshish/jet/jet3e.tga models/players/slshish/jet/jet3f.tga models/players/slshish/jet/jet3g.tga models/players/slshish/jet/jet3h.tga 
 		blendfunc add
