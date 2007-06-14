@@ -1,6 +1,7 @@
 h_face,models/players/slshish/head.tga
 h_eyes,models/players/slshish/eyes.tga
 h_hair,models/players/slshish/hair.tga
-h_neko,nothing
+h_neko,models/players/slshish/neko.tga
+
 
 tag_head
