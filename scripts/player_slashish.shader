@@ -62,6 +62,7 @@ models/players/slshish/redskirt
 	{
 		map models/players/slshish/redskirt.tga
 		rgbGen lightingDiffuse
+		alphaFunc GE128
 	}
 }
 
