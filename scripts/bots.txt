@@ -56,6 +56,12 @@ model		liz
 aifile	bots/liz_c.c
 }
 
+{
+name		Slshish
+model		slshish
+aifile	bots/slshish_c.c
+}
+
 // for the sake of the ctf menu
 
 
