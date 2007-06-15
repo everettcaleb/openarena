@@ -1086,3 +1086,99 @@ textures/sfx/launchpad_metalbridge04d
 		rgbgen wave square 0 .7 0 1.4
 	}
 }
+
+textures/sfx2/ntrl_launchpad
+{
+	qer_editorimage textures/sfx/launchpad03.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx/tread.jpg
+		tcmod scroll 0 1
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch.jpg
+		blendfunc add
+		tcmod scroll 0 4
+		rgbgen wave square 0 .7 0 1.4
+	}
+	{
+		map textures/sfx/launchpad03.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/sfx/nlaunch2.jpg
+		blendfunc add
+		rgbgen wave square 0 .7 0 1.4
+	}
+}
+
+textures/sfx2/blue_launchpad
+{
+	qer_editorimage textures/sfx/launchpad03.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx/tread.jpg
+		tcmod scroll 0 1
+		rgbgen identity
+	}
+	{
+		map textures/sfx/blaunch.jpg
+		blendfunc add
+		tcmod scroll 0 4
+		rgbgen wave square 0 .7 0 1.4
+	}
+	{
+		map textures/sfx/launchpad03.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/sfx/blaunch2.jpg
+		blendfunc add
+		rgbgen wave square 0 .7 0 1.4
+	}
+}
+
+textures/sfx2/red_launchpad
+{
+	qer_editorimage textures/sfx/launchpad03.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx/tread.jpg
+		tcmod scroll 0 1
+		rgbgen identity
+	}
+	{
+		map textures/sfx/rlaunch.jpg
+		blendfunc add
+		tcmod scroll 0 4
+		rgbgen wave square 0 .7 0 1.4
+	}
+	{
+		map textures/sfx/launchpad03.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/sfx/rlaunch2.jpg
+		blendfunc add
+		rgbgen wave square 0 .7 0 1.4
+	}
+}
