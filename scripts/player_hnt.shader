@@ -7,6 +7,16 @@ models/players/hnt/clothes
 		alphaFunc GE128
 	}
 }
+
+models/players/hnt/drkclothes
+{
+	cull disable
+	{
+		map models/players/hnt/drkclothes.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
 models/players/hnt/gldclothes
 {
 	cull disable
@@ -31,6 +41,16 @@ models/players/hnt/hair
 	cull disable
 	{
 		map models/players/hnt/skin.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/hnt/drkhair
+{
+	cull disable
+	{
+		map models/players/hnt/drkskin.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
