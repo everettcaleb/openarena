@@ -15,4 +15,5 @@ clown2
 mc-oa
 terrain
 oasfx
-
+nki
+islandctf
