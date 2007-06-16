@@ -53,25 +53,25 @@ aifile	bots/hnt_c.c
 {
 name		Sly
 model		hnt/sly
-aifile	bots/hnt_c.c
+aifile	bots/sly_c.c
 }
 
 {
 name		Dark
 model		hnt/dark
-aifile	bots/hnt_c.c
+aifile	bots/dark_c.c
 }
 
 {
 name		Tanisha
 model		hnt/tanisha
-aifile	bots/hnt_c.c
+aifile	bots/tanisha_c.c
 }
 
 {
 name		Rai
 model		hnt/rai
-aifile	bots/hnt_c.c
+aifile	bots/rai_c.c
 }
 
 {
