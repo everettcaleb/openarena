@@ -1151,3 +1151,16 @@ textures/skies2/ctf6sky_ter
 		tcmod scroll -0.013 -0.008
 	}	
 }
+
+textures/skies2/nebula2
+{
+	qer_editorimage textures/skies/nebulae.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/nebulae.jpg
+	q3map_surfacelight 100
+	q3map_sun .5 .5 .5 35 65 45
+	skyparms env/nebulae/nebulae 2048 -
+}

@@ -53,35 +53,12 @@ textures/clown/bleeding-wall
 	}
 	{
 		map textures/clown/fleshy_t.tga
-		blendFunc GL_DST_COLOR GL_ZERO
+		blendFunc gl_dst_color gl_zero
 		rgbGen identity
 		alphaFunc GT0
 		depthWrite
 		tcMod scroll 0 -.1
-	}
-	{
-		map textures/clown/flow_t1.tga
-		blendFunc GL_DST_COLOR GL_ZERO
-		rgbGen identity
-		alphaFunc GT0
-		depthWrite
-		tcMod turb .02 .02 .02 .02
-	}
-	{
-		map textures/clown/flow_t6.tga
-		blendFunc GL_DST_COLOR GL_ZERO
-		rgbGen identity
-		alphaFunc GT0
-		depthWrite
-		tcMod scroll 0 -.06
-	}
-	{
-		map textures/clown/flow_t5.tga
-		blendFunc GL_DST_COLOR GL_ZERO
-		rgbGen identity
-		alphaFunc GT0
-		depthWrite
-		tcMod scroll 0 -.03
+		tcMod turb .02 .02 .5 .2
 	}
 }
 

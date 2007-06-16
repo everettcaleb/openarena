@@ -223,5 +223,6 @@ CONTEXT_NAMES
 	[("Dmo", 1),		("punk boi", 0.1), ("Emo", 0.3), ("Johnny Rotten", 0.6), ("Elmo", 0.4)]
 	[("Penguin", 1),	("FLOSS fr34k", 0.3), ("windows error", 0.1), ("nerd", 0.6)]
 	[("Hnt", 1),		("Sugar", 0.1), ("Clothing Malfunction", 0.5), ("Sucubus", 0.3)]
+	[("Slshish", 1),		("pr0n star", 0.1), ("skewl chick", 0.4), ("teeny bopper", 0.5)]
 //	[("Orb", 1),		("Psycod the Magnificant", 0.5), ("Slayer of the 19 cats of Doom", 0.5)]
 }

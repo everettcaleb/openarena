@@ -812,6 +812,10 @@ femalebot = {
 	"Kyonshi";
 	"Major";
 	"Hnt";
+	"Slshish";
+	"Sly";
+	"Dark";
+	
 }
 
 malebot = {
@@ -840,6 +844,9 @@ botnames = {
 	"Liz";
 	"Sarge";
 	"Grunt";
+	"Sly";
+	"Dark";
+	"Slshish";
 }
 
 negative = { 
@@ -951,6 +958,7 @@ peeps = {
 	"Lao Tzu";
 	"M. K. Ghandhi";
 	"Tsun Tzu";
+	"Jack Thompson";
 	
 }
 

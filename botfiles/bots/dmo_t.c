@@ -197,6 +197,7 @@ chat "Dmo"
 		"Das schlechteste setzt sich durch";
 		"Wuss";
 		"Sissy";
+		"Ya pansy!";
 		DEATH_INSULT2;
 		DEATH_INSULT0;
 		// 0 = enemy name
@@ -214,6 +215,7 @@ chat "Dmo"
 	//======================================================
 	type "kill_rail" //initiated when the bot kills someone with rail gun
 	{
+		"Pff, try a real weapon next time.";
 		KILL_RAIL1;
 		KILL_RAIL0;
 		// 0 = enemy name
@@ -257,6 +259,7 @@ chat "Dmo"
 	} //end type
 	type "random_misc" //miscellanous chats initiated randomly
 	{
+		
 		GUYTALK1;
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot

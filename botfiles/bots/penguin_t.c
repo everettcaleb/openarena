@@ -32,7 +32,7 @@ chat "Penguin"
 		"Stop using winblows";
 		"GNU RU1Z3!";
 		"Linus told me to skin you alive, windoze users.";
-		HELLO1;
+		
 		// 0 = bot name
 		// 1 = random opponent
 		// 4 = level's title
@@ -41,6 +41,7 @@ chat "Penguin"
 	{
 		"I need to recompile my qvms, l8r.";
 		"I need to go burn a Win98 CD";
+		"Pizza's here, l8r";
 		GOODBYE1;
 		GOODBYE0;
 		// 0 = bot name
@@ -79,6 +80,10 @@ chat "Penguin"
 		2, " must be an Arena Lord.";
 		1, " kept getting in my way.";
 		4, " has never been good to me.";
+		2, " is a known cheater... the only way I could have lost.";
+		2, " has a more optimized build than I.";
+		2, " what use flags did you use in your compile?";
+		4, " isn't optimized properly.";
 		// 0 = bot name
 		// 1 = random opponent
 		// 2 = opponent in first place
@@ -88,6 +93,9 @@ chat "Penguin"
 	//======================================================
 	type "hit_talking" //bot is hit while chat balloon is visible; lecture attacker on poor sportsmanship
 	{
+		"Jerk";
+		"Schmuck";
+		"Putz";
 		DEATH_TALKING;
 		// 0 = shooter
 		// 1 = weapon used by shooter
@@ -129,7 +137,7 @@ chat "Penguin"
 	type "death_lava" //initiated when the bot dies in lava
 	{
 		"It burns!";
-		"land conservation";
+		"That's hot.";
 		DEATH_SUICIDE0;
 		DEATH_SUICIDE1;
 		// 0 = random opponent
@@ -189,6 +197,7 @@ chat "Penguin"
 	type "death_praise" //praise initiated when the bot died
 	{
 		"Linus, you are no longer my god, ", 0, " is.";
+		"Was that the new ", 1, "?";
 		D_PRAISE0;
 		D_PRAISE1;
 		// 0 = enemy name
@@ -206,7 +215,8 @@ chat "Penguin"
 	{
 		"LOL!";
 		"Too easy";
-		"Try recompiling with -pipe -O12 -fweb -funswitch-loops -funroll-all-loops -funit-at-a-time -fsched2-use-superblocks -frename-registers -fprefetch-loop-arrays -finline-limit=32768 -ffast-math -fbranch-target-load-optimize2";
+		"Try recompiling with -pipe -O12 -fweb -funswitch-loops -funroll-all-loops -funit-at-a-time -fsched2-use-superblocks -frename-registers -fprefetch-loop-arrays -finline-limit=32768 -ffast-math -fbranch-target-load-optimize2"; //may be too long
+		"tsk... sad, really.  I almost hated to do that.";
 
 	
 		// 0 = enemy name
@@ -242,7 +252,7 @@ chat "Penguin"
 		"Get a real job";
 		"Get a life";
 		"You need 1337 lessons";
-		"I nailed your mom last night.";
+		"I so nailed your mom last night.";
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
 		// 4 = level's title
