@@ -8,7 +8,7 @@ aifile	bots/gargoyle_c.c
 
 {
 name		Grism
-model		sarge
+model		sarge/classic
 aifile	bots/grism_c.c
 }
 
@@ -47,6 +47,18 @@ aifile	bots/penguin_c.c
 {
 name		Hnt
 model		hnt
+aifile	bots/hnt_c.c
+}
+
+{
+name		Sly
+model		hnt/sly
+aifile	bots/hnt_c.c
+}
+
+{
+name		Dark
+model		hnt/dark
 aifile	bots/hnt_c.c
 }
 
