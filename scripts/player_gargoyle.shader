@@ -167,3 +167,31 @@ models/players/gargoyle/baredold
 	}
 }
 
+// TEAM SKIN EXPLOSION
+
+models/players/gargoyle/morphedgarg_red
+{
+	{
+		map models/players/gargoyle/morphedgarg_red.tga
+	}
+	{
+		map models/players/gargoyle/morphedshader_red.tga
+		blendfunc add
+		tcMod scroll -0.2 0.3
+		tcGen environment 
+	}
+	{
+		map models/players/gargoyle/morphedgarg_red.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/gargoyle/morphedwings_red
+{
+	cull disable
+	{
+		map models/players/gargoyle/morphedwings_red.tga
+		blendfunc add
+	}
+}

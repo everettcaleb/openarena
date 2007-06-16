@@ -1,6 +1,5 @@
-h_face,models/players/hnt/azskin.tga
-h_hair,models/players/hnt/redhair.tga
-h_clothes,models/players/hnt/redclothes.tga
-
+h_face,models/players/hnt/skin.tga
+h_hair,models/players/hnt/hair.tga
+h_clothes,models/players/hnt/clothes.tga
 
 tag_head

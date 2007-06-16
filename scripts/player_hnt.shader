@@ -82,3 +82,101 @@ models/players/hnt/slyclothes
 		alphaFunc GE128
 	}
 }
+
+
+// TEAM SKIN EXPLOSION
+
+models/players/hnt/clothes_blue
+{
+	cull disable
+	{
+		map models/players/hnt/clothes_blue.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/hnt/clothes_red
+{
+	cull disable
+	{
+		map models/players/hnt/clothes_red.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/hnt/drkclothes_blue
+{
+	cull disable
+	{
+		map models/players/hnt/drkclothes_blue.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/hnt/gldclothes_red
+{
+	cull disable
+	{
+		map models/players/hnt/gldclothes_red.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/hnt/redclothes_blue
+{
+	cull disable
+	{
+		map models/players/hnt/redclothes_blue.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/hnt/hair
+{
+	cull disable
+	{
+		map models/players/hnt/skin.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+
+models/players/hnt/gldhair_red
+{
+	cull disable
+	{
+		map models/players/hnt/gldskin_red.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/hnt/redhair_blue
+{
+	cull disable
+	{
+		map models/players/hnt/azskin_blue.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/hnt/slyclothes_blue
+{
+	cull disable
+	{
+		map models/players/hnt/sly2_blue.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/hnt/slyclothes_red
+{
+	cull disable
+	{
+		map models/players/hnt/sly2_red.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+

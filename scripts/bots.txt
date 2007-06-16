@@ -63,6 +63,18 @@ aifile	bots/hnt_c.c
 }
 
 {
+name		Tanisha
+model		hnt/tanisha
+aifile	bots/hnt_c.c
+}
+
+{
+name		Rai
+model		hnt/rai
+aifile	bots/hnt_c.c
+}
+
+{
 name		Liz
 model		liz
 aifile	bots/liz_c.c
