@@ -1011,3 +1011,143 @@ textures/skies/moons1
 	}
 	
 }
+
+textures/skies/tim_tourney2
+{
+	qer_editorimage textures/skies/s18.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/s17.tga
+	q3map_surfacelight 100
+	q3map_sun .5 .5 .5 75 65 45
+	skyparms - 1024 -
+	{
+		map textures/skies/s18.tga
+		tcmod scale 2 3
+		tcmod scroll 0.03 0.03
+	}
+	{
+		map textures/skies/s14.tga
+		blendfunc add
+		tcmod scale 3 2
+		tcmod scroll 0.015 0.015
+	}
+}
+
+textures/skies/mkc_ctf1
+{
+	qer_editorimage textures/skies/s8.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/s9.tga
+	q3map_surfacelight 100
+	q3map_sun .5 .5 .5 75 65 45
+	skyparms - 512 -
+	{
+		map textures/skies/s8.tga
+		tcmod scale 3 2
+		tcmod scroll 0.02 0.03
+	}
+	{
+		map textures/skies/s9.tga
+		blendfunc filter
+		tcmod scale 2 3
+		tcmod scroll 0.015 0.025
+	}
+
+}
+
+textures/skies2/ctf6sky
+{
+	qer_editorimage textures/skies/s3.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/s4.tga
+	q3map_surfacelight 100
+	q3map_sun .5 .5 .5 35 65 45
+	skyparms - 256 -
+	{
+		map textures/skies/s3.tga
+		tcmod scale 2 3
+		tcmod scroll 0.018 -0.025
+	}
+	{
+		map textures/skies/s4.tga
+		blendfunc filter
+		tcmod scale 3 2
+		tcmod scroll 0.023 -0.016
+	}
+	{
+		map textures/skies/s14.tga
+		blendfunc filter
+		tcmod scale 2 3
+		tcmod scroll 0.015 0.025
+	}
+		
+}
+
+textures/skies/terrain1
+{
+	qer_editorimage textures/skies/s18.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/s1.tga
+	q3map_surfacelight 100
+	q3map_sun .5 .5 .5 95 75 45
+	skyparms - 2048 -
+	{
+		map textures/skies/s18.tga
+		tcmod scale 3 2 
+		tcmod scroll -0.018 -0.025
+	}
+	{
+		map textures/skies/s12.tga
+		blendfunc filter
+		tcmod scale 2 3
+		tcmod scroll -0.008 -0.009
+	}
+	{
+		map textures/skies/clouds.tga
+		blendfunc add
+		tcmod scale 2 3
+		tcmod scroll -0.013 -0.008
+	}
+}
+
+textures/skies2/ctf6sky_ter
+{
+	qer_editorimage textures/skies/s20.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/s5.tga
+	q3map_surfacelight 100
+	q3map_sun .5 .5 .5 35 65 45
+	skyparms - 1024 -
+	{
+		map textures/skies/s2.tga
+		tcmod scale 2 3
+		tcmod scroll 0.018 -0.025
+	}
+	{
+		map textures/skies/s6.tga
+		blendfunc filter
+		tcmod scale 3 2
+		tcmod scroll 0.023 -0.016
+	}
+	{
+		map textures/skies/topclouds.tga
+		blendfunc add
+		tcmod scale .9 .7
+		tcmod scroll -0.013 -0.008
+	}	
+}
