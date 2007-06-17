@@ -582,3 +582,31 @@ textures/sfx/fog_intel
 	
 	
 }
+
+textures/sfx2/ouchfog
+{
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm fog
+	surfaceparm nolightmap
+	q3map_globaltexture
+	cull none
+	fogparms ( 1 0 0 ) 50
+	{
+		map textures/skies/s2.tga
+		blendfunc filter
+		tcmod scale 0.4 0.4
+		tcmod turb .01 .5 0 .05
+	}
+}
+
+textures/sfx2/dist_fog
+{
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm fog
+	surfaceparm nolightmap
+	q3map_globaltexture
+	cull none
+	fogparms ( .05 .04 .03 ) 256
+}

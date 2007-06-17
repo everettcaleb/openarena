@@ -60,7 +60,7 @@ textures/nki/nki_justwater
 	surfaceparm water
 //	surfaceparm alphashadow
 	surfaceparm nolightmap
-//	surfaceparm globaltexture
+//	q3map_globaltexture
 	cull disable
 	{
 		map textures/liquids/pool3d_4b2.tga
@@ -157,7 +157,7 @@ textures/nki/palmtreemask
 	surfaceparm trans
 	surfaceparm alphashadow
 	surfaceparm nolightmap
-	surfaceparm globaltexture
+	q3map_globaltexture
 	cull disable
 	{
 		map textures/nki/palmtreemask2.tga
