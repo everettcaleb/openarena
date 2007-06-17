@@ -18,7 +18,7 @@ Shadowdragon	- Models
 mightypea	- Models
 Morphed		- Skins
 toddd		- Sound
-Psymong		- Music
+Psymong		- Music (fla22k_04_intro, fla22k_04_loop, sonic3, sonic6)
 DarkThief 	- Skins
 slyus		- Skins
 Czestmyr	- Maps (czestdm1)
@@ -39,6 +39,7 @@ kick52		- Textures
 NASA and STScI	- Skybox images (Planetary Nebula NGC 3132, Reflection Nebula NGC 1999, 
 			Spiral Galaxy NGC 4622)
 stroggi		- Map (Suction), shaders, textures
+SAHChandler	- Music (sonic1, sonic2, sonic5, fla22k_02)
 
 Thanks to Nexuiz team, Alien Arena, QuakeSRC.org,
 modDB, mancubus.net, Quake3World, Doomworld, 
