@@ -478,3 +478,27 @@ textures/base_wall/metalfloor_wall_10
 		rgbgen identity
 	}
 }
+
+textures/clown/cheapfloor2
+{
+	qer_editorimage textures/clown/stone_floor.jpg
+	{
+		map textures/clown/stone_floor.jpg
+		rgbgen identity
+	}
+	{
+		map textures/effects/tinfx.tga
+		tcgen environment
+		rgbgen vertex
+	}
+	{
+		map textures/clown/stone_floor.jpg
+		blendfunc add
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}
