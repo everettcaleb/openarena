@@ -500,6 +500,25 @@ itemDef {
 	visible 1 
     }
 
+itemDef {
+      	name minplayers
+      	text "Minimum Players:"
+	cvar "bot_minplayers"
+      	style 0	
+	type ITEM_TYPE_NUMERICFIELD
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 215 388 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+    }
+
 // GAME TYPE SELECITON !!
 
 itemDef {

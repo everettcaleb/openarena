@@ -1,0 +1,354 @@
+#include "ui/menudef.h"
+
+// classic H*L style menu
+
+{
+  menuDef
+  {
+    name "videomodes"
+    visible 0
+    fullscreen 1
+    background "ui/assets/splash"	
+    itemFocusSound "sound/misc/menu2.wav"	
+    focusColor 1 1 0 1
+    rect 0 0 640 480
+    outOfBoundsClick  
+    style 0
+
+    onOpen
+    {
+    
+    }
+
+itemDef {
+      	name titleness
+      	text "Video Modes"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale 1
+      	rect 0 65 1 1
+      	textalign 0		
+     	textalignx 48 	
+	textaligny 40        
+	forecolor 1 0.7 0.2 1
+	visible 1 
+	}
+
+// The Bar of Buttons
+
+itemDef {
+      	name button1
+      	text "Apply"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 145 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20      
+	backcolor 0 0 0 0
+	forecolor 0.935 0.70 0.24 1
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+	       	open configuration;
+ 		close videomodes;
+      		}
+	}
+
+itemDef {
+      	name button2
+      	text "Done"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 177 163 34
+      	textalign 0		
+     	textalignx 5 	
+	textaligny 20   
+	forecolor 0.935 0.70 0.24 1   
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+		open configuration;
+ 		close videomodes;
+      		}
+	}
+// the audio controls
+
+itemDef {
+      	name volume
+      	style 0	
+      	text "Quality:"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 137 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+itemDef {
+      	name settin
+	grp serveus
+      	style 0
+	type ITEM_TYPE_MULTI
+	text ""
+	cvar "ui_glCustom"
+	cvarFloatList { "High" 0 "Medium" 1 "Low" 2 "Really Low" 3 "Custom" 4 }
+	text ""
+	background "ui/assets/scrollbar"
+	textstyle 6
+      	textscale .24
+      	rect 212 166 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+       forecolor     1   1   1   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+
+
+// MAX PRAYERS
+itemDef {
+      	name maxprayamer
+      	style 0	
+      	text "Screen resolution:"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 200 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+itemDef {
+      	name mussic
+	grp serveus
+      	style 0
+	type ITEM_TYPE_MULTI
+	text ""
+	cvar "r_mode"
+	cvarFloatList { "320*240" 0 "400*300" 1 "512*384" 2 "640*480" 3 "800*600" 4 "960*720" 5 "1024*768" 6 "1152*864" 7 "1280*1024" 8 "1600*1200" 9 "2048*1536" 10 "856*480" 11 "Custom defined" -1 }
+	background "ui/assets/scrollbar"
+	textstyle 6
+      	textscale .24
+      	rect 212 229 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+    
+      forecolor     1   1   1   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+// other buttons
+
+
+
+itemDef {
+        	name openal
+      	style 0	
+      	text "Texture Detail:"
+	type ITEM_TYPE_MULTI
+	cvar "r_picmip"
+	cvarFloatList { "Low" 2 "Medium" 1 "High" 0 }
+	textstyle 6
+      	textscale .24
+      	rect 212 287 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+forecolor 1 1 1 1
+	visible 1 
+    }
+
+
+// other buttons
+
+itemDef {
+      	name frares
+      	style 0	
+      	text "Fullscreen:"
+	cvar "r_fullscreen"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	textstyle 6
+      	textscale .22
+      	rect 54 316 117 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+	action { uiScript glCustom }
+    }
+
+itemDef {
+      	name pure
+      	style 0	
+      	text "GL Extensions:"
+	cvar "r_allowExtensions"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	textstyle 6
+      	textscale .22
+      	rect 54 340 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+	action { uiScript glCustom }
+    }
+itemDef {
+      	name ded
+      	style 0	
+      	text "Color Depth:"
+      	style 0	
+	type ITEM_TYPE_MULTI
+	cvar "r_colorBits"
+	cvarFloatList { "Desktop" 0 "16bpp" 16 "32bpp" 32 }
+	textstyle 6
+      	textscale .22
+      	rect 54 364 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+	action { uiScript glCustom }
+    }
+
+// row 2 of other buttons
+
+itemDef {
+      	name fraglimit
+      	text "Multitexturing:"
+      	style 0	
+	type ITEM_TYPE_YESNO
+
+	cvar "r_vertexLight"
+
+	textstyle 6
+      	textscale .22
+      	rect 215 316 117 24
+
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+	action { uiScript glCustom }
+    }
+
+itemDef {
+      	name timelimit
+      	text "Model Detail:"
+      	style 0	
+	type ITEM_TYPE_MULTI
+	cvar "r_lodBias"
+	cvarFloatList { "Insane" -50 "High" 0 "Medium" 1 "Low" 2 "Minimum" 50}
+	textstyle 6
+      	textscale .22
+      	rect 215 340 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+action {
+	uiScript glCustom ; uiScript update "r_lodbias"
+	}
+	visible 1 
+    }
+itemDef {
+      	name caplimit
+      	text "Texture filter:"
+	type ITEM_TYPE_MULTI
+	cvar "r_texturemode"
+	cvarStrList { "Bilinear", "GL_LINEAR_MIPMAP_NEAREST", "Trilinear", "GL_LINEAR_MIPMAP_LINEAR"  }
+      	style 0	
+	maxchars 5
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 215 364 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+    }
+
+itemDef {
+      	name minplayers
+      	text "Flares:"
+	cvar "r_flares"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 215 388 116 24
+      	textalign 0		
+     	textalignx 6	
+action { uiScript glCustom }
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+    }
+
+itemDef {
+      	name minfayers
+      	text "Detail Texturing:"
+	cvar "r_detailTextures"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 54 388 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+    }
+// GAME TYPE SELECITON !!
+
+itemDef {
+      	name gametypefield
+      	style 0	
+	ownerdraw UI_NETGAMETYPE
+      	text "Type:"
+      	style 0	
+	textstyle 6
+      	textscale .237
+      	rect 382 156 223 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 10        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+
+}

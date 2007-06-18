@@ -15,6 +15,14 @@ gfx/ui/ingamemenubg
 	}
 }
 
+ui/assets/ingame
+{
+	{
+		map ui/assets/ingame.tga
+		blendfunc gl_dst_color gl_src_color
+	}
+}
+
 // concept: fading background sequences of levels
 gfx/ui/menubg
 {

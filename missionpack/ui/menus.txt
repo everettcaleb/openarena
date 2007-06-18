@@ -14,7 +14,10 @@
 	loadMenu { "ui/cdkey.menu" }
 	loadMenu { "ui/system.menu" }
 	loadMenu { "ui/options.menu" }
+	loadMenu { "ui/audio.menu" }
 	loadMenu { "ui/help.menu" }
+	loadMenu { "ui/configuration.menu" }
+	loadMenu { "ui/videomodes.menu" }
 	loadMenu { "ui/ordershelp.menu" }
  	loadMenu { "ui/mod.menu" }
 	loadMenu { "ui/demo.menu" }

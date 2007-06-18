@@ -1,0 +1,198 @@
+#include "ui/menudef.h"
+
+// classic H*L style menu
+
+{
+  menuDef
+  {
+    name "audio"
+    visible 0
+    fullscreen 1
+    background "ui/assets/splash"	
+    itemFocusSound "sound/misc/menu2.wav"	
+    focusColor 1 1 0 1
+    rect 0 0 640 480
+    outOfBoundsClick  
+    style 0
+
+    onOpen
+    {
+    
+    }
+
+itemDef {
+      	name titleness
+      	text "Audio"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale 1
+      	rect 0 65 1 1
+      	textalign 0		
+     	textalignx 48 	
+	textaligny 40        
+	forecolor 1 0.7 0.2 1
+	visible 1 
+	}
+
+// The Bar of Buttons
+
+itemDef {
+      	name button1
+      	text "Apply"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 145 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20      
+	backcolor 0 0 0 0
+	forecolor 0.935 0.70 0.24 1
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+	       	open configuration;
+ 		close audio;
+      		}
+	}
+
+itemDef {
+      	name button2
+      	text "Done"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 177 163 34
+      	textalign 0		
+     	textalignx 5 	
+	textaligny 20   
+	forecolor 0.935 0.70 0.24 1   
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+		open configuration;
+ 		close audio;
+      		}
+	}
+// the audio controls
+
+itemDef {
+      	name volume
+      	style 0	
+      	text "Sound volume"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 137 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+itemDef {
+      	name settin
+	grp serveus
+      	style 0
+	type ITEM_TYPE_SLIDER
+	text ""
+	cvarfloat "s_volume" 0.7 0 1
+	background "ui/assets/scrollbar"
+	textstyle 6
+      	textscale .24
+      	rect 212 166 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+       forecolor     1   1   1   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+
+
+// MAX PRAYERS
+itemDef {
+      	name maxprayamer
+      	style 0	
+      	text "Music volume:"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 200 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+itemDef {
+      	name mussic
+	grp serveus
+      	style 0
+	type ITEM_TYPE_SLIDER
+	text ""
+	cvarfloat "s_musicvolume" 0.25 0 1
+	background "ui/assets/scrollbar"
+	textstyle 6
+      	textscale .24
+      	rect 212 229 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+    
+      forecolor     1   1   1   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+// other buttons
+
+
+
+itemDef {
+        	name openal
+      	style 0	
+      	text "Use OpenAL:"
+ 	cvar "s_useOpenAL"
+	type ITEM_TYPE_YESNO	
+	textstyle 6
+      	textscale .24
+      	rect 212 287 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+forecolor 1 1 1 1
+	visible 1 
+    }
+
+
+// other buttons
+
+itemDef {
+      	name sndrate
+  	
+      	text "Rate:"
+	type ITEM_TYPE_MULTI
+	cvar "s_khz"
+	cvarFloatList { "48000Hz" 48 "44100Hz" 44 "22050Hz" 22 "11025Hz" 11 }
+	textstyle 6
+      	textscale .24
+      	rect 212 310 150 24
+	textalign ITEM_ALIGN_RIGHT
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+    }
+
+
+}
