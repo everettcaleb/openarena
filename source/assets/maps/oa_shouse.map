@@ -4,6 +4,7 @@
 "classname" "worldspawn"
 "gridsize" "128 128 256"
 "message" "The Strange House"
+"music" "music/fla22k_02.ogg"
 // brush 0
 {
 ( -2048 -2048 -96 ) ( 2048 -2048 -96 ) ( 2048 2048 -96 ) common/caulk 0 0 0 0.5 0.5 0 0 0
