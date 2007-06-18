@@ -1,0 +1,35 @@
+#include "ui/menudef.h"
+
+{
+  assetGlobalDef {
+    	font "gfx/2d/bigchars" 16				
+    	smallFont "gfx/2d/bigchars" 12				
+    	bigFont "gfx/2d/bigchars" 20				
+	cursor "gfx/ui/cursor"			
+	itemFocusSound "sound/misc/menu2.wav"		
+	shadowColor 0.0 0.0 0.0 0.25			
+  	}
+							   
+
+
+
+
+menuDef {
+    	name "playerStatus"
+    	fullScreen MENU_TRUE				
+	rect 0 450 96 96
+    	visible MENU_FALSE
+	focusColor 0.1 0.6 1 1				
+
+	itemDef {
+      	name "thehead"
+	rect 64 0 48 48
+	visible 1
+    	decoration
+	ownerdraw CG_PLAYER_HEAD 
+	}
+
+
+  }
+
+}
