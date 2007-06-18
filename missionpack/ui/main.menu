@@ -5,7 +5,7 @@
     	font "gfx/2d/bigchars" 16				
     	smallFont "gfx/2d/bigchars" 12				
     	bigFont "gfx/2d/bigchars" 20				
-	cursor "gfx/ui/cursor"			
+	cursor "ui/assets/cursor"			
 	itemFocusSound "sound/misc/menu2.wav"		
 	shadowColor 0.0 0.0 0.0 0.25			
   	}
@@ -16,9 +16,9 @@
 
 menuDef {
     	name "main"
-	background "gfx/ui/menubg"		
+	background "ui/assets/splash"		
     	fullScreen MENU_TRUE				
-	rect 0 0 800 600
+	rect 0 0 640 480
     	visible MENU_TRUE
 	focusColor 0.1 0.6 1 1				
 
@@ -50,7 +50,39 @@ itemDef {
 	}
 	
 
+itemDef {
+	name sp
+	text "Create Server"
+	textscale .5
+	style 0	
+	type 1
+	textstyle 6
+	rect 0 110 200 40 
+	textalign 3	 
+	textalignx 20  	
+       	textaligny 32        
+	backcolor 0 0 0 0
+	forecolor 1 1 1 1
+	visible 1 
+	action { open createserver; close main}
+	}
 
+itemDef {
+	name sp
+	text "Join Server"
+	textscale .5
+	style 0	
+	type 1
+	textstyle 6
+	rect 0 140 200 40 
+	textalign 3	 
+	textalignx 20  	
+       	textaligny 32        
+	backcolor 0 0 0 0
+	forecolor 1 1 1 1
+	visible 1 
+	action { open joinserver }
+	}
 
 itemDef {
       	name quit
@@ -72,7 +104,7 @@ itemDef {
 
 itemDef {
       	name warning
-      	text "OPENARENAMISSIONPACK MENU v0.000000000000000001ISH.!!"
+      	text "OPENARENAMISSIONPACK MENU v0.001"
       	style 0	
 	type 1
 	textstyle 6
