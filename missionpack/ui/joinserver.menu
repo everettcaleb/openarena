@@ -1,0 +1,249 @@
+#include "ui/menudef.h"
+
+// classic H*L style menu
+
+{
+  menuDef
+  {
+    name "joinserver"
+    visible 0
+    fullscreen 1
+    background "ui/assets/splash"	
+    itemFocusSound "sound/misc/menu2.wav"	
+    focusColor 1 1 0 1
+    rect 0 0 640 480
+    outOfBoundsClick  
+    style 0
+
+    onOpen
+    {
+      uiScript loadArenas;
+    }
+
+itemDef {
+      	name titleness
+      	text "Join Server"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale 1
+      	rect 0 65 1 1
+      	textalign 0		
+     	textalignx 48 	
+	textaligny 40        
+	forecolor 1 0.7 0.2 1
+	visible 1 
+	}
+
+// The Bar of Buttons
+
+itemDef {
+      	name advoptions
+      	text "Join Server"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 145 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20      
+	backcolor 0 0 0 0
+	forecolor 1 0.9 0.2 1
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+	       
+      		}
+	}
+
+itemDef {
+      	name Create
+      	text "Create Server"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.27
+      	rect 52 177 163 34
+      	textalign 0		
+     	textalignx 5 	
+	textaligny 20   
+	forecolor 1 0.9 0.2 1   
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+ 		close joinserver;
+		open createserver;
+      		}
+	}
+
+itemDef {
+      	name button3
+      	text "View game info"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.25
+      	rect 52 209 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor 1 0.9 0.2 1     
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+		close createserver;
+		open menu;
+      		}
+	}
+
+
+itemDef {
+      	name button4
+      	text "Refresh"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 241 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor 1 0.9 0.2 1     
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+		uiScript RefreshFilter
+      		}
+	}
+
+itemDef {
+      	name button5
+      	text "Update"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 273 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor 1 0.9 0.2 1     
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+		uiScript RefreshServers
+      		}
+	}
+
+itemDef {
+      	name button6
+      	text "Filter"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 305 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20    
+	forecolor 1 0.9 0.2 1    
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+itemDef {
+      	name button7
+      	text "Add Server"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 337 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20  
+	forecolor 1 0.9 0.2 1      
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+
+itemDef {
+      	name button8
+      	text "Chat Looms"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 369 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20  
+	forecolor 1 0.9 0.2 1      
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+
+itemDef {
+      	name button9
+      	text "Done"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 401 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20  
+	forecolor 1 0.9 0.2 1      
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+		close joinserver;
+		open main;
+      		}
+	}
+*/
+// THE LIST OF THE MAPS!
+
+
+    itemDef
+    {
+      name serverlist
+      rect 164 139 465 297
+      type ITEM_TYPE_LISTBOX
+      style WINDOW_STYLE_FILLED
+      elementwidth 450
+      elementheight 14
+      textscale .20
+      elementtype LISTBOX_TEXT
+      feeder FEEDER_SERVERS
+      textalign 0
+   	background "ui/assets/scrollbar"
+      textaligny 14
+      border 1
+      bordercolor   0.25 0.25 0.25 1
+      forecolor     1   0.5   0.01   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+      visible 1
+      //columns 1
+        //2 190 25 ITEM_ALIGN_LEFT
+	columns 5 2 20 20 222 20 20 400 5 10 260 0 0 260 0 0
+    }
+
+}

@@ -1,0 +1,431 @@
+#include "ui/menudef.h"
+
+// classic H*L style menu
+
+{
+  menuDef
+  {
+    name "player"
+    visible 0
+    fullscreen 1
+    background "ui/assets/splash"	
+    itemFocusSound "sound/misc/menu2.wav"	
+    focusColor 1 1 0 1
+    rect 0 0 640 480
+    outOfBoundsClick  
+    style 0
+
+    onOpen
+    {
+      uiScript loadArenas;
+    }
+// the prayer
+
+
+
+itemDef {
+      	name titleness
+      	text "Customize"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale 1
+      	rect 0 65 1 1
+      	textalign 0		
+     	textalignx 48 	
+	textaligny 40        
+	forecolor 1 0.7 0.2 1
+	visible 1 
+	}
+
+// The Bar of Buttons
+
+itemDef {
+      	name advoptions
+      	text "Done"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 145 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20      
+	backcolor 0 0 0 0
+	forecolor 1 0.9 0.2 1
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+	       close player;
+		open main;
+      		}
+	}
+
+itemDef {
+      	name button2
+      	text "Adv Options"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 177 163 34
+      	textalign 0		
+     	textalignx 5 	
+	textaligny 20   
+	forecolor 1 0.9 0.2 1   
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+ 		
+      		}
+	}
+/*
+itemDef {
+      	name button3
+      	text "Cancel"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 209 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor 1 0.9 0.2 1     
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+		close createserver;
+		open menu;
+      		}
+	}
+
+itemDef {
+      	name button4
+      	text "Button4"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 241 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor 1 0.9 0.2 1     
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+
+itemDef {
+      	name button5
+      	text "Button5"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 273 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor 1 0.9 0.2 1     
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+
+itemDef {
+      	name button6
+      	text "Button6"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 305 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20    
+	forecolor 1 0.9 0.2 1    
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+itemDef {
+      	name button7
+      	text "Button7"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 337 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20  
+	forecolor 1 0.9 0.2 1      
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+
+itemDef {
+      	name button8
+      	text "Button8"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 369 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20  
+	forecolor 1 0.9 0.2 1      
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+
+itemDef {
+      	name button9
+      	text "Button9"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 401 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20  
+	forecolor 1 0.9 0.2 1      
+	visible 1 
+	      action
+      		{
+	        play "sound/misc/menu1.wav"; 
+      		}
+	}
+*/
+// THE LIST OF THE MAPS!
+
+    itemDef
+    {
+      name playerlist
+    //  rect 410 160 169 196
+  rect 578 160 56 196
+group grparenatype	
+      type ITEM_TYPE_LISTBOX
+      style WINDOW_STYLE_FILLED
+      elementwidth 32
+      elementheight 32
+cvarTest "ui_q3model"
+	hideCVar { "1" }
+      textscale .20
+      elementtype LISTBOX_IMAGE
+      feeder FEEDER_HEADS
+      textalign 0
+   	background "ui/assets/scrollbar"
+      textaligny 14
+      border 1
+      bordercolor   0.25 0.25 0.25 1
+      forecolor     1   0.5   0.01   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+      visible 1
+      columns 1
+        2 190 25 ITEM_ALIGN_LEFT
+    }
+    itemDef
+    {
+      name playerlist
+    //  rect 410 160 169 196
+  rect 571 118 56 339
+group grparenatype	
+      type ITEM_TYPE_LISTBOX
+      style WINDOW_STYLE_FILLED
+      elementwidth 32
+      elementheight 32
+cvarTest "ui_q3model"
+	showCVar { "1" }
+      textscale .20
+      elementtype LISTBOX_IMAGE
+      feeder FEEDER_Q3HEADS
+      textalign 0
+   	background "ui/assets/scrollbar"
+      textaligny 14
+      border 1
+      bordercolor   0.25 0.25 0.25 1
+      forecolor     1   0.5   0.01   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+      visible 1
+      columns 1
+        2 190 25 ITEM_ALIGN_LEFT
+    }
+itemDef {
+	name themodel
+	ownerdraw UI_PLAYERMODEL
+	//rect 410 160 169 196
+rect 361 118 217 339
+
+//rect 0 0 640 480
+ style WINDOW_STYLE_FILLED
+	style 1
+	decoration 
+      border 1
+      bordercolor   0.25 0.25 0.25 1
+      forecolor     1   0.5   0.01   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1
+    	}
+
+itemDef {
+      	name mappreviewtext
+      	text "Map:"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .237
+      	rect 382 116 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 0        
+	forecolor 1 1 1 1
+	visible 1 
+	}
+// GAME TYPE SELECITON !!
+    
+// PLAYER NAME
+itemDef {
+      	name hostnamer
+      	style 0	
+      	text "Player Name"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 137 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+itemDef {
+      	name settin
+      	style WINDOW_STYLE_FILLED
+	type ITEM_TYPE_EDITFIELD
+	text ""
+	cvar "ui_Name"
+	maxChars 32
+	maxPaintChars 10
+	background "ui/assets/scrollbar"
+	textstyle 6
+      	textscale .24
+      	rect 212 166 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+      border 1
+      bordercolor   0.25 0.25 0.25 1
+      forecolor     1   0.5   0.01   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+
+
+// MAX PRAYERS
+itemDef {
+      	name hanidcap
+      	style 0	
+      	text "Handicap:"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 200 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+itemDef {
+      	name settin2
+	grp serveus
+      	style 0
+	ownerdraw UI_HANDICAP
+	type ITEM_TYPE_EDITFIELD
+	text ""
+	cvar "sv_maxclients"
+	maxChars 32
+	maxPaintChars 10
+	background "ui/assets/scrollbar"
+	textstyle 6
+	maxchars 4
+      	textscale .24
+      	rect 212 229 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+      border 1
+      bordercolor   0.25 0.25 0.25 1
+      forecolor     1   0.5   0.01   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+// other buttons
+
+
+// PASS WORLD
+itemDef {
+      	name password
+      	style 0	
+      	text "Model type:"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 263 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+itemDef {
+  	name arenatype
+	type ITEM_TYPE_MULTI	
+	cvar "ui_q3model"
+	cvarFloatList { "Team Game" 0 "DM Game" 1 }
+	text ""
+      	style WINDOW_STYLE_FILLED
+	background "ui/assets/scrollbar"
+	textstyle 6
+      	textscale .24
+      	rect 212 287 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+      border 1
+      bordercolor   0.25 0.25 0.25 1
+      forecolor     1   0.5   0.01   1
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+// other buttons
+}

@@ -81,9 +81,24 @@ itemDef {
 	backcolor 0 0 0 0
 	forecolor 1 1 1 1
 	visible 1 
-	action { open joinserver }
+	action { open joinserver; close main }
 	}
-
+itemDef {
+	name sp
+	text "Customize Player"
+	textscale .5
+	style 0	
+	type 1
+	textstyle 6
+	rect 0 190 200 40 
+	textalign 3	 
+	textalignx 20  	
+       	textaligny 32        
+	backcolor 0 0 0 0
+	forecolor 1 1 1 1
+	visible 1 
+	action { open player; close main }
+	}
 itemDef {
       	name quit
       	text "Quit"
