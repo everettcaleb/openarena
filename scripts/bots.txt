@@ -99,5 +99,5 @@ aifile	bots/sarge_c.c
 {
 name		Grunt
 model		gargoyle/tech
-aifile	bots/gargoyle_c.c
+aifile	bots/grunt_c.c
 }

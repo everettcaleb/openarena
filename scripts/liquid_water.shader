@@ -644,8 +644,8 @@ textures/liquids2/clear_ripple1_q3dm1light
 	cull none
 	q3map_surfacelight 100
 	tessSize 32
-	fogparms ( 0.215686 0.278431 0.333333 ) 512
-	deformvertexes wave 128 sin .5 .5 .5 .5
+	fogparms ( 0.215686 0.278431 0.333333 ) 1024
+	deformvertexes wave 256 sin .5 .5 .5 .5
 	{ 
 		map textures/liquids/pool3d_5e.jpg
 		blendFunc gl_dst_color gl_one
