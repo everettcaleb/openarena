@@ -7247,10 +7247,12 @@ gothic_trim/zinc_shiny
 // entity 152
 {
 "classname" "team_blueobelisk"
-"origin" "1792 0 1536"
+"origin" "1792 0 1528"
+"gametype" "oneflag, obelisk, harvester"
 }
 // entity 153
 {
 "classname" "team_redobelisk"
-"origin" "-1792 0 1536"
+"origin" "-1792 0 1528"
+"gametype" "oneflag, obelisk, harvester"
 }
