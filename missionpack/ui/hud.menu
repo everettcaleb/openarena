@@ -6,7 +6,7 @@
     	smallFont "gfx/2d/bigchars" 12				
     	bigFont "gfx/2d/bigchars" 20				
 	cursor "gfx/ui/cursor"			
-	itemFocusSound "sound/misc/menu2.wav"		
+		
 	shadowColor 0.0 0.0 0.0 0.25			
   	}
 							   
@@ -15,20 +15,53 @@
 
 
 menuDef {
-    	name "playerStatus"
-    	fullScreen MENU_TRUE				
-	rect 0 450 96 96
-    	visible MENU_FALSE
+    	name "health"
+    	fullScreen 0				
+	//rect 0 450 96 96
+    	visible 1
 	focusColor 0.1 0.6 1 1				
+	//rect 0 0 640 480
+rect 238 425 174 55
+itemDef {
+      	name backer
+      	textstyle 3
+      	textscale 0.7
+      	rect 0 0 174 55
+        border 1
+        style WINDOW_STYLE_FILLED
+	background "ui/assets/sbar"
+        bordercolor   0.25 0.25 0.25 0.7
+        forecolor     1   0.5   0.01   1
+        backcolor     0.0 0.0 0.0 0.5
+        outlinecolor  1   0.5   0.01   0.3
+	decoration
+	visible 1 
+	}
 
 	itemDef {
       	name "thehead"
-	rect 64 0 48 48
+	rect 0 8 50 50
+//rect 0 -64 174 174
+
 	visible 1
     	decoration
 	ownerdraw CG_PLAYER_HEAD 
 	}
 
+itemDef {
+      	name healthness
+      	textstyle 3
+      	textscale 1
+      	rect 64 0 84 48
+      	textalign 0		
+     	textalignx 1	
+	textaligny 1
+	//rect 8 434 64 48
+	ownerdraw CG_PLAYER_HEALTH       
+	forecolor 1 1 0.6 1
+	decoration
+	visible 1 
+	}
 
   }
 
