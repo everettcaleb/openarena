@@ -1,0 +1,20 @@
+gametypes {
+  { "Deathmatch" 0 }
+  { "Tournament" 1 }
+  { "Team Deathmatch" 3 } 
+  { "Capture the flag" 4 }
+  { "One flag" 5 }
+  { "Over load" 6 }
+  { "Harvester" 7 }
+}
+
+joingametypes {
+  { "Don't care" -1 }
+  { "Deathmatch" 0 }
+  { "Tournament" 1 }
+  { "Team Deathmatch" 3 } 
+  { "Capture the flag" 4 }
+  { "One flag" 5 }
+  { "Over load" 6 }
+  { "Harvester" 7 }
+}

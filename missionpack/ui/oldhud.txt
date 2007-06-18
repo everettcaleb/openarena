@@ -1,4 +1,0 @@
-// The heads up display. IT'S NOT A MENU but     whatever.
-{
-	loadMenu { "ui/hud.menu" }
-}

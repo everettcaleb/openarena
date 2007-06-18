@@ -1,4 +1,0 @@
-// This loads stuff for the main menu that is not ingame. Fun times.
-{	
-	loadMenu { "ui/main.menu" }
-}

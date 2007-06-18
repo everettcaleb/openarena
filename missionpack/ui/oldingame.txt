@@ -1,4 +1,0 @@
-// ingame menu for made for quick voting and quitting.
-{	
- 	loadMenu { "ui/ingame.menu" }
-}

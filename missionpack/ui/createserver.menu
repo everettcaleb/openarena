@@ -49,7 +49,7 @@ itemDef {
      	textalignx 5  	
 	textaligny 20      
 	backcolor 0 0 0 0
-	forecolor 1 0.9 0.2 1
+	forecolor 0.935 0.70 0.24 1
 	visible 1 
 	      action
       		{
@@ -69,7 +69,7 @@ itemDef {
       	textalign 0		
      	textalignx 5 	
 	textaligny 20   
-	forecolor 1 0.9 0.2 1   
+	forecolor 0.935 0.70 0.24 1   
 	visible 1 
 	      action
       		{
@@ -89,7 +89,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 1 0.9 0.2 1     
+	forecolor 0.935 0.70 0.24 1     
 	visible 1 
 	      action
       		{
@@ -111,7 +111,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 1 0.9 0.2 1     
+	forecolor 0.935 0.70 0.24 1     
 	visible 1 
 	      action
       		{
@@ -130,7 +130,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 1 0.9 0.2 1     
+	forecolor 0.935 0.70 0.24 1     
 	visible 1 
 	      action
       		{
@@ -149,7 +149,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20    
-	forecolor 1 0.9 0.2 1    
+	forecolor 0.935 0.70 0.24 1    
 	visible 1 
 	      action
       		{
@@ -167,7 +167,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 1 0.9 0.2 1      
+	forecolor 0.935 0.70 0.24 1      
 	visible 1 
 	      action
       		{
@@ -186,7 +186,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 1 0.9 0.2 1      
+	forecolor 0.935 0.70 0.24 1      
 	visible 1 
 	      action
       		{
@@ -205,7 +205,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 1 0.9 0.2 1      
+	forecolor 0.935 0.70 0.24 1      
 	visible 1 
 	      action
       		{
@@ -267,24 +267,6 @@ itemDef {
 	forecolor 1 1 1 1
 	visible 1 
 	}
-// GAME TYPE SELECITON !!
-
-itemDef {
-      	name gametyper
-      	style 0	
-	ownerdraw UI_NETGAMETYPE
-      	text "Type:"
-      	style 0	
-	type 0
-	textstyle 6
-      	textscale .237
-      	rect 382 140 1 1
-      	textalign 0		
-     	textalignx 6	
-	textaligny 0        
-	forecolor 1 1 1 1
-	visible 1 
-    }
     
 // SERVER NAME
 itemDef {
@@ -471,7 +453,6 @@ itemDef {
 	cvar "fraglimit"
       	style 0	
 	type ITEM_TYPE_NUMERICFIELD
-	ownerdrawflag UI_SHOW_NETANYNONTEAMGAME 
 	maxchars 5
 	textstyle 6
       	textscale .22
@@ -490,7 +471,6 @@ itemDef {
 	cvar "timelimit"
       	style 0	
 	type ITEM_TYPE_NUMERICFIELD
-	ownerdrawflag UI_SHOW_NETANYNONTEAMGAME 
 	maxchars 5
 	textstyle 6
       	textscale .22
@@ -507,7 +487,6 @@ itemDef {
 	cvar "capturelimit"
       	style 0	
 	type ITEM_TYPE_NUMERICFIELD
-	ownerdrawflag UI_SHOW_NETANYNONTEAMGAME 
 	maxchars 5
 	textstyle 6
       	textscale .22
@@ -520,4 +499,23 @@ itemDef {
 	forecolor 0.75 0.75 0.75 1
 	visible 1 
     }
+
+// GAME TYPE SELECITON !!
+
+itemDef {
+      	name gametypefield
+      	style 0	
+	ownerdraw UI_NETGAMETYPE
+      	text "Type:"
+      	style 0	
+	textstyle 6
+      	textscale .237
+      	rect 382 156 223 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 10        
+	forecolor 1 1 1 1
+	visible 1 
+    }
+
 }

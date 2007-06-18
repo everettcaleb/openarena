@@ -1,0 +1,11 @@
+// Team Clan Things
+
+teams {
+  { "Killers" "ui/assets/killers"  "Clint" "John" "Harry" "Bruce" "Fred"  }
+  { "Cyborgs" "ui/assets/cyborgs" "Robby" "Zapper" "Wrench" "Diskette" "Bad Ass Motherboard" }
+  { "Summer" "ui/assets/summer"  "Tanisha" "Rai" "Babe2" "Babe3" "Hunk"  }
+}
+characters {
+  { "Dmo"  "male" }
+  { "Hnt"  "female" }
+}

@@ -34,7 +34,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 40        
-	forecolor 1 0.7 0.2 1
+	forecolor 0.935 0.70 0.24 1
 	visible 1 
 	}
 

@@ -31,7 +31,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 40        
-	forecolor 1 0.7 0.2 1
+	forecolor 0.935 0.70 0.24 1
 	visible 1 
 	}
 
@@ -243,7 +243,12 @@ itemDef {
       visible 1
       //columns 1
         //2 190 25 ITEM_ALIGN_LEFT
-	columns 5 2 20 20 222 20 20 400 5 10 260 0 0 260 0 0
+	columns 5
+ 81 40 0 ITEM_ALIGN_LEFT  // name
+464 40 0 ITEM_ALIGN_LEFT
+1 40 400 ITEM_ALIGN_LEFT
+1 40 400 ITEM_ALIGN_LEFT
+1 40 800 ITEM_ALIGN_LEFT
     }
 
 }
