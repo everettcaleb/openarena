@@ -17,6 +17,7 @@ models/players/hnt/drkclothes
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/gldclothes
 {
 	cull disable
@@ -26,6 +27,26 @@ models/players/hnt/gldclothes
 		alphaFunc GE128
 	}
 }
+
+models/players/hnt/azsuit
+{
+	{
+		map models/players/hnt/azskin.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/suitchrome.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+	{
+		map models/players/hnt/azskin.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+
 models/players/hnt/redclothes
 {
 	cull disable
@@ -55,6 +76,7 @@ models/players/hnt/drkhair
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/gldhair
 {
 	cull disable
@@ -64,6 +86,7 @@ models/players/hnt/gldhair
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/redhair
 {
 	cull disable
@@ -73,6 +96,7 @@ models/players/hnt/redhair
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/slyclothes
 {
 	cull disable
@@ -83,9 +107,7 @@ models/players/hnt/slyclothes
 	}
 }
 
-
 // TEAM SKIN EXPLOSION
-
 models/players/hnt/clothes_blue
 {
 	cull disable
@@ -95,6 +117,7 @@ models/players/hnt/clothes_blue
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/clothes_red
 {
 	cull disable
@@ -104,6 +127,7 @@ models/players/hnt/clothes_red
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/drkclothes_blue
 {
 	cull disable
@@ -113,6 +137,7 @@ models/players/hnt/drkclothes_blue
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/gldclothes_red
 {
 	cull disable
@@ -122,6 +147,7 @@ models/players/hnt/gldclothes_red
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/redclothes_blue
 {
 	cull disable
@@ -142,7 +168,6 @@ models/players/hnt/hair
 	}
 }
 
-
 models/players/hnt/gldhair_red
 {
 	cull disable
@@ -152,6 +177,7 @@ models/players/hnt/gldhair_red
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/redhair_blue
 {
 	cull disable
@@ -161,6 +187,7 @@ models/players/hnt/redhair_blue
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/slyclothes_blue
 {
 	cull disable
@@ -170,6 +197,7 @@ models/players/hnt/slyclothes_blue
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/slyclothes_red
 {
 	cull disable
