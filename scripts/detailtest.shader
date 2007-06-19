@@ -31,7 +31,7 @@ textures/gothic_block/blocks17
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -51,7 +51,7 @@ textures/gothic_block/blocks17e
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -188,6 +188,7 @@ textures/gothic_block/blocks17_ow
 		clampmap textures/oa/fiar.tga
 		tcMod rotate 5564
 		tcMod stretch inversesawtooth 1 1 0 7 
+		rgbgen identity
 	}
 	{
 		map textures/gothic_block/blocks17_ow.tga
@@ -201,7 +202,7 @@ textures/gothic_block/blocks17_ow
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail

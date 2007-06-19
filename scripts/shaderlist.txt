@@ -1,4 +1,5 @@
 common
+detailtest
 oasky
 oafx
 beams
