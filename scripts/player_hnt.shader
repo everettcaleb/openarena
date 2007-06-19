@@ -158,6 +158,15 @@ models/players/hnt/redclothes_blue
 	}
 }
 
+models/players/hnt/redclothes_gray
+{
+	cull disable
+	{
+		map models/players/hnt/redclothes_gray.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
 models/players/hnt/hair
 {
 	cull disable
@@ -205,6 +214,45 @@ models/players/hnt/slyclothes_red
 		map models/players/hnt/sly2_red.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+}
+
+models/players/hnt/azsuit_blue
+{
+	{
+		map models/players/hnt/azskin_blue.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/suitchrome.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+	{
+		map models/players/hnt/azskin_blue.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+	}
+}
+
+
+models/players/hnt/azsuit_red
+{
+	{
+		map models/players/hnt/azskin_red.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/suitchrome.tga
+		blendfunc add
+		rgbGen lightingDiffuse
+		tcGen environment 
+	}
+	{
+		map models/players/hnt/azskin_red.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
 	}
 }
 
