@@ -502,3 +502,47 @@ textures/clown/cheapfloor2
 		rgbgen identity
 	}
 }
+
+textures/proto2/c_zinc_shiny
+{
+	qer_editorimage textures/gothic_trim/zinc_shiny.tga
+	{	
+		map textures/gothic_trim/zinc_shiny.tga
+		rgbgen identity
+	}
+	{
+		map textures/effects/tinfx.tga
+		tcgen environment
+		rgbgen identity
+	}
+	{
+		map textures/gothic_trim/zinc_shiny.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}
+
+textures/proto2/vertex_greenstone
+{
+	qer_editorimage textures/gothic_block/blocks17i.jpg
+	surfaceparm pointlight
+	{
+		map textures/gothic_block/blocks17i.jpg
+		rgbgen oneminusvertex
+	}
+}
+
+textures/proto2/vertex_cavestone
+{
+	qer_editorimage textures/organics/pjrock7d.jpg
+	surfaceparm pointlight
+	{
+		map textures/organics/pjrock7d.jpg
+		rgbgen oneminusvertex
+	}
+}

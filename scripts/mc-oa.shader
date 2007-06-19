@@ -158,7 +158,7 @@ textures/mc-oa-dm04/anodm2_grey0_jumper
 
 textures/anoice1/anoice1
 {
-	qer_editorimage textures/anoice1/anoice1_view.tga
+	qer_editorimage textures/anoice1/anoice1.tga
 	surfaceparm noimpact
 	surfaceparm nolightmap
 	q3map_globaltexture
@@ -167,6 +167,13 @@ textures/anoice1/anoice1
 	surfaceparm sky
 	q3map_sun 0.65 0.75 0.85 195 295 14
 	skyparms env/anoice1/anoice1 - -
+	{
+		map textures/anoice1/anoice1.jpg
+		blendfunc filter
+		tcmod scale 3 2
+		tcmod scroll .01 .02
+		rgbgen identity
+	}
 }
 
 
