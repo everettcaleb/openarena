@@ -464,8 +464,8 @@ type "whoisteamleader"
 type "iamteamleader"
 {
 "I am the leader.";
-"I lead.";
 "I shall lead.";
+"I lead.";
 }
 	//defend the base command
 type "cmd_defendbase"
@@ -503,7 +503,7 @@ type "cmd_attackenemybase"
 type "cmd_returnflag"
 {
 0, " please return our flag!";
-0, " please get our flag back, ASAP!";
+0, " get our flag back, ASAP!";
 }
 	//go harvesting
 type "cmd_harvest"

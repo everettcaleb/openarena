@@ -278,7 +278,7 @@ chat "Dark"
 		"Has anyone tried out the new ", 5, "?  Is it worth the upgrade?";
 		MISC1;
 		"You would be surprised what you can do with a ", animal, " a ", food, " and ", peeps, ".";
-		"Next time you see Gargoyle tell him to call me, mmmkay?";
+		"Next time you see ", peeps, " tell 'em to call me, mmmkay?";
 		neuterbot, " is cute.";
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot

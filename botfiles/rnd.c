@@ -42,7 +42,7 @@ DEATH_BFG2 = {
 }
 
 DEATH_BFG3 = {
-	"Is this your first frag,", 0, "?";
+	"Is this your first frag, ", 0, "?";
 	"Now that was just rude.";
 	"Ok, who gave ", 0," the new toy?";
 }
@@ -79,7 +79,7 @@ KILL_KAMIKAZE1 = {
 	"Told ya so.";
 	"I am all that is man.";
 	"Now that's what I call fun!";
-	"Shit, missed", 0,".";
+	"D'oh!  Missed ", 0,".";
 }
 
 
@@ -1134,7 +1134,7 @@ curse = {
 	"I hope your genitals fall off in a freak fishing accident.";
 	"May your first born child be born a politician...";
 	"May your first born child be born with the intelligence of Pat Robertson.";
-	"May you dream of dmn_clown's ~mother for the rest of your rotten life!";
+	"May you dream of leilol's ~mother for the rest of your rotten life!";
 	"hum kah chan!";
 }
 

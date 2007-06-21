@@ -63,7 +63,7 @@ chat "Dmo"
 	{
 		3, " sucks!";
 		2, ", I let you win.";
-		4, " worst level ever!  Let's play it again.";
+		4, " worst level ever!  Let's play it again!";
 		
 		// 0 = bot name
 		// 1 = random opponent
@@ -97,7 +97,7 @@ chat "Dmo"
 	{
 		"So much for sportsmanship...";
 		"Loser!";
-		"Wanker";
+		"Wanker!";
 		"Putz";
 		"Tosser";
 		DEATH_TALKING;
@@ -110,6 +110,7 @@ chat "Dmo"
 		"Wuss";
 		"Heh, you suck.";
 		"Dick Cheney is a better shot than you!";
+		"Ya pansy!";
 		// 0 = shooter
 		// 1 = weapon used by shooter
 	} //end type
@@ -197,7 +198,8 @@ chat "Dmo"
 		"Das schlechteste setzt sich durch";
 		"Wuss";
 		"Sissy";
-		"Ya pansy!";
+		"Pansy!";
+		"Come back here... I'll chew your leg off!";
 		DEATH_INSULT2;
 		DEATH_INSULT0;
 		// 0 = enemy name
@@ -249,6 +251,13 @@ chat "Dmo"
 	//======================================================
 	type "random_insult" //insult initiated randomly (just when the bot feels like it)
 	{
+		"Fascist pig!";
+		"Capitalist swine";
+		"Marxist scum!";
+		"Neo-liberal twit!";
+		"Neo-conservative twit!";
+		"Redneck";
+		"White Trash";
 		TAUNT0;
 		TAUNT1;
 		
@@ -259,7 +268,12 @@ chat "Dmo"
 	} //end type
 	type "random_misc" //miscellanous chats initiated randomly
 	{
-		
+		"...we'll sacrifice the older ones, they're livin' in the past, we'll burn up their religion and we'll all be free at last...";
+		"OI! OI! PUNK ROCK'S NOT DEAD!";
+		"...you sit around the house in your daddy's clothes, you're lookin' a mess, you're pickin' your nose...";
+		"...can't stand rock n' roll, no I can't stand rock n' roll, up your bum with rock n' roll...";
+		"Viva la revolucion!";
+		"Cheap holiday in other people's misery...";
 		GUYTALK1;
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot

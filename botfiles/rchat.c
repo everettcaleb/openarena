@@ -142,12 +142,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"The more you know, the less you understand.";
 }
 
-["Pat Robertson"] = 1
+["Pat Robertson", "Jack Thompson"] = 1
 {
 	"I hear he has a ", substance, " addiction.";
 	"I hear that he was caught in bed with a ", animal, " after smoking ", substance, ".";
-	"This isn't a chat room!";
-	response_insult;
+	"Isn't there a video of him humping a ", animal, " on YouTube?";
+	"I got him hooked on ", substance, ".";
+	"I sold him ", food, " laced with ", substance, ".";	
 }
 
 ["Jesus"] = 1
@@ -160,6 +161,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"Religion is business and there is money in sin.";
 	"You want to talk about religion HERE?!?!? Some people...";
 	"Quite a few attrocities have been performed in his name.";
+	"I am an anti-christ.";
 }
 
 ["addiction", "addicted to"] = 4
@@ -170,7 +172,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"That can be tough on the people around you.";
 }
 
-[(1, " is a ", 0) &name, !"Grism", !"Gargoyle"] = 4
+[(1, " is a ", 0) &name, !"Grism", !"Gargoyle", !"Dmo", !"Penguin", !"Sarge", !"Grunt"] = 4
 {
 	"That is Mizz ", 0, " to you, ", fighter, ".";
 	"I'm only rude to ", fighter, "s like you.";
@@ -191,6 +193,29 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"The most heroic word in all languages is revolution.";
 	"Intelligent discontent is the mainspring of civilization. Progress is born of agitation. It is agitation or stagnation.";
 	"How pseudo revolutionary of you...";
+}
+
+["OI"] = 5
+{
+	"OI! OI! OI!";
+}
+
+["fuck"] = 1
+{
+	proposition01;
+	immaturity01;
+}
+
+["shit"] = 1
+{
+	"I hope you washed your hands...";
+	"Eeew... please flush.";
+	immaturity01;
+}
+
+["ass"] = 1
+{
+	immaturity01;
 }
 
 ["bots", "bot", !"stupid bot"] = 2
@@ -219,7 +244,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"perv";
 }
 
-[(1, " is a ", 0) &name, !"Kyonshi", !"Major"] = 4
+[(1, " is a ", 0) &name, !"Kyonshi", !"Major", !"Hnt", !"Dark", !"Tanisha", !"Rai", !"Slshish"] = 4
 {
 	"That is Mr. ", 0, " to you, ", fighter, ".";
 	"I'm only rude to ", fighter, "s like you.";
