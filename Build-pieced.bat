@@ -79,6 +79,12 @@ zip pak2-players.pk3 -d sound/player/watr_un.wav
 zip pak2-players.pk3 -d sound/player/footsteps/*.*
 zip pak2-players.pk3 -d sound/player/sarge/*.*
 
+zip -9r pak2-players-mature.pk3 models/players/arachna/*.* -x *svn*
+zip -9r pak2-players-mature.pk3 models/players/hnt/*.* -x *svn*
+zip pak2-players.pk3 -d models/players/hnt/*.*
+zip pak2-players.pk3 -d models/players/arachna/*.*
+
+
 zip -9r pak3-music.pk3 music/*.* -x *svn*
 
 zip -9r pak4-textures.pk3 textures/*.* -x *svn*
