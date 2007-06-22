@@ -31,7 +31,7 @@ textures/nki_shaders/tropicalwater
 	surfaceparm water
 //	surfaceparm alphashadow
 	surfaceparm nolightmap
-//	q3map_globaltexture
+	q3map_globaltexture
 	cull disable
 	{
 		map textures/liquids/pool3d_4b2.tga
@@ -105,37 +105,43 @@ textures/nki_shaders/lavabright_1k5
 
 }
 
-textures/nki_shaders/palmtree1
+textures/mapobjects/palmtree1
 {
-	qer_editorimage textures/nki/palmier1.tga
+	qer_editorimage models/mapobjects/palmier/palmier1.tga
 	surfaceparm nonsolid
-	surfaceparm playerclip
 	surfaceparm noimpact
-	surfaceparm nolightmap
-	surfaceparm nomarks
-//	surfaceparm nodlight
-	{
-		map textures/nki/palmier1.tga
-	}
-}
-textures/nki_shaders/palmtreemask
-{
-	qer_editorimage textures/nki/palmtreemask1.tga
-//	qer_trans 50
-	surfaceparm lightfilter
-	surfaceparm nomarks
 	surfaceparm trans
-	surfaceparm alphashadow
-	surfaceparm nolightmap
-	q3map_globaltexture
+	surfaceparm nomarks
+//	surfaceparm alphashadow
+//	surfaceparm nolightmap
+//	surfaceparm nodlight
 	cull disable
 	{
-		map textures/nki/palmtreemask1.tga
-		blendFunc blend
-//		alphaFunc GE128
-//		rgbGen identity
+		map models/mapobjects/palmier/palmier1.tga
+//		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		alphaFunc GE128
+		RgbGen vertex
 	}
 }
+
+//textures/nki_shaders/palmtreemask
+//{
+//	qer_editorimage textures/nki/palmtreemask1.tga
+//	qer_trans 50
+//	surfaceparm lightfilter
+//	surfaceparm nomarks
+//	surfaceparm trans
+//	surfaceparm alphashadow
+//	surfaceparm nolightmap
+//	q3map_globaltexture
+//	cull disable
+//	{
+//		map textures/nki/palmtreemask1.tga
+//		blendFunc blend
+//		alphaFunc GE128
+//		rgbGen identity
+//	}
+//}
 
 textures/nki_shaders/forest4
 {
@@ -256,29 +262,3 @@ textures/mapobjects/leafs4
 		// rgbGen identity
 	// }
 }
-
-// textures/nki_shaders/testdotproduct1
-// {
-	// qer_editorimage textures/nki/nki_forest1.tga
-	// q3map_nonplanar
-	// q3map_shadeAngle 180
-	// q3map_tcGen ivector ( 256 0 0 ) ( 0 256 0 )
-	// q3map_alphaMod dotproduct2 ( 0.0 0.0 0.75 )
-	// {
-		// map textures/nki/nki_forest1.tga	// Primary texture
-		// rgbGen identity
-	// }
-	// {
-		// map textures/nki/nki_sand2.tga
-		// blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		// alphaFunc GE128
-		// rgbGen identity
-		// alphaGen vertex
-	// }
-	// {
-		// map $lightmap
-		// blendFunc GL_DST_COLOR GL_ZERO
-		// rgbGen identity
-	// }
-	 // q3map_styleMarker
-// }

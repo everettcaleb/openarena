@@ -29,6 +29,7 @@ textures/islandctf/terrain_1
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -46,6 +47,7 @@ textures/islandctf/terrain_2
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -63,6 +65,7 @@ textures/islandctf/terrain_3
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -80,6 +83,7 @@ textures/islandctf/terrain_4
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -195,6 +199,7 @@ textures/islandctf/terrain_1to2
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -218,6 +223,7 @@ textures/islandctf/terrain_1to3
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -241,6 +247,7 @@ textures/islandctf/terrain_1to4
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -264,6 +271,7 @@ textures/islandctf/terrain_2to3
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -287,6 +295,7 @@ textures/islandctf/terrain_2to4
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
@@ -310,13 +319,14 @@ textures/islandctf/terrain_3to4
 		map $lightmap
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcGen lightmap
+		//RgbGen identity
 	}
 }
 
 textures/islandctf/terrain.vertex
 {
 	{
-		map textures/nki/nki_forest2.tga
+		map textures/nki/nki_sand2.tga
 		rgbGen vertex
 	}
 }
