@@ -56,7 +56,42 @@ zip pak0.pk3 sound/player/sarge/*.* -x *svn*
 zip -9r pak1-maps.pk3 levelshots/*.* -x *svn*
 zip -9r pak1-maps.pk3 maps/*.bsp -x *svn*
 
+
+REM VERY VERY DIRTY SLOW WORKAROUND to get select screen working
+
+zip -9r pak0.pk3 models/players/null.txt -x *svn*
+zip -9r pak0.pk3 models/players/*.* -x *svn*
+zip -9r pak0.pk3 models/players/*.* -x *svn*
+
+zip pak2-players-mature.pk3 -d models/players/hnt/*.*
+zip pak2-players-mature.pk3 -d models/players/arachna/*.*
+zip pak2-players-mature.pk3 -d models/players/dmo/*.*
+zip pak2-players-mature.pk3 -d models/players/kyonshi/*.*
+zip pak2-players-mature.pk3 -d models/players/liz/*.*
+zip pak2-players-mature.pk3 -d models/players/major/*.*
+zip pak2-players-mature.pk3 -d models/players/slshish/*.*
+zip pak2-players-mature.pk3 -d models/players/penguin/*.*
+zip pak2-players-mature.pk3 -d models/players/gargoyle/*.*
+zip pak2-players-mature.pk3 -d models/players/merman/*.*
+
+
 zip -9r pak2-players.pk3 models/players/*.* -x *svn*
+zip pak2-players.pk3 -d models/players/grism/*.*
+zip pak2-players.pk3 -d models/players/sarge/*.*
+
+copy pak2-players.pk3 pak2-players-mature.pk3
+
+zip -9r pak2-players-mature.pk3 models/players/arachna/*.* -x *svn*
+zip -9r pak2-players-mature.pk3 models/players/hnt/*.* -x *svn*
+zip pak2-players-mature.pk3 -d models/players/dmo/*.*
+zip pak2-players-mature.pk3 -d models/players/kyonshi/*.*
+zip pak2-players-mature.pk3 -d models/players/liz/*.*
+zip pak2-players-mature.pk3 -d models/players/major/*.*
+zip pak2-players-mature.pk3 -d models/players/slshish/*.*
+zip pak2-players-mature.pk3 -d models/players/penguin/*.*
+zip pak2-players-mature.pk3 -d models/players/gargoyle/*.*
+zip pak2-players-mature.pk3 -d models/players/merman/*.*
+
 zip -9r pak2-players.pk3 sound/player/*.* -x *svn*
 zip -9r pak2-players.pk3 scripts/player_*.* -x *svn*
 
@@ -78,12 +113,6 @@ zip pak2-players.pk3 -d sound/player/watr_out.wav
 zip pak2-players.pk3 -d sound/player/watr_un.wav
 zip pak2-players.pk3 -d sound/player/footsteps/*.*
 zip pak2-players.pk3 -d sound/player/sarge/*.*
-
-zip -9r pak2-players-mature.pk3 models/players/arachna/*.* -x *svn*
-zip -9r pak2-players-mature.pk3 models/players/hnt/*.* -x *svn*
-zip pak2-players.pk3 -d models/players/hnt/*.*
-zip pak2-players.pk3 -d models/players/arachna/*.*
-
 
 zip -9r pak3-music.pk3 music/*.* -x *svn*
 
