@@ -51,12 +51,12 @@
 }
 // brush 5
 {
-( -2544 1016 2504 ) ( -2544 -1024 2504 ) ( -2552 -1024 2504 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
-( -2544 1016 2504 ) ( -2552 1016 2504 ) ( -2552 1016 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
-( -2552 -1024 -64 ) ( -2544 -1024 -64 ) ( -2544 1016 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
-( -2552 -1024 2504 ) ( -2544 -1024 2504 ) ( -2552 -1024 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
-( -2552 1016 2504 ) ( -2552 -1024 2504 ) ( -2552 1016 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
-( -2544 -1024 2504 ) ( -2544 1016 2504 ) ( -2544 -1024 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
+( 1408 1016 2504 ) ( 1408 -1024 2504 ) ( 1400 -1024 2504 ) common/clusterportal 32 0 0 0.5 0.5 0 0 0
+( 1408 1016 2504 ) ( 1400 1016 2504 ) ( 1400 1016 -64 ) common/clusterportal 32 0 0 0.5 0.5 0 0 0
+( 1400 -1024 -64 ) ( 1408 -1024 -64 ) ( 1408 1016 -64 ) common/clusterportal 32 0 0 0.5 0.5 0 0 0
+( 1400 -1024 2504 ) ( 1408 -1024 2504 ) ( 1400 -1024 -64 ) common/clusterportal 32 0 0 0.5 0.5 0 0 0
+( 1400 1016 2504 ) ( 1400 -1024 2504 ) ( 1400 1016 -64 ) common/clusterportal 0 0 0 0.5 0.5 0 0 0
+( 1408 -1024 2504 ) ( 1408 1016 2504 ) ( 1408 -1024 -64 ) common/clusterportal 0 0 0 0.5 0.5 0 0 0
 }
 // brush 6
 {
@@ -5819,6 +5819,24 @@ gothic_trim/zinc_shiny
 ( -1951 191 64 ) ( -1934 178 -64 ) ( -1951 191 -64 ) common/clip 0 0 0 0.5 0.5 0 0 0
 ( -1933 177 -64 ) ( -1912 167 -64 ) ( -1933 177 64 ) common/clip 0 0 0 0.5 0.5 0 0 0
 }
+// brush 622
+{
+( -2544 1016 2504 ) ( -2544 -1024 2504 ) ( -2552 -1024 2504 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
+( -2544 1016 2504 ) ( -2552 1016 2504 ) ( -2552 1016 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
+( -2552 -1024 -64 ) ( -2544 -1024 -64 ) ( -2544 1016 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
+( -2552 -1024 2504 ) ( -2544 -1024 2504 ) ( -2552 -1024 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
+( -2552 1016 2504 ) ( -2552 -1024 2504 ) ( -2552 1016 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
+( -2544 -1024 2504 ) ( -2544 1016 2504 ) ( -2544 -1024 -64 ) skies/earthsky01 0 0 0 0.5 0.5 0 0 0
+}
+// brush 623
+{
+( -1408 1016 2504 ) ( -1408 -1024 2504 ) ( -1416 -1024 2504 ) common/clusterportal 32 0 0 0.5 0.5 0 0 0
+( -1408 1016 2504 ) ( -1416 1016 2504 ) ( -1416 1016 -64 ) common/clusterportal 32 0 0 0.5 0.5 0 0 0
+( -1416 -1024 -64 ) ( -1408 -1024 -64 ) ( -1408 1016 -64 ) common/clusterportal 32 0 0 0.5 0.5 0 0 0
+( -1416 -1024 2504 ) ( -1408 -1024 2504 ) ( -1416 -1024 -64 ) common/clusterportal 32 0 0 0.5 0.5 0 0 0
+( -1416 1016 2504 ) ( -1416 -1024 2504 ) ( -1416 1016 -64 ) common/clusterportal 0 0 0 0.5 0.5 0 0 0
+( -1408 -1024 2504 ) ( -1408 1016 2504 ) ( -1408 -1024 -64 ) common/clusterportal 0 0 0 0.5 0.5 0 0 0
+}
 }
 // entity 1
 {
@@ -5887,13 +5905,13 @@ gothic_trim/zinc_shiny
 {
 "classname" "team_CTF_redflag"
 "origin" "-1792 -2 1545"
-"gametype" "ctf"
+"gametype" "oneflag, ctf"
 }
 // entity 8
 {
 "classname" "team_CTF_blueflag"
 "origin" "1792 -2 1545"
-"gametype" "ctf"
+"gametype" "oneflag, ctf"
 }
 // entity 9
 {
@@ -6373,12 +6391,13 @@ gothic_trim/zinc_shiny
 {
 "classname" "item_health_mega"
 "origin" "1 0 1090"
-"gametype" "ctf"
+"gametype" "ctf, obelisk"
 }
 // entity 49
 {
 "classname" "team_neutralobelisk"
 "origin" "0 0 1055"
+"gametype" "oneflag, harvester"
 }
 // entity 50
 {
@@ -7248,11 +7267,17 @@ gothic_trim/zinc_shiny
 {
 "classname" "team_blueobelisk"
 "origin" "1792 0 1528"
-"gametype" "oneflag, obelisk, harvester"
+"angle" "180"
 }
 // entity 153
 {
 "classname" "team_redobelisk"
 "origin" "-1792 0 1528"
-"gametype" "oneflag, obelisk, harvester"
+"angle" "0"
+}
+// entity 154
+{
+"classname" "team_CTF_neutralflag"
+"origin" "0 0 1064"
+"gametype" "oneflag"
 }

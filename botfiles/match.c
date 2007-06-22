@@ -102,10 +102,8 @@ MTCONTEXT_INITIALTEAMCHAT
 	//go harvesting
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " harvest" = (MSG_HARVEST, ST_ADDRESSED);
 	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " go harvesting" = (MSG_HARVEST, ST_ADDRESSED);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " collect skulls" = (MSG_HARVEST, ST_ADDRESSED);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": get some" = (MSG_HARVEST, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": harvest" = (MSG_HARVEST, 0);
-	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": collect" = (MSG_HARVEST, 0);
+	EC"("|EC"[", NETNAME, EC")"|EC"]", PLACE, EC": ", ADDRESSEE, " collect ","skulls"|"cubes" = (MSG_HARVEST, ST_ADDRESSED);
+	
 	
 
 	//kill someone (NOTE: make sure these are after the get flag match templates because of the "kill"
