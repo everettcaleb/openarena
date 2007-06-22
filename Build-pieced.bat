@@ -91,8 +91,8 @@ zip pak2-players-mature.pk3 -d models/players/penguin/*.*
 zip pak2-players-mature.pk3 -d models/players/gargoyle/*.*
 zip pak2-players-mature.pk3 -d models/players/merman/*.*
 
-zip pak0.pk3 -d models/players/hnt/*.*
-zip pak0.pk3 -d models/players/arachna/*.*
+zip pak2-players.pk3 -d models/players/hnt/*.*
+zip pak2-players.pk3 -d models/players/arachna/*.*
 
 
 zip -9r pak2-players.pk3 sound/player/*.* -x *svn*
