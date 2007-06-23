@@ -198,7 +198,7 @@ textures/sfx/teslacoil
 {
 	qer_editorimage textures/sfx/tesla1.jpg
 	q3map_lightimage textures/sfx/tesla1.jpg
-	q3map_surfacelight 300
+	q3map_surfacelight 25
 	cull none
 	{
 		map $lightmap
@@ -239,7 +239,7 @@ textures/sfx/teslacoil3
 {
 	qer_editorimage textures/sfx/tesla1b.jpg
 	q3map_lightimage textures/sfx/electricslime.jpg
-	q3map_surfacelight 300
+	q3map_surfacelight 25
 	cull none
 	{
 		map $lightmap
@@ -295,7 +295,7 @@ textures/sfx/xian_dm3padwall
 	q3map_lightimage textures/sfx/xian_dm3padwallglow.jpg
 	surfaceparm nomarks
 	surfaceparm metalsteps
-	q3map_surfacelight 400
+	q3map_surfacelight 25
 		
 	{
 		map textures/sfx/xian_dm3padwall.jpg

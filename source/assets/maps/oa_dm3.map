@@ -8670,73 +8670,67 @@ base_support/cable
 }
 // entity 147
 {
-"classname" "info_intermission"
-"mangle" "20 30 0"
-"origin" "-736 376 240"
-}
-// entity 148
-{
 "classname" "ammo_shells"
 "origin" "968 -776 80"
 }
-// entity 149
+// entity 148
 {
 "classname" "ammo_rockets"
 "origin" "760 -360 48"
 }
-// entity 150
+// entity 149
 {
 "classname" "ammo_shells"
 "origin" "920 -8 56"
 }
-// entity 151
+// entity 150
 {
 "classname" "weapon_shotgun"
 "origin" "1776 -656 -16"
 }
-// entity 152
+// entity 151
 {
 "classname" "item_health_mega"
 "origin" "576 -32 -176"
 }
-// entity 153
+// entity 152
 {
 "classname" "ammo_slugs"
 "origin" "728 256 48"
 }
-// entity 154
+// entity 153
 {
 "classname" "ammo_slugs"
 "origin" "336 248 48"
 }
-// entity 155
+// entity 154
 {
 "classname" "ammo_bullets"
 "origin" "64 -208 -136"
 }
-// entity 156
+// entity 155
 {
 "classname" "item_armor_combat"
 "origin" "1232 -904 -32"
 }
-// entity 157
+// entity 156
 {
 "classname" "misc_portal_surface"
 "origin" "1184 -904 16"
 "target" "misc_portal_camera2"
 }
-// entity 158
+// entity 157
 {
 "classname" "item_armor_body"
 "origin" "256 -704 328"
 }
-// entity 159
+// entity 158
 {
 "classname" "misc_portal_surface"
 "origin" "-512 -448 32"
 "target" "misc_portal_camera1"
 }
-// entity 160
+// entity 159
 {
 "classname" "misc_portal_camera"
 "origin" "160 -320 104"
@@ -8744,13 +8738,13 @@ base_support/cable
 "target" "target_position1"
 "roll" "0"
 }
-// entity 161
+// entity 160
 {
 "classname" "target_position"
 "origin" "504 -336 40"
 "targetname" "target_position1"
 }
-// entity 162
+// entity 161
 {
 "classname" "misc_portal_camera"
 "origin" "1328 544 96"
@@ -8758,13 +8752,13 @@ base_support/cable
 "roll" "180"
 "targetname" "misc_portal_camera2"
 }
-// entity 163
+// entity 162
 {
 "classname" "target_position"
 "origin" "1344 304 56"
 "targetname" "target_position2"
 }
-// entity 164
+// entity 163
 {
 "classname" "trigger_push"
 "target" "target_position3"
@@ -8778,13 +8772,13 @@ base_support/cable
 ( 608 664 -280 ) ( 608 712 -280 ) ( 608 664 -176 ) common/trigger 0 0 0 0.5 0.5 0 0 0
 }
 }
-// entity 165
+// entity 164
 {
 "classname" "target_position"
 "origin" "632 696 -64"
 "targetname" "target_position3"
 }
-// entity 166
+// entity 165
 {
 "classname" "trigger_push"
 "target" "target_position4"
@@ -8798,231 +8792,243 @@ base_support/cable
 ( 608 832 -120 ) ( 608 880 -120 ) ( 608 832 72 ) common/trigger 0 40 0 0.200000003 0.200000003 0 0 0
 }
 }
-// entity 167
+// entity 166
 {
 "classname" "target_position"
 "origin" "632 880 48"
 "targetname" "target_position4"
 }
-// entity 168
+// entity 167
 {
 "classname" "item_health_mega"
 "origin" "-721 96 184"
 }
-// entity 169
+// entity 168
 {
 "classname" "target_speaker"
 "origin" "-344 760 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone01.wav"
 }
-// entity 170
+// entity 169
 {
 "classname" "target_speaker"
 "origin" "-584 760 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone02.wav"
 }
-// entity 171
+// entity 170
 {
 "classname" "target_speaker"
 "origin" "-280 312 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone02.wav"
 }
-// entity 172
+// entity 171
 {
 "classname" "target_speaker"
 "origin" "-416 608 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone01.wav"
 }
-// entity 173
+// entity 172
 {
 "classname" "target_speaker"
 "origin" "-824 760 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone01.wav"
 }
-// entity 174
+// entity 173
 {
 "classname" "target_speaker"
 "origin" "-584 528 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone02.wav"
 }
-// entity 175
+// entity 174
 {
 "classname" "target_speaker"
 "origin" "-800 296 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone02.wav"
 }
-// entity 176
+// entity 175
 {
 "classname" "target_speaker"
 "origin" "-280 696 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone02.wav"
 }
-// entity 177
+// entity 176
 {
 "classname" "target_speaker"
 "origin" "-280 528 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone01.wav"
 }
-// entity 178
+// entity 177
 {
 "classname" "target_speaker"
 "origin" "-872 208 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone01.wav"
 }
-// entity 179
+// entity 178
 {
 "classname" "target_speaker"
 "origin" "-584 392 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone01.wav"
 }
-// entity 180
+// entity 179
 {
 "classname" "target_speaker"
 "origin" "-416 440 48"
 "spawnflags" "1"
 "noise" "sound/world/machinerydrone02.wav"
 }
-// entity 181
+// entity 180
 {
 "classname" "target_speaker"
 "origin" "-856 528 152"
 "noise" "sound/world/monitor_02.wav"
 "spawnflags" "1"
 }
-// entity 182
+// entity 181
 {
 "classname" "target_speaker"
 "origin" "-424 648 128"
 "noise" "sound/world/monitor_02.wav"
 "spawnflags" "1"
 }
-// entity 183
+// entity 182
 {
 "classname" "target_speaker"
 "origin" "-424 768 128"
 "noise" "sound/world/monitor_02.wav"
 "spawnflags" "1"
 }
-// entity 184
+// entity 183
 {
 "classname" "target_speaker"
 "origin" "-568 536 104"
 "noise" "sound/world/monitor_02.wav"
 "spawnflags" "1"
 }
-// entity 185
+// entity 184
 {
 "classname" "target_speaker"
 "origin" "-568 432 104"
 "noise" "sound/world/monitor_02.wav"
 "spawnflags" "1"
 }
-// entity 186
+// entity 185
 {
 "classname" "target_speaker"
 "origin" "-688 480 152"
 "noise" "sound/world/monitor_02.wav"
 "spawnflags" "1"
 }
-// entity 187
+// entity 186
 {
 "classname" "target_speaker"
 "origin" "-800 400 152"
 "noise" "sound/world/monitor_02.wav"
 "spawnflags" "1"
 }
-// entity 188
+// entity 187
 {
 "classname" "target_speaker"
 "origin" "832 832 -16"
 "noise" "sound/world/demonwind01.wav"
 "spawnflags" "1"
 }
-// entity 189
+// entity 188
 {
 "classname" "target_speaker"
 "origin" "1728 832 -16"
 "noise" "sound/world/demonwind01.wav"
 "spawnflags" "1"
 }
-// entity 190
+// entity 189
 {
 "classname" "target_speaker"
 "origin" "1600 960 -16"
 "noise" "sound/world/demonwind01.wav"
 "spawnflags" "1"
 }
-// entity 191
+// entity 190
 {
 "classname" "target_speaker"
 "origin" "1344 960 -16"
 "noise" "sound/world/demonwind01.wav"
 "spawnflags" "1"
 }
-// entity 192
+// entity 191
 {
 "classname" "target_speaker"
 "origin" "1088 960 -16"
 "noise" "sound/world/demonwind01.wav"
 "spawnflags" "1"
 }
-// entity 193
+// entity 192
 {
 "classname" "target_speaker"
 "origin" "1872 -152 -368"
 "noise" "sound/world/ambient/x_drowning.wav"
 "spawnflags" "1"
 }
-// entity 194
+// entity 193
 {
 "classname" "target_speaker"
 "origin" "1576 88 -368"
 "noise" "sound/world/ambient/x_drowning.wav"
 "spawnflags" "1"
 }
-// entity 195
+// entity 194
 {
 "classname" "target_speaker"
 "origin" "1784 -192 -136"
 "noise" "sound/world/ambient/x_rumbledrone.wav"
 "spawnflags" "1"
 }
-// entity 196
+// entity 195
 {
 "classname" "target_speaker"
 "origin" "1344 -192 -136"
 "noise" "sound/world/ambient/x_rumbledrone.wav"
 "spawnflags" "1"
 }
-// entity 197
+// entity 196
 {
 "classname" "target_speaker"
 "origin" "1208 -904 0"
 "noise" "sound/world/suck1.wav"
 "spawnflags" "1"
 }
-// entity 198
+// entity 197
 {
 "classname" "target_speaker"
 "origin" "-528 -440 8"
 "noise" "sound/world/suck1.wav"
 "spawnflags" "1"
 }
-// entity 199
+// entity 198
 {
 "classname" "target_speaker"
 "origin" "64 -704 288"
 "spawnflags" "1"
 "noise" "sound/world/growl3.wav"
+}
+// entity 199
+{
+"classname" "info_player_intermission"
+"origin" "1064 -272 88"
+"target" "target_position5"
+}
+// entity 200
+{
+"classname" "target_position"
+"origin" "1848 -192 -136"
+"targetname" "target_position5"
 }
