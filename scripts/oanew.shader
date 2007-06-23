@@ -1,29 +1,3 @@
-models/powerups/armor/shard
-{
-	{
-		map models/powerups/armor/shard.tga
-		tcMod rotate 12
-		tcMod scroll 0.1 0
-		tcGen environment 
-	}
-	{
-		map models/powerups/armor/shard2.tga
-		blendfunc add
-		rgbGen wave sin 0 1 0 1 
-		tcMod rotate -64
-		tcMod scroll 1 0.1
-		tcGen environment 
-	}
-	{
-		map models/powerups/armor/shard2.tga
-		blendfunc add
-		rgbGen wave sin 0 1 0 1 
-		tcMod rotate 35
-		tcMod scroll -2 -0.4
-		tcGen environment 
-	}
-}
-
 lowShotgunFlash
 {
 	deformVertexes autosprite

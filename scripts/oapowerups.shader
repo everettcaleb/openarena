@@ -184,6 +184,23 @@ models/powerups/instant/flight_ring
 	}
 }
 
+models/powerups/armor/shard
+{
+	{
+		map models/powerups/armor/shard.jpg
+		rgbgen vertex
+	}
+}
+
+models/powerups/armor/shard_env
+{
+	{
+		map models/powerups/armor/shard_env.jpg
+		blendfunc add
+		tcgen environment
+	}
+}
+
 //gibs ;-p
 models/gibs/heart
 {
