@@ -7275,261 +7275,261 @@
 }
 // entity 98
 {
-"classname" "info_intermission"
-"origin" "464 -112 48"
-"target" "target_position1"
-}
-// entity 99
-{
 "classname" "weapon_lightning"
 "origin" "528 -304 -104"
 }
-// entity 100
+// entity 99
 {
 "classname" "item_quad"
 "origin" "200 72 -80"
 }
-// entity 101
+// entity 100
 {
 "classname" "ammo_rockets"
 "origin" "440 -784 -104"
 }
-// entity 102
+// entity 101
 {
 "classname" "ammo_rockets"
 "origin" "440 -832 -104"
 }
-// entity 103
+// entity 102
 {
 "classname" "ammo_rockets"
 "origin" "88 -776 -104"
 }
-// entity 104
+// entity 103
 {
 "classname" "ammo_shells"
 "origin" "360 -136 -296"
 }
-// entity 105
+// entity 104
 {
 "classname" "ammo_shells"
 "origin" "728 -864 -216"
 }
-// entity 106
+// entity 105
 {
 "classname" "ammo_shells"
 "origin" "88 -824 -80"
 }
-// entity 107
+// entity 106
 {
 "classname" "ammo_bullets"
 "origin" "256 -832 24"
 }
-// entity 108
+// entity 107
 {
 "classname" "ammo_bullets"
 "origin" "984 -616 -104"
 }
-// entity 109
+// entity 108
 {
 "classname" "ammo_bullets"
 "origin" "840 -584 16"
 }
-// entity 110
+// entity 109
 {
 "classname" "ammo_bullets"
 "origin" "88 -872 -80"
 }
-// entity 111
+// entity 110
 {
 "classname" "ammo_cells"
 "origin" "816 -192 24"
 }
-// entity 112
+// entity 111
 {
 "classname" "ammo_cells"
 "origin" "320 -448 -112"
 }
-// entity 113
+// entity 112
 {
 "classname" "ammo_cells"
 "origin" "320 -616 24"
 }
-// entity 114
+// entity 113
 {
 "classname" "item_armor_body"
 "origin" "1136 -592 16"
 }
-// entity 115
+// entity 114
 {
 "classname" "item_armor_combat"
 "origin" "712 72 -304"
 }
-// entity 116
+// entity 115
 {
 "classname" "item_armor_combat"
 "origin" "512 -96 -112"
 }
-// entity 117
+// entity 116
 {
 "classname" "item_armor_shard"
 "origin" "832 -768 -240"
 }
-// entity 118
+// entity 117
 {
 "classname" "weapon_shotgun"
 "origin" "328 -1016 -104"
 }
-// entity 119
+// entity 118
 {
 "classname" "weapon_plasmagun"
 "origin" "352 -8 -288"
 }
-// entity 120
+// entity 119
 {
 "classname" "misc_teleporter_dest"
 "angle" "180"
 "targetname" "t1"
 "origin" "440 -864 64"
 }
-// entity 121
+// entity 120
 {
 "classname" "misc_teleporter_dest"
 "targetname" "t2"
 "angle" "-90"
 "origin" "624 96 -256"
 }
-// entity 122
+// entity 121
 {
 "classname" "misc_teleporter_dest"
 "targetname" "t3"
 "origin" "720 -176 64"
 }
-// entity 123
+// entity 122
 {
 "classname" "misc_teleporter_dest"
 "targetname" "t4"
 "origin" "376 -240 -256"
 }
-// entity 124
+// entity 123
 {
 "classname" "misc_teleporter_dest"
 "targetname" "t5"
 "angle" "-90"
 "origin" "368 56 -256"
 }
-// entity 125
+// entity 124
 {
 "classname" "ammo_lightning"
 "origin" "-136 -528 -72"
 }
-// entity 126
+// entity 125
 {
 "classname" "ammo_lightning"
 "origin" "-104 568 -296"
 }
-// entity 127
+// entity 126
 {
 "classname" "target_position"
 "origin" "184 -240 -240"
 "targetname" "target_position1"
 }
-// entity 128
+// entity 127
 {
 "classname" "item_health_mega"
 "origin" "-40 584 -288"
 }
-// entity 129
+// entity 128
 {
 "classname" "weapon_railgun"
 "origin" "192 -32 -104"
 }
-// entity 130
+// entity 129
 {
 "classname" "item_armor_shard"
 "origin" "832 -888 -240"
 }
-// entity 131
+// entity 130
 {
 "classname" "item_armor_shard"
 "origin" "832 -856 -240"
 }
-// entity 132
+// entity 131
 {
 "classname" "item_armor_shard"
 "origin" "832 -824 -240"
 }
-// entity 133
+// entity 132
 {
 "classname" "item_armor_shard"
 "origin" "832 -792 -240"
 }
-// entity 134
+// entity 133
 {
 "classname" "target_speaker"
 "origin" "-104 272 -344"
 "noise" "sound/world/lava_amb_01_quiet.wav"
 "spawnflags" "1"
 }
-// entity 135
+// entity 134
 {
 "classname" "target_speaker"
 "origin" "280 -240 -360"
 "noise" "sound/world/lava_amb_01_quiet.wav"
 "spawnflags" "1"
 }
-// entity 136
+// entity 135
 {
 "classname" "target_speaker"
 "origin" "-88 -240 -216"
 "spawnflags" "1"
 "noise" "sound/world/ambient/x_ominous.wav"
 }
-// entity 137
+// entity 136
 {
 "classname" "target_speaker"
 "origin" "640 120 -248"
 "spawnflags" "1"
 "noise" "sound/world/suck1.wav"
 }
-// entity 138
+// entity 137
 {
 "classname" "target_speaker"
 "origin" "376 -256 64"
 "spawnflags" "1"
 "noise" "sound/world/ambient/x_forbidden.wav"
 }
-// entity 139
+// entity 138
 {
 "classname" "target_speaker"
 "origin" "640 -480 -88"
 "spawnflags" "1"
 "noise" "sound/world/suck1.wav"
 }
-// entity 140
+// entity 139
 {
 "classname" "target_speaker"
 "origin" "-128 -608 -16"
 "spawnflags" "1"
 "noise" "sound/world/suck1.wav"
 }
-// entity 141
+// entity 140
 {
 "classname" "target_speaker"
 "origin" "496 -864 64"
 "spawnflags" "1"
 "noise" "sound/world/suck1.wav"
 }
-// entity 142
+// entity 141
 {
 "classname" "target_speaker"
 "origin" "784 -928 -184"
 "spawnflags" "1"
 "noise" "sound/world/suck1.wav"
 }
-// entity 143
+// entity 142
 {
 "classname" "target_speaker"
 "origin" "-64 600 -256"
 "spawnflags" "1"
 "noise" "sound/world/growl1.wav"
+}
+// entity 143
+{
+"classname" "info_player_intermission"
+"origin" "464 -112 48"
+"target" "target_position1"
 }
