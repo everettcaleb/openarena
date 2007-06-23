@@ -147,3 +147,33 @@ models/players/slshish/jet2
 	}
 }
 
+
+
+models/players/slshish/bootjenna
+{
+	cull disable
+	{
+		map models/players/slshish/bootjenna.tga
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/slshish/hairjenna
+{
+	cull disable
+	{
+		map models/players/slshish/hairjenna.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/slshish/shirtjenna
+{
+	cull disable
+	{
+		map models/players/slshish/shirtjenna.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
