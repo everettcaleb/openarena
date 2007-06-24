@@ -610,3 +610,23 @@ textures/sfx2/dist_fog
 	cull none
 	fogparms ( .05 .04 .03 ) 256
 }
+
+textures/sfx/xnotsodensegreyfog
+{
+        surfaceparm trans
+        surfaceparm nonsolid
+	surfaceparm fog
+	surfaceparm nomarks
+        cull disable
+        fogparms ( 0.4784 0.4784 0.4784 ) 600
+	{
+		map textures/liquids/kc_fogcloud3.tga
+		blendfunc filter
+		tcMod turb .01 .5 0 .05
+	}
+	{
+		map textures/liquids/kc_fogcloud3.tga
+		blendfunc filter
+		tcMod scroll -.02 .02
+	}
+}
