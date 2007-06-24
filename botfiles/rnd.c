@@ -815,6 +815,7 @@ femalebot = {
 	"Slshish";
 	"Sly";
 	"Dark";
+	"Jenna";
 	
 }
 
@@ -830,6 +831,7 @@ malebot = {
 
 neuterbot = {
 	"Liz";
+	"Arachna";
 }
 
 botnames = {
@@ -847,6 +849,8 @@ botnames = {
 	"Sly";
 	"Dark";
 	"Slshish";
+	"Jenna";
+	"Arachna";
 }
 
 negative = { 
