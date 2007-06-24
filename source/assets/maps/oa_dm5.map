@@ -6666,24 +6666,24 @@ sfx/teslacoil
 }
 // entity 126
 {
-"classname" "info_intermission"
-"origin" "-176 -824 328"
-"target" "target_position1"
-}
-// entity 127
-{
 "classname" "target_position"
 "origin" "144 -464 88"
 "targetname" "target_position1"
 }
-// entity 128
+// entity 127
 {
 "classname" "item_health_mega"
 "origin" "280 1000 120"
 }
-// entity 129
+// entity 128
 {
 "classname" "light"
 "light" "50"
 "origin" "736 -224 248"
+}
+// entity 129
+{
+"classname" "info_player_intermission"
+"origin" "-176 -824 328"
+"target" "target_position1"
 }
