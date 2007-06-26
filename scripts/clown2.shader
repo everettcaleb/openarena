@@ -546,3 +546,116 @@ textures/proto2/vertex_cavestone
 		rgbgen oneminusvertex
 	}
 }
+
+textures/sfx2/redgoal2
+{
+	surfaceparm nolightmap
+	surfaceparm trans
+	cull none
+	{
+		map textures/sfx2/redgoal2.tga
+		tcgen environment
+		blendfunc add
+		tcmod turb .1 .3 .5 .4
+		tcmod scale .5 .5
+	}
+}
+
+textures/sfx2/bluegoal2
+{
+	surfaceparm nolightmap
+	surfaceparm trans
+	cull none
+	{
+		map textures/sfx2/bluegoal2.tga
+		tcgen environment
+		blendfunc add
+		tcmod turb .1 .3 .5 .4
+		tcmod scale .5 .5
+	}
+}
+
+textures/base_wall2/respawn_effect1
+{
+	qer_editorimage textures/base_wall2/redjet_1.tga
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull none
+	{
+		map textures/base_wall2/redjet_1.tga
+		blendfunc add
+		tcmod scroll .4 0
+		tcmod scale 1 -1
+	}
+	{
+		map textures/base_wall2/redjet_2.tga
+		blendfunc add
+		tcmod scroll -.4 0
+		tcmod scale 1 -1
+	}
+	{
+		map textures/base_wall2/redjet_3.tga
+		blendfunc add
+		tcmod scale 1 -1
+	}
+}
+
+textures/base_wall2/respawn_effect1_blue
+{
+	qer_editorimage textures/base_wall2/bluejet_1.tga
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull none
+	{
+		map textures/base_wall2/bluejet_1.tga
+		blendfunc add
+		tcmod scroll .4 0
+		tcmod scale 1 -1
+	}
+	{
+		map textures/base_wall2/bluejet_2.tga
+		blendfunc add
+		tcmod scroll -.4 0
+		tcmod scale 1 -1
+	}
+	{
+		map textures/base_wall2/bluejet_3.tga
+		blendfunc add
+		tcmod scale 1 -1
+	}
+}
+
+textures/base_wall2/respawn_effect1_ntrl
+{
+	qer_editorimage textures/base_wall2/ntrljet_1.tga
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull none
+	{
+		map textures/base_wall2/ntrljet_1.tga
+		blendfunc add
+		tcmod scroll .4 0
+		tcmod scale 1 -1
+	}
+	{
+		map textures/base_wall2/ntrljet_2.tga
+		blendfunc add
+		tcmod scroll -.4 0
+		tcmod scale 1 -1
+	}
+	{
+		map textures/base_wall2/ntrljet_3.tga
+		blendfunc add
+		tcmod scale 1 -1
+		
+	}
+}

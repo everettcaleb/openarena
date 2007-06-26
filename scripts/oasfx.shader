@@ -286,6 +286,7 @@ textures/sfx/proto_zzztblu3
 		blendFunc GL_ONE GL_ONE
 		tcMod turb 3 .3 0 .3
 		tcmod scroll 2 2
+		tcmod scale .2 .2
 	}
 }
 
