@@ -12,7 +12,7 @@ textures/nki_shaders/tropicalsky
 //	q3map_lightmapBrightness 2.0 
 //	q3map_sunExt red green blue intensity degrees elevation deviance samples
 	q3map_sunExt 1 0.84 0.51 140 200 40 4 4
-	q3map_lightsubdivide 256
+//	q3map_lightsubdivide 256
 	q3map_globaltexture
 	skyParms env/sky1/sky001 512 -
 	surfaceparm noimpact
@@ -28,10 +28,16 @@ textures/nki_shaders/tropicalwater
 	surfaceparm lightfilter
 	surfaceparm nomarks
 	surfaceparm trans
+//	surfaceparm fog
 	surfaceparm water
 //	surfaceparm alphashadow
 	surfaceparm nolightmap
+	//deformVertexes wave <div> <func> <base> <amplitude> <phase> <freq>
+	deformVertexes wave 256 sin 0 16 0 0.1 
+	tessSize 256
 	q3map_globaltexture
+	q3map_flare textures/flares/twilightflare
+//	fogparms ( 0.277 0.664 0.570 ) 2048 //0.277 0.664 0.570,    0.1365 0.332 0.285
 	cull disable
 	{
 		map textures/liquids/pool3d_4b2.tga
