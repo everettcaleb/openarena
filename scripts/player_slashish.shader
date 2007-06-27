@@ -158,6 +158,24 @@ models/players/slshish/bootjenna
 	}
 }
 
+models/players/slshish/bootjenna_red
+{
+	cull disable
+	{
+		map models/players/slshish/bootjenna_red.tga
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/slshish/bootjenna_blue
+{
+	cull disable
+	{
+		map models/players/slshish/bootjenna_blue.tga
+		rgbGen lightingDiffuse
+	}
+}
+
 models/players/slshish/hairjenna
 {
 	cull disable
@@ -168,11 +186,52 @@ models/players/slshish/hairjenna
 	}
 }
 
+models/players/slshish/hairjenna_red
+{
+	cull disable
+	{
+		map models/players/slshish/hairjenna_red.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/slshish/hairjenna_blue
+{
+	cull disable
+	{
+		map models/players/slshish/hairjenna_blue.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+
 models/players/slshish/shirtjenna
 {
 	cull disable
 	{
 		map models/players/slshish/shirtjenna.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/slshish/shirtjenna_red
+{
+	cull disable
+	{
+		map models/players/slshish/shirtjenna_red.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/slshish/shirtjenna_blue
+{
+	cull disable
+	{
+		map models/players/slshish/shirtjenna_blue.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
