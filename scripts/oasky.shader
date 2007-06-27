@@ -1164,3 +1164,77 @@ textures/skies2/nebula2
 	q3map_sun .5 .5 .5 35 65 45
 	skyparms env/nebulae/nebulae 2048 -
 }
+
+textures/skies/xproto_sky_tourney2
+{
+	qer_editorimage textures/skies/intelredclouds.tga
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/s9.tga
+	q3map_surfacelight 200
+	q3map_sun .5 .5 .5 100 180 80
+	skyparms - 1024 -
+	{
+		map textures/skies/intelredclouds.tga
+		tcmod scroll .02 .04
+		tcmod scale 2 3
+	}
+	{
+		map textures/skies/topclouds.jpg
+		blendfunc add
+		tcmod scroll -.005 .005
+		tcmod scale 5 4
+	}
+	{
+		map textures/skies/anoice1.jpg
+		blendfunc filter
+		tcmod scroll .005 .005
+		tcmod scale 4 4
+	}
+	
+}
+
+textures/skies/xmkc_ctf5sky
+{
+	qer_editorimage textures/skies/stars.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_sun	0.9 0.8 1.0 85 85 75
+	skyparms - 1024 -
+	{
+		map textures/skies/stars.jpg
+		tcmod scale 4 7
+	}
+	{
+		map textures/skies/nitesky.jpg
+		blendfunc add
+		tcmod scale 2 4
+		tcmod scroll 0.2 0.001
+	}
+}
+
+textures/skies/tim_tourney1
+{
+	qer_editorimage textures/skies/dimclouds.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_sun	.6 .37 .19 100 320 60
+	skyparms - 1024 -
+	{
+		map textures/skies/intelredclouds.jpg
+		tcmod scale 6 4
+		tcmod scroll 0.04 0.01
+	}
+	{
+		map textures/skies/dimclouds.jpg
+		blendfunc add
+		tcmod scale 2 3
+		tcmod scroll 0.03 0.02
+	}
+}
