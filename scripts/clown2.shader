@@ -481,9 +481,9 @@ textures/base_wall/metalfloor_wall_10
 
 textures/clown/cheapfloor2
 {
-	qer_editorimage textures/clown/stone_floor.jpg
+	qer_editorimage textures/clown/stone_tile.jpg
 	{
-		map textures/clown/stone_floor.jpg
+		map textures/clown/stone_tile.jpg
 		rgbgen identity
 	}
 	{
@@ -492,7 +492,7 @@ textures/clown/cheapfloor2
 		rgbgen vertex
 	}
 	{
-		map textures/clown/stone_floor.jpg
+		map textures/clown/stone_tile.jpg
 		blendfunc add
 		rgbgen identity
 	}
@@ -506,24 +506,15 @@ textures/clown/cheapfloor2
 textures/proto2/c_zinc_shiny
 {
 	qer_editorimage textures/gothic_trim/zinc_shiny.tga
-	{	
-		map textures/gothic_trim/zinc_shiny.tga
-		rgbgen identity
-	}
-	{
-		map textures/effects/tinfx.tga
-		tcgen environment
-		rgbgen identity
-	}
-	{
-		map textures/gothic_trim/zinc_shiny.tga
-		blendfunc blend
-		rgbgen identity
-	}
 	{
 		map $lightmap
-		blendfunc filter
 		rgbgen identity
+	}
+	{
+		map textures/gothic_trim/zinc_shiny.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen identitylighting
+		alphagen lightingspecular
 	}
 }
 
@@ -589,12 +580,14 @@ textures/base_wall2/respawn_effect1
 		blendfunc add
 		tcmod scroll .4 0
 		tcmod scale 1 -1
+		rgbGen wave sin 0 1 0 .5
 	}
 	{
 		map textures/base_wall2/redjet_2.tga
 		blendfunc add
 		tcmod scroll -.4 0
 		tcmod scale 1 -1
+		rgbGen wave sin 1 0 0 1.5
 	}
 	{
 		map textures/base_wall2/redjet_3.tga
@@ -617,12 +610,14 @@ textures/base_wall2/respawn_effect1_blue
 		blendfunc add
 		tcmod scroll .4 0
 		tcmod scale 1 -1
+		rgbGen wave sin 0 1 0 .5
 	}
 	{
 		map textures/base_wall2/bluejet_2.tga
 		blendfunc add
 		tcmod scroll -.4 0
 		tcmod scale 1 -1
+		rgbGen wave sin 1 0 0 1.5
 	}
 	{
 		map textures/base_wall2/bluejet_3.tga
@@ -645,12 +640,14 @@ textures/base_wall2/respawn_effect1_ntrl
 		blendfunc add
 		tcmod scroll .4 0
 		tcmod scale 1 -1
+		rgbGen wave sin 0 1 0 .5
 	}
 	{
 		map textures/base_wall2/ntrljet_2.tga
 		blendfunc add
 		tcmod scroll -.4 0
 		tcmod scale 1 -1
+		rgbGen wave sin 1 0 0 1.5
 	}
 	{
 		map textures/base_wall2/ntrljet_3.tga
@@ -659,3 +656,4 @@ textures/base_wall2/respawn_effect1_ntrl
 		
 	}
 }
+
