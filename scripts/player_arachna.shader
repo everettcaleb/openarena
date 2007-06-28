@@ -267,3 +267,4 @@ models/players/arachna/spider_widowe_blue
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 4
 	}
+}
