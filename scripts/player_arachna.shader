@@ -229,7 +229,7 @@ models/players/arachna/hair_widowe_blue
 {
 	cull disable
 	{
-		map models/players/arachna/hair_widowe_red.tga
+		map models/players/arachna/hair_widowe_blue.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
@@ -238,7 +238,7 @@ models/players/arachna/hair_widowe_blue
 models/players/arachna/torso_widowe_blue
 {
 	{
-		map models/players/arachna/torso_widowe_red.tga
+		map models/players/arachna/torso_widowe_blue.tga
 		rgbGen lightingDiffuse
 	}
 	
@@ -247,7 +247,7 @@ models/players/arachna/torso_widowe_blue
 models/players/arachna/spider_widowe_blue
 {
 	{
-		map models/players/arachna/spider_widowe_red.tga
+		map models/players/arachna/spider_widowe_blue.tga
 		rgbGen lightingDiffuse
 	}
 	{
