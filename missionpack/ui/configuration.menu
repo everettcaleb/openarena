@@ -9,7 +9,7 @@
     visible 0
     fullscreen 1
     background "ui/assets/splash"	
-    itemFocusSound "sound/misc/menu2.wav"	
+    itemFocusSound "ui/assets/hover.wav"	
     focusColor 1 1 0 1
     rect 0 0 640 480
     outOfBoundsClick  
@@ -53,7 +53,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 	       
       		}
 	}
@@ -73,7 +73,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 		open audio;
 		close configuration;
 
@@ -95,7 +95,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 		open videomodes;
 		close configuration;
       		}
@@ -117,7 +117,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
       		}
 	}
 
@@ -136,7 +136,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
       		}
 	}
 
@@ -155,7 +155,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 		close configuration;
 		open main;
       		}

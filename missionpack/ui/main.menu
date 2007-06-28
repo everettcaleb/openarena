@@ -6,7 +6,7 @@
     	smallFont "gfx/2d/bigchars" 12				
     	bigFont "gfx/2d/bigchars" 20				
 	cursor "ui/assets/cursor"			
-	itemFocusSound "sound/misc/menu2.wav"		
+	itemFocusSound "ui/assets/hover.wav"		
 	shadowColor 0.0 0.0 0.0 0.25			
   	}
 							   
@@ -62,7 +62,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
  	
       		}
 	}
@@ -82,7 +82,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 		open createserver;
 		close menu;
       		}
@@ -103,7 +103,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 		open joinserver;
 		close menu;
       		}
@@ -124,7 +124,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 		open configuration;
 		close menu;
       		}
@@ -145,7 +145,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 		open player;
 		close menu;
       		}
@@ -165,7 +165,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
       		}
 	}
 
@@ -184,7 +184,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
       		}
 	}
 
@@ -203,7 +203,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
 		uiscript "quit";
       		}
 	}
@@ -223,7 +223,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "sound/misc/menu1.wav"; 
+	        play "ui/assets/select.wav"; 
       		}
 	}
 
