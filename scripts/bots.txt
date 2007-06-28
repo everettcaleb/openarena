@@ -98,6 +98,12 @@ model		arachna
 aifile	bots/arachna_c.c
 }
 
+{
+name		Widowe
+model		arachna/widowe
+aifile	bots/widowe_c.c
+}
+
 // for the sake of the ctf menu
 
 
