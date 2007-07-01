@@ -27,6 +27,15 @@ models/players/arachna/jewelry
 	}
 }
 
+models/players/arachna/jewelry3
+{
+	cull disable
+	{
+		map models/players/arachna/jewelry3.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
 models/players/arachna/torso
 {
 	{
