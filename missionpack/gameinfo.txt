@@ -3,10 +3,10 @@ gametypes {
   { "Tournament" 1 }
   { "Team Deathmatch" 3 } 
   { "Capture the flag" 4 }
-  { "Elimination" 5 }
-  { "One flag" 6 }
-  { "Over load" 7 }
-  { "Harvester" 8 }
+  { "One flag" 5 }
+  { "Over load" 6 }
+  { "Harvester" 7 }
+  { "Elimination" 8 }
 }
 
 joingametypes {
@@ -15,8 +15,8 @@ joingametypes {
   { "Tournament" 1 }
   { "Team Deathmatch" 3 } 
   { "Capture the flag" 4 }
-  { "Elimination" 5 }
-  { "One flag" 6 }
-  { "Over load" 7 }
-  { "Harvester" 8 }
+  { "One flag" 5 }
+  { "Over load" 6 }
+  { "Harvester" 7 }
+  { "Elimination" 8 }
 }
