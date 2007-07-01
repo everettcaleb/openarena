@@ -1,0 +1,124 @@
+{
+map			"kaos"
+bots		"gargoyle kyonshi grism major"
+longname	"Kaooos"
+fraglimit	20
+type		"single ffa tourney team sp elimination"
+}
+
+{
+map			"czest1dm"
+bots		"gargoyle kyonshi"
+longname	"Monastery"
+fraglimit	20
+type		"single ffa tourney team sp elimination"
+}
+
+
+
+{
+	map "oa_ctf2"
+	bots "kyonshi"
+	longname "OA_CTF2"
+	fraglimit 20
+	type "tourney ctf elimination"
+}
+
+
+{
+map		"hydronex"
+bots		"sarge gargoyle"
+longname	"Hydrocapture"
+fraglimit	30
+type		"ctf elimination"
+}
+
+{
+map		"oa_bases5"
+bots		"sarge gargoyle"
+longname	"Some better bases"
+fraglimit	30
+type		"ctf elimination"
+}
+
+
+{
+map		"delta"
+bots		"merman major"
+longname	"mission over mars"
+fraglimit	"20"
+type		"ctf"
+}
+
+{
+map		"oa_dm3"
+bots		"dmo kyonshi major merman penguin"
+longname	"The Abandoned Base"
+fraglimit	"30"
+type		"single ffa sp team"
+}
+
+{
+map		"oa_dm4"
+bots		"dmo hnt gargoyle major"
+longname	"The Bad Place"
+fraglimit	"30"
+type		"single ffa sp tourney elimination"
+}
+
+{
+map		"oa_dm5"
+bots		"merman major sarge grunt"
+longname	"The Cistern"
+fraglimit	"30"
+type		"single ffa sp team elimination"
+}
+
+{
+map		"oa_pvomit"
+bots		"merman kyonshi gargoyle"
+longname	"Projectile Vomit"
+fraglimit	"25"
+type		"single ffa tourney sp elimination"
+}
+
+{
+map		"oa_shine"
+bots		"major hnt kyonshi"
+longname	"Shine"
+fraglimit	"30"
+type		"single ffa sp elimination"
+}
+
+{
+map		"suspended"
+bots		"merman hnt gargoyle"
+longname	"Suspended"
+fraglimit	"20"
+type		"single ffa tourney sp elimination"
+}
+
+
+// ctf maps
+{
+map			"oa_bases3"
+bots		"tux"
+longname	"Some Bases"
+fraglimit	30
+type		"ctf elimination"
+}
+
+{
+map		"oa_ctf4ish"
+bots		"dmo hnt kyonshi"
+longname	"Free Space"
+type		"ctf elimination"
+}
+
+{
+map "oasago2f2"
+bots		"kyonshi"
+longname "Sago's castle 2"
+fraglimit	10
+type "single ffa tourney sp ctf elimination"
+}
