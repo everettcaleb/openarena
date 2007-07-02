@@ -1,0 +1,201 @@
+Index: code/q3_ui/ui_mods.c
+===================================================================
+--- code/q3_ui/ui_mods.c	(revision 1103)
++++ code/q3_ui/ui_mods.c	(working copy)
+@@ -161,7 +161,7 @@
+ 
+ 	// always start off with baseq3
+ 	s_mods.list.numitems = 1;
+-	s_mods.list.itemnames[0] = s_mods.descriptionList[0] = "Quake III Arena";
++	s_mods.list.itemnames[0] = s_mods.descriptionList[0] = "OpenArena";
+ 	s_mods.fs_gameList[0] = "";
+ 
+ 	numdirs = trap_FS_GetFileList( "$modlist", "", dirlist, sizeof(dirlist) );
+Index: code/unix/unix_shared.c
+===================================================================
+--- code/unix/unix_shared.c	(revision 1103)
++++ code/unix/unix_shared.c	(working copy)
+@@ -407,9 +407,9 @@
+ 	if ((p = getenv("HOME")) != NULL) {
+ 		Q_strncpyz(homePath, p, sizeof(homePath));
+ #ifdef MACOS_X
+-		Q_strcat(homePath, sizeof(homePath), "/Library/Application Support/Quake3");
++		Q_strcat(homePath, sizeof(homePath), "/Library/Application Support/OpenArena");
+ #else
+-		Q_strcat(homePath, sizeof(homePath), "/.q3a");
++		Q_strcat(homePath, sizeof(homePath), "/.openarena");
+ #endif
+ 		if (mkdir(homePath, 0777)) {
+ 			if (errno != EEXIST) 
+Index: code/win32/win_shared.c
+===================================================================
+--- code/win32/win_shared.c	(revision 1103)
++++ code/win32/win_shared.c	(working copy)
+@@ -330,7 +330,7 @@
+ 		return NULL;
+ 	}
+ 	Q_strncpyz( path, szPath, sizeof(path) );
+-	Q_strcat( path, sizeof(path), "\\Quake3" );
++	Q_strcat( path, sizeof(path), "\\OpenArena" );
+ 	FreeLibrary(shfolder);
+ 	if( !CreateDirectory( path, NULL ) )
+ 	{
+Index: code/server/sv_ccmds.c
+===================================================================
+--- code/server/sv_ccmds.c	(revision 1103)
++++ code/server/sv_ccmds.c	(working copy)
+@@ -430,6 +430,12 @@
+ 		return;
+ 	}
+ 
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+@@ -484,6 +490,12 @@
+ 		return;
+ 	}
+ 
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+Index: code/server/sv_client.c
+===================================================================
+--- code/server/sv_client.c	(revision 1103)
++++ code/server/sv_client.c	(working copy)
+@@ -88,6 +88,15 @@
+ 		return;
+ 	}
+ 
++	// if there's no authorize server defined, just let them in
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Not authorizing client due to lack of auth server\n");
++		challenge->pingTime = svs.time;
++		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+Index: code/qcommon/q_shared.h
+===================================================================
+--- code/qcommon/q_shared.h	(revision 1103)
++++ code/qcommon/q_shared.h	(working copy)
+@@ -26,17 +26,17 @@
+ // q_shared.h -- included first by ALL program modules.
+ // A user mod should never modify this file
+ 
+-#define Q3_VERSION            "ioQ3 1.33"
++#define Q3_VERSION            "ioQ3 1.33+oa"
+ #ifndef SVN_VERSION
+   #define SVN_VERSION Q3_VERSION
+ #endif
+-#define CLIENT_WINDOW_TITLE   "ioquake3"
+-#define CLIENT_WINDOW_ICON    "ioq3"
+-#define CONSOLE_WINDOW_TITLE  "ioquake3 console"
+-#define CONSOLE_WINDOW_ICON   "ioq3 console"
++#define CLIENT_WINDOW_TITLE   "OpenArena"
++#define CLIENT_WINDOW_ICON    "OpenArena"
++#define CONSOLE_WINDOW_TITLE  "OpenArena console"
++#define CONSOLE_WINDOW_ICON   "OpenArena console"
+ // 1.32 released 7-10-2002
+ 
+-#define BASEGAME              "baseq3"
++#define BASEGAME              "baseoa"
+ 
+ #define MAX_TEAMNAME 32
+ 
+Index: code/qcommon/files.c
+===================================================================
+--- code/qcommon/files.c	(revision 1103)
++++ code/qcommon/files.c	(working copy)
+@@ -2900,6 +2900,7 @@
+ */
+ static void FS_CheckPak0( void )
+ {
++/*
+ 	searchpath_t	*path;
+ 	qboolean founddemo = qfalse;
+ 	unsigned foundPak = 0;
+@@ -2972,6 +2973,7 @@
+ 		|| !Q_stricmp( fs_gamedirvar->string, "missionpack" ))
+ 			Com_Error(ERR_FATAL, "\n*** you need to install Quake III Arena in order to play ***");
+ 	}
++*/
+ }
+ 
+ /*
+@@ -3383,7 +3385,7 @@
+ 	// try to start up normally
+ 	FS_Startup( BASEGAME );
+ 
+-	FS_CheckPak0( );
++	// FS_CheckPak0( );
+ 
+ 	// if we can't find default.cfg, assume that the paths are
+ 	// busted and error out now, rather than getting an unreadable
+Index: code/qcommon/qcommon.h
+===================================================================
+--- code/qcommon/qcommon.h	(revision 1103)
++++ code/qcommon/qcommon.h	(working copy)
+@@ -236,10 +236,10 @@
+ #define	UPDATE_SERVER_NAME	"update.quake3arena.com"
+ // override on command line, config files etc.
+ #ifndef MASTER_SERVER_NAME
+-#define MASTER_SERVER_NAME	"master.quake3arena.com"
++#define MASTER_SERVER_NAME	"dpmaster.deathmask.net"
+ #endif
+ #ifndef AUTHORIZE_SERVER_NAME
+-#define	AUTHORIZE_SERVER_NAME	"authorize.quake3arena.com"
++#define	AUTHORIZE_SERVER_NAME	""
+ #endif
+ 
+ #define	PORT_MASTER			27950
+Index: code/ui/ui_main.c
+===================================================================
+--- code/ui/ui_main.c	(revision 1103)
++++ code/ui/ui_main.c	(working copy)
+@@ -64,7 +64,7 @@
+ 
+ static const serverFilter_t serverFilters[] = {
+ 	{"All", "" },
+-	{"Quake 3 Arena", "" },
++	{"OpenArena", "" },
+ 	{"Team Arena", "missionpack" },
+ 	{"Rocket Arena", "arena" },
+ 	{"Alliance", "alliance20" },
+Index: code/client/cl_main.c
+===================================================================
+--- code/client/cl_main.c	(revision 1103)
++++ code/client/cl_main.c	(working copy)
+@@ -3582,6 +3582,7 @@
+ =================
+ */
+ qboolean CL_CDKeyValidate( const char *key, const char *checksum ) {
++	/*
+ 	char	ch;
+ 	byte	sum;
+ 	char	chs[3];
+@@ -3638,6 +3639,9 @@
+ 	}
+ 
+ 	return qfalse;
++	*/
++
++	return qtrue;
+ }
+ 
+ 
