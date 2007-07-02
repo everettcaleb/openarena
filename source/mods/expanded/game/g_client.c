@@ -1282,7 +1282,8 @@ void ClientSpawn(gentity_t *ent) {
 	//In Elimination the player should not spawn if he have already spawned in the round (but not for spectators)
 	if(g_gametype.integer == GT_ELIMINATION && (client->sess.sessionTeam != TEAM_SPECTATOR))
 	{
-		if((level.roundNumber==level.roundNumberStarted)||(level.time<level.roundStartTime-g_elimination_activewarmup.integer*1000))
+		if((level.roundNumber==level.roundNumberStarted)||(level.time<level.roundStartTime-g_elimination_activewarmup.integer*1000)&& 
+			TeamCount( -1, TEAM_BLUE ) && TeamCount( -1, TEAM_RED ))
 		{	
 			client->sess.spectatorState = SPECTATOR_FREE;
 			client->isEliminated = qtrue;
@@ -1458,6 +1459,15 @@ else
 	
 	//	ent->health = client->ps.stats[STAT_HEALTH] = 0;
 }
+	//Instantgib mode, replace weapons with rail and gauntlet :)
+	if(g_instantgib.integer)
+	{
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GAUNTLET );
+		client->ps.ammo[WP_GAUNTLET] = -1;
+		client->ps.stats[STAT_WEAPONS] = ( 1 << WP_RAILGUN );
+		client->ps.ammo[WP_RAILGUN] = 999;
+	}
+
 	G_SetOrigin( ent, spawn_origin );
 	VectorCopy( spawn_origin, client->ps.origin );
 

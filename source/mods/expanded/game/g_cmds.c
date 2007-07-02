@@ -84,7 +84,7 @@ void DeathmatchScoreboardMessage( gentity_t *ent ) {
 	}
 
 	trap_SendServerCommand( ent-g_entities, va("scores %i %i %i %i%s", i, 
-		level.teamScores[TEAM_RED], level.teamScores[TEAM_BLUE],level.roundStartTime,
+		level.teamScores[TEAM_RED], level.teamScores[TEAM_BLUE], level.roundStartTime,
 		string ) );
 }
 

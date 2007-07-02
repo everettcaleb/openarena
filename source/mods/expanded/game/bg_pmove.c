@@ -357,6 +357,13 @@ PM_CheckJump
 =============
 */
 static qboolean PM_CheckJump( void ) {
+
+	//Elimination - here insert code to relese spectators
+	if ( pm->ps->pm_type == PM_SPECTATOR )
+	{
+		//pm->ps->pm_type = PM_NORMAL;
+	}
+
 	if ( pm->ps->pm_flags & PMF_RESPAWNED ) {
 		return qfalse;		// don't allow jump until all buttons are up
 	}
@@ -366,12 +373,16 @@ static qboolean PM_CheckJump( void ) {
 		return qfalse;
 	}
 
+
 	// must wait for jump to be released
 	if ( pm->ps->pm_flags & PMF_JUMP_HELD ) {
 		// clear upmove so cmdscale doesn't lower running speed
 		pm->cmd.upmove = 0;
 		return qfalse;
 	}
+
+	
+
 
 	pml.groundPlane = qfalse;		// jumping away
 	pml.walking = qfalse;
@@ -1639,7 +1650,7 @@ static void PM_Weapon( void ) {
 	}
 
 	// take an ammo away if not infinite
-	if ( pm->ps->ammo[ pm->ps->weapon ] != -1 ) {
+	if ( pm->ps->ammo[ pm->ps->weapon ] != -1 && pm->ps->ammo[ pm->ps->weapon ] !=999 ) {
 		pm->ps->ammo[ pm->ps->weapon ]--;
 	}
 

@@ -100,6 +100,10 @@ void TossClientItems( gentity_t *self ) {
 		}
 	}
 
+	if (g_instantgib.integer){
+	//Nothing!	
+	}
+	else
 	if ( weapon > WP_MACHINEGUN && weapon != WP_GRAPPLING_HOOK && 
 		self->client->ps.ammo[ weapon ] ) {
 		// find the item type for this weapon
@@ -1055,6 +1059,17 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 		targ->client->lasthurt_mod = mod;
 	}
 
+	//If vampire is enabled, gain health but not from self or teammate, cannot steal more than targ has
+	if((targ != attacker) && !(OnSameTeam(targ, attacker)) && g_vampire.value>0.0)
+	{
+		if(take<targ->health)
+			attacker->health += (int)(((float)take)*g_vampire.value);
+		else
+			attacker->health += (int)(((float)targ->health)*g_vampire.value);
+		if(attacker->health>g_vampireMaxHealth.integer)
+			attacker->health = g_vampireMaxHealth.integer;
+	}
+
 	// do the damage
 	if (take) {
 		targ->health = targ->health - take;
@@ -1077,6 +1092,7 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 		}
 	}
 
+	
 }
 
 

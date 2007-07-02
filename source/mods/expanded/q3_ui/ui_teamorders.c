@@ -75,7 +75,7 @@ static const char *ctfMessages[] = {
 	"i am the leader",
 	"%s defend the base",
 	"%s follow me",
-	"%s get enemy flag",
+	"%s get the enemy flag",
 	"%s camp here",
 	"%s report",
 	"i stop being the leader",

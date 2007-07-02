@@ -842,22 +842,88 @@ CG_DrawEliminationTimer
 static float CG_DrawEliminationTimer( float y ) {
 	char		*s;
 	int			w;
-	int			mins, seconds, tens;
+	int			mins, seconds, tens, sec;
 	int			msec;
-	qboolean		positive;
+	vec4_t			color;
+	const char	*st;
+	float scale;
+	int cw;
+
+	//default color is white
+	memcpy(color,g_color_table[ColorIndex(COLOR_WHITE)],sizeof(color));
 
 	//msec = cg.time - cgs.levelStartTime;
-	if(cg.time>cgs.roundStartTime)
-		msec = cgs.roundtime*1000 - (cg.time -cgs.roundStartTime);
-	else
-		msec = -cg.time +cgs.roundStartTime;
-	if(msec<0)
+	if(cg.time>cgs.roundStartTime) //We are started
 	{
-		positive = qfalse;
-		msec = -msec;
+		msec = cgs.roundtime*1000 - (cg.time -cgs.roundStartTime);
+		if(msec<=30*1000-1) //<= 30 seconds
+			memcpy(color,g_color_table[ColorIndex(COLOR_YELLOW)],sizeof(color));
+		if(msec<=10*1000-1) //<= 10 seconds
+			memcpy(color,g_color_table[ColorIndex(COLOR_RED)],sizeof(color));
+		msec += 1000; //120-1 instead of 119-0
 	}
 	else
-		positive = qtrue;
+	{
+		//Warmup
+		msec = -cg.time +cgs.roundStartTime;
+		memcpy(color,g_color_table[ColorIndex(COLOR_GREEN)],sizeof(color));
+		sec = msec/1000;
+		msec += 1000; //5-1 instead of 4-0
+/***
+Lots of stuff
+****/
+	if(cg.warmup == 0)
+	{
+		st = va( "Round in: %i", sec + 1 );
+		if ( sec != cg.warmupCount ) {
+			cg.warmupCount = sec;
+			switch ( sec ) {
+			case 0:
+				trap_S_StartLocalSound( cgs.media.count1Sound, CHAN_ANNOUNCER );
+				break;
+			case 1:
+				trap_S_StartLocalSound( cgs.media.count2Sound, CHAN_ANNOUNCER );
+				break;
+			case 2:
+				trap_S_StartLocalSound( cgs.media.count3Sound, CHAN_ANNOUNCER );
+				break;
+			default:
+				break;
+			}
+		} 
+		scale = 0.45f;
+		switch ( cg.warmupCount ) {
+		case 0:
+			cw = 28;
+			scale = 0.54f;
+			break;
+		case 1:
+			cw = 24;
+			scale = 0.51f;
+			break;
+		case 2:
+			cw = 20;
+			scale = 0.48f;
+			break;
+		default:
+			cw = 16;
+			scale = 0.45f;
+			break;
+		}
+
+	#ifdef MISSIONPACK
+			w = CG_Text_Width(s, scale, 0);
+			CG_Text_Paint(320 - w / 2, 125, scale, colorWhite, st, 0, 0, ITEM_TEXTSTYLE_SHADOWEDMORE);
+	#else
+		w = CG_DrawStrlen( st );
+		CG_DrawStringExt( 320 - w * cw/2, 70, st, colorWhite, 
+				qfalse, qtrue, cw, (int)(cw * 1.5), 0 );
+	#endif
+	}
+/*
+Lots of stuff
+*/
+	}
 
 	seconds = msec / 1000;
 	mins = seconds / 60;
@@ -865,13 +931,10 @@ static float CG_DrawEliminationTimer( float y ) {
 	tens = seconds / 10;
 	seconds -= tens * 10;
 
-	if(qtrue)
-		s = va( " %i:%i%i", mins, tens, seconds );
-	else
-		s = va( "-%i:%i%i", mins, tens, seconds );
+	s = va( " %i:%i%i", mins, tens, seconds );
 	w = CG_DrawStrlen( s ) * BIGCHAR_WIDTH;
-
-	CG_DrawBigString( 635 - w, y + 2, s, 1.0F);
+	
+	CG_DrawBigStringColor( 635 - w, y + 2, s, color);
 
 	return y + BIGCHAR_HEIGHT + 4;
 }
@@ -2310,6 +2373,10 @@ CG_DrawAmmoWarning
 static void CG_DrawAmmoWarning( void ) {
 	const char	*s;
 	int			w;
+
+	//Don't rapport in instant gib
+	if(cgs.instantgib)
+		return;
 
 	if ( cg_drawAmmoWarning.integer == 0 ) {
 		return;

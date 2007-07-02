@@ -102,20 +102,17 @@ typedef enum {
 	//-- team games go after this --
 
 	GT_TEAM,			// team deathmatch
-	GT_CTF,				// capture the flag
+
+	//-- team games that uses bases go after this
+
+	GT_CTF,				// capture the flag	
 	GT_1FCTF,
 	GT_OBELISK,
 	GT_HARVESTER,	
-	GT_ELIMINATION,			// team elimination (custom)	
+	GT_ELIMINATION,			// team elimination (custom)
 	GT_MAX_GAME_TYPE
+	
 } gametype_t;
-
-//suggested on code3arena:
-#ifdef MISSIONPACK
-#define MAX_GAME_TYPE GT_MAX_GAME_TYPE
-#else
-#define MAX_GAME_TYPE (GT_CTF + 1)
-#endif
 
 typedef enum { GENDER_MALE, GENDER_FEMALE, GENDER_NEUTER } gender_t;
 

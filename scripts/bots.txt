@@ -33,7 +33,7 @@ aifile	bots/merman_c.c
 {
 name		Sergei
 model		sergei
-aifile	bots/dmo_c.c
+aifile	bots/sergei_c.c
 }
 
 
@@ -47,7 +47,7 @@ aifile	bots/penguin_c.c
 {
 name		Angelyss
 model		angelyss
-aifile	bots/hnt_c.c
+aifile	bots/angelyss_c.c
 }
 
 {
@@ -90,7 +90,7 @@ aifile	bots/slshish_c.c
 {
 name		Nekoyumi
 model		ayumi/neko
-aifile	bots/slshish_c.c
+aifile	bots/ayumi_c.c
 }
 
 {

@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
-chat "Dmo"
+chat "Ayumi"
 {
 	//the teamplay.h file is included for all kinds of teamplay chats
 	#include "teamplay.h"
@@ -29,10 +29,6 @@ chat "Dmo"
 	//======================================================
 	type "game_enter" //initiated when the bot enters the game
 	{
-		"Ever feel like you've been cheated?";
-		"Time to die!";
-		0, " is a tosser!";
-		"Now that your daddy is gone...";
 		HELLO1;
 		// 0 = bot name
 		// 1 = random opponent
@@ -40,10 +36,6 @@ chat "Dmo"
 	} //end type
 	type "game_exit" //initiated when the bot exits the game
 	{
-		"Your daddy is here, got to go.";
-		"Adios.";
-		4, " sucks, l8r.";
-		"I'm going to get drunk, l8r";
 		GOODBYE1;
 		GOODBYE0;
 		// 0 = bot name
@@ -52,9 +44,6 @@ chat "Dmo"
 	} //end type
 	type "level_start" //initiated when a new level starts
 	{
-		"Wow this is worse than oa_bases3!";
-		0, " is going down.";
-		
 		HELLO2;
 		
 		// 0 = bot name
@@ -63,7 +52,6 @@ chat "Dmo"
 	{
 		3, " sucks!";
 		2, ", I let you win.";
-		4, " worst level ever!  Let's play it again!";
 		
 		// 0 = bot name
 		// 1 = random opponent
@@ -83,8 +71,8 @@ chat "Dmo"
 	} //end type
 	type "level_end_lose" //initiated when a level ends and the bot is last in the rankings
 	{
-		2, " got lucky.";
-		1, " kept spawn camping.";
+		2, " must be an Arena Lord.";
+		1, " kept getting in my way.";
 		4, " has never been good to me.";
 		// 0 = bot name
 		// 1 = random opponent
@@ -95,22 +83,15 @@ chat "Dmo"
 	//======================================================
 	type "hit_talking" //bot is hit while chat balloon is visible; lecture attacker on poor sportsmanship
 	{
-		"So much for sportsmanship...";
-		"Loser!";
-		"Wanker!";
-		"Putz";
-		"Tosser";
 		DEATH_TALKING;
 		// 0 = shooter
 		// 1 = weapon used by shooter
 	} //end type
 	type "hit_nodeath" //bot is hit by an opponent's weapon attack but didn't die; either praise or insult
 	{
-		"Sissy";
+		"Try harder next time.";
 		"Wuss";
 		"Heh, you suck.";
-		"Dick Cheney is a better shot than you!";
-		"Ya pansy!";
 		// 0 = shooter
 		// 1 = weapon used by shooter
 	} //end type
@@ -141,7 +122,8 @@ chat "Dmo"
 	} //end type
 	type "death_lava" //initiated when the bot dies in lava
 	{
-		"Mmmm... toasted nuts!";
+		"It burns!";
+		"land conservation";
 		DEATH_SUICIDE0;
 		DEATH_SUICIDE1;
 		// 0 = random opponent
@@ -154,18 +136,16 @@ chat "Dmo"
 	} //end type
 	type "death_drown" //initiated when the bot drowns
 	{
-		"I need to spend some time at the Y.";
-		"All of that time in those swimming lessons for naught.";
-		"I should grow gills...";
-		"Crayon should have taught me how to swim...";
+		"I can't swim!";
 		
 		
 		// 0 = random opponent
 	} //end type
 	type "death_suicide" //initiated when bot blows self up with a weapon or craters
 	{
-		"crap!";
+		"Aww crap!";
 		"Shutup!";
+		"I meant to do that.";
 		DEATH_SUICIDE2;
 		DEATH_SUICIDE1;
 		
@@ -174,6 +154,7 @@ chat "Dmo"
 	} //end type
 	type "death_gauntlet" //initiated when the bot is killed by a gauntlet attack
 	{
+		"D'oh!";
 		DEATH_GAUNTLET0;
 		DEATH_GAUNTLET1;
 		// 0 = enemy name
@@ -195,11 +176,6 @@ chat "Dmo"
 	} //end type
 	type "death_insult" //insult initiated when the bot died
 	{
-		"Das schlechteste setzt sich durch";
-		"Wuss";
-		"Sissy";
-		"Pansy!";
-		"Come back here... I'll chew your leg off!";
 		DEATH_INSULT2;
 		DEATH_INSULT0;
 		// 0 = enemy name
@@ -217,7 +193,6 @@ chat "Dmo"
 	//======================================================
 	type "kill_rail" //initiated when the bot kills someone with rail gun
 	{
-		"Pff, try a real weapon next time.";
 		KILL_RAIL1;
 		KILL_RAIL0;
 		// 0 = enemy name
@@ -225,7 +200,10 @@ chat "Dmo"
 	type "kill_gauntlet" //initiated when the bot kills someone with gauntlet
 	{
 		"LOL!";
+		"Too easy";
+		
 
+	
 		// 0 = enemy name
 	} //end type
 	type "kill_telefrag" //initiated when the bot telefragged someone
@@ -251,16 +229,9 @@ chat "Dmo"
 	//======================================================
 	type "random_insult" //insult initiated randomly (just when the bot feels like it)
 	{
-		"Fascist pig!";
-		"Capitalist swine";
-		"Marxist scum!";
-		"Neo-liberal twit!";
-		"Neo-conservative twit!";
-		"Redneck";
-		"White Trash";
-		TAUNT0;
-		TAUNT1;
-		
+		"Your breath stinks";
+		"Get off your dead butt and something for a change.";
+		"Life got you down?  Give it up.";
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
 		// 4 = level's title
@@ -268,13 +239,9 @@ chat "Dmo"
 	} //end type
 	type "random_misc" //miscellanous chats initiated randomly
 	{
-		"...we'll sacrifice the older ones, they're livin' in the past, we'll burn up their religion and we'll all be free at last...";
-		"OI! OI! PUNK ROCK'S NOT DEAD!";
-		"...you sit around the house in your daddy's clothes, you're lookin' a mess, you're pickin' your nose...";
-		"...can't stand rock n' roll, no I can't stand rock n' roll, up your bum with rock n' roll...";
-		"Viva la revolucion!";
-		"Cheap holiday in other people's misery...";
-		GUYTALK1;
+		
+		GRRLTALK0;
+		GRRLTALK1;
 		// 0 = name of randomly chosen player
 		// 1 = name of the last player killed by this bot
 		// 4 = level's title

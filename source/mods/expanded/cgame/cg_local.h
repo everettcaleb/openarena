@@ -1030,6 +1030,9 @@ typedef struct {
 	int				roundStartTime;	
 	int				roundtime;
 
+//instantgib:
+	int				instantgib;
+
 	int				scores1, scores2;		// from configstrings
 	int				redflag, blueflag;		// flag status from configstrings
 	int				flagStatus;

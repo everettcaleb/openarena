@@ -102,6 +102,10 @@ vmCvar_t	g_elimination_bfg;
 vmCvar_t	g_elimination_roundtime;
 vmCvar_t	g_elimination_warmup;
 vmCvar_t	g_elimination_activewarmup;
+//dmn_clowns suggestions (with my idea of implementing):
+vmCvar_t	g_instantgib;
+vmCvar_t	g_vampire;
+vmCvar_t	g_vampireMaxHealth;
 
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
@@ -193,9 +197,14 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_elimination_startArmor, "elimination_startArmor", "200", 0, 0, qtrue },
 	{ &g_elimination_bfg, "elimination_bfg", "0", 0, 0, qtrue },
 	{ &g_elimination_roundtime, "elimination_roundtime", "120", CVAR_SERVERINFO | CVAR_ARCHIVE | CVAR_NORESTART, 0, qtrue },
-	{ &g_elimination_warmup, "elimination_warmup", "5", 0, 0, qtrue },
-	{ &g_elimination_activewarmup, "elimination_activewarmup", "2", 0, 0, qtrue }
-
+	{ &g_elimination_warmup, "elimination_warmup", "7", 0, 0, qtrue },
+	{ &g_elimination_activewarmup, "elimination_activewarmup", "5", 0, 0, qtrue },
+	//Lets try a pure server CVAR thingy: (not working as I had hoped... too slow)
+	//{ &g_roundStartTime, "g_roundStartTime", "0", CVAR_SERVERINFO | CVAR_ROM, 0, qfalse },
+	//Instantgib and Vampire thingies
+	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO, 0, qfalse },
+	{ &g_vampire, "g_vampire", "0.0", 0, 0, qfalse },
+	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", 0, 0, qtrue }
 };
 
 // bk001129 - made static to avoid aliasing
@@ -1417,6 +1426,9 @@ void StartEliminationRound(void)
 		trap_SendServerCommand( -1, "print \"Not enough players to start the round\n\"");
 		level.roundNumberStarted = level.roundNumber-1;
 		level.roundRespawned = qfalse;
+		//Remember that one of the teams is empty!
+		level.roundRedPlayers = countsLiving[TEAM_RED];
+		level.roundBluePlayers = countsLiving[TEAM_BLUE];
 		level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
 		return;
 	}
@@ -1427,6 +1439,16 @@ void StartEliminationRound(void)
 	level.roundBluePlayers = countsLiving[TEAM_BLUE];
 	SendScoreboardMessageToAllClients();
 	EnableWeapons();
+}
+
+//things to do at end of round:
+void EndEliminationRound(void)
+{
+	DisableWeapons();
+	level.roundNumber++;
+	level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
+	SendScoreboardMessageToAllClients();
+	level.roundRespawned = qfalse;
 }
 
 
@@ -1444,9 +1466,11 @@ CheckElimination
 =============
 */
 void CheckElimination(void) {
-	if ( level.numPlayingClients == 0 ) {
+	if ( level.numPlayingClients < 1 ) {
 		return;
 	}	
+
+	
 
 	if(g_gametype.integer == GT_ELIMINATION)
 	{
@@ -1462,76 +1486,60 @@ void CheckElimination(void) {
 		countsHealth[TEAM_BLUE] = TeamHealthCount( -1, TEAM_BLUE );
 		countsHealth[TEAM_RED] = TeamHealthCount( -1, TEAM_RED );
 
-		if((countsLiving[TEAM_BLUE]==0)&&(level.roundNumber==level.roundNumberStarted))
-		{
-			DisableWeapons();
-			//Blue team has been eliminated!
-			level.roundNumber++;
-			trap_SendServerCommand( -1, "print \"Blue Team eliminated!\n\"");
-			level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
-			//level.teamScores[TEAM_RED]++;
-			AddTeamScore(level.intermission_origin,TEAM_RED,1);
-			SendScoreboardMessageToAllClients();
-			level.roundRespawned = qfalse;
-			//RespawnAll();
-		}
-		else
-		if((countsLiving[TEAM_RED]==0)&&(level.roundNumber==level.roundNumberStarted))
-		{
-			DisableWeapons();
-			//Red team eliminated!
-			level.roundNumber++;
-			trap_SendServerCommand( -1, "print \"Red Team eliminated!\n\"");
-			level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
-			//level.teamScores[TEAM_BLUE]++;
-			AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
-			SendScoreboardMessageToAllClients();
-			level.roundRespawned = qfalse;
-			//RespawnAll();
-		}
+		if(level.roundBluePlayers != 0 && level.roundRedPlayers != 0) //Cannot score if one of the team never got any living players
+			if((countsLiving[TEAM_BLUE]==0)&&(level.roundNumber==level.roundNumberStarted))
+			{
+				//Blue team has been eliminated!
+				trap_SendServerCommand( -1, "print \"Blue Team eliminated!\n\"");
+				AddTeamScore(level.intermission_origin,TEAM_RED,1);
+				EndEliminationRound();
+			}
+			else if((countsLiving[TEAM_RED]==0)&&(level.roundNumber==level.roundNumberStarted))
+			{
+				//Red team eliminated!
+				level.roundNumber++;
+				trap_SendServerCommand( -1, "print \"Red Team eliminated!\n\"");
+				AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
+				EndEliminationRound();
+			}
 
 		//Time up
 		if((level.roundNumber==level.roundNumberStarted)&&(level.time>=level.roundStartTime+1000*g_elimination_roundtime.integer))
 		{
-			DisableWeapons();
-			level.roundNumber++;
-			trap_SendServerCommand( -1, "print \"No team eliminated!\n\"");
-			level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
-			level.roundRespawned = qfalse;
+			trap_SendServerCommand( -1, "print \"No teams eliminated!\n\"");
 			if(level.roundBluePlayers != 0 && level.roundRedPlayers != 0) //We don't want to divide by zero. (should not be possible)
-			if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)>((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
-			{
-				//Red team has higher procentage survivors
-				trap_SendServerCommand( -1, "print \"Red team had most survivers!\n\"");
-				AddTeamScore(level.intermission_origin,TEAM_RED,1);
-			}
-			else
-			if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)<((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
-			{
-				//Blue team has higher procentage survivors
-				trap_SendServerCommand( -1, "print \"Blue team had most survivers!\n\"");
-				AddTeamScore(level.intermission_origin,TEAM_BLUE,1);	
-			}
-			else
-			if(countsHealth[TEAM_RED]>countsHealth[TEAM_BLUE])
-			{
-				//Red team has more health
-				trap_SendServerCommand( -1, "print \"Red team has more health left!\n\"");
-				AddTeamScore(level.intermission_origin,TEAM_RED,1);
-			}
-			else
-			if(countsHealth[TEAM_RED]<countsHealth[TEAM_BLUE])
-			{
-				//Blue team has more health
-				trap_SendServerCommand( -1, "print \"Blue team has more health left!\n\"");
-				AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
-			}
-			SendScoreboardMessageToAllClients();
+				if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)>((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
+				{
+					//Red team has higher procentage survivors
+					trap_SendServerCommand( -1, "print \"Red team has most survivers!\n\"");
+					AddTeamScore(level.intermission_origin,TEAM_RED,1);
+				}
+				else if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)<((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
+				{
+					//Blue team has higher procentage survivors
+					trap_SendServerCommand( -1, "print \"Blue team has most survivers!\n\"");
+					AddTeamScore(level.intermission_origin,TEAM_BLUE,1);	
+				}
+				else if(countsHealth[TEAM_RED]>countsHealth[TEAM_BLUE])
+				{
+					//Red team has more health
+					trap_SendServerCommand( -1, "print \"Red team has more health left!\n\"");
+					AddTeamScore(level.intermission_origin,TEAM_RED,1);
+				}
+				else if(countsHealth[TEAM_RED]<countsHealth[TEAM_BLUE])
+				{
+					//Blue team has more health
+					trap_SendServerCommand( -1, "print \"Blue team has more health left!\n\"");
+					AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
+				}
+			EndEliminationRound();
 		}
 
 		//This might be better placed another place:
-		if(g_elimination_activewarmup.integer > g_elimination_warmup.integer)
-			g_elimination_activewarmup.integer = g_elimination_warmup.integer;
+		if(g_elimination_activewarmup.integer<1)
+			g_elimination_activewarmup.integer=1; //We need at least 1 second to spawn all players
+		if(g_elimination_activewarmup.integer > g_elimination_warmup.integer) //This must not be true
+			g_elimination_warmup.integer = g_elimination_activewarmup.integer+1; //Increase warmup
 
 		//Force respawn
 		if(level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer && !level.roundRespawned)
@@ -1549,6 +1557,14 @@ void CheckElimination(void) {
 
 		if((level.roundNumber>level.roundNumberStarted)&&(level.time>=level.roundStartTime))
 			StartEliminationRound();
+	
+		if(level.time+1000*g_elimination_warmup.integer-500>level.roundStartTime)
+		if(counts[TEAM_BLUE]<1 || counts[TEAM_RED]<1)
+		{
+			RespawnDead(); //Allow players to run around anyway
+			EndEliminationRound(); //Start over
+			return;
+		}
 	}
 }
 /*

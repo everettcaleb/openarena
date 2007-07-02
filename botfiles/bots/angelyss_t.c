@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
-chat "Hnt"
+chat "Angelyss"
 {
 	//the teamplay.h file is included for all kinds of teamplay chats
 	#include "teamplay.h"

@@ -76,6 +76,13 @@ static void CG_ParseScores( void ) {
 	cg.teamScores[1] = atoi( CG_Argv( 3 ) );
 	cgs.roundStartTime = atoi( CG_Argv( 4 ) );
 
+	//Update thing in lower-right corner
+	if(cgs.gametype == GT_ELIMINATION)
+	{
+		cgs.scores1 = cg.teamScores[0];
+		cgs.scores2 = cg.teamScores[1];
+	}
+
 	memset( cg.scores, 0, sizeof( cg.scores ) );
 
 #define NUM_DATA 15
@@ -163,6 +170,8 @@ void CG_ParseServerinfo( void ) {
 	cgs.timelimit = atoi( Info_ValueForKey( info, "timelimit" ) );
 	cgs.maxclients = atoi( Info_ValueForKey( info, "sv_maxclients" ) );
 	cgs.roundtime = atoi( Info_ValueForKey( info, "elimination_roundtime" ) );
+	cgs.roundStartTime = atoi( Info_ValueForKey( info, "g_roundStartTime") );
+	cgs.instantgib = atoi( Info_ValueForKey( info, "g_instantgib" ) );
 	mapname = Info_ValueForKey( info, "mapname" );
 	Com_sprintf( cgs.mapname, sizeof( cgs.mapname ), "maps/%s.bsp", mapname );
 	Q_strncpyz( cgs.redTeam, Info_ValueForKey( info, "g_redTeam" ), sizeof(cgs.redTeam) );

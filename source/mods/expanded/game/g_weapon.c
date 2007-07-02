@@ -110,8 +110,15 @@ qboolean CheckGauntletAttack( gentity_t *ent ) {
 		s_quadFactor *= 2;
 	}
 #endif
+	if(g_instantgib.integer) {
+		damage = 1000; 
+		G_Damage( traceEnt, ent, ent, forward, tr.endpos,
+		damage, 0, MOD_GAUNTLET );
+	}
 
+	else {
 	damage = 50 * s_quadFactor;
+	}
 	G_Damage( traceEnt, ent, ent, forward, tr.endpos,
 		damage, 0, MOD_GAUNTLET );
 
@@ -454,6 +461,8 @@ void weapon_railgun_fire (gentity_t *ent) {
 	gentity_t	*unlinkedEntities[MAX_RAIL_HITS];
 
 	damage = 100 * s_quadFactor;
+	if(g_instantgib.integer)
+		damage = 5000;
 
 	VectorMA (muzzle, 8192, forward, end);
 

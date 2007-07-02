@@ -260,9 +260,18 @@ CG_TouchItem
 */
 static void CG_TouchItem( centity_t *cent ) {
 	gitem_t		*item;
+	//For instantgib
+	qboolean	canBePicked;
 
 	if(cgs.gametype == GT_ELIMINATION)
 		return; //No weapon pickup in elimination
+
+	//normally we can
+	canBePicked = qtrue;
+
+	//But in instantgib we normally can't:
+	if(cgs.instantgib)
+		canBePicked = qfalse;
 
 	if ( !cg_predictItems.integer ) {
 		return;
@@ -300,22 +309,32 @@ static void CG_TouchItem( centity_t *cent ) {
 		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_BLUE &&
 			item->giTag == PW_BLUEFLAG)
 			return;
+		//Even in instantgib, we can predict our own flag
+		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_RED &&
+			item->giTag == PW_BLUEFLAG)
+			canBePicked = qtrue;
+		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_BLUE &&
+			item->giTag == PW_REDFLAG)
+			canBePicked = qtrue;
 	}
 
 	// grab it
-	BG_AddPredictableEventToPlayerstate( EV_ITEM_PICKUP, cent->currentState.modelindex , &cg.predictedPlayerState);
+	if(canBePicked)
+	{
+		BG_AddPredictableEventToPlayerstate( EV_ITEM_PICKUP, cent->currentState.modelindex , &cg.predictedPlayerState);
 
-	// remove it from the frame so it won't be drawn
-	cent->currentState.eFlags |= EF_NODRAW;
+		// remove it from the frame so it won't be drawn
+		cent->currentState.eFlags |= EF_NODRAW;
 
-	// don't touch it again this prediction
-	cent->miscTime = cg.time;
+		// don't touch it again this prediction
+		cent->miscTime = cg.time;
 
-	// if its a weapon, give them some predicted ammo so the autoswitch will work
-	if ( item->giType == IT_WEAPON ) {
-		cg.predictedPlayerState.stats[ STAT_WEAPONS ] |= 1 << item->giTag;
-		if ( !cg.predictedPlayerState.ammo[ item->giTag ] ) {
-			cg.predictedPlayerState.ammo[ item->giTag ] = 1;
+		// if its a weapon, give them some predicted ammo so the autoswitch will work
+		if ( item->giType == IT_WEAPON ) {
+			cg.predictedPlayerState.stats[ STAT_WEAPONS ] |= 1 << item->giTag;
+			if ( !cg.predictedPlayerState.ammo[ item->giTag ] ) {
+				cg.predictedPlayerState.ammo[ item->giTag ] = 1;
+			}
 		}
 	}
 }

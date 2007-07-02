@@ -418,7 +418,7 @@ typedef struct {
 	int			portalSequence;
 #endif
 	//Added for elimination:
-	int roundStartTime;			//time the current round was started
+	int roundStartTime;		//time the current round was started
 	int roundNumber;			//The round number we have reached
 	int roundNumberStarted;			//1 less than roundNumber if we are allowed to spawn
 	int roundRedPlayers;			//How many players was there at start of round
@@ -790,6 +790,11 @@ extern	vmCvar_t	g_elimination_bfg;
 extern	vmCvar_t	g_elimination_roundtime;
 extern	vmCvar_t	g_elimination_warmup;
 extern	vmCvar_t	g_elimination_activewarmup;
+
+//new in elimination Beta2
+extern vmCvar_t		g_instantgib;
+extern vmCvar_t		g_vampire;
+extern vmCvar_t		g_vampireMaxHealth;
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );
