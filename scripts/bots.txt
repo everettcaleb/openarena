@@ -45,32 +45,32 @@ aifile	bots/penguin_c.c
 
 
 {
-name		Hnt
-model		hnt
+name		Angelyss
+model		angelyss
 aifile	bots/hnt_c.c
 }
 
 {
 name		Sly
-model		hnt/sly
+model		angelyss/sly
 aifile	bots/sly_c.c
 }
 
 {
 name		Dark
-model		hnt/dark
+model		angelyss/dark
 aifile	bots/dark_c.c
 }
 
 {
 name		Tanisha
-model		hnt/tanisha
+model		angelyss/tanisha
 aifile	bots/tanisha_c.c
 }
 
 {
 name		Rai
-model		hnt/rai
+model		angelyss/rai
 aifile	bots/rai_c.c
 }
 
@@ -81,14 +81,21 @@ aifile	bots/liz_c.c
 }
 
 {
-name		Slshish
-model		slshish
+name		Ayumi
+model		ayumi
+aifile	bots/slshish_c.c
+}
+
+
+{
+name		Nekoyumi
+model		ayumi/neko
 aifile	bots/slshish_c.c
 }
 
 {
 name		Jenna
-model		slshish/jenna
+model		ayumi/jenna
 aifile	bots/jenna_c.c
 }
 

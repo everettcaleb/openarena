@@ -65,6 +65,7 @@ zip -9r pak0.pk3 models/players/*.* -x *svn*
 rem cut out everyone but sarge as he is the required model
 
 zip pak0.pk3 -d models/players/hnt/*.*
+zip pak0.pk3 -d models/players/angelyss/*.*
 zip pak0.pk3 -d models/players/arachna/*.*
 zip pak0.pk3 -d models/players/sergei/*.*
 zip pak0.pk3 -d models/players/kyonshi/*.*
@@ -92,6 +93,7 @@ zip pak2-players-mature.pk3 -d models/players/gargoyle/*.*
 zip pak2-players-mature.pk3 -d models/players/merman/*.*
 
 zip pak2-players.pk3 -d models/players/hnt/*.*
+zip pak2-players.pk3 -d models/players/angelyss/*.*
 zip pak2-players.pk3 -d models/players/arachna/*.*
 
 
