@@ -1,27 +1,27 @@
 //*******************************
 //DEFAULT_SKIN:
 //*******************************
-models/players/dmo/face
+models/players/sergei/face
 {
 	cull disable
 	{
-		map models/players/dmo/face.tga
+		map models/players/sergei/face.tga
 		rgbGen lightingDiffuse
 	}
 }
-models/players/dmo/skin
+models/players/sergei/skin
 {
 	cull disable
 	{
-		map models/players/dmo/skin.tga
+		map models/players/sergei/skin.tga
 		rgbGen lightingDiffuse
 	}
 }
-models/players/dmo/hairs
+models/players/sergei/hairs
 {
 	cull disable
 	{
-		map models/players/dmo/hairs.tga
+		map models/players/sergei/hairs.tga
 		rgbGen lightingDiffuse
 //		blendfunc blend
 		alphaFunc GE128
@@ -33,7 +33,7 @@ models/players/dmo/hairs
 //		tcGen environment 
 //	}
 	// {
-		// map models/players/dmo/hairs.tga
+		// map models/players/sergei/hairs.tga
 		// blendfunc blend
 		// rgbGen lightingDiffuse
 	// }
@@ -41,27 +41,27 @@ models/players/dmo/hairs
 //*******************************
 //RED_SKIN:
 //*******************************
-models/players/dmo/facered
+models/players/sergei/facered
 {
 	cull disable
 	{
-		map models/players/dmo/facered.tga
+		map models/players/sergei/facered.tga
 		rgbGen lightingDiffuse
 	}
 }
-models/players/dmo/skinred
+models/players/sergei/skinred
 {
 	cull disable
 	{
-		map models/players/dmo/skinred.tga
+		map models/players/sergei/skinred.tga
 		rgbGen lightingDiffuse
 	}
 }
-models/players/dmo/hairsred
+models/players/sergei/hairsred
 {
 	cull disable
 	{
-		map models/players/dmo/hairsred.tga
+		map models/players/sergei/hairsred.tga
 		rgbGen lightingDiffuse
 //		blendfunc blend
 		alphaFunc GE128
@@ -73,7 +73,7 @@ models/players/dmo/hairsred
 //		tcGen environment 
 //	}
 	// {
-		// map models/players/dmo/hairsred.tga
+		// map models/players/sergei/hairsred.tga
 		// blendfunc blend
 		// rgbGen lightingDiffuse
 	// }
@@ -81,27 +81,27 @@ models/players/dmo/hairsred
 //*******************************
 //BLUE_SKIN:
 //*******************************
-models/players/dmo/faceblue
+models/players/sergei/faceblue
 {
 	cull disable
 	{
-		map models/players/dmo/faceblue.tga
+		map models/players/sergei/faceblue.tga
 		rgbGen lightingDiffuse
 	}
 }
-models/players/dmo/skinblue
+models/players/sergei/skinblue
 {
 	cull disable
 	{
-		map models/players/dmo/skinblue.tga
+		map models/players/sergei/skinblue.tga
 		rgbGen lightingDiffuse
 	}
 }
-models/players/dmo/hairsblue
+models/players/sergei/hairsblue
 {
 	cull disable
 	{
-		map models/players/dmo/hairsblue.tga
+		map models/players/sergei/hairsblue.tga
 		rgbGen lightingDiffuse
 //		blendfunc blend
 		alphaFunc GE128
@@ -113,7 +113,7 @@ models/players/dmo/hairsblue
 //		tcGen environment 
 //	}
 	// {
-		// map models/players/dmo/hairsblue.tga
+		// map models/players/sergei/hairsblue.tga
 		// blendfunc blend
 		// rgbGen lightingDiffuse
 	// }
