@@ -31,8 +31,8 @@ aifile	bots/merman_c.c
 }
 
 {
-name		Dmo
-model		dmo
+name		Sergei
+model		sergei
 aifile	bots/dmo_c.c
 }
 
