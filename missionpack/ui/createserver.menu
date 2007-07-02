@@ -445,6 +445,41 @@ itemDef {
 	visible 1 
     }
 
+itemDef {
+      	name vamp
+      	text "Vampire:"
+	cvar "g_vampire"
+      	style 0	
+	type ITEM_TYPE_NUMERICFIELD
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 54 388 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+    }
+
+itemDef {
+      	name instantgib
+      	style 0	
+      	text "Instant Gib:"
+	cvar "g_instantgib"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	textstyle 6
+      	textscale .22
+      	rect 54 412 117 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+    }
 // row 2 of other buttons
 
 itemDef {
