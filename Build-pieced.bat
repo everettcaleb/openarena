@@ -71,7 +71,7 @@ zip pak0.pk3 -d models/players/sergei/*.*
 zip pak0.pk3 -d models/players/kyonshi/*.*
 zip pak0.pk3 -d models/players/liz/*.*
 zip pak0.pk3 -d models/players/major/*.*
-zip pak0.pk3 -d models/players/slshish/*.*
+zip pak0.pk3 -d models/players/ayumi/*.*
 zip pak0.pk3 -d models/players/penguin/*.*
 zip pak0.pk3 -d models/players/gargoyle/*.*
 zip pak0.pk3 -d models/players/merman/*.*
@@ -87,7 +87,7 @@ zip pak2-players-mature.pk3 -d models/players/sergei/*.*
 zip pak2-players-mature.pk3 -d models/players/kyonshi/*.*
 zip pak2-players-mature.pk3 -d models/players/liz/*.*
 zip pak2-players-mature.pk3 -d models/players/major/*.*
-zip pak2-players-mature.pk3 -d models/players/slshish/*.*
+zip pak2-players-mature.pk3 -d models/players/ayumi/*.*
 zip pak2-players-mature.pk3 -d models/players/penguin/*.*
 zip pak2-players-mature.pk3 -d models/players/gargoyle/*.*
 zip pak2-players-mature.pk3 -d models/players/merman/*.*
