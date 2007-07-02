@@ -1,3 +1,19 @@
+0.7.0 (7/7/2007)
+- lots of crap.
+- New player model : Arachna
+- New player model : Angelyss
+- New player model : Ayumi
+- New player model : Liz
+- New player model : Merman
+- New player model : Penguin
+- New player model : Sergei
+- New voice and skins for Grism
+- Quake's DM maps converted.
+- 22 new maps
+- ce1m7's teleport bug fixed
+- oa_bases3 had an overhaul, now more balanced too
+- dm4ish and dm6ish also had several changes
+
 0.6.0 (12/2/2006)
 - Botfiles code from dmn_clown!
 - Binaries updated to ioquake3 revision 982
