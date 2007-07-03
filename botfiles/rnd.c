@@ -811,11 +811,13 @@ fighter = {
 femalebot = {
 	"Kyonshi";
 	"Major";
-	"Hnt";
-	"Slshish";
+	"Angelyss";
+	"Ayumi";
 	"Sly";
 	"Dark";
 	"Jenna";
+	"Tanisha";
+	"Rai";
 	
 }
 
@@ -823,7 +825,7 @@ malebot = {
 	"Grism";
 	"Gargoyle";
 	"Merman";
-	"Dmo";
+	"Sergei";
 	"Penguin";
 	"Sarge";
 	"Grunt";
@@ -832,6 +834,7 @@ malebot = {
 neuterbot = {
 	"Liz";
 	"Arachna";
+	"Widowe";
 }
 
 botnames = {
@@ -840,17 +843,20 @@ botnames = {
 	"Kyonshi";
 	"Major";
 	"Merman";
-	"Dmo";
-	"Hnt";
+	"Sergei";
+	"Angelyss";
 	"Penguin";
 	"Liz";
 	"Sarge";
 	"Grunt";
 	"Sly";
 	"Dark";
-	"Slshish";
+	"Ayumi";
 	"Jenna";
 	"Arachna";
+	"Widowe";
+	"Tanisha";
+	"Rai";
 }
 
 negative = { 
