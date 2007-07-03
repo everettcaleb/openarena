@@ -55,13 +55,13 @@ fraglimit	30
 type		"single ffa tourney team sp"
 }
 
-{
-map			"cbctf1"
-bots		"sarge gargoyle"
-longname	"Capture the Space"
-fraglimit	30
-type		"ctf"
-}
+//{
+//map			"cbctf1"
+//bots		"sarge gargoyle"
+//longname	"Capture the Space"
+//fraglimit	30
+//type		"ctf"
+//}
 {
 map             "fan"
 longname        "Fan"
@@ -96,6 +96,16 @@ fraglimit	30
 type		"ctf"
 }
 
+{
+map		"suction"
+bots		"sarge gargoyle"
+longname	"Suction"
+fraglimit	30
+type		"ctf"
+}
+
+
+
 //for a multiple of 4
 //{
 //map		"delta"
@@ -115,7 +125,7 @@ type		"single ffa sp team"
 
 {
 map		"oa_dm2"
-bots		"dmo kyonshi major merman grunt hnt"
+bots		"sergei kyonshi major merman grunt angelyss"
 longname	"Claustrophobopolis"
 fraglimit	"30"
 type		"single ffa sp team"
@@ -123,7 +133,7 @@ type		"single ffa sp team"
 
 {
 map		"oa_dm3"
-bots		"dmo kyonshi major merman penguin"
+bots		"sergei kyonshi major merman penguin"
 longname	"The Abandoned Base"
 fraglimit	"30"
 type		"single ffa sp team"
@@ -131,7 +141,7 @@ type		"single ffa sp team"
 
 {
 map		"oa_dm4"
-bots		"dmo hnt gargoyle major"
+bots		"sergei angelyss gargoyle major"
 longname	"The Bad Place"
 fraglimit	"30"
 type		"single ffa sp tourney"
@@ -155,7 +165,7 @@ type		"sp tourney"
 
 {
 map		"oa_dm7"
-bots		"hnt grunt kyonshi dmo"
+bots		"angelyss ayumi kyonshi sergei"
 longname	"nameless"
 fraglimit	"15"
 type		"single ffa tourney sp"
@@ -171,7 +181,7 @@ type		"single ffa tourney sp"
 
 {
 map		"oa_shine"
-bots		"major hnt kyonshi"
+bots		"major angelyss kyonshi"
 longname	"Shine"
 fraglimit	"30"
 type		"single ffa sp"
@@ -179,18 +189,26 @@ type		"single ffa sp"
 
 {
 map		"suspended"
-bots		"merman hnt gargoyle"
+bots		"merman angelyss gargoyle"
 longname	"Suspended"
 fraglimit	"20"
 type		"single ffa tourney sp"
 }
 
+//{
+//map		"oa_shouse"
+//bots		"merman sergei kyonshi"
+//longname	"Strange House"
+//fraglimit	"20"
+//type		"single ffa sp"
+//}
+
 {
-map		"oa_shouse"
-bots		"merman dmo kyonshi"
-longname	"Strange House"
+map		"czest1tourney"
+bots		"merman sergei kyonshi"
+longname	"The Space Spire"
 fraglimit	"20"
-type		"single ffa sp"
+type		"single ffa sp tourney"
 }
 
 // commented out due to very ugly texturing
@@ -212,9 +230,17 @@ fraglimit	30
 type		"ctf"
 }
 
+//{
+//map		"oa_ctf4ish"
+//bots		"sergei angelyss kyonshi"
+//longname	"Free Space"
+//type		"ctf"
+//}
+
 {
-map		"oa_ctf4ish"
-bots		"dmo hnt kyonshi"
-longname	"Free Space"
+map		"oasago2f2"
+bots		"merman sergei kyonshi"
+longname	"Sago's Castle 2"
+fraglimit	"20"
 type		"ctf"
 }
