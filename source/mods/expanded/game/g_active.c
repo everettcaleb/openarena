@@ -462,6 +462,11 @@ void ClientTimerActions( gentity_t *ent, int msec ) {
 			if ( ent->health > client->ps.stats[STAT_MAX_HEALTH] ) {
 				ent->health--;
 			}
+			if ( ent->health < client->ps.stats[STAT_MAX_HEALTH] ) {
+				ent->health+=g_regen.integer;
+				if(ent->health>client->ps.stats[STAT_MAX_HEALTH])
+					ent->health= client->ps.stats[STAT_MAX_HEALTH];
+			}
 		}
 
 		// count down armor when over max

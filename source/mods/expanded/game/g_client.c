@@ -1459,13 +1459,16 @@ else
 	
 	//	ent->health = client->ps.stats[STAT_HEALTH] = 0;
 }
-	//Instantgib mode, replace weapons with rail and gauntlet :)
+	//Instantgib mode, replace weapons with rail (and maybe gauntlet)
 	if(g_instantgib.integer)
 	{
-		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GAUNTLET );
-		client->ps.ammo[WP_GAUNTLET] = -1;
 		client->ps.stats[STAT_WEAPONS] = ( 1 << WP_RAILGUN );
-		client->ps.ammo[WP_RAILGUN] = 999;
+		client->ps.ammo[WP_RAILGUN] = 1000; //Don't display any ammo
+		if(g_instantgib.integer>1)
+		{
+			 client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GAUNTLET );
+	              	client->ps.ammo[WP_GAUNTLET] = -1;
+		}
 	}
 
 	G_SetOrigin( ent, spawn_origin );

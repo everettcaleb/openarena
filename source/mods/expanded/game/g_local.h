@@ -795,6 +795,8 @@ extern	vmCvar_t	g_elimination_activewarmup;
 extern vmCvar_t		g_instantgib;
 extern vmCvar_t		g_vampire;
 extern vmCvar_t		g_vampireMaxHealth;
+//new in elimination Beta3
+extern vmCvar_t		g_regen;
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );

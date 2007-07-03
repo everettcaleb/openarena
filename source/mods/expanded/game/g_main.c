@@ -106,6 +106,8 @@ vmCvar_t	g_elimination_activewarmup;
 vmCvar_t	g_instantgib;
 vmCvar_t	g_vampire;
 vmCvar_t	g_vampireMaxHealth;
+//Regen
+vmCvar_t	g_regen;
 
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
@@ -202,8 +204,9 @@ static cvarTable_t		gameCvarTable[] = {
 	//Lets try a pure server CVAR thingy: (not working as I had hoped... too slow)
 	//{ &g_roundStartTime, "g_roundStartTime", "0", CVAR_SERVERINFO | CVAR_ROM, 0, qfalse },
 	//Instantgib and Vampire thingies
-	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO, 0, qfalse },
+	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO | CVAR_LATCH, 0, qfalse },
 	{ &g_vampire, "g_vampire", "0.0", 0, 0, qfalse },
+	{ &g_regen, "g_regen", "0", 0, 0, qfalse },
 	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", 0, 0, qtrue }
 };
 

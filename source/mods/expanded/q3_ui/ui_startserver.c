@@ -786,6 +786,7 @@ static void ServerOptions_Start( void ) {
 	case GT_ELIMINATION:
 		trap_Cvar_SetValue( "ui_ctf_fraglimit", fraglimit );
 		trap_Cvar_SetValue( "ui_ctf_timelimit", timelimit );
+		trap_Cvar_SetValue( "ui_ctf_friendlt", friendlyfire );
 		break;
 
 	}

@@ -55,13 +55,13 @@ fraglimit	30
 type		"single ffa tourney team sp"
 }
 
-//{
-//map			"cbctf1"
-//bots		"sarge gargoyle"
-//longname	"Capture the Space"
-//fraglimit	30
-//type		"ctf"
-//}
+{
+map			"cbctf1"
+bots		"sarge gargoyle"
+longname	"Capture the Space"
+fraglimit	30
+type		"ctf"
+}
 {
 map             "fan"
 longname        "Fan"
@@ -71,13 +71,13 @@ type            "single tourney ffa sp"
 }
 
 // for a multiple of 4
-//{
-//	map "oa_ctf2"
-//	bots "kyonshi"
-//	longname "OA_CTF2"
-//	fraglimit 20
-//	type "tourney ctf"
-//}
+{
+	map "oa_ctf2"
+	bots "kyonshi"
+	longname "OA_CTF2"
+	fraglimit 20
+	type "tourney ctf"
+}
 
 
 {
@@ -107,13 +107,13 @@ type		"ctf"
 
 
 //for a multiple of 4
-//{
-//map		"delta"
-//bots		"merman major"
-//longname	"mission over mars"
-//fraglimit	"20"
-//type		"ctf"
-//}
+{
+map		"delta"
+bots		"merman major"
+longname	"mission over mars"
+fraglimit	"20"
+type		"ctf"
+}
 
 {
 map		"oa_dm1"
@@ -230,17 +230,24 @@ fraglimit	30
 type		"ctf"
 }
 
-//{
-//map		"oa_ctf4ish"
-//bots		"sergei angelyss kyonshi"
-//longname	"Free Space"
-//type		"ctf"
-//}
+{
+map		"oa_ctf4ish"
+bots		"sergei angelyss kyonshi"
+longname	"Free Space"
+type		"ctf"
+}
 
 {
 map		"oasago2f2"
 bots		"merman sergei kyonshi"
 longname	"Sago's Castle 2"
 fraglimit	"20"
+type		"ctf"
+}
+
+{
+map		"czest3ctf"
+bots		"sergei angelyss kyonshi"
+longname	"Holy Wars"
 type		"ctf"
 }
