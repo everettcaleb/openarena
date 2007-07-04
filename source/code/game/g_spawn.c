@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -191,7 +191,7 @@ void SP_team_blueobelisk( gentity_t *ent );
 void SP_team_redobelisk( gentity_t *ent );
 void SP_team_neutralobelisk( gentity_t *ent );
 #endif
-void SP_item_botroam( gentity_t *ent ) {};
+void SP_item_botroam( gentity_t *ent ) { }
 
 spawn_t	spawns[] = {
 	// info entities don't do anything at all, but provide positional
@@ -266,7 +266,7 @@ spawn_t	spawns[] = {
 #endif
 	{"item_botroam", SP_item_botroam},
 
-	{0, 0}
+	{NULL, 0}
 };
 
 /*

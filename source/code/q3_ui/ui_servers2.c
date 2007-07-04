@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -101,7 +101,7 @@ static const char *master_items[] = {
 	"Local",
 	"Internet",
 	"Favorites",
-	0
+	NULL
 };
 
 static const char *servertype_items[] = {
@@ -110,7 +110,7 @@ static const char *servertype_items[] = {
 	"Team Deathmatch",
 	"Tournament",
 	"Capture the Flag",
-	0
+	NULL
 };
 
 static const char *sortkey_items[] = {
@@ -119,7 +119,7 @@ static const char *sortkey_items[] = {
 	"Open Player Spots",
 	"Game Type",
 	"Ping Time",
-	0
+	NULL
 };
 
 static char* gamenames[] = {
@@ -136,7 +136,7 @@ static char* gamenames[] = {
 	"Urban Terror",		// Urban Terror
 	"OSP",						// Orange Smoothie Productions
 	"???",			// unknown
-	0
+	NULL
 };
 
 static char* netnames[] = {
@@ -1265,11 +1265,11 @@ static void ArenaServers_Event( void* ptr, int event ) {
 	case ID_PUNKBUSTER:
 		if (g_arenaservers.punkbuster.curvalue)			
 		{
-			UI_ConfirmMenu_Style( "Enable Punkbuster?",  UI_CENTER|UI_INVERSE|UI_SMALLFONT, (voidfunc_f)NULL, Punkbuster_ConfirmEnable );
+			UI_ConfirmMenu_Style( "Enable Punkbuster?",  UI_CENTER|UI_INVERSE|UI_SMALLFONT, 0, Punkbuster_ConfirmEnable );
 		}
 		else
 		{
-			UI_ConfirmMenu_Style( "Disable Punkbuster?", UI_CENTER|UI_INVERSE|UI_SMALLFONT, (voidfunc_f)NULL, Punkbuster_ConfirmDisable );
+			UI_ConfirmMenu_Style( "Disable Punkbuster?", UI_CENTER|UI_INVERSE|UI_SMALLFONT, 0, Punkbuster_ConfirmDisable );
 		}
 		break;
 	}

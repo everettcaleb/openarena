@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -169,16 +169,14 @@ static void UI_CDKeyMenu_DrawKey( void *self ) {
 	}
 
 	val = UI_CDKeyMenu_PreValidateKey( f->field.buffer );
-UI_DrawProportionalString( 320, 176, "NOTE: A CD key is not necessary", UI_CENTER|UI_SMALLFONT, color_yellow );
 	if( val == 1 ) {
-		UI_DrawProportionalString( 320, 376, "Please don't enter your CD Key", UI_CENTER|UI_SMALLFONT, color_yellow );
-		
+		UI_DrawProportionalString( 320, 376, "No CD Key Needed", UI_CENTER|UI_SMALLFONT, color_yellow );
 	}
 	else if ( val == 0 ) {
-		UI_DrawProportionalString( 320, 376, "The CD Key is valid, delete it!", UI_CENTER|UI_SMALLFONT, color_white );
+		UI_DrawProportionalString( 320, 376, "No CD Key needed, thank you", UI_CENTER|UI_SMALLFONT, color_white );
 	}
 	else {
-		UI_DrawProportionalString( 320, 376, "You can ignore this.", UI_CENTER|UI_SMALLFONT, color_red );
+		UI_DrawProportionalString( 320, 376, "No CD Key needed", UI_CENTER|UI_SMALLFONT, color_red );
 	}
 }
 

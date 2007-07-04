@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -923,7 +923,7 @@ char *ClientConnect( int clientNum, qboolean firstTime, qboolean isBot ) {
   // we don't check password for bots and local client
   // NOTE: local client <-> "ip" "localhost"
   //   this means this client is not running in our current process
-	if ( !( ent->r.svFlags & SVF_BOT ) && (strcmp(value, "localhost") != 0)) {
+	if ( !isBot && (strcmp(value, "localhost") != 0)) {
 		// check for a password
 		value = Info_ValueForKey (userinfo, "password");
 		if ( g_password.string[0] && Q_stricmp( g_password.string, "none" ) &&
@@ -1322,6 +1322,16 @@ void ClientDisconnect( int clientNum ) {
 		&& !level.warmupTime && level.sortedClients[1] == clientNum ) {
 		level.clients[ level.sortedClients[0] ].sess.wins++;
 		ClientUserinfoChanged( level.sortedClients[0] );
+	}
+
+	if( g_gametype.integer == GT_TOURNAMENT &&
+		ent->client->sess.sessionTeam == TEAM_FREE &&
+		level.intermissiontime ) {
+
+		trap_SendConsoleCommand( EXEC_APPEND, "map_restart 0\n" );
+		level.restarted = qtrue;
+		level.changemap = NULL;
+		level.intermissiontime = 0;
 	}
 
 	trap_UnlinkEntity (ent);

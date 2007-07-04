@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -107,6 +107,7 @@ static qboolean	CG_ParseAnimationFile( const char *filename, clientInfo_t *ci ) 
 	}
 	if ( len >= sizeof( text ) - 1 ) {
 		CG_Printf( "File %s too long\n", filename );
+		trap_FS_FCloseFile( f );
 		return qfalse;
 	}
 	trap_FS_Read( text, len, f );
@@ -297,7 +298,7 @@ CG_FileExists
 static qboolean	CG_FileExists(const char *filename) {
 	int len;
 
-	len = trap_FS_FOpenFile( filename, 0, FS_READ );
+	len = trap_FS_FOpenFile( filename, NULL, FS_READ );
 	if (len>0) {
 		return qtrue;
 	}
@@ -648,11 +649,10 @@ Load it now, taking the disk hits.
 This will usually be deferred to a safe time
 ===================
 */
-static void CG_LoadClientInfo( clientInfo_t *ci ) {
+static void CG_LoadClientInfo( int clientNum, clientInfo_t *ci ) {
 	const char	*dir, *fallback;
 	int			i, modelloaded;
 	const char	*s;
-	int			clientNum;
 	char		teamname[MAX_QPATH];
 
 	teamname[0] = 0;
@@ -725,7 +725,6 @@ static void CG_LoadClientInfo( clientInfo_t *ci ) {
 
 	// reset any existing players and bodies, because they might be in bad
 	// frames for this new model
-	clientNum = ci - cgs.clientinfo;
 	for ( i = 0 ; i < MAX_GENTITIES ; i++ ) {
 		if ( cg_entities[i].currentState.clientNum == clientNum
 			&& cg_entities[i].currentState.eType == ET_PLAYER ) {
@@ -804,7 +803,7 @@ We aren't going to load it now, so grab some other
 client's info to use until we have some spare time.
 ======================
 */
-static void CG_SetDeferredClientInfo( clientInfo_t *ci ) {
+static void CG_SetDeferredClientInfo( int clientNum, clientInfo_t *ci ) {
 	int		i;
 	clientInfo_t	*match;
 
@@ -823,7 +822,7 @@ static void CG_SetDeferredClientInfo( clientInfo_t *ci ) {
 			continue;
 		}
 		// just load the real info cause it uses the same models and skins
-		CG_LoadClientInfo( ci );
+		CG_LoadClientInfo( clientNum, ci );
 		return;
 	}
 
@@ -846,7 +845,7 @@ static void CG_SetDeferredClientInfo( clientInfo_t *ci ) {
 		// an improper team skin.  This will cause a hitch for the first
 		// player, when the second enters.  Combat shouldn't be going on
 		// yet, so it shouldn't matter
-		CG_LoadClientInfo( ci );
+		CG_LoadClientInfo( clientNum, ci );
 		return;
 	}
 
@@ -865,7 +864,7 @@ static void CG_SetDeferredClientInfo( clientInfo_t *ci ) {
 	// we should never get here...
 	CG_Printf( "CG_SetDeferredClientInfo: no valid clients!\n" );
 
-	CG_LoadClientInfo( ci );
+	CG_LoadClientInfo( clientNum, ci );
 }
 
 
@@ -1036,14 +1035,14 @@ void CG_NewClientInfo( int clientNum ) {
 		// if we are defering loads, just have it pick the first valid
 		if ( forceDefer || (cg_deferPlayers.integer && !cg_buildScript.integer && !cg.loading ) ) {
 			// keep whatever they had if it won't violate team skins
-			CG_SetDeferredClientInfo( &newInfo );
+			CG_SetDeferredClientInfo( clientNum, &newInfo );
 			// if we are low on memory, leave them with this model
 			if ( forceDefer ) {
 				CG_Printf( "Memory is low.  Using deferred model.\n" );
 				newInfo.deferred = qfalse;
 			}
 		} else {
-			CG_LoadClientInfo( &newInfo );
+			CG_LoadClientInfo( clientNum, &newInfo );
 		}
 	}
 
@@ -1076,7 +1075,7 @@ void CG_LoadDeferredPlayers( void ) {
 				ci->deferred = qfalse;
 				continue;
 			}
-			CG_LoadClientInfo( ci );
+			CG_LoadClientInfo( i, ci );
 //			break;
 		}
 	}

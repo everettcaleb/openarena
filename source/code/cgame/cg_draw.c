@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -2135,7 +2135,7 @@ static void CG_DrawTeamVote(void) {
 }
 
 
-static qboolean CG_DrawScoreboard() {
+static qboolean CG_DrawScoreboard( void ) {
 #ifdef MISSIONPACK
 	static qboolean firstTime = qtrue;
 	float fade, *fadeColor;
@@ -2475,7 +2475,7 @@ static void CG_DrawWarmup( void ) {
 CG_DrawTimedMenus
 =================
 */
-void CG_DrawTimedMenus() {
+void CG_DrawTimedMenus( void ) {
 	if (cg.voiceTime) {
 		int t = cg.time - cg.voiceTime;
 		if ( t > 2500 ) {
@@ -2587,7 +2587,7 @@ static void CG_Draw2D( void ) {
 }
 
 
-static void CG_DrawTourneyScoreboard() {
+static void CG_DrawTourneyScoreboard( void ) {
 #ifdef MISSIONPACK
 #else
 	CG_DrawOldTourneyScoreboard();

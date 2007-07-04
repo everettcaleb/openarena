@@ -15,21 +15,21 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 //
 // g_local.h -- local definitions for game module
 
-#include "q_shared.h"
+#include "../qcommon/q_shared.h"
 #include "bg_public.h"
 #include "g_public.h"
 
 //==================================================================
 
 // the "gameversion" client command will print this plus compile date
-#define	GAMEVERSION	"baseq3"
+#define	GAMEVERSION	BASEGAME
 
 #define BODY_QUEUE_SIZE		8
 
@@ -490,7 +490,7 @@ void G_AddPredictableEvent( gentity_t *ent, int event, int eventParm );
 void G_AddEvent( gentity_t *ent, int event, int eventParm );
 void G_SetOrigin( gentity_t *ent, vec3_t origin );
 void AddRemap(const char *oldShader, const char *newShader, float timeOffset);
-const char *BuildShaderStateConfig();
+const char *BuildShaderStateConfig( void );
 
 //
 // g_combat.c

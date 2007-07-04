@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -66,8 +66,8 @@ vmCvar_t	g_synchronousClients;
 vmCvar_t	g_warmup;
 vmCvar_t	g_doWarmup;
 vmCvar_t	g_restarted;
-vmCvar_t	g_log;
-vmCvar_t	g_logSync;
+vmCvar_t	g_logfile;
+vmCvar_t	g_logfileSync;
 vmCvar_t	g_blood;
 vmCvar_t	g_podiumDist;
 vmCvar_t	g_podiumDrop;
@@ -127,8 +127,8 @@ static cvarTable_t		gameCvarTable[] = {
 
 	{ &g_warmup, "g_warmup", "20", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_doWarmup, "g_doWarmup", "0", 0, 0, qtrue  },
-	{ &g_log, "g_log", "games.log", CVAR_ARCHIVE, 0, qfalse  },
-	{ &g_logSync, "g_logSync", "0", CVAR_ARCHIVE, 0, qfalse  },
+	{ &g_logfile, "g_logfile", "games.log", CVAR_ARCHIVE, 0, qfalse  },
+	{ &g_logfileSync, "g_logfileSync", "0", CVAR_ARCHIVE, 0, qfalse  },
 
 	{ &g_password, "g_password", "", CVAR_USERINFO, 0, qfalse  },
 
@@ -200,7 +200,7 @@ This is the only way control passes into the module.
 This must be the very first function compiled into the .q3vm file
 ================
 */
-int vmMain( int command, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11  ) {
+intptr_t vmMain( int command, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11  ) {
 	switch ( command ) {
 	case GAME_INIT:
 		G_InitGame( arg0, arg1, arg2 );
@@ -209,7 +209,7 @@ int vmMain( int command, int arg0, int arg1, int arg2, int arg3, int arg4, int a
 		G_ShutdownGame( arg0 );
 		return 0;
 	case GAME_CLIENT_CONNECT:
-		return (int)ClientConnect( arg0, arg1, arg2 );
+		return (intptr_t)ClientConnect( arg0, arg1, arg2 );
 	case GAME_CLIENT_THINK:
 		ClientThink( arg0 );
 		return 0;
@@ -316,7 +316,7 @@ void G_FindTeams( void ) {
 	G_Printf ("%i teams with %i entities\n", c, c2);
 }
 
-void G_RemapTeamShaders() {
+void G_RemapTeamShaders( void ) {
 #ifdef MISSIONPACK
 	char string[1024];
 	float f = level.time * 0.001;
@@ -427,14 +427,14 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 
 	level.snd_fry = G_SoundIndex("sound/player/fry.wav");	// FIXME standing in lava / slime
 
-	if ( g_gametype.integer != GT_SINGLE_PLAYER && g_log.string[0] ) {
-		if ( g_logSync.integer ) {
-			trap_FS_FOpenFile( g_log.string, &level.logFile, FS_APPEND_SYNC );
+	if ( g_gametype.integer != GT_SINGLE_PLAYER && g_logfile.string[0] ) {
+		if ( g_logfileSync.integer ) {
+			trap_FS_FOpenFile( g_logfile.string, &level.logFile, FS_APPEND_SYNC );
 		} else {
-			trap_FS_FOpenFile( g_log.string, &level.logFile, FS_APPEND );
+			trap_FS_FOpenFile( g_logfile.string, &level.logFile, FS_APPEND );
 		}
 		if ( !level.logFile ) {
-			G_Printf( "WARNING: Couldn't open logfile: %s\n", g_log.string );
+			G_Printf( "WARNING: Couldn't open logfile: %s\n", g_logfile.string );
 		} else {
 			char	serverinfo[MAX_INFO_STRING];
 
@@ -536,9 +536,6 @@ void G_ShutdownGame( int restart ) {
 
 //===================================================================
 
-#ifndef GAME_HARD_LINKED
-// this is only here so the functions in q_shared.c and bg_*.c can link
-
 void QDECL Com_Error ( int level, const char *error, ... ) {
 	va_list		argptr;
 	char		text[1024];
@@ -560,8 +557,6 @@ void QDECL Com_Printf( const char *msg, ... ) {
 
 	G_Printf ("%s", text);
 }
-
-#endif
 
 /*
 ========================================================================
@@ -1021,6 +1016,8 @@ or moved to a new level based on the "nextmap" cvar
 void ExitLevel (void) {
 	int		i;
 	gclient_t *cl;
+	char nextmap[MAX_STRING_CHARS];
+	char d1[MAX_STRING_CHARS];
 
 	//bot interbreeding
 	BotInterbreedEndMatch();
@@ -1038,8 +1035,16 @@ void ExitLevel (void) {
 		return;	
 	}
 
+	trap_Cvar_VariableStringBuffer( "nextmap", nextmap, sizeof(nextmap) );
+	trap_Cvar_VariableStringBuffer( "d1", d1, sizeof(d1) );
 
-	trap_SendConsoleCommand( EXEC_APPEND, "vstr nextmap\n" );
+	if( !Q_stricmp( nextmap, "map_restart 0" ) && Q_stricmp( d1, "" ) ) {
+		trap_Cvar_Set( "nextmap", "vstr d2" );
+		trap_SendConsoleCommand( EXEC_APPEND, "vstr d1\n" );
+	} else {
+		trap_SendConsoleCommand( EXEC_APPEND, "vstr nextmap\n" );
+	}
+
 	level.changemap = NULL;
 	level.intermissiontime = 0;
 
@@ -1436,7 +1441,12 @@ void CheckTournament( void ) {
 		if ( level.warmupTime < 0 ) {
 			if ( level.numPlayingClients == 2 ) {
 				// fudge by -1 to account for extra delays
-				level.warmupTime = level.time + ( g_warmup.integer - 1 ) * 1000;
+				if ( g_warmup.integer > 1 ) {
+					level.warmupTime = level.time + ( g_warmup.integer - 1 ) * 1000;
+				} else {
+					level.warmupTime = 0;
+				}
+
 				trap_SetConfigstring( CS_WARMUP, va("%i", level.warmupTime) );
 			}
 			return;

@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -242,7 +242,7 @@ static const char *s_drivers[] =
 {
 	OPENGL_DRIVER_NAME,
 	_3DFX_DRIVER_NAME,
-	0
+	NULL
 };
 
 #define ID_BACK2		101
@@ -304,6 +304,9 @@ static graphicsoptions_t		s_graphicsoptions;
 static InitialVideoOptions_s s_ivo_templates[] =
 {
 	{
+		6, qtrue, 3, 0, 2, 2, 2, 1, 0, qtrue
+	},
+	{
 		4, qtrue, 2, 0, 2, 2, 1, 1, 0, qtrue	// JDC: this was tq 3
 	},
 	{
@@ -350,7 +353,7 @@ static void GraphicsOptions_CheckConfig( void )
 {
 	int i;
 
-	for ( i = 0; i < NUM_IVO_TEMPLATES; i++ )
+	for ( i = 0; i < NUM_IVO_TEMPLATES-1; i++ )
 	{
 		if ( s_ivo_templates[i].colordepth != s_graphicsoptions.colordepth.curvalue )
 			continue;
@@ -373,7 +376,9 @@ static void GraphicsOptions_CheckConfig( void )
 		s_graphicsoptions.list.curvalue = i;
 		return;
 	}
-	s_graphicsoptions.list.curvalue = 4;
+
+	// return 'Custom' ivo template
+	s_graphicsoptions.list.curvalue = NUM_IVO_TEMPLATES - 1;
 }
 
 /*
@@ -723,7 +728,7 @@ void GraphicsOptions_MenuInit( void )
 	{
 		"Default",
 		"Voodoo",
-		0
+		NULL
 	};
 
 	static const char *tq_names[] =
@@ -731,24 +736,25 @@ void GraphicsOptions_MenuInit( void )
 		"Default",
 		"16 bit",
 		"32 bit",
-		0
+		NULL
 	};
 
 	static const char *s_graphics_options_names[] =
 	{
+		"Very High Quality",
 		"High Quality",
 		"Normal",
 		"Fast",
 		"Fastest",
 		"Custom",
-		0
+		NULL
 	};
 
 	static const char *lighting_names[] =
 	{
 		"Lightmap",
 		"Vertex",
-		0
+		NULL
 	};
 
 	static const char *colordepth_names[] =
@@ -756,7 +762,7 @@ void GraphicsOptions_MenuInit( void )
 		"Default",
 		"16 bit",
 		"32 bit",
-		0
+		NULL
 	};
 
 	static const char *resolutions[] = 
@@ -773,26 +779,26 @@ void GraphicsOptions_MenuInit( void )
 		"1600x1200",
 		"2048x1536",
 		"856x480 wide screen",
-		0
+		NULL
 	};
 	static const char *filter_names[] =
 	{
 		"Bilinear",
 		"Trilinear",
-		0
+		NULL
 	};
 	static const char *quality_names[] =
 	{
 		"Low",
 		"Medium",
 		"High",
-		0
+		NULL
 	};
 	static const char *enabled_names[] =
 	{
 		"Off",
 		"On",
-		0
+		NULL
 	};
 
 	int y;

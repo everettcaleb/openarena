@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -247,7 +247,7 @@ static void Demos_MenuInit( void ) {
 		if (!Q_stricmp(demoname +  len - 4,".dm3"))
 			demoname[len-4] = '\0';
 
-		Q_strupr(demoname);
+//		Q_strupr(demoname);
 
 		demoname += len + 1;
 	}

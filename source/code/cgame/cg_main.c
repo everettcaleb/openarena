@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -43,7 +43,7 @@ This is the only way control passes into the module.
 This must be the very first function compiled into the .q3vm file
 ================
 */
-int vmMain( int command, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11  ) {
+intptr_t vmMain( int command, int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11  ) {
 
 	switch ( command ) {
 	case CG_INIT:
@@ -391,8 +391,6 @@ void CG_UpdateCvars( void ) {
 		} else {
 			trap_Cvar_Set( "teamoverlay", "0" );
 		}
-		// FIXME E3 HACK
-		trap_Cvar_Set( "teamoverlay", "1" );
 	}
 
 	// if force model changed
@@ -438,9 +436,6 @@ void QDECL CG_Error( const char *msg, ... ) {
 	trap_Error( text );
 }
 
-#ifndef CGAME_HARD_LINKED
-// this is only here so the functions in q_shared.c and bg_*.c can link (FIXME)
-
 void QDECL Com_Error( int level, const char *error, ... ) {
 	va_list		argptr;
 	char		text[1024];
@@ -462,8 +457,6 @@ void QDECL Com_Printf( const char *msg, ... ) {
 
 	CG_Printf ("%s", text);
 }
-
-#endif
 
 /*
 ================
@@ -708,7 +701,7 @@ static void CG_RegisterSounds( void ) {
 	}
 
 	// only register the items that the server says we need
-	strcpy( items, CG_ConfigString( CS_ITEMS ) );
+	Q_strncpyz(items, CG_ConfigString(CS_ITEMS), sizeof(items));
 
 	for ( i = 1 ; i < bg_numItems ; i++ ) {
 //		if ( items[ i ] == '1' || cg_buildScript.integer ) {
@@ -1021,7 +1014,7 @@ static void CG_RegisterGraphics( void ) {
 	memset( cg_weapons, 0, sizeof( cg_weapons ) );
 
 	// only register the items that the server says we need
-	strcpy( items, CG_ConfigString( CS_ITEMS) );
+	Q_strncpyz(items, CG_ConfigString(CS_ITEMS), sizeof(items));
 
 	for ( i = 1 ; i < bg_numItems ; i++ ) {
 		if ( items[ i ] == '1' || cg_buildScript.integer ) {
@@ -1114,7 +1107,7 @@ CG_BuildSpectatorString
 
 =======================
 */
-void CG_BuildSpectatorString() {
+void CG_BuildSpectatorString(void) {
 	int i;
 	cg.spectatorList[0] = 0;
 	for (i = 0; i < MAX_CLIENTS; i++) {
@@ -1455,7 +1448,7 @@ void CG_LoadMenus(const char *menuFile) {
 		trap_Error( va( S_COLOR_YELLOW "menu file not found: %s, using default\n", menuFile ) );
 		len = trap_FS_FOpenFile( "ui/hud.txt", &f, FS_READ );
 		if (!f) {
-			trap_Error( va( S_COLOR_RED "default menu file not found: ui/hud.txt, unable to continue!\n", menuFile ) );
+			trap_Error( va( S_COLOR_RED "default menu file not found: ui/hud.txt, unable to continue!\n") );
 		}
 	}
 
@@ -1756,7 +1749,7 @@ CG_LoadHudMenu();
 
 =================
 */
-void CG_LoadHudMenu() {
+void CG_LoadHudMenu( void ) {
 	char buff[1024];
 	const char *hudSet;
 
@@ -1823,7 +1816,7 @@ void CG_LoadHudMenu() {
 	CG_LoadMenus(hudSet);
 }
 
-void CG_AssetCache() {
+void CG_AssetCache( void ) {
 	//if (Assets.textFont == NULL) {
 	//  trap_R_RegisterFont("fonts/arial.ttf", 72, &Assets.textFont);
 	//}

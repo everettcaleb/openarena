@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -306,7 +306,6 @@ G_RemoveRandomBot
 */
 int G_RemoveRandomBot( int team ) {
 	int i;
-	char netname[36];
 	gclient_t	*cl;
 
 	for ( i=0 ; i< g_maxclients.integer ; i++ ) {
@@ -320,9 +319,7 @@ int G_RemoveRandomBot( int team ) {
 		if ( team >= 0 && cl->sess.sessionTeam != team ) {
 			continue;
 		}
-		strcpy(netname, cl->pers.netname);
-		Q_CleanStr(netname);
-		trap_SendConsoleCommand( EXEC_INSERT, va("kick %s\n", netname) );
+		trap_SendConsoleCommand( EXEC_INSERT, va("clientkick %d\n", cl->ps.clientNum) );
 		return qtrue;
 	}
 	return qfalse;

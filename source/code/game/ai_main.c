@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -32,16 +32,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 #include "g_local.h"
-#include "q_shared.h"
-#include "botlib.h"		//bot lib interface
-#include "be_aas.h"
-#include "be_ea.h"
-#include "be_ai_char.h"
-#include "be_ai_chat.h"
-#include "be_ai_gen.h"
-#include "be_ai_goal.h"
-#include "be_ai_move.h"
-#include "be_ai_weap.h"
+#include "../qcommon/q_shared.h"
+#include "../botlib/botlib.h"		//bot lib interface
+#include "../botlib/be_aas.h"
+#include "../botlib/be_ea.h"
+#include "../botlib/be_ai_char.h"
+#include "../botlib/be_ai_chat.h"
+#include "../botlib/be_ai_gen.h"
+#include "../botlib/be_ai_goal.h"
+#include "../botlib/be_ai_move.h"
+#include "../botlib/be_ai_weap.h"
 //
 #include "ai_main.h"
 #include "ai_dmq3.h"
@@ -55,7 +55,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "inv.h"
 #include "syn.h"
 
+#ifndef MAX_PATH
 #define MAX_PATH		144
+#endif
 
 
 //bot states
@@ -1591,10 +1593,11 @@ int BotInitLibrary(void) {
 	trap_BotLibVarSet("g_gametype", buf);
 	//bot developer mode and log file
 	trap_BotLibVarSet("bot_developer", bot_developer.string);
+	trap_Cvar_VariableStringBuffer("logfile", buf, sizeof(buf));
 	trap_BotLibVarSet("log", buf);
 	//no chatting
 	trap_Cvar_VariableStringBuffer("bot_nochat", buf, sizeof(buf));
-	if (strlen(buf)) trap_BotLibVarSet("nochat", "0");
+	if (strlen(buf)) trap_BotLibVarSet("nochat", buf);
 	//visualize jump pads
 	trap_Cvar_VariableStringBuffer("bot_visualizejumppads", buf, sizeof(buf));
 	if (strlen(buf)) trap_BotLibVarSet("bot_visualizejumppads", buf);
@@ -1626,6 +1629,9 @@ int BotInitLibrary(void) {
 	//cd directory
 	trap_Cvar_VariableStringBuffer("fs_cdpath", buf, sizeof(buf));
 	if (strlen(buf)) trap_BotLibVarSet("cddir", buf);
+	//home directory
+	trap_Cvar_VariableStringBuffer("fs_homepath", buf, sizeof(buf));
+	if (strlen(buf)) trap_BotLibVarSet("homedir", buf);
 	//
 #ifdef MISSIONPACK
 	trap_BotLibDefine("MISSIONPACK");

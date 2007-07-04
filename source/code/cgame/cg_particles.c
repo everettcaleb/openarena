@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -1252,7 +1252,7 @@ void CG_ParticleExplosion (char *animStr, vec3_t origin, vec3_t vel, int duratio
 
 	// find the animation string
 	for (anim=0; shaderAnimNames[anim]; anim++) {
-		if (!stricmp( animStr, shaderAnimNames[anim] ))
+		if (!Q_stricmp( animStr, shaderAnimNames[anim] ))
 			break;
 	}
 	if (!shaderAnimNames[anim]) {

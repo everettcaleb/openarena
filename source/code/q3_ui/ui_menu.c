@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Foobar; if not, write to the Free Software
+along with Quake III Arena source code; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -37,7 +37,7 @@ MAIN MENU
 #define ID_SETUP				12
 #define ID_DEMOS				13
 #define ID_CINEMATICS			14
-#define ID_TEAMARENA		15
+#define ID_MISSIONPACK		15
 #define ID_MODS					16
 #define ID_EXIT					17
 
@@ -120,13 +120,13 @@ void Main_MenuEvent (void* ptr, int event) {
 		UI_ModsMenu();
 		break;
 
-	case ID_TEAMARENA:
+	case ID_MISSIONPACK:
 		trap_Cvar_Set( "fs_game", "missionpack");
 		trap_Cmd_ExecuteText( EXEC_APPEND, "vid_restart;" );
 		break;
 
 	case ID_EXIT:
-		UI_ConfirmMenu( "EXIT GAME?", NULL, MainMenu_ExitAction );
+		UI_ConfirmMenu( "EXIT GAME?", 0, MainMenu_ExitAction );
 		break;
 	}
 }
@@ -222,7 +222,7 @@ static void Main_MenuDraw( void ) {
 	}
 
 		UI_DrawProportionalString( 320, 372, "", UI_CENTER|UI_SMALLFONT, color );
-		UI_DrawString( 320, 400, "OpenArena(c) 2005-2006 OpenArena Team", UI_CENTER|UI_SMALLFONT, color );
+		UI_DrawString( 320, 400, "OpenArena(c) 2005-2007 OpenArena Team", UI_CENTER|UI_SMALLFONT, color );
 		UI_DrawString( 320, 414, "OpenArena comes with ABSOLUTELY NO WARRANTY; this is free software", UI_CENTER|UI_SMALLFONT, color );
 		UI_DrawString( 320, 428, "and you are welcome to redistribute it under certain conditions;", UI_CENTER|UI_SMALLFONT, color );
 		UI_DrawString( 320, 444, "read COPYING for details.", UI_CENTER|UI_SMALLFONT, color );
@@ -371,9 +371,9 @@ void UI_MainMenu( void ) {
 		s_main.teamArena.generic.flags			= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
 		s_main.teamArena.generic.x				= 320;
 		s_main.teamArena.generic.y				= y;
-		s_main.teamArena.generic.id				= ID_TEAMARENA;
+		s_main.teamArena.generic.id				= ID_MISSIONPACK;
 		s_main.teamArena.generic.callback		= Main_MenuEvent; 
-		s_main.teamArena.string					= "TEAM ARENA";
+		s_main.teamArena.string					= "MISSION PACK";
 		s_main.teamArena.color					= color_red;
 		s_main.teamArena.style					= style;
 	}

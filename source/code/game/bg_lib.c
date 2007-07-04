@@ -3,7 +3,7 @@
 // bg_lib,c -- standard C library replacement routines used by code
 // compiled for the virtual machine
 
-#include "q_shared.h"
+#include "../qcommon/q_shared.h"
 
 /*-
  * Copyright (c) 1992, 1993
@@ -17,11 +17,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- * 3. All advertising materials mentioning features or use of this software
- *    must display the following acknowledgement:
- *	This product includes software developed by the University of
- *	California, Berkeley and its contributors.
- * 4. Neither the name of the University nor the names of its contributors
+ * 3. Neither the name of the University nor the names of its contributors
  *    may be used to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
@@ -37,6 +33,8 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
+#include "bg_lib.h"
 
 #if defined(LIBC_SCCS) && !defined(lint)
 #if 0
@@ -269,9 +267,6 @@ char *strstr( const char *string, const char *strCharSet ) {
 }
 #endif // bk001211
 
-// bk001120 - presumably needed for Mac
-//#if !defined(_MSC_VER) && !defined(__linux__)
-// bk001127 - undid undo
 #if defined ( Q3_VM )
 int tolower( int c ) {
 	if ( c >= 'A' && c <= 'Z' ) {
@@ -914,10 +909,6 @@ double _atof( const char **stringPtr ) {
 }
 
 
-// bk001120 - presumably needed for Mac
-//#if !defined ( _MSC_VER ) && ! defined ( __linux__ )
-
-// bk001127 - undid undo
 #if defined ( Q3_VM )
 int atoi( const char *string ) {
 	int		sign;
@@ -1076,7 +1067,7 @@ void AddInt( char **buf_p, int val, int width, int flags ) {
 	}
 
 	if( flags & LADJUST ) {
-		while ( width-- ) {
+		while ( width-- > 0) {
 			*buf++ = ( flags & ZEROPAD ) ? '0' : ' ';
 		}
 	}
@@ -1262,7 +1253,7 @@ reswitch:
 			break;
 		case 'f':
 			AddFloat( &buf_p, *(double *)arg, width, prec );
-#ifdef __LCC__
+#ifdef Q3_VM
 			arg += 1;	// everything is 32 bit in my compiler
 #else
 			arg += 2;
