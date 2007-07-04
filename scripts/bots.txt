@@ -111,6 +111,24 @@ model		arachna/widowe
 aifile	bots/widowe_c.c
 }
 
+//{
+//name		Beret
+//model		beret
+//aifile`	bots/beret_c.c
+//}
+
+//{
+//name		Tony
+//model		tony
+//aifile	bots/tony_c.c
+//}
+
+//{
+//name		Skelebot
+//model		skelebot
+//aifile	bots/skelebot_c.c
+//}
+
 // for the sake of the ctf menu
 
 

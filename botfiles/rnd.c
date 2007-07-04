@@ -829,12 +829,15 @@ malebot = {
 	"Penguin";
 	"Sarge";
 	"Grunt";
+	"Beret";
+	"Tony";
 }
 
 neuterbot = {
 	"Liz";
 	"Arachna";
 	"Widowe";
+	"Skelebot";
 }
 
 botnames = {
@@ -857,6 +860,9 @@ botnames = {
 	"Widowe";
 	"Tanisha";
 	"Rai";
+	"Skelebot";
+	"Tony";
+	"Beret";
 }
 
 negative = { 

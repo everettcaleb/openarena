@@ -225,6 +225,9 @@ CONTEXT_NAMES
 	[("Angelyss", 1),		("Sugar", 0.1), ("Clothing Malfunction", 0.5), ("Sucubus", 0.3)]
 	[("Ayumi", 1),	("pr0n star", 0.1), ("skewl chick", 0.4), ("teeny bopper", 0.5)]
 	[("Jenna", 1),		("street trash", 0.2), ("grease ball", 0.3), ("Biker Babe", 0.5)]
-	[("Arachna", 1),	("Lloth", 0.5), ("spider queen", 0.1)]
+	[("Arachna", 1),	("Llooth", 0.5), ("spider princess", 0.1)]
+	[("Tony", 1),		("Gangter", 0.5), ("Wussy", 0.3), ("Mamma's boi", 0.1)]
+	[("Beret", 1),		("Commando", 0.5), ("Psychonaut", 0.5), ("War Machine Wannabe", 0.1)]
+	[("Skelebot", 1)	("Skillet", 0.5), ("Stove", 0.3), ("Junior", 0.1)]
 //	[("Orb", 1),		("Psycod the Magnificant", 0.5), ("Slayer of the 19 cats of Doom", 0.5)]
 }
