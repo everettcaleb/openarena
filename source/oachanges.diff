@@ -209,5 +209,18 @@ Index: code/client/snd_openal.c
 +	default_sfx = S_AL_BufferFind("sound/misc/silence.wav");
  	S_AL_BufferUse(default_sfx);
  	knownSfx[default_sfx].isLocked = qtrue;
+Index: code/client/snd_dma.c
+===================================================================
+--- snd_dma.c	2007-07-03 15:04:24.000000000 -0400
++++ snd_dma.c	2007-07-05 11:51:21.000000000 -0400
+@@ -364,7 +364,7 @@
+ 		Com_Memset( s_knownSfx, 0, sizeof( s_knownSfx ) );
+ 		Com_Memset(sfxHash, 0, sizeof(sfx_t *)*LOOP_HASH);
+ 
+-		S_Base_RegisterSound("sound/feedback/hit.wav", qfalse);		// changed to a sound in baseq3
++		S_Base_RegisterSound("sound/misc/silence.wav", qfalse);		// changed to a sound in baseq3
+ 	}
+ }
+ 
 
 
