@@ -263,14 +263,14 @@ static void CG_TouchItem( centity_t *cent ) {
 	//For instantgib
 	qboolean	canBePicked;
 
-	if(cgs.gametype == GT_ELIMINATION)
+	if(cgs.gametype == GT_ELIMINATION || cgs.gametype == GT_LMS)
 		return; //No weapon pickup in elimination
 
 	//normally we can
 	canBePicked = qtrue;
 
-	//But in instantgib we normally can't:
-	if(cgs.instantgib)
+	//But in instantgib and CTF_ELIMINATION we normally can't:
+	if(cgs.instantgib || cgs.gametype == GT_CTF_ELIMINATION)
 		canBePicked = qfalse;
 
 	if ( !cg_predictItems.integer ) {
@@ -299,9 +299,9 @@ static void CG_TouchItem( centity_t *cent ) {
 			return;
 		}
 	}
-	if( cgs.gametype == GT_CTF || cgs.gametype == GT_HARVESTER ) {
+	if( cgs.gametype == GT_CTF || cgs.gametype == GT_CTF_ELIMINATION || cgs.gametype == GT_HARVESTER ) {
 #else
-	if( cgs.gametype == GT_CTF ) {
+	if( cgs.gametype == GT_CTF || cgs.gametype == GT_CTF_ELIMINATION ) {
 #endif
 		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_RED &&
 			item->giTag == PW_REDFLAG)

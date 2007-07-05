@@ -108,6 +108,8 @@ vmCvar_t	g_vampire;
 vmCvar_t	g_vampireMaxHealth;
 //Regen
 vmCvar_t	g_regen;
+//Beta 4
+int	g_ffa_gt; //Are this a FFA gametype even if gametype is high?
 
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
@@ -207,7 +209,7 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO | CVAR_LATCH, 0, qfalse },
 	{ &g_vampire, "g_vampire", "0.0", 0, 0, qfalse },
 	{ &g_regen, "g_regen", "0", 0, 0, qfalse },
-	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", 0, 0, qtrue }
+	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", 0, 0, qtrue },
 };
 
 // bk001129 - made static to avoid aliasing
@@ -390,6 +392,13 @@ void G_RegisterCvars( void ) {
 		trap_Cvar_Set( "g_gametype", "0" );
 	}
 
+	//set FFA status for high gametypes:
+	if ( g_gametype.integer == GT_LMS ) {
+		g_ffa_gt = 1;	//Last Man standig is a FFA gametype
+	} else {
+		g_ffa_gt = 0;	//If >GT_CTF use bases
+	}
+
 	level.warmupModificationCount = g_warmup.modificationCount;
 }
 
@@ -512,7 +521,7 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 	G_FindTeams();
 
 	// make sure we have flags for CTF, etc
-	if( g_gametype.integer >= GT_TEAM ) {
+	if( g_gametype.integer >= GT_TEAM && (g_ffa_gt!=1)) {
 		G_CheckTeamItems();
 	}
 
@@ -539,6 +548,7 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 	level.roundNumberStarted = 0;
 	level.roundStartTime = level.time+g_elimination_warmup.integer*1000;
 	level.roundRespawned = qfalse;
+	level.eliminationSides = rand()%2; //0 or 1
 }
 
 
@@ -835,7 +845,7 @@ void CalculateRanks( void ) {
 		sizeof(level.sortedClients[0]), SortRanks );
 
 	// set the rank value for all clients that are connected and not spectators
-	if ( g_gametype.integer >= GT_TEAM ) {
+	if ( g_gametype.integer >= GT_TEAM && g_ffa_gt!=1) {
 		// in team games, rank is just the order of the teams, 0=red, 1=blue, 2=tied
 		for ( i = 0;  i < level.numConnectedClients; i++ ) {
 			cl = &level.clients[ level.sortedClients[i] ];
@@ -870,7 +880,7 @@ void CalculateRanks( void ) {
 	}
 
 	// set the CS_SCORES1/2 configstrings, which will be visible to everyone
-	if ( g_gametype.integer >= GT_TEAM ) {
+	if ( g_gametype.integer >= GT_TEAM && g_ffa_gt!=1) {
 		trap_SetConfigstring( CS_SCORES1, va("%i", level.teamScores[TEAM_RED] ) );
 		trap_SetConfigstring( CS_SCORES2, va("%i", level.teamScores[TEAM_BLUE] ) );
 	} else {
@@ -1168,7 +1178,7 @@ void LogExit( const char *string ) {
 		numSorted = 32;
 	}
 
-	if ( g_gametype.integer >= GT_TEAM ) {
+	if ( g_gametype.integer >= GT_TEAM && g_ffa_gt!=1) {
 		G_LogPrintf( "red:%i  blue:%i\n",
 			level.teamScores[TEAM_RED], level.teamScores[TEAM_BLUE] );
 	}
@@ -1200,7 +1210,7 @@ void LogExit( const char *string ) {
 
 #ifdef MISSIONPACK
 	if (g_singlePlayer.integer) {
-		if (g_gametype.integer >= GT_CTF) {
+		if (g_gametype.integer >= GT_CTF && g_ffa_gt==0) {
 			won = level.teamScores[TEAM_RED] > level.teamScores[TEAM_BLUE];
 		}
 		trap_SendConsoleCommand( EXEC_APPEND, (won) ? "spWin\n" : "spLose\n" );
@@ -1308,7 +1318,7 @@ qboolean ScoreIsTied( void ) {
 		return qfalse;
 	}
 	
-	if ( g_gametype.integer >= GT_TEAM ) {
+	if ( g_gametype.integer >= GT_TEAM && g_ffa_gt!=1) {
 		return level.teamScores[TEAM_RED] == level.teamScores[TEAM_BLUE];
 	}
 
@@ -1371,7 +1381,7 @@ void CheckExitRules( void ) {
 		return;
 	}
 
-	if ( g_gametype.integer < GT_CTF && g_fraglimit.integer ) {
+	if ( (g_gametype.integer < GT_CTF || g_ffa_gt>0 ) && g_fraglimit.integer ) {
 		if ( level.teamScores[TEAM_RED] >= g_fraglimit.integer ) {
 			trap_SendServerCommand( -1, "print \"Red hit the fraglimit.\n\"" );
 			LogExit( "Fraglimit hit." );
@@ -1402,7 +1412,7 @@ void CheckExitRules( void ) {
 		}
 	}
 
-	if ( g_gametype.integer >= GT_CTF && g_capturelimit.integer ) {
+	if ( (g_gametype.integer >= GT_CTF && g_ffa_gt<1) && g_capturelimit.integer ) {
 
 		if ( level.teamScores[TEAM_RED] >= g_capturelimit.integer ) {
 			trap_SendServerCommand( -1, "print \"Red hit the capturelimit.\n\"" );
@@ -1440,6 +1450,10 @@ void StartEliminationRound(void)
 	level.roundNumberStarted = level.roundNumber; //Set numbers
 	level.roundRedPlayers = countsLiving[TEAM_RED];
 	level.roundBluePlayers = countsLiving[TEAM_BLUE];
+	if(g_gametype.integer == GT_CTF_ELIMINATION) {
+		Team_ReturnFlag( TEAM_RED );
+		Team_ReturnFlag( TEAM_BLUE );
+	}
 	SendScoreboardMessageToAllClients();
 	EnableWeapons();
 }
@@ -1475,7 +1489,7 @@ void CheckElimination(void) {
 
 	
 
-	if(g_gametype.integer == GT_ELIMINATION)
+	if(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION)
 	{
 		int		counts[TEAM_NUM_TEAMS];
 		int		countsLiving[TEAM_NUM_TEAMS];
@@ -1496,14 +1510,15 @@ void CheckElimination(void) {
 				trap_SendServerCommand( -1, "print \"Blue Team eliminated!\n\"");
 				AddTeamScore(level.intermission_origin,TEAM_RED,1);
 				EndEliminationRound();
+				Team_ForceGesture(TEAM_RED);
 			}
 			else if((countsLiving[TEAM_RED]==0)&&(level.roundNumber==level.roundNumberStarted))
 			{
 				//Red team eliminated!
-				level.roundNumber++;
 				trap_SendServerCommand( -1, "print \"Red Team eliminated!\n\"");
 				AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
 				EndEliminationRound();
+				Team_ForceGesture(TEAM_BLUE);
 			}
 
 		//Time up

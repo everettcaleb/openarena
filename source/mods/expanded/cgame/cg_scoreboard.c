@@ -192,7 +192,7 @@ static void CG_DrawClientScore( int y, score_t *score, float *color, float fade,
 		localClient = qtrue;
 
 		if ( cg.snap->ps.persistant[PERS_TEAM] == TEAM_SPECTATOR 
-			|| cgs.gametype >= GT_TEAM ) {
+			|| cgs.gametype >= GT_TEAM && cgs.ffa_gt!=1) {
 			rank = -1;
 		} else {
 			rank = cg.snap->ps.persistant[PERS_RANK] & ~RANK_TIED_FLAG;
@@ -319,7 +319,7 @@ qboolean CG_DrawOldScoreboard( void ) {
 	}
 
 	// current rank
-	if ( cgs.gametype < GT_TEAM) {
+	if ( cgs.gametype < GT_TEAM || cgs.ffa_gt == 1) {
 		if (cg.snap->ps.persistant[PERS_TEAM] != TEAM_SPECTATOR ) {
 			s = va("%s place with %i",
 				CG_PlaceString( cg.snap->ps.persistant[PERS_RANK] + 1 ),
@@ -369,7 +369,7 @@ qboolean CG_DrawOldScoreboard( void ) {
 
 	localClient = qfalse;
 
-	if ( cgs.gametype >= GT_TEAM ) {
+	if ( cgs.gametype >= GT_TEAM && cgs.ffa_gt!=1) {
 		//
 		// teamplay scoreboard
 		//
@@ -500,7 +500,7 @@ void CG_DrawOldTourneyScoreboard( void ) {
 	// print the two scores
 
 	y = 160;
-	if ( cgs.gametype >= GT_TEAM ) {
+	if ( cgs.gametype >= GT_TEAM && cgs.ffa_gt!=1) {
 		//
 		// teamplay scoreboard
 		//

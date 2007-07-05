@@ -83,8 +83,8 @@ void TossClientItems( gentity_t *self ) {
 	// drop the weapon if not a gauntlet or machinegun
 	weapon = self->s.weapon;
 
-	//Never drop in elimination mode!
-	if( g_gametype.integer == GT_ELIMINATION)
+	//Never drop in elimination or last man standing mode!
+	if( g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_LMS)
 		return;
 
 	// make a special check to see if they are changing to a new
@@ -100,7 +100,7 @@ void TossClientItems( gentity_t *self ) {
 		}
 	}
 
-	if (g_instantgib.integer){
+	if (g_instantgib.integer || g_gametype.integer == GT_CTF_ELIMINATION){
 	//Nothing!	
 	}
 	else
@@ -371,7 +371,7 @@ void CheckAlmostCapture( gentity_t *self, gentity_t *attacker ) {
 		self->client->ps.powerups[PW_BLUEFLAG] ||
 		self->client->ps.powerups[PW_NEUTRALFLAG] ) {
 		// get the goal flag this player should have been going for
-		if ( g_gametype.integer == GT_CTF ) {
+		if ( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION) {
 			if ( self->client->sess.sessionTeam == TEAM_BLUE ) {
 				classname = "team_CTF_blueflag";
 			}
@@ -950,7 +950,8 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 #else	
 		if ( targ != attacker && OnSameTeam (targ, attacker)  ) {
 #endif
-			if ( !g_friendlyFire.integer || g_elimination_selfdamage.integer<2) {
+			if ( !g_friendlyFire.integer || g_elimination_selfdamage.integer<2 && 
+							(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION)) {
 				return;
 			}
 		}
@@ -1003,7 +1004,8 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 		damage = 1;
 	}
 
-	if (g_gametype.integer == GT_ELIMINATION && g_elimination_selfdamage.integer<1 && ( targ == attacker ||  mod == MOD_FALLING )) {
+	if ((g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_LMS) 
+				&& g_elimination_selfdamage.integer<1 && ( targ == attacker ||  mod == MOD_FALLING )) {
 		damage = 0;
 	}
 
@@ -1046,9 +1048,9 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 
 	// See if it's the player hurting the emeny flag carrier
 #ifdef MISSIONPACK
-	if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_1FCTF ) {
+	if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_1FCTF || g_gametype.integer == GT_CTF_ELIMINATION) {
 #else	
-	if( g_gametype.integer == GT_CTF) {
+	if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION) {
 #endif
 		Team_CheckHurtCarrier(targ, attacker);
 	}

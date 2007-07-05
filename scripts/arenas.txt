@@ -229,12 +229,12 @@ longname	"Some Bases"
 fraglimit	30
 type		"ctf"
 }
-
+//for the mp menu
 {
 map		"oa_ctf4ish"
 bots		"sergei angelyss kyonshi"
 longname	"Free Space"
-type		"ctf"
+type		"ctf oneflag harvester obelisk"
 }
 
 {

@@ -97,6 +97,8 @@ MULTIPLAYER MENU (SERVER BROWSER)
 #define GAMES_TOURNEY		3
 #define GAMES_CTF			4
 #define GAMES_ELIMINATION		5
+#define GAMES_CTF_ELIMINATION		6
+
 
 static const char *master_items[] = {
 	"Local",
@@ -112,6 +114,7 @@ static const char *servertype_items[] = {
 	"Tournament",
 	"Capture the Flag",
 	"Elimination",
+	"CTF Elimination",
 	NULL
 };
 
@@ -138,6 +141,7 @@ static char* gamenames[] = {
 	"Urban Terror",		// Urban Terror
 	"OSP",						// Orange Smoothie Productions
 	"Elimination",
+	"CTF Elimination",
 	"???",			// unknown
 	NULL
 };
@@ -149,7 +153,7 @@ static char* netnames[] = {
 	NULL
 };
 
-static char quake3worldMessage[] = "Visit www.quake3world.com - News, Community, Events, Files";
+static char quake3worldMessage[] = "Visit www.openarena.ws - News, Community, Events, Files";
 
 const char* punkbuster_items[] = {
 	"Disabled",
@@ -520,7 +524,12 @@ static void ArenaServers_UpdateMenu( void ) {
 				continue;
 			}
 			break;
-
+		
+		case GAMES_CTF_ELIMINATION:
+			if( servernodeptr->gametype != GT_CTF_ELIMINATION ) {
+				continue;
+			}
+			break;
 		}
 
 		if( servernodeptr->pingtime < servernodeptr->minPing ) {
@@ -1051,6 +1060,10 @@ static void ArenaServers_StartRefresh( void )
 
 		case GAMES_ELIMINATION:
 			strcpy( myargs, " elimination" );
+			break;
+
+		case GAMES_CTF_ELIMINATION:
+			strcpy( myargs, " ctfelimination" );
 			break;
 		}
 

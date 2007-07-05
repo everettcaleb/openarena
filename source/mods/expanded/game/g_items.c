@@ -86,7 +86,7 @@ int Pickup_Powerup( gentity_t *ent, gentity_t *other ) {
 
     // if same team in team game, no sound
     // cannot use OnSameTeam as it expects to g_entities, not clients
-  	if ( g_gametype.integer >= GT_TEAM && other->client->sess.sessionTeam == client->sess.sessionTeam  ) {
+  	if ( g_gametype.integer >= GT_TEAM && g_ffa_gt==0 && other->client->sess.sessionTeam == client->sess.sessionTeam  ) {
       continue;
     }
 
@@ -420,10 +420,14 @@ void Touch_Item (gentity_t *ent, gentity_t *other, trace_t *trace) {
 	qboolean	predict;
 
 	//instant gib
-	if (g_instantgib.integer && ent->item->giType != IT_TEAM)
+	if ((g_instantgib.integer || g_gametype.integer == GT_CTF_ELIMINATION) && ent->item->giType != IT_TEAM)
 		return;
 
-	if (g_gametype.integer == GT_ELIMINATION)
+	//Cannot touch flag before round starts
+	if(g_gametype.integer == GT_CTF_ELIMINATION && level.roundNumber != level.roundNumberStarted)
+		return;
+
+	if (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_LMS)
 		return;		//nothing to pick up in elimination
 
 	if (!other->client)
@@ -591,9 +595,9 @@ gentity_t *LaunchItem( gitem_t *item, vec3_t origin, vec3_t velocity ) {
 
 	dropped->s.eFlags |= EF_BOUNCE_HALF;
 #ifdef MISSIONPACK
-	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_1FCTF)			&& item->giType == IT_TEAM) { // Special case for CTF flags
+	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_1FCTF || g_gametype.integer == GT_CTF_ELIMINATION)			&& item->giType == IT_TEAM) { // Special case for CTF flags
 #else
-	if (g_gametype.integer == GT_CTF && item->giType == IT_TEAM) { // Special case for CTF flags
+	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION)&& item->giType == IT_TEAM) { // Special case for CTF flags
 #endif
 		dropped->think = Team_DroppedFlagThink;
 		dropped->nextthink = level.time + 30000;
@@ -698,7 +702,7 @@ void FinishSpawningItem( gentity_t *ent ) {
 
 	
 	// powerups don't spawn in for a while (but not in elimination)
-	if(g_gametype.integer != GT_ELIMINATION && !g_instantgib.integer)	
+	if(g_gametype.integer != GT_ELIMINATION && g_gametype.integer != GT_CTF_ELIMINATION && g_gametype.integer != GT_LMS && !g_instantgib.integer)	
 	if ( ent->item->giType == IT_POWERUP ) {
 		float	respawn;
 
@@ -727,7 +731,7 @@ void G_CheckTeamItems( void ) {
 	// Set up team stuff
 	Team_InitGame();
 
-	if( g_gametype.integer == GT_CTF ) {
+	if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION) {
 		gitem_t	*item;
 
 		// check for the two flags
@@ -820,7 +824,7 @@ void ClearRegisteredItems( void ) {
 		// players always start with the base weapon
 		RegisterItem( BG_FindItemForWeapon( WP_MACHINEGUN ) );
 		RegisterItem( BG_FindItemForWeapon( WP_GAUNTLET ) );
-		if(g_gametype.integer == GT_ELIMINATION)
+		if(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_LMS)
 		{
 			RegisterItem( BG_FindItemForWeapon( WP_SHOTGUN ) );
 			RegisterItem( BG_FindItemForWeapon( WP_GRENADE_LAUNCHER ) );
@@ -913,7 +917,10 @@ void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 	//if((item->giType == IT_TEAM && g_instantgib.integer) || !g_instantgib.integer)
 	{
 		//Don't load pickups in Elimination (or maybe... gives warnings)
-		if (g_gametype.integer != GT_ELIMINATION )
+		if (g_gametype.integer != GT_ELIMINATION && g_gametype.integer != GT_CTF_ELIMINATION && g_gametype.integer != GT_LMS)
+			RegisterItem( item );
+		//Registrer flags anyway in CTF Elimination:
+		if (g_gametype.integer == GT_CTF_ELIMINATION && item->giType == IT_TEAM)
 			RegisterItem( item );
 		if ( G_ItemDisabled(item) )
 			return;
@@ -927,7 +934,8 @@ void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 
 	ent->physicsBounce = 0.50;		// items are bouncy
 
-	if (g_gametype.integer == GT_ELIMINATION || item->giType != IT_TEAM && g_instantgib.integer)
+	if (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_LMS || item->giType != IT_TEAM && 
+									(g_instantgib.integer || g_gametype.integer==GT_CTF_ELIMINATION))
 		ent->s.eFlags |= EF_NODRAW; //Invisible in elimination
 
 	if ( item->giType == IT_POWERUP ) {

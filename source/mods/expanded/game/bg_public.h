@@ -109,7 +109,12 @@ typedef enum {
 	GT_1FCTF,
 	GT_OBELISK,
 	GT_HARVESTER,	
+	
+	//-- custom game types, there will be a variable in 
+	
 	GT_ELIMINATION,			// team elimination (custom)
+	GT_CTF_ELIMINATION,		// ctf elimination
+	GT_LMS,				// Last man standing
 	GT_MAX_GAME_TYPE
 	
 } gametype_t;
@@ -158,8 +163,9 @@ typedef enum {
 #define PMF_FOLLOW			4096	// spectate following another player
 #define PMF_SCOREBOARD		8192	// spectate as a scoreboard
 #define PMF_INVULEXPAND		16384	// invulnerability sphere set to full size
-//Elimination players can fire
-#define PMF_ELIMWARMUP		32768	//I hope this is more than 16 signed bits!
+//Elimination players cannot fire in warmup
+#define PMF_ELIMWARMUP		32768	//I hope this is more than 16 signed bits! (it's not but it just works anyway...)
+//Don't add anymore, I have already set the sign bit :-(
 
 #define	PMF_ALL_TIMES	(PMF_TIME_WATERJUMP|PMF_TIME_LAND|PMF_TIME_KNOCKBACK)
 

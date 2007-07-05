@@ -128,7 +128,7 @@ BotCTFCarryingFlag
 ==================
 */
 int BotCTFCarryingFlag(bot_state_t *bs) {
-	if (gametype != GT_CTF) return CTF_FLAG_NONE;
+	if (gametype != GT_CTF && gametype!=GT_CTF_ELIMINATION) return CTF_FLAG_NONE;
 
 	if (bs->inventory[INVENTORY_REDFLAG] > 0) return CTF_FLAG_RED;
 	else if (bs->inventory[INVENTORY_BLUEFLAG] > 0) return CTF_FLAG_BLUE;
@@ -369,7 +369,7 @@ void BotSetTeamStatus(bot_state_t *bs) {
 			break;
 		case LTG_TEAMACCOMPANY:
 			BotEntityInfo(bs->teammate, &entinfo);
-			if ( ( (gametype == GT_CTF || gametype == GT_1FCTF) && EntityCarriesFlag(&entinfo))
+			if ( ( (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION || gametype == GT_1FCTF) && EntityCarriesFlag(&entinfo))
 				|| ( gametype == GT_HARVESTER && EntityCarriesCubes(&entinfo)) ) {
 				teamtask = TEAMTASK_ESCORT;
 			}
@@ -423,7 +423,7 @@ BotSetLastOrderedTask
 */
 int BotSetLastOrderedTask(bot_state_t *bs) {
 
-	if (gametype == GT_CTF) {
+	if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 		// don't go back to returning the flag if it's at the base
 		if ( bs->lastgoal_ltgtype == LTG_RETURNFLAG ) {
 			if ( BotTeam(bs) == TEAM_RED ) {
@@ -448,7 +448,7 @@ int BotSetLastOrderedTask(bot_state_t *bs) {
 		bs->teamgoal_time = FloatTime() + 300;
 		BotSetTeamStatus(bs);
 		//
-		if ( gametype == GT_CTF ) {
+		if ( gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 			if ( bs->ltgtype == LTG_GETFLAG ) {
 				bot_goal_t *tb, *eb;
 				int tt, et;
@@ -1326,7 +1326,7 @@ BotTeamGoals
 void BotTeamGoals(bot_state_t *bs, int retreat) {
 
 	if ( retreat ) {
-		if (gametype == GT_CTF) {
+		if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION ) {
 			BotCTFRetreatGoals(bs);
 		}
 #ifdef MISSIONPACK
@@ -1342,7 +1342,7 @@ void BotTeamGoals(bot_state_t *bs, int retreat) {
 #endif
 	}
 	else {
-		if (gametype == GT_CTF) {
+		if (gametype == GT_CTF|| gametype == GT_CTF_ELIMINATION) {
 			//decide what to do in CTF mode
 			BotCTFSeekGoals(bs);
 		}
@@ -1537,7 +1537,7 @@ int BotSynonymContext(bot_state_t *bs) {
 
 	context = CONTEXT_NORMAL|CONTEXT_NEARBYITEM|CONTEXT_NAMES;
 	//
-	if (gametype == GT_CTF
+	if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION
 #ifdef MISSIONPACK
 		|| gametype == GT_1FCTF
 #endif
@@ -1625,7 +1625,7 @@ void BotCheckItemPickup(bot_state_t *bs, int *oldinventory) {
 #ifdef MISSIONPACK
 	int offence, leader;
 
-	if (gametype <= GT_TEAM)
+	if (gametype <= GT_TEAM && g_ffa_gt==0)
 		return;
 
 	offence = -1;
@@ -1668,7 +1668,7 @@ void BotCheckItemPickup(bot_state_t *bs, int *oldinventory) {
 						 bs->ltgtype != LTG_ATTACKENEMYBASE &&
 						 bs->ltgtype != LTG_HARVEST ) {
 						//
-						if ((gametype != GT_CTF || (bs->redflagstatus == 0 && bs->blueflagstatus == 0)) &&
+						if ((gametype != GT_CTF && gametype != GT_CTF_ELIMINATION || (bs->redflagstatus == 0 && bs->blueflagstatus == 0)) &&
 							(gametype != GT_1FCTF || bs->neutralflagstatus == 0) ) {
 							// tell the leader we want to be on offence
 							BotVoiceChat(bs, leader, VOICECHAT_WANTONOFFENSE);
@@ -1693,7 +1693,7 @@ void BotCheckItemPickup(bot_state_t *bs, int *oldinventory) {
 				else if (g_spSkill.integer <= 3) {
 					if ( bs->ltgtype != LTG_DEFENDKEYAREA ) {
 						//
-						if ((gametype != GT_CTF || (bs->redflagstatus == 0 && bs->blueflagstatus == 0)) &&
+						if ((gametype != GT_CTF && gametype != GT_CTF_ELIMINATION || (bs->redflagstatus == 0 && bs->blueflagstatus == 0)) &&
 							(gametype != GT_1FCTF || bs->neutralflagstatus == 0) ) {
 							// tell the leader we want to be on defense
 							BotVoiceChat(bs, -1, VOICECHAT_WANTONDEFENSE);
@@ -1826,7 +1826,7 @@ void BotUseKamikaze(bot_state_t *bs) {
 	if (bs->kamikaze_time > FloatTime())
 		return;
 	bs->kamikaze_time = FloatTime() + 0.2;
-	if (gametype == GT_CTF) {
+	if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 		//never use kamikaze if the team flag carrier is visible
 		if (BotCTFCarryingFlag(bs))
 			return;
@@ -1933,7 +1933,7 @@ void BotUseInvulnerability(bot_state_t *bs) {
 	if (bs->invulnerability_time > FloatTime())
 		return;
 	bs->invulnerability_time = FloatTime() + 0.2;
-	if (gametype == GT_CTF) {
+	if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 		//never use kamikaze if the team flag carrier is visible
 		if (BotCTFCarryingFlag(bs))
 			return;
@@ -2188,7 +2188,7 @@ TeamPlayIsOn
 ==================
 */
 int TeamPlayIsOn(void) {
-	return ( gametype >= GT_TEAM );
+	return ( gametype >= GT_TEAM && g_ffa_gt!=1);
 }
 
 /*
@@ -2268,7 +2268,7 @@ BotWantsToRetreat
 int BotWantsToRetreat(bot_state_t *bs) {
 	aas_entityinfo_t entinfo;
 
-	if (gametype == GT_CTF) {
+	if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 		//always retreat when carrying a CTF flag
 		if (BotCTFCarryingFlag(bs))
 			return qtrue;
@@ -2321,7 +2321,7 @@ BotWantsToChase
 int BotWantsToChase(bot_state_t *bs) {
 	aas_entityinfo_t entinfo;
 
-	if (gametype == GT_CTF) {
+	if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 		//never chase when carrying a CTF flag
 		if (BotCTFCarryingFlag(bs))
 			return qfalse;
@@ -2776,7 +2776,7 @@ int BotSameTeam(bot_state_t *bs, int entnum) {
 		//BotAI_Print(PRT_ERROR, "BotSameTeam: client out of range\n");
 		return qfalse;
 	}
-	if ( gametype >= GT_TEAM ) {
+	if ( gametype >= GT_TEAM && g_ffa_gt!=1) {
 		trap_GetConfigstring(CS_PLAYERS+bs->client, info1, sizeof(info1));
 		trap_GetConfigstring(CS_PLAYERS+entnum, info2, sizeof(info2));
 		//
@@ -4865,7 +4865,7 @@ void BotCheckEvents(bot_state_t *bs, entityState_t *state) {
 		}
 		case EV_GLOBAL_TEAM_SOUND:
 		{
-			if (gametype == GT_CTF) {
+			if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 				switch(state->eventParm) {
 					case GTS_RED_CAPTURE:
 						bs->blueflagstatus = 0;
@@ -5130,7 +5130,7 @@ void BotSetupAlternativeRouteGoals(void) {
 	if (altroutegoals_setup)
 		return;
 #ifdef MISSIONPACK
-	if (gametype == GT_CTF) {
+	if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 		if (trap_BotGetLevelItemGoal(-1, "Neutral Flag", &ctf_neutralflag) < 0)
 			BotAI_Print(PRT_WARNING, "no alt routes without Neutral Flag\n");
 		if (ctf_neutralflag.areanum) {
@@ -5402,7 +5402,7 @@ void BotSetupDeathmatchAI(void) {
 	trap_Cvar_Register(&bot_predictobstacles, "bot_predictobstacles", "1", 0);
 	trap_Cvar_Register(&g_spSkill, "g_spSkill", "2", 0);
 	//
-	if (gametype == GT_CTF) {
+	if (gametype == GT_CTF || gametype == GT_CTF_ELIMINATION) {
 		if (trap_BotGetLevelItemGoal(-1, "Red Flag", &ctf_redflag) < 0)
 			BotAI_Print(PRT_WARNING, "CTF without Red Flag\n");
 		if (trap_BotGetLevelItemGoal(-1, "Blue Flag", &ctf_blueflag) < 0)

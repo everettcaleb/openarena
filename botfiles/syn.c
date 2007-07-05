@@ -228,6 +228,6 @@ CONTEXT_NAMES
 	[("Arachna", 1),	("Llooth", 0.5), ("spider princess", 0.1)]
 	[("Tony", 1),		("Gangter", 0.5), ("Wussy", 0.3), ("Mamma's boi", 0.1)]
 	[("Beret", 1),		("Commando", 0.5), ("Psychonaut", 0.5), ("War Machine Wannabe", 0.1)]
-	[("Skelebot", 1),	("Skillet", 0.5), ("Stove", 0.3), ("Junior", 0.1)]
+	[("Skelebot", 1),	("Skillet", 0.5), ("Arnold", 0.3), ("Termi", 0.1)]
 //	[("Orb", 1),		("Psycod the Magnificant", 0.5), ("Slayer of the 19 cats of Doom", 0.5)]
 }

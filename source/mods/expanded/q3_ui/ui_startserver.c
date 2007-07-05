@@ -99,10 +99,11 @@ static const char *gametype_items[] = {
 	"Tournament",
 	"Capture the Flag",
 	"Elimination",
+	"CTF Elimination",
 	NULL
 };
 
-static int gametype_remap[] = {GT_FFA, GT_TEAM, GT_TOURNAMENT, GT_CTF, GT_ELIMINATION};
+static int gametype_remap[] = {GT_FFA, GT_TEAM, GT_TOURNAMENT, GT_CTF, GT_ELIMINATION, GT_CTF_ELIMINATION};
 static int gametype_remap2[] = {0, 2, 0, 1, 3, 4};
 
 // use ui_servers2.c definition
@@ -158,8 +159,13 @@ static int GametypeBits( char *string ) {
 			bits |= 1 << GT_ELIMINATION;
 			continue;
 		}
-	}
 
+		if( Q_stricmp( token, "ctfelimination" ) == 0 ) {
+			bits |= 1 << GT_CTF_ELIMINATION;
+			continue;
+		}
+	
+}
 	return bits;
 }
 
@@ -789,6 +795,11 @@ static void ServerOptions_Start( void ) {
 		trap_Cvar_SetValue( "ui_ctf_friendlt", friendlyfire );
 		break;
 
+	case GT_CTF_ELIMINATION:
+		trap_Cvar_SetValue( "ui_ctf_fraglimit", fraglimit );
+		trap_Cvar_SetValue( "ui_ctf_timelimit", timelimit );
+		trap_Cvar_SetValue( "ui_ctf_friendlt", friendlyfire );
+		break;
 	}
 
 	trap_Cvar_SetValue( "sv_maxclients", Com_Clamp( 0, 12, maxclients ) );
@@ -1169,6 +1180,11 @@ static void ServerOptions_SetMenuItems( void ) {
 		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_ctf_friendly" ) );
 		break;
 
+	case GT_CTF_ELIMINATION:
+		Com_sprintf( s_serveroptions.flaglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_capturelimit" ) ) );
+		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_timelimit" ) ) );
+		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_ctf_friendly" ) );
+		break;
 	}
 
 	Q_strncpyz( s_serveroptions.hostname.field.buffer, UI_Cvar_VariableString( "sv_hostname" ), sizeof( s_serveroptions.hostname.field.buffer ) );

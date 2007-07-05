@@ -1026,6 +1026,9 @@ typedef struct {
 
 	int				levelStartTime;
 
+//Forced FFA
+	int			ffa_gt;
+
 //Elimination
 	int				roundStartTime;	
 	int				roundtime;

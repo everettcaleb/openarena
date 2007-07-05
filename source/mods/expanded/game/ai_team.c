@@ -131,7 +131,7 @@ int BotSortTeamMatesByBaseTravelTime(bot_state_t *bs, int *teammates, int maxtea
 	int traveltimes[MAX_CLIENTS];
 	bot_goal_t *goal = NULL;
 
-	if (gametype == GT_CTF || gametype == GT_1FCTF) {
+	if (gametype == GT_CTF || gametype == GT_1FCTF || gametype == GT_CTF_ELIMINATION) {
 		if (BotTeam(bs) == TEAM_RED)
 			goal = &ctf_redflag;
 		else
@@ -1932,7 +1932,7 @@ void BotTeamAI(bot_state_t *bs) {
 	char netname[MAX_NETNAME];
 
 	//
-	if ( gametype < GT_TEAM  )
+	if ( gametype < GT_TEAM && g_ffa_gt == 0 )
 		return;
 	// make sure we've got a valid team leader
 	if (!BotValidTeamLeader(bs)) {
@@ -1992,6 +1992,7 @@ void BotTeamAI(bot_state_t *bs) {
 			break;
 		}
 		case GT_CTF:
+		case GT_CTF_ELIMINATION:
 		{
 			//if the number of team mates changed or the flag status changed
 			//or someone wants to know what to do

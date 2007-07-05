@@ -109,7 +109,7 @@ void G_InitSessionData( gclient_t *client, char *userinfo ) {
 	sess = &client->sess;
 
 	// initial team determination
-	if ( g_gametype.integer >= GT_TEAM ) {
+	if ( g_gametype.integer >= GT_TEAM && g_ffa_gt!=1) {
 		if ( g_teamAutoJoin.integer ) {
 			sess->sessionTeam = PickTeam( -1 );
 			BroadcastTeamChange( client, -1 );
@@ -126,6 +126,7 @@ void G_InitSessionData( gclient_t *client, char *userinfo ) {
 			switch ( g_gametype.integer ) {
 			default:
 			case GT_FFA:
+			case GT_LMS:
 			case GT_SINGLE_PLAYER:
 				if ( g_maxGameClients.integer > 0 && 
 					level.numNonSpectatorClients >= g_maxGameClients.integer ) {

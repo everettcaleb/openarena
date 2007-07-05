@@ -47,6 +47,7 @@ void Team_InitGame( void ) {
 
 	switch( g_gametype.integer ) {
 	case GT_CTF:
+	case GT_CTF_ELIMINATION:
 		teamgame.redStatus = -1; // Invalid to force update
 		Team_SetFlagStatus( TEAM_RED, FLAG_ATBASE );
 		 teamgame.blueStatus = -1; // Invalid to force update
@@ -177,7 +178,7 @@ qboolean OnSameTeam( gentity_t *ent1, gentity_t *ent2 ) {
 		return qfalse;
 	}
 
-	if ( g_gametype.integer < GT_TEAM ) {
+	if ( g_gametype.integer < GT_TEAM || g_ffa_gt==1) {
 		return qfalse;
 	}
 
@@ -221,7 +222,7 @@ void Team_SetFlagStatus( int team, flagStatus_t status ) {
 	if( modified ) {
 		char st[4];
 
-		if( g_gametype.integer == GT_CTF ) {
+		if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION) {
 			st[0] = ctfFlagStatusRemap[teamgame.redStatus];
 			st[1] = ctfFlagStatusRemap[teamgame.blueStatus];
 			st[2] = 0;
@@ -559,7 +560,7 @@ gentity_t *Team_ResetFlag( int team ) {
 }
 
 void Team_ResetFlags( void ) {
-	if( g_gametype.integer == GT_CTF ) {
+	if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION) {
 		Team_ResetFlag( TEAM_RED );
 		Team_ResetFlag( TEAM_BLUE );
 	}
@@ -754,6 +755,10 @@ int Team_TouchOurFlag( gentity_t *ent, gentity_t *other, int team ) {
 	// Increase the team's score
 	AddTeamScore(ent->s.pos.trBase, other->client->sess.sessionTeam, 1);
 	Team_ForceGesture(other->client->sess.sessionTeam);
+	//If CTF Elimination, stop the round:
+	if(g_gametype.integer==GT_CTF_ELIMINATION) {
+		EndEliminationRound();
+	}
 
 	other->client->pers.teamState.captures++;
 	// add the sprite over the player's head
@@ -987,6 +992,15 @@ gentity_t *SelectRandomTeamSpawnPoint( int teamstate, team_t team ) {
 	int			selection;
 	gentity_t	*spots[MAX_TEAM_SPAWN_POINTS];
 	char		*classname;
+
+	if(g_gametype.integer == GT_ELIMINATION) { //change sides every round
+		if((level.roundNumber+level.eliminationSides)%2==1){
+			if(team == TEAM_RED)
+				team = TEAM_BLUE;
+			else if(team == TEAM_BLUE)
+				team = TEAM_RED;
+		}
+	}
 
 	if (teamstate == TEAM_BEGIN) {
 		if (team == TEAM_RED)
@@ -1380,7 +1394,7 @@ gentity_t *SpawnObelisk( vec3_t origin, int team, int spawnflags) {
 void SP_team_redobelisk( gentity_t *ent ) {
 	gentity_t *obelisk;
 
-	if ( g_gametype.integer <= GT_TEAM ) {
+	if ( g_gametype.integer <= GT_TEAM || g_ffa_gt>0) {
 		G_FreeEntity(ent);
 		return;
 	}
@@ -1405,7 +1419,7 @@ void SP_team_redobelisk( gentity_t *ent ) {
 void SP_team_blueobelisk( gentity_t *ent ) {
 	gentity_t *obelisk;
 
-	if ( g_gametype.integer <= GT_TEAM ) {
+	if ( g_gametype.integer <= GT_TEAM || g_ffa_gt>0) {
 		G_FreeEntity(ent);
 		return;
 	}

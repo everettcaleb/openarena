@@ -424,6 +424,7 @@ typedef struct {
 	int roundRedPlayers;			//How many players was there at start of round
 	int roundBluePlayers;			//used to find winners in a draw.
 	qboolean roundRespawned;		//We have respawned for this round!
+	int eliminationSides;			//Random, change red/blue bases
 } level_locals_t;
 
 
@@ -586,6 +587,7 @@ void RespawnAll(void); //For round elimination
 void RespawnDead(void);
 void EnableWeapons(void);
 void DisableWeapons(void);
+void EndEliminationRound(void);
 int TeamLeader( int team );
 team_t PickTeam( int ignoreClientNum );
 void SetClientViewAngle( gentity_t *ent, vec3_t angle );
@@ -797,6 +799,8 @@ extern vmCvar_t		g_vampire;
 extern vmCvar_t		g_vampireMaxHealth;
 //new in elimination Beta3
 extern vmCvar_t		g_regen;
+//Free for all gametype
+extern int		g_ffa_gt; //0 = TEAM GAME, 1 = FFA, 2 = TEAM GAME without bases
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );

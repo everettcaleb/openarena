@@ -373,7 +373,7 @@ void UI_MainMenu( void ) {
 		s_main.teamArena.generic.y				= y;
 		s_main.teamArena.generic.id				= ID_TEAMARENA;
 		s_main.teamArena.generic.callback		= Main_MenuEvent; 
-		s_main.teamArena.string					= "TEAM ARENA";
+		s_main.teamArena.string					= "MISSION PACK";
 		s_main.teamArena.color					= color_red;
 		s_main.teamArena.style					= style;
 	}

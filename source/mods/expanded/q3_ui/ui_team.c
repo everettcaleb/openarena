@@ -179,6 +179,7 @@ void TeamMain_MenuInit( void ) {
 	case GT_CTF:
 	case GT_ELIMINATION:
 		s_teammain.joingame.generic.flags |= QMF_GRAYED;
+	case GT_CTF_ELIMINATION:
 		break;
 	}
 
