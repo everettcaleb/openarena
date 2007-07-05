@@ -195,13 +195,13 @@ fraglimit	"20"
 type		"single ffa tourney sp"
 }
 
-//{
-//map		"oa_shouse"
-//bots		"merman sergei kyonshi"
-//longname	"Strange House"
-//fraglimit	"20"
-//type		"single ffa sp"
-//}
+{
+map		"oa_shouse"
+bots		"merman sergei kyonshi"
+longname	"Strange House"
+fraglimit	"20"
+type		"single ffa sp"
+}
 
 {
 map		"czest1tourney"
@@ -212,13 +212,13 @@ type		"single ffa sp tourney"
 }
 
 // commented out due to very ugly texturing
-//{
-//map		"q3dm6ish"
-//bots		"tux"
-//longname	"Q3DM6ish"
-//fraglimit	20
-//type		"single ffa tourney team sp"
-//}
+{
+map		"q3dm6ish"
+bots		"tux"
+longname	"Q3DM6ish"
+fraglimit	20
+type		"single ffa tourney team sp"
+}
 
 
 // ctf maps
@@ -242,6 +242,13 @@ map		"oasago2f2"
 bots		"merman sergei kyonshi"
 longname	"Sago's Castle 2"
 fraglimit	"20"
+type		"ctf"
+}
+
+{
+map		"czest2ctf"
+bots		"sergei angelyss kyonshi"
+longname	"The Bridge of Despair"
 type		"ctf"
 }
 
