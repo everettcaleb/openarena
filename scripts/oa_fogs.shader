@@ -630,3 +630,4 @@ textures/sfx/xnotsodensegreyfog
 		tcMod scroll -.02 .02
 	}
 }
+
