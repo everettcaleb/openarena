@@ -3,7 +3,7 @@ map             "oa_rpg3dm2"
 longname        "Trial by Error"
 bots            "sarge gargoyle"
 timelimit       10
-type            "single tourney ffa"
+type            "single tourney ffa elimination"
 }
 
 {
@@ -27,7 +27,7 @@ map			"kaos"
 bots		"gargoyle kyonshi grism major"
 longname	"Kaooos"
 fraglimit	20
-type		"single ffa tourney team sp"
+type		"single ffa tourney team sp elimination"
 }
 
 {
@@ -85,7 +85,7 @@ map		"hydronex"
 bots		"sarge gargoyle"
 longname	"Hydrocapture"
 fraglimit	30
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
@@ -93,7 +93,7 @@ map		"oa_bases5"
 bots		"sarge gargoyle"
 longname	"Some better bases"
 fraglimit	30
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
@@ -101,7 +101,7 @@ map		"suction"
 bots		"sarge gargoyle"
 longname	"Suction"
 fraglimit	30
-type		"ctf"
+type		"ctf ctfelimination"
 }
 
 
@@ -112,7 +112,7 @@ map		"delta"
 bots		"merman major"
 longname	"mission over mars"
 fraglimit	"20"
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
@@ -128,7 +128,7 @@ map		"oa_dm2"
 bots		"sergei kyonshi major merman grunt angelyss"
 longname	"Claustrophobopolis"
 fraglimit	"30"
-type		"single ffa sp team"
+type		"single ffa sp team elimination"
 }
 
 {
@@ -136,7 +136,7 @@ map		"oa_dm3"
 bots		"sergei kyonshi major merman penguin"
 longname	"The Abandoned Base"
 fraglimit	"30"
-type		"single ffa sp team"
+type		"single ffa sp team elimination"
 }
 
 {
@@ -152,7 +152,7 @@ map		"oa_dm5"
 bots		"merman major sarge grunt"
 longname	"The Cistern"
 fraglimit	"30"
-type		"single ffa sp team"
+type		"single ffa sp team elimination"
 }
 
 {
@@ -184,7 +184,7 @@ map		"oa_shine"
 bots		"major angelyss kyonshi"
 longname	"Shine"
 fraglimit	"30"
-type		"single ffa sp"
+type		"single ffa sp elimination"
 }
 
 {
@@ -192,7 +192,7 @@ map		"suspended"
 bots		"merman angelyss gargoyle"
 longname	"Suspended"
 fraglimit	"20"
-type		"single ffa tourney sp"
+type		"single ffa tourney sp elimination"
 }
 
 //{
@@ -227,14 +227,14 @@ map			"oa_bases3"
 bots		"tux"
 longname	"Some Bases"
 fraglimit	30
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 //for the mp menu
 {
 map		"oa_ctf4ish"
 bots		"sergei angelyss kyonshi"
 longname	"Free Space"
-type		"ctf oneflag harvester obelisk"
+type		"ctf oneflag harvester overload elimination ctfelimination"
 }
 
 {
@@ -242,12 +242,12 @@ map		"oasago2f2"
 bots		"merman sergei kyonshi"
 longname	"Sago's Castle 2"
 fraglimit	"20"
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
 map		"czest3ctf"
 bots		"sergei angelyss kyonshi"
 longname	"Holy Wars"
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
