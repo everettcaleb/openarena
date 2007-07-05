@@ -117,11 +117,11 @@ model		beret
 aifile	bots/beret_c.c
 }
 
-//{
-//name		Tony
-//model		tony
-//aifile	bots/tony_c.c
-//}
+{
+name		Tony
+model		tony
+aifile	bots/tony_c.c
+}
 
 {
 name		Skelebot

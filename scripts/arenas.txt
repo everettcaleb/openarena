@@ -214,7 +214,7 @@ type		"single ffa sp tourney"
 // commented out due to very ugly texturing
 {
 map		"q3dm6ish"
-bots		"tux"
+bots		"tony skelebot beret liz"
 longname	"Q3DM6ish"
 fraglimit	20
 type		"single ffa tourney team sp"
