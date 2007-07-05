@@ -114,7 +114,7 @@ aifile	bots/widowe_c.c
 {
 name		Beret
 model		beret
-aifile`	bots/beret_c.c
+aifile	bots/beret_c.c
 }
 
 //{
