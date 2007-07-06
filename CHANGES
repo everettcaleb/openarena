@@ -11,13 +11,16 @@
 - New player model : Sergei
 - New player model : Tony
 - New voice and skins for Grism
+- 26 new maps
 - Quake's DM maps converted, from dm1 to dm7
-- 24 new maps
 - ce1m7's teleport bug fixed
 - oa_bases3 had an overhaul, now more balanced too
 - various weapon sounds are new
 - new announcer voice
 - dm4ish, dm6ish, and cbctf1 also had several changes
+- new gibs
+- new music
+- uses ioquake3 revision 1107
 - a lot of other stuff we forgot 
 
 0.6.0 (12/2/2006)
