@@ -117,7 +117,32 @@ Index: qcommon/q_shared.h
 +#define BASEGAME              "baseoa"
  
  #define MAX_TEAMNAME 32
+Index: client/cl_main.c
+===================================================================
+--- cl_main.c	(revision 1107)
++++ cl_main.c	(working copy)
+@@ -3622,9 +3622,9 @@
+ 		case 'W':
+ 			sum += ch;
+ 			continue;
+-		default:*/
+-			return qtrue;
+-		
++		default:
++			return qfalse;
++		}
+ 	}
  
+ 	sprintf(chs, "%02x", sum);
+@@ -3636,8 +3636,8 @@
+ 	if (!checksum) {
+ 		return qtrue;
+ 	}
+-
+-	return qfalse;
++*/
++	return qtrue;
+ }
 Index: qcommon/files.c
 ===================================================================
 --- qcommon/files.c	(revision 1107)

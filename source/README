@@ -2,4 +2,6 @@ OpenArena uses icculus.org/quake3 as an engine base now. The diff file for the c
 
 http://svn.icculus.org/quake3/trunk/
 
-The binaries are compiled at revision 833
+The binaries are compiled at revision 1107
+
+NOTE:  You may have to manually apply the changes to --- code/server/sv_client.c
