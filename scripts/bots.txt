@@ -83,7 +83,7 @@ aifile	bots/liz_c.c
 {
 name		Ayumi
 model		ayumi
-aifile	bots/slshish_c.c
+aifile	bots/ayumi_c.c
 }
 
 
