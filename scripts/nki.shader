@@ -37,7 +37,7 @@ textures/nki_shaders/tropicalwater
 	tessSize 256
 	q3map_globaltexture
 	q3map_flare textures/flares/twilightflare
-//	fogparms ( 0.277 0.664 0.570 ) 2048 //0.277 0.664 0.570,    0.1365 0.332 0.285
+	fogparms ( 0.215686 0.278431 0.333333 ) 1024
 	cull disable
 	{
 		map textures/liquids/pool3d_4b2.tga
