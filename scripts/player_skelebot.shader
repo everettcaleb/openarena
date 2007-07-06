@@ -34,3 +34,99 @@ models/players/skelebot/skin2
 	}
 }
 //		map textures/effects/eyespec.tga
+
+//*******************************
+//BLUE_SKIN:
+//*******************************
+
+models/players/skelebot/skin1blue
+{
+	{
+		map models/players/skelebot/skin1blue.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/tinfx3.jpg
+ 		blendfunc add
+		tcGen environment
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/skelebot/skin2blue
+{
+	{
+		map models/players/skelebot/skin2blue.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/tinfx3.jpg
+ 		blendfunc add
+		tcGen environment
+		rgbGen lightingDiffuse
+	}
+}
+
+//*******************************
+//RED_SKIN:
+//*******************************
+
+models/players/skelebot/skin1red
+{
+	{
+		map models/players/skelebot/skin1red.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/tinfx3.jpg
+ 		blendfunc add
+		tcGen environment
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/skelebot/skin2red
+{
+	{
+		map models/players/skelebot/skin2red.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/tinfx3.jpg
+ 		blendfunc add
+		tcGen environment
+		rgbGen lightingDiffuse
+	}
+}
+
+//*******************************
+//METALSKIN:
+//*******************************
+
+models/players/skelebot/skin1metal
+{
+	{
+		map models/players/skelebot/skin1metal.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/tinfx3.jpg
+ 		blendfunc add
+		tcGen environment
+		rgbGen lightingDiffuse
+	}
+}
+
+models/players/skelebot/skin2metal
+{
+	{
+		map models/players/skelebot/skin2metal.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map textures/effects/tinfx3.jpg
+ 		blendfunc add
+		tcGen environment
+		rgbGen lightingDiffuse
+	}
+}

@@ -1,7 +1,6 @@
 common
 detailtest
 oasky
-oafx
 beams
 liquid_lavas
 liquid_water

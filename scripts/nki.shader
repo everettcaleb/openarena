@@ -95,7 +95,7 @@ textures/nki_shaders/lavabright_1k5
 	q3map_lightimage textures/nki/nki_lava5.tga  // q3map_lightimage must appear before qer_editorimage !!
 	qer_editorimage textures/nki/nki_lava5.tga
 	surfaceparm lava
-	surfaceparm nolightmap
+//	surfaceparm nolightmap
 	surfaceparm nomarks
 	surfaceparm noimpact
 	surfaceparm trans
@@ -116,38 +116,16 @@ textures/mapobjects/palmtree1
 	qer_editorimage models/mapobjects/palmier/palmier1.tga
 	surfaceparm nonsolid
 	surfaceparm noimpact
-	surfaceparm trans
+//	surfaceparm trans
 	surfaceparm nomarks
-//	surfaceparm alphashadow
-//	surfaceparm nolightmap
-//	surfaceparm nodlight
+	surfaceparm alphashadow
 	cull disable
 	{
 		map models/mapobjects/palmier/palmier1.tga
-//		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		alphaFunc GE128
 		RgbGen vertex
 	}
 }
-
-//textures/nki_shaders/palmtreemask
-//{
-//	qer_editorimage textures/nki/palmtreemask1.tga
-//	qer_trans 50
-//	surfaceparm lightfilter
-//	surfaceparm nomarks
-//	surfaceparm trans
-//	surfaceparm alphashadow
-//	surfaceparm nolightmap
-//	q3map_globaltexture
-//	cull disable
-//	{
-//		map textures/nki/palmtreemask1.tga
-//		blendFunc blend
-//		alphaFunc GE128
-//		rgbGen identity
-//	}
-//}
 
 textures/nki_shaders/forest4
 {
