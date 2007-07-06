@@ -57,9 +57,10 @@ models/players/ayumi/blueshirt
 }
 
 models/players/ayumi/bodytrans
-{
+{	
+	cull front
 	{
-		map models/players/ayumi/blueshirt.tga
+		map models/players/ayumi/body.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
