@@ -43,7 +43,7 @@ models/players/ayumi/redshirt
 	{
 		map models/players/ayumi/redshirt.tga
 		rgbGen lightingDiffuse
-		alphaFunc GE128
+	//	alphaFunc GE128
 	}
 }
 
@@ -56,13 +56,22 @@ models/players/ayumi/blueshirt
 	}
 }
 
+models/players/ayumi/bodytrans
+{
+	{
+		map models/players/ayumi/blueshirt.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
 models/players/ayumi/redskirt
 {
 	cull disable
 	{
 		map models/players/ayumi/redskirt.tga
 		rgbGen lightingDiffuse
-		alphaFunc GE128
+	//	alphaFunc GE128
 	}
 }
 
