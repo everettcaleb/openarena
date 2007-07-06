@@ -23,7 +23,7 @@ type		"single ffa tourney team sp"
 }
 
 {
-map			"kaos"
+map			"kaos2"
 bots		"gargoyle kyonshi grism major"
 longname	"Kaooos"
 fraglimit	20
