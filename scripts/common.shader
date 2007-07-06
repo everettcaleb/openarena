@@ -270,3 +270,9 @@ textures/common/missileclip
 	surfaceparm playerclip
 	surfaceparm trans
 }
+
+textures/common/full_clip
+{
+	surfaceparm nodraw
+	surfaceparm playerclip
+}
