@@ -1,7 +1,7 @@
-Index: code/q3_ui/ui_mods.c
+Index: q3_ui/ui_mods.c
 ===================================================================
---- code/q3_ui/ui_mods.c	(revision 1103)
-+++ code/q3_ui/ui_mods.c	(working copy)
+--- q3_ui/ui_mods.c	(revision 1107)
++++ q3_ui/ui_mods.c	(working copy)
 @@ -161,7 +161,7 @@
  
  	// always start off with baseq3
@@ -11,10 +11,10 @@ Index: code/q3_ui/ui_mods.c
  	s_mods.fs_gameList[0] = "";
  
  	numdirs = trap_FS_GetFileList( "$modlist", "", dirlist, sizeof(dirlist) );
-Index: code/unix/unix_shared.c
+Index: unix/unix_shared.c
 ===================================================================
---- code/unix/unix_shared.c	(revision 1103)
-+++ code/unix/unix_shared.c	(working copy)
+--- unix/unix_shared.c	(revision 1107)
++++ unix/unix_shared.c	(working copy)
 @@ -407,9 +407,9 @@
  	if ((p = getenv("HOME")) != NULL) {
  		Q_strncpyz(homePath, p, sizeof(homePath));
@@ -27,10 +27,10 @@ Index: code/unix/unix_shared.c
  #endif
  		if (mkdir(homePath, 0777)) {
  			if (errno != EEXIST) 
-Index: code/win32/win_shared.c
+Index: win32/win_shared.c
 ===================================================================
---- code/win32/win_shared.c	(revision 1103)
-+++ code/win32/win_shared.c	(working copy)
+--- win32/win_shared.c	(revision 1107)
++++ win32/win_shared.c	(working copy)
 @@ -330,7 +330,7 @@
  		return NULL;
  	}
@@ -40,10 +40,10 @@ Index: code/win32/win_shared.c
  	FreeLibrary(shfolder);
  	if( !CreateDirectory( path, NULL ) )
  	{
-Index: code/server/sv_ccmds.c
+Index: server/sv_ccmds.c
 ===================================================================
---- code/server/sv_ccmds.c	(revision 1103)
-+++ code/server/sv_ccmds.c	(working copy)
+--- server/sv_ccmds.c	(revision 1107)
++++ server/sv_ccmds.c	(working copy)
 @@ -430,6 +430,12 @@
  		return;
  	}
@@ -70,10 +70,10 @@ Index: code/server/sv_ccmds.c
  	// look up the authorize server's IP
  	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
  		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
-Index: code/server/sv_client.c
+Index: server/sv_client.c
 ===================================================================
---- code/server/sv_client.c	(revision 1103)
-+++ code/server/sv_client.c	(working copy)
+--- server/sv_client.c	(revision 1107)
++++ server/sv_client.c	(working copy)
 @@ -88,6 +88,15 @@
  		return;
  	}
@@ -90,10 +90,10 @@ Index: code/server/sv_client.c
  	// look up the authorize server's IP
  	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
  		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
-Index: code/qcommon/q_shared.h
+Index: qcommon/q_shared.h
 ===================================================================
---- code/qcommon/q_shared.h	(revision 1103)
-+++ code/qcommon/q_shared.h	(working copy)
+--- qcommon/q_shared.h	(revision 1107)
++++ qcommon/q_shared.h	(working copy)
 @@ -26,17 +26,17 @@
  // q_shared.h -- included first by ALL program modules.
  // A user mod should never modify this file
@@ -118,10 +118,10 @@ Index: code/qcommon/q_shared.h
  
  #define MAX_TEAMNAME 32
  
-Index: code/qcommon/files.c
+Index: qcommon/files.c
 ===================================================================
---- code/qcommon/files.c	(revision 1103)
-+++ code/qcommon/files.c	(working copy)
+--- qcommon/files.c	(revision 1107)
++++ qcommon/files.c	(working copy)
 @@ -2900,6 +2900,7 @@
  */
  static void FS_CheckPak0( void )
@@ -147,10 +147,10 @@ Index: code/qcommon/files.c
  
  	// if we can't find default.cfg, assume that the paths are
  	// busted and error out now, rather than getting an unreadable
-Index: code/qcommon/qcommon.h
+Index: qcommon/qcommon.h
 ===================================================================
---- code/qcommon/qcommon.h	(revision 1103)
-+++ code/qcommon/qcommon.h	(working copy)
+--- qcommon/qcommon.h	(revision 1107)
++++ qcommon/qcommon.h	(working copy)
 @@ -236,10 +236,10 @@
  #define	UPDATE_SERVER_NAME	"update.quake3arena.com"
  // override on command line, config files etc.
@@ -164,10 +164,10 @@ Index: code/qcommon/qcommon.h
  #endif
  
  #define	PORT_MASTER			27950
-Index: code/ui/ui_main.c
+Index: ui/ui_main.c
 ===================================================================
---- code/ui/ui_main.c	(revision 1103)
-+++ code/ui/ui_main.c	(working copy)
+--- ui/ui_main.c	(revision 1107)
++++ ui/ui_main.c	(working copy)
 @@ -64,7 +64,7 @@
  
  static const serverFilter_t serverFilters[] = {
@@ -177,42 +177,10 @@ Index: code/ui/ui_main.c
  	{"Team Arena", "missionpack" },
  	{"Rocket Arena", "arena" },
  	{"Alliance", "alliance20" },
-Index: code/client/cl_main.c
+Index: client/snd_dma.c
 ===================================================================
---- code/client/cl_main.c	(revision 1103)
-+++ code/client/cl_main.c	(working copy)
-@@ -3582,6 +3582,7 @@
- =================
- */
- qboolean CL_CDKeyValidate( const char *key, const char *checksum ) {
-+	/*
- 	char	ch;
- 	byte	sum;
- 	char	chs[3];
-@@ -3638,6 +3639,9 @@
- 	}
- 
- 	return qfalse;
-+	*/
-+
-+	return qtrue;
- }
-Index: code/client/snd_openal.c
-===================================================================
---- snd_openal.c	2007-03-18 21:34:51.000000000 -0400
-+++ snd_openal.c	2007-06-26 17:01:28.000000000 -0400
-@@ -384,7 +384,7 @@
- 	numSfx = 0;
- 
- 	// Load the default sound, and lock it
--	default_sfx = S_AL_BufferFind("sound/feedback/hit.wav");
-+	default_sfx = S_AL_BufferFind("sound/misc/silence.wav");
- 	S_AL_BufferUse(default_sfx);
- 	knownSfx[default_sfx].isLocked = qtrue;
-Index: code/client/snd_dma.c
-===================================================================
---- snd_dma.c	2007-07-03 15:04:24.000000000 -0400
-+++ snd_dma.c	2007-07-05 11:51:21.000000000 -0400
+--- client/snd_dma.c	(revision 1107)
++++ client/snd_dma.c	(working copy)
 @@ -364,7 +364,7 @@
  		Com_Memset( s_knownSfx, 0, sizeof( s_knownSfx ) );
  		Com_Memset(sfxHash, 0, sizeof(sfx_t *)*LOOP_HASH);
@@ -222,5 +190,16 @@ Index: code/client/snd_dma.c
  	}
  }
  
-
-
+Index: client/snd_openal.c
+===================================================================
+--- client/snd_openal.c	(revision 1107)
++++ client/snd_openal.c	(working copy)
+@@ -384,7 +384,7 @@
+ 	numSfx = 0;
+ 
+ 	// Load the default sound, and lock it
+-	default_sfx = S_AL_BufferFind("sound/feedback/hit.wav");
++	default_sfx = S_AL_BufferFind("sound/misc/silence.wav");
+ 	S_AL_BufferUse(default_sfx);
+ 	knownSfx[default_sfx].isLocked = qtrue;
+ 
