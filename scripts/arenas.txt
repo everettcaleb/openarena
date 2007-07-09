@@ -125,7 +125,7 @@ type		"single ffa sp team"
 
 {
 map		"oa_dm2"
-bots		"sergei kyonshi major merman grunt angelyss"
+bots		"sergei kyonshi major merman angelyss"
 longname	"Claustrophobopolis"
 fraglimit	"30"
 type		"single ffa sp team"
