@@ -269,3 +269,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"I am not worthy to even think that name.";
 	"Silence, Mortal!  You are not worthy of uttering an Arena Lord's name.";
 }
+
+[("sing me a song ", 0) &name] = 5
+{
+	"No, I am not in the mood.";
+	"There must be someway out of here, said the joker to the thief...";
+	"Hey, Mr. Tamberine man, play a song for me, I'm not sleepy and there ~ain't no place I'm going to...";
+	"She was a girl from Birmingham, she just had an abortion, she was a case of insanity, her name was Pauline, she lived in a tree...";
+	"...You've got to break the chains that hold you down, crush the tyrants to the ground...";
+	"...Put a bullet in my head, but you can't change a word I said, you've got the ~disease, I've got the solution...";
+	"Not right now, I'm kinda busy.";
+	"Sometimes I try to do things and it just don't turn out the way I want it to and I get real frustrated...";
+	"...as far I'm concerned I think you really suck, you're rotten, and you really blow... I hate your guts and I wish that you was dead...";
+}
+

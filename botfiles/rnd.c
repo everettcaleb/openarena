@@ -77,7 +77,7 @@ KILL_KAMIKAZE0 = {
 
 KILL_KAMIKAZE1 = {
 	"Told ya so.";
-	"I am all that is man.";
+	"I am all that is bot.";
 	"Now that's what I call fun!";
 	"D'oh!  Missed ", 0,".";
 }
@@ -341,7 +341,7 @@ KILL_INSULT1 = {
 	"You should have stayed in bed this morning.";
 	"Life's a game YOU cannot win...";
 	"Another notch to my weapon belt.";
-	"Damn, you really suck.";
+	"Heh, you suck.";
 }
 
 KILL_INSULT2 = {
@@ -353,7 +353,7 @@ KILL_INSULT2 = {
 
 KILL_INSULT3 = {
 	"Yet they say violence isn't necessary...";
-	"Are you a fan of Ghandi?  Because non-violence will not work in the arena.";
+	"Are you a fan of Ghandi?  Because non-violence will not work here.";
 	number, " dollars says you don't get a frag this match.";
 	"Man, ", 0," I thought with a name like yours you'd be a challenge.";
 	"Lew-hoo-zer";
@@ -490,8 +490,8 @@ TAUNT0 = {
 }
 
 TAUNT1 = {
-	"*NEWS FLASH*, ", 0, " gave my ", family_member, disease, ".";
-	"Does your mother know what you spend your time on?";
+	"*NEWS FLASH*, ", 0, " gave my ", family_member, " ", disease, ".";
+	"Does your mother know how you spend your time?";
 	"I wish I could be as lame as you.";
 	"Oh just admit it, ", 0, " you think Visual Basic is a great language.";
 }
