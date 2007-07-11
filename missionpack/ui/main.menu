@@ -6,7 +6,7 @@
     	smallFont "gfx/2d/bigchars" 12				
     	bigFont "gfx/2d/bigchars" 20				
 	cursor "ui/assets/cursor"			
-	itemFocusSound "ui/assets/hover.wav"		
+	itemFocusSound MP_SND_HOVER		
 	shadowColor 0.0 0.0 0.0 0.25			
   	}
 							   
@@ -16,11 +16,11 @@
 
 menuDef {
     	name "main"
-	background "ui/assets/splash"		
+	background MP_BACKGROUND	
     	fullScreen MENU_TRUE				
 	rect 0 0 640 480
     	visible MENU_TRUE
-    	focusColor 1 1 0 1			
+    	focusColor MP_FOCUSCOLOR			
 
 						
 	onOpen { 
@@ -32,7 +32,7 @@ menuDef {
 
 itemDef {
       	name titleness
-      	text "Missionpack"
+      	text MISSIONPACK_TITLE
       	style 0	
 	type 0
 	textstyle 6
@@ -41,7 +41,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 90        
-	forecolor 1 1 0.6 1
+	forecolor MP_TITLECOLOR
 	visible 1 
 	}
 
@@ -58,11 +58,11 @@ itemDef {
       	textalign 0		
      	textalignx 5 	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1   
+	forecolor MP_TEXTCOLOR   
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
  	
       		}
 	}
@@ -78,11 +78,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1    
+	forecolor MP_TEXTCOLOR    
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 		open createserver;
 		close menu;
       		}
@@ -99,11 +99,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1    
+	forecolor MP_TEXTCOLOR    
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 		open joinserver;
 		close menu;
       		}
@@ -120,11 +120,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1    
+	forecolor MP_TEXTCOLOR    
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 		open configuration;
 		close menu;
       		}
@@ -141,11 +141,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20    
-	forecolor 0.935 0.70 0.24 1   
+	forecolor MP_TEXTCOLOR   
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 		open player;
 		close menu;
       		}
@@ -161,11 +161,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -180,11 +180,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -199,11 +199,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 		uiscript "quit";
       		}
 	}
@@ -219,11 +219,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 

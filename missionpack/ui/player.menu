@@ -8,9 +8,9 @@
     name "player"
     visible 0
     fullscreen 1
-    background "ui/assets/splash"	
-    itemFocusSound "ui/assets/hover.wav"	
-    focusColor 1 1 0 1
+    background MP_BACKGROUND
+    itemFocusSound MP_SND_HOVER	
+    focusColor MP_FOCUSCOLOR
     rect 0 0 640 480
     outOfBoundsClick  
     style 0
@@ -34,7 +34,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 40        
-	forecolor 0.935 0.70 0.24 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	}
 
@@ -56,7 +56,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 	       close player;
 		open main;
       		}
@@ -73,11 +73,11 @@ itemDef {
       	textalign 0		
      	textalignx 5 	
 	textaligny 20   
-	forecolor 1 0.9 0.2 1   
+	forecolor MP_TEXTCOLOR  
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
  		
       		}
 	}
@@ -93,11 +93,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 1 0.9 0.2 1     
+	forecolor MP_TEXTCOLOR    
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 		close createserver;
 		open menu;
       		}
@@ -114,11 +114,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 1 0.9 0.2 1     
+	forecolor MP_TEXTCOLOR    
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -133,11 +133,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 1 0.9 0.2 1     
+	forecolor MP_TEXTCOLOR    
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -152,11 +152,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20    
-	forecolor 1 0.9 0.2 1    
+	forecolor MP_TEXTCOLOR   
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 itemDef {
@@ -170,11 +170,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 1 0.9 0.2 1      
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -189,11 +189,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 1 0.9 0.2 1      
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -208,11 +208,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 1 0.9 0.2 1      
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 */
@@ -237,10 +237,10 @@ cvarTest "ui_q3model"
    	background "ui/assets/scrollbar"
       textaligny 14
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
       visible 1
       columns 1
         2 190 25 ITEM_ALIGN_LEFT
@@ -264,10 +264,10 @@ cvarTest "ui_q3model"
    	background "ui/assets/scrollbar"
       textaligny 14
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
       visible 1
       columns 1
         2 190 25 ITEM_ALIGN_LEFT
@@ -283,10 +283,10 @@ rect 361 118 217 339
 	style 1
 	decoration 
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
 	visible 1
     	}
 
@@ -338,10 +338,10 @@ itemDef {
      	textalignx 6	
 	textaligny 18        
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
 	visible 1 
     }
 
@@ -381,10 +381,10 @@ itemDef {
      	textalignx 6	
 	textaligny 18        
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
 	visible 1 
     }
 // other buttons
@@ -421,10 +421,10 @@ itemDef {
      	textalignx 6	
 	textaligny 18        
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
 	visible 1 
     }
 // other buttons
