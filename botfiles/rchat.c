@@ -260,7 +260,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"Has anyone ever told you to shut the hell up?";
 }
 
-["Aardappel", "leileilol", "Multiplex", "crayon", "JK Makowka", "Democritus", "jzero", "Mancubus", "mewse", "div0", "MilesTeg", "evillair", "Shadowdragon", "mightypea", "Morphed", "toddd", "Psymong", "DarkThief", "slyus", "SavageX", "Kaz", "pixie", "Vondur", "Tyrann", "Ed", "Czestmyr"] = 1
+["Aardappel", "leileilol", "Multiplex", "crayon", "JK Makowka", "Democritus", "jzero", "Mancubus", "mewse", "div0", "MilesTeg", "evillair", "Shadowdragon", "mightypea", "Morphed", "toddd", "Psymong", "DarkThief", "slyus", "SavageX", "Kaz", "pixie", "Vondur", "Tyrann", "Ed", "Czestmyr", "kick52", "kit89", "lazureus", "sago007", "dmn_clown"] = 1
 {
 	"Why do you think you have the right to utter that name, you ", fighter, "?";
 	"Speak that name with respect.";
@@ -281,5 +281,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"Not right now, I'm kinda busy.";
 	"Sometimes I try to do things and it just don't turn out the way I want it to and I get real frustrated...";
 	"...as far I'm concerned I think you really suck, you're rotten, and you really blow... I hate your guts and I wish that you was dead...";
+	"... ~Don't go out tonight, it could be your life, ~there's a bathroom on the right...";
+	"No life 'till leather, we're going to kick some ~ass tonight!  Oh yeah, yeah yeah!";
+	"Play some Skynard, Man!";
+	"...there's a lot of people sayin' we'd be better off dead, I don't feel like satan, but I am to them, so I try to forget it any way I can...";
+	"Sorry, my voice is shot... too much whiskey.";
+	"Nah...";
+	"...now the sun has disappeared, all is darkness, anger, pain, and fear, twisted sightless wrecks of men go groping on their knees and cry in pain, and the sun has disappeared...";
 }
 
