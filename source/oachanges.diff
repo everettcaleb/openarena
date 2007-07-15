@@ -119,21 +119,16 @@ Index: qcommon/q_shared.h
  #define MAX_TEAMNAME 32
 Index: client/cl_main.c
 ===================================================================
---- cl_main.c	(revision 1107)
-+++ cl_main.c	(working copy)
-@@ -3622,9 +3622,9 @@
- 		case 'W':
- 			sum += ch;
- 			continue;
--		default:*/
--			return qtrue;
--		
-+		default:
-+			return qfalse;
-+		}
- 	}
- 
- 	sprintf(chs, "%02x", sum);
+--- client/cl_main.c	(revision 1107)
++++ client/cl_main.c	(working copy)
+@@ -3582,7 +3582,7 @@
+ */
+ qboolean CL_CDKeyValidate( const char *key, const char *checksum ) {
+-	char	ch;
++/*	char	ch;
+ 	byte	sum;
+ 	char	chs[3];
+ 	int i, len;
 @@ -3636,8 +3636,8 @@
  	if (!checksum) {
  		return qtrue;

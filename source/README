@@ -4,4 +4,12 @@ http://svn.icculus.org/quake3/trunk/
 
 The binaries are compiled at revision 1107
 
-NOTE:  You may have to manually apply the changes to --- code/server/sv_client.c
+NOTE:  You may have to manually apply the changes to --- 
+
+code/server/sv_client.c
+code/client/cl_main.c
+code/qcommon/files.c
+code/qcommon/qcommon.h
+code/ui/ui_main.c
+code/client/snd_dma.c
+code/client/snd_openal.c
