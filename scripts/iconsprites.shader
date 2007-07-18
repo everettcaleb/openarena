@@ -116,6 +116,15 @@ medal_impressive
 	}
 }
 
+medal_frags
+{
+	nopicmip
+	{
+		clampmap menu/medals/medal_frags.tga
+		blendFunc blend
+	}
+}
+
 medal_excellent
 {
 	nopicmip
