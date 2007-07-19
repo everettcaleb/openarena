@@ -307,17 +307,15 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define VOICECHAT_KILLGAUNTLET		"kill_gauntlet"			// I just killed you with the gauntlet
 #define VOICECHAT_PRAISE			"praise"				// you did something good
 
-#include "ui/lang_english.h"
+#include "ui/lang_english.h" // load english language
+// #include "ui/lang_fr.h" // load french
+// #include "ui/lang_de.h" // load german
+// #include "ui/lang_sp.h" // load spanish
+// #include "ui/lang_ja.h" // load japanese (won't be for a while unfortunately)
 
-#define MP_BACKGROUND "ui/assets/splash.jpg" // background of the menu
-#define MP_SND_SELECT "ui/assets/select.wav" // confirm noise
-#define MP_SND_HOVER "ui/assets/hover.wav" // hover noise
+// MAKE IT HOW IT LOOKS!!!!
 
-#define MP_TITLECOLOR 1 1 0.6 1 // Title colors
-#define MP_TEXTCOLOR 0.935 0.70 0.24 1 // regular color of menu button text
-#define MP_FOCUSCOLOR 1 0 1 1 1 // regular color of menu button text
+// #include "ui/theme_kirkland.h" // you know what this is
+#include "ui/theme_azure.h" // more ut/ta like 
+// #include "ui/theme_classic.h" // more like regular menu
 
-#define MP_BOX_BORDER 0.25 0.25 0.25 1
-#define MP_BOX_FORE 1   0.5   0.01   1
-#define MP_BOX_BACK 0.0 0.0 0.0 1
-#define MP_BOX_OUTLINE 1   0.5   0.01   0.3

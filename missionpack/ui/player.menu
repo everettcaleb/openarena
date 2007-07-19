@@ -301,7 +301,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 0        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
 	}
 // GAME TYPE SELECITON !!
@@ -319,7 +319,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
     }
 itemDef {
@@ -359,7 +359,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
     }
 itemDef {
@@ -403,7 +403,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
     }
 itemDef {

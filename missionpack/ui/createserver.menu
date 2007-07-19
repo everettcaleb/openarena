@@ -1,16 +1,14 @@
 #include "ui/menudef.h"
 
-// classic H*L style menu
-
 {
   menuDef
   {
     name "createserver"
     visible 0
     fullscreen 1
-    background "ui/assets/splash"	
-    itemFocusSound "ui/assets/hover.wav"	
-    focusColor 1 1 0 1
+    background MP_BACKGROUND	
+    itemFocusSound MP_SND_HOVER		
+    focusColor MP_FOCUSCOLOR
     rect 0 0 640 480
     outOfBoundsClick  
     style 0
@@ -31,7 +29,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 40        
-	forecolor 1 0.7 0.2 1
+	forecolor MP_TITLECOLOR
 	visible 1 
 	}
 
@@ -49,11 +47,11 @@ itemDef {
      	textalignx 5  	
 	textaligny 20      
 	backcolor 0 0 0 0
-	forecolor 0.935 0.70 0.24 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 	       
       		}
 	}
@@ -69,11 +67,11 @@ itemDef {
       	textalign 0		
      	textalignx 5 	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1   
+	forecolor MP_TEXTCOLOR   
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
  		uiScript StartServer // let's get it started
       		}
 	}
@@ -89,11 +87,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
 		close createserver;
 		open menu;
       		}
@@ -111,11 +109,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -130,11 +128,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -149,11 +147,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20    
-	forecolor 0.935 0.70 0.24 1    
+	forecolor MP_TEXTCOLOR    
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 itemDef {
@@ -167,11 +165,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 0.935 0.70 0.24 1      
+	forecolor MP_TEXTCOLOR      
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -186,11 +184,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 0.935 0.70 0.24 1      
+	forecolor MP_TEXTCOLOR      
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 
@@ -205,11 +203,11 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor 0.935 0.70 0.24 1      
+	forecolor MP_TEXTCOLOR      
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play MP_SND_SELECT; 
       		}
 	}
 */
@@ -231,10 +229,10 @@ itemDef {
    	background "ui/assets/scrollbar"
       textaligny 14
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
       visible 1
       columns 1
         2 190 25 ITEM_ALIGN_LEFT
@@ -249,7 +247,7 @@ itemDef {
       ownerdraw UI_STARTMAPCINEMATIC
       rect 437 40 160 120
       border 1
-      bordercolor .5 .5 .5 .5
+      bordercolor MP_BOX_BORDER
       visible 1
     }
 
@@ -264,7 +262,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 0        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
 	}
     
@@ -281,7 +279,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
     }
 itemDef {
@@ -301,10 +299,10 @@ itemDef {
      	textalignx 6	
 	textaligny 18        
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
 	visible 1 
     }
 
@@ -322,7 +320,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
     }
 itemDef {
@@ -343,10 +341,10 @@ itemDef {
      	textalignx 6	
 	textaligny 18        
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
 	visible 1 
     }
 // other buttons
@@ -365,7 +363,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
     }
 itemDef {
@@ -385,10 +383,10 @@ itemDef {
      	textalignx 6	
 	textaligny 18        
       border 1
-      bordercolor   0.25 0.25 0.25 1
-      forecolor     1   0.5   0.01   1
-      backcolor     0.0 0.0 0.0 1
-      outlinecolor  1   0.5   0.01   0.3
+      bordercolor   MP_BOX_BORDER
+      forecolor     MP_BOX_FORE
+      backcolor     MP_BOX_BACK
+      outlinecolor  MP_BOX_OUTLINE
 	visible 1 
     }
 // other buttons
@@ -406,7 +404,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 
@@ -423,7 +421,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 itemDef {
@@ -441,7 +439,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 
@@ -460,7 +458,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 
@@ -477,7 +475,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 // row 2 of other buttons
@@ -496,7 +494,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 
@@ -513,7 +511,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 itemDef {
@@ -531,7 +529,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 
@@ -550,7 +548,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_SMALLCOLOR
 	visible 1 
     }
 
@@ -568,7 +566,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 10        
-	forecolor 1 1 1 1
+	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
     }
 
