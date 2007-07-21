@@ -1,0 +1,1883 @@
+Index: code/q3_ui/ui_mods.c
+===================================================================
+--- code/q3_ui/ui_mods.c	(revision 1119)
++++ code/q3_ui/ui_mods.c	(working copy)
+@@ -159,9 +159,9 @@
+ 	s_mods.descriptionPtr = s_mods.description;
+ 	s_mods.fs_gamePtr = s_mods.fs_game;
+ 
+-	// always start off with baseq3
++	// always start off with baseoa
+ 	s_mods.list.numitems = 1;
+-	s_mods.list.itemnames[0] = s_mods.descriptionList[0] = "Quake III Arena";
++	s_mods.list.itemnames[0] = s_mods.descriptionList[0] = "OpenArena";
+ 	s_mods.fs_gameList[0] = "";
+ 
+ 	numdirs = trap_FS_GetFileList( "$modlist", "", dirlist, sizeof(dirlist) );
+Index: code/q3_ui/ui_menu.c
+===================================================================
+--- code/q3_ui/ui_menu.c	(revision 1119)
++++ code/q3_ui/ui_menu.c	(working copy)
+@@ -37,7 +37,7 @@
+ #define ID_SETUP				12
+ #define ID_DEMOS				13
+ #define ID_CINEMATICS			14
+-#define ID_TEAMARENA		15
++#define ID_MISSIONPACK		15
+ #define ID_MODS					16
+ #define ID_EXIT					17
+ 
+@@ -120,7 +120,7 @@
+ 		UI_ModsMenu();
+ 		break;
+ 
+-	case ID_TEAMARENA:
++	case ID_MISSIONPACK:
+ 		trap_Cvar_Set( "fs_game", "missionpack");
+ 		trap_Cmd_ExecuteText( EXEC_APPEND, "vid_restart;" );
+ 		break;
+@@ -220,13 +220,13 @@
+ 		// standard menu drawing
+ 		Menu_Draw( &s_main.menu );		
+ 	}
++		UI_DrawProportionalString( 320, 372, "", UI_CENTER|UI_SMALLFONT, color );
++		UI_DrawString( 320, 400, "OpenArena(c) 2005-2007 OpenArena Team", UI_CENTER|UI_SMALLFONT, color );
++		UI_DrawString( 320, 414, "OpenArena comes with ABSOLUTELY NO WARRANTY; this is free software", UI_CENTER|UI_SMALLFONT, color );
++		UI_DrawString( 320, 428, "and you are welcome to redistribute it under certain conditions;", UI_CENTER|UI_SMALLFONT, color );
++		UI_DrawString( 320, 444, "read COPYING for details.", UI_CENTER|UI_SMALLFONT, color );
+ 
+-	if (uis.demoversion) {
+-		UI_DrawProportionalString( 320, 372, "DEMO      FOR MATURE AUDIENCES      DEMO", UI_CENTER|UI_SMALLFONT, color );
+-		UI_DrawString( 320, 400, "Quake III Arena(c) 1999-2000, Id Software, Inc.  All Rights Reserved", UI_CENTER|UI_SMALLFONT, color );
+-	} else {
+-		UI_DrawString( 320, 450, "Quake III Arena(c) 1999-2000, Id Software, Inc.  All Rights Reserved", UI_CENTER|UI_SMALLFONT, color );
+-	}
++
+ }
+ 
+ 
+@@ -372,9 +372,9 @@
+ 		s_main.teamArena.generic.flags			= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
+ 		s_main.teamArena.generic.x				= 320;
+ 		s_main.teamArena.generic.y				= y;
+-		s_main.teamArena.generic.id				= ID_TEAMARENA;
++		s_main.teamArena.generic.id				= ID_MISSIONPACK;
+ 		s_main.teamArena.generic.callback		= Main_MenuEvent; 
+-		s_main.teamArena.string					= "TEAM ARENA";
++		s_main.teamArena.string					= "MISSION PACK";
+ 		s_main.teamArena.color					= color_red;
+ 		s_main.teamArena.style					= style;
+ 	}
+Index: code/q3_ui/ui_servers2.c
+===================================================================
+--- code/q3_ui/ui_servers2.c	(revision 1119)
++++ code/q3_ui/ui_servers2.c	(working copy)
+@@ -146,7 +146,7 @@
+ 	NULL
+ };
+ 
+-static char quake3worldMessage[] = "Visit www.quake3world.com - News, Community, Events, Files";
++static char quake3worldMessage[] = "Visit www.openarena.ws - News, Community, Events, Files";
+ 
+ const char* punkbuster_items[] = {
+ 	"Disabled",
+Index: code/q3_ui/ui_teamorders.c
+===================================================================
+--- code/q3_ui/ui_teamorders.c	(revision 1119)
++++ code/q3_ui/ui_teamorders.c	(working copy)
+@@ -75,7 +75,7 @@
+ 	"i am the leader",
+ 	"%s defend the base",
+ 	"%s follow me",
+-	"%s get enemy flag",
++	"%s get the enemy flag",
+ 	"%s camp here",
+ 	"%s report",
+ 	"i stop being the leader",
+Index: code/q3_ui/ui_credits.c
+===================================================================
+--- code/q3_ui/ui_credits.c	(revision 1119)
++++ code/q3_ui/ui_credits.c	(working copy)
+@@ -61,56 +61,12 @@
+ */
+ static void UI_CreditMenu_Draw( void ) {
+ 	int		y;
+-
+ 	y = 12;
+-	UI_DrawProportionalString( 320, y, "id Software is:", UI_CENTER|UI_SMALLFONT, color_white );
+-
+ 	y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Programming", UI_CENTER|UI_SMALLFONT, color_white );
++	UI_DrawProportionalString( 320, y, "Thank you for playing", UI_CENTER|UI_SMALLFONT, color_white );
+ 	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "John Carmack, Robert A. Duffy, Jim Dose'", UI_CENTER|UI_SMALLFONT, color_white );
+-
+-	y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Art", UI_CENTER|UI_SMALLFONT, color_white );
+-	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Adrian Carmack, Kevin Cloud,", UI_CENTER|UI_SMALLFONT, color_white );
+-	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Kenneth Scott, Seneca Menard, Fred Nilsson", UI_CENTER|UI_SMALLFONT, color_white );
+-
+-	y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Game Designer", UI_CENTER|UI_SMALLFONT, color_white );
+-	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Graeme Devine", UI_CENTER|UI_SMALLFONT, color_white );
+-
+-	y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Level Design", UI_CENTER|UI_SMALLFONT, color_white );
+-	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Tim Willits, Christian Antkow, Paul Jaquays", UI_CENTER|UI_SMALLFONT, color_white );
+-
+-	y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "CEO", UI_CENTER|UI_SMALLFONT, color_white );
+-	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Todd Hollenshead", UI_CENTER|UI_SMALLFONT, color_white );
+-
+-	y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Director of Business Development", UI_CENTER|UI_SMALLFONT, color_white );
+-	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Marty Stratton", UI_CENTER|UI_SMALLFONT, color_white );
+-
+-	y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Biz Assist and id Mom", UI_CENTER|UI_SMALLFONT, color_white );
+-	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Donna Jackson", UI_CENTER|UI_SMALLFONT, color_white );
+-
+-	y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Development Assistance", UI_CENTER|UI_SMALLFONT, color_white );
+-	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawProportionalString( 320, y, "Eric Webb", UI_CENTER|UI_SMALLFONT, color_white );
+-
+-	y += 1.35 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
+-	UI_DrawString( 320, y, "To order: 1-800-idgames     www.quake3arena.com     www.idsoftware.com", UI_CENTER|UI_SMALLFONT, color_red );
+ 	y += SMALLCHAR_HEIGHT;
+-	UI_DrawString( 320, y, "Quake III Arena(c) 1999-2000, Id Software, Inc.  All Rights Reserved", UI_CENTER|UI_SMALLFONT, color_red );
++	UI_DrawString( 320, y, "Click or press any key to quit", UI_CENTER|UI_SMALLFONT, color_red );
+ }
+ 
+ 
+Index: code/q3_ui/ui_cdkey.c
+===================================================================
+--- code/q3_ui/ui_cdkey.c	(revision 1119)
++++ code/q3_ui/ui_cdkey.c	(working copy)
+@@ -170,13 +170,13 @@
+ 
+ 	val = UI_CDKeyMenu_PreValidateKey( f->field.buffer );
+ 	if( val == 1 ) {
+-		UI_DrawProportionalString( 320, 376, "Please enter your CD Key", UI_CENTER|UI_SMALLFONT, color_yellow );
++		UI_DrawProportionalString( 320, 376, "No CD Key Needed", UI_CENTER|UI_SMALLFONT, color_yellow );
+ 	}
+ 	else if ( val == 0 ) {
+-		UI_DrawProportionalString( 320, 376, "The CD Key appears to be valid, thank you", UI_CENTER|UI_SMALLFONT, color_white );
++		UI_DrawProportionalString( 320, 376, "No CD Key needed, thank you", UI_CENTER|UI_SMALLFONT, color_white );
+ 	}
+ 	else {
+-		UI_DrawProportionalString( 320, 376, "The CD Key is not valid", UI_CENTER|UI_SMALLFONT, color_red );
++		UI_DrawProportionalString( 320, 376, "No CD Key Needed", UI_CENTER|UI_SMALLFONT, color_red );
+ 	}
+ }
+ 
+Index: code/unix/unix_shared.c
+===================================================================
+--- code/unix/unix_shared.c	(revision 1119)
++++ code/unix/unix_shared.c	(working copy)
+@@ -407,9 +407,9 @@
+ 	if ((p = getenv("HOME")) != NULL) {
+ 		Q_strncpyz(homePath, p, sizeof(homePath));
+ #ifdef MACOS_X
+-		Q_strcat(homePath, sizeof(homePath), "/Library/Application Support/Quake3");
++		Q_strcat(homePath, sizeof(homePath), "/Library/Application Support/OpenArena");
+ #else
+-		Q_strcat(homePath, sizeof(homePath), "/.q3a");
++		Q_strcat(homePath, sizeof(homePath), "/.openarena");
+ #endif
+ 		if (mkdir(homePath, 0777)) {
+ 			if (errno != EEXIST) 
+Index: code/win32/background.bmp
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: code/win32/qe3.ico
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: code/win32/clear.bmp
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: code/win32/win_shared.c
+===================================================================
+--- code/win32/win_shared.c	(revision 1119)
++++ code/win32/win_shared.c	(working copy)
+@@ -330,7 +330,7 @@
+ 		return NULL;
+ 	}
+ 	Q_strncpyz( path, szPath, sizeof(path) );
+-	Q_strcat( path, sizeof(path), "\\Quake3" );
++	Q_strcat( path, sizeof(path), "\\OpenArena" );
+ 	FreeLibrary(shfolder);
+ 	if( !CreateDirectory( path, NULL ) )
+ 	{
+Index: code/server/sv_ccmds.c
+===================================================================
+--- code/server/sv_ccmds.c	(revision 1119)
++++ code/server/sv_ccmds.c	(working copy)
+@@ -430,6 +430,12 @@
+ 		return;
+ 	}
+ 
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+@@ -484,6 +490,14 @@
+ 		return;
+ 	}
+ 
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
++
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+Index: code/server/sv_client.c
+===================================================================
+--- code/server/sv_client.c	(revision 1119)
++++ code/server/sv_client.c	(working copy)
+@@ -87,7 +87,17 @@
+ 		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
+ 		return;
+ 	}
++	
++	// if there's no authorize server defined, just let them in
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Not authorizing client due to lack of auth server\n");
++		challenge->pingTime = svs.time;
++		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
++		return;
++	}
+ 
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+Index: code/renderer/tr_local.h
+===================================================================
+--- code/renderer/tr_local.h	(revision 1119)
++++ code/renderer/tr_local.h	(working copy)
+@@ -866,6 +866,8 @@
+ 	qboolean	projection2D;	// if qtrue, drawstretchpic doesn't need to change modes
+ 	byte		color2D[4];
+ 	qboolean	vertexes2D;		// shader needs to be finished
++	qboolean	doneBloom;		// done bloom this frame
++	qboolean	doneSurfaces;   // done any 3d surfaces already
+ 	trRefEntity_t	entity2D;	// currentEntity will point at this when doing 2D rendering
+ } backEndState_t;
+ 
+@@ -1317,6 +1319,7 @@
+ 
+ extern	shaderCommands_t	tess;
+ 
++void RB_SetGL2D (void);
+ void RB_BeginSurface(shader_t *shader, int fogNum );
+ void RB_EndSurface(void);
+ void RB_CheckOverflow( int verts, int indexes );
+@@ -1669,5 +1672,8 @@
+ void R_DoneFreeType( void );
+ void RE_RegisterFont(const char *fontName, int pointSize, fontInfo_t *font);
+ 
++//Bloom Stuff
++void R_BloomInit( void );
++void R_BloomScreen( void );
+ 
+ #endif //TR_LOCAL_H
+Index: code/renderer/tr_init.c
+===================================================================
+--- code/renderer/tr_init.c	(revision 1119)
++++ code/renderer/tr_init.c	(working copy)
+@@ -1122,6 +1122,8 @@
+ 
+ 	R_Register();
+ 
++	R_BloomInit();
++
+ 	max_polys = r_maxpolys->integer;
+ 	if (max_polys < MAX_POLYS)
+ 		max_polys = MAX_POLYS;
+Index: code/renderer/tr_flares.c
+===================================================================
+--- code/renderer/tr_flares.c	(revision 1119)
++++ code/renderer/tr_flares.c	(working copy)
+@@ -79,7 +79,7 @@
+ 	vec3_t		color;
+ } flare_t;
+ 
+-#define		MAX_FLARES		128
++#define		MAX_FLARES		256
+ 
+ flare_t		r_flareStructs[MAX_FLARES];
+ flare_t		*r_activeFlares, *r_inactiveFlares;
+Index: code/renderer/tr_backend.c
+===================================================================
+--- code/renderer/tr_backend.c	(revision 1119)
++++ code/renderer/tr_backend.c	(working copy)
+@@ -899,7 +899,8 @@
+ 
+ 	backEnd.refdef = cmd->refdef;
+ 	backEnd.viewParms = cmd->viewParms;
+-
++	//TODO Maybe check for rdf_noworld stuff but q3mme has full 3d ui
++	backEnd.doneSurfaces = qtrue;
+ 	RB_RenderDrawSurfList( cmd->drawSurfs, cmd->numDrawSurfs );
+ 
+ 	return (const void *)(cmd + 1);
+@@ -1038,7 +1039,8 @@
+ 	GLimp_EndFrame();
+ 
+ 	backEnd.projection2D = qfalse;
+-
++	backEnd.doneBloom = qfalse;
++	backEnd.doneSurfaces = qfalse;
+ 	return (const void *)(cmd + 1);
+ }
+ 
+@@ -1067,6 +1069,8 @@
+ 			data = RB_SetColor( data );
+ 			break;
+ 		case RC_STRETCH_PIC:
++			//Check if it's time for BLOOM!
++			R_BloomScreen();
+ 			data = RB_StretchPic( data );
+ 			break;
+ 		case RC_DRAW_SURFS:
+@@ -1076,6 +1080,8 @@
+ 			data = RB_DrawBuffer( data );
+ 			break;
+ 		case RC_SWAP_BUFFERS:
++			//Check if it's time for BLOOM!
++			R_BloomScreen();
+ 			data = RB_SwapBuffers( data );
+ 			break;
+ 		case RC_SCREENSHOT:
+Index: code/qcommon/q_shared.h
+===================================================================
+--- code/qcommon/q_shared.h	(revision 1119)
++++ code/qcommon/q_shared.h	(working copy)
+@@ -26,17 +26,17 @@
+ // q_shared.h -- included first by ALL program modules.
+ // A user mod should never modify this file
+ 
+-#define Q3_VERSION            "ioQ3 1.33"
++#define Q3_VERSION            "ioQ3 1.33+oa"
+ #ifndef SVN_VERSION
+   #define SVN_VERSION Q3_VERSION
+ #endif
+-#define CLIENT_WINDOW_TITLE   "ioquake3"
+-#define CLIENT_WINDOW_ICON    "ioq3"
+-#define CONSOLE_WINDOW_TITLE  "ioquake3 console"
+-#define CONSOLE_WINDOW_ICON   "ioq3 console"
++#define CLIENT_WINDOW_TITLE   "OpenArena"
++#define CLIENT_WINDOW_ICON    "OpenArena"
++#define CONSOLE_WINDOW_TITLE  "OpenArena console"
++#define CONSOLE_WINDOW_ICON   "OpenArena console"
+ // 1.32 released 7-10-2002
+ 
+-#define BASEGAME              "baseq3"
++#define BASEGAME              "baseoa"
+ 
+ #define MAX_TEAMNAME 32
+ 
+Index: code/qcommon/files.c
+===================================================================
+--- code/qcommon/files.c	(revision 1119)
++++ code/qcommon/files.c	(working copy)
+@@ -2900,7 +2900,7 @@
+ */
+ static void FS_CheckPak0( void )
+ {
+-	searchpath_t	*path;
++/*	searchpath_t	*path;
+ 	qboolean founddemo = qfalse;
+ 	unsigned foundPak = 0;
+ 
+@@ -2972,6 +2972,7 @@
+ 		|| !Q_stricmp( fs_gamedirvar->string, "missionpack" ))
+ 			Com_Error(ERR_FATAL, "\n*** you need to install Quake III Arena in order to play ***");
+ 	}
++*/
+ }
+ 
+ /*
+@@ -3383,7 +3384,7 @@
+ 	// try to start up normally
+ 	FS_Startup( BASEGAME );
+ 
+-	FS_CheckPak0( );
++//	FS_CheckPak0( );
+ 
+ 	// if we can't find default.cfg, assume that the paths are
+ 	// busted and error out now, rather than getting an unreadable
+Index: code/qcommon/qcommon.h
+===================================================================
+--- code/qcommon/qcommon.h	(revision 1119)
++++ code/qcommon/qcommon.h	(working copy)
+@@ -225,7 +225,7 @@
+ 
+ ==============================================================
+ */
+-
++//up this to 69 for 0.8 release!!
+ #define	PROTOCOL_VERSION	68
+ // 1.31 - 67
+ 
+@@ -233,13 +233,13 @@
+ // NOTE: that stuff only works with two digits protocols
+ extern int demo_protocols[];
+ 
+-#define	UPDATE_SERVER_NAME	"update.quake3arena.com"
++#define	UPDATE_SERVER_NAME	""
+ // override on command line, config files etc.
+ #ifndef MASTER_SERVER_NAME
+-#define MASTER_SERVER_NAME	"master.quake3arena.com"
++#define MASTER_SERVER_NAME	"dpmaster.deathmask.net"
+ #endif
+ #ifndef AUTHORIZE_SERVER_NAME
+-#define	AUTHORIZE_SERVER_NAME	"authorize.quake3arena.com"
++#define	AUTHORIZE_SERVER_NAME	""
+ #endif
+ 
+ #define	PORT_MASTER			27950
+Index: code/qcommon/qfiles.h
+===================================================================
+--- code/qcommon/qfiles.h	(revision 1119)
++++ code/qcommon/qfiles.h	(working copy)
+@@ -35,7 +35,7 @@
+ #endif
+ 
+ // surface geometry should not exceed these limits
+-#define	SHADER_MAX_VERTEXES	1000
++#define	SHADER_MAX_VERTEXES	16384
+ #define	SHADER_MAX_INDEXES	(6*SHADER_MAX_VERTEXES)
+ 
+ 
+Index: code/qcommon/common.c
+===================================================================
+--- code/qcommon/common.c	(revision 1119)
++++ code/qcommon/common.c	(working copy)
+@@ -37,9 +37,9 @@
+ #define MAX_NUM_ARGVS	50
+ 
+ #define MIN_DEDICATED_COMHUNKMEGS 1
+-#define MIN_COMHUNKMEGS		56
+-#define DEF_COMHUNKMEGS		64
+-#define DEF_COMZONEMEGS		24
++#define MIN_COMHUNKMEGS		112
++#define DEF_COMHUNKMEGS		128
++#define DEF_COMZONEMEGS		48
+ #define XSTRING(x)				STRING(x)
+ #define STRING(x)					#x
+ #define DEF_COMHUNKMEGS_S	XSTRING(DEF_COMHUNKMEGS)
+Index: code/ui/ui_main.c
+===================================================================
+--- code/ui/ui_main.c	(revision 1119)
++++ code/ui/ui_main.c	(working copy)
+@@ -64,8 +64,8 @@
+ 
+ static const serverFilter_t serverFilters[] = {
+ 	{"All", "" },
+-	{"Quake 3 Arena", "" },
+-	{"Team Arena", "missionpack" },
++	{"OpenArena", "" },
++	{"Mission Pack", "missionpack" },
+ 	{"Rocket Arena", "arena" },
+ 	{"Alliance", "alliance20" },
+ 	{"Weapons Factory Arena", "wfa" },
+@@ -121,7 +121,7 @@
+ };
+ 
+ #ifndef MISSIONPACK // bk001206
+-static char quake3worldMessage[] = "Visit www.quake3world.com - News, Community, Events, Files";
++static char quake3worldMessage[] = "Visit www.openarena.ws - News, Community, Events, Files";
+ #endif
+ 
+ static int gamecodetoui[] = {4,2,3,0,5,1,6};
+Index: code/client/cl_main.c
+===================================================================
+--- code/client/cl_main.c	(revision 1119)
++++ code/client/cl_main.c	(working copy)
+@@ -3582,7 +3582,7 @@
+ =================
+ */
+ qboolean CL_CDKeyValidate( const char *key, const char *checksum ) {
+-	char	ch;
++/*	char	ch;
+ 	byte	sum;
+ 	char	chs[3];
+ 	int i, len;
+@@ -3636,8 +3636,8 @@
+ 	if (!checksum) {
+ 		return qtrue;
+ 	}
+-
+-	return qfalse;
++*/
++	return qtrue;
+ }
+ 
+ 
+Index: code/client/snd_dma.c
+===================================================================
+--- code/client/snd_dma.c	(revision 1119)
++++ code/client/snd_dma.c	(working copy)
+@@ -364,7 +364,7 @@
+ 		Com_Memset( s_knownSfx, 0, sizeof( s_knownSfx ) );
+ 		Com_Memset(sfxHash, 0, sizeof(sfx_t *)*LOOP_HASH);
+ 
+-		S_Base_RegisterSound("sound/feedback/hit.wav", qfalse);		// changed to a sound in baseq3
++		S_Base_RegisterSound("sound/misc/silence.wav", qfalse);		// changed to a less annoying sound in baseoa
+ 	}
+ }
+ 
+Index: code/client/snd_openal.c
+===================================================================
+--- code/client/snd_openal.c	(revision 1119)
++++ code/client/snd_openal.c	(working copy)
+@@ -384,7 +384,7 @@
+ 	numSfx = 0;
+ 
+ 	// Load the default sound, and lock it
+-	default_sfx = S_AL_BufferFind("sound/feedback/hit.wav");
++	default_sfx = S_AL_BufferFind("sound/misc/silence.wav");
+ 	S_AL_BufferUse(default_sfx);
+ 	knownSfx[default_sfx].isLocked = qtrue;
+ 
+Index: cross-make-mingw.sh
+===================================================================
+--- cross-make-mingw.sh	(revision 1110)
++++ cross-make-mingw.sh	(working copy)
+@@ -1,6 +1,8 @@
+ #!/bin/sh
+ 
+-export CC=i586-mingw32msvc-gcc
+-export WINDRES=i586-mingw32msvc-windres
++PREFIX=/home/justme/mingw32/mingw32
++TARGET=i386-mingw32
++PATH="$PREFIX/bin:$PREFIX/$TARGET/bin:$PATH"
++export PATH
+ export PLATFORM=mingw32
+ exec make $*
+Index: Makefile
+===================================================================
+--- Makefile	(revision 1110)
++++ Makefile	(working copy)
+@@ -97,7 +97,7 @@
+ endif
+ 
+ ifndef USE_OPENAL_DLOPEN
+-USE_OPENAL_DLOPEN=0
++USE_OPENAL_DLOPEN=1
+ endif
+ 
+ ifndef USE_CURL
+@@ -113,7 +113,7 @@
+ endif
+ 
+ ifndef USE_CODEC_VORBIS
+-USE_CODEC_VORBIS=0
++USE_CODEC_VORBIS=1
+ endif
+ 
+ ifndef USE_LOCAL_HEADERS
+@@ -164,8 +164,6 @@
+ #############################################################################
+ 
+ ## Defaults
+-VM_PPC=
+-
+ LIB=lib
+ 
+ INSTALL=install
+@@ -197,7 +195,7 @@
+       BASE_CFLAGS += -DUSE_OPENAL_DLOPEN=1
+     endif
+   endif
+-  
++
+   ifeq ($(USE_CURL),1)
+     BASE_CFLAGS += -DUSE_CURL=1
+     ifeq ($(USE_CURL_DLOPEN),1)
+@@ -211,9 +209,8 @@
+ 
+   ifeq ($(USE_SDL),1)
+     BASE_CFLAGS += -DUSE_SDL_VIDEO=1 -DUSE_SDL_SOUND=1 $(shell sdl-config --cflags)
+-    GL_CFLAGS =
+   else
+-    GL_CFLAGS = -I/usr/X11R6/include
++    BASE_CFLAGS += -I/usr/X11R6/include
+   endif
+ 
+   OPTIMIZE = -O3 -ffast-math -funroll-loops -fomit-frame-pointer
+@@ -233,9 +230,7 @@
+   else
+   ifeq ($(ARCH),ppc)
+     BASE_CFLAGS += -maltivec
+-    ifneq ($(VM_PPC),)
+-      HAVE_VM_COMPILED=true
+-    endif
++    HAVE_VM_COMPILED=false
+   endif
+   endif
+   endif
+@@ -266,7 +261,7 @@
+       CLIENT_LDFLAGS += -lopenal
+     endif
+   endif
+-  
++ 
+   ifeq ($(USE_CURL),1)
+     ifneq ($(USE_CURL_DLOPEN),1)
+       CLIENT_LDFLAGS += -lcurl
+@@ -290,7 +285,6 @@
+ #############################################################################
+ 
+ ifeq ($(PLATFORM),darwin)
+-  VM_PPC=vm_ppc_new
+   HAVE_VM_COMPILED=true
+   BASE_CFLAGS=
+   CLIENT_LDFLAGS=
+@@ -310,7 +304,7 @@
+     LDFLAGS += -arch ppc \
+       -L/Developer/SDKs/MacOSX10.2.8.sdk/usr/lib/gcc/darwin/3.3 \
+       -F/Developer/SDKs/MacOSX10.2.8.sdk/System/Library/Frameworks \
+-      -Wl,-syslibroot,/Developer/SDKs/MacOSX10.2.8.sdk,-m 
++      -Wl,-syslibroot,/Developer/SDKs/MacOSX10.2.8.sdk,-m
+     ARCH=ppc
+ 
+     # OS X 10.2 sdk lacks dlopen() so ded would need libSDL anyway
+@@ -318,7 +312,7 @@
+ 
+     # because of a problem with linking on 10.2 this will generate multiply
+     # defined symbol errors.  The errors can be turned into warnings with
+-    # the -m linker flag, but you can't shut up the warnings 
++    # the -m linker flag, but you can't shut up the warnings
+     USE_OPENAL_DLOPEN=1
+   else
+   ifeq ($(BUILD_MACOSX_UB),i386)
+@@ -336,7 +330,7 @@
+     ARCH=i386
+     BUILD_SERVER=0
+   else
+-    # for whatever reason using the headers in the MacOSX SDKs tend to throw 
++    # for whatever reason using the headers in the MacOSX SDKs tend to throw
+     # errors even though they are identical to the system ones which don't
+     # therefore we shut up warning flags when running the universal build
+     # script as much as possible.
+@@ -346,9 +340,6 @@
+ 
+   ifeq ($(ARCH),ppc)
+     OPTIMIZE += -faltivec -O3
+-    # Carbon is required on PPC only to make a call to MakeDataExecutable
+-    # in the PPC vm (should be a better non-Carbon way).
+-    LDFLAGS += -framework Carbon
+   endif
+   ifeq ($(ARCH),i386)
+     OPTIMIZE += -march=prescott -mfpmath=sse
+@@ -370,7 +361,7 @@
+       BASE_CFLAGS += -DUSE_OPENAL_DLOPEN=1
+     endif
+   endif
+-  
++
+   ifeq ($(USE_CURL),1)
+     BASE_CFLAGS += -DUSE_CURL=1
+     ifneq ($(USE_CURL_DLOPEN),1)
+@@ -388,7 +379,6 @@
+   ifeq ($(USE_SDL),1)
+     BASE_CFLAGS += -DUSE_SDL_VIDEO=1 -DUSE_SDL_SOUND=1 -D_THREAD_SAFE=1 \
+       -I$(SDLHDIR)/include
+-    GL_CFLAGS =
+     # We copy sdlmain before ranlib'ing it so that subversion doesn't think
+     #  the file has been modified by each build.
+     LIBSDLMAIN=$(B)/libSDLmain.a
+@@ -426,7 +416,7 @@
+ ifeq ($(PLATFORM),mingw32)
+ 
+ ifndef WINDRES
+-WINDRES=windres
++WINDRES=/home/justme/mingw32/bin/mingw32-windres
+ endif
+ 
+   ARCH=x86
+@@ -436,7 +426,7 @@
+   ifeq ($(USE_OPENAL),1)
+     BASE_CFLAGS += -DUSE_OPENAL=1 -DUSE_OPENAL_DLOPEN=1
+   endif
+-  
++
+   ifeq ($(USE_CURL),1)
+     BASE_CFLAGS += -DUSE_CURL=1
+     ifneq ($(USE_CURL_DLOPEN),1)
+@@ -448,9 +438,7 @@
+     BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
+   endif
+ 
+-  GL_CFLAGS =
+-
+-  OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math -falign-loops=2 \
++  OPTIMIZE = -O2 -march=i586 -fomit-frame-pointer -ffast-math -falign-loops=2 \
+     -funroll-loops -falign-jumps=2 -falign-functions=2 -fstrength-reduce
+ 
+   HAVE_VM_COMPILED = true
+@@ -485,7 +473,7 @@
+   endif
+ 
+   BUILD_SERVER = 0
+-  BUILD_CLIENT_SMP = 0
++  BUILD_CLIENT_SMP = 1
+ 
+ else # ifeq mingw32
+ 
+@@ -502,10 +490,9 @@
+   endif #alpha test
+ 
+ 
+-  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
++  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
++                -I/usr/X11R6/include
+ 
+-  GL_CFLAGS = -I/usr/X11R6/include
+-
+   DEBUG_CFLAGS=$(BASE_CFLAGS) -g
+ 
+   ifeq ($(USE_OPENAL),1)
+@@ -624,6 +611,7 @@
+ 
+ ifeq ($(PLATFORM),sunos)
+ 
++  CC=gcc
+   INSTALL=ginstall
+   MKDIR=gmkdir
+   COPYDIR="/usr/local/share/games/quake3"
+@@ -645,9 +633,8 @@
+ 
+   ifeq ($(USE_SDL),1)
+     BASE_CFLAGS += -DUSE_SDL_SOUND=1 $(shell sdl-config --cflags)
+-    GL_CFLAGS =
+   else
+-    GL_CFLAGS = -I/usr/openwin/include
++    BASE_CFLAGS += -I/usr/openwin/include
+   endif
+ 
+   OPTIMIZE = -O3 -ffast-math -funroll-loops
+@@ -664,8 +651,8 @@
+       -falign-functions=2 -fstrength-reduce
+     HAVE_VM_COMPILED=true
+     BASE_CFLAGS += -m32
+-    LDFLAGS+=-m32
+-    GL_CFLAGS+= -I/usr/X11/include/NVIDIA
++    LDFLAGS += -m32
++    BASE_CFLAGS += -I/usr/X11/include/NVIDIA
+   endif
+   endif
+ 
+@@ -728,9 +715,9 @@
+ 
+ ifneq ($(BUILD_GAME_SO),0)
+   TARGETS += \
+-    $(B)/baseq3/cgame$(ARCH).$(SHLIBEXT) \
+-    $(B)/baseq3/qagame$(ARCH).$(SHLIBEXT) \
+-    $(B)/baseq3/ui$(ARCH).$(SHLIBEXT)     \
++    $(B)/baseoa/cgame$(ARCH).$(SHLIBEXT) \
++    $(B)/baseoa/qagame$(ARCH).$(SHLIBEXT) \
++    $(B)/baseoa/ui$(ARCH).$(SHLIBEXT)     \
+     $(B)/missionpack/cgame$(ARCH).$(SHLIBEXT) \
+     $(B)/missionpack/qagame$(ARCH).$(SHLIBEXT) \
+     $(B)/missionpack/ui$(ARCH).$(SHLIBEXT)
+@@ -739,13 +726,12 @@
+ ifneq ($(BUILD_GAME_QVM),0)
+   ifneq ($(CROSS_COMPILING),1)
+     TARGETS += \
+-      $(B)/baseq3/vm/cgame.qvm \
+-      $(B)/baseq3/vm/qagame.qvm \
+-      $(B)/baseq3/vm/ui.qvm \
++      $(B)/baseoa/vm/cgame.qvm \
++      $(B)/baseoa/vm/qagame.qvm \
++      $(B)/baseoa/vm/ui.qvm \
+       $(B)/missionpack/vm/qagame.qvm \
+       $(B)/missionpack/vm/cgame.qvm \
+-      $(B)/missionpack/vm/ui.qvm \
+-      qvmdeps
++      $(B)/missionpack/vm/ui.qvm
+   endif
+ endif
+ 
+@@ -762,56 +748,106 @@
+ endif
+ 
+ ifeq ($(GENERATE_DEPENDENCIES),1)
+-  DEPEND_CFLAGS=-MMD
++  BASE_CFLAGS += -MMD
+ endif
+ 
+ ifeq ($(USE_SVN),1)
+   BASE_CFLAGS += -DSVN_VERSION=\\\"$(SVN_VERSION)\\\"
+ endif
+ 
+-DO_CC=$(CC) $(NOTSHLIBCFLAGS) $(CFLAGS) -o $@ -c $<
+-DO_SMP_CC=$(CC) $(NOTSHLIBCFLAGS) $(CFLAGS) -DSMP -o $@ -c $<
+-DO_BOT_CC=$(CC) $(NOTSHLIBCFLAGS) $(CFLAGS) $(BOTCFLAGS) -DBOTLIB -o $@ -c $<   # $(SHLIBCFLAGS) # bk001212
+-DO_DEBUG_CC=$(CC) $(NOTSHLIBCFLAGS) $(DEBUG_CFLAGS) -o $@ -c $<
+-DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
+-DO_SHLIB_DEBUG_CC=$(CC) $(DEBUG_CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
+-DO_AS=$(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
+-DO_DED_CC=$(CC) $(NOTSHLIBCFLAGS) -DDEDICATED $(CFLAGS) -o $@ -c $<
+-DO_WINDRES=$(WINDRES) -i $< -o $@
++define DO_CC       
++@echo "CC $<"
++@$(CC) $(NOTSHLIBCFLAGS) $(CFLAGS) -o $@ -c $<
++endef
+ 
++define DO_SMP_CC
++@echo "SMP_CC $<"
++@$(CC) $(NOTSHLIBCFLAGS) $(CFLAGS) -DSMP -o $@ -c $<
++endef
++
++define DO_BOT_CC
++@echo "BOT_CC $<"
++@$(CC) $(NOTSHLIBCFLAGS) $(CFLAGS) $(BOTCFLAGS) -DBOTLIB -o $@ -c $<
++endef
++
++ifeq ($(GENERATE_DEPENDENCIES),1)
++  DO_QVM_DEP=cat $(@:%.o=%.d) | sed -e 's/\.o/\.asm/g' >> $(@:%.o=%.d)
++endif
++
++define DO_SHLIB_CC
++@echo "SHLIB_CC $<"
++@$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
++@$(DO_QVM_DEP)
++endef
++
++define DO_SHLIB_CC_MISSIONPACK
++@echo "SHLIB_CC_MISSIONPACK $<"
++@$(CC) -DMISSIONPACK $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
++@$(DO_QVM_DEP)
++endef
++
++define DO_AS
++@echo "AS $<"
++@$(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
++endef
++
++define DO_DED_CC
++@echo "DED_CC $<"
++@$(CC) $(NOTSHLIBCFLAGS) -DDEDICATED $(CFLAGS) -o $@ -c $<
++endef
++
++define DO_WINDRES
++@echo "WINDRES $<"
++@$(WINDRES) -i $< -o $@
++endef
++
++
+ #############################################################################
+ # MAIN TARGETS
+ #############################################################################
+ 
+-default:build_release
++default: release
++all: debug release
+ 
+-debug: build_debug
+-release: build_release
++debug:
++	@$(MAKE) targets B=$(BD) CFLAGS="$(CFLAGS) $(DEBUG_CFLAGS)"
+ 
+-build_debug: B=$(BD)
+-build_debug: makedirs tools
+-	$(MAKE)  targets B=$(BD) CFLAGS="$(CFLAGS) $(DEBUG_CFLAGS) $(DEPEND_CFLAGS)"
++release:
++	@$(MAKE) targets B=$(BR) CFLAGS="$(CFLAGS) $(RELEASE_CFLAGS)"
+ 
+-build_release: B=$(BR)
+-build_release: makedirs tools
+-	$(MAKE)  targets B=$(BR) CFLAGS="$(CFLAGS) $(RELEASE_CFLAGS) $(DEPEND_CFLAGS)"
++# Create the build directories and tools, print out
++# an informational message, then start building
++targets: makedirs tools
++	@echo ""
++	@echo "Building ioquake3 in $(B):"
++	@echo "  CC: $(CC)"
++	@echo ""
++	@echo "  CFLAGS:"
++	@for i in $(CFLAGS); \
++	do \
++		echo "    $$i"; \
++	done
++	@echo ""
++	@echo "  Output:"
++	@for i in $(TARGETS); \
++	do \
++		echo "    $$i"; \
++	done
++	@echo ""
++	@$(MAKE) $(TARGETS)
+ 
+-#Build both debug and release builds
+-all:build_debug build_release
+-
+-targets: $(TARGETS)
+-
+ makedirs:
+ 	@if [ ! -d $(BUILD_DIR) ];then $(MKDIR) $(BUILD_DIR);fi
+ 	@if [ ! -d $(B) ];then $(MKDIR) $(B);fi
+ 	@if [ ! -d $(B)/client ];then $(MKDIR) $(B)/client;fi
++	@if [ ! -d $(B)/clientsmp ];then $(MKDIR) $(B)/clientsmp;fi
+ 	@if [ ! -d $(B)/ded ];then $(MKDIR) $(B)/ded;fi
+-	@if [ ! -d $(B)/baseq3 ];then $(MKDIR) $(B)/baseq3;fi
+-	@if [ ! -d $(B)/baseq3/cgame ];then $(MKDIR) $(B)/baseq3/cgame;fi
+-	@if [ ! -d $(B)/baseq3/game ];then $(MKDIR) $(B)/baseq3/game;fi
+-	@if [ ! -d $(B)/baseq3/ui ];then $(MKDIR) $(B)/baseq3/ui;fi
+-	@if [ ! -d $(B)/baseq3/qcommon ];then $(MKDIR) $(B)/baseq3/qcommon;fi
+-	@if [ ! -d $(B)/baseq3/vm ];then $(MKDIR) $(B)/baseq3/vm;fi
++	@if [ ! -d $(B)/baseoa ];then $(MKDIR) $(B)/baseoa;fi
++	@if [ ! -d $(B)/baseoa/cgame ];then $(MKDIR) $(B)/baseoa/cgame;fi
++	@if [ ! -d $(B)/baseoa/game ];then $(MKDIR) $(B)/baseoa/game;fi
++	@if [ ! -d $(B)/baseoa/ui ];then $(MKDIR) $(B)/baseoa/ui;fi
++	@if [ ! -d $(B)/baseoa/qcommon ];then $(MKDIR) $(B)/baseoa/qcommon;fi
++	@if [ ! -d $(B)/baseoa/vm ];then $(MKDIR) $(B)/baseoa/vm;fi
+ 	@if [ ! -d $(B)/missionpack ];then $(MKDIR) $(B)/missionpack;fi
+ 	@if [ ! -d $(B)/missionpack/cgame ];then $(MKDIR) $(B)/missionpack/cgame;fi
+ 	@if [ ! -d $(B)/missionpack/game ];then $(MKDIR) $(B)/missionpack/game;fi
+@@ -828,15 +864,24 @@
+ 
+ ifeq ($(CROSS_COMPILING),1)
+ tools:
+-	echo QVM tools not built when cross-compiling
++	@echo QVM tools not built when cross-compiling
+ else
+ tools:
+ 	$(MAKE) -C $(TOOLSDIR)/lcc install
+ 	$(MAKE) -C $(TOOLSDIR)/asm install
+ endif
+ 
+-DO_Q3LCC=$(Q3LCC) -o $@ $<
++define DO_Q3LCC
++@echo "Q3LCC $<"
++@$(Q3LCC) -o $@ $<
++endef
+ 
++define DO_Q3LCC_MISSIONPACK
++@echo "Q3LCC_MISSIONPACK $<"
++@$(Q3LCC) -DMISSIONPACK -o $@ $<
++endef
++
++
+ #############################################################################
+ # CLIENT/SERVER
+ #############################################################################
+@@ -969,6 +1014,7 @@
+   \
+   $(B)/client/tr_animation.o \
+   $(B)/client/tr_backend.o \
++  $(B)/client/tr_bloom.o \
+   $(B)/client/tr_bsp.o \
+   $(B)/client/tr_cmds.o \
+   $(B)/client/tr_curve.o \
+@@ -1017,7 +1063,7 @@
+     Q3OBJ += $(B)/client/vm_x86_64.o
+   endif
+   ifeq ($(ARCH),ppc)
+-    Q3OBJ += $(B)/client/$(VM_PPC).o
++    Q3OBJ += $(B)/client/vm_ppc.o
+   endif
+ endif
+ 
+@@ -1059,15 +1105,18 @@
+     $(B)/client/sdl_glimp.o
+ 
+   Q3POBJ_SMP = \
+-    $(B)/client/linux_glimp_smp.o \
+-    $(B)/client/sdl_glimp_smp.o
++    $(B)/clientsmp/linux_glimp.o \
++    $(B)/clientsmp/sdl_glimp.o
+ endif
+ 
+ $(B)/ioquake3.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
+-	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
++	@echo "LD $@"
++	@$(CC) -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) \
++		$(LDFLAGS) $(LIBSDLMAIN)
+ 
+ $(B)/ioquake3-smp.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
+-	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
++	@echo "LD $@"
++	@$(CC) -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
+ 		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+ 
+ ifneq ($(strip $(LIBSDLMAIN)),)
+@@ -1078,202 +1127,8 @@
+ endif
+ endif
+ 
+-$(B)/client/cl_cgame.o : $(CDIR)/cl_cgame.c; $(DO_CC)
+-$(B)/client/cl_cin.o : $(CDIR)/cl_cin.c; $(DO_CC)
+-$(B)/client/cl_console.o : $(CDIR)/cl_console.c; $(DO_CC)
+-ifeq ($(USE_SVN),1)
+-  $(B)/client/cl_console.o : .svn/entries
+-endif
+-$(B)/client/cl_input.o : $(CDIR)/cl_input.c; $(DO_CC)
+-$(B)/client/cl_keys.o : $(CDIR)/cl_keys.c; $(DO_CC)
+-$(B)/client/cl_main.o : $(CDIR)/cl_main.c; $(DO_CC)
+-$(B)/client/cl_net_chan.o : $(CDIR)/cl_net_chan.c; $(DO_CC)
+-$(B)/client/cl_parse.o : $(CDIR)/cl_parse.c; $(DO_CC)
+-$(B)/client/cl_scrn.o : $(CDIR)/cl_scrn.c; $(DO_CC)
+-$(B)/client/cl_ui.o : $(CDIR)/cl_ui.c; $(DO_CC)
+-$(B)/client/cl_avi.o : $(CDIR)/cl_avi.c; $(DO_CC)
+-$(B)/client/snd_adpcm.o : $(CDIR)/snd_adpcm.c; $(DO_CC)
+-$(B)/client/snd_dma.o : $(CDIR)/snd_dma.c; $(DO_CC)
+-$(B)/client/snd_mem.o : $(CDIR)/snd_mem.c; $(DO_CC)
+-$(B)/client/snd_mix.o : $(CDIR)/snd_mix.c; $(DO_CC)
+-$(B)/client/snd_wavelet.o : $(CDIR)/snd_wavelet.c; $(DO_CC)
+ 
+-$(B)/client/snd_main.o : $(CDIR)/snd_main.c; $(DO_CC)
+-$(B)/client/snd_codec.o : $(CDIR)/snd_codec.c; $(DO_CC)
+-$(B)/client/snd_codec_wav.o : $(CDIR)/snd_codec_wav.c; $(DO_CC)
+-$(B)/client/snd_codec_ogg.o : $(CDIR)/snd_codec_ogg.c; $(DO_CC)
+ 
+-$(B)/client/qal.o : $(CDIR)/qal.c; $(DO_CC)
+-$(B)/client/snd_openal.o : $(CDIR)/snd_openal.c; $(DO_CC)
+-
+-$(B)/client/cl_curl.o : $(CDIR)/cl_curl.c; $(DO_CC)
+-
+-$(B)/client/sv_bot.o : $(SDIR)/sv_bot.c; $(DO_CC)
+-$(B)/client/sv_client.o : $(SDIR)/sv_client.c; $(DO_CC)
+-$(B)/client/sv_ccmds.o : $(SDIR)/sv_ccmds.c; $(DO_CC)
+-$(B)/client/sv_game.o : $(SDIR)/sv_game.c; $(DO_CC)
+-$(B)/client/sv_init.o : $(SDIR)/sv_init.c; $(DO_CC)
+-$(B)/client/sv_main.o : $(SDIR)/sv_main.c; $(DO_CC)
+-$(B)/client/sv_net_chan.o : $(SDIR)/sv_net_chan.c; $(DO_CC)
+-$(B)/client/sv_snapshot.o : $(SDIR)/sv_snapshot.c; $(DO_CC)
+-$(B)/client/sv_world.o : $(SDIR)/sv_world.c; $(DO_CC)
+-$(B)/client/cm_trace.o : $(CMDIR)/cm_trace.c; $(DO_CC)
+-$(B)/client/cm_load.o : $(CMDIR)/cm_load.c; $(DO_CC)
+-$(B)/client/cm_test.o : $(CMDIR)/cm_test.c; $(DO_CC)
+-$(B)/client/cm_patch.o : $(CMDIR)/cm_patch.c; $(DO_CC)
+-$(B)/client/cm_polylib.o : $(CMDIR)/cm_polylib.c; $(DO_CC)
+-$(B)/client/cmd.o : $(CMDIR)/cmd.c; $(DO_CC)
+-$(B)/client/common.o : $(CMDIR)/common.c; $(DO_CC)
+-ifeq ($(USE_SVN),1)
+-  $(B)/client/common.o : .svn/entries
+-endif
+-$(B)/client/cvar.o : $(CMDIR)/cvar.c; $(DO_CC)
+-$(B)/client/files.o : $(CMDIR)/files.c; $(DO_CC)
+-$(B)/client/md4.o : $(CMDIR)/md4.c; $(DO_CC)
+-$(B)/client/md5.o : $(CMDIR)/md5.c; $(DO_CC)
+-$(B)/client/msg.o : $(CMDIR)/msg.c; $(DO_CC)
+-$(B)/client/net_chan.o : $(CMDIR)/net_chan.c; $(DO_CC)
+-$(B)/client/huffman.o : $(CMDIR)/huffman.c; $(DO_CC)
+-$(B)/client/q_shared.o : $(CMDIR)/q_shared.c; $(DO_CC)
+-$(B)/client/q_math.o : $(CMDIR)/q_math.c; $(DO_CC)
+-
+-$(B)/client/be_aas_bspq3.o : $(BLIBDIR)/be_aas_bspq3.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_cluster.o : $(BLIBDIR)/be_aas_cluster.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_debug.o : $(BLIBDIR)/be_aas_debug.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_entity.o : $(BLIBDIR)/be_aas_entity.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_file.o : $(BLIBDIR)/be_aas_file.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_main.o : $(BLIBDIR)/be_aas_main.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_move.o : $(BLIBDIR)/be_aas_move.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_optimize.o : $(BLIBDIR)/be_aas_optimize.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_reach.o : $(BLIBDIR)/be_aas_reach.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_route.o : $(BLIBDIR)/be_aas_route.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_routealt.o : $(BLIBDIR)/be_aas_routealt.c; $(DO_BOT_CC)
+-$(B)/client/be_aas_sample.o : $(BLIBDIR)/be_aas_sample.c; $(DO_BOT_CC)
+-$(B)/client/be_ai_char.o : $(BLIBDIR)/be_ai_char.c; $(DO_BOT_CC)
+-$(B)/client/be_ai_chat.o : $(BLIBDIR)/be_ai_chat.c; $(DO_BOT_CC)
+-$(B)/client/be_ai_gen.o : $(BLIBDIR)/be_ai_gen.c; $(DO_BOT_CC)
+-$(B)/client/be_ai_goal.o : $(BLIBDIR)/be_ai_goal.c; $(DO_BOT_CC)
+-$(B)/client/be_ai_move.o : $(BLIBDIR)/be_ai_move.c; $(DO_BOT_CC)
+-$(B)/client/be_ai_weap.o : $(BLIBDIR)/be_ai_weap.c; $(DO_BOT_CC)
+-$(B)/client/be_ai_weight.o : $(BLIBDIR)/be_ai_weight.c; $(DO_BOT_CC)
+-$(B)/client/be_ea.o : $(BLIBDIR)/be_ea.c; $(DO_BOT_CC)
+-$(B)/client/be_interface.o : $(BLIBDIR)/be_interface.c; $(DO_BOT_CC)
+-$(B)/client/l_crc.o : $(BLIBDIR)/l_crc.c; $(DO_BOT_CC)
+-$(B)/client/l_libvar.o : $(BLIBDIR)/l_libvar.c; $(DO_BOT_CC)
+-$(B)/client/l_log.o : $(BLIBDIR)/l_log.c; $(DO_BOT_CC)
+-$(B)/client/l_memory.o : $(BLIBDIR)/l_memory.c; $(DO_BOT_CC)
+-$(B)/client/l_precomp.o : $(BLIBDIR)/l_precomp.c; $(DO_BOT_CC)
+-$(B)/client/l_script.o : $(BLIBDIR)/l_script.c; $(DO_BOT_CC)
+-$(B)/client/l_struct.o : $(BLIBDIR)/l_struct.c; $(DO_BOT_CC)
+-
+-$(B)/client/jcapimin.o : $(JPDIR)/jcapimin.c; $(DO_CC)
+-$(B)/client/jchuff.o : $(JPDIR)/jchuff.c; $(DO_CC)
+-$(B)/client/jcinit.o : $(JPDIR)/jcinit.c; $(DO_CC)
+-$(B)/client/jccoefct.o : $(JPDIR)/jccoefct.c; $(DO_CC)
+-$(B)/client/jccolor.o : $(JPDIR)/jccolor.c; $(DO_CC)
+-$(B)/client/jfdctflt.o : $(JPDIR)/jfdctflt.c; $(DO_CC)
+-$(B)/client/jcdctmgr.o : $(JPDIR)/jcdctmgr.c; $(DO_CC)
+-$(B)/client/jcmainct.o : $(JPDIR)/jcmainct.c; $(DO_CC)
+-$(B)/client/jcmarker.o : $(JPDIR)/jcmarker.c; $(DO_CC)
+-$(B)/client/jcmaster.o : $(JPDIR)/jcmaster.c; $(DO_CC)
+-$(B)/client/jcomapi.o : $(JPDIR)/jcomapi.c; $(DO_CC)
+-$(B)/client/jcparam.o : $(JPDIR)/jcparam.c;  $(DO_CC)
+-$(B)/client/jcprepct.o : $(JPDIR)/jcprepct.c; $(DO_CC)
+-$(B)/client/jcsample.o : $(JPDIR)/jcsample.c; $(DO_CC)
+-
+-$(B)/client/jdapimin.o : $(JPDIR)/jdapimin.c; $(DO_CC)
+-$(B)/client/jdapistd.o : $(JPDIR)/jdapistd.c; $(DO_CC)
+-$(B)/client/jdatasrc.o : $(JPDIR)/jdatasrc.c; $(DO_CC)
+-$(B)/client/jdcoefct.o : $(JPDIR)/jdcoefct.c; $(DO_CC)
+-$(B)/client/jdcolor.o : $(JPDIR)/jdcolor.c; $(DO_CC)
+-$(B)/client/jcphuff.o : $(JPDIR)/jcphuff.c; $(DO_CC)
+-$(B)/client/jddctmgr.o : $(JPDIR)/jddctmgr.c; $(DO_CC)
+-$(B)/client/jdhuff.o : $(JPDIR)/jdhuff.c; $(DO_CC)
+-$(B)/client/jdinput.o : $(JPDIR)/jdinput.c; $(DO_CC)
+-$(B)/client/jdmainct.o : $(JPDIR)/jdmainct.c; $(DO_CC)
+-$(B)/client/jdmarker.o : $(JPDIR)/jdmarker.c; $(DO_CC)
+-$(B)/client/jdmaster.o : $(JPDIR)/jdmaster.c; $(DO_CC)
+-$(B)/client/jdpostct.o : $(JPDIR)/jdpostct.c; $(DO_CC)
+-$(B)/client/jdsample.o : $(JPDIR)/jdsample.c; $(DO_CC)
+-$(B)/client/jdtrans.o : $(JPDIR)/jdtrans.c; $(DO_CC)
+-$(B)/client/jerror.o : $(JPDIR)/jerror.c; $(DO_CC) $(GL_CFLAGS)
+-$(B)/client/jidctflt.o : $(JPDIR)/jidctflt.c; $(DO_CC)
+-$(B)/client/jmemmgr.o : $(JPDIR)/jmemmgr.c; $(DO_CC)
+-$(B)/client/jmemnobs.o : $(JPDIR)/jmemnobs.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/jutils.o : $(JPDIR)/jutils.c; $(DO_CC)
+-
+-$(B)/client/tr_bsp.o : $(RDIR)/tr_bsp.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_animation.o : $(RDIR)/tr_animation.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_backend.o : $(RDIR)/tr_backend.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_cmds.o : $(RDIR)/tr_cmds.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_curve.o : $(RDIR)/tr_curve.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_flares.o : $(RDIR)/tr_flares.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_font.o : $(RDIR)/tr_font.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_image.o : $(RDIR)/tr_image.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_init.o : $(RDIR)/tr_init.c; $(DO_CC)    $(GL_CFLAGS)
+-$(B)/client/tr_light.o : $(RDIR)/tr_light.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_main.o : $(RDIR)/tr_main.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_marks.o : $(RDIR)/tr_marks.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_mesh.o : $(RDIR)/tr_mesh.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_model.o : $(RDIR)/tr_model.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_noise.o : $(RDIR)/tr_noise.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_scene.o : $(RDIR)/tr_scene.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_shade.o : $(RDIR)/tr_shade.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_shader.o : $(RDIR)/tr_shader.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_shade_calc.o : $(RDIR)/tr_shade_calc.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_shadows.o : $(RDIR)/tr_shadows.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_sky.o : $(RDIR)/tr_sky.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_smp.o : $(RDIR)/tr_smp.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_stripify.o : $(RDIR)/tr_stripify.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_subdivide.o : $(RDIR)/tr_subdivide.c; $(DO_CC)   $(GL_CFLAGS)
+-$(B)/client/tr_surface.o : $(RDIR)/tr_surface.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/tr_world.o : $(RDIR)/tr_world.c; $(DO_CC)   $(GL_CFLAGS)
+-
+-$(B)/client/unix_qgl.o : $(UDIR)/unix_qgl.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/unix_main.o : $(UDIR)/unix_main.c; $(DO_CC)
+-$(B)/client/unix_net.o : $(UDIR)/unix_net.c; $(DO_CC)
+-$(B)/client/unix_shared.o : $(UDIR)/unix_shared.c; $(DO_CC)
+-$(B)/client/irix_glimp.o : $(UDIR)/irix_glimp.c; $(DO_CC)
+-$(B)/client/irix_glimp_smp.o : $(UDIR)/irix_glimp.c; $(DO_SMP_CC)
+-$(B)/client/irix_snd.o : $(UDIR)/irix_snd.c; $(DO_CC)
+-$(B)/client/irix_input.o : $(UDIR)/irix_input.c; $(DO_CC)
+-$(B)/client/linux_signals.o : $(UDIR)/linux_signals.c; $(DO_CC) $(GL_CFLAGS)
+-$(B)/client/linux_glimp.o : $(UDIR)/linux_glimp.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/sdl_glimp.o : $(UDIR)/sdl_glimp.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/linux_glimp_smp.o : $(UDIR)/linux_glimp.c; $(DO_SMP_CC)  $(GL_CFLAGS)
+-$(B)/client/sdl_glimp_smp.o : $(UDIR)/sdl_glimp.c; $(DO_SMP_CC)  $(GL_CFLAGS)
+-$(B)/client/linux_joystick.o : $(UDIR)/linux_joystick.c; $(DO_CC)
+-$(B)/client/linux_qgl.o : $(UDIR)/linux_qgl.c; $(DO_CC)  $(GL_CFLAGS)
+-$(B)/client/linux_input.o : $(UDIR)/linux_input.c; $(DO_CC)
+-$(B)/client/linux_snd.o : $(UDIR)/linux_snd.c; $(DO_CC)
+-$(B)/client/sdl_snd.o : $(UDIR)/sdl_snd.c; $(DO_CC)
+-$(B)/client/snd_mixa.o : $(UDIR)/snd_mixa.s; $(DO_AS)
+-$(B)/client/matha.o : $(UDIR)/matha.s; $(DO_AS)
+-$(B)/client/ftola.o : $(UDIR)/ftola.s; $(DO_AS)
+-$(B)/client/snapvectora.o : $(UDIR)/snapvectora.s; $(DO_AS)
+-
+-$(B)/client/win_gamma.o : $(W32DIR)/win_gamma.c; $(DO_CC)
+-$(B)/client/win_glimp.o : $(W32DIR)/win_glimp.c; $(DO_CC)
+-$(B)/client/win_input.o : $(W32DIR)/win_input.c; $(DO_CC)
+-$(B)/client/win_main.o : $(W32DIR)/win_main.c; $(DO_CC)
+-$(B)/client/win_net.o : $(W32DIR)/win_net.c; $(DO_CC)
+-$(B)/client/win_qgl.o : $(W32DIR)/win_qgl.c; $(DO_CC)
+-$(B)/client/win_shared.o : $(W32DIR)/win_shared.c; $(DO_CC)
+-$(B)/client/win_snd.o : $(W32DIR)/win_snd.c; $(DO_CC)
+-$(B)/client/win_syscon.o : $(W32DIR)/win_syscon.c; $(DO_CC)
+-$(B)/client/win_wndproc.o : $(W32DIR)/win_wndproc.c; $(DO_CC)
+-$(B)/client/win_resource.o : $(W32DIR)/winquake.rc; $(DO_WINDRES)
+-
+-$(B)/client/vm_x86.o : $(CMDIR)/vm_x86.c; $(DO_CC)
+-$(B)/client/vm_x86_64.o : $(CMDIR)/vm_x86_64.c; $(DO_CC)
+-ifneq ($(VM_PPC),)
+-$(B)/client/$(VM_PPC).o : $(CMDIR)/$(VM_PPC).c; $(DO_CC)
+-endif
+-
+-$(B)/client/unzip.o : $(CMDIR)/unzip.c; $(DO_CC)
+-$(B)/client/vm.o : $(CMDIR)/vm.c; $(DO_CC)
+-$(B)/client/vm_interpreted.o : $(CMDIR)/vm_interpreted.c; $(DO_CC)
+-
+ #############################################################################
+ # DEDICATED SERVER
+ #############################################################################
+@@ -1372,132 +1227,56 @@
+     Q3DOBJ += $(B)/ded/vm_x86_64.o
+   endif
+   ifeq ($(ARCH),ppc)
+-    Q3DOBJ += $(B)/ded/$(VM_PPC).o
++    Q3DOBJ += $(B)/ded/vm_ppc.o
+   endif
+ endif
+ 
+ $(B)/ioq3ded.$(ARCH)$(BINEXT): $(Q3DOBJ)
+-	$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
++	@echo "LD $@"
++	@$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
+ 
+-$(B)/ded/sv_bot.o : $(SDIR)/sv_bot.c; $(DO_DED_CC)
+-$(B)/ded/sv_client.o : $(SDIR)/sv_client.c; $(DO_DED_CC)
+-$(B)/ded/sv_ccmds.o : $(SDIR)/sv_ccmds.c; $(DO_DED_CC)
+-$(B)/ded/sv_game.o : $(SDIR)/sv_game.c; $(DO_DED_CC)
+-$(B)/ded/sv_init.o : $(SDIR)/sv_init.c; $(DO_DED_CC)
+-$(B)/ded/sv_main.o : $(SDIR)/sv_main.c; $(DO_DED_CC)
+-$(B)/ded/sv_net_chan.o : $(SDIR)/sv_net_chan.c; $(DO_DED_CC)
+-$(B)/ded/sv_snapshot.o : $(SDIR)/sv_snapshot.c; $(DO_DED_CC)
+-$(B)/ded/sv_world.o : $(SDIR)/sv_world.c; $(DO_DED_CC)
+-$(B)/ded/cm_load.o : $(CMDIR)/cm_load.c; $(DO_DED_CC)
+-$(B)/ded/cm_polylib.o : $(CMDIR)/cm_polylib.c; $(DO_DED_CC)
+-$(B)/ded/cm_test.o : $(CMDIR)/cm_test.c; $(DO_DED_CC)
+-$(B)/ded/cm_trace.o : $(CMDIR)/cm_trace.c; $(DO_DED_CC)
+-$(B)/ded/cm_patch.o : $(CMDIR)/cm_patch.c; $(DO_DED_CC)
+-$(B)/ded/cmd.o : $(CMDIR)/cmd.c; $(DO_DED_CC)
+-$(B)/ded/common.o : $(CMDIR)/common.c; $(DO_DED_CC)
+-ifeq ($(USE_SVN),1)
+-  $(B)/ded/common.o : .svn/entries
+-endif
+-$(B)/ded/cvar.o : $(CMDIR)/cvar.c; $(DO_DED_CC)
+-$(B)/ded/files.o : $(CMDIR)/files.c; $(DO_DED_CC)
+-$(B)/ded/md4.o : $(CMDIR)/md4.c; $(DO_DED_CC)
+-$(B)/ded/msg.o : $(CMDIR)/msg.c; $(DO_DED_CC)
+-$(B)/ded/net_chan.o : $(CMDIR)/net_chan.c; $(DO_DED_CC)
+-$(B)/ded/huffman.o : $(CMDIR)/huffman.c; $(DO_DED_CC)
+-$(B)/ded/q_shared.o : $(CMDIR)/q_shared.c; $(DO_DED_CC)
+-$(B)/ded/q_math.o : $(CMDIR)/q_math.c; $(DO_DED_CC)
+ 
+-$(B)/ded/be_aas_bspq3.o : $(BLIBDIR)/be_aas_bspq3.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_cluster.o : $(BLIBDIR)/be_aas_cluster.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_debug.o : $(BLIBDIR)/be_aas_debug.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_entity.o : $(BLIBDIR)/be_aas_entity.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_file.o : $(BLIBDIR)/be_aas_file.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_main.o : $(BLIBDIR)/be_aas_main.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_move.o : $(BLIBDIR)/be_aas_move.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_optimize.o : $(BLIBDIR)/be_aas_optimize.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_reach.o : $(BLIBDIR)/be_aas_reach.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_route.o : $(BLIBDIR)/be_aas_route.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_routealt.o : $(BLIBDIR)/be_aas_routealt.c; $(DO_BOT_CC)
+-$(B)/ded/be_aas_sample.o : $(BLIBDIR)/be_aas_sample.c; $(DO_BOT_CC)
+-$(B)/ded/be_ai_char.o : $(BLIBDIR)/be_ai_char.c; $(DO_BOT_CC)
+-$(B)/ded/be_ai_chat.o : $(BLIBDIR)/be_ai_chat.c; $(DO_BOT_CC)
+-$(B)/ded/be_ai_gen.o : $(BLIBDIR)/be_ai_gen.c; $(DO_BOT_CC)
+-$(B)/ded/be_ai_goal.o : $(BLIBDIR)/be_ai_goal.c; $(DO_BOT_CC)
+-$(B)/ded/be_ai_move.o : $(BLIBDIR)/be_ai_move.c; $(DO_BOT_CC)
+-$(B)/ded/be_ai_weap.o : $(BLIBDIR)/be_ai_weap.c; $(DO_BOT_CC)
+-$(B)/ded/be_ai_weight.o : $(BLIBDIR)/be_ai_weight.c; $(DO_BOT_CC)
+-$(B)/ded/be_ea.o : $(BLIBDIR)/be_ea.c; $(DO_BOT_CC)
+-$(B)/ded/be_interface.o : $(BLIBDIR)/be_interface.c; $(DO_BOT_CC)
+-$(B)/ded/l_crc.o : $(BLIBDIR)/l_crc.c; $(DO_BOT_CC)
+-$(B)/ded/l_libvar.o : $(BLIBDIR)/l_libvar.c; $(DO_BOT_CC)
+-$(B)/ded/l_log.o : $(BLIBDIR)/l_log.c; $(DO_BOT_CC)
+-$(B)/ded/l_memory.o : $(BLIBDIR)/l_memory.c; $(DO_BOT_CC)
+-$(B)/ded/l_precomp.o : $(BLIBDIR)/l_precomp.c; $(DO_BOT_CC)
+-$(B)/ded/l_script.o : $(BLIBDIR)/l_script.c; $(DO_BOT_CC)
+-$(B)/ded/l_struct.o : $(BLIBDIR)/l_struct.c; $(DO_BOT_CC)
+ 
+-$(B)/ded/linux_signals.o : $(UDIR)/linux_signals.c; $(DO_DED_CC)
+-$(B)/ded/unix_main.o : $(UDIR)/unix_main.c; $(DO_DED_CC)
+-$(B)/ded/unix_net.o : $(UDIR)/unix_net.c; $(DO_DED_CC)
+-$(B)/ded/unix_shared.o : $(UDIR)/unix_shared.c; $(DO_DED_CC)
+-
+-$(B)/ded/null_client.o : $(NDIR)/null_client.c; $(DO_DED_CC)
+-$(B)/ded/null_input.o : $(NDIR)/null_input.c; $(DO_DED_CC)
+-$(B)/ded/null_snddma.o : $(NDIR)/null_snddma.c; $(DO_DED_CC)
+-$(B)/ded/unzip.o : $(CMDIR)/unzip.c; $(DO_DED_CC)
+-$(B)/ded/vm.o : $(CMDIR)/vm.c; $(DO_DED_CC)
+-$(B)/ded/vm_interpreted.o : $(CMDIR)/vm_interpreted.c; $(DO_DED_CC)
+-
+-$(B)/ded/ftola.o : $(UDIR)/ftola.s; $(DO_AS)
+-$(B)/ded/snapvectora.o : $(UDIR)/snapvectora.s; $(DO_AS)
+-$(B)/ded/matha.o : $(UDIR)/matha.s; $(DO_AS)
+-
+-$(B)/ded/vm_x86.o : $(CMDIR)/vm_x86.c; $(DO_DED_CC)
+-$(B)/ded/vm_x86_64.o : $(CMDIR)/vm_x86_64.c; $(DO_DED_CC)
+-ifneq ($(VM_PPC),)
+-$(B)/ded/$(VM_PPC).o : $(CMDIR)/$(VM_PPC).c; $(DO_DED_CC)
+-endif
+-
+-
+-
+ #############################################################################
+-## BASEQ3 CGAME
++## baseoa CGAME
+ #############################################################################
+ 
+ Q3CGOBJ_ = \
+-  $(B)/baseq3/cgame/cg_main.o \
+-  $(B)/baseq3/game/bg_misc.o \
+-  $(B)/baseq3/game/bg_pmove.o \
+-  $(B)/baseq3/game/bg_slidemove.o \
+-  $(B)/baseq3/cgame/cg_consolecmds.o \
+-  $(B)/baseq3/cgame/cg_draw.o \
+-  $(B)/baseq3/cgame/cg_drawtools.o \
+-  $(B)/baseq3/cgame/cg_effects.o \
+-  $(B)/baseq3/cgame/cg_ents.o \
+-  $(B)/baseq3/cgame/cg_event.o \
+-  $(B)/baseq3/cgame/cg_info.o \
+-  $(B)/baseq3/cgame/cg_localents.o \
+-  $(B)/baseq3/cgame/cg_marks.o \
+-  $(B)/baseq3/cgame/cg_players.o \
+-  $(B)/baseq3/cgame/cg_playerstate.o \
+-  $(B)/baseq3/cgame/cg_predict.o \
+-  $(B)/baseq3/cgame/cg_scoreboard.o \
+-  $(B)/baseq3/cgame/cg_servercmds.o \
+-  $(B)/baseq3/cgame/cg_snapshot.o \
+-  $(B)/baseq3/cgame/cg_view.o \
+-  $(B)/baseq3/cgame/cg_weapons.o \
++  $(B)/baseoa/cgame/cg_main.o \
++  $(B)/baseoa/game/bg_misc.o \
++  $(B)/baseoa/game/bg_pmove.o \
++  $(B)/baseoa/game/bg_slidemove.o \
++  $(B)/baseoa/cgame/cg_consolecmds.o \
++  $(B)/baseoa/cgame/cg_draw.o \
++  $(B)/baseoa/cgame/cg_drawtools.o \
++  $(B)/baseoa/cgame/cg_effects.o \
++  $(B)/baseoa/cgame/cg_ents.o \
++  $(B)/baseoa/cgame/cg_event.o \
++  $(B)/baseoa/cgame/cg_info.o \
++  $(B)/baseoa/cgame/cg_localents.o \
++  $(B)/baseoa/cgame/cg_marks.o \
++  $(B)/baseoa/cgame/cg_players.o \
++  $(B)/baseoa/cgame/cg_playerstate.o \
++  $(B)/baseoa/cgame/cg_predict.o \
++  $(B)/baseoa/cgame/cg_scoreboard.o \
++  $(B)/baseoa/cgame/cg_servercmds.o \
++  $(B)/baseoa/cgame/cg_snapshot.o \
++  $(B)/baseoa/cgame/cg_view.o \
++  $(B)/baseoa/cgame/cg_weapons.o \
+   \
+-  $(B)/baseq3/qcommon/q_math.o \
+-  $(B)/baseq3/qcommon/q_shared.o
++  $(B)/baseoa/qcommon/q_math.o \
++  $(B)/baseoa/qcommon/q_shared.o
+ 
+-Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseq3/cgame/cg_syscalls.o
+-Q3CGVMOBJ = $(Q3CGOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
++Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseoa/cgame/cg_syscalls.o
++Q3CGVMOBJ = $(Q3CGOBJ_:%.o=%.asm) $(B)/baseoa/game/bg_lib.asm
+ 
+-$(B)/baseq3/cgame$(ARCH).$(SHLIBEXT) : $(Q3CGOBJ)
+-	$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3CGOBJ)
++$(B)/baseoa/cgame$(ARCH).$(SHLIBEXT) : $(Q3CGOBJ)
++	@echo "LD $@"
++	@$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3CGOBJ)
+ 
+-$(B)/baseq3/vm/cgame.qvm: $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm
+-	$(Q3ASM) -o $@ $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm
++$(B)/baseoa/vm/cgame.qvm: $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm
++	@echo "Q3ASM $@"
++	@$(Q3ASM) -o $@ $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm
+ 
+ #############################################################################
+ ## MISSIONPACK CGAME
+@@ -1535,60 +1314,64 @@
+ MPCGVMOBJ = $(MPCGOBJ_:%.o=%.asm) $(B)/missionpack/game/bg_lib.asm
+ 
+ $(B)/missionpack/cgame$(ARCH).$(SHLIBEXT) : $(MPCGOBJ)
+-	$(CC) $(SHLIBLDFLAGS) -o $@ $(MPCGOBJ)
++	@echo "LD $@"
++	@$(CC) $(SHLIBLDFLAGS) -o $@ $(MPCGOBJ)
+ 
+ $(B)/missionpack/vm/cgame.qvm: $(MPCGVMOBJ) $(CGDIR)/cg_syscalls.asm
+-	$(Q3ASM) -o $@ $(MPCGVMOBJ) $(CGDIR)/cg_syscalls.asm
++	@echo "Q3ASM $@"
++	@$(Q3ASM) -o $@ $(MPCGVMOBJ) $(CGDIR)/cg_syscalls.asm
+ 
+ 
+ 
+ #############################################################################
+-## BASEQ3 GAME
++## baseoa GAME
+ #############################################################################
+ 
+ Q3GOBJ_ = \
+-  $(B)/baseq3/game/g_main.o \
+-  $(B)/baseq3/game/ai_chat.o \
+-  $(B)/baseq3/game/ai_cmd.o \
+-  $(B)/baseq3/game/ai_dmnet.o \
+-  $(B)/baseq3/game/ai_dmq3.o \
+-  $(B)/baseq3/game/ai_main.o \
+-  $(B)/baseq3/game/ai_team.o \
+-  $(B)/baseq3/game/ai_vcmd.o \
+-  $(B)/baseq3/game/bg_misc.o \
+-  $(B)/baseq3/game/bg_pmove.o \
+-  $(B)/baseq3/game/bg_slidemove.o \
+-  $(B)/baseq3/game/g_active.o \
+-  $(B)/baseq3/game/g_arenas.o \
+-  $(B)/baseq3/game/g_bot.o \
+-  $(B)/baseq3/game/g_client.o \
+-  $(B)/baseq3/game/g_cmds.o \
+-  $(B)/baseq3/game/g_combat.o \
+-  $(B)/baseq3/game/g_items.o \
+-  $(B)/baseq3/game/g_mem.o \
+-  $(B)/baseq3/game/g_misc.o \
+-  $(B)/baseq3/game/g_missile.o \
+-  $(B)/baseq3/game/g_mover.o \
+-  $(B)/baseq3/game/g_session.o \
+-  $(B)/baseq3/game/g_spawn.o \
+-  $(B)/baseq3/game/g_svcmds.o \
+-  $(B)/baseq3/game/g_target.o \
+-  $(B)/baseq3/game/g_team.o \
+-  $(B)/baseq3/game/g_trigger.o \
+-  $(B)/baseq3/game/g_utils.o \
+-  $(B)/baseq3/game/g_weapon.o \
++  $(B)/baseoa/game/g_main.o \
++  $(B)/baseoa/game/ai_chat.o \
++  $(B)/baseoa/game/ai_cmd.o \
++  $(B)/baseoa/game/ai_dmnet.o \
++  $(B)/baseoa/game/ai_dmq3.o \
++  $(B)/baseoa/game/ai_main.o \
++  $(B)/baseoa/game/ai_team.o \
++  $(B)/baseoa/game/ai_vcmd.o \
++  $(B)/baseoa/game/bg_misc.o \
++  $(B)/baseoa/game/bg_pmove.o \
++  $(B)/baseoa/game/bg_slidemove.o \
++  $(B)/baseoa/game/g_active.o \
++  $(B)/baseoa/game/g_arenas.o \
++  $(B)/baseoa/game/g_bot.o \
++  $(B)/baseoa/game/g_client.o \
++  $(B)/baseoa/game/g_cmds.o \
++  $(B)/baseoa/game/g_combat.o \
++  $(B)/baseoa/game/g_items.o \
++  $(B)/baseoa/game/g_mem.o \
++  $(B)/baseoa/game/g_misc.o \
++  $(B)/baseoa/game/g_missile.o \
++  $(B)/baseoa/game/g_mover.o \
++  $(B)/baseoa/game/g_session.o \
++  $(B)/baseoa/game/g_spawn.o \
++  $(B)/baseoa/game/g_svcmds.o \
++  $(B)/baseoa/game/g_target.o \
++  $(B)/baseoa/game/g_team.o \
++  $(B)/baseoa/game/g_trigger.o \
++  $(B)/baseoa/game/g_utils.o \
++  $(B)/baseoa/game/g_weapon.o \
+   \
+-  $(B)/baseq3/qcommon/q_math.o \
+-  $(B)/baseq3/qcommon/q_shared.o
++  $(B)/baseoa/qcommon/q_math.o \
++  $(B)/baseoa/qcommon/q_shared.o
+ 
+-Q3GOBJ = $(Q3GOBJ_) $(B)/baseq3/game/g_syscalls.o
+-Q3GVMOBJ = $(Q3GOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
++Q3GOBJ = $(Q3GOBJ_) $(B)/baseoa/game/g_syscalls.o
++Q3GVMOBJ = $(Q3GOBJ_:%.o=%.asm) $(B)/baseoa/game/bg_lib.asm
+ 
+-$(B)/baseq3/qagame$(ARCH).$(SHLIBEXT) : $(Q3GOBJ)
+-	$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3GOBJ)
++$(B)/baseoa/qagame$(ARCH).$(SHLIBEXT) : $(Q3GOBJ)
++	@echo "LD $@"
++	@$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3GOBJ)
+ 
+-$(B)/baseq3/vm/qagame.qvm: $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm
+-	$(Q3ASM) -o $@ $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm
++$(B)/baseoa/vm/qagame.qvm: $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm
++	@echo "Q3ASM $@"
++	@$(Q3ASM) -o $@ $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm
+ 
+ #############################################################################
+ ## MISSIONPACK GAME
+@@ -1633,70 +1416,74 @@
+ MPGVMOBJ = $(MPGOBJ_:%.o=%.asm) $(B)/missionpack/game/bg_lib.asm
+ 
+ $(B)/missionpack/qagame$(ARCH).$(SHLIBEXT) : $(MPGOBJ)
+-	$(CC) $(SHLIBLDFLAGS) -o $@ $(MPGOBJ)
++	@echo "LD $@"
++	@$(CC) $(SHLIBLDFLAGS) -o $@ $(MPGOBJ)
+ 
+ $(B)/missionpack/vm/qagame.qvm: $(MPGVMOBJ) $(GDIR)/g_syscalls.asm
+-	$(Q3ASM) -o $@ $(MPGVMOBJ) $(GDIR)/g_syscalls.asm
++	@echo "Q3ASM $@"
++	@$(Q3ASM) -o $@ $(MPGVMOBJ) $(GDIR)/g_syscalls.asm
+ 
+ 
+ 
+ #############################################################################
+-## BASEQ3 UI
++## baseoa UI
+ #############################################################################
+ 
+ Q3UIOBJ_ = \
+-  $(B)/baseq3/ui/ui_main.o \
+-  $(B)/baseq3/game/bg_misc.o \
+-  $(B)/baseq3/ui/ui_addbots.o \
+-  $(B)/baseq3/ui/ui_atoms.o \
+-  $(B)/baseq3/ui/ui_cdkey.o \
+-  $(B)/baseq3/ui/ui_cinematics.o \
+-  $(B)/baseq3/ui/ui_confirm.o \
+-  $(B)/baseq3/ui/ui_connect.o \
+-  $(B)/baseq3/ui/ui_controls2.o \
+-  $(B)/baseq3/ui/ui_credits.o \
+-  $(B)/baseq3/ui/ui_demo2.o \
+-  $(B)/baseq3/ui/ui_display.o \
+-  $(B)/baseq3/ui/ui_gameinfo.o \
+-  $(B)/baseq3/ui/ui_ingame.o \
+-  $(B)/baseq3/ui/ui_loadconfig.o \
+-  $(B)/baseq3/ui/ui_menu.o \
+-  $(B)/baseq3/ui/ui_mfield.o \
+-  $(B)/baseq3/ui/ui_mods.o \
+-  $(B)/baseq3/ui/ui_network.o \
+-  $(B)/baseq3/ui/ui_options.o \
+-  $(B)/baseq3/ui/ui_playermodel.o \
+-  $(B)/baseq3/ui/ui_players.o \
+-  $(B)/baseq3/ui/ui_playersettings.o \
+-  $(B)/baseq3/ui/ui_preferences.o \
+-  $(B)/baseq3/ui/ui_qmenu.o \
+-  $(B)/baseq3/ui/ui_removebots.o \
+-  $(B)/baseq3/ui/ui_saveconfig.o \
+-  $(B)/baseq3/ui/ui_serverinfo.o \
+-  $(B)/baseq3/ui/ui_servers2.o \
+-  $(B)/baseq3/ui/ui_setup.o \
+-  $(B)/baseq3/ui/ui_sound.o \
+-  $(B)/baseq3/ui/ui_sparena.o \
+-  $(B)/baseq3/ui/ui_specifyserver.o \
+-  $(B)/baseq3/ui/ui_splevel.o \
+-  $(B)/baseq3/ui/ui_sppostgame.o \
+-  $(B)/baseq3/ui/ui_spskill.o \
+-  $(B)/baseq3/ui/ui_startserver.o \
+-  $(B)/baseq3/ui/ui_team.o \
+-  $(B)/baseq3/ui/ui_teamorders.o \
+-  $(B)/baseq3/ui/ui_video.o \
++  $(B)/baseoa/ui/ui_main.o \
++  $(B)/baseoa/game/bg_misc.o \
++  $(B)/baseoa/ui/ui_addbots.o \
++  $(B)/baseoa/ui/ui_atoms.o \
++  $(B)/baseoa/ui/ui_cdkey.o \
++  $(B)/baseoa/ui/ui_cinematics.o \
++  $(B)/baseoa/ui/ui_confirm.o \
++  $(B)/baseoa/ui/ui_connect.o \
++  $(B)/baseoa/ui/ui_controls2.o \
++  $(B)/baseoa/ui/ui_credits.o \
++  $(B)/baseoa/ui/ui_demo2.o \
++  $(B)/baseoa/ui/ui_display.o \
++  $(B)/baseoa/ui/ui_gameinfo.o \
++  $(B)/baseoa/ui/ui_ingame.o \
++  $(B)/baseoa/ui/ui_loadconfig.o \
++  $(B)/baseoa/ui/ui_menu.o \
++  $(B)/baseoa/ui/ui_mfield.o \
++  $(B)/baseoa/ui/ui_mods.o \
++  $(B)/baseoa/ui/ui_network.o \
++  $(B)/baseoa/ui/ui_options.o \
++  $(B)/baseoa/ui/ui_playermodel.o \
++  $(B)/baseoa/ui/ui_players.o \
++  $(B)/baseoa/ui/ui_playersettings.o \
++  $(B)/baseoa/ui/ui_preferences.o \
++  $(B)/baseoa/ui/ui_qmenu.o \
++  $(B)/baseoa/ui/ui_removebots.o \
++  $(B)/baseoa/ui/ui_saveconfig.o \
++  $(B)/baseoa/ui/ui_serverinfo.o \
++  $(B)/baseoa/ui/ui_servers2.o \
++  $(B)/baseoa/ui/ui_setup.o \
++  $(B)/baseoa/ui/ui_sound.o \
++  $(B)/baseoa/ui/ui_sparena.o \
++  $(B)/baseoa/ui/ui_specifyserver.o \
++  $(B)/baseoa/ui/ui_splevel.o \
++  $(B)/baseoa/ui/ui_sppostgame.o \
++  $(B)/baseoa/ui/ui_spskill.o \
++  $(B)/baseoa/ui/ui_startserver.o \
++  $(B)/baseoa/ui/ui_team.o \
++  $(B)/baseoa/ui/ui_teamorders.o \
++  $(B)/baseoa/ui/ui_video.o \
+   \
+-  $(B)/baseq3/qcommon/q_math.o \
+-  $(B)/baseq3/qcommon/q_shared.o
++  $(B)/baseoa/qcommon/q_math.o \
++  $(B)/baseoa/qcommon/q_shared.o
+ 
+ Q3UIOBJ = $(Q3UIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
+-Q3UIVMOBJ = $(Q3UIOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
++Q3UIVMOBJ = $(Q3UIOBJ_:%.o=%.asm) $(B)/baseoa/game/bg_lib.asm
+ 
+-$(B)/baseq3/ui$(ARCH).$(SHLIBEXT) : $(Q3UIOBJ)
+-	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(Q3UIOBJ)
++$(B)/baseoa/ui$(ARCH).$(SHLIBEXT) : $(Q3UIOBJ)
++	@echo "LD $@"
++	@$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(Q3UIOBJ)
+ 
+-$(B)/baseq3/vm/ui.qvm: $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm
+-	$(Q3ASM) -o $@ $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm
++$(B)/baseoa/vm/ui.qvm: $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm
++	@echo "Q3ASM $@"
++	@$(Q3ASM) -o $@ $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm
+ 
+ #############################################################################
+ ## MISSIONPACK UI
+@@ -1715,79 +1502,145 @@
+   $(B)/missionpack/qcommon/q_shared.o
+ 
+ MPUIOBJ = $(MPUIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
+-MPUIVMOBJ = $(MPUIOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
++MPUIVMOBJ = $(MPUIOBJ_:%.o=%.asm) $(B)/baseoa/game/bg_lib.asm
+ 
+ $(B)/missionpack/ui$(ARCH).$(SHLIBEXT) : $(MPUIOBJ)
+-	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(MPUIOBJ)
++	@echo "LD $@"
++	@$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(MPUIOBJ)
+ 
+ $(B)/missionpack/vm/ui.qvm: $(MPUIVMOBJ) $(UIDIR)/ui_syscalls.asm
+-	$(Q3ASM) -o $@ $(MPUIVMOBJ) $(UIDIR)/ui_syscalls.asm
++	@echo "Q3ASM $@"
++	@$(Q3ASM) -o $@ $(MPUIVMOBJ) $(UIDIR)/ui_syscalls.asm
+ 
+ 
+ 
+ #############################################################################
++## CLIENT/SERVER RULES
++#############################################################################
++
++$(B)/client/%.o: $(UDIR)/%.s
++	$(DO_AS)
++
++$(B)/client/%.o: $(CDIR)/%.c
++	$(DO_CC)
++
++$(B)/client/%.o: $(SDIR)/%.c
++	$(DO_CC)
++
++$(B)/client/%.o: $(CMDIR)/%.c
++	$(DO_CC)
++
++$(B)/client/%.o: $(BLIBDIR)/%.c
++	$(DO_BOT_CC)
++
++$(B)/client/%.o: $(JPDIR)/%.c
++	$(DO_CC)
++
++$(B)/client/%.o: $(RDIR)/%.c
++	$(DO_CC)
++
++$(B)/client/%.o: $(UDIR)/%.c
++	$(DO_CC)
++
++$(B)/clientsmp/%.o: $(UDIR)/%.c
++	$(DO_SMP_CC)
++
++$(B)/client/%.o: $(W32DIR)/%.c
++	$(DO_CC)
++
++$(B)/client/%.o: $(W32DIR)/%.rc
++	$(DO_WINDRES)
++
++
++$(B)/ded/%.o: $(UDIR)/%.s
++	$(DO_AS)
++
++$(B)/ded/%.o: $(SDIR)/%.c
++	$(DO_DED_CC)
++
++$(B)/ded/%.o: $(CMDIR)/%.c
++	$(DO_DED_CC)
++
++$(B)/ded/%.o: $(BLIBDIR)/%.c
++	$(DO_BOT_CC)
++
++$(B)/ded/%.o: $(UDIR)/%.c
++	$(DO_DED_CC)
++
++$(B)/ded/%.o: $(NDIR)/%.c
++	$(DO_DED_CC)
++
++# Extra dependencies to ensure the SVN version is incorporated
++ifeq ($(USE_SVN),1)
++  $(B)/client/cl_console.o : .svn/entries
++  $(B)/client/common.o : .svn/entries
++  $(B)/ded/common.o : .svn/entries
++endif
++
++
++#############################################################################
+ ## GAME MODULE RULES
+ #############################################################################
+ 
+-$(B)/baseq3/cgame/%.o: $(CGDIR)/%.c
++$(B)/baseoa/cgame/%.o: $(CGDIR)/%.c
+ 	$(DO_SHLIB_CC)
+ 
+-$(B)/baseq3/cgame/%.asm: $(CGDIR)/%.c
++$(B)/baseoa/cgame/%.asm: $(CGDIR)/%.c
+ 	$(DO_Q3LCC)
+ 
+ $(B)/missionpack/cgame/%.o: $(CGDIR)/%.c
+-	$(DO_SHLIB_CC) -DMISSIONPACK
++	$(DO_SHLIB_CC_MISSIONPACK)
+ 
+ $(B)/missionpack/cgame/%.asm: $(CGDIR)/%.c
+-	$(DO_Q3LCC) -DMISSIONPACK
++	$(DO_Q3LCC_MISSIONPACK)
+ 
+ 
+-$(B)/baseq3/game/%.o: $(GDIR)/%.c
++$(B)/baseoa/game/%.o: $(GDIR)/%.c
+ 	$(DO_SHLIB_CC)
+ 
+-$(B)/baseq3/game/%.asm: $(GDIR)/%.c
++$(B)/baseoa/game/%.asm: $(GDIR)/%.c
+ 	$(DO_Q3LCC)
+ 
+ $(B)/missionpack/game/%.o: $(GDIR)/%.c
+-	$(DO_SHLIB_CC) -DMISSIONPACK
++	$(DO_SHLIB_CC_MISSIONPACK)
+ 
+ $(B)/missionpack/game/%.asm: $(GDIR)/%.c
+-	$(DO_Q3LCC) -DMISSIONPACK
++	$(DO_Q3LCC_MISSIONPACK)
+ 
+ 
+-$(B)/baseq3/ui/%.o: $(Q3UIDIR)/%.c
++$(B)/baseoa/ui/%.o: $(Q3UIDIR)/%.c
+ 	$(DO_SHLIB_CC)
+ 
+-$(B)/baseq3/ui/%.asm: $(Q3UIDIR)/%.c
++$(B)/baseoa/ui/%.asm: $(Q3UIDIR)/%.c
+ 	$(DO_Q3LCC)
+ 
+ $(B)/missionpack/ui/%.o: $(UIDIR)/%.c
+-	$(DO_SHLIB_CC) -DMISSIONPACK
++	$(DO_SHLIB_CC_MISSIONPACK)
+ 
+ $(B)/missionpack/ui/%.asm: $(UIDIR)/%.c
+-	$(DO_Q3LCC) -DMISSIONPACK
++	$(DO_Q3LCC_MISSIONPACK)
+ 
+ 
+-$(B)/baseq3/qcommon/%.o: $(CMDIR)/%.c
++$(B)/baseoa/qcommon/%.o: $(CMDIR)/%.c
+ 	$(DO_SHLIB_CC)
+ 
+-$(B)/baseq3/qcommon/%.asm: $(CMDIR)/%.c
++$(B)/baseoa/qcommon/%.asm: $(CMDIR)/%.c
+ 	$(DO_Q3LCC)
+ 
+ $(B)/missionpack/qcommon/%.o: $(CMDIR)/%.c
+-	$(DO_SHLIB_CC) -DMISSIONPACK
++	$(DO_SHLIB_CC_MISSIONPACK)
+ 
+ $(B)/missionpack/qcommon/%.asm: $(CMDIR)/%.c
+-	$(DO_Q3LCC) -DMISSIONPACK
++	$(DO_Q3LCC_MISSIONPACK)
+ 
+ 
+ #############################################################################
+ # MISC
+ #############################################################################
+ 
+-copyfiles: build_release
+-	@if [ ! -d $(COPYDIR)/baseq3 ]; then echo "You need to set COPYDIR to where your Quake3 data is!"; fi
+-	-$(MKDIR) -p -m 0755 $(COPYDIR)/baseq3
++copyfiles: release
++	@if [ ! -d $(COPYDIR)/baseoa ]; then echo "You need to set COPYDIR to where your Quake3 data is!"; fi
++	-$(MKDIR) -p -m 0755 $(COPYDIR)/baseoa
+ 	-$(MKDIR) -p -m 0755 $(COPYDIR)/missionpack
+ 
+ ifneq ($(BUILD_CLIENT),0)
+@@ -1805,13 +1658,13 @@
+ 	fi
+ endif
+ 
+-ifneq ($(BUILD_GAME_SO),0)	
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/cgame$(ARCH).$(SHLIBEXT) \
+-					$(COPYDIR)/baseq3/.
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/qagame$(ARCH).$(SHLIBEXT) \
+-					$(COPYDIR)/baseq3/.
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/ui$(ARCH).$(SHLIBEXT) \
+-					$(COPYDIR)/baseq3/.
++ifneq ($(BUILD_GAME_SO),0)
++	$(INSTALL) -s -m 0755 $(BR)/baseoa/cgame$(ARCH).$(SHLIBEXT) \
++					$(COPYDIR)/baseoa/.
++	$(INSTALL) -s -m 0755 $(BR)/baseoa/qagame$(ARCH).$(SHLIBEXT) \
++					$(COPYDIR)/baseoa/.
++	$(INSTALL) -s -m 0755 $(BR)/baseoa/ui$(ARCH).$(SHLIBEXT) \
++					$(COPYDIR)/baseoa/.
+ 	-$(MKDIR) -p -m 0755 $(COPYDIR)/missionpack
+ 	$(INSTALL) -s -m 0755 $(BR)/missionpack/cgame$(ARCH).$(SHLIBEXT) \
+ 					$(COPYDIR)/missionpack/.
+@@ -1822,30 +1675,31 @@
+ endif
+ 
+ clean: clean-debug clean-release
+-	$(MAKE) -C $(LOKISETUPDIR) clean
++	@$(MAKE) -C $(LOKISETUPDIR) clean
+ 
+ clean2:
+-	if [ -d $(B) ];then (find $(B) -name '*.d' -exec rm {} \;)fi
+-	rm -f $(Q3OBJ) $(Q3POBJ) $(Q3POBJ_SMP) $(Q3DOBJ) \
++	@echo "CLEAN $(B)"
++	@if [ -d $(B) ];then (find $(B) -name '*.d' -exec rm {} \;)fi
++	@rm -f $(Q3OBJ) $(Q3POBJ) $(Q3POBJ_SMP) $(Q3DOBJ) \
+ 		$(MPGOBJ) $(Q3GOBJ) $(Q3CGOBJ) $(MPCGOBJ) $(Q3UIOBJ) $(MPUIOBJ) \
+ 		$(MPGVMOBJ) $(Q3GVMOBJ) $(Q3CGVMOBJ) $(MPCGVMOBJ) $(Q3UIVMOBJ) $(MPUIVMOBJ)
+-	rm -f $(TARGETS)
++	@rm -f $(TARGETS)
+ 
+ clean-debug:
+-	$(MAKE) clean2 B=$(BD) CFLAGS="$(DEBUG_CFLAGS)"
++	@$(MAKE) clean2 B=$(BD)
+ 
+ clean-release:
+-	$(MAKE) clean2 B=$(BR) CFLAGS="$(RELEASE_CFLAGS)"
++	@$(MAKE) clean2 B=$(BR)
+ 
+ toolsclean:
+-	$(MAKE) -C $(TOOLSDIR)/asm clean uninstall
+-	$(MAKE) -C $(TOOLSDIR)/lcc clean uninstall
++	@$(MAKE) -C $(TOOLSDIR)/asm clean uninstall
++	@$(MAKE) -C $(TOOLSDIR)/lcc clean uninstall
+ 
+ distclean: clean toolsclean
+-	rm -rf $(BUILD_DIR)
++	@rm -rf $(BUILD_DIR)
+ 
+-installer: build_release
+-	$(MAKE) VERSION=$(VERSION) -C $(LOKISETUPDIR)
++installer: release
++	@$(MAKE) VERSION=$(VERSION) -C $(LOKISETUPDIR)
+ 
+ dist:
+ 	rm -rf ioquake3-$(SVN_VERSION)
+@@ -1859,16 +1713,10 @@
+ 
+ D_FILES=$(shell find . -name '*.d')
+ 
+-$(B)/baseq3/vm/vm.d: $(Q3GOBJ) $(Q3CGOBJ) $(Q3UIOBJ)
+-	cat $(^:%.o=%.d) | sed -e 's/\.o/\.asm/g' > $@
+-
+-$(B)/missionpack/vm/vm.d: $(MPGOBJ) $(MPCGOBJ) $(MPUIOBJ)
+-	cat $(^:%.o=%.d) | sed -e 's/\.o/\.asm/g' > $@
+-
+-qvmdeps: $(B)/baseq3/vm/vm.d $(B)/missionpack/vm/vm.d
+-
+ ifneq ($(strip $(D_FILES)),)
+   include $(D_FILES)
+ endif
+ 
+-.PHONY: release debug clean distclean copyfiles installer dist
++.PHONY: all clean clean2 clean-debug clean-release copyfiles \
++	debug default dist distclean installer makedirs release \
++	targets tools toolsclean
