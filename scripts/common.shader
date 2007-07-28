@@ -276,3 +276,35 @@ textures/common/full_clip
 	surfaceparm nodraw
 	surfaceparm playerclip
 }
+
+textures/common/antiportal
+{
+	qer_nocarve
+	surfaceparm nodraw
+	surfaceparm nonsolid
+	surfaceparm structural
+	surfaceparm trans
+	surfaceparm antiportal
+}
+
+textures/common/areaportal
+{
+	surfaceparm nodraw
+	surfaceparm nolightmap
+	surfaceparm nonsolid
+	surfaceparm structural
+	surfaceparm trans
+	surfaceparm nomarks
+	surfaceparm areaportal
+}
+
+textures/common/lightgrid
+{
+	surfaceparm nodraw
+	surfaceparm nolightmap
+	surfaceparm nonsolid
+	surfaceparm detail
+	surfaceparm nomarks
+	surfaceparm trans
+	surfaceparm lightgrid
+}
