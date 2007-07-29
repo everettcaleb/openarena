@@ -20,6 +20,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
+
 #define ITEM_TYPE_TEXT 0                  // simple text
 #define ITEM_TYPE_BUTTON 1                // button, basically text with a border 
 #define ITEM_TYPE_RADIOBUTTON 2           // toggle button, may be grouped 
@@ -306,8 +307,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define VOICECHAT_DEATHINSULT		"death_insult"			// you just killed me
 #define VOICECHAT_KILLGAUNTLET		"kill_gauntlet"			// I just killed you with the gauntlet
 #define VOICECHAT_PRAISE			"praise"				// you did something good
-
-#include "lang_english.h" // load english language
+// if building with this in your ../ui/ file you MUST remove the ui/!!
+#include "ui/lang_english.h" // load english language
 // #include "lang_fr.h" // load french
 // #include "lang_de.h" // load german
 // #include "lang_sp.h" // load spanish
@@ -316,6 +317,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // MAKE IT HOW IT LOOKS!!!!
 
 // #include "theme_kirkland.h" // you know what this is
-#include "theme_azure.h" // more ut/ta like 
+#include "ui/theme_azure.h" // more ut/ta like 
 // #include "theme_classic.h" // more like regular menu
-
+// please remember to add a new line at the end of a file

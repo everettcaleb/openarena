@@ -35,8 +35,8 @@ itemDef {
       	style 0	
 	type 0
 	textstyle 6
-      	textscale 1
-      	rect 0 65 1 1
+      	textscale .5
+      	rect 0 32 1 1
       	textalign 0		
      	textalignx 48 	
 	textaligny 90        
@@ -53,7 +53,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 177 163 34
+      	rect 73 150 163 34
       	textalign 0		
      	textalignx 5 	
 	textaligny 20   
@@ -73,7 +73,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 209 163 34
+      	rect 73 182 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
@@ -94,7 +94,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 241 163 34
+      	rect 73 214 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
@@ -110,12 +110,34 @@ itemDef {
 
 itemDef {
       	name button5
+      	text "Add Bot"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 73 246 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor 0.935 0.70 0.24 1    
+	visible 1 
+	      action
+      		{
+	        play "ui/assets/select.wav"; 
+		open ingame_addbot;
+		close ingame;
+      		}
+	}
+
+
+itemDef {
+      	name button6
       	text "Configuration"
       	style 0
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 273 163 34
+      	rect 73 278 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
@@ -130,13 +152,13 @@ itemDef {
 	}
 
 itemDef {
-      	name button6
+      	name button7
       	text "Player"
       	style 0
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 305 163 34
+      	rect 73 310 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20    
@@ -150,13 +172,13 @@ itemDef {
       		}
 	}
 itemDef {
-      	name button7
+      	name button8
       	text "Call Vote"
       	style 0
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 337 163 34
+      	rect 73 342 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -170,13 +192,13 @@ itemDef {
 	}
 
 itemDef {
-      	name button8
+      	name button9
       	text "Help"
       	style 0
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 369 163 34
+      	rect 73 374 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -189,13 +211,13 @@ itemDef {
 	}
 
 itemDef {
-      	name button10
+      	name button11
       	text "Quit"
       	style 0
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 433 163 34
+      	rect 73 438 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -209,13 +231,13 @@ itemDef {
 	}
 
 itemDef {
-      	name button9
+      	name button10
       	text "Movies"
       	style 0
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 401 163 34
+      	rect 73 406 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -230,7 +252,7 @@ itemDef {
 
 itemDef {
       	name warning
-      	text "OPENARENAMISSIONPACK MENU v0.001"
+      	text "OPENARENAMISSIONPACK MENU v0.002"
       	style 0	
 	type 1
 	textstyle 6

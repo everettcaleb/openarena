@@ -28,7 +28,7 @@ menuDef {
 		playlooped "music/menu" ;
 		uiScript stopRefresh ;
 		}
-		
+	
 
 itemDef {
       	name titleness
@@ -230,7 +230,7 @@ itemDef {
 
 itemDef {
       	name warning
-      	text "OPENARENAMISSIONPACK MENU v0.001"
+      	text "OPENARENAMISSIONPACK MENU v0.002"
       	style 0	
 	type 1
 	textstyle 6
@@ -242,19 +242,9 @@ itemDef {
 	forecolor 1 1 1 1
 	visible 1 
 	}
-
-
-
-
-
 }
 }
 }
-
-   }
-
-
-
-  }
-
+}
+}
 }
