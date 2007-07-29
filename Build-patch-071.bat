@@ -6,6 +6,10 @@ zip -9r pak7-patch.pk3 scripts/common.shader
 zip -9r pak7-patch.pk3 scripts/decals.shader
 zip -9r pak7-patch.pk3 scripts/iconsprites.shader
 zip -9r pak7-patch.pk3 scripts/oaflares.shader
+zip -9r pak7-patch.pk3 scripts/oanew.shader
+
+zip -9r pak7-patch.pk3 gfx/misc/smokepuff3.tga
+zip -9r pak7-patch.pk3 gfx/misc/smokepuff2b.tga
 
 zip -9r pak7-patch.pk3 icons/envirosuit.tga
 zip -9r pak7-patch.pk3 icons/flight.tga
