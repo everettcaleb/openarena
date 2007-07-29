@@ -3,6 +3,7 @@ zip -9r pak7-patch.pk3 COPYING
 
 zip -9r pak7-patch.pk3 scripts/arenas.txt
 zip -9r pak7-patch.pk3 scripts/common.shader
+zip -9r pak7-patch.pk3 scripts/decals.shader
 zip -9r pak7-patch.pk3 scripts/iconsprites.shader
 zip -9r pak7-patch.pk3 scripts/oaflares.shader
 
