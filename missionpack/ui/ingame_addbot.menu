@@ -29,7 +29,7 @@ menuDef {
 	visible 0
 	fullscreen 0
 	outOfBoundsClick
-	rect 275 120 80 128
+	rect 275 120 100 128
 	forecolor 0.935 0.70 0.24 1
 	focusColor 0.1 0.6 1 1
 	
@@ -81,7 +81,7 @@ itemDef {
 	name addthebotstupid
 	text "Add Bot"
 	textscale .2
-	style WINDOW_STYLE_FILLED
+	style 0
 	rect 0 80 128 20
 	textalign ITEM_ALIGN_LEFT
 	textalignx 15
@@ -89,6 +89,20 @@ itemDef {
 	forecolor 0.935 0.70 0.24 1
 	visible 1
 	action { uiScript addBot }
+	}
+// because someone will whine if this isn't in the menu
+itemDef {
+	name returntogame
+	text "Return to Game"
+	textscale .2
+	style 0
+	rect 0 100 128 20
+	textalign ITEM_ALIGN_LEFT
+	textalignx 15
+	textaligny 15
+	forecolor 0.935 0.70 0.24 1
+	visible 1
+	action { uiScript closeingame }
 	}
 
 }
