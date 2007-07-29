@@ -307,15 +307,15 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define VOICECHAT_KILLGAUNTLET		"kill_gauntlet"			// I just killed you with the gauntlet
 #define VOICECHAT_PRAISE			"praise"				// you did something good
 
-#include "ui/lang_english.h" // load english language
-// #include "ui/lang_fr.h" // load french
-// #include "ui/lang_de.h" // load german
-// #include "ui/lang_sp.h" // load spanish
-// #include "ui/lang_ja.h" // load japanese (won't be for a while unfortunately)
+#include "lang_english.h" // load english language
+// #include "lang_fr.h" // load french
+// #include "lang_de.h" // load german
+// #include "lang_sp.h" // load spanish
+// #include "lang_ja.h" // load japanese (won't be for a while unfortunately)
 
 // MAKE IT HOW IT LOOKS!!!!
 
-// #include "ui/theme_kirkland.h" // you know what this is
-#include "ui/theme_azure.h" // more ut/ta like 
-// #include "ui/theme_classic.h" // more like regular menu
+// #include "theme_kirkland.h" // you know what this is
+#include "theme_azure.h" // more ut/ta like 
+// #include "theme_classic.h" // more like regular menu
 
