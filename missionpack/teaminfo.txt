@@ -6,6 +6,6 @@ teams {
   { "Summer" "ui/assets/summer"  "Tanisha" "Rai" "Babe2" "Babe3" "Hunk"  }
 }
 characters {
-  { "Dmo"  "male" }
-  { "Hnt"  "female" }
+  { "Sergei"  "male" }
+  { "Angelyss"  "female" }
 }

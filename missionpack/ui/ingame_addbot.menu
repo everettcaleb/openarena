@@ -1,0 +1,95 @@
+/*
+===========================================================================
+Copyright (C) 2007 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+
+#include "ui/menudef.h"
+//to add a human exterminator without using the console
+{
+menuDef {
+	name "ingame_addbot"
+	visible 0
+	fullscreen 0
+	outOfBoundsClick
+	rect 275 120 80 128
+	forecolor 0.935 0.70 0.24 1
+	focusColor 0.1 0.6 1 1
+	
+itemDef {
+	name botname
+	style 0
+	text "Name:"
+	ownerdraw UI_BOTNAME
+	rect 0 20 128 20
+	textalign ITEM_ALIGN_LEFT
+	textalignx 15
+	textaligny 15
+	textscale .2
+	forecolor 0.935 0.70 0.24 1
+	visible 1
+	}
+
+itemDef {
+	name teamname
+	style 0
+	text "Team:"	
+	ownerdraw UI_REDBLUE
+	rect 0 40 128 20
+	textalign ITEM_ALIGN_LEFT		
+	textalignx 15
+	textaligny 15    
+	textscale .2
+	cvarTest "g_gametype"
+	disableCvar { "0" ; "1" }
+	forecolor 0.935 0.70 0.24 1
+	visible 1 
+	}
+
+itemDef {
+	name botskill
+	style 0	
+	text "Skill:"
+	ownerdraw UI_BOTSKILL
+	rect 0 60 128 20
+	textalign ITEM_ALIGN_LEFT		
+	textalignx 15
+	textaligny 15    
+	textscale .2     
+	forecolor 0.935 0.70 0.24 1
+	visible 1 
+	}
+
+itemDef {
+	name addthebotstupid
+	text "Add Bot"
+	textscale .2
+	style WINDOW_STYLE_FILLED
+	rect 0 80 128 20
+	textalign ITEM_ALIGN_LEFT
+	textalignx 15
+	textaligny 15
+	forecolor 0.935 0.70 0.24 1
+	visible 1
+	action { uiScript addBot }
+	}
+
+}
+}
