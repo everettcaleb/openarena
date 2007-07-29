@@ -253,9 +253,6 @@ void CG_DrawInformation( void ) {
 	case GT_ELIMINATION:
 		s = "Elimination";
 		break;
-	case GT_CTF_ELIMINATION:
-		s = "CTF Elimination";
-		break;
 #ifdef MISSIONPACK
 	case GT_1FCTF:
 		s = "One Flag CTF";

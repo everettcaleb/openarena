@@ -350,12 +350,23 @@ void SpectatorThink( gentity_t *ent, usercmd_t *ucmd ) {
 		trap_UnlinkEntity( ent );
 	}
 
+	if(ent->client->sess.sessionTeam != TEAM_SPECTATOR && g_gametype.integer>=GT_ELIMINATION && g_gametype.integer<=GT_LMS)
+		return;
+
 	client->oldbuttons = client->buttons;
 	client->buttons = ucmd->buttons;
 
 	// attack button cycles through spectators
 	if ( ( client->buttons & BUTTON_ATTACK ) && ! ( client->oldbuttons & BUTTON_ATTACK ) ) {
 		Cmd_FollowCycle_f( ent, 1 );
+	}
+
+	if ( ( client->buttons & BUTTON_USE_HOLDABLE ) && ! ( client->oldbuttons & BUTTON_USE_HOLDABLE ) ) {
+		//Cmd_FollowCycle_f( ent, 1 );
+		//client->sess.spectatorState = SPECTATOR_FREE;
+		StopFollowing(ent);
+		//ent->client->ps.stats[STAT_HEALTH] = 0;
+		//ClientBegin( ent->client - level.clients );
 	}
 }
 
@@ -462,6 +473,13 @@ void ClientTimerActions( gentity_t *ent, int msec ) {
 			if ( ent->health > client->ps.stats[STAT_MAX_HEALTH] ) {
 				ent->health--;
 			}
+			//Start killing players in LMS, if we are in overtime
+			if(g_gametype.integer==GT_LMS && TeamHealthCount( -1, TEAM_FREE ) != ent->health &&(level.roundNumber==level.roundNumberStarted)&&(level.time>=level.roundStartTime+1000*g_elimination_roundtime.integer)) {
+				ent->damage=5;
+				G_Damage (ent, NULL, NULL, NULL, NULL, 
+					ent->damage, DAMAGE_NO_ARMOR, MOD_UNKNOWN);
+			}
+			else
 			if ( ent->health < client->ps.stats[STAT_MAX_HEALTH] ) {
 				ent->health+=g_regen.integer;
 				if(ent->health>client->ps.stats[STAT_MAX_HEALTH])
@@ -1008,8 +1026,10 @@ void ClientThink_real( gentity_t *ent ) {
 		// wait for the attack button to be pressed
 		if ( level.time > client->respawnTime ) {
 			// forcerespawn is to prevent users from waiting out powerups
-			if ( g_forcerespawn.integer > 0 && 
-				( level.time - client->respawnTime ) > g_forcerespawn.integer * 1000 ) {
+			if (( g_forcerespawn.integer > 0 && 
+				( level.time - client->respawnTime ) > g_forcerespawn.integer * 1000 )
+				//In Last man standing, we force a quick respawn, since the player must be able to loose health
+				|| g_gametype.integer==GT_LMS && ( level.time - client->respawnTime )>300) {
 				respawn( ent );
 				return;
 			}
@@ -1095,6 +1115,9 @@ void SpectatorClientEndFrame( gentity_t *ent ) {
 				}
 			}
 		}
+	
+		
+			
 	}
 
 	if ( ent->client->sess.spectatorState == SPECTATOR_SCOREBOARD ) {

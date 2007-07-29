@@ -316,6 +316,8 @@ static void CG_TouchItem( centity_t *cent ) {
 		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_BLUE &&
 			item->giTag == PW_REDFLAG)
 			canBePicked = qtrue;
+		if (item->giTag == WP_RAILGUN)
+			canBePicked = qfalse;
 	}
 
 	// grab it

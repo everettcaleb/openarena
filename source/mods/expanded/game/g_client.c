@@ -306,6 +306,8 @@ SelectSpectatorSpawnPoint
 ============
 */
 gentity_t *SelectSpectatorSpawnPoint( vec3_t origin, vec3_t angles ) {
+	//gentity_t	*spot;
+
 	FindIntermissionPoint();
 
 	VectorCopy( level.intermission_origin, origin );
@@ -317,7 +319,11 @@ gentity_t *SelectSpectatorSpawnPoint( vec3_t origin, vec3_t angles ) {
 	//if(g_gametype.integer == GT_ELIMINATION)
 	//	return SelectSpawnPoint( vec3_origin, origin, angles );
 
-	return NULL;
+	//VectorCopy (origin,spot->s.origin);
+	//spot->s.origin[2] += 9;
+	//VectorCopy (angles, spot->s.angles);
+
+	return NULL; //spot;
 }
 
 /*
@@ -507,9 +513,21 @@ void respawn( gentity_t *ent ) {
 
 	if((g_gametype.integer!=GT_ELIMINATION && g_gametype.integer!=GT_CTF_ELIMINATION) || !ent->client->isEliminated)
 	{
-		ent->client->isEliminated  = qtrue;
+		ent->client->isEliminated  = qtrue; //must not be true in warmup
 		CopyToBodyQue (ent);
 	}
+
+	if(g_gametype.integer==GT_LMS)
+		if(ent->client->pers.livesLeft>0)
+		{
+			//ent->client->pers.livesLeft--; Coutned down somewhere else
+			ent->client->isEliminated = qfalse;
+		}
+		else //We have used all our lives
+		{
+			ent->client->isEliminated = qtrue;
+			return;
+		}
 
 	if((g_gametype.integer==GT_ELIMINATION || g_gametype.integer==GT_CTF_ELIMINATION) 
 			&& ent->client->ps.pm_type == PM_SPECTATOR && ent->client->ps.stats[STAT_HEALTH] > 0)
@@ -586,6 +604,7 @@ Returns number of living players on a team
 team_t TeamLivingCount( int ignoreClientNum, int team ) {
 	int		i;
 	int		count = 0;
+	qboolean	LMS = (g_gametype.integer==GT_LMS);
 
 	for ( i = 0 ; i < level.maxclients ; i++ ) {
 		if ( i == ignoreClientNum ) {
@@ -594,7 +613,8 @@ team_t TeamLivingCount( int ignoreClientNum, int team ) {
 		if ( level.clients[i].pers.connected == CON_DISCONNECTED ) {
 			continue;
 		}
-		if ( level.clients[i].sess.sessionTeam == team && (level.clients[i].ps.stats[STAT_HEALTH]>0) && !(level.clients[i].isEliminated)) {
+		//crash if g_gametype.integer is used here, why?
+		if ( level.clients[i].sess.sessionTeam == team && (level.clients[i].ps.stats[STAT_HEALTH]>0 || LMS) && !(level.clients[i].isEliminated)) {
 			count++;
 		}
 	}
@@ -654,6 +674,7 @@ void RespawnAll(void)
 		}
 		client = g_entities + i;
 		client->client->ps.pm_type = PM_NORMAL;
+		client->client->pers.livesLeft = g_lms_lives.integer;
 		respawnRound(client);
 	}
 	return;
@@ -673,6 +694,7 @@ void RespawnDead(void)
 	gentity_t	*client;
 	for(i=0;i<level.maxclients;i++)
 	{
+		
 		if ( level.clients[i].pers.connected == CON_DISCONNECTED ) {
 			continue;
 		}
@@ -683,6 +705,7 @@ void RespawnDead(void)
 			continue;
 		}
 		client = g_entities + i;
+		client->client->pers.livesLeft = g_lms_lives.integer;
 		respawnRound(client);
 	}
 	return;
@@ -736,12 +759,86 @@ void EnableWeapons(void)
 		if ( level.clients[i].sess.sessionTeam == TEAM_SPECTATOR ) {
 			continue;
 		}
+
+		/*if ( level.clients[i].isEliminated == qtrue ){
+			continue;
+		}*/
+
 		client = g_entities + i;
 		client->client->ps.pm_flags &= ~PMF_ELIMWARMUP;
 	}
 	return;
 }
 
+/*
+================
+LMSpoint
+
+Gives a point to the lucky survivor
+================
+*/
+
+void LMSpoint(void)
+{
+	int i;
+	gentity_t	*client;
+	for(i=0;i<level.maxclients;i++)
+	{
+		if ( level.clients[i].pers.connected == CON_DISCONNECTED ) {
+			continue;
+		}
+
+		if ( level.clients[i].sess.sessionTeam == TEAM_SPECTATOR ) {
+			continue;
+		}
+
+		if ( level.clients[i].isEliminated == qtrue ){
+			continue;
+		}
+		
+		client = g_entities + i;
+
+		if ( client->health <= 0 ){
+			continue;
+		}
+	
+		client->client->ps.persistant[PERS_SCORE] += 1;
+	}
+	
+	CalculateRanks();
+	return;
+}
+
+/*
+wins2score
+
+Sets score to number of wins
+*/
+
+/*void wins2score(void)
+{
+	
+No longer needed
+
+
+	int i;
+	gentity_t	*client;
+	for(i=0;i<level.maxclients;i++)
+	{
+		if ( level.clients[i].pers.connected == CON_DISCONNECTED ) {
+			continue;
+		}
+
+		if ( level.clients[i].sess.sessionTeam == TEAM_SPECTATOR ) {
+			continue;
+		}
+
+		client->client->ps.persistant[PERS_SCORE] = level.clients[ i ].sess.wins;
+	}
+	
+	CalculateRanks();
+	return;
+}*/
 
 /*
 ================
@@ -1292,7 +1389,6 @@ void ClientSpawn(gentity_t *ent) {
 			client->sess.spectatorState = SPECTATOR_FREE;
 			client->isEliminated = qtrue;
 			client->ps.pm_type = PM_SPECTATOR;
-			//ent->health = client->ps.stats[STAT_ARMOR] = g_elimination_startArmor.integer;
 			return;
 		}
 		else
@@ -1301,9 +1397,24 @@ void ClientSpawn(gentity_t *ent) {
 			client->sess.spectatorState = SPECTATOR_NOT;
 			client->ps.pm_type = PM_NORMAL;
 			client->isEliminated = qfalse;
-			
-			//client->ps.isEliminated = qfalse;
 		}
+	}
+
+	if(g_gametype.integer == GT_LMS && client->sess.sessionTeam != TEAM_SPECTATOR)
+	{
+		if(level.roundNumber==level.roundNumberStarted /*|| level.time<level.roundStartTime-g_elimination_activewarmup.integer*1000*/ && 1>client->pers.livesLeft)
+		{	
+			client->sess.spectatorState = SPECTATOR_FREE;
+			client->isEliminated = qtrue;
+			client->ps.pm_type = PM_SPECTATOR;
+			return;
+		}
+		
+		client->sess.spectatorState = SPECTATOR_NOT;
+		client->ps.pm_type = PM_NORMAL;
+		client->isEliminated = qfalse;
+		if(client->pers.livesLeft>0)
+			client->pers.livesLeft--;
 	}
 
 	// find a spawn point
@@ -1480,7 +1591,7 @@ else
 
 	// the respawned flag will be cleared after the attack and jump keys come up
 	client->ps.pm_flags |= PMF_RESPAWNED;
-	if(g_gametype.integer==GT_ELIMINATION || g_gametype.integer==GT_CTF_ELIMINATION)	
+	if(g_gametype.integer==GT_ELIMINATION || g_gametype.integer==GT_CTF_ELIMINATION || g_gametype.integer==GT_LMS)	
 		client->ps.pm_flags |= PMF_ELIMWARMUP;
 
 	trap_GetUsercmd( client - level.clients, &ent->client->pers.cmd );

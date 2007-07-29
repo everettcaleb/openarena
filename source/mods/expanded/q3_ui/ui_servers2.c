@@ -98,6 +98,7 @@ MULTIPLAYER MENU (SERVER BROWSER)
 #define GAMES_CTF			4
 #define GAMES_ELIMINATION		5
 #define GAMES_CTF_ELIMINATION		6
+#define GAMES_LMS			7
 
 
 static const char *master_items[] = {
@@ -115,6 +116,7 @@ static const char *servertype_items[] = {
 	"Capture the Flag",
 	"Elimination",
 	"CTF Elimination",
+	"Last Man Standing",
 	NULL
 };
 
@@ -142,6 +144,7 @@ static char* gamenames[] = {
 	"OSP",						// Orange Smoothie Productions
 	"Elimination",
 	"CTF Elimination",
+	"Last Man Standing",
 	"???",			// unknown
 	NULL
 };
@@ -527,6 +530,12 @@ static void ArenaServers_UpdateMenu( void ) {
 		
 		case GAMES_CTF_ELIMINATION:
 			if( servernodeptr->gametype != GT_CTF_ELIMINATION ) {
+				continue;
+			}
+			break;
+
+		case GAMES_LMS:
+			if( servernodeptr->gametype != GT_LMS ) {
 				continue;
 			}
 			break;
@@ -1064,6 +1073,10 @@ static void ArenaServers_StartRefresh( void )
 
 		case GAMES_CTF_ELIMINATION:
 			strcpy( myargs, " ctfelimination" );
+			break;
+
+		case GAMES_LMS:
+			strcpy( myargs, " lms" );
 			break;
 		}
 

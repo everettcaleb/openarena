@@ -254,6 +254,7 @@ typedef struct {
 	qboolean	teamInfo;			// send team overlay updates?
 	//elimination:
 	int		roundReached;			//Only spawn if we are new to this round
+	int		livesLeft;			//lives in LMS
 } clientPersistant_t;
 
 
@@ -588,6 +589,8 @@ void RespawnDead(void);
 void EnableWeapons(void);
 void DisableWeapons(void);
 void EndEliminationRound(void);
+void LMSpoint(void);
+//void wins2score(void);
 int TeamLeader( int team );
 team_t PickTeam( int ignoreClientNum );
 void SetClientViewAngle( gentity_t *ent, vec3_t angle );
@@ -801,6 +804,11 @@ extern vmCvar_t		g_vampireMaxHealth;
 extern vmCvar_t		g_regen;
 //Free for all gametype
 extern int		g_ffa_gt; //0 = TEAM GAME, 1 = FFA, 2 = TEAM GAME without bases
+
+//beta 5
+extern vmCvar_t		g_lms_lives;
+//extern vmCvar_t		g_no_bunny;
+extern vmCvar_t		g_airJumps;
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );

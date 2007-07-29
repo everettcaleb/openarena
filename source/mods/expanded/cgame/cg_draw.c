@@ -931,7 +931,10 @@ Lots of stuff
 	tens = seconds / 10;
 	seconds -= tens * 10;
 
-	s = va( " %i:%i%i", mins, tens, seconds );
+	if(msec>=0)
+		s = va( " %i:%i%i", mins, tens, seconds );
+	else
+		s = va( " Overtime");
 	w = CG_DrawStrlen( s ) * BIGCHAR_WIDTH;
 	
 	CG_DrawBigStringColor( 635 - w, y + 2, s, color);
@@ -1134,11 +1137,11 @@ static void CG_DrawUpperRight( void ) {
 	if ( cg_drawFPS.integer ) {
 		y = CG_DrawFPS( y );
 	}
-	if ( cg_drawTimer.integer && cgs.gametype!=GT_ELIMINATION && cgs.gametype != GT_CTF_ELIMINATION) {
+	if (cgs.gametype==GT_ELIMINATION || cgs.gametype == GT_CTF_ELIMINATION || cgs.gametype==GT_LMS)
+		y = CG_DrawEliminationTimer( y );
+	if ( cg_drawTimer.integer) {
 		y = CG_DrawTimer( y );
 	}
-	if (cgs.gametype==GT_ELIMINATION || cgs.gametype == GT_CTF_ELIMINATION)
-		y = CG_DrawEliminationTimer( y );
 	if ( cg_drawAttacker.integer ) {
 		y = CG_DrawAttacker( y );
 	}

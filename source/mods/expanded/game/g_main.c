@@ -110,6 +110,10 @@ vmCvar_t	g_vampireMaxHealth;
 vmCvar_t	g_regen;
 //Beta 4
 int	g_ffa_gt; //Are this a FFA gametype even if gametype is high?
+//beta 5
+vmCvar_t	g_lms_lives;
+//vmCvar_t	g_no_bunny; Breaks too much
+vmCvar_t	g_airJumps;
 
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
@@ -210,6 +214,10 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_vampire, "g_vampire", "0.0", 0, 0, qfalse },
 	{ &g_regen, "g_regen", "0", 0, 0, qfalse },
 	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", 0, 0, qtrue },
+	//beta 5
+	{ &g_lms_lives, "g_lms_lives", "1", 0, 0, qtrue },
+//	{ &g_no_bunny, "g_no_bunny", "0", 0, 0, qtrue },
+	{ &g_airJumps, "g_airJumps", "0", 0, 0, qtrue },
 };
 
 // bk001129 - made static to avoid aliasing
@@ -1428,9 +1436,27 @@ void CheckExitRules( void ) {
 	}
 }
 
+//LMS - Last man Stading functions:
+void StartLMSRound(void) {
+	int		countsLiving;
+	countsLiving = TeamLivingCount( -1, TEAM_FREE );
+	if(countsLiving<2) {
+		trap_SendServerCommand( -1, "print \"Not enough players to start the round\n\"");
+		level.roundNumberStarted = level.roundNumber-1;
+		level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
+		return;
+	}
+
+	//If we are enough to start a round:
+	level.roundNumberStarted = level.roundNumber; //Set numbers
+
+	SendScoreboardMessageToAllClients();
+	EnableWeapons();
+}
+
 //the elimination start function
-void StartEliminationRound(void)
-{
+void StartEliminationRound(void) {
+
 	int		countsLiving[TEAM_NUM_TEAMS];
 	countsLiving[TEAM_BLUE] = TeamLivingCount( -1, TEAM_BLUE );
 	countsLiving[TEAM_RED] = TeamLivingCount( -1, TEAM_RED );
@@ -1476,6 +1502,80 @@ FUNCTIONS CALLED EVERY FRAME
 
 ========================================================================
 */
+
+/*
+CheckLMS
+*/
+
+void CheckLMS(void) {
+	if ( level.numPlayingClients < 1 ) {
+		return;
+	}
+
+	if(g_gametype.integer == GT_LMS)
+	{
+		int		countsLiving[TEAM_NUM_TEAMS];
+		//trap_SendServerCommand( -1, "print \"This is LMS!\n\"");
+		countsLiving[TEAM_FREE] = TeamLivingCount( -1, TEAM_FREE );
+		if(countsLiving[TEAM_FREE]==1 && level.roundNumber==level.roundNumberStarted)
+		{
+			LMSpoint();
+			trap_SendServerCommand( -1, "print \"We have a winner!\n\"");
+			EndEliminationRound();
+			Team_ForceGesture(TEAM_FREE);
+		}
+
+		if(countsLiving[TEAM_FREE]==0 && level.roundNumber==level.roundNumberStarted)
+		{
+			trap_SendServerCommand( -1, "print \"All death... how sad\n\"");
+			EndEliminationRound();
+		}
+
+		if((level.roundNumber==level.roundNumberStarted)&&(level.time>=level.roundStartTime+1000*g_elimination_roundtime.integer))
+		{
+			//trap_SendServerCommand( -1, "print \"Too many players left!\n\"");
+			//EndEliminationRound();
+		}
+
+		//This might be better placed another place:
+		if(g_elimination_activewarmup.integer<1)
+			g_elimination_activewarmup.integer=1; //We need at least 1 second to spawn all players
+		if(g_elimination_activewarmup.integer > g_elimination_warmup.integer) //This must not be true
+			g_elimination_warmup.integer = g_elimination_activewarmup.integer+1; //Increase warmup
+
+		//Force respawn
+		if(level.roundNumber != level.roundNumberStarted && level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer && !level.roundRespawned)
+		{
+			level.roundRespawned = qtrue;
+			RespawnAll();
+			DisableWeapons();
+			SendScoreboardMessageToAllClients();
+		}
+
+		if(level.time<=level.roundStartTime && level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer)
+		{
+			RespawnDead();
+			//DisableWeapons();
+		}
+
+		if(level.roundNumber == level.roundNumberStarted)
+		{
+			EnableWeapons();
+		}
+
+		if((level.roundNumber>level.roundNumberStarted)&&(level.time>=level.roundStartTime))
+			StartLMSRound();
+	
+		if(level.time+1000*g_elimination_warmup.integer-500>level.roundStartTime)
+		if(level.numPlayingClients < 2)
+		{
+			RespawnDead(); //Allow player to run around anyway
+			EndEliminationRound(); //Start over
+			return;
+		}
+
+	}
+}
 
 /*
 =============
@@ -1560,7 +1660,7 @@ void CheckElimination(void) {
 			g_elimination_warmup.integer = g_elimination_activewarmup.integer+1; //Increase warmup
 
 		//Force respawn
-		if(level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer && !level.roundRespawned)
+		if(level.roundNumber!=level.roundNumberStarted && level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer && !level.roundRespawned)
 		{
 			level.roundRespawned = qtrue;
 			RespawnAll();
@@ -2008,6 +2108,7 @@ end = trap_Milliseconds();
 
 	//Check Elimination state
 	CheckElimination();
+	CheckLMS();
 
 	// see if it is time to end the level
 	CheckExitRules();

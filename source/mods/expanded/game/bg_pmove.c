@@ -48,6 +48,9 @@ float	pm_spectatorfriction = 5.0f;
 
 int		c_pmove = 0;
 
+//Repeting airjumps/no bunny, elimination B5
+int	pm_airjumps = 1;
+int	pm_nobunny = 0;
 
 /*
 ===============
@@ -234,11 +237,15 @@ static void PM_Friction( void ) {
 ==============
 PM_Accelerate
 
+TODO: bunny hoping
+
 Handles user intended acceleration
 ==============
 */
 static void PM_Accelerate( vec3_t wishdir, float wishspeed, float accel ) {
-#if 1
+//#if 1
+if(pm_nobunny == 0)
+{
 	// q2 style
 	int			i;
 	float		addspeed, accelspeed, currentspeed;
@@ -256,7 +263,10 @@ static void PM_Accelerate( vec3_t wishdir, float wishspeed, float accel ) {
 	for (i=0 ; i<3 ; i++) {
 		pm->ps->velocity[i] += accelspeed*wishdir[i];	
 	}
-#else
+}
+else
+{
+//#else
 	// proper way (avoids strafe jump maxspeed bug), but feels bad
 	vec3_t		wishVelocity;
 	vec3_t		pushDir;
@@ -273,7 +283,8 @@ static void PM_Accelerate( vec3_t wishdir, float wishspeed, float accel ) {
 	}
 
 	VectorMA( pm->ps->velocity, canPush, pushDir, pm->ps->velocity );
-#endif
+}
+//#endif
 }
 
 
@@ -358,11 +369,6 @@ PM_CheckJump
 */
 static qboolean PM_CheckJump( void ) {
 
-	//Elimination - here insert code to relese spectators
-	if ( pm->ps->pm_type == PM_SPECTATOR )
-	{
-		//pm->ps->pm_type = PM_NORMAL;
-	}
 
 	if ( pm->ps->pm_flags & PMF_RESPAWNED ) {
 		return qfalse;		// don't allow jump until all buttons are up
@@ -1546,7 +1552,7 @@ PM_Weapon
 Generates weapon events and modifes the weapon counter
 
 Elimination TODO:
-Make this thing stop when having
+Make this thing stop during warmup (done)
 ==============
 */
 static void PM_Weapon( void ) {

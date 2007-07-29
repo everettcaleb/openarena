@@ -141,6 +141,10 @@ extern vmCvar_t	ui_cdkeychecked;
 #define QMF_UPPERCASE			0x00080000	// edit field is all upper case
 #define QMF_SILENT				0x00100000
 
+//for cgs.ffa_gt and g_ffa
+#define FREEFORALL			(s_serveroptions.gametype==GT_LMS)
+#define TRAP_FREEFORALL			(trap_Cvar_VariableValue( "g_gametype" ) == GT_LMS)
+
 // callback notifications
 #define QM_GOTFOCUS				1
 #define QM_LOSTFOCUS			2

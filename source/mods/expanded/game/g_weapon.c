@@ -821,6 +821,12 @@ void FireWeapon( gentity_t *ent ) {
 	if (g_gametype.integer == GT_ELIMINATION && level.roundStartTime>level.time)
 		return;
 
+	//Make people drop out of follow mode (this should be moved, so people can change betwean players.)
+	if (ent->client->sess.spectatorState == SPECTATOR_FOLLOW) {
+		StopFollowing( ent );
+		return;
+	}
+
 	if (ent->client->ps.powerups[PW_QUAD] ) {
 		s_quadFactor = g_quadfactor.value;
 	} else {
