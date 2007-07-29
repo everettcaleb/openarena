@@ -30,26 +30,6 @@ gfx/misc/tracer
 	}
 }
 
-bloodMark
-{
-	nopicmip
-	polygonoffset
-	{
-		clampmap textures/oafx/bloodsplatmult.tga
-		blendfunc gl_dst_color gl_src_color
-		alphaGen Vertex
-	}
-}
-
-bloodTrail
-{
-	nopicmip
-	{
-		clampmap textures/oafx/bloodmult.tga
-		blendfunc gl_dst_color gl_src_color
-		alphaGen Vertex
-	}
-}
 
 gfx/damage/bullet_mrk
 {
@@ -139,15 +119,6 @@ oldwake
 	}
 }
 
-viewBloodBlend
-{
-	sort nearest
-	{
-		map textures/oafx/bloodscreenmult.tga
-		blendfunc gl_dst_color gl_src_color
-		alphaGen Vertex
-	}
-}
 
 waterBubble
 {
