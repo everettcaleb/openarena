@@ -232,6 +232,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"Yeah, bots are stupid.";
 	"Man, why do they even bother with ai, it never works?";
 	"Hey!  Blame the person that programmed me!";
+	"What are you trying to say, Dave?";
 }
 
 ["sex", "coitis", "sexual intercourse"] = 2
