@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #define MP_TITLECOLOR 1 1 1 1 // Title colors
 #define MP_TEXTCOLOR  0.24 0.70 0.935 1 // regular color of menu button text
-#define MP_FOCUSCOLOR 0 1 1 1 1 // focus 
+#define MP_FOCUSCOLOR 0.34 0.8 0.835 1 // focus 
 #define MP_BOX_HEADERCOLOR 1 1 1 1 // for the text appearing above editboxes
 #define MP_SMALLCOLOR 0.25 0.45 0.85 1 // the smaller options colors
 

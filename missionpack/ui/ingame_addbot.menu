@@ -30,8 +30,8 @@ menuDef {
 	fullscreen 0
 	outOfBoundsClick
 	rect 275 120 100 128
-	forecolor 0.935 0.70 0.24 1
-	focusColor 0.1 0.6 1 1
+	forecolor MP_TEXTCOLOR
+	focusColor MP_FOCUSCOLOR
 	
 itemDef {
 	name botname
@@ -43,7 +43,7 @@ itemDef {
 	textalignx 15
 	textaligny 15
 	textscale .2
-	forecolor 0.935 0.70 0.24 1
+	forecolor MP_TEXTCOLOR
 	visible 1
 	}
 
@@ -58,8 +58,8 @@ itemDef {
 	textaligny 15    
 	textscale .2
 	cvarTest "g_gametype"
-	disableCvar { "0" ; "1" }
-	forecolor 0.935 0.70 0.24 1
+	disableCvar { "0" ; "1" ; "10" }
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	}
 
@@ -73,7 +73,7 @@ itemDef {
 	textalignx 15
 	textaligny 15    
 	textscale .2     
-	forecolor 0.935 0.70 0.24 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	}
 
@@ -86,7 +86,7 @@ itemDef {
 	textalign ITEM_ALIGN_LEFT
 	textalignx 15
 	textaligny 15
-	forecolor 0.935 0.70 0.24 1
+	forecolor MP_TEXTCOLOR
 	visible 1
 	action { uiScript addBot }
 	}
@@ -100,7 +100,7 @@ itemDef {
 	textalign ITEM_ALIGN_LEFT
 	textalignx 15
 	textaligny 15
-	forecolor 0.935 0.70 0.24 1
+	forecolor MP_TEXTCOLOR
 	visible 1
 	action { uiScript closeingame }
 	}
