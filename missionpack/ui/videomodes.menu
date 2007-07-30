@@ -339,6 +339,26 @@ action { uiScript glCustom }
     }
 
 itemDef {
+      	name bloom
+      	text "Bloom:"
+	cvar "r_bloom"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 215 412 116 24
+      	textalign 0		
+     	textalignx 6	
+action { uiScript glCustom }
+	textaligny 20        
+	forecolor 0.75 0.75 0.75 1
+	visible 1 
+    }
+
+itemDef {
       	name minfayers
       	text "Detail Texturing:"
 	cvar "r_detailTextures"
