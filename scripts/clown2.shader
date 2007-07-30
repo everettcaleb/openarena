@@ -657,3 +657,112 @@ textures/base_wall2/respawn_effect1_ntrl
 	}
 }
 
+textures/base_floor/proto_rustygrate2
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/base_floor/proto_rustygrate2.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GE128
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/base_floor/rusty_pentagrate
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/base_floor/rusty_pentagrate.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GE128
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/base_floor/pjgrate1
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/base_floor/pjgrate1.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GE128
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/base_floor/pjgrate2
+{
+	surfaceparm metalsteps
+	surfaceparm nodamage
+	cull none
+	{
+		map textures/base_floor/pjgrate2.tga
+		blendFunc gl_one gl_zero	
+		rgbGen identity
+		alphaFunc GE128
+		depthWrite
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+		depthFunc equal
+	}
+}
+
+textures/base_floor/clangspot2
+{
+	surfaceparm metalsteps
+	{
+		map textures/base_floor/clangspot2.tga
+		rgbgen identity
+	}
+	{
+		map textures/liquids/proto_gruel3.tga
+		blendfunc gl_one gl_zero
+		tcmod scroll .01 .01
+		tcmod turb 0 0.01 0 .1
+	}
+	{
+		map textures/effects/tinfx.tga
+		blendfunc add
+		tcgen environment
+	}
+	{
+		map textures/base_floor/clangspot2.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
