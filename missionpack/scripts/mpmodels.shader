@@ -31,3 +31,35 @@ models/flags/n_flag
 		depthfunc equal
 	}
 }
+
+models/powerups/orb/r_orb
+{
+	cull none
+	{
+		map textures/effects/redfx.tga
+		tcgen environment
+		tcmod turb 1 1 .5 1
+		rgbgen identity
+	}
+}
+
+models/powerups/orb/b_orb
+{	
+	cull none
+	{
+		map textures/effects/quadmap2.tga
+		tcgen environment
+		tcmod turb 1 1 .5 1
+		rgbgen identity
+	}
+}
+
+models/powerups/orb/shell
+{
+	cull none
+	{
+		map textures/effects/envmapdimb.jpg
+		tcgen environment
+		blendfunc add
+	}
+}
