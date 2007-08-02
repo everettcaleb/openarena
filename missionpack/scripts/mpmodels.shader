@@ -39,6 +39,7 @@ models/powerups/orb/r_orb
 		map textures/effects/redfx.tga
 		tcgen environment
 		tcmod turb 1 1 .5 1
+		blendfunc add
 		rgbgen identity
 	}
 }
@@ -50,6 +51,7 @@ models/powerups/orb/b_orb
 		map textures/effects/quadmap2.tga
 		tcgen environment
 		tcmod turb 1 1 .5 1
+		blendfunc add
 		rgbgen identity
 	}
 }
