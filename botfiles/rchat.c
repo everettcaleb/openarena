@@ -285,7 +285,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"... ~Don't go out tonight, it could be your life, ~there's a bathroom on the right...";
 	"No life 'till leather, we're going to kick some ~ass tonight!  Oh yeah, yeah yeah!";
 	"Play some Skynard, Man!";
-	"...there's a lot of people sayin' we'd be better off dead, I don't feel like satan, but I am to them, so I try to forget it any way I can...";
+	"...there's a lot of people sayin' we'd be better off dead, I ~don't feel like satan, but I am to them, so I try to forget it any way I can...";
 	"Sorry, my voice is shot... too much whiskey.";
 	"Nah...";
 	"...now the sun has disappeared, all is darkness, anger, pain, and fear, twisted sightless wrecks of men go groping on their knees and cry in pain, and the sun has disappeared...";

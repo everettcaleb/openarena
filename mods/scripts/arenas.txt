@@ -3,7 +3,7 @@ map			"kaos"
 bots		"gargoyle kyonshi grism major"
 longname	"Kaooos"
 fraglimit	20
-type		"single ffa tourney team sp elimination"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -11,7 +11,7 @@ map			"czest1dm"
 bots		"gargoyle kyonshi"
 longname	"Monastery"
 fraglimit	20
-type		"single ffa tourney team sp elimination"
+type		"single ffa tourney team sp elimination lms"
 }
 
 
@@ -21,7 +21,7 @@ type		"single ffa tourney team sp elimination"
 	bots "kyonshi"
 	longname "OA_CTF2"
 	fraglimit 20
-	type "single ffa tourney team sp ctf  elimination ctfelimination"
+	type "single ffa tourney team sp ctf  elimination ctfelimination lms"
 }
 
 
@@ -55,7 +55,7 @@ map		"oa_dm3"
 bots		"sergei kyonshi major merman penguin"
 longname	"The Abandoned Base"
 fraglimit	"30"
-type		"single ffa tourney team sp elimination"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -63,7 +63,7 @@ map		"oa_dm4"
 bots		"sergei angelyss gargoyle major"
 longname	"The Bad Place"
 fraglimit	"30"
-type		"single ffa tourney team sp elimination"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -71,7 +71,7 @@ map		"oa_dm5"
 bots		"merman major sarge grunt"
 longname	"The Cistern"
 fraglimit	"30"
-type		"single ffa tourney team sp elimination"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -87,7 +87,7 @@ map		"oa_shine"
 bots		"major angelyss kyonshi"
 longname	"Shine"
 fraglimit	"30"
-type		"single ffa tourney team sp elimination"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -95,7 +95,7 @@ map		"suspended"
 bots		"merman angelyss gargoyle"
 longname	"Suspended"
 fraglimit	"20"
-type		"single ffa tourney team sp elimination"
+type		"single ffa tourney team sp elimination lms"
 }
 
 
