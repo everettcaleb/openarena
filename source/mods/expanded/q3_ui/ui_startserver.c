@@ -163,7 +163,7 @@ static int GametypeBits( char *string ) {
 			continue;
 		}
 
-		/*if( Q_stricmp( token, "ctfelimination" ) == 0 ) {
+		if( Q_stricmp( token, "ctfelimination" ) == 0 ) {
 			bits |= 1 << GT_CTF_ELIMINATION;
 			continue;
 		}
@@ -171,7 +171,7 @@ static int GametypeBits( char *string ) {
 		if( Q_stricmp( token, "lms" ) == 0 ) {
 			bits |= 1 << GT_LMS;
 			continue;
-		}*/
+		}
 	
 }
 	return bits;

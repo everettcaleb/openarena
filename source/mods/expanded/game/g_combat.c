@@ -637,6 +637,11 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 	// don't allow respawn until the death anim is done
 	// g_forcerespawn may force spawning at some later time
 	self->client->respawnTime = level.time + 1700;
+	//However during warm up, we should respawn quicker!
+	if(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_LMS)
+		if(level.time<=level.roundStartTime && level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer)
+			self->client->respawnTime = level.time + rand()%800;
+		
 
 	// remove powerups
 	memset( self->client->ps.powerups, 0, sizeof(self->client->ps.powerups) );
@@ -953,7 +958,7 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 #else	
 		if ( targ != attacker && OnSameTeam (targ, attacker)  ) {
 #endif
-			if ( !g_friendlyFire.integer || g_elimination_selfdamage.integer<2 && 
+			if ( !g_friendlyFire.integer && (g_gametype.integer != GT_ELIMINATION || g_gametype.integer != GT_CTF_ELIMINATION) || g_elimination_selfdamage.integer<2 && 
 							(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION)) {
 				return;
 			}
@@ -1012,9 +1017,12 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 		damage = 0;
 	}
 
-	if (g_gametype.integer == GT_ELIMINATION && level.time < level.roundStartTime) {
-		damage = 0;
+
+//So people can be telefragged!
+	if (g_gametype.integer == GT_ELIMINATION && level.time < level.roundStartTime && ((mod == MOD_LAVA) || (mod == MOD_SLIME)) ) {
+		damage = 1000;
 	}
+
 
 	take = damage;
 	save = 0;

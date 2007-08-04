@@ -115,6 +115,7 @@ typedef enum {
 	GT_ELIMINATION,			// team elimination (custom)
 	GT_CTF_ELIMINATION,		// ctf elimination
 	GT_LMS,				// Last man standing
+	GT_DOUBLE_D,			// Double Domination
 	GT_MAX_GAME_TYPE
 	
 } gametype_t;
@@ -312,6 +313,17 @@ typedef enum {
 
 	HI_NUM_HOLDABLE
 } holdable_t;
+
+typedef enum {
+	DD_NONE,
+
+	DD_POINTARED,
+	DD_POINTABLUE,
+	DD_POINTAWHITE,
+	DD_POINTBRED,
+	DD_POINTBBLUE,
+	DD_POINTBWHITE
+} doubled_t;
 
 
 typedef enum {
@@ -562,6 +574,9 @@ typedef enum {
 
 	TEAM_NUM_TEAMS
 } team_t;
+
+// This is a fair assumption for Double Domination:
+#define TEAM_NONE TEAM_SPECTATOR
 
 // Time between location updates
 #define TEAM_LOCATION_UPDATE_TIME		1000

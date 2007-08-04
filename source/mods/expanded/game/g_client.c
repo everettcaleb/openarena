@@ -55,6 +55,10 @@ void SP_info_player_start(gentity_t *ent) {
 	SP_info_player_deathmatch( ent );
 }
 
+//One for Double_D
+void SP_info_player_dd(gentity_t *ent) {
+}
+
 /*QUAKED info_player_intermission (1 0 1) (-16 -16 -24) (16 16 32)
 The intermission will be viewed from this point.  Target an info_notnull for the view direction.
 */
@@ -810,37 +814,6 @@ void LMSpoint(void)
 }
 
 /*
-wins2score
-
-Sets score to number of wins
-*/
-
-/*void wins2score(void)
-{
-	
-No longer needed
-
-
-	int i;
-	gentity_t	*client;
-	for(i=0;i<level.maxclients;i++)
-	{
-		if ( level.clients[i].pers.connected == CON_DISCONNECTED ) {
-			continue;
-		}
-
-		if ( level.clients[i].sess.sessionTeam == TEAM_SPECTATOR ) {
-			continue;
-		}
-
-		client->client->ps.persistant[PERS_SCORE] = level.clients[ i ].sess.wins;
-	}
-	
-	CalculateRanks();
-	return;
-}*/
-
-/*
 ================
 TeamLeader
 
@@ -1126,7 +1099,7 @@ void ClientUserinfoChanged( int clientNum ) {
 */
 
 #ifdef MISSIONPACK
-	if (g_gametype.integer >= GT_TEAM && g_ffa_gt==0) {
+	if (g_gametype.integer >= GT_TEAM && g_ffa_gt!=1) {
 		client->pers.teamInfo = qtrue;
 	} else {
 		s = Info_ValueForKey( userinfo, "teamoverlay" );
@@ -1421,9 +1394,11 @@ void ClientSpawn(gentity_t *ent) {
 	// do it before setting health back up, so farthest
 	// ranging doesn't count this client
 	if ((client->sess.sessionTeam == TEAM_SPECTATOR) 
-			|| (client->ps.pm_type == PM_SPECTATOR || client->isEliminated) && (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION) ) {
-		spawnPoint = SelectSpectatorSpawnPoint ( 
-						spawn_origin, spawn_angles);
+			/*|| (client->ps.pm_type == PM_SPECTATOR || client->isEliminated ) */ && (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION) ) {
+		spawnPoint = SelectSpectatorSpawnPoint ( spawn_origin, spawn_angles);
+	} else if (g_gametype.integer == GT_DOUBLE_D) {
+		//Double Domination uses special spawn points:
+		spawnPoint = SelectDoubleDominationSpawnPoint (spawn_origin, spawn_angles);
 	} else if (g_gametype.integer >= GT_CTF && g_ffa_gt==0) {
 		// all base oriented team games use the CTF spawn points
 		spawnPoint = SelectCTFSpawnPoint ( 

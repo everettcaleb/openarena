@@ -390,8 +390,24 @@ void CG_DrawFlagModel( float x, float y, float w, float h, int team, qboolean fo
 
 		if( team == TEAM_RED ) {
 			handle = cgs.media.redFlagModel;
+			if(cgs.gametype == GT_DOUBLE_D){
+				if(cgs.redflag == TEAM_BLUE)
+					handle = cgs.media.blueFlagModel;
+				if(cgs.redflag == TEAM_FREE)
+					handle = cgs.media.neutralFlagModel;
+				if(cgs.redflag == TEAM_NONE)
+					handle = cgs.media.neutralFlagModel;
+			}
 		} else if( team == TEAM_BLUE ) {
 			handle = cgs.media.blueFlagModel;
+			if(cgs.gametype == GT_DOUBLE_D){
+				if(cgs.redflag == TEAM_BLUE)
+					handle = cgs.media.blueFlagModel;
+				if(cgs.redflag == TEAM_FREE)
+					handle = cgs.media.neutralFlagModel;
+				if(cgs.redflag == TEAM_NONE)
+					handle = cgs.media.neutralFlagModel;
+			}
 		} else if( team == TEAM_FREE ) {
 			handle = cgs.media.neutralFlagModel;
 		} else {
@@ -835,6 +851,58 @@ static float CG_DrawTimer( float y ) {
 }
 
 /*
+CG_DrawDoubleDominationThings
+*/
+
+static float CG_DrawDoubleDominationThings( float y ) {
+	char		*s;
+	int			w;
+	int 		statusA, statusB;
+	statusA = cgs.redflag;
+	statusB = cgs.blueflag;
+
+	if(statusA == TEAM_NONE) {
+		s = va("Point A not spawned");
+	}
+	if(statusA == TEAM_FREE) {
+		s = va("Point A is not controlled");
+	}
+	if(statusA == TEAM_RED) {
+		s = va("Point A is controlled by RED");
+	}
+	if(statusA == TEAM_BLUE) {
+		s = va("Point A is controlled by BLUE");
+	}
+	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
+	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
+	y+=SMALLCHAR_HEIGHT+4;
+
+	if(statusB == TEAM_NONE) {
+		s = va("Point B not spawned");
+	}
+	if(statusB == TEAM_FREE) {
+		s = va("Point B is not controlled");
+	}
+	if(statusB == TEAM_RED) {
+		s = va("Point B is controlled by RED");
+	}
+	if(statusB == TEAM_BLUE) {
+		s = va("Point B is controlled by BLUE");
+	}
+	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
+	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
+
+	if(statusB == statusA && statusA == TEAM_RED || statusB == statusA && statusA == TEAM_BLUE) {
+		s = va("Capture in: %i",(cgs.timetaken+10*1000-cg.time)/1000+1);
+		w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
+		y+=SMALLCHAR_HEIGHT+4;
+		CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
+	}
+
+	return y + SMALLCHAR_HEIGHT+4;
+}
+
+/*
 =================
 CG_DrawEliminationTimer
 =================
@@ -848,14 +916,17 @@ static float CG_DrawEliminationTimer( float y ) {
 	const char	*st;
 	float scale;
 	int cw;
+	int rst;
+	
+	rst = cgs.roundStartTime;
 
 	//default color is white
 	memcpy(color,g_color_table[ColorIndex(COLOR_WHITE)],sizeof(color));
 
 	//msec = cg.time - cgs.levelStartTime;
-	if(cg.time>cgs.roundStartTime) //We are started
+	if(cg.time>rst) //We are started
 	{
-		msec = cgs.roundtime*1000 - (cg.time -cgs.roundStartTime);
+		msec = cgs.roundtime*1000 - (cg.time -rst);
 		if(msec<=30*1000-1) //<= 30 seconds
 			memcpy(color,g_color_table[ColorIndex(COLOR_YELLOW)],sizeof(color));
 		if(msec<=10*1000-1) //<= 10 seconds
@@ -865,7 +936,7 @@ static float CG_DrawEliminationTimer( float y ) {
 	else
 	{
 		//Warmup
-		msec = -cg.time +cgs.roundStartTime;
+		msec = -cg.time +rst;
 		memcpy(color,g_color_table[ColorIndex(COLOR_GREEN)],sizeof(color));
 		sec = msec/1000;
 		msec += 1000; //5-1 instead of 4-0
@@ -912,8 +983,8 @@ Lots of stuff
 		}
 
 	#ifdef MISSIONPACK
-			w = CG_Text_Width(s, scale, 0);
-			CG_Text_Paint(320 - w / 2, 125, scale, colorWhite, st, 0, 0, ITEM_TEXTSTYLE_SHADOWEDMORE);
+			//w = CG_Text_Width(s, scale, 0);
+			//CG_Text_Paint(320 - w / 2, 125, scale, colorWhite, st, 0, 0, ITEM_TEXTSTYLE_SHADOWEDMORE);
 	#else
 		w = CG_DrawStrlen( st );
 		CG_DrawStringExt( 320 - w * cw/2, 70, st, colorWhite, 
@@ -1130,6 +1201,9 @@ static void CG_DrawUpperRight( void ) {
 
 	if ( cgs.gametype >= GT_TEAM && cgs.ffa_gt!=1 && cg_drawTeamOverlay.integer == 1 ) {
 		y = CG_DrawTeamOverlay( y, qtrue, qtrue );
+	}
+	if ( cgs.gametype == GT_DOUBLE_D ) {
+		y = CG_DrawDoubleDominationThings(y);
 	} 
 	if ( cg_drawSnapshot.integer ) {
 		y = CG_DrawSnapshot( y );
@@ -2510,6 +2584,8 @@ static void CG_DrawWarmup( void ) {
 			s = "CTF Elimination";
 		} else if ( cgs.gametype == GT_LMS ) {
 			s = "Last Man Standing";
+		} else if ( cgs.gametype == GT_DOUBLE_D ) {
+			s = "Double Domination";
 #ifdef MISSIONPACK
 		} else if ( cgs.gametype == GT_1FCTF ) {
 			s = "One Flag CTF";
@@ -2636,7 +2712,7 @@ static void CG_Draw2D( void ) {
 		return;
 	}
 */
-	if ( cg.snap->ps.persistant[PERS_TEAM] == TEAM_SPECTATOR ) {
+	if ( cg.snap->ps.persistant[PERS_TEAM] == TEAM_SPECTATOR /*|| cg.snap->ps.pm_type == PM_SPECTATOR*/ ) {
 		CG_DrawSpectator();
 		CG_DrawCrosshair();
 		CG_DrawCrosshairNames();

@@ -320,6 +320,20 @@ static void CG_TouchItem( centity_t *cent ) {
 			canBePicked = qfalse;
 	}
 
+	//Currently we don't predict anything in Double Domination because it looks like we take a flag
+	if( cgs.gametype == GT_DOUBLE_D ) {
+		if(cgs.redflag == TEAM_NONE)
+			return; //Can never pick if just one flag is NONE (because then the other is too)
+		if(item->giTag == PW_REDFLAG){ //at point A
+			//if(cgs.redflag == cg.predictedPlayerState.persistant[PERS_TEAM]) //already taken
+				return;
+		}	
+		if(item->giTag == PW_BLUEFLAG){ //at point B
+			//if(cgs.blueflag == cg.predictedPlayerState.persistant[PERS_TEAM]) //already taken
+				return;
+		}	
+	}
+
 	// grab it
 	if(canBePicked)
 	{

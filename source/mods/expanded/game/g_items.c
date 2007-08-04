@@ -440,6 +440,16 @@ void Touch_Item (gentity_t *ent, gentity_t *other, trace_t *trace) {
 		return;
 	}
 
+	//In double DD we cannot "pick up" a flag we already got
+	if(g_gametype.integer == GT_DOUBLE_D) {
+		if( strcmp(ent->classname, "team_CTF_redflag") == 0 )
+			if(other->client->sess.sessionTeam == level.pointStatusA)
+				return;
+		if( strcmp(ent->classname, "team_CTF_blueflag") == 0 )
+			if(other->client->sess.sessionTeam == level.pointStatusB)
+				return;
+	}
+
 	G_LogPrintf( "Item: %i %s\n", other->s.number, ent->item->classname );
 
 	predict = other->client->pers.predictItemPickup;
@@ -595,9 +605,9 @@ gentity_t *LaunchItem( gitem_t *item, vec3_t origin, vec3_t velocity ) {
 
 	dropped->s.eFlags |= EF_BOUNCE_HALF;
 #ifdef MISSIONPACK
-	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_1FCTF || g_gametype.integer == GT_CTF_ELIMINATION)			&& item->giType == IT_TEAM) { // Special case for CTF flags
+	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_1FCTF || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_DOUBLE_D)			&& item->giType == IT_TEAM) { // Special case for CTF flags
 #else
-	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION)&& item->giType == IT_TEAM) { // Special case for CTF flags
+	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_DOUBLE_D)&& item->giType == IT_TEAM) { // Special case for CTF flags
 #endif
 		dropped->think = Team_DroppedFlagThink;
 		dropped->nextthink = level.time + 30000;
@@ -731,7 +741,7 @@ void G_CheckTeamItems( void ) {
 	// Set up team stuff
 	Team_InitGame();
 
-	if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION) {
+	if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_DOUBLE_D) {
 		gitem_t	*item;
 
 		// check for the two flags
@@ -841,6 +851,14 @@ void ClearRegisteredItems( void ) {
 		RegisterItem( BG_FindItem( "Blue Cube" ) );
 	}
 #endif
+	if(g_gametype.integer == GT_DOUBLE_D ) {
+		RegisterItem( BG_FindItem( "Point A (Blue)" ) );
+		RegisterItem( BG_FindItem( "Point A (Red)" ) );
+		RegisterItem( BG_FindItem( "Point A (White)" ) );
+		RegisterItem( BG_FindItem( "Point B (Blue)" ) );
+		RegisterItem( BG_FindItem( "Point B (Red)" ) );
+		RegisterItem( BG_FindItem( "Point B (White)" ) );
+	}
 }
 
 /*
@@ -937,6 +955,9 @@ void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 	if (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_LMS || item->giType != IT_TEAM && 
 									(g_instantgib.integer || g_gametype.integer==GT_CTF_ELIMINATION))
 		ent->s.eFlags |= EF_NODRAW; //Invisible in elimination
+
+	if(g_gametype.integer == GT_DOUBLE_D && (strcmp(ent->classname, "team_CTF_redflag")==0 || strcmp(ent->classname, "team_CTF_blueflag")==0))
+		ent->s.eFlags |= EF_NODRAW; //Don't draw the flag models
 
 	if ( item->giType == IT_POWERUP ) {
 		G_SoundIndex( "sound/items/poweruprespawn.wav" );

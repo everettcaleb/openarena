@@ -112,8 +112,6 @@ vmCvar_t	g_regen;
 int	g_ffa_gt; //Are this a FFA gametype even if gametype is high?
 //beta 5
 vmCvar_t	g_lms_lives;
-//vmCvar_t	g_no_bunny; Breaks too much
-vmCvar_t	g_airJumps;
 
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
@@ -216,8 +214,6 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", 0, 0, qtrue },
 	//beta 5
 	{ &g_lms_lives, "g_lms_lives", "1", 0, 0, qtrue },
-//	{ &g_no_bunny, "g_no_bunny", "0", 0, 0, qtrue },
-	{ &g_airJumps, "g_airJumps", "0", 0, 0, qtrue },
 };
 
 // bk001129 - made static to avoid aliasing
@@ -557,6 +553,9 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 	level.roundStartTime = level.time+g_elimination_warmup.integer*1000;
 	level.roundRespawned = qfalse;
 	level.eliminationSides = rand()%2; //0 or 1
+
+	if(g_gametype.integer == GT_DOUBLE_D)
+		Team_SpawnDoubleDominationPoints();
 }
 
 
@@ -936,6 +935,23 @@ void SendScoreboardMessageToAllClients( void ) {
 	for ( i = 0 ; i < level.maxclients ; i++ ) {
 		if ( level.clients[ i ].pers.connected == CON_CONNECTED ) {
 			DeathmatchScoreboardMessage( g_entities + i );
+		}
+	}
+}
+
+/*
+========================
+SendDDtimetakenMessageToAllClients
+
+Do this if a team just started dominating.
+========================
+*/
+void SendDDtimetakenMessageToAllClients( void ) {
+	int		i;
+
+	for ( i = 0 ; i < level.maxclients ; i++ ) {
+		if ( level.clients[ i ].pers.connected == CON_CONNECTED ) {
+			DoubleDominationScoreTimeMessage( g_entities + i );
 		}
 	}
 }
@@ -1502,6 +1518,49 @@ FUNCTIONS CALLED EVERY FRAME
 
 ========================================================================
 */
+
+/*
+CheckDoubleDomination
+*/
+
+void CheckDoubleDomination( void ) {
+	if ( level.numPlayingClients < 1 ) {
+		return;
+	}
+
+	if(g_gametype.integer != GT_DOUBLE_D)
+		return;
+
+	if(level.pointStatusA == TEAM_RED && level.pointStatusB == TEAM_RED && level.timeTaken + 10*1000 <= level.time) {
+		//Red scores
+		trap_SendServerCommand( -1, "print \"Red team scores!\n\"");
+		AddTeamScore(level.intermission_origin,TEAM_RED,1);
+		Team_ForceGesture(TEAM_RED);
+		Team_RemoveDoubleDominationPoints();
+		//We start again in 10 seconds:
+		level.roundStartTime = level.time + 10*1000;
+		SendScoreboardMessageToAllClients();
+		CalculateRanks();
+	}
+
+	if(level.pointStatusA == TEAM_BLUE && level.pointStatusB == TEAM_BLUE && level.timeTaken + 10*1000 <= level.time) {
+		//Blue scores
+		trap_SendServerCommand( -1, "print \"Blue team scores!\n\"");
+		AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
+		Team_ForceGesture(TEAM_BLUE);
+		Team_RemoveDoubleDominationPoints();
+		//We start again in 10 seconds:
+		level.roundStartTime = level.time + 10*1000;
+		SendScoreboardMessageToAllClients();
+		CalculateRanks();
+	}
+
+	if((level.pointStatusA == TEAM_NONE || level.pointStatusB == TEAM_NONE) && level.time>level.roundStartTime) {
+		trap_SendServerCommand( -1, "print \"A new round has started\n\"");
+		Team_SpawnDoubleDominationPoints();
+		SendScoreboardMessageToAllClients();
+	}
+}
 
 /*
 CheckLMS
@@ -2109,6 +2168,9 @@ end = trap_Milliseconds();
 	//Check Elimination state
 	CheckElimination();
 	CheckLMS();
+
+	//Check Double Domination
+	CheckDoubleDomination();
 
 	// see if it is time to end the level
 	CheckExitRules();

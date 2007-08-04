@@ -89,6 +89,15 @@ void DeathmatchScoreboardMessage( gentity_t *ent ) {
 		string ) );
 }
 
+/*
+==================
+DoubleDominationScoreTime
+
+==================
+*/
+void DoubleDominationScoreTimeMessage( gentity_t *ent ) {
+	trap_SendServerCommand( ent-g_entities, va("ddtaken %i", level.timeTaken));
+}
 
 /*
 ==================
@@ -650,13 +659,13 @@ to free floating spectator mode
 =================
 */
 void StopFollowing( gentity_t *ent ) {
-	if(g_gametype.integer<GT_ELIMINATION || g_gametype.integer>GT_LMS)
-	{
+	//if(g_gametype.integer<GT_ELIMINATION || g_gametype.integer>GT_LMS)
+	//{
 		ent->client->ps.persistant[ PERS_TEAM ] = TEAM_SPECTATOR;	
 		ent->client->sess.sessionTeam = TEAM_SPECTATOR;	
-	}
-	else
-		ent->client->ps.pm_type = PM_SPECTATOR;
+	//}
+	//else
+	//	ent->client->ps.pm_type = PM_SPECTATOR;
 	ent->client->sess.spectatorState = SPECTATOR_FREE;
 	ent->client->ps.pm_flags &= ~PMF_FOLLOW;
 	ent->r.svFlags &= ~SVF_BOT;
@@ -1222,7 +1231,11 @@ static const char *gameNames[] = {
 	"Capture the Flag",
 	"One Flag CTF",
 	"Overload",
-	"Harvester"
+	"Harvester",
+	"Elimination",
+	"CTF Elimination",
+	"Last Man Standing",
+	"Double Domination"
 };
 
 /*

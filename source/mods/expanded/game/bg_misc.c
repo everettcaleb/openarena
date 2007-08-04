@@ -916,6 +916,108 @@ Only in One Flag CTF games
 	},
 #endif
 
+/*QUAKED team_DD_point
+Only in DD games
+*/
+	{
+		"team_DD_pointAblue",
+		NULL,
+        { "models/flags/b_flag.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/iconf_blu1",
+/* pickup */	"Point A (Blue)",
+		0,
+		IT_TEAM,
+		DD_POINTABLUE,
+/* precache */ "",
+/* sounds */ ""
+	},
+
+/*QUAKED team_DD_point
+Only in DD games
+*/
+	{
+		"team_DD_pointBblue",
+		NULL,
+        { "models/flags/b_flag.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/iconf_blu1",
+/* pickup */	"Point B (Blue)",
+		0,
+		IT_TEAM,
+		DD_POINTBBLUE,
+/* precache */ "",
+/* sounds */ ""
+	},
+
+/*QUAKED team_DD_point
+Only in DD games
+*/
+	{
+		"team_DD_pointAred",
+		NULL,
+        { "models/flags/r_flag.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/iconf_red1",
+/* pickup */	"Point A (Red)",
+		0,
+		IT_TEAM,
+		DD_POINTARED,
+/* precache */ "",
+/* sounds */ ""
+	},
+
+/*QUAKED team_DD_point
+Only in DD games
+*/
+	{
+		"team_DD_pointBred",
+		NULL,
+        { "models/flags/r_flag.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/iconf_red1",
+/* pickup */	"Point B (Red)",
+		0,
+		IT_TEAM,
+		DD_POINTBRED,
+/* precache */ "",
+/* sounds */ ""
+	},
+
+/*QUAKED team_DD_point
+Only in DD games
+*/
+	{
+		"team_DD_pointAwhite",
+		NULL,
+        { "models/powerups/instant/quad.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/iconf_red1",
+/* pickup */	"Point A (White)",
+		0,
+		IT_TEAM,
+		DD_POINTAWHITE,
+/* precache */ "",
+/* sounds */ ""
+	},
+
+/*QUAKED team_DD_point
+Only in DD games
+*/
+	{
+		"team_DD_pointBwhite",
+		NULL,
+        { "models/powerups/instant/quad.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/iconf_red1",
+/* pickup */	"Point B (White)",
+		0,
+		IT_TEAM,
+		DD_POINTBWHITE,
+/* precache */ "",
+/* sounds */ ""
+	},
+
 	// end of list marker
 	{NULL}
 };
@@ -1157,6 +1259,12 @@ qboolean BG_CanItemBeGrabbed( int gametype, const entityState_t *ent, const play
 					(item->giTag == PW_BLUEFLAG && ps->powerups[PW_REDFLAG]) )
 					return qtrue;
 			}
+		}
+
+		if( gametype == GT_DOUBLE_D) {
+			//We can touch both flags
+			if(item->giTag == PW_BLUEFLAG || item->giTag == PW_REDFLAG)
+				return qtrue;
 		}
 
 #ifdef MISSIONPACK

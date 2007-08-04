@@ -48,6 +48,7 @@ void Team_InitGame( void ) {
 	switch( g_gametype.integer ) {
 	case GT_CTF:
 	case GT_CTF_ELIMINATION:
+	case GT_DOUBLE_D:
 		teamgame.redStatus = -1; // Invalid to force update
 		Team_SetFlagStatus( TEAM_RED, FLAG_ATBASE );
 		 teamgame.blueStatus = -1; // Invalid to force update
@@ -219,12 +220,18 @@ void Team_SetFlagStatus( int team, flagStatus_t status ) {
 		break;
 	}
 
+
 	if( modified ) {
 		char st[4];
 
 		if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION) {
 			st[0] = ctfFlagStatusRemap[teamgame.redStatus];
 			st[1] = ctfFlagStatusRemap[teamgame.blueStatus];
+			st[2] = 0;
+		}
+		else if (g_gametype.integer == GT_DOUBLE_D) {
+			st[0] = oneFlagStatusRemap[teamgame.redStatus];
+			st[1] = oneFlagStatusRemap[teamgame.blueStatus];
 			st[2] = 0;
 		}
 		else {		// GT_1FCTF
@@ -559,6 +566,76 @@ gentity_t *Team_ResetFlag( int team ) {
 	return rent;
 }
 
+//Functions for Double Domination
+
+void Team_DD_RemovePointAgfx( void ) {
+	gentity_t *ent;
+	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAblue")) != NULL)
+		G_FreeEntity(ent);
+	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAred")) != NULL)
+		G_FreeEntity(ent);
+	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAwhite")) != NULL)
+		G_FreeEntity(ent);
+}
+
+void Team_DD_RemovePointBgfx( void ) {
+	gentity_t *ent;
+	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBblue")) != NULL)
+		G_FreeEntity(ent);
+	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBred")) != NULL)
+		G_FreeEntity(ent);
+	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBwhite")) != NULL)
+		G_FreeEntity(ent);
+}
+
+void Team_DD_makeA2team( gentity_t *target, int team ) {
+	gitem_t			*it;
+	gentity_t		*it_ent;
+	Team_DD_RemovePointAgfx();
+	if(team == TEAM_NONE)
+		return;
+	if(team == TEAM_RED)
+		it = BG_FindItem ("Point A (Red)");
+	if(team == TEAM_BLUE)
+		it = BG_FindItem ("Point A (Blue)");
+	if(team == TEAM_FREE)
+		it = BG_FindItem ("Point A (White)");
+	if (!it) {
+		PrintMsg( NULL, "No item\n");
+		return;
+	}
+	it_ent = G_Spawn();
+	
+	VectorCopy( target->r.currentOrigin, it_ent->s.origin );
+	it_ent->classname = it->classname;
+	G_SpawnItem(it_ent, it);
+	FinishSpawningItem(it_ent );
+}
+
+void Team_DD_makeB2team( gentity_t *target, int team ) {
+	gitem_t			*it;
+	gentity_t		*it_ent;
+	Team_DD_RemovePointBgfx();
+	if(team == TEAM_NONE)
+		return;
+	if(team == TEAM_RED)
+		it = BG_FindItem ("Point B (Red)");
+	if(team == TEAM_BLUE)
+		it = BG_FindItem ("Point B (Blue)");
+	if(team == TEAM_FREE)
+		it = BG_FindItem ("Point B (White)");
+	if (!it) {
+		PrintMsg( NULL, "No item\n");
+		return;
+	}
+	it_ent = G_Spawn();
+	
+	VectorCopy( target->r.currentOrigin, it_ent->s.origin );
+	it_ent->classname = it->classname;
+	G_SpawnItem(it_ent, it);
+	FinishSpawningItem(it_ent );
+}
+
 void Team_ResetFlags( void ) {
 	if( g_gametype.integer == GT_CTF || g_gametype.integer == GT_CTF_ELIMINATION) {
 		Team_ResetFlag( TEAM_RED );
@@ -578,6 +655,10 @@ void Team_ReturnFlagSound( gentity_t *ent, int team ) {
 		G_Printf ("Warning:  NULL passed to Team_ReturnFlagSound\n");
 		return;
 	}
+
+	//See if we are during CTF_ELIMINATION warmup
+	if((level.time<=level.roundStartTime && level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer)&&g_gametype.integer == GT_CTF_ELIMINATION)
+		return;
 
 	te = G_TempEntity( ent->s.pos.trBase, EV_GLOBAL_TEAM_SOUND );
 	if( team == TEAM_BLUE ) {
@@ -602,7 +683,7 @@ void Team_TakeFlagSound( gentity_t *ent, int team ) {
 	switch(team) {
 		case TEAM_RED:
 			if( teamgame.blueStatus != FLAG_ATBASE ) {
-				if (teamgame.blueTakenTime > level.time - 10000)
+				if (teamgame.blueTakenTime > level.time - 10000 && g_gametype.integer != GT_CTF_ELIMINATION)
 					return;
 			}
 			teamgame.blueTakenTime = level.time;
@@ -610,7 +691,7 @@ void Team_TakeFlagSound( gentity_t *ent, int team ) {
 
 		case TEAM_BLUE:	// CTF
 			if( teamgame.redStatus != FLAG_ATBASE ) {
-				if (teamgame.redTakenTime > level.time - 10000)
+				if (teamgame.redTakenTime > level.time - 10000 && g_gametype.integer != GT_CTF_ELIMINATION)
 					return;
 			}
 			teamgame.redTakenTime = level.time;
@@ -693,10 +774,111 @@ void Team_DroppedFlagThink(gentity_t *ent) {
 	// Reset Flag will delete this entity
 }
 
+/*
+Update DD points
+*/
+
+void updateDDpoints(void) {
+	//teamgame.redStatus = -1; // Invalid to force update
+	Team_SetFlagStatus( TEAM_RED, level.pointStatusA );
+	//teamgame.blueStatus = -1; // Invalid to force update
+	Team_SetFlagStatus( TEAM_BLUE, level.pointStatusB );
+}
 
 /*
 ==============
-Team_DroppedFlagThink
+Team_SpawnDoubleDominationPoints
+==============
+*/
+
+int Team_SpawnDoubleDominationPoints ( void ) {
+	gentity_t	*ent;
+	level.pointStatusA = TEAM_FREE;
+	level.pointStatusB = TEAM_FREE;
+	updateDDpoints();
+	ent = NULL;
+	if ((ent = G_Find (ent, FOFS(classname), "team_CTF_redflag")) != NULL) {
+		Team_DD_makeA2team( ent, TEAM_FREE );
+	}
+	if ((ent = G_Find (ent, FOFS(classname), "team_CTF_blueflag")) != NULL) {
+		Team_DD_makeB2team( ent, TEAM_FREE );
+	}
+	return 1;
+}
+
+/*
+==============
+Team_RemoveDoubleDominationPoints
+==============
+*/
+
+int Team_RemoveDoubleDominationPoints ( void ) {
+	level.pointStatusA = TEAM_NONE;
+	level.pointStatusB = TEAM_NONE;
+	updateDDpoints();
+	Team_DD_makeA2team( NULL, TEAM_NONE );
+	Team_DD_makeB2team( NULL, TEAM_NONE );
+	return 1;
+}
+
+/*
+==============
+Team_TouchDoubleDominationPoint
+==============
+*/
+
+//team is the either TEAM_RED(A) or TEAM_BLUE(B)
+int Team_TouchDoubleDominationPoint( gentity_t *ent, gentity_t *other, int team ) {
+	gentity_t	*player;
+	gclient_t	*cl = other->client;
+	int 		clientTeam = cl->sess.sessionTeam;
+
+	if(team == TEAM_RED) //We have touched point A
+	{
+		if(TEAM_NONE == level.pointStatusA)
+			return 0; //Haven't spawned yet
+		if(clientTeam == level.pointStatusA)
+			return 0; //If we already have the flag
+		//if we didn't have the point, then we have now!
+		level.pointStatusA = clientTeam;
+		PrintMsg( NULL, "%s" S_COLOR_WHITE " (%s) took control of A!\n", cl->pers.netname, TeamName(clientTeam) );
+		Team_DD_makeA2team( ent, clientTeam );
+		//Do we also have point B?
+		if(clientTeam == level.pointStatusB)
+		{
+			//We are dominating!
+			level.timeTaken = level.time; //At this time
+			PrintMsg( NULL, "%s" S_COLOR_WHITE " is dominating!\n", TeamName(clientTeam) );
+			SendDDtimetakenMessageToAllClients();
+		}
+	}
+
+	if(team == TEAM_BLUE) //We have touched point B
+	{
+		if(TEAM_NONE == level.pointStatusB)
+			return 0; //Haven't spawned yet
+		if(clientTeam == level.pointStatusB)
+			return 0; //If we already have the flag
+		//if we didn't have the point, then we have now!
+		level.pointStatusB = clientTeam;
+		PrintMsg( NULL, "%s" S_COLOR_WHITE " (%s) took control of B!\n", cl->pers.netname, TeamName(clientTeam) );
+		Team_DD_makeB2team( ent, clientTeam );
+		//Do we also have point A?
+		if(clientTeam == level.pointStatusA)
+		{
+			//We are dominating!
+			level.timeTaken = level.time; //At this time
+			PrintMsg( NULL, "%s" S_COLOR_WHITE " is dominating!\n", TeamName(clientTeam) );
+			SendDDtimetakenMessageToAllClients();
+		}
+	}
+
+	updateDDpoints();
+}
+
+/*
+==============
+Team_TouchOurFlag
 ==============
 */
 int Team_TouchOurFlag( gentity_t *ent, gentity_t *other, int team ) {
@@ -857,7 +1039,7 @@ int Team_TouchEnemyFlag( gentity_t *ent, gentity_t *other, int team ) {
 int Pickup_Team( gentity_t *ent, gentity_t *other ) {
 	int team;
 	gclient_t *cl = other->client;
-
+	
 #ifdef MISSIONPACK
 	if( g_gametype.integer == GT_OBELISK ) {
 		// there are no team items that can be picked up in obelisk
@@ -901,6 +1083,9 @@ int Pickup_Team( gentity_t *ent, gentity_t *other ) {
 		return 0;
 	}
 #endif
+	if( g_gametype.integer == GT_DOUBLE_D) {
+		return Team_TouchDoubleDominationPoint( ent, other, team );
+	}
 	// GT_CTF
 	if( team == cl->sess.sessionTeam) {
 		return Team_TouchOurFlag( ent, other, team );
@@ -1038,6 +1223,45 @@ gentity_t *SelectRandomTeamSpawnPoint( int teamstate, team_t team ) {
 	return spots[ selection ];
 }
 
+/*
+================
+SelectRandomDDSpawnPoint
+
+go to a random Double Domination Spawn Point
+================
+*/
+#define	MAX_TEAM_SPAWN_POINTS	32
+gentity_t *SelectRandomDDSpawnPoint( void ) {
+	gentity_t	*spot;
+	int			count;
+	int			selection;
+	gentity_t	*spots[MAX_TEAM_SPAWN_POINTS];
+	char		*classname;
+
+	
+	classname = "info_player_dd";
+		
+	count = 0;
+
+	spot = NULL;
+
+	while ((spot = G_Find (spot, FOFS(classname), classname)) != NULL) {
+		if ( SpotWouldTelefrag( spot ) ) {
+			continue;
+		}
+		spots[ count ] = spot;
+		if (++count == MAX_TEAM_SPAWN_POINTS)
+			break;
+	}
+
+	if ( !count ) {	// no spots that won't telefrag
+		return G_Find( NULL, FOFS(classname), classname);
+	}
+
+	selection = rand() % count;
+	return spots[ selection ];
+}
+
 
 /*
 ===========
@@ -1049,6 +1273,28 @@ gentity_t *SelectCTFSpawnPoint ( team_t team, int teamstate, vec3_t origin, vec3
 	gentity_t	*spot;
 
 	spot = SelectRandomTeamSpawnPoint ( teamstate, team );
+
+	if (!spot) {
+		return SelectSpawnPoint( vec3_origin, origin, angles );
+	}
+
+	VectorCopy (spot->s.origin, origin);
+	origin[2] += 9;
+	VectorCopy (spot->s.angles, angles);
+
+	return spot;
+}
+
+/*
+===========
+SelectDoubleDominationSpawnPoint
+
+============
+*/
+gentity_t *SelectDoubleDominationSpawnPoint ( vec3_t origin, vec3_t angles ) {
+	gentity_t	*spot;
+
+	spot = SelectRandomDDSpawnPoint (  );
 
 	if (!spot) {
 		return SelectSpawnPoint( vec3_origin, origin, angles );

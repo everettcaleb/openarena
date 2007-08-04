@@ -1208,6 +1208,8 @@ const char *CG_GameTypeString(void) {
 		return "CTF Elimination";
 	} else if ( cgs.gametype == GT_LMS ) {
 		return "Last Man Standing";
+	} else if ( cgs.gametype == GT_DOUBLE_D ) {
+		return "Double Domination";
 	}
 	return "";
 }

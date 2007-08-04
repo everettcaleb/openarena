@@ -673,6 +673,11 @@ typedef struct {
 	qhandle_t	blueFlagShader[3];
 	qhandle_t	flagShader[4];
 
+//For Double Domination:
+	qhandle_t	ddPointA;
+	qhandle_t	ddPointB;
+	qhandle_t	ddPointSkin[3]; //0=white,1=red,2=blue
+
 	qhandle_t	flagPoleModel;
 	qhandle_t	flagFlapModel;
 
@@ -1035,6 +1040,9 @@ typedef struct {
 
 //instantgib:
 	int				instantgib;
+
+//Double Domination DD
+	int 				timetaken;
 
 	int				scores1, scores2;		// from configstrings
 	int				redflag, blueflag;		// flag status from configstrings

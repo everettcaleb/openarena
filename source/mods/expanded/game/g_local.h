@@ -426,6 +426,13 @@ typedef struct {
 	int roundBluePlayers;			//used to find winners in a draw.
 	qboolean roundRespawned;		//We have respawned for this round!
 	int eliminationSides;			//Random, change red/blue bases
+
+	//Added for Double Domination
+	//Points get status: TEAM_FREE for not taking, TEAM_RED/TEAM_BLUE for taken and TEAM_NONE for not spawned yet
+	int pointStatusA;			//Status of the RED (A) domination point
+	int pointStatusB;			//Status of the BLUE (B) doimination point
+	int timeTaken;				//Time team started having both points
+	//use roundStartTime for telling, then the points respawn
 } level_locals_t;
 
 
@@ -647,6 +654,7 @@ void CheckTeamLeader( int team );
 void G_RunThink (gentity_t *ent);
 void QDECL G_LogPrintf( const char *fmt, ... );
 void SendScoreboardMessageToAllClients( void );
+void SendDDtimetakenMessageToAllClients( void );
 void QDECL G_Printf( const char *fmt, ... );
 void QDECL G_Error( const char *fmt, ... );
 
@@ -807,8 +815,6 @@ extern int		g_ffa_gt; //0 = TEAM GAME, 1 = FFA, 2 = TEAM GAME without bases
 
 //beta 5
 extern vmCvar_t		g_lms_lives;
-//extern vmCvar_t		g_no_bunny;
-extern vmCvar_t		g_airJumps;
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );

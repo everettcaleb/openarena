@@ -1029,7 +1029,7 @@ void ClientThink_real( gentity_t *ent ) {
 			if (( g_forcerespawn.integer > 0 && 
 				( level.time - client->respawnTime ) > g_forcerespawn.integer * 1000 )
 				//In Last man standing, we force a quick respawn, since the player must be able to loose health
-				|| g_gametype.integer==GT_LMS && ( level.time - client->respawnTime )>300) {
+				|| (g_gametype.integer==GT_LMS || g_gametype.integer==GT_ELIMINATION || g_gametype.integer==GT_CTF_ELIMINATION) && ( level.time - client->respawnTime )>0) {
 				respawn( ent );
 				return;
 			}
