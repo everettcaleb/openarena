@@ -67,7 +67,7 @@ static void UI_CreditMenu_Draw( void ) {
 	y += PROP_HEIGHT * PROP_SMALL_SIZE_SCALE;
 	UI_DrawProportionalString( 320, y, "OpenArena Expanded", UI_CENTER|UI_SMALLFONT, color_white );
 	
-	y += SMALLCHAR_HEIGHT;
+	y += 28;
 	UI_DrawString( 320, y, "Click or press any key to quit", UI_CENTER|UI_SMALLFONT, color_red );
 }
 
