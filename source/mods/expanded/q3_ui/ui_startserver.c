@@ -105,7 +105,7 @@ static const char *gametype_items[] = {
 };
 
 static int gametype_remap[] = {GT_FFA, GT_TEAM, GT_TOURNAMENT, GT_CTF, GT_ELIMINATION, GT_CTF_ELIMINATION, GT_LMS};
-static int gametype_remap2[] = {0, 2, 0, 1, 3, 4, 5};
+static int gametype_remap2[] = {0, 2, 0, 1, 3, 4, 5, 6};
 
 // use ui_servers2.c definition
 extern const char* punkbuster_items[];
@@ -133,7 +133,6 @@ static int GametypeBits( char *string ) {
 
 		if( Q_stricmp( token, "ffa" ) == 0 ) {
 			bits |= 1 << GT_FFA;
-			bits |= 1 << GT_LMS;
 			continue;
 		}
 
@@ -154,7 +153,6 @@ static int GametypeBits( char *string ) {
 
 		if( Q_stricmp( token, "ctf" ) == 0 ) {
 			bits |= 1 << GT_CTF;
-			bits |= 1 << GT_CTF_ELIMINATION;
 			continue;
 		}
 
@@ -798,20 +796,20 @@ static void ServerOptions_Start( void ) {
 		break;
 
 	case GT_ELIMINATION:
-		trap_Cvar_SetValue( "ui_ctf_fraglimit", fraglimit );
-		trap_Cvar_SetValue( "ui_ctf_timelimit", timelimit );
-		trap_Cvar_SetValue( "ui_ctf_friendlt", friendlyfire );
+		trap_Cvar_SetValue( "ui_elimination_fraglimit", fraglimit );
+		trap_Cvar_SetValue( "ui_elimination_timelimit", timelimit );
+		trap_Cvar_SetValue( "ui_elimination_friendlt", friendlyfire );
 		break;
 
 	case GT_CTF_ELIMINATION:
-		trap_Cvar_SetValue( "ui_ctf_fraglimit", fraglimit );
-		trap_Cvar_SetValue( "ui_ctf_timelimit", timelimit );
-		trap_Cvar_SetValue( "ui_ctf_friendlt", friendlyfire );
+		trap_Cvar_SetValue( "ui_ctf_elimination_fraglimit", fraglimit );
+		trap_Cvar_SetValue( "ui_ctf_elimination_timelimit", timelimit );
+		trap_Cvar_SetValue( "ui_ctf_elimination_friendlt", friendlyfire );
 		break;
 
 	case GT_LMS:
-		trap_Cvar_SetValue( "ui_ffa_fraglimit", fraglimit );
-		trap_Cvar_SetValue( "ui_ffa_timelimit", timelimit );
+		trap_Cvar_SetValue( "ui_lms_fraglimit", fraglimit );
+		trap_Cvar_SetValue( "ui_lms_timelimit", timelimit );
 		break;
 	}
 
@@ -1188,20 +1186,20 @@ static void ServerOptions_SetMenuItems( void ) {
 		break;
 
 	case GT_ELIMINATION:
-		Com_sprintf( s_serveroptions.flaglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_capturelimit" ) ) );
-		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_timelimit" ) ) );
-		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_ctf_friendly" ) );
+		Com_sprintf( s_serveroptions.flaglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_elimination_capturelimit" ) ) );
+		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_elimination_timelimit" ) ) );
+		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_elimination_friendly" ) );
 		break;
 
 	case GT_CTF_ELIMINATION:
-		Com_sprintf( s_serveroptions.flaglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_capturelimit" ) ) );
-		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_timelimit" ) ) );
-		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_ctf_friendly" ) );
+		Com_sprintf( s_serveroptions.flaglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_elimination_capturelimit" ) ) );
+		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_elimination_timelimit" ) ) );
+		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_ctf_elimination_friendly" ) );
 		break;
 
 	case GT_LMS:
-		Com_sprintf( s_serveroptions.fraglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ffa_fraglimit" ) ) );
-		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ffa_timelimit" ) ) );
+		Com_sprintf( s_serveroptions.fraglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_lms_fraglimit" ) ) );
+		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_lms_timelimit" ) ) );
 		break;
 
 	}

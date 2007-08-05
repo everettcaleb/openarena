@@ -113,6 +113,17 @@ vmCvar_t	ui_ctf_capturelimit;
 vmCvar_t	ui_ctf_timelimit;
 vmCvar_t	ui_ctf_friendly;
 
+vmCvar_t	ui_elimination_capturelimit;
+vmCvar_t	ui_elimination_timelimit;
+vmCvar_t	ui_elimination_friendly;
+
+vmCvar_t	ui_ctf_elimination_capturelimit;
+vmCvar_t	ui_ctf_elimination_timelimit;
+vmCvar_t	ui_ctf_elimination_friendly;
+
+vmCvar_t	ui_lms_fraglimit;
+vmCvar_t	ui_lms_timelimit;
+
 vmCvar_t	ui_arenasFile;
 vmCvar_t	ui_botsFile;
 vmCvar_t	ui_spScores1;
@@ -171,6 +182,17 @@ static cvarTable_t		cvarTable[] = {
 	{ &ui_ctf_capturelimit, "ui_ctf_capturelimit", "8", CVAR_ARCHIVE },
 	{ &ui_ctf_timelimit, "ui_ctf_timelimit", "30", CVAR_ARCHIVE },
 	{ &ui_ctf_friendly, "ui_ctf_friendly",  "0", CVAR_ARCHIVE },
+
+	{ &ui_team_fraglimit, "ui_elimination_capturelimit", "0", CVAR_ARCHIVE },
+	{ &ui_team_timelimit, "ui_elimination_timelimit", "20", CVAR_ARCHIVE },
+	{ &ui_team_friendly, "ui_elimination_friendly",  "1", CVAR_ARCHIVE },
+
+	{ &ui_ctf_capturelimit, "ui_ctf_elimination_capturelimit", "8", CVAR_ARCHIVE },
+	{ &ui_ctf_timelimit, "ui_ctf_elimination_timelimit", "30", CVAR_ARCHIVE },
+	{ &ui_ctf_friendly, "ui_ctf_elimination_friendly",  "0", CVAR_ARCHIVE },
+
+	{ &ui_ffa_fraglimit, "ui_lms_fraglimit", "20", CVAR_ARCHIVE },
+	{ &ui_ffa_timelimit, "ui_lms_timelimit", "0", CVAR_ARCHIVE },
 
 	{ &ui_arenasFile, "g_arenasFile", "", CVAR_INIT|CVAR_ROM },
 	{ &ui_botsFile, "g_botsFile", "", CVAR_INIT|CVAR_ROM },
