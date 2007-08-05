@@ -226,7 +226,7 @@ void InGame_MenuInit( void ) {
 	s_ingame.teamorders.string				= "TEAM ORDERS";
 	s_ingame.teamorders.color				= color_red;
 	s_ingame.teamorders.style				= UI_CENTER|UI_SMALLFONT;
-	if( !(trap_Cvar_VariableValue( "g_gametype" ) >= GT_TEAM) || TRAP_FREEFORALL ) {
+	if( !(trap_Cvar_VariableValue( "g_gametype" ) >= GT_TEAM) || (trap_Cvar_VariableValue( "g_gametype" ) == GT_LMS ) ) {
 		s_ingame.teamorders.generic.flags |= QMF_GRAYED;
 	}
 	else {

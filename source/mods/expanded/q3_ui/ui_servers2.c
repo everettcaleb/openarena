@@ -99,6 +99,7 @@ MULTIPLAYER MENU (SERVER BROWSER)
 #define GAMES_ELIMINATION		5
 #define GAMES_CTF_ELIMINATION		6
 #define GAMES_LMS			7
+#define GAMES_DOUBLE_D			8
 
 
 static const char *master_items[] = {
@@ -117,6 +118,7 @@ static const char *servertype_items[] = {
 	"Elimination",
 	"CTF Elimination",
 	"Last Man Standing",
+	"Double Domination",
 	NULL
 };
 
@@ -145,6 +147,7 @@ static char* gamenames[] = {
 	"Elimination",
 	"CTF Elimination",
 	"Last Man Standing",
+	"Double Domination",
 	"???",			// unknown
 	NULL
 };
@@ -536,6 +539,12 @@ static void ArenaServers_UpdateMenu( void ) {
 
 		case GAMES_LMS:
 			if( servernodeptr->gametype != GT_LMS ) {
+				continue;
+			}
+			break;
+
+		case GAMES_DOUBLE_D:
+			if( servernodeptr->gametype != GT_DOUBLE_D ) {
 				continue;
 			}
 			break;
@@ -1077,6 +1086,10 @@ static void ArenaServers_StartRefresh( void )
 
 		case GAMES_LMS:
 			strcpy( myargs, " lms" );
+			break;
+		
+		case GAMES_DOUBLE_D:
+			strcpy( myargs, " dd" );
 			break;
 		}
 

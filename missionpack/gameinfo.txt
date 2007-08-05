@@ -9,6 +9,7 @@ gametypes {
   { "Elimination" 8 }
   { "CTF Elimination" 9 }
   { "Last Man Standing" 10 }
+  { "Double Domination" 11 }
 }
 
 joingametypes {
@@ -23,4 +24,5 @@ joingametypes {
   { "Elimination" 8 }
   { "CTF Elimination" 9 }
   { "Last Man Standing" 10 }
+  { "Double Domination" 11 }
 }
