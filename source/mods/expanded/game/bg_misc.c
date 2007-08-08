@@ -1007,7 +1007,7 @@ Only in DD games
 	{
 		"team_DD_pointBwhite",
 		NULL,
-        { "models/powerups/instant/quad.md3",
+        { "models/powerups/ammo/bfgam.md3",
 		NULL, NULL, NULL },
 /* icon */		"icons/iconf_red1",
 /* pickup */	"Point B (White)",
@@ -1210,6 +1210,11 @@ qboolean BG_CanItemBeGrabbed( int gametype, const entityState_t *ent, const play
 
 #ifdef MISSIONPACK
 	case IT_PERSISTANT_POWERUP:
+
+		//In Double D we don't want persistant Powerups (or maybe, can be discussed)
+		if(gametype == GT_DOUBLE_D)
+			return qfalse;
+
 		// can only hold one item at a time
 		if ( ps->stats[STAT_PERSISTANT_POWERUP] ) {
 			return qfalse;

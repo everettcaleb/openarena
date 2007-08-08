@@ -1531,11 +1531,16 @@ void CheckDoubleDomination( void ) {
 	if(g_gametype.integer != GT_DOUBLE_D)
 		return;
 
+	//Don't score if we are in intermission. Both points might have been taken when we went into intermission
+	if(level.intermissiontime)
+		return;
+
 	if(level.pointStatusA == TEAM_RED && level.pointStatusB == TEAM_RED && level.timeTaken + 10*1000 <= level.time) {
 		//Red scores
 		trap_SendServerCommand( -1, "print \"Red team scores!\n\"");
 		AddTeamScore(level.intermission_origin,TEAM_RED,1);
 		Team_ForceGesture(TEAM_RED);
+		Team_DD_bonusAtPoints(TEAM_RED);
 		Team_RemoveDoubleDominationPoints();
 		//We start again in 10 seconds:
 		level.roundStartTime = level.time + 10*1000;
@@ -1548,6 +1553,7 @@ void CheckDoubleDomination( void ) {
 		trap_SendServerCommand( -1, "print \"Blue team scores!\n\"");
 		AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
 		Team_ForceGesture(TEAM_BLUE);
+		Team_DD_bonusAtPoints(TEAM_BLUE);
 		Team_RemoveDoubleDominationPoints();
 		//We start again in 10 seconds:
 		level.roundStartTime = level.time + 10*1000;

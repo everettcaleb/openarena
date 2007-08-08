@@ -120,11 +120,11 @@ static int gametype_remap2[] = {
 		2, 
 		0, 
 		1, 
-		3, 
-		4, 
-		5, 
-		6, 
-		7 };		//Dammit Jim, The array is b0rked!!
+		2, 
+		1, 
+		0, 
+		2, 
+		3 };		//Dammit Jim, The array is b0rked!!
 
 // use ui_servers2.c definition
 extern const char* punkbuster_items[];

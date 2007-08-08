@@ -859,6 +859,8 @@ void ClearRegisteredItems( void ) {
 		RegisterItem( BG_FindItem( "Point B (Red)" ) );
 		RegisterItem( BG_FindItem( "Point B (White)" ) );
 	}
+
+	
 }
 
 /*
@@ -956,8 +958,8 @@ void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 									(g_instantgib.integer || g_gametype.integer==GT_CTF_ELIMINATION))
 		ent->s.eFlags |= EF_NODRAW; //Invisible in elimination
 
-	if(g_gametype.integer == GT_DOUBLE_D && (strcmp(ent->classname, "team_CTF_redflag")==0 || strcmp(ent->classname, "team_CTF_blueflag")==0))
-		ent->s.eFlags |= EF_NODRAW; //Don't draw the flag models
+	if(g_gametype.integer == GT_DOUBLE_D && (strcmp(ent->classname, "team_CTF_redflag")==0 || strcmp(ent->classname, "team_CTF_blueflag")==0 || strcmp(ent->classname, "team_CTF_neutralflag") == 0 || item->giType == IT_PERSISTANT_POWERUP  ))
+		ent->s.eFlags |= EF_NODRAW; //Don't draw the flag models/persistant powerups
 
 	if ( item->giType == IT_POWERUP ) {
 		G_SoundIndex( "sound/items/poweruprespawn.wav" );

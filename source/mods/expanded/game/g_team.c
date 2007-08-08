@@ -40,6 +40,10 @@ teamgame_t teamgame;
 
 gentity_t	*neutralObelisk;
 
+//Some pointers for Double Domination so we don't need GFind (I think it might crash at random times...)
+gentity_t	*ddA;
+gentity_t	*ddB;
+
 void Team_SetFlagStatus( int team, flagStatus_t status );
 
 void Team_InitGame( void ) {
@@ -53,6 +57,8 @@ void Team_InitGame( void ) {
 		Team_SetFlagStatus( TEAM_RED, FLAG_ATBASE );
 		 teamgame.blueStatus = -1; // Invalid to force update
 		Team_SetFlagStatus( TEAM_BLUE, FLAG_ATBASE );
+		ddA = NULL;
+		ddB = NULL;
 		break;
 #ifdef MISSIONPACK
 	case GT_1FCTF:
@@ -272,8 +278,42 @@ void Team_ForceGesture(int team) {
 			continue;
 		if (ent->client->sess.sessionTeam != team)
 			continue;
-		//
 		ent->flags |= FL_FORCE_GESTURE;
+	}
+}
+
+/*
+================
+Team_DD_bonusAtPoints
+Adds bonus point to a player if he is close to the point and on the team that scores 
+================
+*/
+
+void Team_DD_bonusAtPoints(int team) {
+	vec3_t v1, v2;
+	int i;
+	gentity_t *player;
+
+	for (i = 0; i < MAX_CLIENTS; i++) {
+		player = &g_entities[i];
+		if (!player->inuse)
+			continue;
+		if (!player->client)
+			continue;
+		
+		if( player->client->sess.sessionTeam != team )
+			return; //player was not on scoring team 
+
+		//See if the player is close to any of the points:
+		VectorSubtract(player->r.currentOrigin, ddA->r.currentOrigin, v1);
+		VectorSubtract(player->r.currentOrigin, ddB->r.currentOrigin, v2);
+		if (!( ( ( VectorLength(v1) < CTF_TARGET_PROTECT_RADIUS &&
+				trap_InPVS(ddA->r.currentOrigin, player->r.currentOrigin ) ) ||
+				( VectorLength(v2) < CTF_TARGET_PROTECT_RADIUS &&
+				trap_InPVS(ddB->r.currentOrigin, player->r.currentOrigin ) ) )))
+					return; //Wasn't close to any of the points
+	
+		AddScore(player, player->r.currentOrigin, DD_AT_POINT_AT_CAPTURE);
 	}
 }
 
@@ -398,6 +438,76 @@ void Team_FragBonuses(gentity_t *targ, gentity_t *inflictor, gentity_t *attacker
 		attacker->client->rewardTime = level.time + REWARD_SPRITE_TIME;
 
 		return;
+	}
+
+//We palce the Double Domination bonus test here! This appears to be the best place to place them.
+	if ( g_gametype.integer == GT_DOUBLE_D ) {
+		if(attacker->client->sess.sessionTeam == level.pointStatusA ) { //Attack must defend point A
+			//See how close attacker and target was to Point A:
+			VectorSubtract(targ->r.currentOrigin, ddA->r.currentOrigin, v1);
+			VectorSubtract(attacker->r.currentOrigin, ddA->r.currentOrigin, v2);
+
+			if ( ( ( VectorLength(v1) < CTF_TARGET_PROTECT_RADIUS &&
+				trap_InPVS(ddA->r.currentOrigin, targ->r.currentOrigin ) ) ||
+				( VectorLength(v2) < CTF_TARGET_PROTECT_RADIUS &&
+				trap_InPVS(ddA->r.currentOrigin, attacker->r.currentOrigin ) ) ) &&
+				attacker->client->sess.sessionTeam != targ->client->sess.sessionTeam) {
+				
+				//We defended point A
+				//Was we dominating and maybe close to score?
+				if(attacker->client->sess.sessionTeam == level.pointStatusB && level.time - level.timeTaken > (10-DD_CLOSE)*1000)
+					AddScore(attacker, targ->r.currentOrigin, DD_POINT_DEFENCE_CLOSE_BONUS);
+				else
+					AddScore(attacker, targ->r.currentOrigin, DD_POINT_DEFENCE_BONUS);
+				attacker->client->pers.teamState.basedefense++;
+
+				attacker->client->ps.persistant[PERS_DEFEND_COUNT]++;
+				// add the sprite over the player's head
+				attacker->client->ps.eFlags &= ~(EF_AWARD_IMPRESSIVE | EF_AWARD_EXCELLENT | EF_AWARD_GAUNTLET | EF_AWARD_ASSIST | EF_AWARD_DEFEND | EF_AWARD_CAP );
+				attacker->client->ps.eFlags |= EF_AWARD_DEFEND;
+				attacker->client->rewardTime = level.time + REWARD_SPRITE_TIME;
+
+				return; //Return so we don't recieve credits for point B also
+
+			} //We denfended point A
+
+
+
+		} //Defend point A
+
+		if(attacker->client->sess.sessionTeam == level.pointStatusB ) { //Attack must defend point B
+			//See how close attacker and target was to Point B:
+			VectorSubtract(targ->r.currentOrigin, ddB->r.currentOrigin, v1);
+			VectorSubtract(attacker->r.currentOrigin, ddB->r.currentOrigin, v2);
+
+			if ( ( ( VectorLength(v1) < CTF_TARGET_PROTECT_RADIUS &&
+				trap_InPVS(ddB->r.currentOrigin, targ->r.currentOrigin ) ) ||
+				( VectorLength(v2) < CTF_TARGET_PROTECT_RADIUS &&
+				trap_InPVS(ddB->r.currentOrigin, attacker->r.currentOrigin ) ) ) &&
+				attacker->client->sess.sessionTeam != targ->client->sess.sessionTeam) {
+				
+				//We defended point B
+				//Was we dominating and maybe close to score?
+				if(attacker->client->sess.sessionTeam == level.pointStatusA && level.time - level.timeTaken > (10-DD_CLOSE)*1000)
+					AddScore(attacker, targ->r.currentOrigin, DD_POINT_DEFENCE_CLOSE_BONUS);
+				else
+					AddScore(attacker, targ->r.currentOrigin, DD_POINT_DEFENCE_BONUS);
+				attacker->client->pers.teamState.basedefense++;
+
+				attacker->client->ps.persistant[PERS_DEFEND_COUNT]++;
+				// add the sprite over the player's head
+				attacker->client->ps.eFlags &= ~(EF_AWARD_IMPRESSIVE | EF_AWARD_EXCELLENT | EF_AWARD_GAUNTLET | EF_AWARD_ASSIST | EF_AWARD_DEFEND | EF_AWARD_CAP );
+				attacker->client->ps.eFlags |= EF_AWARD_DEFEND;
+				attacker->client->rewardTime = level.time + REWARD_SPRITE_TIME;
+
+				return;
+
+			} //We denfended point B
+
+
+
+		} //Defend point B
+	return; //In double Domination we shall not go on, or we would test for team bases that we don't use
 	}
 
 	// flag and flag carrier area defense bonuses
@@ -569,28 +679,36 @@ gentity_t *Team_ResetFlag( int team ) {
 //Functions for Double Domination
 
 void Team_DD_RemovePointAgfx( void ) {
-	gentity_t *ent;
+	/*gentity_t *ent;
 	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAblue")) != NULL)
 		G_FreeEntity(ent);
 	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAred")) != NULL)
 		G_FreeEntity(ent);
 	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAwhite")) != NULL)
-		G_FreeEntity(ent);
+		G_FreeEntity(ent);*/
+	if(ddA!=NULL) {
+		G_FreeEntity(ddA);
+		ddA = NULL;
+	}
 }
 
 void Team_DD_RemovePointBgfx( void ) {
-	gentity_t *ent;
+	/*gentity_t *ent;
 	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBblue")) != NULL)
 		G_FreeEntity(ent);
 	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBred")) != NULL)
 		G_FreeEntity(ent);
-	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBwhite")) != NULL)
-		G_FreeEntity(ent);
+	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBwhite")) != NULL) {
+		G_FreeEntity(ent);*/
+	if(ddB!=NULL) {
+		G_FreeEntity(ddB);
+		ddB = NULL;
+	}
 }
 
 void Team_DD_makeA2team( gentity_t *target, int team ) {
 	gitem_t			*it;
-	gentity_t		*it_ent;
+	//gentity_t		*it_ent;
 	Team_DD_RemovePointAgfx();
 	if(team == TEAM_NONE)
 		return;
@@ -604,17 +722,18 @@ void Team_DD_makeA2team( gentity_t *target, int team ) {
 		PrintMsg( NULL, "No item\n");
 		return;
 	}
-	it_ent = G_Spawn();
+	ddA = G_Spawn();
 	
-	VectorCopy( target->r.currentOrigin, it_ent->s.origin );
-	it_ent->classname = it->classname;
-	G_SpawnItem(it_ent, it);
-	FinishSpawningItem(it_ent );
+	VectorCopy( target->r.currentOrigin, ddA->s.origin );
+	ddA->classname = it->classname;
+	G_SpawnItem(ddA, it);
+	FinishSpawningItem(ddA );
 }
 
 void Team_DD_makeB2team( gentity_t *target, int team ) {
 	gitem_t			*it;
-	gentity_t		*it_ent;
+	//gentity_t		*it_ent;
+	it = NULL;
 	Team_DD_RemovePointBgfx();
 	if(team == TEAM_NONE)
 		return;
@@ -628,12 +747,12 @@ void Team_DD_makeB2team( gentity_t *target, int team ) {
 		PrintMsg( NULL, "No item\n");
 		return;
 	}
-	it_ent = G_Spawn();
+	ddB = G_Spawn();
 	
-	VectorCopy( target->r.currentOrigin, it_ent->s.origin );
-	it_ent->classname = it->classname;
-	G_SpawnItem(it_ent, it);
-	FinishSpawningItem(it_ent );
+	VectorCopy( target->r.currentOrigin, ddB->s.origin );
+	ddB->classname = it->classname;
+	G_SpawnItem(ddB, it);
+	FinishSpawningItem(ddB );
 }
 
 void Team_ResetFlags( void ) {
@@ -831,7 +950,25 @@ Team_TouchDoubleDominationPoint
 int Team_TouchDoubleDominationPoint( gentity_t *ent, gentity_t *other, int team ) {
 	gentity_t	*player;
 	gclient_t	*cl = other->client;
+	qboolean	otherDominating, isClose;
 	int 		clientTeam = cl->sess.sessionTeam;
+	int		otherTeam;
+	int		score; //Used to add the scores together 
+
+	if(clientTeam == TEAM_RED)
+		otherTeam = TEAM_BLUE;
+	else
+		otherTeam = TEAM_RED;
+
+	otherDominating = qfalse;
+	isClose = qfalse;
+
+	if(level.pointStatusA == otherTeam && level.pointStatusB == otherTeam) {
+		otherDominating = qtrue;
+		if(level.time - level.timeTaken > (10-DD_CLOSE)*1000)
+			isClose = qtrue;
+	}	
+	
 
 	if(team == TEAM_RED) //We have touched point A
 	{
@@ -843,6 +980,14 @@ int Team_TouchDoubleDominationPoint( gentity_t *ent, gentity_t *other, int team 
 		level.pointStatusA = clientTeam;
 		PrintMsg( NULL, "%s" S_COLOR_WHITE " (%s) took control of A!\n", cl->pers.netname, TeamName(clientTeam) );
 		Team_DD_makeA2team( ent, clientTeam );
+		//Give personal score
+		score = DD_POINT_CAPTURE; //Base score for capture
+		if(otherDominating){
+			score += DD_POINT_CAPTURE_BREAK;
+			if(isClose)
+				score += DD_POINT_CAPTURE_CLOSE;
+		}
+		AddScore(other, ent->r.currentOrigin, score);
 		//Do we also have point B?
 		if(clientTeam == level.pointStatusB)
 		{
@@ -863,6 +1008,14 @@ int Team_TouchDoubleDominationPoint( gentity_t *ent, gentity_t *other, int team 
 		level.pointStatusB = clientTeam;
 		PrintMsg( NULL, "%s" S_COLOR_WHITE " (%s) took control of B!\n", cl->pers.netname, TeamName(clientTeam) );
 		Team_DD_makeB2team( ent, clientTeam );
+		//Give personal score
+		score = DD_POINT_CAPTURE; //Base score for capture
+		if(otherDominating){
+			score += DD_POINT_CAPTURE_BREAK;
+			if(isClose)
+				score += DD_POINT_CAPTURE_CLOSE;
+		}
+		AddScore(other, ent->r.currentOrigin, score);
 		//Do we also have point A?
 		if(clientTeam == level.pointStatusA)
 		{

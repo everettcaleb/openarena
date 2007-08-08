@@ -39,6 +39,7 @@ TEAM ORDERS MENU
 #define ID_LIST_BOTS		10
 #define ID_LIST_CTF_ORDERS	11
 #define ID_LIST_TEAM_ORDERS	12
+#define ID_LIST_DD_ORDERS	13
 
 
 typedef struct {
@@ -102,6 +103,29 @@ static const char *teamMessages[] = {
 	NULL
 };
 
+#define NUM_DD_ORDERS		8
+static const char *ddOrders[] = {
+	"I Am the Leader",
+	"Follow Me",
+	"Roam",
+	"Dominate Point A",
+	"Dominate Point B",
+	"Camp Here",
+	"Report",
+	"I Relinquish Command",
+	NULL
+};
+static const char *ddMessages[] = {
+	"i am the leader",
+	"%s follow me",
+	"%s roam",
+	"%s camp point a",
+	"%s camp point b",
+	"%s camp here",
+	"%s report",
+	"i stop being the leader",
+	NULL
+};
 
 /*
 ===============
@@ -140,6 +164,12 @@ static void UI_TeamOrdersMenu_SetList( int id ) {
 		teamOrdersMenuInfo.list.generic.id = id;
 		teamOrdersMenuInfo.list.numitems = NUM_TEAM_ORDERS;
 		teamOrdersMenuInfo.list.itemnames = teamOrders;
+		break;
+
+	case ID_LIST_DD_ORDERS:
+		teamOrdersMenuInfo.list.generic.id = id;
+		teamOrdersMenuInfo.list.numitems = NUM_DD_ORDERS;
+		teamOrdersMenuInfo.list.itemnames = ddOrders;
 		break;
 	}
 
@@ -267,17 +297,24 @@ static void UI_TeamOrdersMenu_ListEvent( void *ptr, int event ) {
 		if( teamOrdersMenuInfo.gametype == GT_CTF || teamOrdersMenuInfo.gametype == GT_CTF_ELIMINATION ) {
 			UI_TeamOrdersMenu_SetList( ID_LIST_CTF_ORDERS );
 		}
-		else {
+		if( teamOrdersMenuInfo.gametype == GT_TEAM || teamOrdersMenuInfo.gametype == GT_ELIMINATION ) {
 			UI_TeamOrdersMenu_SetList( ID_LIST_TEAM_ORDERS );
 		}
+		if( teamOrdersMenuInfo.gametype == GT_DOUBLE_D ) {
+			UI_TeamOrdersMenu_SetList( ID_LIST_DD_ORDERS );
+		}
+
 		return;
 	}
 
 	if( id == ID_LIST_CTF_ORDERS ) {
 		Com_sprintf( message, sizeof(message), ctfMessages[selection], teamOrdersMenuInfo.botNames[teamOrdersMenuInfo.selectedBot] );
 	}
-	else {
+	if( id == ID_LIST_TEAM_ORDERS ) {
 		Com_sprintf( message, sizeof(message), teamMessages[selection], teamOrdersMenuInfo.botNames[teamOrdersMenuInfo.selectedBot] );
+	}
+	if( id == ID_LIST_DD_ORDERS ) {
+		Com_sprintf( message, sizeof(message), ddMessages[selection], teamOrdersMenuInfo.botNames[teamOrdersMenuInfo.selectedBot] );
 	}
 
 	trap_Cmd_ExecuteText( EXEC_APPEND, va( "say_team \"%s\"\n", message ) );

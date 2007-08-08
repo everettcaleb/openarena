@@ -53,6 +53,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #endif
 
+//For Double Domination:
+#define DD_POINT_DEFENCE_BONUS			1	//Score for fragging someone while either you or target are near a Domination Point
+#define DD_POINT_DEFENCE_CLOSE_BONUS		2	//Score for fragging someone while either you or target are near a Domination Point and have almost scored
+//Following is added togehter:
+#define DD_POINT_CAPTURE			1	//Score for taking a point
+#define DD_POINT_CAPTURE_BREAK			1	//If the enemy was dominating
+#define DD_POINT_CAPTURE_CLOSE			1	//Extra score if the enemy was about to score
+#define DD_AT_POINT_AT_CAPTURE			1	//You was close to a point as capture succeded.	
+
+#define DD_CLOSE				3	//How many seconds to score is close		
+
 #define CTF_TARGET_PROTECT_RADIUS			1000	// the radius around an object being defended where a target will be worth extra frags
 #define CTF_ATTACKER_PROTECT_RADIUS			1000	// the radius around an object being defended where an attacker will get extra frags when making kills
 
@@ -92,3 +103,4 @@ int Pickup_Team( gentity_t *ent, gentity_t *other );
 //Double Domination:
 int Team_SpawnDoubleDominationPoints ( void );
 int Team_RemoveDoubleDominationPoints ( void );
+void Team_DD_bonusAtPoints(int team);

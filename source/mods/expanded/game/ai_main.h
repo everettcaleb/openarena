@@ -58,6 +58,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define LTG_ATTACKENEMYBASE			13	//attack the enemy base
 #define LTG_MAKELOVE_UNDER			14
 #define LTG_MAKELOVE_ONTOP			15
+//Long term DD goals
+#define LTG_POINTA				16	//Take/Defend point A
+#define LTG_POINTB				17	//Take/Defend point B
 //some goal dedication times
 #define TEAM_HELP_TIME				60	//1 minute teamplay help time
 #define TEAM_ACCOMPANY_TIME			600	//10 minutes teamplay accompany time
@@ -73,6 +76,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define CTF_RUSHBASE_TIME			120	//2 minutes ctf rush base time
 #define CTF_RETURNFLAG_TIME			180	//3 minutes to return the flag
 #define CTF_ROAM_TIME				60	//1 minute ctf roam time
+//Time for Double Domination tasks
+#define DD_POINTA				600
+#define DD_POINTB				600
 //patrol flags
 #define PATROL_LOOP					1
 #define PATROL_REVERSE				2
