@@ -250,9 +250,6 @@ void CG_DrawInformation( void ) {
 	case GT_CTF:
 		s = "Capture The Flag";
 		break;
-	case GT_ELIMINATION:
-		s = "Elimination";
-		break;
 #ifdef MISSIONPACK
 	case GT_1FCTF:
 		s = "One Flag CTF";
@@ -264,6 +261,18 @@ void CG_DrawInformation( void ) {
 		s = "Harvester";
 		break;
 #endif
+	case GT_ELIMINATION:
+		s = "Elimination";
+		break;
+	case GT_CTF_ELIMINATION:
+		s = " CTF Elimination";
+		break;
+	case GT_LMS:
+		s = "Last Man Standing";
+		break;
+	case GT_DOUBLE_D:
+		s = "Double Domination";
+		break;
 	default:
 		s = "Unknown Gametype";
 		break;

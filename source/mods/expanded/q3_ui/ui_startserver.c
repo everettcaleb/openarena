@@ -106,14 +106,14 @@ static const char *gametype_items[] = {
 };
 
 static int gametype_remap[] = {
-		GT_FFA,			// 0 for the following array only
-		GT_TEAM, 		// 2
-		GT_TOURNAMENT, 		// 0
-		GT_CTF, 		// 1
-		GT_ELIMINATION, 	// 3  in theory and usually in practice
-		GT_CTF_ELIMINATION, 	// 4  in theory but not practice
-		GT_LMS, 		// 5  in theory but not practice
-		GT_DOUBLE_D };		// 6  in theory but not practice
+		GT_FFA,			
+		GT_TEAM, 		
+		GT_TOURNAMENT, 		
+		GT_CTF, 		
+		GT_ELIMINATION, 	
+		GT_CTF_ELIMINATION, 	
+		GT_LMS, 		
+		GT_DOUBLE_D };		
 
 static int gametype_remap2[] = {
 		0, 
@@ -127,7 +127,7 @@ static int gametype_remap2[] = {
 		4, 
 		5, 
 		6, 
-		7 };		//this works
+		7 };		//this works and should increment for more gametypes
 
 // use ui_servers2.c definition
 extern const char* punkbuster_items[];
