@@ -1038,6 +1038,9 @@ typedef struct {
 	int				roundStartTime;	
 	int				roundtime;
 
+//Last Man Standing
+	int				lms_mode;
+
 //instantgib:
 	int				instantgib;
 

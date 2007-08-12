@@ -113,6 +113,9 @@ int	g_ffa_gt; //Are this a FFA gametype even if gametype is high?
 //beta 5
 vmCvar_t	g_lms_lives;
 
+//beta 8
+vmCvar_t	g_lms_mode;
+
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
 	// don't override the cheat state set by the system
@@ -214,6 +217,8 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", 0, 0, qtrue },
 	//beta 5
 	{ &g_lms_lives, "g_lms_lives", "1", 0, 0, qtrue },
+	//beta 8
+	{ &g_lms_mode, "g_lms_mode", "0", CVAR_ARCHIVE | CVAR_SERVERINFO | CVAR_NORESTART, 0, qtrue },
 };
 
 // bk001129 - made static to avoid aliasing
@@ -1573,7 +1578,17 @@ CheckLMS
 */
 
 void CheckLMS(void) {
+	int mode;
+	mode = g_lms_mode.integer;
 	if ( level.numPlayingClients < 1 ) {
+		return;
+	}
+
+	//We don't want to do anything in itnermission
+	if(level.intermissiontime) {
+		if(level.roundRespawned)
+			EndEliminationRound();
+		level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
 		return;
 	}
 
@@ -1584,6 +1599,7 @@ void CheckLMS(void) {
 		countsLiving[TEAM_FREE] = TeamLivingCount( -1, TEAM_FREE );
 		if(countsLiving[TEAM_FREE]==1 && level.roundNumber==level.roundNumberStarted)
 		{
+			if(mode <=1 )
 			LMSpoint();
 			trap_SendServerCommand( -1, "print \"We have a winner!\n\"");
 			EndEliminationRound();
@@ -1596,15 +1612,17 @@ void CheckLMS(void) {
 			EndEliminationRound();
 		}
 
-		if((level.roundNumber==level.roundNumberStarted)&&(level.time>=level.roundStartTime+1000*g_elimination_roundtime.integer))
+		if((level.roundNumber==level.roundNumberStarted)&&(g_lms_mode.integer == 1 || g_lms_mode.integer==3)&&(level.time>=level.roundStartTime+1000*g_elimination_roundtime.integer))
 		{
-			//trap_SendServerCommand( -1, "print \"Too many players left!\n\"");
-			//EndEliminationRound();
+			trap_SendServerCommand( -1, "print \"Time up - Overtime disabled\n\"");
+			if(mode <=1 )
+			LMSpoint();
+			EndEliminationRound();
 		}
 
 		//This might be better placed another place:
-		if(g_elimination_activewarmup.integer<1)
-			g_elimination_activewarmup.integer=1; //We need at least 1 second to spawn all players
+		if(g_elimination_activewarmup.integer<2)
+			g_elimination_activewarmup.integer=2; //We need at least 2 seconds to spawn all players
 		if(g_elimination_activewarmup.integer > g_elimination_warmup.integer) //This must not be true
 			g_elimination_warmup.integer = g_elimination_activewarmup.integer+1; //Increase warmup
 
@@ -1652,7 +1670,13 @@ void CheckElimination(void) {
 		return;
 	}	
 
-	
+	//We don't want to do anything in itnermission
+	if(level.intermissiontime) {
+		if(level.roundRespawned)
+			EndEliminationRound();
+		level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
+		return;
+	}	
 
 	if(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION)
 	{

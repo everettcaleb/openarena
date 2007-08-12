@@ -904,6 +904,52 @@ static float CG_DrawDoubleDominationThings( float y ) {
 
 /*
 =================
+CG_DrawLMSmode
+=================
+*/
+
+static float CG_DrawLMSmode( float y ) {
+	char		*s;
+	int		w;
+
+	if(cgs.lms_mode == 0) {
+		s = va("LMS: Point/round + OT");
+	}
+	if(cgs.lms_mode == 1) {
+		s = va("LMS: Point/round - OT");
+	}
+	if(cgs.lms_mode == 2) {
+		s = va("LMS: Point/kill + OT");
+	}
+	if(cgs.lms_mode == 3) {
+		s = va("LMS: Point/kill - OT");
+	}
+
+	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
+	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
+
+	return y + SMALLCHAR_HEIGHT+4;
+}
+
+/*
+=================
+CG_DrawEliminationDeathMessage
+=================
+*/
+
+static float CG_DrawEliminationDeathMessage( float y ) {
+	char		*s;
+	int			w;
+
+	s = va("You are waiting for a new round");
+	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
+	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
+
+	return y + SMALLCHAR_HEIGHT+4;
+}
+
+/*
+=================
 CG_DrawEliminationTimer
 =================
 */
@@ -1205,14 +1251,22 @@ static void CG_DrawUpperRight( void ) {
 	if ( cgs.gametype == GT_DOUBLE_D ) {
 		y = CG_DrawDoubleDominationThings(y);
 	} 
+	else
+	if ( cgs.gametype == GT_LMS && cg.showScores ) {
+		y = CG_DrawLMSmode(y);
+	}
+	
 	if ( cg_drawSnapshot.integer ) {
 		y = CG_DrawSnapshot( y );
 	}
 	if ( cg_drawFPS.integer ) {
 		y = CG_DrawFPS( y );
 	}
-	if (cgs.gametype==GT_ELIMINATION || cgs.gametype == GT_CTF_ELIMINATION || cgs.gametype==GT_LMS)
+	if (cgs.gametype==GT_ELIMINATION || cgs.gametype == GT_CTF_ELIMINATION || cgs.gametype==GT_LMS) {
 		y = CG_DrawEliminationTimer( y );
+		if (cgs.clientinfo[ cg.clientNum ].isDead)
+			y = CG_DrawEliminationDeathMessage( y);
+	}
 	if ( cg_drawTimer.integer) {
 		y = CG_DrawTimer( y );
 	}

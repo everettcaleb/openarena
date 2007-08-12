@@ -961,6 +961,10 @@ void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 	if(g_gametype.integer == GT_DOUBLE_D && (strcmp(ent->classname, "team_CTF_redflag")==0 || strcmp(ent->classname, "team_CTF_blueflag")==0 || strcmp(ent->classname, "team_CTF_neutralflag") == 0 || item->giType == IT_PERSISTANT_POWERUP  ))
 		ent->s.eFlags |= EF_NODRAW; //Don't draw the flag models/persistant powerups
 
+#ifdef MISSIONPACK
+	if(g_gametype.integer == GT_CTF_ELIMINATION && strcmp(ent->classname, "team_CTF_neutralflag") == 0)
+		ent->s.eFlags |= EF_NODRAW; // Don't draw the flag in CTF_elimination
+#endif
 	if ( item->giType == IT_POWERUP ) {
 		G_SoundIndex( "sound/items/poweruprespawn.wav" );
 		G_SpawnFloat( "noglobalsound", "0", &ent->speed);

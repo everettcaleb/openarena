@@ -187,6 +187,7 @@ void CG_ParseServerinfo( void ) {
 	cgs.maxclients = atoi( Info_ValueForKey( info, "sv_maxclients" ) );
 	cgs.roundtime = atoi( Info_ValueForKey( info, "elimination_roundtime" ) );
 	cgs.instantgib = atoi( Info_ValueForKey( info, "g_instantgib" ) );
+	cgs.lms_mode = atoi( Info_ValueForKey( info, "g_lms_mode" ) );
 	mapname = Info_ValueForKey( info, "mapname" );
 	Com_sprintf( cgs.mapname, sizeof( cgs.mapname ), "maps/%s.bsp", mapname );
 	Q_strncpyz( cgs.redTeam, Info_ValueForKey( info, "g_redTeam" ), sizeof(cgs.redTeam) );

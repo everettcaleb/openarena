@@ -515,9 +515,9 @@ respawn
 void respawn( gentity_t *ent ) {
 	gentity_t	*tent;
 
-	if((g_gametype.integer!=GT_ELIMINATION && g_gametype.integer!=GT_CTF_ELIMINATION) || !ent->client->isEliminated)
+	if((g_gametype.integer!=GT_ELIMINATION && g_gametype.integer!=GT_CTF_ELIMINATION && g_gametype.integer !=GT_LMS) && !ent->client->isEliminated)
 	{
-		ent->client->isEliminated  = qtrue; //must not be true in warmup
+		ent->client->isEliminated = qtrue; //must not be true in warmup
 		CopyToBodyQue (ent);
 	}
 
@@ -529,7 +529,11 @@ void respawn( gentity_t *ent ) {
 		}
 		else //We have used all our lives
 		{
-			ent->client->isEliminated = qtrue;
+			if( ent->client->isEliminated!=qtrue) {
+				ent->client->isEliminated = qtrue;
+				if((g_lms_mode.integer == 2 || g_lms_mode.integer == 3) && level.roundNumber == level.roundNumberStarted)
+					LMSpoint();				
+			}
 			return;
 		}
 
@@ -801,10 +805,12 @@ void LMSpoint(void)
 		}
 		
 		client = g_entities + i;
-
+		/*
+		Not good in mode 2 & 3
 		if ( client->health <= 0 ){
 			continue;
 		}
+		*/
 	
 		client->client->ps.persistant[PERS_SCORE] += 1;
 	}
@@ -1294,6 +1300,10 @@ void ClientBegin( int clientNum ) {
 
 	//Elimination:
 	client->pers.roundReached = 0; //We will spawn in next round
+	if(g_gametype.integer == GT_LMS) {
+		client->isEliminated = qtrue; //So player does not give a point in gamemode 2 and 3
+		//trap_SendServerCommand( -1, va("print \"%s" S_COLOR_WHITE " will start dead\n\"", client->pers.netname) );
+	}
 
 	// save eflags around this, because changing teams will
 	// cause this to happen with a valid entity, and we
@@ -1378,7 +1388,11 @@ void ClientSpawn(gentity_t *ent) {
 		if(level.roundNumber==level.roundNumberStarted /*|| level.time<level.roundStartTime-g_elimination_activewarmup.integer*1000*/ && 1>client->pers.livesLeft)
 		{	
 			client->sess.spectatorState = SPECTATOR_FREE;
-			client->isEliminated = qtrue;
+			if( ent->client->isEliminated!=qtrue) {
+				client->isEliminated = qtrue;
+				if((g_lms_mode.integer == 2 || g_lms_mode.integer == 3) && level.roundNumber == level.roundNumberStarted)
+					LMSpoint();
+			}
 			client->ps.pm_type = PM_SPECTATOR;
 			return;
 		}
