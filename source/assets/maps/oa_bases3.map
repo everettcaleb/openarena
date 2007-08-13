@@ -4037,7 +4037,7 @@
 // entity 120
 {
 "classname" "team_CTF_neutralflag"
-"origin" "1632 -448 -40"
+"origin" "1632 -448 -32"
 "gametype" "oneflag"
 }
 // entity 121
@@ -4113,4 +4113,54 @@
 "classname" "item_scout"
 "origin" "3624 -920 48"
 "spawnflags" "4"
+}
+// entity 133
+{
+"classname" "info_player_dd"
+"origin" "904 416 80"
+}
+// entity 134
+{
+"classname" "info_player_dd"
+"origin" "2344 528 80"
+}
+// entity 135
+{
+"classname" "info_player_dd"
+"origin" "2312 392 80"
+}
+// entity 136
+{
+"classname" "info_player_dd"
+"origin" "2288 256 80"
+}
+// entity 137
+{
+"classname" "info_player_dd"
+"origin" "2256 144 80"
+}
+// entity 138
+{
+"classname" "info_player_dd"
+"origin" "2240 8 80"
+}
+// entity 139
+{
+"classname" "info_player_dd"
+"origin" "1008 8 80"
+}
+// entity 140
+{
+"classname" "info_player_dd"
+"origin" "976 112 80"
+}
+// entity 141
+{
+"classname" "info_player_dd"
+"origin" "960 216 80"
+}
+// entity 142
+{
+"classname" "info_player_dd"
+"origin" "936 296 80"
 }
