@@ -208,13 +208,13 @@ textures/base_light/proto_lightred2
 
 textures/base_light/ceil1_38
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 300
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -223,20 +223,20 @@ textures/base_light/ceil1_38
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
 
 textures/base_light/ceil1_38_10k
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 10000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -245,20 +245,20 @@ textures/base_light/ceil1_38_10k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
 
 textures/base_light/ceil1_38_20k
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 20000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -267,20 +267,20 @@ textures/base_light/ceil1_38_20k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
 
 textures/base_light/ceil1_38_30k
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 30000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -289,20 +289,20 @@ textures/base_light/ceil1_38_30k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
 
 textures/base_light/ceil1_38_40k
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 40000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -311,20 +311,20 @@ textures/base_light/ceil1_38_40k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
 
 textures/base_light/ceil1_38_50k
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 50000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -333,20 +333,20 @@ textures/base_light/ceil1_38_50k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
 
 textures/base_light/ceil1_38_70k
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 70000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -355,20 +355,20 @@ textures/base_light/ceil1_38_70k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
 
 textures/base_light/ceil1_38_90k
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 90000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -377,7 +377,7 @@ textures/base_light/ceil1_38_90k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
@@ -385,7 +385,7 @@ textures/base_light/ceil1_38_90k
 textures/base_light/ceil1_39
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 300
 	q3map_flare flareShader-wide
@@ -399,7 +399,7 @@ textures/base_light/ceil1_39
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -837,13 +837,13 @@ textures/base_light/runway
 
 textures/base_light/ceil1_30
 {
-	qer_editorimage textures/base_light/ceil1_30.jpg
-	q3map_lightimage textures/base_light/ceil1_30.blend.jpg
+	qer_editorimage textures/base_light/ceil1_30.tga
+	q3map_lightimage textures/base_light/ceil1_30.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 10000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_30.jpg
+		map textures/base_light/ceil1_30.tga
 		rgbGen identity
 	}
 	{
@@ -852,20 +852,20 @@ textures/base_light/ceil1_30
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_30.blend.jpg
+		map textures/base_light/ceil1_30.blend.tga
 		blendfunc add
 	}
 }
 
 textures/base_light/ceil1_30_8k
 {
-	qer_editorimage textures/base_light/ceil1_30.jpg
-	q3map_lightimage textures/base_light/ceil1_30.blend.jpg
+	qer_editorimage textures/base_light/ceil1_30.tga
+	q3map_lightimage textures/base_light/ceil1_30.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 8000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_30.jpg
+		map textures/base_light/ceil1_30.tga
 		rgbGen identity
 	}
 	{
@@ -874,7 +874,7 @@ textures/base_light/ceil1_30_8k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_30.blend.jpg
+		map textures/base_light/ceil1_30.blend.tga
 		blendfunc add
 	}
 }
@@ -882,15 +882,15 @@ textures/base_light/ceil1_30_8k
 
 textures/base_light/ceil1_30_trans
 {
-	qer_editorimage textures/base_light/ceil1_30.jpg
-	q3map_lightimage textures/base_light/ceil1_30.blend.jpg
+	qer_editorimage textures/base_light/ceil1_30.tga
+	q3map_lightimage textures/base_light/ceil1_30.blend.tga
 	surfaceparm metalsteps
 	surfaceparm nomarks
 	surfaceparm trans
 	q3map_surfacelight 10000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_30.jpg
+		map textures/base_light/ceil1_30.tga
 		blendfunc gl_one gl_one_minus_src_alpha
 		rgbGen identity
 	}
@@ -900,7 +900,7 @@ textures/base_light/ceil1_30_trans
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_30.blend.jpg
+		map textures/base_light/ceil1_30.blend.tga
 		blendfunc add
 	}
 }
@@ -995,8 +995,8 @@ textures/base_light/ceil1_34_5k
 
 textures/base_light/ceil1_37
 {
-	qer_editorimage textures/base_light/ceil1_37.jpg
-	q3map_lightimage textures/base_light/ceil1_37.blend.jpg
+	qer_editorimage textures/base_light/ceil1_37.tga
+	q3map_lightimage textures/base_light/ceil1_37.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 10000
 	q3map_flare flareShader-wide
@@ -1017,13 +1017,13 @@ textures/base_light/ceil1_37
 
 textures/base_light/ceil1_4
 {
-	qer_editorimage textures/base_light/ceil1_4.jpg
-	q3map_lightimage textures/base_light/ceil1_4.blend.jpg
+	qer_editorimage textures/base_light/ceil1_4.tga
+	q3map_lightimage textures/base_light/ceil1_4.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 1000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_4.jpg
+		map textures/base_light/ceil1_4.tga
 		rgbGen identity
 	}
 	{
@@ -1032,7 +1032,7 @@ textures/base_light/ceil1_4
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_4.blend.jpg
+		map textures/base_light/ceil1_4.blend.tga
 		blendfunc add
 		rgbGen wave noise 0.8 0.2 0 1
 	}
@@ -1175,13 +1175,13 @@ textures/base_light/ceil1_34_5k
 
 textures/base_light/ceil_white5k
 {
-	qer_editorimage textures/base_light/ceil1_38.jpg
-	q3map_lightimage textures/base_light/ceil1_38.blend.jpg
+	qer_editorimage textures/base_light/ceil1_38.tga
+	q3map_lightimage textures/base_light/ceil1_38.blend.tga
 	surfaceparm metalsteps
 	q3map_surfacelight 5000
 	q3map_flare flareShader-wide
 	{
-		map textures/base_light/ceil1_38.jpg
+		map textures/base_light/ceil1_38.tga
 		rgbGen identity
 	}
 	{
@@ -1190,7 +1190,7 @@ textures/base_light/ceil_white5k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_38.blend.jpg
+		map textures/base_light/ceil1_38.blend.tga
 		blendfunc add
 	}
 }
@@ -1198,7 +1198,7 @@ textures/base_light/ceil_white5k
 textures/base_light/xceil1_39
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 300
 	q3map_flare flareShader-wide
@@ -1212,7 +1212,7 @@ textures/base_light/xceil1_39
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1220,7 +1220,7 @@ textures/base_light/xceil1_39
 textures/base_light/xceil1_39_1
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 1000
 	q3map_flare flareShader-wide
@@ -1234,7 +1234,7 @@ textures/base_light/xceil1_39_1
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1242,7 +1242,7 @@ textures/base_light/xceil1_39_1
 textures/base_light/xceil1_39_10k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 10000
 	q3map_flare flareShader-wide
@@ -1256,7 +1256,7 @@ textures/base_light/xceil1_39_10k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1264,7 +1264,7 @@ textures/base_light/xceil1_39_10k
 textures/base_light/xceil1_39_110k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 110000
 	q3map_flare flareShader-wide
@@ -1278,7 +1278,7 @@ textures/base_light/xceil1_39_110k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1286,7 +1286,7 @@ textures/base_light/xceil1_39_110k
 textures/base_light/xceil1_39_15k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 15000
 	q3map_flare flareShader-wide
@@ -1300,7 +1300,7 @@ textures/base_light/xceil1_39_15k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1308,7 +1308,7 @@ textures/base_light/xceil1_39_15k
 textures/base_light/xceil1_39_20k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 20000
 	q3map_flare flareShader-wide
@@ -1322,7 +1322,7 @@ textures/base_light/xceil1_39_20k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1330,7 +1330,7 @@ textures/base_light/xceil1_39_20k
 textures/base_light/xceil1_39_2k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 2000
 	q3map_flare flareShader-wide
@@ -1344,7 +1344,7 @@ textures/base_light/xceil1_39_2k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1352,7 +1352,7 @@ textures/base_light/xceil1_39_2k
 textures/base_light/xceil1_39_30k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 30000
 	q3map_flare flareShader-wide
@@ -1366,7 +1366,7 @@ textures/base_light/xceil1_39_30k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1374,7 +1374,7 @@ textures/base_light/xceil1_39_30k
 textures/base_light/xceil1_39_500k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 500000
 	q3map_flare flareShader-wide
@@ -1388,7 +1388,7 @@ textures/base_light/xceil1_39_500k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1396,7 +1396,7 @@ textures/base_light/xceil1_39_500k
 textures/base_light/xceil1_39_50k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 50000
 	q3map_flare flareShader-wide
@@ -1410,7 +1410,7 @@ textures/base_light/xceil1_39_50k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1418,7 +1418,7 @@ textures/base_light/xceil1_39_50k
 textures/base_light/xceil1_39_5k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 5000
 	q3map_flare flareShader-wide
@@ -1432,7 +1432,7 @@ textures/base_light/xceil1_39_5k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1440,7 +1440,7 @@ textures/base_light/xceil1_39_5k
 textures/base_light/xceil1_39_70k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 70000
 	q3map_flare flareShader-wide
@@ -1454,7 +1454,7 @@ textures/base_light/xceil1_39_70k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1462,7 +1462,7 @@ textures/base_light/xceil1_39_70k
 textures/base_light/xceil1_39_90k
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 90000
 	q3map_flare flareShader-wide
@@ -1476,7 +1476,7 @@ textures/base_light/xceil1_39_90k
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1484,7 +1484,7 @@ textures/base_light/xceil1_39_90k
 textures/base_light/xceil1_39_a
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 4000
 	q3map_flare flareShader-wide
@@ -1499,7 +1499,7 @@ textures/base_light/xceil1_39_a
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
@@ -1507,7 +1507,7 @@ textures/base_light/xceil1_39_a
 textures/base_light/xceil1_39_b
 {
 	qer_editorimage textures/base_light/ceil1_39.tga
-	q3map_lightimage textures/base_light/ceil1_39.blend.jpg
+	q3map_lightimage textures/base_light/ceil1_39.blend.tga
 	surfaceparm nomarks
 	q3map_surfacelight 8000
 	q3map_flare flareShader-wide
@@ -1521,7 +1521,7 @@ textures/base_light/xceil1_39_b
 		tcGen lightmap 
 	}
 	{
-		map textures/base_light/ceil1_39.blend.jpg
+		map textures/base_light/ceil1_39.blend.tga
 		blendfunc add
 	}
 }
