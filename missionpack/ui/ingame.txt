@@ -5,7 +5,7 @@
 	loadMenu { "ui/ingame_vote.menu" }
 	loadMenu { "ui/ingame_about.menu" }
 	loadMenu { "ui/ingame_controls.menu" }
-	loadMenu { "ui/ingame_join.menu" }
+	loadMenu { "ui/ingame_joinserver.menu" }
 	loadMenu { "ui/ingame_options.menu" }
 	loadMenu { "ui/ingame_system.menu" }
 	loadMenu { "ui/ingame_leave.menu" }
