@@ -95,8 +95,10 @@ markShadow
 projectionShadow
 {
 	polygonoffset
+	deformvertexes projectionshadow		//need this
 	{
-		map $whiteimage 
+		map $whiteimage
+		blendfunc filter
 		rgbGen wave square 0 0 0 0 
 	}
 }
