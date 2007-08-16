@@ -76,6 +76,7 @@ itemDef {
 	      action
       		{
 	        play "ui/assets/select.wav"; 
+		exec "vid_restart";
 	       	open configuration;
  		close videomodes;
       		}
