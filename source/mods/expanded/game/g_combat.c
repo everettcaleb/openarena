@@ -519,7 +519,7 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 		attacker->client->lastkilled_client = self->s.number;
 
 		if ( attacker == self || OnSameTeam (self, attacker ) ) {
-			if(g_gametype.integer!=GT_LMS)
+			if(g_gametype.integer!=GT_LMS && !((g_gametype.integer==GT_ELIMINATION || g_gametype.integer==GT_CTF_ELIMINATION) && level.time < level.roundStartTime))
 				AddScore( attacker, self->r.currentOrigin, -1 );
 		} else {
 			if(g_gametype.integer!=GT_LMS)
@@ -554,8 +554,8 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 
 		}
 	} else {
-		if(g_gametype.integer!=GT_LMS)
-		AddScore( self, self->r.currentOrigin, -1 );
+		if(g_gametype.integer!=GT_LMS && !((g_gametype.integer==GT_ELIMINATION || g_gametype.integer==GT_CTF_ELIMINATION) && level.time < level.roundStartTime))
+			AddScore( self, self->r.currentOrigin, -1 );
 	}
 
 	// Add team bonuses
@@ -958,7 +958,7 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 #else	
 		if ( targ != attacker && OnSameTeam (targ, attacker)  ) {
 #endif
-			if ( !g_friendlyFire.integer && (g_gametype.integer != GT_ELIMINATION || g_gametype.integer != GT_CTF_ELIMINATION) || g_elimination_selfdamage.integer<2 && 
+			if ( !g_friendlyFire.integer && (g_gametype.integer != GT_ELIMINATION && g_gametype.integer != GT_CTF_ELIMINATION) || g_elimination_selfdamage.integer<2 && 
 							(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION)) {
 				return;
 			}

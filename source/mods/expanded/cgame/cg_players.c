@@ -333,11 +333,11 @@ static qboolean	CG_FindClientModelFile( char *filename, int length, clientInfo_t
 	while(1) {
 		for ( i = 0; i < 2; i++ ) {
 			if ( i == 0 && teamName && *teamName ) {
-				//								"models/players/characters/james/stroggs/lower_lily_red.skin"
+				//								"models/players/characters/sergei/stroggs/lower_lily_red.skin"
 				Com_sprintf( filename, length, "models/players/%s%s/%s%s_%s_%s.%s", charactersFolder, modelName, teamName, base, skinName, team, ext );
 			}
 			else {
-				//								"models/players/characters/james/lower_lily_red.skin"
+				//								"models/players/characters/sergei/lower_lily_red.skin"
 				Com_sprintf( filename, length, "models/players/%s%s/%s_%s_%s.%s", charactersFolder, modelName, base, skinName, team, ext );
 			}
 			if ( CG_FileExists( filename ) ) {
@@ -345,21 +345,21 @@ static qboolean	CG_FindClientModelFile( char *filename, int length, clientInfo_t
 			}
 			if ( cgs.gametype >= GT_TEAM && cgs.ffa_gt!=1) {
 				if ( i == 0 && teamName && *teamName ) {
-					//								"models/players/characters/james/stroggs/lower_red.skin"
+					//								"models/players/characters/sergei/stroggs/lower_red.skin"
 					Com_sprintf( filename, length, "models/players/%s%s/%s%s_%s.%s", charactersFolder, modelName, teamName, base, team, ext );
 				}
 				else {
-					//								"models/players/characters/james/lower_red.skin"
+					//								"models/players/characters/sergei/lower_red.skin"
 					Com_sprintf( filename, length, "models/players/%s%s/%s_%s.%s", charactersFolder, modelName, base, team, ext );
 				}
 			}
 			else {
 				if ( i == 0 && teamName && *teamName ) {
-					//								"models/players/characters/james/stroggs/lower_lily.skin"
+					//								"models/players/characters/sergei/stroggs/lower_lily.skin"
 					Com_sprintf( filename, length, "models/players/%s%s/%s%s_%s.%s", charactersFolder, modelName, teamName, base, skinName, ext );
 				}
 				else {
-					//								"models/players/characters/james/lower_lily.skin"
+					//								"models/players/characters/sergei/lower_lily.skin"
 					Com_sprintf( filename, length, "models/players/%s%s/%s_%s.%s", charactersFolder, modelName, base, skinName, ext );
 				}
 			}

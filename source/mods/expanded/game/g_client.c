@@ -521,7 +521,7 @@ void respawn( gentity_t *ent ) {
 		CopyToBodyQue (ent);
 	}
 
-	if(g_gametype.integer==GT_LMS)
+	if(g_gametype.integer==GT_LMS) {
 		if(ent->client->pers.livesLeft>0)
 		{
 			//ent->client->pers.livesLeft--; Coutned down somewhere else
@@ -532,10 +532,12 @@ void respawn( gentity_t *ent ) {
 			if( ent->client->isEliminated!=qtrue) {
 				ent->client->isEliminated = qtrue;
 				if((g_lms_mode.integer == 2 || g_lms_mode.integer == 3) && level.roundNumber == level.roundNumberStarted)
-					LMSpoint();				
+					LMSpoint();	
+				ent->client->sess.spectatorState = PM_SPECTATOR;			
 			}
 			return;
 		}
+	}
 
 	if((g_gametype.integer==GT_ELIMINATION || g_gametype.integer==GT_CTF_ELIMINATION) 
 			&& ent->client->ps.pm_type == PM_SPECTATOR && ent->client->ps.stats[STAT_HEALTH] > 0)
@@ -1363,7 +1365,7 @@ void ClientSpawn(gentity_t *ent) {
 
 	//In Elimination the player should not spawn if he have already spawned in the round (but not for spectators)
 	if(
-		(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION) 
+		(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION  && !level.intermissiontime) 
 		&& (client->sess.sessionTeam != TEAM_SPECTATOR))
 	{
 		if((level.roundNumber==level.roundNumberStarted)||(level.time<level.roundStartTime-g_elimination_activewarmup.integer*1000)&& 
@@ -1383,7 +1385,7 @@ void ClientSpawn(gentity_t *ent) {
 		}
 	}
 
-	if(g_gametype.integer == GT_LMS && client->sess.sessionTeam != TEAM_SPECTATOR)
+	if(g_gametype.integer == GT_LMS && client->sess.sessionTeam != TEAM_SPECTATOR && !level.intermissiontime)
 	{
 		if(level.roundNumber==level.roundNumberStarted /*|| level.time<level.roundStartTime-g_elimination_activewarmup.integer*1000*/ && 1>client->pers.livesLeft)
 		{	
@@ -1537,25 +1539,52 @@ else
 	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GAUNTLET );
 	client->ps.ammo[WP_GAUNTLET] = -1;
 	client->ps.ammo[WP_GRAPPLING_HOOK] = -1;
-	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_MACHINEGUN );
-	client->ps.ammo[WP_MACHINEGUN] = 200;
-	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_SHOTGUN );
-	client->ps.ammo[WP_SHOTGUN] = 200;
-	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GRENADE_LAUNCHER );
-	client->ps.ammo[WP_GRENADE_LAUNCHER] = 200;
-	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_ROCKET_LAUNCHER );
-	client->ps.ammo[WP_ROCKET_LAUNCHER] = 200;
-	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_LIGHTNING );
-	client->ps.ammo[WP_LIGHTNING] = 200;
-	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_RAILGUN );
-	client->ps.ammo[WP_RAILGUN] = 200;
-	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_PLASMAGUN );
-	client->ps.ammo[WP_PLASMAGUN] = 200;
-	if (g_elimination_bfg.integer > 0)
-	{
+	if (g_elimination_machinegun.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_MACHINEGUN );
+		client->ps.ammo[WP_MACHINEGUN] = g_elimination_machinegun.integer;
+	}
+	if (g_elimination_shotgun.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_SHOTGUN );
+		client->ps.ammo[WP_SHOTGUN] = g_elimination_shotgun.integer;
+	}
+	if (g_elimination_grenade.integer > 0) {	
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GRENADE_LAUNCHER );
+		client->ps.ammo[WP_GRENADE_LAUNCHER] = g_elimination_grenade.integer;
+	}
+	if (g_elimination_rocket.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_ROCKET_LAUNCHER );
+		client->ps.ammo[WP_ROCKET_LAUNCHER] = g_elimination_rocket.integer;
+	}
+	if (g_elimination_lightning.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_LIGHTNING );
+		client->ps.ammo[WP_LIGHTNING] = g_elimination_lightning.integer;
+	}
+	if (g_elimination_railgun.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_RAILGUN );
+		client->ps.ammo[WP_RAILGUN] = g_elimination_railgun.integer;
+	}
+	if (g_elimination_plasmagun.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_PLASMAGUN );
+		client->ps.ammo[WP_PLASMAGUN] = g_elimination_plasmagun.integer;
+	}
+	if (g_elimination_bfg.integer > 0) {
 		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_BFG );
 		client->ps.ammo[WP_BFG] = g_elimination_bfg.integer;
 	}
+#ifdef MISSIONPACK
+	if (g_elimination_nail.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_NAILGUN );
+		client->ps.ammo[WP_NAILGUN] = g_elimination_nail.integer;
+	}
+	if (g_elimination_mine.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_PROX_LAUNCHER );
+		client->ps.ammo[WP_PROX_LAUNCHER] = g_elimination_mine.integer;
+	}
+	if (g_elimination_chain.integer > 0) {
+		client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_CHAINGUN );
+		client->ps.ammo[WP_CHAINGUN] = g_elimination_chain.integer;
+	}
+#endif
 	
 	ent->health = client->ps.stats[STAT_ARMOR] = g_elimination_startArmor.integer; //client->ps.stats[STAT_MAX_HEALTH]*2;
 	ent->health = client->ps.stats[STAT_HEALTH] = g_elimination_startHealth.integer; //client->ps.stats[STAT_MAX_HEALTH]*2;	

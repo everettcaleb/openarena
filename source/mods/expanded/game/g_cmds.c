@@ -530,21 +530,17 @@ void SetTeam( gentity_t *ent, char *s ) {
 	specClient = 0;
 	specState = SPECTATOR_NOT;
 	if ( !Q_stricmp( s, "scoreboard" ) || !Q_stricmp( s, "score" )  ) {
-		//if(g_gametype.integer!=GT_ELIMINATION && g_gametype.integer!=GT_CTF_ELIMINATION && g_gametype.integer!=GT_LMS)
 		team = TEAM_SPECTATOR;
 		specState = SPECTATOR_SCOREBOARD;
 	} else if ( !Q_stricmp( s, "follow1" ) ) {
-		//if(g_gametype.integer!=GT_ELIMINATION && g_gametype.integer!=GT_CTF_ELIMINATION && g_gametype.integer!=GT_LMS)
 		team = TEAM_SPECTATOR;
 		specState = SPECTATOR_FOLLOW;
 		specClient = -1;
 	} else if ( !Q_stricmp( s, "follow2" ) ) {
-		//if(g_gametype.integer!=GT_ELIMINATION && g_gametype.integer!=GT_CTF_ELIMINATION && g_gametype.integer!=GT_LMS)
 		team = TEAM_SPECTATOR;
 		specState = SPECTATOR_FOLLOW;
 		specClient = -2;
 	} else if ( !Q_stricmp( s, "spectator" ) || !Q_stricmp( s, "s" ) ) {
-		//if(g_gametype.integer!=GT_ELIMINATION && g_gametype.integer!=GT_CTF_ELIMINATION && g_gametype.integer!=GT_LMS)
 		team = TEAM_SPECTATOR;
 		specState = SPECTATOR_FREE;
 	} else if ( g_gametype.integer >= GT_TEAM && g_ffa_gt!=1) {
@@ -659,13 +655,16 @@ to free floating spectator mode
 =================
 */
 void StopFollowing( gentity_t *ent ) {
-	//if(g_gametype.integer<GT_ELIMINATION || g_gametype.integer>GT_LMS)
-	//{
+	if(g_gametype.integer<GT_ELIMINATION || g_gametype.integer>GT_LMS)
+	{
+		//Shouldn't this already be the case?
 		ent->client->ps.persistant[ PERS_TEAM ] = TEAM_SPECTATOR;	
 		ent->client->sess.sessionTeam = TEAM_SPECTATOR;	
-	//}
-	//else
-	//	ent->client->ps.pm_type = PM_SPECTATOR;
+	}
+	else {
+		ent->client->ps.stats[STAT_HEALTH] = 0;
+		ent->health = 0;
+	}
 	ent->client->sess.spectatorState = SPECTATOR_FREE;
 	ent->client->ps.pm_flags &= ~PMF_FOLLOW;
 	ent->r.svFlags &= ~SVF_BOT;
@@ -765,7 +764,8 @@ void Cmd_Follow_f( gentity_t *ent ) {
 	}
 
 	// first set them to spectator
-	if ( ent->client->sess.sessionTeam != TEAM_SPECTATOR ) {
+	//if ( ent->client->sess.sessionTeam != TEAM_SPECTATOR ) {
+	if ( ent->client->sess.spectatorState == SPECTATOR_NOT ) {
 		SetTeam( ent, "spectator" );
 	}
 

@@ -274,12 +274,13 @@ void trigger_teleporter_touch (gentity_t *self, gentity_t *other, trace_t *trace
 	if ( !other->client ) {
 		return;
 	}
+
 	if ( other->client->ps.pm_type == PM_DEAD ) {
 		return;
 	}
 	// Spectators only?
 	if ( ( self->spawnflags & 1 ) && 
-		other->client->sess.sessionTeam != TEAM_SPECTATOR ) {
+		(other->client->sess.sessionTeam != TEAM_SPECTATOR && other->client->ps.pm_type != PM_SPECTATOR) ) {
 		return;
 	}
 

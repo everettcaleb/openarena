@@ -48,10 +48,6 @@ float	pm_spectatorfriction = 5.0f;
 
 int		c_pmove = 0;
 
-//Repeting airjumps/no bunny, elimination B5
-int	pm_airjumps = 1;
-int	pm_nobunny = 0;
-
 /*
 ===============
 PM_AddEvent
@@ -243,9 +239,8 @@ Handles user intended acceleration
 ==============
 */
 static void PM_Accelerate( vec3_t wishdir, float wishspeed, float accel ) {
-//#if 1
-if(pm_nobunny == 0)
-{
+#if 1
+
 	// q2 style
 	int			i;
 	float		addspeed, accelspeed, currentspeed;
@@ -263,10 +258,7 @@ if(pm_nobunny == 0)
 	for (i=0 ; i<3 ; i++) {
 		pm->ps->velocity[i] += accelspeed*wishdir[i];	
 	}
-}
-else
-{
-//#else
+#else
 	// proper way (avoids strafe jump maxspeed bug), but feels bad
 	vec3_t		wishVelocity;
 	vec3_t		pushDir;
@@ -284,7 +276,7 @@ else
 
 	VectorMA( pm->ps->velocity, canPush, pushDir, pm->ps->velocity );
 }
-//#endif
+#endif
 }
 
 
@@ -1564,7 +1556,7 @@ static void PM_Weapon( void ) {
 	}
 
 	// ignore if spectator
-	if ( pm->ps->persistant[PERS_TEAM] == TEAM_SPECTATOR) {
+	if ( pm->ps->persistant[PERS_TEAM] == TEAM_SPECTATOR || pm->ps->pm_type == PM_SPECTATOR) {
 		return;
 	}
 

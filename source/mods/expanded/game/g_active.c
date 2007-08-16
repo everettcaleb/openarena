@@ -254,8 +254,9 @@ void	G_TouchTriggers( gentity_t *ent ) {
 		return;
 	}
 
-	// dead clients don't activate triggers!
-	if ( ent->client->ps.stats[STAT_HEALTH] <= 0 ) {
+	//ELIMINATION LMS
+	// dead clients don't activate triggers! The reason our pm_spectators can't do anything
+	if ( ent->client->ps.stats[STAT_HEALTH] <= 0 && ent->client->ps.pm_type != PM_SPECTATOR) {
 		return;
 	}
 
@@ -279,11 +280,12 @@ void	G_TouchTriggers( gentity_t *ent ) {
 		}
 
 		// ignore most entities if a spectator
-		if ( (ent->client->sess.sessionTeam == TEAM_SPECTATOR) || ent->client->isEliminated ) {
+		if ( (ent->client->sess.sessionTeam == TEAM_SPECTATOR) || ent->client->ps.pm_type == PM_SPECTATOR ) {
 			if ( hit->s.eType != ET_TELEPORT_TRIGGER &&
 				// this is ugly but adding a new ET_? type will
 				// most likely cause network incompatibilities
-				hit->touch != Touch_DoorTrigger) {
+				//We need to stop eliminated players from opening doors somewhere else /Sago007 20070814
+				hit->touch != Touch_DoorTrigger ) {
 				continue;
 			}
 		}
@@ -350,9 +352,11 @@ void SpectatorThink( gentity_t *ent, usercmd_t *ucmd ) {
 		trap_UnlinkEntity( ent );
 	}
 
+	/* Stopped players from going into follow mode in B5, should be fixed in B9
 	if(ent->client->sess.sessionTeam != TEAM_SPECTATOR && g_gametype.integer>=GT_ELIMINATION && g_gametype.integer<=GT_LMS)
 		return;
-
+	*/
+	
 	client->oldbuttons = client->buttons;
 	client->buttons = ucmd->buttons;
 
@@ -1086,6 +1090,7 @@ SpectatorClientEndFrame
 */
 void SpectatorClientEndFrame( gentity_t *ent ) {
 	gclient_t	*cl;
+	int i, preservedScore[MAX_PERSISTANT]; //for keeping in elimination
 
 	// if we are doing a chase cam or a remote view, grab the latest info
 	if ( ent->client->sess.spectatorState == SPECTATOR_FOLLOW ) {
@@ -1103,7 +1108,16 @@ void SpectatorClientEndFrame( gentity_t *ent ) {
 			cl = &level.clients[ clientNum ];
 			if ( cl->pers.connected == CON_CONNECTED && cl->sess.sessionTeam != TEAM_SPECTATOR ) {
 				flags = (cl->ps.eFlags & ~(EF_VOTED | EF_TEAMVOTED)) | (ent->client->ps.eFlags & (EF_VOTED | EF_TEAMVOTED));
-				ent->client->ps = cl->ps;
+				//this is here LMS/Elimination goes wrong with player follow
+				if(ent->client->sess.sessionTeam!=TEAM_SPECTATOR){
+					for(i = 0; i < MAX_PERSISTANT; i++)
+						preservedScore[i] = ent->client->ps.persistant[i];
+					ent->client->ps = cl->ps;
+					for(i = 0; i < MAX_PERSISTANT; i++)
+						ent->client->ps.persistant[i] = preservedScore[i];
+				}
+				else
+					ent->client->ps = cl->ps;
 				ent->client->ps.pm_flags |= PMF_FOLLOW;
 				ent->client->ps.eFlags = flags;
 				return;

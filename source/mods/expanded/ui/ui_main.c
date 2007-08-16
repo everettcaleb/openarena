@@ -1435,7 +1435,7 @@ static const char *UI_AIFromName(const char *name) {
 			return uiInfo.aliasList[j].ai;
 		}
 	}
-	return "James";
+	return "sergei";
 }
 
 #ifndef MISSIONPACK // bk001206
@@ -1479,7 +1479,7 @@ static const char *UI_OpponentLeaderModel(void) {
 			return uiInfo.characterList[i].base;
 		}
 	}
-	return "James";
+	return "sergei";
 }
 #endif
 
@@ -4600,9 +4600,9 @@ static qboolean Character_Parse(char **p) {
 			uiInfo.characterList[uiInfo.characterCount].imageName = String_Alloc(va("models/players/heads/%s/icon_default.tga", uiInfo.characterList[uiInfo.characterCount].name));
 
 	  if (tempStr && (!Q_stricmp(tempStr, "female"))) {
-        uiInfo.characterList[uiInfo.characterCount].base = String_Alloc(va("Janet"));
+        uiInfo.characterList[uiInfo.characterCount].base = String_Alloc(va("kyonshi"));
       } else if (tempStr && (!Q_stricmp(tempStr, "male"))) {
-        uiInfo.characterList[uiInfo.characterCount].base = String_Alloc(va("James"));
+        uiInfo.characterList[uiInfo.characterCount].base = String_Alloc(va("sergei"));
 	  } else {
         uiInfo.characterList[uiInfo.characterCount].base = String_Alloc(va("%s",tempStr));
 	  }

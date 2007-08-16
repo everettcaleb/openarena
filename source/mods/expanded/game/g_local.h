@@ -640,6 +640,8 @@ void DeathmatchScoreboardMessage (gentity_t *client);
 // g_cmds.c
 //
 
+void DoubleDominationScoreTimeMessage( gentity_t *ent );
+
 //
 // g_pweapon.c
 //
@@ -803,6 +805,19 @@ extern	vmCvar_t	g_elimination_bfg;
 extern	vmCvar_t	g_elimination_roundtime;
 extern	vmCvar_t	g_elimination_warmup;
 extern	vmCvar_t	g_elimination_activewarmup;
+//more weapons in beta 9:
+extern	vmCvar_t	g_elimination_machinegun;
+extern	vmCvar_t	g_elimination_shotgun;
+extern	vmCvar_t	g_elimination_grenade;
+extern	vmCvar_t	g_elimination_rocket;
+extern	vmCvar_t	g_elimination_railgun;
+extern	vmCvar_t	g_elimination_lightning;
+extern	vmCvar_t	g_elimination_plasmagun;
+#ifdef MISSIONPACK
+extern	vmCvar_t	g_elimination_chain;
+extern	vmCvar_t	g_elimination_mine;
+extern	vmCvar_t	g_elimination_nail;
+#endif
 
 //new in elimination Beta2
 extern vmCvar_t		g_instantgib;

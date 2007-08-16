@@ -102,6 +102,19 @@ vmCvar_t	g_elimination_bfg;
 vmCvar_t	g_elimination_roundtime;
 vmCvar_t	g_elimination_warmup;
 vmCvar_t	g_elimination_activewarmup;
+//more weapons in beta 9:
+vmCvar_t	g_elimination_machinegun;
+vmCvar_t	g_elimination_shotgun;
+vmCvar_t	g_elimination_grenade;
+vmCvar_t	g_elimination_rocket;
+vmCvar_t	g_elimination_railgun;
+vmCvar_t	g_elimination_lightning;
+vmCvar_t	g_elimination_plasmagun;
+#ifdef MISSIONPACK
+vmCvar_t	g_elimination_chain;
+vmCvar_t	g_elimination_mine;
+vmCvar_t	g_elimination_nail;
+#endif
 //dmn_clowns suggestions (with my idea of implementing):
 vmCvar_t	g_instantgib;
 vmCvar_t	g_vampire;
@@ -202,21 +215,34 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_rankings, "g_rankings", "0", 0, 0, qfalse},
 	//Now for elimination stuff:
 	{ &g_elimination_selfdamage, "elimination_selfdamage", "0", 0, 0, qtrue },
-	{ &g_elimination_startHealth, "elimination_startHealth", "200", 0, 0, qtrue },
-	{ &g_elimination_startArmor, "elimination_startArmor", "200", 0, 0, qtrue },
-	{ &g_elimination_bfg, "elimination_bfg", "0", 0, 0, qtrue },
+	{ &g_elimination_startHealth, "elimination_startHealth", "200", CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_startArmor, "elimination_startArmor", "200", CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_bfg, "elimination_bfg", "0", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
 	{ &g_elimination_roundtime, "elimination_roundtime", "120", CVAR_SERVERINFO | CVAR_ARCHIVE | CVAR_NORESTART, 0, qtrue },
 	{ &g_elimination_warmup, "elimination_warmup", "7", 0, 0, qtrue },
 	{ &g_elimination_activewarmup, "elimination_activewarmup", "5", 0, 0, qtrue },
+//more weapons in beta 9:
+	{ &g_elimination_machinegun, "elimination_machinegun", "200", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_shotgun, "elimination_shotgun", "200", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_grenade, "elimination_grenade", "200", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_rocket, "elimination_rocket", "200", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_railgun, "elimination_railgun", "200", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_lightning, "elimination_lightning", "200", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_plasmagun, "elimination_plasmagun", "200", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+#ifdef MISSIONPACK
+	{ &g_elimination_chain, "elimination_chain", "0", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_mine, "elimination_mine", "0", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+	{ &g_elimination_nail, "elimination_nail", "0", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+#endif
 	//Lets try a pure server CVAR thingy: (not working as I had hoped... too slow)
 	//{ &g_roundStartTime, "g_roundStartTime", "0", CVAR_SERVERINFO | CVAR_ROM, 0, qfalse },
 	//Instantgib and Vampire thingies
-	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO | CVAR_LATCH, 0, qfalse },
-	{ &g_vampire, "g_vampire", "0.0", 0, 0, qfalse },
-	{ &g_regen, "g_regen", "0", 0, 0, qfalse },
-	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", 0, 0, qtrue },
+	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO | CVAR_LATCH | CVAR_NORESTART, 0, qfalse },
+	{ &g_vampire, "g_vampire", "0.0", CVAR_NORESTART, 0, qfalse },
+	{ &g_regen, "g_regen", "0", CVAR_NORESTART, 0, qfalse },
+	{ &g_vampireMaxHealth, "g_vampire_max_health", "500", CVAR_NORESTART, 0, qtrue },
 	//beta 5
-	{ &g_lms_lives, "g_lms_lives", "1", 0, 0, qtrue },
+	{ &g_lms_lives, "g_lms_lives", "1", CVAR_NORESTART, 0, qtrue },
 	//beta 8
 	{ &g_lms_mode, "g_lms_mode", "0", CVAR_ARCHIVE | CVAR_SERVERINFO | CVAR_NORESTART, 0, qtrue },
 };
@@ -1588,7 +1614,7 @@ void CheckLMS(void) {
 	if(level.intermissiontime) {
 		if(level.roundRespawned)
 			EndEliminationRound();
-		level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
+		level.roundStartTime = level.time; //so that a player might join at any time to fix the bots+no humans+autojoin bug
 		return;
 	}
 
@@ -1649,8 +1675,7 @@ void CheckLMS(void) {
 		if((level.roundNumber>level.roundNumberStarted)&&(level.time>=level.roundStartTime))
 			StartLMSRound();
 	
-		if(level.time+1000*g_elimination_warmup.integer-500>level.roundStartTime)
-		if(level.numPlayingClients < 2)
+		if(level.time+1000*g_elimination_warmup.integer-500>level.roundStartTime && level.numPlayingClients < 2)
 		{
 			RespawnDead(); //Allow player to run around anyway
 			EndEliminationRound(); //Start over
@@ -1692,7 +1717,7 @@ void CheckElimination(void) {
 		countsHealth[TEAM_BLUE] = TeamHealthCount( -1, TEAM_BLUE );
 		countsHealth[TEAM_RED] = TeamHealthCount( -1, TEAM_RED );
 
-		if(level.roundBluePlayers != 0 && level.roundRedPlayers != 0) //Cannot score if one of the team never got any living players
+		if(level.roundBluePlayers != 0 && level.roundRedPlayers != 0) { //Cannot score if one of the team never got any living players
 			if((countsLiving[TEAM_BLUE]==0)&&(level.roundNumber==level.roundNumberStarted))
 			{
 				//Blue team has been eliminated!
@@ -1709,12 +1734,13 @@ void CheckElimination(void) {
 				EndEliminationRound();
 				Team_ForceGesture(TEAM_BLUE);
 			}
+		}
 
 		//Time up
 		if((level.roundNumber==level.roundNumberStarted)&&(level.time>=level.roundStartTime+1000*g_elimination_roundtime.integer))
 		{
 			trap_SendServerCommand( -1, "print \"No teams eliminated!\n\"");
-			if(level.roundBluePlayers != 0 && level.roundRedPlayers != 0) //We don't want to divide by zero. (should not be possible)
+			if(level.roundBluePlayers != 0 && level.roundRedPlayers != 0) {//We don't want to divide by zero. (should not be possible)
 				if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)>((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
 				{
 					//Red team has higher procentage survivors
@@ -1739,6 +1765,7 @@ void CheckElimination(void) {
 					trap_SendServerCommand( -1, "print \"Blue team has more health left!\n\"");
 					AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
 				}
+			}
 			EndEliminationRound();
 		}
 

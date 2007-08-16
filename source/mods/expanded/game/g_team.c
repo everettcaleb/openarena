@@ -710,6 +710,7 @@ void Team_DD_makeA2team( gentity_t *target, int team ) {
 	gitem_t			*it;
 	//gentity_t		*it_ent;
 	Team_DD_RemovePointAgfx();
+	it = NULL;
 	if(team == TEAM_NONE)
 		return;
 	if(team == TEAM_RED)
@@ -948,7 +949,6 @@ Team_TouchDoubleDominationPoint
 
 //team is the either TEAM_RED(A) or TEAM_BLUE(B)
 int Team_TouchDoubleDominationPoint( gentity_t *ent, gentity_t *other, int team ) {
-	gentity_t	*player;
 	gclient_t	*cl = other->client;
 	qboolean	otherDominating, isClose;
 	int 		clientTeam = cl->sess.sessionTeam;
@@ -1027,6 +1027,8 @@ int Team_TouchDoubleDominationPoint( gentity_t *ent, gentity_t *other, int team 
 	}
 
 	updateDDpoints();
+
+	return 1;
 }
 
 /*

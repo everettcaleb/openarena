@@ -53,6 +53,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #endif
 
+#ifdef MISSIONPACK
+
+//For Double Domination:
+#define DD_POINT_DEFENCE_BONUS			10	//Score for fragging someone while either you or target are near a Domination Point
+#define DD_POINT_DEFENCE_CLOSE_BONUS		25	//Score for fragging someone while either you or target are near a Domination Point and have almost scored
+//Following is added togehter:
+#define DD_POINT_CAPTURE			5	//Score for taking a point
+#define DD_POINT_CAPTURE_BREAK			10	//If the enemy was dominating
+#define DD_POINT_CAPTURE_CLOSE			15	//Extra score if the enemy was about to score
+#define DD_AT_POINT_AT_CAPTURE			30	//You was close to a point as capture succeded.	
+
+#else
+
 //For Double Domination:
 #define DD_POINT_DEFENCE_BONUS			1	//Score for fragging someone while either you or target are near a Domination Point
 #define DD_POINT_DEFENCE_CLOSE_BONUS		2	//Score for fragging someone while either you or target are near a Domination Point and have almost scored
@@ -61,6 +74,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define DD_POINT_CAPTURE_BREAK			1	//If the enemy was dominating
 #define DD_POINT_CAPTURE_CLOSE			1	//Extra score if the enemy was about to score
 #define DD_AT_POINT_AT_CAPTURE			1	//You was close to a point as capture succeded.	
+
+#endif
 
 #define DD_CLOSE				3	//How many seconds to score is close		
 
@@ -104,3 +119,6 @@ int Pickup_Team( gentity_t *ent, gentity_t *other );
 int Team_SpawnDoubleDominationPoints ( void );
 int Team_RemoveDoubleDominationPoints ( void );
 void Team_DD_bonusAtPoints(int team);
+
+//Added to make gcc happy (and because I use it in main)
+void Team_ForceGesture(int team);

@@ -7,5 +7,5 @@ teams {
 }
 characters {
   { "Sergei"  "male" }
-  { "Angelyss"  "female" }
+  { "Kyonshi"  "female" }
 }

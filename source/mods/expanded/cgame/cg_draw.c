@@ -863,32 +863,34 @@ static float CG_DrawDoubleDominationThings( float y ) {
 
 	if(statusA == TEAM_NONE) {
 		s = va("Point A not spawned");
-	}
+	} else
 	if(statusA == TEAM_FREE) {
 		s = va("Point A is not controlled");
-	}
+	} else
 	if(statusA == TEAM_RED) {
 		s = va("Point A is controlled by RED");
-	}
+	} else
 	if(statusA == TEAM_BLUE) {
 		s = va("Point A is controlled by BLUE");
-	}
+	} else
+		s = va("Point A has an error");
 	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
 	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
 	y+=SMALLCHAR_HEIGHT+4;
 
 	if(statusB == TEAM_NONE) {
 		s = va("Point B not spawned");
-	}
+	} else
 	if(statusB == TEAM_FREE) {
 		s = va("Point B is not controlled");
-	}
+	} else
 	if(statusB == TEAM_RED) {
 		s = va("Point B is controlled by RED");
-	}
+	} else
 	if(statusB == TEAM_BLUE) {
 		s = va("Point B is controlled by BLUE");
-	}
+	} else
+		s = va("Point B has an error");
 	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
 	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
 
@@ -914,16 +916,17 @@ static float CG_DrawLMSmode( float y ) {
 
 	if(cgs.lms_mode == 0) {
 		s = va("LMS: Point/round + OT");
-	}
+	} else
 	if(cgs.lms_mode == 1) {
 		s = va("LMS: Point/round - OT");
-	}
+	} else
 	if(cgs.lms_mode == 2) {
 		s = va("LMS: Point/kill + OT");
-	}
+	} else
 	if(cgs.lms_mode == 3) {
 		s = va("LMS: Point/kill - OT");
-	}
+	} else
+		s = va("LMS: Unknown mode");
 
 	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
 	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
@@ -1233,6 +1236,21 @@ static float CG_DrawTeamOverlay( float y, qboolean right, qboolean upper ) {
 //#endif
 }
 
+static float CG_DrawFollowMessage( float y ) {
+	char		*s;
+	int			w;	
+
+	if ( !(cg.snap->ps.pm_flags & PMF_FOLLOW) ) {
+		return y;
+	}
+
+	s = va("USE_ITEM to stop following");
+	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
+	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
+
+	return y + SMALLCHAR_HEIGHT+4;
+}
+
 
 /*
 =====================
@@ -1267,6 +1285,9 @@ static void CG_DrawUpperRight( void ) {
 		if (cgs.clientinfo[ cg.clientNum ].isDead)
 			y = CG_DrawEliminationDeathMessage( y);
 	}
+
+	y = CG_DrawFollowMessage( y );
+
 	if ( cg_drawTimer.integer) {
 		y = CG_DrawTimer( y );
 	}

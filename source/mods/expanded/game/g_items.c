@@ -843,6 +843,11 @@ void ClearRegisteredItems( void ) {
 			RegisterItem( BG_FindItemForWeapon( WP_RAILGUN ) );
 			RegisterItem( BG_FindItemForWeapon( WP_PLASMAGUN ) );
 			RegisterItem( BG_FindItemForWeapon( WP_BFG ) );
+#ifdef MISSIONPACK
+			RegisterItem( BG_FindItemForWeapon( WP_NAILGUN ) );
+			RegisterItem( BG_FindItemForWeapon( WP_PROX_LAUNCHER ) );
+			RegisterItem( BG_FindItemForWeapon( WP_CHAINGUN ) );
+#endif
 		}
 	}
 #ifdef MISSIONPACK
