@@ -62,7 +62,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 90        
-	forecolor 1 1 0.6 1
+	forecolor MP_TITLECOLOR
 	visible 1 
 	}
 
@@ -294,11 +294,6 @@ itemDef {
 }
 }
 }
-
-   }
-
-
-
-  }
-
+}
+}
 }

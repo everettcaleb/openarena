@@ -30,9 +30,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
     name "videomodes"
     visible 0
     fullscreen 1
-    background "ui/assets/splash"	
+    background MP_BACKGROUND	
     itemFocusSound "ui/assets/hover.wav"	
-    focusColor 1 1 0 1
+    focusColor MP_FOCUSCOLOR
     rect 0 0 640 480
     outOfBoundsClick  
     style 0
@@ -53,7 +53,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 40        
-	forecolor 1 0.7 0.2 1
+	forecolor MP_TITLECOLOR
 	visible 1 
 	}
 
@@ -71,7 +71,7 @@ itemDef {
      	textalignx 5  	
 	textaligny 20      
 	backcolor 0 0 0 0
-	forecolor 0.935 0.70 0.24 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	      action
       		{
@@ -93,7 +93,7 @@ itemDef {
       	textalign 0		
      	textalignx 5 	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1   
+	forecolor MP_TEXTCOLOR 
 	visible 1 
 	      action
       		{
@@ -116,7 +116,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-	forecolor 1 1 1 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
     }
 /*
@@ -156,7 +156,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-	forecolor 1 1 1 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
     }
 itemDef {
@@ -175,7 +175,7 @@ itemDef {
      	textalignx 6	
 	textaligny 18        
     
-      forecolor     1   1   1   1
+      forecolor     MP_TEXTCOLOR
       backcolor     0.0 0.0 0.0 1
       outlinecolor  1   0.5   0.01   0.3
 	visible 1 
@@ -197,7 +197,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-forecolor 1 1 1 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
     }
 
@@ -217,7 +217,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	action { uiScript glCustom }
     }
@@ -235,7 +235,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	action { uiScript glCustom }
     }
@@ -253,7 +253,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	action { uiScript glCustom }
     }
@@ -275,7 +275,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	action { uiScript glCustom }
     }
@@ -293,7 +293,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 action {
 	uiScript glCustom ; uiScript update "r_lodbias"
 	}
@@ -315,7 +315,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
     }
 
@@ -335,7 +335,7 @@ itemDef {
      	textalignx 6	
 action { uiScript glCustom }
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
     }
 
@@ -355,7 +355,7 @@ itemDef {
 	textalignx 6	
 	action { uiScript glCustom }
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	}
 
@@ -374,7 +374,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 20        
-	forecolor 0.75 0.75 0.75 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
     }
 // GAME TYPE SELECITON !!
@@ -391,7 +391,7 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 10        
-	forecolor 1 1 1 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
     }
 

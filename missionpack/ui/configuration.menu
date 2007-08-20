@@ -22,17 +22,15 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/menudef.h"
 
-// classic H*L style menu
-
 {
   menuDef
   {
     name "configuration"
     visible 0
     fullscreen 1
-    background "ui/assets/splash"	
+    background MP_BACKGROUND	
     itemFocusSound "ui/assets/hover.wav"	
-    focusColor 1 1 0 1
+    focusColor MP_FOCUSCOLOR
     rect 0 0 640 480
     outOfBoundsClick  
     style 0
@@ -53,7 +51,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 40        
-	forecolor 1 0.7 0.2 1
+	forecolor MP_TITLECOLOR
 	visible 1 
 	}
 
@@ -71,7 +69,7 @@ itemDef {
      	textalignx 5  	
 	textaligny 20      
 	backcolor 0 0 0 0
-	forecolor 0.935 0.70 0.24 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	      action
       		{
@@ -91,7 +89,7 @@ itemDef {
       	textalign 0		
      	textalignx 5 	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1   
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	      action
       		{
@@ -113,7 +111,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR  
 	visible 1 
 	      action
       		{
@@ -135,7 +133,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR  
 	visible 1 
 	      action
       		{
@@ -154,7 +152,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
-	forecolor 0.935 0.70 0.24 1     
+	forecolor MP_TEXTCOLOR  
 	visible 1 
 	      action
       		{
@@ -173,7 +171,7 @@ itemDef {
       	textalign 0		
      	textalignx 5  	
 	textaligny 20    
-	forecolor 0.935 0.70 0.24 1    
+	forecolor MP_TEXTCOLOR 
 	visible 1 
 	      action
       		{

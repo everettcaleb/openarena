@@ -56,7 +56,7 @@ itemDef {
       	textalign 0		
      	textalignx 48 	
 	textaligny 40        
-	forecolor MP_TEXTCOLOR
+	forecolor MP_TITLECOLOR
 	visible 1 
 	}
 
@@ -74,7 +74,7 @@ itemDef {
      	textalignx 5  	
 	textaligny 20      
 	backcolor 0 0 0 0
-	forecolor 1 0.9 0.2 1
+	forecolor MP_TEXTCOLOR
 	visible 1 
 	      action
       		{
