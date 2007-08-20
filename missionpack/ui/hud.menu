@@ -24,69 +24,103 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 {
   assetGlobalDef {
-    	font "gfx/2d/bigchars" 16				
-    	smallFont "gfx/2d/bigchars" 12				
-    	bigFont "gfx/2d/bigchars" 20				
+	font "gfx/2d/bigchars" 16				
+	smallFont "gfx/2d/bigchars" 12				
+	bigFont "gfx/2d/bigchars" 20				
 	cursor "gfx/ui/cursor"			
-		
 	shadowColor 0.0 0.0 0.0 0.25			
-  	}
-							   
-
-
-
+	}
 
 menuDef {
-    	name "health"
-    	fullScreen 0				
-	//rect 0 450 96 96
-    	visible 1
+	name "hud"
+	fullScreen 0				
+	visible 1
 	focusColor 0.1 0.6 1 1				
-	//rect 0 0 640 480
-rect 238 425 174 55
+	rect 2 425 190 55
 
 itemDef {
-      	name backer
-      	textstyle 3
-      	textscale 0.7
-      	rect 0 0 174 55
-        border 1
-        style WINDOW_STYLE_FILLED
+	name backer
+	textstyle 3
+	textscale 0.7
+	rect 0 0 636 55
+	border 1
+	style WINDOW_STYLE_FILLED
 	background "ui/assets/sbar"
-        bordercolor   0.25 0.25 0.25 0.7
-        forecolor     1   0.5   0.01   1
-        backcolor     0.0 0.0 0.0 0.5
-        outlinecolor  1   0.5   0.01   0.3
+	bordercolor   0.25 0.25 0.25 0.7
+	forecolor     1   0.5   0.01   1
+	backcolor     0.0 0.0 0.0 0.5
+	outlinecolor  1   0.5   0.01   0.3
 	decoration
 	visible 1 
 	}
 
-	itemDef {
-      	name "thehead"
-	rect 0 8 50 50
-//rect 0 -64 174 174
-
+itemDef {
+	name "thehead"
+	rect 228 8 50 50
 	visible 1
-    	decoration
+	decoration
 	ownerdraw CG_PLAYER_HEAD 
 	}
 
 itemDef {
-      	name healthness
-      	textstyle 3
-      	textscale 1
-      	rect 64 0 84 48
-      	textalign 0		
-     	textalignx 1	
+	name healthness
+	textstyle 3
+	textscale 1
+	rect 288 0 84 48
+	textalign 0		
+	textalignx 1	
 	textaligny 1
-	//rect 8 434 64 48
-	ownerdraw CG_PLAYER_HEALTH       
+	ownerdraw CG_PLAYER_HEALTH
 	forecolor 1 1 0.6 1
 	decoration
 	visible 1 
 	}
 
-  }
+itemDef {
+	name aricon
+	rect 375 0 50 50
+	visible 1
+	decoration
+	ownerdraw CG_PLAYER_ARMOR_ICON
+	}
+
+itemDef {
+	name armor
+	textstyle 3
+	textscale 1
+	rect 418 0 84 48
+	textalign 0
+	textalignx 1
+	textaligny 1
+	textscale .75
+	ownerdraw CG_PLAYER_ARMOR_VALUE
+	forecolor 1 1 0.6 1
+	decoration
+	visible 1 
+	}
+
+itemDef {
+	name amicon
+	rect 183 10 45 45
+	visible 1
+	decoration
+	ownerdraw CG_PLAYER_AMMO_ICON
+	}
+
+itemDef {
+	name ammo
+	textstyle 3
+	textscale 1
+	rect 100 0 84 48
+	textalign 0
+	textalignx 1
+	textaligny 1
+	textscale .75
+	ownerdraw CG_PLAYER_AMMO_VALUE
+	forecolor 1 1 0.6 1
+	decoration
+	visible 1 
+	}
 
 }
-
+}
