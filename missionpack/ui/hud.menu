@@ -21,21 +21,21 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "ui/menudef.h"
-
+//will be the minimal hud but full hud for now
 {
   assetGlobalDef {
-	font "gfx/2d/bigchars" 16				
-	smallFont "gfx/2d/bigchars" 12				
-	bigFont "gfx/2d/bigchars" 20				
-	cursor "gfx/ui/cursor"			
-	shadowColor 0.0 0.0 0.0 0.25			
+	font "gfx/2d/bigchars" 16
+	smallFont "gfx/2d/bigchars" 12
+	bigFont "gfx/2d/bigchars" 20
+	cursor "gfx/ui/cursor"
+	shadowColor 0.0 0.0 0.0 0.25
 	}
 
 menuDef {
 	name "hud"
-	fullScreen 0				
+	fullScreen 0
 	visible 1
-	focusColor 0.1 0.6 1 1				
+	focusColor 0.1 0.6 1 1
 	rect 2 425 190 55
 
 itemDef {
@@ -51,7 +51,7 @@ itemDef {
 	backcolor     0.0 0.0 0.0 0.5
 	outlinecolor  1   0.5   0.01   0.3
 	decoration
-	visible 1 
+	visible 1
 	}
 
 itemDef {
@@ -153,6 +153,89 @@ itemDef {
 	decoration
 	ownerdraw CG_HARVESTER_SKULLS
 	}
+
+itemDef {
+	name spscore
+	rect 380 15 40 12
+	visible 1
+	decoration
+	forecolor 1 1 1 1
+	text "KillLimit: "
+	textscale .25
+	ownerdrawflag CG_SHOW_ANYNONTEAMGAME
+	ownerdraw CG_CAPFRAGLIMIT
+	}
+
+itemDef {
+	name spscore1
+	rect 380 30 40 12
+	visible 1
+	decoration
+	text "1st: "
+	textscale .25
+	forecolor .25 .25 1 1
+	ownerdrawflag CG_SHOW_ANYNONTEAMGAME
+	ownerdraw CG_1STPLACE
+	}
+
+itemDef {
+	name spscore2
+	rect 440 30 40 12
+	visible 1
+	decoration
+	text "2nd: "
+	textscale .25
+	forecolor 1 0 0 1
+	ownerdrawflag CG_SHOW_ANYNONTEAMGAME
+	ownerdraw CG_2NDPLACE
+	}
+
+itemDef {
+	name spscore3
+	rect 380 45 40 0
+	visible 1
+	decoration
+	text "Score: "
+	textscale .2
+	forecolor 1 1 1 1
+	ownerdrawflag CG_SHOW_ANYNONTEAMGAME
+	ownerdraw CG_PLAYER_SCORE
+	}
+
+itemDef {
+	name tscore
+	rect 380 15 40 12
+	visible 1
+	decoration
+	forecolor 1 1 1 1
+	text "CaptureLimit: "
+	textscale .2
+	ownerdrawflag CG_SHOW_ANYTEAMGAME
+	ownerdraw CG_CAPFRAGLIMIT
+	}
+
+itemDef {
+	name tscore1
+	rect 380 30 40 0
+	visible 1
+	decoration
+	forecolor .25 .25 1 1
+	text "Blue: "
+	textscale .2
+	ownerdrawflag CG_SHOW_ANYTEAMGAME
+	ownerdraw CG_BLUE_SCORE
+	}
+
+itemDef {
+	name tscore2
+	rect 380 45 40 0
+	visible 1
+	decoration
+	forecolor 1 0 0 1
+	text "Red: "
+	textscale .2
+	ownerdrawflag CG_SHOW_ANYTEAMGAME
+	ownerdraw CG_RED_SCORE
 
 }
 }
