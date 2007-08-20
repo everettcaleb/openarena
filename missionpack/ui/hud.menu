@@ -78,7 +78,7 @@ itemDef {
 
 itemDef {
 	name aricon
-	rect 375 0 50 50
+	rect 500 0 50 50
 	visible 1
 	decoration
 	ownerdraw CG_PLAYER_ARMOR_ICON
@@ -88,7 +88,7 @@ itemDef {
 	name armor
 	textstyle 3
 	textscale 1
-	rect 418 0 84 48
+	rect 550 0 84 48
 	textalign 0
 	textalignx 1
 	textaligny 1
@@ -101,7 +101,7 @@ itemDef {
 
 itemDef {
 	name amicon
-	rect 183 10 45 45
+	rect 87 10 45 45
 	visible 1
 	decoration
 	ownerdraw CG_PLAYER_AMMO_ICON
@@ -111,7 +111,7 @@ itemDef {
 	name ammo
 	textstyle 3
 	textscale 1
-	rect 100 0 84 48
+	rect 4 0 84 48
 	textalign 0
 	textalignx 1
 	textaligny 1
@@ -120,6 +120,38 @@ itemDef {
 	forecolor 1 1 0.6 1
 	decoration
 	visible 1 
+	}
+
+itemDef {
+	name itemicon
+	rect 135 10 15 15
+	visible 1
+	decoration
+	ownerdraw CG_PLAYER_ITEM
+	}
+
+itemDef {
+	name perpow
+	rect 135 36 15 15
+	visible 1
+	decoration
+	ownerdraw CG_CTF_POWERUP
+	}
+
+itemDef {
+	name flag1
+	rect 151 10 35 35
+	visible 1
+	decoration
+	ownerdraw CG_PLAYER_HASFLAG
+	}
+
+itemDef {
+	name skull1
+	rect 151 10 50 35
+	visible 1
+	decoration
+	ownerdraw CG_HARVESTER_SKULLS
 	}
 
 }
