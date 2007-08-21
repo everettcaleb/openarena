@@ -58,7 +58,7 @@ itemDef {
 	type 0
 	textstyle 6
       	textscale .5
-      	rect 0 32 1 1
+      	rect 0 15 1 1
       	textalign 0		
      	textalignx 48 	
 	textaligny 90        
@@ -75,7 +75,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 150 163 34
+      	rect 73 110 163 34
       	textalign 0		
      	textalignx 5 	
 	textaligny 20   
@@ -95,7 +95,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 182 163 34
+      	rect 73 142 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
@@ -116,7 +116,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 214 163 34
+      	rect 73 174 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
@@ -137,7 +137,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 246 163 34
+      	rect 73 206 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
@@ -159,7 +159,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 278 163 34
+      	rect 73 238 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
@@ -180,7 +180,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 310 163 34
+      	rect 73 270 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20    
@@ -200,7 +200,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 342 163 34
+      	rect 73 302 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -220,7 +220,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 374 163 34
+      	rect 73 334 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -239,7 +239,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 438 163 34
+      	rect 73 398 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -259,7 +259,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 406 163 34
+      	rect 73 366 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
