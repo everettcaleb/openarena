@@ -216,7 +216,7 @@ itemDef {
 
 itemDef {
 	name tscore1
-	rect 380 30 40 0
+	rect 380 30 36 0
 	visible 1
 	decoration
 	forecolor .25 .25 1 1
