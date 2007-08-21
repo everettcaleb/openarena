@@ -129,6 +129,9 @@ vmCvar_t	g_lms_lives;
 //beta 8
 vmCvar_t	g_lms_mode;
 
+//beta 10
+vmCvar_t	g_elimination_ctf_oneway;
+
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
 	// don't override the cheat state set by the system
@@ -234,8 +237,9 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_elimination_mine, "elimination_mine", "0", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
 	{ &g_elimination_nail, "elimination_nail", "0", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
 #endif
-	//Lets try a pure server CVAR thingy: (not working as I had hoped... too slow)
-	//{ &g_roundStartTime, "g_roundStartTime", "0", CVAR_SERVERINFO | CVAR_ROM, 0, qfalse },
+	//Beta 10
+	{ &g_elimination_ctf_oneway, "elimination_ctf_oneway", "0", CVAR_SERVERINFO | CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+
 	//Instantgib and Vampire thingies
 	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO | CVAR_LATCH | CVAR_NORESTART, 0, qfalse },
 	{ &g_vampire, "g_vampire", "0.0", CVAR_NORESTART, 0, qfalse },
@@ -989,6 +993,23 @@ void SendDDtimetakenMessageToAllClients( void ) {
 
 /*
 ========================
+SendAttackingTeamMessageToAllClients
+
+Used for CTF Elimination oneway
+========================
+*/
+void SendAttackingTeamMessageToAllClients( void ) {
+	int		i;
+
+	for ( i = 0 ; i < level.maxclients ; i++ ) {
+		if ( level.clients[ i ].pers.connected == CON_CONNECTED ) {
+			AttackingTeamMessage( g_entities + i );
+		}
+	}
+}
+
+/*
+========================
 MoveClientToIntermission
 
 When the intermission starts, this will be called for all players.
@@ -1528,6 +1549,8 @@ void StartEliminationRound(void) {
 		Team_ReturnFlag( TEAM_BLUE );
 	}
 	SendScoreboardMessageToAllClients();
+	if(g_elimination_ctf_oneway.integer)
+		SendAttackingTeamMessageToAllClients(); //Ensure that evaryone know who should attack.
 	EnableWeapons();
 }
 
@@ -1539,8 +1562,20 @@ void EndEliminationRound(void)
 	level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
 	SendScoreboardMessageToAllClients();
 	level.roundRespawned = qfalse;
+	if(g_elimination_ctf_oneway.integer)
+		SendAttackingTeamMessageToAllClients();
 }
 
+//Things to do if we don't want to move the roundNumber
+void RestartEliminationRound(void) {
+	DisableWeapons();
+	level.roundNumberStarted = level.roundNumber-1;
+	level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
+	SendScoreboardMessageToAllClients();
+	level.roundRespawned = qfalse;
+	if(g_elimination_ctf_oneway.integer)
+		SendAttackingTeamMessageToAllClients();
+}
 
 /*
 ========================================================================
@@ -1610,10 +1645,11 @@ void CheckLMS(void) {
 		return;
 	}
 
-	//We don't want to do anything in itnermission
+	//We don't want to do anything in intermission
 	if(level.intermissiontime) {
-		if(level.roundRespawned)
-			EndEliminationRound();
+		if(level.roundRespawned) {
+			RestartEliminationRound();
+		}
 		level.roundStartTime = level.time; //so that a player might join at any time to fix the bots+no humans+autojoin bug
 		return;
 	}
@@ -1678,7 +1714,7 @@ void CheckLMS(void) {
 		if(level.time+1000*g_elimination_warmup.integer-500>level.roundStartTime && level.numPlayingClients < 2)
 		{
 			RespawnDead(); //Allow player to run around anyway
-			EndEliminationRound(); //Start over
+			RestartEliminationRound(); //Start over
 			return;
 		}
 
@@ -1698,7 +1734,7 @@ void CheckElimination(void) {
 	//We don't want to do anything in itnermission
 	if(level.intermissiontime) {
 		if(level.roundRespawned)
-			EndEliminationRound();
+			RestartEliminationRound();
 		level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
 		return;
 	}	
@@ -1740,8 +1776,20 @@ void CheckElimination(void) {
 		if((level.roundNumber==level.roundNumberStarted)&&(level.time>=level.roundStartTime+1000*g_elimination_roundtime.integer))
 		{
 			trap_SendServerCommand( -1, "print \"No teams eliminated!\n\"");
+
 			if(level.roundBluePlayers != 0 && level.roundRedPlayers != 0) {//We don't want to divide by zero. (should not be possible)
-				if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)>((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
+				if(g_gametype.integer == GT_CTF_ELIMINATION && g_elimination_ctf_oneway.integer) {
+					//One way CTF, make defensice team the winner.
+					if ( (level.eliminationSides+level.roundNumber)%2 == 0 ) { //Red was attacking
+						trap_SendServerCommand( -1, "print \"Blue team defended the base\n\"");
+						AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
+					}
+					else {
+						trap_SendServerCommand( -1, "print \"Red team defended the base\n\"");
+						AddTeamScore(level.intermission_origin,TEAM_RED,1);
+					}
+				}
+				else if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)>((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
 				{
 					//Red team has higher procentage survivors
 					trap_SendServerCommand( -1, "print \"Red team has most survivers!\n\"");
@@ -1796,7 +1844,7 @@ void CheckElimination(void) {
 		if(counts[TEAM_BLUE]<1 || counts[TEAM_RED]<1)
 		{
 			RespawnDead(); //Allow players to run around anyway
-			EndEliminationRound(); //Start over
+			RestartEliminationRound(); //Start over
 			return;
 		}
 	}

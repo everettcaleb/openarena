@@ -180,6 +180,57 @@ int BotSortTeamMatesByBaseTravelTime(bot_state_t *bs, int *teammates, int maxtea
 
 /*
 ==================
+BotSortTeamMatesByReletiveTravelTime2ddA
+For Double Domination
+==================
+*/
+int BotSortTeamMatesByRelativeTravelTime2ddA(bot_state_t *bs, int *teammates, int maxteammates) {
+	int i, j, k, numteammates;
+	double traveltime, traveltime2b;
+	char buf[MAX_INFO_STRING];
+	static int maxclients;
+	double traveltimes[MAX_CLIENTS];
+	//int traveltimes2b[MAX_CLIENTS];
+	bot_goal_t *goalA = &ctf_redflag;
+	bot_goal_t *goalB = &ctf_blueflag;
+
+	if (!maxclients)
+		maxclients = trap_Cvar_VariableIntegerValue("sv_maxclients");
+
+	numteammates = 0;
+
+	for (i = 0; i < maxclients && i < MAX_CLIENTS; i++) {
+		trap_GetConfigstring(CS_PLAYERS+i, buf, sizeof(buf));
+		//if no config string or no name
+		if (!strlen(buf) || !strlen(Info_ValueForKey(buf, "n"))) continue;
+		//skip spectators
+		if (atoi(Info_ValueForKey(buf, "t")) == TEAM_SPECTATOR) continue;
+		if (BotSameTeam(bs, i)) {
+			traveltime = (double)BotClientTravelTimeToGoal(i, goalA);
+			traveltime2b = (double)BotClientTravelTimeToGoal(i, goalB);
+			traveltime = traveltime/traveltime2b;
+
+			for (j = 0; j < numteammates; j++) {
+				if (traveltime < traveltimes[j]) {
+					for (k = numteammates; k > j; k--) {
+						traveltimes[k] = traveltimes[k-1];
+						teammates[k] = teammates[k-1];
+					}
+					break;
+				}
+			}
+			traveltimes[j] = traveltime;
+			teammates[j] = i;
+			numteammates++;
+			if (numteammates >= maxteammates) break;
+		}
+	}
+
+	return numteammates;
+}
+
+/*
+==================
 BotSetTeamMateTaskPreference
 ==================
 */
@@ -682,6 +733,54 @@ void BotCTFOrders_EnemyFlagNotAtBase(bot_state_t *bs) {
 	}
 }
 
+/*
+==================
+BotDDorders
+==================
+*/
+
+void BotDDorders_Standard(bot_state_t *bs) {
+	int numteammates, i;
+	int teammates[MAX_CLIENTS];
+	char name[MAX_NETNAME];
+
+	//sort team mates by travel time to base
+	numteammates = BotSortTeamMatesByRelativeTravelTime2ddA(bs, teammates, sizeof(teammates));
+
+	switch(numteammates) {
+		case 1: break;
+		/*case 2: 
+		{
+			//the one closest to point A will take that
+			ClientName(teammates[0], name, sizeof(name));
+			BotAI_BotInitialChat(bs, "cmd_takea", name, NULL);
+			BotSayTeamOrder(bs, teammates[0]);
+			//BotSayVoiceTeamOrder(bs, teammates[0], VOICECHAT_TAKEA);
+			//the other goes for point B
+			ClientName(teammates[1], name, sizeof(name));
+			BotAI_BotInitialChat(bs, "cmd_takeb", name, NULL);
+			BotSayTeamOrder(bs, teammates[1]);
+			//BotSayVoiceTeamOrder(bs, teammates[1], VOICECHAT_TAKEB);
+			break;
+		}*/
+		default:
+		{
+			for(i=0;i<numteammates/2;i++) { //Half take point A
+				ClientName(teammates[i], name, sizeof(name));
+				BotAI_BotInitialChat(bs, "cmd_takea", name, NULL);
+				BotSayTeamOrder(bs, teammates[i]);
+				//BotSayVoiceTeamOrder(bs, teammates[0], VOICECHAT_TAKEA);
+			}
+			for(i=numteammates/2+1;i<numteammates;i++) { //Rest takes point B
+				ClientName(teammates[i], name, sizeof(name));
+				BotAI_BotInitialChat(bs, "cmd_takeb", name, NULL);
+				BotSayTeamOrder(bs, teammates[i]);
+				//BotSayVoiceTeamOrder(bs, teammates[0], VOICECHAT_TAKEB);
+			}
+			break;
+		}
+	}
+}
 
 /*
 ==================
@@ -842,6 +941,15 @@ void BotCTFOrders(bot_state_t *bs) {
 		case 2: BotCTFOrders_FlagNotAtBase(bs); break;
 		case 3: BotCTFOrders_BothFlagsNotAtBase(bs); break;
 	}
+}
+
+/*
+==================
+BotDDorders
+==================
+*/
+void BotDDorders(bot_state_t *bs) {
+	BotDDorders_Standard(bs);	
 }
 
 
@@ -2014,6 +2122,24 @@ void BotTeamAI(bot_state_t *bs) {
 			//if it's time to give orders
 			if (bs->teamgiveorders_time && bs->teamgiveorders_time < FloatTime() - 3) {
 				BotCTFOrders(bs);
+				//
+				bs->teamgiveorders_time = 0;
+			}
+			break;
+		}
+		case GT_DOUBLE_D:
+		{
+			//if the number of team mates changed or the domination point status changed
+			//or someone wants to know what to do
+			if (bs->numteammates != numteammates || bs->flagstatuschanged || bs->forceorders) {
+				bs->teamgiveorders_time = FloatTime();
+				bs->numteammates = numteammates;
+				bs->flagstatuschanged = qfalse;
+				bs->forceorders = qfalse;
+			}
+			//if it's time to give orders
+			if (bs->teamgiveorders_time && bs->teamgiveorders_time < FloatTime() - 3) {
+				BotDDorders(bs);
 				//
 				bs->teamgiveorders_time = 0;
 			}

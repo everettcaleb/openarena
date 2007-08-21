@@ -638,9 +638,10 @@ void DeathmatchScoreboardMessage (gentity_t *client);
 
 //
 // g_cmds.c
-//
+// Also another place /Sago
 
 void DoubleDominationScoreTimeMessage( gentity_t *ent );
+void AttackingTeamMessage( gentity_t *ent );
 
 //
 // g_pweapon.c
@@ -833,6 +834,9 @@ extern vmCvar_t		g_lms_lives;
 
 //beta 8
 extern vmCvar_t		g_lms_mode; //How do we score: 0 = One Survivor get a point, 1 = same but without overtime, 2 = one point for each player killed (+overtime), 3 = same without overtime
+
+//beta 10
+extern vmCvar_t		g_elimination_ctf_oneway;	//Only attack in one direction (level.eliminationSides+level.roundNumber)%2 == 0 red attacks
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );

@@ -936,6 +936,41 @@ static float CG_DrawLMSmode( float y ) {
 
 /*
 =================
+CG_DrawCTFoneway
+=================
+*/
+
+static float CG_DrawCTFoneway( float y ) {
+	char		*s;
+	int		w;
+	vec4_t		color;
+
+	if(cgs.gametype != GT_CTF_ELIMINATION)
+		return y;
+
+	memcpy(color,g_color_table[ColorIndex(COLOR_WHITE)],sizeof(color));
+
+	if(cgs.oneway == 0) {
+		return y; //nothing to draw
+	} else
+	if(cgs.attackingTeam == TEAM_BLUE) {
+		memcpy(color,g_color_table[ColorIndex(COLOR_BLUE)],sizeof(color));
+		s = va("Blue team on offence");
+	} else
+	if(cgs.attackingTeam == TEAM_RED) {
+		memcpy(color,g_color_table[ColorIndex(COLOR_RED)],sizeof(color));
+		s = va("Red team on offence");
+	} else
+		s = va("Unknown team on offence");
+
+	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
+	CG_DrawSmallStringColor( 635 - w, y + 2, s, color);
+
+	return y + SMALLCHAR_HEIGHT+4;
+}
+
+/*
+=================
 CG_DrawEliminationDeathMessage
 =================
 */
@@ -1272,6 +1307,10 @@ static void CG_DrawUpperRight( void ) {
 	else
 	if ( cgs.gametype == GT_LMS && cg.showScores ) {
 		y = CG_DrawLMSmode(y);
+	}
+	else
+	if ( cgs.gametype == GT_CTF_ELIMINATION ) {
+		y = CG_DrawCTFoneway(y);
 	}
 	
 	if ( cg_drawSnapshot.integer ) {

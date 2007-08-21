@@ -214,74 +214,54 @@ itemDef {
 	}
 
 itemDef {
-      	name button9
-      	text "Help"
-      	style 0
+	name button9
+	text "Help"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 334 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 73 334 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20  
 	forecolor MP_TEXTCOLOR     
-	visible 1 
-	      action
-      		{
+	visible 1
+	action
+		{
 	        play "ui/assets/select.wav"; 
-      		}
+		}
 	}
 
 itemDef {
-      	name button11
-      	text "Quit"
-      	style 0
+	name button11
+	text "Quit"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 398 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 73 366 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20  
 	forecolor MP_TEXTCOLOR     
-	visible 1 
-	      action
-      		{
+	visible 1
+	action
+		{
 	        play "ui/assets/select.wav"; 
 		uiscript "quit";
-      		}
+		}
 	}
 
 itemDef {
-      	name button10
-      	text "Movies"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 73 366 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
-	forecolor MP_TEXTCOLOR     
-	visible 1 
-	      action
-      		{
-	        play "ui/assets/select.wav"; 
-      		}
-	}
-
-
-itemDef {
-      	name warning
-      	text "OPENARENAMISSIONPACK MENU v0.002"
-      	style 0	
+	name warning
+	text "OPENARENAMISSIONPACK MENU v0.002"
+	style 0	
 	type 1
 	textstyle 6
-      	textscale .2
-      	rect 0 0 32 12 
-      	textalign 3		
-     	textalignx 20  	
+	textscale .2
+	rect 0 0 32 12 
+	textalign 3		
+	textalignx 20  	
 	textaligny 32        
 	forecolor 1 1 1 1
 	visible 1 

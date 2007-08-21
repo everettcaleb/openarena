@@ -74,7 +74,7 @@ itemDef {
 	      action
       		{
 	        play "ui/assets/select.wav"; 
-		exec "vid_restart";
+		exec "snd_restart";
 	       	open configuration;
  		close audio;
       		}

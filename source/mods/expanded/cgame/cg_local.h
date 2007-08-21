@@ -1038,6 +1038,10 @@ typedef struct {
 	int				roundStartTime;	
 	int				roundtime;
 
+//CTF Elimination
+	qboolean			oneway;
+	int				attackingTeam;
+
 //Last Man Standing
 	int				lms_mode;
 

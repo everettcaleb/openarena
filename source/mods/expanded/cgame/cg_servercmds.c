@@ -135,6 +135,23 @@ static void CG_ParseDDtimetaken( void ) {
 
 /*
 =================
+CG_ParseAttackingTeam
+
+=================
+*/
+static void CG_ParseAttackingTeam( void ) {
+	int temp;
+	temp = atoi( CG_Argv( 1 ) );
+	if(temp==TEAM_RED)
+		cgs.attackingTeam = TEAM_RED;
+	else if (temp==TEAM_BLUE)
+		cgs.attackingTeam = TEAM_BLUE;
+	else
+		cgs.attackingTeam = TEAM_NONE; //Should never happen.
+}
+
+/*
+=================
 CG_ParseTeamInfo
 
 =================
@@ -173,7 +190,7 @@ void CG_ParseServerinfo( void ) {
 
 	info = CG_ConfigString( CS_SERVERINFO );
 	cgs.gametype = atoi( Info_ValueForKey( info, "g_gametype" ) );
-	//Be default do as normal:
+	//By default do as normal:
 	cgs.ffa_gt = 0;
 	//See if ffa gametype
 	if(cgs.gametype == GT_LMS)	
@@ -188,6 +205,7 @@ void CG_ParseServerinfo( void ) {
 	cgs.roundtime = atoi( Info_ValueForKey( info, "elimination_roundtime" ) );
 	cgs.instantgib = atoi( Info_ValueForKey( info, "g_instantgib" ) );
 	cgs.lms_mode = atoi( Info_ValueForKey( info, "g_lms_mode" ) );
+	cgs.oneway = atoi( Info_ValueForKey( info, "elimination_ctf_oneway" ) )? qtrue : qfalse;
 	mapname = Info_ValueForKey( info, "mapname" );
 	Com_sprintf( cgs.mapname, sizeof( cgs.mapname ), "maps/%s.bsp", mapname );
 	Q_strncpyz( cgs.redTeam, Info_ValueForKey( info, "g_redTeam" ), sizeof(cgs.redTeam) );
@@ -1084,6 +1102,11 @@ static void CG_ServerCommand( void ) {
 
 	if ( !strcmp( cmd, "ddtaken" ) ) {
 		CG_ParseDDtimetaken();
+		return;
+	}
+
+	if ( !strcmp( cmd, "attackingteam" ) ) {
+		CG_ParseAttackingTeam();
 		return;
 	}
 

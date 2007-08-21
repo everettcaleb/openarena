@@ -101,6 +101,21 @@ void DoubleDominationScoreTimeMessage( gentity_t *ent ) {
 
 /*
 ==================
+AttackingTeamMessage
+
+==================
+*/
+void AttackingTeamMessage( gentity_t *ent ) {
+	int team;
+	if ( (level.eliminationSides+level.roundNumber)%2 == 0 )
+		team = TEAM_RED;
+	else
+		team = TEAM_BLUE;
+	trap_SendServerCommand( ent-g_entities, va("attackingteam %i", team));
+}
+
+/*
+==================
 Cmd_Score_f
 
 Request current scoreboard information

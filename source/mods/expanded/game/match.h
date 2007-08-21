@@ -67,6 +67,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define MSG_ATTACKENEMYBASE				31		//attack the enemy base
 #define MSG_HARVEST						32		//go harvest
 #define MSG_SUICIDE						33		//order to suicide
+//Double Domination messages
+#define MSG_TAKEA					34
+#define MSG_TAKEB					35
 //
 #define MSG_ME							100
 #define MSG_EVERYONE					101

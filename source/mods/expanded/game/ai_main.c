@@ -373,6 +373,16 @@ void BotReportStatus(bot_state_t *bs) {
 			BotAI_Print(PRT_MESSAGE, "%-20s%s%s: harvesting\n", netname, leader, flagstatus);
 			break;
 		}
+		case LTG_POINTA:
+		{
+			BotAI_Print(PRT_MESSAGE, "%-20s%s%s: going for point A\n", netname, leader, flagstatus);
+			break;
+		}
+		case LTG_POINTB:
+		{
+			BotAI_Print(PRT_MESSAGE, "%-20s%s%s: going for point B\n", netname, leader, flagstatus);
+			break;
+		}
 		default:
 		{
 			BotAI_Print(PRT_MESSAGE, "%-20s%s%s: roaming\n", netname, leader, flagstatus);
@@ -519,6 +529,16 @@ void BotSetInfoConfigString(bot_state_t *bs) {
 		case LTG_HARVEST:
 		{
 			Com_sprintf(action, sizeof(action), "harvesting");
+			break;
+		}
+		case LTG_POINTA:
+		{
+			Com_sprintf(action, sizeof(action), "going for point A");
+			break;
+		}
+		case LTG_POINTB:
+		{
+			Com_sprintf(action, sizeof(action), "going for point B");
 			break;
 		}
 		default:

@@ -134,6 +134,16 @@ void BotPrintTeamGoal(bot_state_t *bs) {
 			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna patrol for %1.0f secs\n", netname, t);
 			break;
 		}
+		case LTG_POINTA:
+		{
+			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna take care of point A for %1.0f secs\n", netname, t);
+			break;
+		}
+		case LTG_POINTB:
+		{
+			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna take care of point B for %1.0f secs\n", netname, t);
+			break;
+		}
 		default:
 		{
 			if (bs->ctfroam_time > FloatTime()) {
@@ -639,6 +649,104 @@ void BotMatch_DefendKeyArea(bot_state_t *bs, bot_match_t *match) {
 	bs->teamgoal_time = BotGetTime(match);
 	//set the team goal time
 	if (!bs->teamgoal_time) bs->teamgoal_time = FloatTime() + TEAM_DEFENDKEYAREA_TIME;
+	//away from defending
+	bs->defendaway_time = 0;
+	//
+	BotSetTeamStatus(bs);
+	// remember last ordered task
+	BotRememberLastOrderedTask(bs);
+#ifdef DEBUG
+	BotPrintTeamGoal(bs);
+#endif //DEBUG
+}
+
+/*
+==================
+BotMatch_TakeA
+For Double Domination
+==================
+*/
+void BotMatch_TakeA(bot_state_t *bs, bot_match_t *match) {
+	char itemname[MAX_MESSAGE_SIZE];
+	char netname[MAX_MESSAGE_SIZE];
+	int client;
+
+	if (!TeamPlayIsOn()) return;
+	//if not addressed to this bot
+	if (!BotAddressedToBot(bs, match)) return;
+	//get the match variable
+	trap_BotMatchVariable(match, KEYAREA, itemname, sizeof(itemname));
+	//
+	if (!BotGetMessageTeamGoal(bs, itemname, &bs->teamgoal)) {
+		//BotAI_BotInitialChat(bs, "cannotfind", itemname, NULL);
+		//trap_BotEnterChat(bs->cs, bs->client, CHAT_TEAM);
+		return;
+	}
+	//
+	trap_BotMatchVariable(match, NETNAME, netname, sizeof(netname));
+	//
+	client = ClientFromName(netname);
+	//the team mate who ordered
+	bs->decisionmaker = client;
+	bs->ordered = qtrue;
+	bs->order_time = FloatTime();
+	//set the time to send a message to the team mates
+	bs->teammessage_time = FloatTime() + 2 * random();
+	//set the ltg type
+	bs->ltgtype = LTG_POINTA;
+	//get the team goal time
+	bs->teamgoal_time = BotGetTime(match);
+	//set the team goal time
+	if (!bs->teamgoal_time) bs->teamgoal_time = FloatTime() + DD_POINTA;
+	//away from defending
+	bs->defendaway_time = 0;
+	//
+	BotSetTeamStatus(bs);
+	// remember last ordered task
+	BotRememberLastOrderedTask(bs);
+#ifdef DEBUG
+	BotPrintTeamGoal(bs);
+#endif //DEBUG
+}
+
+/*
+==================
+BotMatch_TakeA
+For Double Domination
+==================
+*/
+void BotMatch_TakeB(bot_state_t *bs, bot_match_t *match) {
+	char itemname[MAX_MESSAGE_SIZE];
+	char netname[MAX_MESSAGE_SIZE];
+	int client;
+
+	if (!TeamPlayIsOn()) return;
+	//if not addressed to this bot
+	if (!BotAddressedToBot(bs, match)) return;
+	//get the match variable
+	trap_BotMatchVariable(match, KEYAREA, itemname, sizeof(itemname));
+	//
+	if (!BotGetMessageTeamGoal(bs, itemname, &bs->teamgoal)) {
+		//BotAI_BotInitialChat(bs, "cannotfind", itemname, NULL);
+		//trap_BotEnterChat(bs->cs, bs->client, CHAT_TEAM);
+		return;
+	}
+	//
+	trap_BotMatchVariable(match, NETNAME, netname, sizeof(netname));
+	//
+	client = ClientFromName(netname);
+	//the team mate who ordered
+	bs->decisionmaker = client;
+	bs->ordered = qtrue;
+	bs->order_time = FloatTime();
+	//set the time to send a message to the team mates
+	bs->teammessage_time = FloatTime() + 2 * random();
+	//set the ltg type
+	bs->ltgtype = LTG_POINTB;
+	//get the team goal time
+	bs->teamgoal_time = BotGetTime(match);
+	//set the team goal time
+	if (!bs->teamgoal_time) bs->teamgoal_time = FloatTime() + DD_POINTA;
 	//away from defending
 	bs->defendaway_time = 0;
 	//
@@ -1980,6 +2088,16 @@ int BotMatchMessage(bot_state_t *bs, char *message) {
 		case MSG_SUICIDE:
 		{
 			BotMatch_Suicide(bs, &match);
+			break;
+		}
+		case MSG_TAKEA:
+		{
+			BotMatch_TakeA(bs, &match);
+			break;
+		}
+		case MSG_TAKEB:
+		{
+			BotMatch_TakeB(bs, &match);
 			break;
 		}
 		default:

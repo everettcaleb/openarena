@@ -1,6 +1,6 @@
 Index: code/q3_ui/ui_mods.c
 ===================================================================
---- code/q3_ui/ui_mods.c	(revision 1121)
+--- code/q3_ui/ui_mods.c	(revision 1126)
 +++ code/q3_ui/ui_mods.c	(working copy)
 @@ -161,7 +161,7 @@
  
@@ -13,7 +13,7 @@ Index: code/q3_ui/ui_mods.c
  	numdirs = trap_FS_GetFileList( "$modlist", "", dirlist, sizeof(dirlist) );
 Index: code/q3_ui/ui_menu.c
 ===================================================================
---- code/q3_ui/ui_menu.c	(revision 1121)
+--- code/q3_ui/ui_menu.c	(revision 1126)
 +++ code/q3_ui/ui_menu.c	(working copy)
 @@ -221,12 +221,11 @@
  		Menu_Draw( &s_main.menu );		
@@ -44,7 +44,7 @@ Index: code/q3_ui/ui_menu.c
  	}
 Index: code/q3_ui/ui_servers2.c
 ===================================================================
---- code/q3_ui/ui_servers2.c	(revision 1121)
+--- code/q3_ui/ui_servers2.c	(revision 1126)
 +++ code/q3_ui/ui_servers2.c	(working copy)
 @@ -32,16 +32,16 @@
  #include "ui_local.h"
@@ -185,7 +185,7 @@ Index: code/q3_ui/ui_servers2.c
  	g_sortkey = Com_Clamp( 0, 4, ui_browserSortKey.integer );
 Index: code/q3_ui/ui_main.c
 ===================================================================
---- code/q3_ui/ui_main.c	(revision 1121)
+--- code/q3_ui/ui_main.c	(revision 1126)
 +++ code/q3_ui/ui_main.c	(working copy)
 @@ -113,6 +113,17 @@
  vmCvar_t	ui_ctf_timelimit;
@@ -225,7 +225,7 @@ Index: code/q3_ui/ui_main.c
  	{ &ui_spScores1, "g_spScores1", "", CVAR_ARCHIVE | CVAR_ROM },
 Index: code/q3_ui/ui_startserver.c
 ===================================================================
---- code/q3_ui/ui_startserver.c	(revision 1121)
+--- code/q3_ui/ui_startserver.c	(revision 1126)
 +++ code/q3_ui/ui_startserver.c	(working copy)
 @@ -98,12 +98,37 @@
  	"Team Deathmatch",
@@ -514,7 +514,7 @@ Index: code/q3_ui/ui_startserver.c
  	Menu_AddItem( &s_serveroptions.menu, &s_serveroptions.pure );
 Index: code/q3_ui/ui_local.h
 ===================================================================
---- code/q3_ui/ui_local.h	(revision 1121)
+--- code/q3_ui/ui_local.h	(revision 1126)
 +++ code/q3_ui/ui_local.h	(working copy)
 @@ -49,6 +49,17 @@
  extern vmCvar_t	ui_ctf_timelimit;
@@ -547,7 +547,7 @@ Index: code/q3_ui/ui_local.h
  #define QM_LOSTFOCUS			2
 Index: code/q3_ui/ui_teamorders.c
 ===================================================================
---- code/q3_ui/ui_teamorders.c	(revision 1121)
+--- code/q3_ui/ui_teamorders.c	(revision 1126)
 +++ code/q3_ui/ui_teamorders.c	(working copy)
 @@ -39,6 +39,7 @@
  #define ID_LIST_BOTS		10
@@ -652,7 +652,7 @@ Index: code/q3_ui/ui_teamorders.c
  
 Index: code/q3_ui/ui_addbots.c
 ===================================================================
---- code/q3_ui/ui_addbots.c	(revision 1121)
+--- code/q3_ui/ui_addbots.c	(revision 1126)
 +++ code/q3_ui/ui_addbots.c	(working copy)
 @@ -333,7 +333,7 @@
  	addBotsMenuInfo.team.generic.y			= y;
@@ -665,7 +665,7 @@ Index: code/q3_ui/ui_addbots.c
  	else {
 Index: code/q3_ui/ui_team.c
 ===================================================================
---- code/q3_ui/ui_team.c	(revision 1121)
+--- code/q3_ui/ui_team.c	(revision 1126)
 +++ code/q3_ui/ui_team.c	(working copy)
 @@ -169,6 +169,7 @@
  	switch( gametype ) {
@@ -688,7 +688,7 @@ Index: code/q3_ui/ui_team.c
  
 Index: code/q3_ui/ui_credits.c
 ===================================================================
---- code/q3_ui/ui_credits.c	(revision 1121)
+--- code/q3_ui/ui_credits.c	(revision 1126)
 +++ code/q3_ui/ui_credits.c	(working copy)
 @@ -63,54 +63,12 @@
  	int		y;
@@ -752,7 +752,7 @@ Index: code/q3_ui/ui_credits.c
  
 Index: code/q3_ui/ui_ingame.c
 ===================================================================
---- code/q3_ui/ui_ingame.c	(revision 1121)
+--- code/q3_ui/ui_ingame.c	(revision 1126)
 +++ code/q3_ui/ui_ingame.c	(working copy)
 @@ -226,7 +226,7 @@
  	s_ingame.teamorders.string				= "TEAM ORDERS";
@@ -765,7 +765,7 @@ Index: code/q3_ui/ui_ingame.c
  	else {
 Index: code/unix/unix_shared.c
 ===================================================================
---- code/unix/unix_shared.c	(revision 1121)
+--- code/unix/unix_shared.c	(revision 1126)
 +++ code/unix/unix_shared.c	(working copy)
 @@ -407,9 +407,9 @@
  	if ((p = getenv("HOME")) != NULL) {
@@ -781,7 +781,7 @@ Index: code/unix/unix_shared.c
  			if (errno != EEXIST) 
 Index: code/win32/win_shared.c
 ===================================================================
---- code/win32/win_shared.c	(revision 1121)
+--- code/win32/win_shared.c	(revision 1126)
 +++ code/win32/win_shared.c	(working copy)
 @@ -330,7 +330,7 @@
  		return NULL;
@@ -794,7 +794,7 @@ Index: code/win32/win_shared.c
  	{
 Index: code/renderer/tr_local.h
 ===================================================================
---- code/renderer/tr_local.h	(revision 1121)
+--- code/renderer/tr_local.h	(revision 1126)
 +++ code/renderer/tr_local.h	(working copy)
 @@ -866,6 +866,8 @@
  	qboolean	projection2D;	// if qtrue, drawstretchpic doesn't need to change modes
@@ -824,7 +824,7 @@ Index: code/renderer/tr_local.h
  #endif //TR_LOCAL_H
 Index: code/renderer/tr_init.c
 ===================================================================
---- code/renderer/tr_init.c	(revision 1121)
+--- code/renderer/tr_init.c	(revision 1126)
 +++ code/renderer/tr_init.c	(working copy)
 @@ -1122,6 +1122,8 @@
  
@@ -1288,7 +1288,7 @@ Index: code/renderer/tr_bloom.c
 +
 Index: code/renderer/tr_shadows.c
 ===================================================================
---- code/renderer/tr_shadows.c	(revision 1121)
+--- code/renderer/tr_shadows.c	(revision 1126)
 +++ code/renderer/tr_shadows.c	(working copy)
 @@ -39,7 +39,7 @@
  	int		facing;
@@ -1301,7 +1301,7 @@ Index: code/renderer/tr_shadows.c
  static	int			numEdgeDefs[SHADER_MAX_VERTEXES];
 Index: code/renderer/tr_flares.c
 ===================================================================
---- code/renderer/tr_flares.c	(revision 1121)
+--- code/renderer/tr_flares.c	(revision 1126)
 +++ code/renderer/tr_flares.c	(working copy)
 @@ -79,7 +79,7 @@
  	vec3_t		color;
@@ -1314,7 +1314,7 @@ Index: code/renderer/tr_flares.c
  flare_t		*r_activeFlares, *r_inactiveFlares;
 Index: code/renderer/tr_animation.c
 ===================================================================
---- code/renderer/tr_animation.c	(revision 1121)
+--- code/renderer/tr_animation.c	(revision 1126)
 +++ code/renderer/tr_animation.c	(working copy)
 @@ -431,7 +431,8 @@
  		{
@@ -1328,7 +1328,7 @@ Index: code/renderer/tr_animation.c
  
 Index: code/renderer/tr_backend.c
 ===================================================================
---- code/renderer/tr_backend.c	(revision 1121)
+--- code/renderer/tr_backend.c	(revision 1126)
 +++ code/renderer/tr_backend.c	(working copy)
 @@ -899,7 +899,8 @@
  
@@ -1370,7 +1370,7 @@ Index: code/renderer/tr_backend.c
  		case RC_SCREENSHOT:
 Index: code/server/sv_ccmds.c
 ===================================================================
---- code/server/sv_ccmds.c	(revision 1121)
+--- code/server/sv_ccmds.c	(revision 1126)
 +++ code/server/sv_ccmds.c	(working copy)
 @@ -430,6 +430,12 @@
  		return;
@@ -1402,7 +1402,7 @@ Index: code/server/sv_ccmds.c
  		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
 Index: code/server/sv_client.c
 ===================================================================
---- code/server/sv_client.c	(revision 1121)
+--- code/server/sv_client.c	(revision 1126)
 +++ code/server/sv_client.c	(working copy)
 @@ -87,7 +87,17 @@
  		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
@@ -1424,7 +1424,7 @@ Index: code/server/sv_client.c
  		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
 Index: code/game/g_spawn.c
 ===================================================================
---- code/game/g_spawn.c	(revision 1121)
+--- code/game/g_spawn.c	(revision 1126)
 +++ code/game/g_spawn.c	(working copy)
 @@ -129,6 +129,8 @@
  void SP_info_player_start (gentity_t *ent);
@@ -1445,7 +1445,7 @@ Index: code/game/g_spawn.c
  	{"info_camp", SP_info_camp},
 Index: code/game/g_team.h
 ===================================================================
---- code/game/g_team.h	(revision 1121)
+--- code/game/g_team.h	(revision 1126)
 +++ code/game/g_team.h	(working copy)
 @@ -53,6 +53,32 @@
  
@@ -1502,7 +1502,7 @@ Index: code/game/g_team.h
 +void Team_ForceGesture(int team);
 Index: code/game/ai_main.h
 ===================================================================
---- code/game/ai_main.h	(revision 1121)
+--- code/game/ai_main.h	(revision 1126)
 +++ code/game/ai_main.h	(working copy)
 @@ -58,6 +58,9 @@
  #define LTG_ATTACKENEMYBASE			13	//attack the enemy base
@@ -1526,17 +1526,8 @@ Index: code/game/ai_main.h
  #define PATROL_REVERSE				2
 Index: code/game/bg_misc.c
 ===================================================================
---- code/game/bg_misc.c	(revision 1121)
+--- code/game/bg_misc.c	(revision 1126)
 +++ code/game/bg_misc.c	(working copy)
-@@ -802,7 +802,7 @@
- /* sounds */ ""
- 	},
- 
--/*QUAKED item_doubler (.3 .3 1) (-16 -16 -16) (16 16 16) suspended redTeam blueTeam
-+/*QUAKED item_ammoregen (.3 .3 1) (-16 -16 -16) (16 16 16) suspended redTeam blueTeam
- */
- 	{
- 		"item_ammoregen",
 @@ -916,6 +916,108 @@
  	},
  #endif
@@ -1682,7 +1673,7 @@ Index: code/game/bg_misc.c
  			return qtrue;
 Index: code/game/g_local.h
 ===================================================================
---- code/game/g_local.h	(revision 1121)
+--- code/game/g_local.h	(revision 1126)
 +++ code/game/g_local.h	(working copy)
 @@ -252,6 +252,9 @@
  	int			voteCount;			// to prevent people from constantly calling votes
@@ -1741,16 +1732,20 @@ Index: code/game/g_local.h
  int TeamLeader( int team );
  team_t PickTeam( int ignoreClientNum );
  void SetClientViewAngle( gentity_t *ent, vec3_t angle );
-@@ -611,6 +640,8 @@
- // g_cmds.c
+@@ -609,8 +638,11 @@
+ 
  //
+ // g_cmds.c
+-//
++// Also another place /Sago
  
 +void DoubleDominationScoreTimeMessage( gentity_t *ent );
++void AttackingTeamMessage( gentity_t *ent );
 +
  //
  // g_pweapon.c
  //
-@@ -625,6 +656,7 @@
+@@ -625,6 +657,7 @@
  void G_RunThink (gentity_t *ent);
  void QDECL G_LogPrintf( const char *fmt, ... );
  void SendScoreboardMessageToAllClients( void );
@@ -1758,7 +1753,16 @@ Index: code/game/g_local.h
  void QDECL G_Printf( const char *fmt, ... );
  void QDECL G_Error( const char *fmt, ... );
  
-@@ -765,6 +797,43 @@
+@@ -712,7 +745,7 @@
+ extern	level_locals_t	level;
+ extern	gentity_t		g_entities[MAX_GENTITIES];
+ 
+-#define	FOFS(x) ((size_t)&(((gentity_t *)0)->x))
++#define	FOFS(x) ((int)&(((gentity_t *)0)->x))
+ 
+ extern	vmCvar_t	g_gametype;
+ extern	vmCvar_t	g_dedicated;
+@@ -765,6 +798,46 @@
  extern	vmCvar_t	g_singlePlayer;
  extern	vmCvar_t	g_proxMineTimeout;
  
@@ -1799,12 +1803,15 @@ Index: code/game/g_local.h
 +//beta 8
 +extern vmCvar_t		g_lms_mode; //How do we score: 0 = One Survivor get a point, 1 = same but without overtime, 2 = one point for each player killed (+overtime), 3 = same without overtime
 +
++//beta 10
++extern vmCvar_t		g_elimination_ctf_oneway;	//Only attack in one direction (level.eliminationSides+level.roundNumber)%2 == 0 red attacks
++
  void	trap_Printf( const char *fmt );
  void	trap_Error( const char *fmt );
  int		trap_Milliseconds( void );
 Index: code/game/g_combat.c
 ===================================================================
---- code/game/g_combat.c	(revision 1121)
+--- code/game/g_combat.c	(revision 1126)
 +++ code/game/g_combat.c	(working copy)
 @@ -83,6 +83,10 @@
  	// drop the weapon if not a gauntlet or machinegun
@@ -1943,9 +1950,131 @@ Index: code/game/g_combat.c
  
 Index: code/game/ai_cmd.c
 ===================================================================
---- code/game/ai_cmd.c	(revision 1121)
+--- code/game/ai_cmd.c	(revision 1126)
 +++ code/game/ai_cmd.c	(working copy)
-@@ -830,7 +830,7 @@
+@@ -134,6 +134,16 @@
+ 			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna patrol for %1.0f secs\n", netname, t);
+ 			break;
+ 		}
++		case LTG_POINTA:
++		{
++			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna take care of point A for %1.0f secs\n", netname, t);
++			break;
++		}
++		case LTG_POINTB:
++		{
++			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna take care of point B for %1.0f secs\n", netname, t);
++			break;
++		}
+ 		default:
+ 		{
+ 			if (bs->ctfroam_time > FloatTime()) {
+@@ -652,6 +662,104 @@
+ 
+ /*
+ ==================
++BotMatch_TakeA
++For Double Domination
++==================
++*/
++void BotMatch_TakeA(bot_state_t *bs, bot_match_t *match) {
++	char itemname[MAX_MESSAGE_SIZE];
++	char netname[MAX_MESSAGE_SIZE];
++	int client;
++
++	if (!TeamPlayIsOn()) return;
++	//if not addressed to this bot
++	if (!BotAddressedToBot(bs, match)) return;
++	//get the match variable
++	trap_BotMatchVariable(match, KEYAREA, itemname, sizeof(itemname));
++	//
++	if (!BotGetMessageTeamGoal(bs, itemname, &bs->teamgoal)) {
++		//BotAI_BotInitialChat(bs, "cannotfind", itemname, NULL);
++		//trap_BotEnterChat(bs->cs, bs->client, CHAT_TEAM);
++		return;
++	}
++	//
++	trap_BotMatchVariable(match, NETNAME, netname, sizeof(netname));
++	//
++	client = ClientFromName(netname);
++	//the team mate who ordered
++	bs->decisionmaker = client;
++	bs->ordered = qtrue;
++	bs->order_time = FloatTime();
++	//set the time to send a message to the team mates
++	bs->teammessage_time = FloatTime() + 2 * random();
++	//set the ltg type
++	bs->ltgtype = LTG_POINTA;
++	//get the team goal time
++	bs->teamgoal_time = BotGetTime(match);
++	//set the team goal time
++	if (!bs->teamgoal_time) bs->teamgoal_time = FloatTime() + DD_POINTA;
++	//away from defending
++	bs->defendaway_time = 0;
++	//
++	BotSetTeamStatus(bs);
++	// remember last ordered task
++	BotRememberLastOrderedTask(bs);
++#ifdef DEBUG
++	BotPrintTeamGoal(bs);
++#endif //DEBUG
++}
++
++/*
++==================
++BotMatch_TakeA
++For Double Domination
++==================
++*/
++void BotMatch_TakeB(bot_state_t *bs, bot_match_t *match) {
++	char itemname[MAX_MESSAGE_SIZE];
++	char netname[MAX_MESSAGE_SIZE];
++	int client;
++
++	if (!TeamPlayIsOn()) return;
++	//if not addressed to this bot
++	if (!BotAddressedToBot(bs, match)) return;
++	//get the match variable
++	trap_BotMatchVariable(match, KEYAREA, itemname, sizeof(itemname));
++	//
++	if (!BotGetMessageTeamGoal(bs, itemname, &bs->teamgoal)) {
++		//BotAI_BotInitialChat(bs, "cannotfind", itemname, NULL);
++		//trap_BotEnterChat(bs->cs, bs->client, CHAT_TEAM);
++		return;
++	}
++	//
++	trap_BotMatchVariable(match, NETNAME, netname, sizeof(netname));
++	//
++	client = ClientFromName(netname);
++	//the team mate who ordered
++	bs->decisionmaker = client;
++	bs->ordered = qtrue;
++	bs->order_time = FloatTime();
++	//set the time to send a message to the team mates
++	bs->teammessage_time = FloatTime() + 2 * random();
++	//set the ltg type
++	bs->ltgtype = LTG_POINTB;
++	//get the team goal time
++	bs->teamgoal_time = BotGetTime(match);
++	//set the team goal time
++	if (!bs->teamgoal_time) bs->teamgoal_time = FloatTime() + DD_POINTA;
++	//away from defending
++	bs->defendaway_time = 0;
++	//
++	BotSetTeamStatus(bs);
++	// remember last ordered task
++	BotRememberLastOrderedTask(bs);
++#ifdef DEBUG
++	BotPrintTeamGoal(bs);
++#endif //DEBUG
++}
++
++/*
++==================
+ BotMatch_GetItem
+ ==================
+ */
+@@ -830,7 +938,7 @@
  	char netname[MAX_MESSAGE_SIZE];
  	int client;
  
@@ -1954,7 +2083,7 @@ Index: code/game/ai_cmd.c
  		if (!ctf_redflag.areanum || !ctf_blueflag.areanum)
  			return;
  	}
-@@ -860,7 +860,7 @@
+@@ -860,7 +968,7 @@
  	//set the team goal time
  	bs->teamgoal_time = FloatTime() + CTF_GETFLAG_TIME;
  	// get an alternate route in ctf
@@ -1963,7 +2092,7 @@ Index: code/game/ai_cmd.c
  		//get an alternative route goal towards the enemy base
  		BotGetAlternateRouteGoal(bs, BotOppositeTeam(bs));
  	}
-@@ -882,7 +882,7 @@
+@@ -882,7 +990,7 @@
  	char netname[MAX_MESSAGE_SIZE];
  	int client;
  
@@ -1972,7 +2101,7 @@ Index: code/game/ai_cmd.c
  		BotMatch_GetFlag(bs, match);
  	}
  #ifdef MISSIONPACK
-@@ -973,7 +973,7 @@
+@@ -973,7 +1081,7 @@
  	char netname[MAX_MESSAGE_SIZE];
  	int client;
  
@@ -1981,7 +2110,7 @@ Index: code/game/ai_cmd.c
  		if (!ctf_redflag.areanum || !ctf_blueflag.areanum)
  			return;
  	}
-@@ -1068,7 +1068,7 @@
+@@ -1068,7 +1176,7 @@
  
  	//if not in CTF mode
  	if (
@@ -1990,7 +2119,16 @@ Index: code/game/ai_cmd.c
  #ifdef MISSIONPACK
  		&& gametype != GT_1FCTF
  #endif
-@@ -1567,7 +1567,7 @@
+@@ -1308,7 +1416,7 @@
+ 		//get the team mate that will be the team leader
+ 		trap_BotMatchVariable(match, NETNAME, teammate, sizeof(teammate));
+ 		strncpy(bs->teamleader, teammate, sizeof(bs->teamleader));
+-		bs->teamleader[sizeof(bs->teamleader)-1] = '\0';
++		bs->teamleader[sizeof(bs->teamleader)] = '\0';
+ 	}
+ 	//chats for someone else
+ 	else {
+@@ -1567,7 +1675,7 @@
  		}
  	}
  	if (bestitem != -1) {
@@ -1999,7 +2137,7 @@ Index: code/game/ai_cmd.c
  #ifdef MISSIONPACK
  			|| gametype == GT_1FCTF
  #endif
-@@ -1724,7 +1724,7 @@
+@@ -1724,7 +1832,7 @@
  
  	char flag[128], netname[MAX_NETNAME];
  
@@ -2008,9 +2146,26 @@ Index: code/game/ai_cmd.c
  		trap_BotMatchVariable(match, FLAG, flag, sizeof(flag));
  		if (match->subtype & ST_GOTFLAG) {
  			if (!Q_stricmp(flag, "red")) {
+@@ -1982,6 +2090,16 @@
+ 			BotMatch_Suicide(bs, &match);
+ 			break;
+ 		}
++		case MSG_TAKEA:
++		{
++			BotMatch_TakeA(bs, &match);
++			break;
++		}
++		case MSG_TAKEB:
++		{
++			BotMatch_TakeB(bs, &match);
++			break;
++		}
+ 		default:
+ 		{
+ 			BotAI_Print(PRT_MESSAGE, "unknown match type\n");
 Index: code/game/g_arenas.c
 ===================================================================
---- code/game/g_arenas.c	(revision 1121)
+--- code/game/g_arenas.c	(revision 1126)
 +++ code/game/g_arenas.c	(working copy)
 @@ -85,7 +85,7 @@
  		}
@@ -2023,9 +2178,69 @@ Index: code/game/g_arenas.c
  			if (level.clients[playerClientNum].sess.sessionTeam	== TEAM_RED) {
 Index: code/game/ai_dmnet.c
 ===================================================================
---- code/game/ai_dmnet.c	(revision 1121)
+--- code/game/ai_dmnet.c	(revision 1126)
 +++ code/game/ai_dmnet.c	(working copy)
-@@ -748,7 +748,7 @@
+@@ -525,6 +525,59 @@
+ 			bs->defendaway_time = 0;
+ 		}
+ 	}
++	//For double domination
++	if (bs->ltgtype == LTG_POINTA &&
++				bs->defendaway_time < FloatTime()) {
++		//check for bot typing status message
++		if (bs->teammessage_time && bs->teammessage_time < FloatTime()) {
++			trap_BotGoalName(bs->teamgoal.number, buf, sizeof(buf));
++			BotAI_BotInitialChat(bs, "defend_start", buf, NULL);
++			trap_BotEnterChat(bs->cs, 0, CHAT_TEAM);
++			BotVoiceChatOnly(bs, -1, VOICECHAT_ONDEFENSE);
++			bs->teammessage_time = 0;
++		}
++		//set the bot goal
++		memcpy(goal, &ctf_redflag, sizeof(bot_goal_t));
++		//if very close... go away for some time
++		VectorSubtract(goal->origin, bs->origin, dir);
++		if (VectorLengthSquared(dir) < Square(70)) {
++			trap_BotResetAvoidReach(bs->ms);
++			bs->defendaway_time = FloatTime() + 3 + 3 * random();
++			if (BotHasPersistantPowerupAndWeapon(bs)) {
++				bs->defendaway_range = 100;
++			}
++			else {
++				bs->defendaway_range = 350;
++			}
++		}
++		return qtrue;
++	}
++	if (bs->ltgtype == LTG_POINTB &&
++				bs->defendaway_time < FloatTime()) {
++		//check for bot typing status message
++		if (bs->teammessage_time && bs->teammessage_time < FloatTime()) {
++			trap_BotGoalName(bs->teamgoal.number, buf, sizeof(buf));
++			BotAI_BotInitialChat(bs, "defend_start", buf, NULL);
++			trap_BotEnterChat(bs->cs, 0, CHAT_TEAM);
++			BotVoiceChatOnly(bs, -1, VOICECHAT_ONDEFENSE);
++			bs->teammessage_time = 0;
++		}
++		//set the bot goal
++		memcpy(goal, &ctf_blueflag, sizeof(bot_goal_t));
++		//if very close... go away for some time
++		VectorSubtract(goal->origin, bs->origin, dir);
++		if (VectorLengthSquared(dir) < Square(70)) {
++			trap_BotResetAvoidReach(bs->ms);
++			bs->defendaway_time = FloatTime() + 3 + 3 * random();
++			if (BotHasPersistantPowerupAndWeapon(bs)) {
++				bs->defendaway_range = 100;
++			}
++			else {
++				bs->defendaway_range = 350;
++			}
++		}
++		return qtrue;
++	}
+ 	//if defending a key area
+ 	if (bs->ltgtype == LTG_DEFENDKEYAREA && !retreat &&
+ 				bs->defendaway_time < FloatTime()) {
+@@ -748,7 +801,7 @@
  		return qtrue;
  	}
  #ifdef CTF
@@ -2034,7 +2249,7 @@ Index: code/game/ai_dmnet.c
  		//if going for enemy flag
  		if (bs->ltgtype == LTG_GETFLAG) {
  			//check for bot typing status message
-@@ -1872,7 +1872,7 @@
+@@ -1872,7 +1925,7 @@
  		else range = 150;
  		//
  #ifdef CTF
@@ -2043,7 +2258,7 @@ Index: code/game/ai_dmnet.c
  			//if carrying a flag the bot shouldn't be distracted too much
  			if (BotCTFCarryingFlag(bs))
  				range = 50;
-@@ -2391,7 +2391,7 @@
+@@ -2391,7 +2444,7 @@
  		bs->check_time = FloatTime() + 1;
  		range = 150;
  #ifdef CTF
@@ -2054,7 +2269,7 @@ Index: code/game/ai_dmnet.c
  				range = 50;
 Index: code/game/g_active.c
 ===================================================================
---- code/game/g_active.c	(revision 1121)
+--- code/game/g_active.c	(revision 1126)
 +++ code/game/g_active.c	(working copy)
 @@ -254,8 +254,9 @@
  		return;
@@ -2209,7 +2424,7 @@ Index: code/game/g_active.c
  	}
 Index: code/game/g_rankings.c
 ===================================================================
---- code/game/g_rankings.c	(revision 1121)
+--- code/game/g_rankings.c	(revision 1126)
 +++ code/game/g_rankings.c	(working copy)
 @@ -104,7 +104,7 @@
  				}
@@ -2222,7 +2437,7 @@ Index: code/game/g_rankings.c
  					SetTeam( ent, "free" );
 Index: code/game/g_session.c
 ===================================================================
---- code/game/g_session.c	(revision 1121)
+--- code/game/g_session.c	(revision 1126)
 +++ code/game/g_session.c	(working copy)
 @@ -109,7 +109,7 @@
  	sess = &client->sess;
@@ -2243,7 +2458,7 @@ Index: code/game/g_session.c
  					level.numNonSpectatorClients >= g_maxGameClients.integer ) {
 Index: code/game/g_bot.c
 ===================================================================
---- code/game/g_bot.c	(revision 1121)
+--- code/game/g_bot.c	(revision 1126)
 +++ code/game/g_bot.c	(working copy)
 @@ -406,7 +406,7 @@
  	minplayers = bot_minplayers.integer;
@@ -2274,9 +2489,9 @@ Index: code/game/g_bot.c
  			}
 Index: code/game/g_main.c
 ===================================================================
---- code/game/g_main.c	(revision 1121)
+--- code/game/g_main.c	(revision 1126)
 +++ code/game/g_main.c	(working copy)
-@@ -94,7 +94,41 @@
+@@ -94,7 +94,44 @@
  vmCvar_t	g_enableBreath;
  vmCvar_t	g_proxMineTimeout;
  #endif
@@ -2315,15 +2530,17 @@ Index: code/game/g_main.c
 +//beta 8
 +vmCvar_t	g_lms_mode;
 +
++//beta 10
++vmCvar_t	g_elimination_ctf_oneway;
++
  // bk001129 - made static to avoid aliasing
  static cvarTable_t		gameCvarTable[] = {
  	// don't override the cheat state set by the system
-@@ -178,8 +212,39 @@
+@@ -178,8 +215,40 @@
  	{ &pmove_fixed, "pmove_fixed", "0", CVAR_SYSTEMINFO, 0, qfalse},
  	{ &pmove_msec, "pmove_msec", "8", CVAR_SYSTEMINFO, 0, qfalse},
  
 -	{ &g_rankings, "g_rankings", "0", 0, 0, qfalse}
--
 +	{ &g_rankings, "g_rankings", "0", 0, 0, qfalse},
 +	//Now for elimination stuff:
 +	{ &g_elimination_selfdamage, "elimination_selfdamage", "0", 0, 0, qtrue },
@@ -2346,8 +2563,9 @@ Index: code/game/g_main.c
 +	{ &g_elimination_mine, "elimination_mine", "0", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
 +	{ &g_elimination_nail, "elimination_nail", "0", CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
 +#endif
-+	//Lets try a pure server CVAR thingy: (not working as I had hoped... too slow)
-+	//{ &g_roundStartTime, "g_roundStartTime", "0", CVAR_SERVERINFO | CVAR_ROM, 0, qfalse },
++	//Beta 10
++	{ &g_elimination_ctf_oneway, "elimination_ctf_oneway", "0", CVAR_SERVERINFO | CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+ 
 +	//Instantgib and Vampire thingies
 +	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO | CVAR_LATCH | CVAR_NORESTART, 0, qfalse },
 +	{ &g_vampire, "g_vampire", "0.0", CVAR_NORESTART, 0, qfalse },
@@ -2360,7 +2578,7 @@ Index: code/game/g_main.c
  };
  
  // bk001129 - made static to avoid aliasing
-@@ -362,6 +427,13 @@
+@@ -362,6 +431,13 @@
  		trap_Cvar_Set( "g_gametype", "0" );
  	}
  
@@ -2374,7 +2592,7 @@ Index: code/game/g_main.c
  	level.warmupModificationCount = g_warmup.modificationCount;
  }
  
-@@ -484,7 +556,7 @@
+@@ -484,7 +560,7 @@
  	G_FindTeams();
  
  	// make sure we have flags for CTF, etc
@@ -2383,7 +2601,7 @@ Index: code/game/g_main.c
  		G_CheckTeamItems();
  	}
  
-@@ -506,6 +578,15 @@
+@@ -506,6 +582,15 @@
  
  	G_RemapTeamShaders();
  
@@ -2399,7 +2617,7 @@ Index: code/game/g_main.c
  }
  
  
-@@ -802,7 +883,7 @@
+@@ -802,7 +887,7 @@
  		sizeof(level.sortedClients[0]), SortRanks );
  
  	// set the rank value for all clients that are connected and not spectators
@@ -2408,7 +2626,7 @@ Index: code/game/g_main.c
  		// in team games, rank is just the order of the teams, 0=red, 1=blue, 2=tied
  		for ( i = 0;  i < level.numConnectedClients; i++ ) {
  			cl = &level.clients[ level.sortedClients[i] ];
-@@ -837,7 +918,7 @@
+@@ -837,7 +922,7 @@
  	}
  
  	// set the CS_SCORES1/2 configstrings, which will be visible to everyone
@@ -2417,7 +2635,7 @@ Index: code/game/g_main.c
  		trap_SetConfigstring( CS_SCORES1, va("%i", level.teamScores[TEAM_RED] ) );
  		trap_SetConfigstring( CS_SCORES2, va("%i", level.teamScores[TEAM_BLUE] ) );
  	} else {
-@@ -891,6 +972,23 @@
+@@ -891,6 +976,40 @@
  
  /*
  ========================
@@ -2438,10 +2656,27 @@ Index: code/game/g_main.c
 +
 +/*
 +========================
++SendAttackingTeamMessageToAllClients
++
++Used for CTF Elimination oneway
++========================
++*/
++void SendAttackingTeamMessageToAllClients( void ) {
++	int		i;
++
++	for ( i = 0 ; i < level.maxclients ; i++ ) {
++		if ( level.clients[ i ].pers.connected == CON_CONNECTED ) {
++			AttackingTeamMessage( g_entities + i );
++		}
++	}
++}
++
++/*
++========================
  MoveClientToIntermission
  
  When the intermission starts, this will be called for all players.
-@@ -1135,7 +1233,7 @@
+@@ -1135,7 +1254,7 @@
  		numSorted = 32;
  	}
  
@@ -2450,7 +2685,7 @@ Index: code/game/g_main.c
  		G_LogPrintf( "red:%i  blue:%i\n",
  			level.teamScores[TEAM_RED], level.teamScores[TEAM_BLUE] );
  	}
-@@ -1167,7 +1265,7 @@
+@@ -1167,7 +1286,7 @@
  
  #ifdef MISSIONPACK
  	if (g_singlePlayer.integer) {
@@ -2459,7 +2694,7 @@ Index: code/game/g_main.c
  			won = level.teamScores[TEAM_RED] > level.teamScores[TEAM_BLUE];
  		}
  		trap_SendConsoleCommand( EXEC_APPEND, (won) ? "spWin\n" : "spLose\n" );
-@@ -1275,7 +1373,7 @@
+@@ -1275,7 +1394,7 @@
  		return qfalse;
  	}
  	
@@ -2468,7 +2703,7 @@ Index: code/game/g_main.c
  		return level.teamScores[TEAM_RED] == level.teamScores[TEAM_BLUE];
  	}
  
-@@ -1338,7 +1436,7 @@
+@@ -1338,7 +1457,7 @@
  		return;
  	}
  
@@ -2477,7 +2712,7 @@ Index: code/game/g_main.c
  		if ( level.teamScores[TEAM_RED] >= g_fraglimit.integer ) {
  			trap_SendServerCommand( -1, "print \"Red hit the fraglimit.\n\"" );
  			LogExit( "Fraglimit hit." );
-@@ -1369,7 +1467,7 @@
+@@ -1369,7 +1488,7 @@
  		}
  	}
  
@@ -2486,7 +2721,7 @@ Index: code/game/g_main.c
  
  		if ( level.teamScores[TEAM_RED] >= g_capturelimit.integer ) {
  			trap_SendServerCommand( -1, "print \"Red hit the capturelimit.\n\"" );
-@@ -1385,8 +1483,65 @@
+@@ -1385,8 +1504,79 @@
  	}
  }
  
@@ -2535,6 +2770,8 @@ Index: code/game/g_main.c
 +		Team_ReturnFlag( TEAM_BLUE );
 +	}
 +	SendScoreboardMessageToAllClients();
++	if(g_elimination_ctf_oneway.integer)
++		SendAttackingTeamMessageToAllClients(); //Ensure that evaryone know who should attack.
 +	EnableWeapons();
 +}
 +
@@ -2546,13 +2783,25 @@ Index: code/game/g_main.c
 +	level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
 +	SendScoreboardMessageToAllClients();
 +	level.roundRespawned = qfalse;
++	if(g_elimination_ctf_oneway.integer)
++		SendAttackingTeamMessageToAllClients();
 +}
 +
++//Things to do if we don't want to move the roundNumber
++void RestartEliminationRound(void) {
++	DisableWeapons();
++	level.roundNumberStarted = level.roundNumber-1;
++	level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
++	SendScoreboardMessageToAllClients();
++	level.roundRespawned = qfalse;
++	if(g_elimination_ctf_oneway.integer)
++		SendAttackingTeamMessageToAllClients();
++}
 +
  /*
  ========================================================================
  
-@@ -1395,9 +1550,259 @@
+@@ -1395,9 +1585,272 @@
  ========================================================================
  */
  
@@ -2616,10 +2865,11 @@ Index: code/game/g_main.c
 +		return;
 +	}
 +
-+	//We don't want to do anything in itnermission
++	//We don't want to do anything in intermission
 +	if(level.intermissiontime) {
-+		if(level.roundRespawned)
-+			EndEliminationRound();
++		if(level.roundRespawned) {
++			RestartEliminationRound();
++		}
 +		level.roundStartTime = level.time; //so that a player might join at any time to fix the bots+no humans+autojoin bug
 +		return;
 +	}
@@ -2684,7 +2934,7 @@ Index: code/game/g_main.c
 +		if(level.time+1000*g_elimination_warmup.integer-500>level.roundStartTime && level.numPlayingClients < 2)
 +		{
 +			RespawnDead(); //Allow player to run around anyway
-+			EndEliminationRound(); //Start over
++			RestartEliminationRound(); //Start over
 +			return;
 +		}
 +
@@ -2704,7 +2954,7 @@ Index: code/game/g_main.c
 +	//We don't want to do anything in itnermission
 +	if(level.intermissiontime) {
 +		if(level.roundRespawned)
-+			EndEliminationRound();
++			RestartEliminationRound();
 +		level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
 +		return;
 +	}	
@@ -2746,8 +2996,20 @@ Index: code/game/g_main.c
 +		if((level.roundNumber==level.roundNumberStarted)&&(level.time>=level.roundStartTime+1000*g_elimination_roundtime.integer))
 +		{
 +			trap_SendServerCommand( -1, "print \"No teams eliminated!\n\"");
++
 +			if(level.roundBluePlayers != 0 && level.roundRedPlayers != 0) {//We don't want to divide by zero. (should not be possible)
-+				if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)>((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
++				if(g_gametype.integer == GT_CTF_ELIMINATION && g_elimination_ctf_oneway.integer) {
++					//One way CTF, make defensice team the winner.
++					if ( (level.eliminationSides+level.roundNumber)%2 == 0 ) { //Red was attacking
++						trap_SendServerCommand( -1, "print \"Blue team defended the base\n\"");
++						AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
++					}
++					else {
++						trap_SendServerCommand( -1, "print \"Red team defended the base\n\"");
++						AddTeamScore(level.intermission_origin,TEAM_RED,1);
++					}
++				}
++				else if(((double)countsLiving[TEAM_RED])/((double)level.roundRedPlayers)>((double)countsLiving[TEAM_BLUE])/((double)level.roundBluePlayers))
 +				{
 +					//Red team has higher procentage survivors
 +					trap_SendServerCommand( -1, "print \"Red team has most survivers!\n\"");
@@ -2802,7 +3064,7 @@ Index: code/game/g_main.c
 +		if(counts[TEAM_BLUE]<1 || counts[TEAM_RED]<1)
 +		{
 +			RespawnDead(); //Allow players to run around anyway
-+			EndEliminationRound(); //Start over
++			RestartEliminationRound(); //Start over
 +			return;
 +		}
 +	}
@@ -2812,7 +3074,7 @@ Index: code/game/g_main.c
  CheckTournament
  
  Once a frame, check for changes in tournement player state
-@@ -1817,6 +2222,13 @@
+@@ -1817,6 +2270,13 @@
  	// see if it is time to do a tournement restart
  	CheckTournament();
  
@@ -2828,7 +3090,7 @@ Index: code/game/g_main.c
  
 Index: code/game/g_mover.c
 ===================================================================
---- code/game/g_mover.c	(revision 1121)
+--- code/game/g_mover.c	(revision 1126)
 +++ code/game/g_mover.c	(working copy)
 @@ -857,7 +857,7 @@
  ================
@@ -2841,7 +3103,7 @@ Index: code/game/g_mover.c
  			ent->parent->moverState != MOVER_POS2) {
 Index: code/game/bg_pmove.c
 ===================================================================
---- code/game/bg_pmove.c	(revision 1121)
+--- code/game/bg_pmove.c	(revision 1126)
 +++ code/game/bg_pmove.c	(working copy)
 @@ -48,7 +48,6 @@
  
@@ -2941,7 +3203,7 @@ Index: code/game/bg_pmove.c
  	// torso animation
 Index: code/game/ai_team.c
 ===================================================================
---- code/game/ai_team.c	(revision 1121)
+--- code/game/ai_team.c	(revision 1126)
 +++ code/game/ai_team.c	(working copy)
 @@ -131,7 +131,7 @@
  	int traveltimes[MAX_CLIENTS];
@@ -2952,7 +3214,138 @@ Index: code/game/ai_team.c
  		if (BotTeam(bs) == TEAM_RED)
  			goal = &ctf_redflag;
  		else
-@@ -1932,7 +1932,7 @@
+@@ -180,6 +180,57 @@
+ 
+ /*
+ ==================
++BotSortTeamMatesByReletiveTravelTime2ddA
++For Double Domination
++==================
++*/
++int BotSortTeamMatesByRelativeTravelTime2ddA(bot_state_t *bs, int *teammates, int maxteammates) {
++	int i, j, k, numteammates;
++	double traveltime, traveltime2b;
++	char buf[MAX_INFO_STRING];
++	static int maxclients;
++	double traveltimes[MAX_CLIENTS];
++	//int traveltimes2b[MAX_CLIENTS];
++	bot_goal_t *goalA = &ctf_redflag;
++	bot_goal_t *goalB = &ctf_blueflag;
++
++	if (!maxclients)
++		maxclients = trap_Cvar_VariableIntegerValue("sv_maxclients");
++
++	numteammates = 0;
++
++	for (i = 0; i < maxclients && i < MAX_CLIENTS; i++) {
++		trap_GetConfigstring(CS_PLAYERS+i, buf, sizeof(buf));
++		//if no config string or no name
++		if (!strlen(buf) || !strlen(Info_ValueForKey(buf, "n"))) continue;
++		//skip spectators
++		if (atoi(Info_ValueForKey(buf, "t")) == TEAM_SPECTATOR) continue;
++		if (BotSameTeam(bs, i)) {
++			traveltime = (double)BotClientTravelTimeToGoal(i, goalA);
++			traveltime2b = (double)BotClientTravelTimeToGoal(i, goalB);
++			traveltime = traveltime/traveltime2b;
++
++			for (j = 0; j < numteammates; j++) {
++				if (traveltime < traveltimes[j]) {
++					for (k = numteammates; k > j; k--) {
++						traveltimes[k] = traveltimes[k-1];
++						teammates[k] = teammates[k-1];
++					}
++					break;
++				}
++			}
++			traveltimes[j] = traveltime;
++			teammates[j] = i;
++			numteammates++;
++			if (numteammates >= maxteammates) break;
++		}
++	}
++
++	return numteammates;
++}
++
++/*
++==================
+ BotSetTeamMateTaskPreference
+ ==================
+ */
+@@ -682,7 +733,55 @@
+ 	}
+ }
+ 
++/*
++==================
++BotDDorders
++==================
++*/
+ 
++void BotDDorders_Standard(bot_state_t *bs) {
++	int numteammates, i;
++	int teammates[MAX_CLIENTS];
++	char name[MAX_NETNAME];
++
++	//sort team mates by travel time to base
++	numteammates = BotSortTeamMatesByRelativeTravelTime2ddA(bs, teammates, sizeof(teammates));
++
++	switch(numteammates) {
++		case 1: break;
++		/*case 2: 
++		{
++			//the one closest to point A will take that
++			ClientName(teammates[0], name, sizeof(name));
++			BotAI_BotInitialChat(bs, "cmd_takea", name, NULL);
++			BotSayTeamOrder(bs, teammates[0]);
++			//BotSayVoiceTeamOrder(bs, teammates[0], VOICECHAT_TAKEA);
++			//the other goes for point B
++			ClientName(teammates[1], name, sizeof(name));
++			BotAI_BotInitialChat(bs, "cmd_takeb", name, NULL);
++			BotSayTeamOrder(bs, teammates[1]);
++			//BotSayVoiceTeamOrder(bs, teammates[1], VOICECHAT_TAKEB);
++			break;
++		}*/
++		default:
++		{
++			for(i=0;i<numteammates/2;i++) { //Half take point A
++				ClientName(teammates[i], name, sizeof(name));
++				BotAI_BotInitialChat(bs, "cmd_takea", name, NULL);
++				BotSayTeamOrder(bs, teammates[i]);
++				//BotSayVoiceTeamOrder(bs, teammates[0], VOICECHAT_TAKEA);
++			}
++			for(i=numteammates/2+1;i<numteammates;i++) { //Rest takes point B
++				ClientName(teammates[i], name, sizeof(name));
++				BotAI_BotInitialChat(bs, "cmd_takeb", name, NULL);
++				BotSayTeamOrder(bs, teammates[i]);
++				//BotSayVoiceTeamOrder(bs, teammates[0], VOICECHAT_TAKEB);
++			}
++			break;
++		}
++	}
++}
++
+ /*
+ ==================
+ BotCTFOrders
+@@ -844,7 +943,16 @@
+ 	}
+ }
+ 
++/*
++==================
++BotDDorders
++==================
++*/
++void BotDDorders(bot_state_t *bs) {
++	BotDDorders_Standard(bs);	
++}
+ 
++
+ /*
+ ==================
+ BotCreateGroup
+@@ -1932,7 +2040,7 @@
  	char netname[MAX_NETNAME];
  
  	//
@@ -2961,7 +3354,16 @@ Index: code/game/ai_team.c
  		return;
  	// make sure we've got a valid team leader
  	if (!BotValidTeamLeader(bs)) {
-@@ -1992,6 +1992,7 @@
+@@ -1960,7 +2068,7 @@
+ 				BotSayVoiceTeamOrder(bs, -1, VOICECHAT_STARTLEADER);
+ 				ClientName(bs->client, netname, sizeof(netname));
+ 				strncpy(bs->teamleader, netname, sizeof(bs->teamleader));
+-				bs->teamleader[sizeof(bs->teamleader)-1] = '\0';
++				bs->teamleader[sizeof(bs->teamleader)] = '\0';
+ 				bs->becometeamleader_time = 0;
+ 			}
+ 			return;
+@@ -1992,6 +2100,7 @@
  			break;
  		}
  		case GT_CTF:
@@ -2969,9 +3371,34 @@ Index: code/game/ai_team.c
  		{
  			//if the number of team mates changed or the flag status changed
  			//or someone wants to know what to do
+@@ -2018,6 +2127,24 @@
+ 			}
+ 			break;
+ 		}
++		case GT_DOUBLE_D:
++		{
++			//if the number of team mates changed or the domination point status changed
++			//or someone wants to know what to do
++			if (bs->numteammates != numteammates || bs->flagstatuschanged || bs->forceorders) {
++				bs->teamgiveorders_time = FloatTime();
++				bs->numteammates = numteammates;
++				bs->flagstatuschanged = qfalse;
++				bs->forceorders = qfalse;
++			}
++			//if it's time to give orders
++			if (bs->teamgiveorders_time && bs->teamgiveorders_time < FloatTime() - 3) {
++				BotDDorders(bs);
++				//
++				bs->teamgiveorders_time = 0;
++			}
++			break;
++		}
+ #ifdef MISSIONPACK
+ 		case GT_1FCTF:
+ 		{
 Index: code/game/g_weapon.c
 ===================================================================
---- code/game/g_weapon.c	(revision 1121)
+--- code/game/g_weapon.c	(revision 1126)
 +++ code/game/g_weapon.c	(working copy)
 @@ -111,7 +111,10 @@
  	}
@@ -3015,7 +3442,7 @@ Index: code/game/g_weapon.c
  	} else {
 Index: code/game/g_misc.c
 ===================================================================
---- code/game/g_misc.c	(revision 1121)
+--- code/game/g_misc.c	(revision 1126)
 +++ code/game/g_misc.c	(working copy)
 @@ -81,7 +81,7 @@
  
@@ -3044,9 +3471,23 @@ Index: code/game/g_misc.c
  		trap_LinkEntity (player);
  	}
  }
+Index: code/game/match.h
+===================================================================
+--- code/game/match.h	(revision 1126)
++++ code/game/match.h	(working copy)
+@@ -67,6 +67,9 @@
+ #define MSG_ATTACKENEMYBASE				31		//attack the enemy base
+ #define MSG_HARVEST						32		//go harvest
+ #define MSG_SUICIDE						33		//order to suicide
++//Double Domination messages
++#define MSG_TAKEA					34
++#define MSG_TAKEB					35
+ //
+ #define MSG_ME							100
+ #define MSG_EVERYONE					101
 Index: code/game/ai_vcmd.c
 ===================================================================
---- code/game/ai_vcmd.c	(revision 1121)
+--- code/game/ai_vcmd.c	(revision 1126)
 +++ code/game/ai_vcmd.c	(working copy)
 @@ -71,7 +71,7 @@
  */
@@ -3095,7 +3536,7 @@ Index: code/game/ai_vcmd.c
  #endif
 Index: code/game/bg_local.h
 ===================================================================
---- code/game/bg_local.h	(revision 1121)
+--- code/game/bg_local.h	(revision 1126)
 +++ code/game/bg_local.h	(working copy)
 @@ -73,6 +73,10 @@
  
@@ -3110,7 +3551,7 @@ Index: code/game/bg_local.h
  void PM_AddEvent( int newEvent );
 Index: code/game/g_trigger.c
 ===================================================================
---- code/game/g_trigger.c	(revision 1121)
+--- code/game/g_trigger.c	(revision 1126)
 +++ code/game/g_trigger.c	(working copy)
 @@ -274,12 +274,13 @@
  	if ( !other->client ) {
@@ -3129,7 +3570,7 @@ Index: code/game/g_trigger.c
  
 Index: code/game/g_missile.c
 ===================================================================
---- code/game/g_missile.c	(revision 1121)
+--- code/game/g_missile.c	(revision 1126)
 +++ code/game/g_missile.c	(working copy)
 @@ -137,7 +137,7 @@
  	}
@@ -3142,7 +3583,7 @@ Index: code/game/g_missile.c
  			return;
 Index: code/game/ai_dmq3.c
 ===================================================================
---- code/game/ai_dmq3.c	(revision 1121)
+--- code/game/ai_dmq3.c	(revision 1126)
 +++ code/game/ai_dmq3.c	(working copy)
 @@ -128,7 +128,7 @@
  ==================
@@ -3162,7 +3603,24 @@ Index: code/game/ai_dmq3.c
  				|| ( gametype == GT_HARVESTER && EntityCarriesCubes(&entinfo)) ) {
  				teamtask = TEAMTASK_ESCORT;
  			}
-@@ -423,7 +423,7 @@
+@@ -408,6 +408,16 @@
+ 		case LTG_ATTACKENEMYBASE:
+ 			teamtask = TEAMTASK_OFFENSE;
+ 			break;
++		case LTG_POINTA:
++			if(BotTeam(bs) == TEAM_BLUE)
++				teamtask = TEAMTASK_OFFENSE;
++			else
++				teamtask = TEAMTASK_DEFENSE;
++		case LTG_POINTB:
++			if(BotTeam(bs) == TEAM_RED)
++				teamtask = TEAMTASK_OFFENSE;
++			else
++				teamtask = TEAMTASK_DEFENSE;
+ 		default:
+ 			teamtask = TEAMTASK_PATROL;
+ 			break;
+@@ -423,7 +433,7 @@
  */
  int BotSetLastOrderedTask(bot_state_t *bs) {
  
@@ -3171,7 +3629,7 @@ Index: code/game/ai_dmq3.c
  		// don't go back to returning the flag if it's at the base
  		if ( bs->lastgoal_ltgtype == LTG_RETURNFLAG ) {
  			if ( BotTeam(bs) == TEAM_RED ) {
-@@ -448,7 +448,7 @@
+@@ -448,7 +458,7 @@
  		bs->teamgoal_time = FloatTime() + 300;
  		BotSetTeamStatus(bs);
  		//
@@ -3180,7 +3638,61 @@ Index: code/game/ai_dmq3.c
  			if ( bs->ltgtype == LTG_GETFLAG ) {
  				bot_goal_t *tb, *eb;
  				int tt, et;
-@@ -1326,7 +1326,7 @@
+@@ -789,6 +799,53 @@
+ 	}
+ }
+ 
++/*
++==================
++BotDDSeekGoals
++==================
++*/
++
++void BotDDSeekGoals(bot_state_t *bs) {
++
++	/*if (bs->ltgtype == LTG_TEAMHELP ||
++			bs->ltgtype == LTG_TEAMACCOMPANY ||
++			bs->ltgtype == LTG_CAMPORDER ||
++			bs->ltgtype == LTG_PATROL ||
++			bs->ltgtype == LTG_GETITEM) {
++		return;
++	}*/
++
++	if(bs->ltgtype == LTG_POINTA)
++		memcpy(&bs->teamgoal, &ctf_redflag, sizeof(bot_goal_t));
++	if(bs->ltgtype == LTG_POINTB)
++		memcpy(&bs->teamgoal, &ctf_blueflag, sizeof(bot_goal_t));
++
++	if(bs->ltgtype == LTG_POINTA || bs->ltgtype == LTG_POINTB)
++		return;
++
++	if(rand()%2==0)
++		bs->ltgtype = LTG_POINTA;
++	else
++		bs->ltgtype = LTG_POINTB;
++
++	if(bs->ltgtype == LTG_POINTA) {
++		memcpy(&bs->teamgoal, &ctf_redflag, sizeof(bot_goal_t));
++		if(BotTeam(bs) == TEAM_BLUE)
++			BotSetUserInfo(bs, "teamtask", va("%d", TEAMTASK_OFFENSE));
++		else
++			BotSetUserInfo(bs, "teamtask", va("%d", TEAMTASK_DEFENSE));
++	} else
++	if(bs->ltgtype == LTG_POINTB) {
++		memcpy(&bs->teamgoal, &ctf_blueflag, sizeof(bot_goal_t));
++		if(BotTeam(bs) == TEAM_RED)
++			BotSetUserInfo(bs, "teamtask", va("%d", TEAMTASK_OFFENSE));
++		else
++			BotSetUserInfo(bs, "teamtask", va("%d", TEAMTASK_DEFENSE));
++	}
++
++
++}
++
+ #ifdef MISSIONPACK
+ /*
+ ==================
+@@ -1326,7 +1383,7 @@
  void BotTeamGoals(bot_state_t *bs, int retreat) {
  
  	if ( retreat ) {
@@ -3189,7 +3701,7 @@ Index: code/game/ai_dmq3.c
  			BotCTFRetreatGoals(bs);
  		}
  #ifdef MISSIONPACK
-@@ -1342,7 +1342,7 @@
+@@ -1342,7 +1399,7 @@
  #endif
  	}
  	else {
@@ -3198,7 +3710,18 @@ Index: code/game/ai_dmq3.c
  			//decide what to do in CTF mode
  			BotCTFSeekGoals(bs);
  		}
-@@ -1537,7 +1537,7 @@
+@@ -1358,6 +1415,10 @@
+ 		}
+ #endif
+ 	}
++
++	if(gametype == GT_DOUBLE_D) //Don't care about retreat
++		BotDDSeekGoals(bs);
++
+ 	// reset the order time which is used to see if
+ 	// we decided to refuse an order
+ 	bs->order_time = 0;
+@@ -1537,7 +1598,7 @@
  
  	context = CONTEXT_NORMAL|CONTEXT_NEARBYITEM|CONTEXT_NAMES;
  	//
@@ -3207,7 +3730,7 @@ Index: code/game/ai_dmq3.c
  #ifdef MISSIONPACK
  		|| gametype == GT_1FCTF
  #endif
-@@ -1625,7 +1625,7 @@
+@@ -1625,7 +1686,7 @@
  #ifdef MISSIONPACK
  	int offence, leader;
  
@@ -3216,7 +3739,7 @@ Index: code/game/ai_dmq3.c
  		return;
  
  	offence = -1;
-@@ -1668,7 +1668,7 @@
+@@ -1668,7 +1729,7 @@
  						 bs->ltgtype != LTG_ATTACKENEMYBASE &&
  						 bs->ltgtype != LTG_HARVEST ) {
  						//
@@ -3225,7 +3748,7 @@ Index: code/game/ai_dmq3.c
  							(gametype != GT_1FCTF || bs->neutralflagstatus == 0) ) {
  							// tell the leader we want to be on offence
  							BotVoiceChat(bs, leader, VOICECHAT_WANTONOFFENSE);
-@@ -1693,7 +1693,7 @@
+@@ -1693,7 +1754,7 @@
  				else if (g_spSkill.integer <= 3) {
  					if ( bs->ltgtype != LTG_DEFENDKEYAREA ) {
  						//
@@ -3234,7 +3757,7 @@ Index: code/game/ai_dmq3.c
  							(gametype != GT_1FCTF || bs->neutralflagstatus == 0) ) {
  							// tell the leader we want to be on defense
  							BotVoiceChat(bs, -1, VOICECHAT_WANTONDEFENSE);
-@@ -1826,7 +1826,7 @@
+@@ -1826,7 +1887,7 @@
  	if (bs->kamikaze_time > FloatTime())
  		return;
  	bs->kamikaze_time = FloatTime() + 0.2;
@@ -3243,7 +3766,7 @@ Index: code/game/ai_dmq3.c
  		//never use kamikaze if the team flag carrier is visible
  		if (BotCTFCarryingFlag(bs))
  			return;
-@@ -1933,7 +1933,7 @@
+@@ -1933,7 +1994,7 @@
  	if (bs->invulnerability_time > FloatTime())
  		return;
  	bs->invulnerability_time = FloatTime() + 0.2;
@@ -3252,7 +3775,7 @@ Index: code/game/ai_dmq3.c
  		//never use kamikaze if the team flag carrier is visible
  		if (BotCTFCarryingFlag(bs))
  			return;
-@@ -2188,7 +2188,7 @@
+@@ -2188,7 +2249,7 @@
  ==================
  */
  int TeamPlayIsOn(void) {
@@ -3261,7 +3784,7 @@ Index: code/game/ai_dmq3.c
  }
  
  /*
-@@ -2268,7 +2268,7 @@
+@@ -2268,7 +2329,7 @@
  int BotWantsToRetreat(bot_state_t *bs) {
  	aas_entityinfo_t entinfo;
  
@@ -3270,7 +3793,7 @@ Index: code/game/ai_dmq3.c
  		//always retreat when carrying a CTF flag
  		if (BotCTFCarryingFlag(bs))
  			return qtrue;
-@@ -2321,7 +2321,7 @@
+@@ -2321,7 +2382,7 @@
  int BotWantsToChase(bot_state_t *bs) {
  	aas_entityinfo_t entinfo;
  
@@ -3279,7 +3802,7 @@ Index: code/game/ai_dmq3.c
  		//never chase when carrying a CTF flag
  		if (BotCTFCarryingFlag(bs))
  			return qfalse;
-@@ -2776,7 +2776,7 @@
+@@ -2776,7 +2837,7 @@
  		//BotAI_Print(PRT_ERROR, "BotSameTeam: client out of range\n");
  		return qfalse;
  	}
@@ -3288,7 +3811,7 @@ Index: code/game/ai_dmq3.c
  		trap_GetConfigstring(CS_PLAYERS+bs->client, info1, sizeof(info1));
  		trap_GetConfigstring(CS_PLAYERS+entnum, info2, sizeof(info2));
  		//
-@@ -4176,7 +4176,7 @@
+@@ -4176,7 +4237,7 @@
  		return 0;
  	}
  	trap_AAS_ValueForBSPEpairKey(ent, "classname", classname, sizeof(classname));
@@ -3297,7 +3820,7 @@ Index: code/game/ai_dmq3.c
  		BotAI_Print(PRT_ERROR, "BotGetActivateGoal: entity with model %s has no classname\n", model);
  		return 0;
  	}
-@@ -4865,7 +4865,7 @@
+@@ -4865,7 +4926,7 @@
  		}
  		case EV_GLOBAL_TEAM_SOUND:
  		{
@@ -3306,7 +3829,7 @@ Index: code/game/ai_dmq3.c
  				switch(state->eventParm) {
  					case GTS_RED_CAPTURE:
  						bs->blueflagstatus = 0;
-@@ -5130,7 +5130,7 @@
+@@ -5130,7 +5191,7 @@
  	if (altroutegoals_setup)
  		return;
  #ifdef MISSIONPACK
@@ -3315,7 +3838,7 @@ Index: code/game/ai_dmq3.c
  		if (trap_BotGetLevelItemGoal(-1, "Neutral Flag", &ctf_neutralflag) < 0)
  			BotAI_Print(PRT_WARNING, "no alt routes without Neutral Flag\n");
  		if (ctf_neutralflag.areanum) {
-@@ -5402,7 +5402,7 @@
+@@ -5402,12 +5463,18 @@
  	trap_Cvar_Register(&bot_predictobstacles, "bot_predictobstacles", "1", 0);
  	trap_Cvar_Register(&g_spSkill, "g_spSkill", "2", 0);
  	//
@@ -3324,9 +3847,20 @@ Index: code/game/ai_dmq3.c
  		if (trap_BotGetLevelItemGoal(-1, "Red Flag", &ctf_redflag) < 0)
  			BotAI_Print(PRT_WARNING, "CTF without Red Flag\n");
  		if (trap_BotGetLevelItemGoal(-1, "Blue Flag", &ctf_blueflag) < 0)
+ 			BotAI_Print(PRT_WARNING, "CTF without Blue Flag\n");
+ 	}
++	else if (gametype == GT_DOUBLE_D) {
++		if (trap_BotGetLevelItemGoal(-1, "Red Flag", &ctf_redflag) < 0)
++			BotAI_Print(PRT_WARNING, "DD without Point A\n");
++		if (trap_BotGetLevelItemGoal(-1, "Blue Flag", &ctf_blueflag) < 0)
++			BotAI_Print(PRT_WARNING, "DD without Point B\n");
++	}
+ #ifdef MISSIONPACK
+ 	else if (gametype == GT_1FCTF) {
+ 		if (trap_BotGetLevelItemGoal(-1, "Neutral Flag", &ctf_neutralflag) < 0)
 Index: code/game/bg_lib.h
 ===================================================================
---- code/game/bg_lib.h	(revision 1121)
+--- code/game/bg_lib.h	(revision 1126)
 +++ code/game/bg_lib.h	(working copy)
 @@ -26,13 +26,6 @@
  #ifndef BG_LIB_H
@@ -3344,7 +3878,7 @@ Index: code/game/bg_lib.h
  #endif
 Index: code/game/g_client.c
 ===================================================================
---- code/game/g_client.c	(revision 1121)
+--- code/game/g_client.c	(revision 1126)
 +++ code/game/g_client.c	(working copy)
 @@ -55,6 +55,10 @@
  	SP_info_player_deathmatch( ent );
@@ -3884,7 +4418,7 @@ Index: code/game/g_client.c
 +	if(g_instantgib.integer)
 +	{
 +		client->ps.stats[STAT_WEAPONS] = ( 1 << WP_RAILGUN );
-+		client->ps.ammo[WP_RAILGUN] = 1000; //Don't display any ammo
++		client->ps.ammo[WP_RAILGUN] = 999; //Don't display any ammo
 +		if(g_instantgib.integer>1)
 +		{
 +			 client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GAUNTLET );
@@ -3930,7 +4464,7 @@ Index: code/game/g_client.c
  			StopFollowing( &g_entities[i] );
 Index: code/game/g_items.c
 ===================================================================
---- code/game/g_items.c	(revision 1121)
+--- code/game/g_items.c	(revision 1126)
 +++ code/game/g_items.c	(working copy)
 @@ -86,7 +86,7 @@
  
@@ -3941,7 +4475,7 @@ Index: code/game/g_items.c
        continue;
      }
  
-@@ -419,6 +419,17 @@
+@@ -419,6 +419,23 @@
  	int			respawn;
  	qboolean	predict;
  
@@ -3953,13 +4487,19 @@ Index: code/game/g_items.c
 +	if(g_gametype.integer == GT_CTF_ELIMINATION && level.roundNumber != level.roundNumberStarted)
 +		return;
 +
++	//Cannot take ctf elimination oneway
++	if(g_gametype.integer == GT_CTF_ELIMINATION && g_elimination_ctf_oneway.integer!=0 && (
++			(other->client->sess.sessionTeam==TEAM_BLUE && (level.eliminationSides+level.roundNumber)%2 == 0 ) ||
++			(other->client->sess.sessionTeam==TEAM_RED && (level.eliminationSides+level.roundNumber)%2 != 0 ) ))
++		return;
++
 +	if (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_LMS)
 +		return;		//nothing to pick up in elimination
 +
  	if (!other->client)
  		return;
  	if (other->health < 1)
-@@ -429,6 +440,16 @@
+@@ -429,6 +446,16 @@
  		return;
  	}
  
@@ -3976,7 +4516,7 @@ Index: code/game/g_items.c
  	G_LogPrintf( "Item: %i %s\n", other->s.number, ent->item->classname );
  
  	predict = other->client->pers.predictItemPickup;
-@@ -584,9 +605,9 @@
+@@ -584,9 +611,9 @@
  
  	dropped->s.eFlags |= EF_BOUNCE_HALF;
  #ifdef MISSIONPACK
@@ -3988,7 +4528,7 @@ Index: code/game/g_items.c
  #endif
  		dropped->think = Team_DroppedFlagThink;
  		dropped->nextthink = level.time + 30000;
-@@ -689,7 +710,9 @@
+@@ -689,7 +716,9 @@
  		return;
  	}
  
@@ -3999,7 +4539,7 @@ Index: code/game/g_items.c
  	if ( ent->item->giType == IT_POWERUP ) {
  		float	respawn;
  
-@@ -718,7 +741,7 @@
+@@ -718,7 +747,7 @@
  	// Set up team stuff
  	Team_InitGame();
  
@@ -4008,7 +4548,7 @@ Index: code/game/g_items.c
  		gitem_t	*item;
  
  		// check for the two flags
-@@ -800,15 +823,49 @@
+@@ -800,15 +829,49 @@
  void ClearRegisteredItems( void ) {
  	memset( itemRegistered, 0, sizeof( itemRegistered ) );
  
@@ -4061,7 +4601,7 @@ Index: code/game/g_items.c
  }
  
  /*
-@@ -881,9 +938,18 @@
+@@ -881,9 +944,18 @@
  	G_SpawnFloat( "random", "0", &ent->random );
  	G_SpawnFloat( "wait", "0", &ent->wait );
  
@@ -4083,7 +4623,7 @@ Index: code/game/g_items.c
  
  	ent->item = item;
  	// some movers spawn on the second frame, so delay item
-@@ -893,6 +959,17 @@
+@@ -893,6 +965,17 @@
  
  	ent->physicsBounce = 0.50;		// items are bouncy
  
@@ -4103,7 +4643,7 @@ Index: code/game/g_items.c
  		G_SpawnFloat( "noglobalsound", "0", &ent->speed);
 Index: code/game/bg_public.h
 ===================================================================
---- code/game/bg_public.h	(revision 1121)
+--- code/game/bg_public.h	(revision 1126)
 +++ code/game/bg_public.h	(working copy)
 @@ -102,11 +102,22 @@
  	//-- team games go after this --
@@ -4171,7 +4711,7 @@ Index: code/game/bg_public.h
  
 Index: code/game/g_cmds.c
 ===================================================================
---- code/game/g_cmds.c	(revision 1121)
+--- code/game/g_cmds.c	(revision 1126)
 +++ code/game/g_cmds.c	(working copy)
 @@ -64,8 +64,9 @@
  		}
@@ -4194,7 +4734,7 @@ Index: code/game/g_cmds.c
  		j = strlen(entry);
  		if (stringlength + j > 1024)
  			break;
-@@ -82,12 +84,21 @@
+@@ -82,14 +84,38 @@
  		stringlength += j;
  	}
  
@@ -4217,8 +4757,25 @@ Index: code/game/g_cmds.c
 +
  /*
  ==================
++AttackingTeamMessage
++
++==================
++*/
++void AttackingTeamMessage( gentity_t *ent ) {
++	int team;
++	if ( (level.eliminationSides+level.roundNumber)%2 == 0 )
++		team = TEAM_RED;
++	else
++		team = TEAM_BLUE;
++	trap_SendServerCommand( ent-g_entities, va("attackingteam %i", team));
++}
++
++/*
++==================
  Cmd_Score_f
-@@ -462,7 +473,7 @@
+ 
+ Request current scoreboard information
+@@ -462,7 +488,7 @@
  =================
  */
  void Cmd_Kill_f( gentity_t *ent ) {
@@ -4227,7 +4784,7 @@ Index: code/game/g_cmds.c
  		return;
  	}
  	if (ent->health <= 0) {
-@@ -532,7 +543,7 @@
+@@ -532,7 +558,7 @@
  	} else if ( !Q_stricmp( s, "spectator" ) || !Q_stricmp( s, "s" ) ) {
  		team = TEAM_SPECTATOR;
  		specState = SPECTATOR_FREE;
@@ -4236,7 +4793,7 @@ Index: code/game/g_cmds.c
  		// if running a team game, assign player to one of the teams
  		specState = SPECTATOR_NOT;
  		if ( !Q_stricmp( s, "red" ) || !Q_stricmp( s, "r" ) ) {
-@@ -644,8 +655,16 @@
+@@ -644,8 +670,16 @@
  =================
  */
  void StopFollowing( gentity_t *ent ) {
@@ -4255,7 +4812,7 @@ Index: code/game/g_cmds.c
  	ent->client->sess.spectatorState = SPECTATOR_FREE;
  	ent->client->ps.pm_flags &= ~PMF_FOLLOW;
  	ent->r.svFlags &= ~SVF_BOT;
-@@ -708,6 +727,10 @@
+@@ -708,6 +742,10 @@
  	int		i;
  	char	arg[MAX_TOKEN_CHARS];
  
@@ -4266,7 +4823,7 @@ Index: code/game/g_cmds.c
  	if ( trap_Argc() != 2 ) {
  		if ( ent->client->sess.spectatorState == SPECTATOR_FOLLOW ) {
  			StopFollowing( ent );
-@@ -715,19 +738,22 @@
+@@ -715,19 +753,22 @@
  		return;
  	}
  
@@ -4291,7 +4848,7 @@ Index: code/game/g_cmds.c
  		return;
  	}
  
-@@ -738,7 +764,8 @@
+@@ -738,7 +779,8 @@
  	}
  
  	// first set them to spectator
@@ -4301,7 +4858,7 @@ Index: code/game/g_cmds.c
  		SetTeam( ent, "spectator" );
  	}
  
-@@ -786,7 +813,7 @@
+@@ -786,7 +828,7 @@
  		}
  
  		// can't follow another spectator
@@ -4310,7 +4867,7 @@ Index: code/game/g_cmds.c
  			continue;
  		}
  
-@@ -845,7 +872,7 @@
+@@ -845,7 +887,7 @@
  	char		text[MAX_SAY_TEXT];
  	char		location[64];
  
@@ -4319,7 +4876,7 @@ Index: code/game/g_cmds.c
  		mode = SAY_ALL;
  	}
  
-@@ -867,7 +894,7 @@
+@@ -867,7 +909,7 @@
  		color = COLOR_CYAN;
  		break;
  	case SAY_TELL:
@@ -4328,7 +4885,7 @@ Index: code/game/g_cmds.c
  			target->client->sess.sessionTeam == ent->client->sess.sessionTeam &&
  			Team_GetLocationMsg(ent, location, sizeof(location)))
  			Com_sprintf (name, sizeof(name), EC"[%s%c%c"EC"] (%s)"EC": ", ent->client->pers.netname, Q_COLOR_ESCAPE, COLOR_WHITE, location );
-@@ -1000,7 +1027,7 @@
+@@ -1000,7 +1042,7 @@
  	int			j;
  	gentity_t	*other;
  
@@ -4337,7 +4894,7 @@ Index: code/game/g_cmds.c
  		mode = SAY_ALL;
  	}
  
-@@ -1133,7 +1160,7 @@
+@@ -1133,7 +1175,7 @@
  		}
  	}
  
@@ -4346,7 +4903,7 @@ Index: code/game/g_cmds.c
  		// praise a team mate who just got a reward
  		for(i = 0; i < MAX_CLIENTS; i++) {
  			who = g_entities + i;
-@@ -1204,7 +1231,11 @@
+@@ -1204,7 +1246,11 @@
  	"Capture the Flag",
  	"One Flag CTF",
  	"Overload",
@@ -4359,7 +4916,7 @@ Index: code/game/g_cmds.c
  };
  
  /*
-@@ -1696,6 +1727,8 @@
+@@ -1696,6 +1742,8 @@
  		Cmd_SetViewpos_f( ent );
  	else if (Q_stricmp (cmd, "stats") == 0)
  		Cmd_Stats_f( ent );
@@ -4370,7 +4927,7 @@ Index: code/game/g_cmds.c
  }
 Index: code/game/g_team.c
 ===================================================================
---- code/game/g_team.c	(revision 1121)
+--- code/game/g_team.c	(revision 1126)
 +++ code/game/g_team.c	(working copy)
 @@ -40,6 +40,10 @@
  
@@ -4611,7 +5168,7 @@ Index: code/game/g_team.c
 +		it = BG_FindItem ("Point A (Blue)");
 +	if(team == TEAM_FREE)
 +		it = BG_FindItem ("Point A (White)");
-+	if (!it) {
++	if (!it || it == NULL) {
 +		PrintMsg( NULL, "No item\n");
 +		return;
 +	}
@@ -4822,7 +5379,7 @@ Index: code/game/g_team.c
 +
 +	updateDDpoints();
 +
-+	return 1;
++	return 0;
 +}
 +
 +/*
@@ -5007,7 +5564,7 @@ Index: code/game/g_team.c
  	}
 Index: code/game/ai_main.c
 ===================================================================
---- code/game/ai_main.c	(revision 1121)
+--- code/game/ai_main.c	(revision 1126)
 +++ code/game/ai_main.c	(working copy)
 @@ -285,7 +285,7 @@
  	else leader = " ";
@@ -5018,7 +5575,24 @@ Index: code/game/ai_main.c
  		if (BotCTFCarryingFlag(bs)) {
  			if (BotTeam(bs) == TEAM_RED) strcpy(flagstatus, S_COLOR_RED"F ");
  			else strcpy(flagstatus, S_COLOR_BLUE"F ");
-@@ -435,7 +435,7 @@
+@@ -373,6 +373,16 @@
+ 			BotAI_Print(PRT_MESSAGE, "%-20s%s%s: harvesting\n", netname, leader, flagstatus);
+ 			break;
+ 		}
++		case LTG_POINTA:
++		{
++			BotAI_Print(PRT_MESSAGE, "%-20s%s%s: going for point A\n", netname, leader, flagstatus);
++			break;
++		}
++		case LTG_POINTB:
++		{
++			BotAI_Print(PRT_MESSAGE, "%-20s%s%s: going for point B\n", netname, leader, flagstatus);
++			break;
++		}
+ 		default:
+ 		{
+ 			BotAI_Print(PRT_MESSAGE, "%-20s%s%s: roaming\n", netname, leader, flagstatus);
+@@ -435,7 +445,7 @@
  	else leader = " ";
  
  	strcpy(carrying, "  ");
@@ -5027,9 +5601,26 @@ Index: code/game/ai_main.c
  		if (BotCTFCarryingFlag(bs)) {
  			strcpy(carrying, "F ");
  		}
+@@ -521,6 +531,16 @@
+ 			Com_sprintf(action, sizeof(action), "harvesting");
+ 			break;
+ 		}
++		case LTG_POINTA:
++		{
++			Com_sprintf(action, sizeof(action), "going for point A");
++			break;
++		}
++		case LTG_POINTB:
++		{
++			Com_sprintf(action, sizeof(action), "going for point B");
++			break;
++		}
+ 		default:
+ 		{
+ 			trap_BotGetTopGoal(bs->gs, &goal);
 Index: code/qcommon/q_shared.h
 ===================================================================
---- code/qcommon/q_shared.h	(revision 1121)
+--- code/qcommon/q_shared.h	(revision 1126)
 +++ code/qcommon/q_shared.h	(working copy)
 @@ -26,17 +26,17 @@
  // q_shared.h -- included first by ALL program modules.
@@ -5057,7 +5648,7 @@ Index: code/qcommon/q_shared.h
  
 Index: code/qcommon/files.c
 ===================================================================
---- code/qcommon/files.c	(revision 1121)
+--- code/qcommon/files.c	(revision 1126)
 +++ code/qcommon/files.c	(working copy)
 @@ -2900,7 +2900,7 @@
  */
@@ -5087,7 +5678,7 @@ Index: code/qcommon/files.c
  	// busted and error out now, rather than getting an unreadable
 Index: code/qcommon/qcommon.h
 ===================================================================
---- code/qcommon/qcommon.h	(revision 1121)
+--- code/qcommon/qcommon.h	(revision 1126)
 +++ code/qcommon/qcommon.h	(working copy)
 @@ -225,7 +225,7 @@
  
@@ -5117,7 +5708,7 @@ Index: code/qcommon/qcommon.h
  #define	PORT_MASTER			27950
 Index: code/qcommon/qfiles.h
 ===================================================================
---- code/qcommon/qfiles.h	(revision 1121)
+--- code/qcommon/qfiles.h	(revision 1126)
 +++ code/qcommon/qfiles.h	(working copy)
 @@ -35,7 +35,7 @@
  #endif
@@ -5130,7 +5721,7 @@ Index: code/qcommon/qfiles.h
  
 Index: code/qcommon/common.c
 ===================================================================
---- code/qcommon/common.c	(revision 1121)
+--- code/qcommon/common.c	(revision 1126)
 +++ code/qcommon/common.c	(working copy)
 @@ -37,9 +37,9 @@
  #define MAX_NUM_ARGVS	50
@@ -5145,9 +5736,82 @@ Index: code/qcommon/common.c
  #define XSTRING(x)				STRING(x)
  #define STRING(x)					#x
  #define DEF_COMHUNKMEGS_S	XSTRING(DEF_COMHUNKMEGS)
+Index: code/botlib/be_ai_chat.c
+===================================================================
+--- code/botlib/be_ai_chat.c	(revision 1126)
++++ code/botlib/be_ai_chat.c	(working copy)
+@@ -367,26 +367,13 @@
+ int BotNextConsoleMessage(int chatstate, bot_consolemessage_t *cm)
+ {
+ 	bot_chatstate_t *cs;
+-	bot_consolemessage_t *firstmsg;
+ 
+ 	cs = BotChatStateFromHandle(chatstate);
+ 	if (!cs) return 0;
+-	if ((firstmsg = cs->firstmessage))
++	if (cs->firstmessage)
+ 	{
+-		cm->handle = firstmsg->handle;
+-		cm->time = firstmsg->time;
+-		cm->type = firstmsg->type;
+-		Q_strncpyz(cm->message, firstmsg->message,
+-			   sizeof(cm->message));
+-		
+-		/* We omit setting the two pointers in cm because pointer
+-		 * size in the VM differs between the size in the engine on
+-		 * 64 bit machines, which would lead to a buffer overflow if
+-		 * this functions is called from the VM. The pointers are
+-		 * of no interest to functions calling
+-		 * BotNextConsoleMessage anyways.
+-		 */
+-		
++		Com_Memcpy(cm, cs->firstmessage, sizeof(bot_consolemessage_t));
++		cm->next = cm->prev = NULL;
+ 		return cm->handle;
+ 	} //end if
+ 	return 0;
+Index: code/botlib/be_ai_goal.c
+===================================================================
+--- code/botlib/be_ai_goal.c	(revision 1126)
++++ code/botlib/be_ai_goal.c	(working copy)
+@@ -103,6 +103,10 @@
+ 	GT_OBELISK,
+ 	GT_HARVESTER,
+ #endif
++	GT_ELIMINATION,
++	GT_CTF_ELIMINATION,
++	GT_LMS,
++	GT_DOUBLE_D,
+ 	GT_MAX_GAME_TYPE
+ } gametype_t;
+ 
+@@ -134,7 +138,7 @@
+ 	int number;							//number of the item info
+ } iteminfo_t;
+ 
+-#define ITEMINFO_OFS(x)	(size_t)&(((iteminfo_t *)0)->x)
++#define ITEMINFO_OFS(x)	(int)&(((iteminfo_t *)0)->x)
+ 
+ fielddef_t iteminfo_fields[] =
+ {
+Index: code/botlib/be_ai_weap.c
+===================================================================
+--- code/botlib/be_ai_weap.c	(revision 1126)
++++ code/botlib/be_ai_weap.c	(working copy)
+@@ -48,8 +48,8 @@
+ //#define DEBUG_AI_WEAP
+ 
+ //structure field offsets
+-#define WEAPON_OFS(x) (size_t)&(((weaponinfo_t *)0)->x)
+-#define PROJECTILE_OFS(x) (size_t)&(((projectileinfo_t *)0)->x)
++#define WEAPON_OFS(x) (int)&(((weaponinfo_t *)0)->x)
++#define PROJECTILE_OFS(x) (int)&(((projectileinfo_t *)0)->x)
+ 
+ //weapon definition // bk001212 - static
+ static fielddef_t weaponinfo_fields[] =
 Index: code/cgame/cg_predict.c
 ===================================================================
---- code/cgame/cg_predict.c	(revision 1121)
+--- code/cgame/cg_predict.c	(revision 1126)
 +++ code/cgame/cg_predict.c	(working copy)
 @@ -260,7 +260,19 @@
  */
@@ -5181,18 +5845,20 @@ Index: code/cgame/cg_predict.c
  #endif
  		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_RED &&
  			item->giTag == PW_REDFLAG)
-@@ -297,22 +309,48 @@
+@@ -297,22 +309,50 @@
  		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_BLUE &&
  			item->giTag == PW_BLUEFLAG)
  			return;
-+		//Even in instantgib, we can predict our own flag
++		//Even in instantgib, we can predict our enemy flag
 +		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_RED &&
-+			item->giTag == PW_BLUEFLAG)
++			item->giTag == PW_BLUEFLAG && (!cgs.oneway || cgs.attackingTeam == TEAM_RED))
 +			canBePicked = qtrue;
 +		if (cg.predictedPlayerState.persistant[PERS_TEAM] == TEAM_BLUE &&
-+			item->giTag == PW_REDFLAG)
++			item->giTag == PW_REDFLAG && (!cgs.oneway || cgs.attackingTeam == TEAM_BLUE))
 +			canBePicked = qtrue;
 +		if (item->giTag == WP_RAILGUN)
++			canBePicked = qfalse;
++		if (item->giTag == WP_PLASMAGUN)
 +			canBePicked = qfalse;
  	}
  
@@ -5242,7 +5908,7 @@ Index: code/cgame/cg_predict.c
  }
 Index: code/cgame/cg_local.h
 ===================================================================
---- code/cgame/cg_local.h	(revision 1121)
+--- code/cgame/cg_local.h	(revision 1126)
 +++ code/cgame/cg_local.h	(working copy)
 @@ -85,8 +85,8 @@
  
@@ -5284,7 +5950,7 @@ Index: code/cgame/cg_local.h
  	qhandle_t	flagPoleModel;
  	qhandle_t	flagFlapModel;
  
-@@ -1023,6 +1031,22 @@
+@@ -1023,6 +1031,26 @@
  
  	int				levelStartTime;
  
@@ -5294,6 +5960,10 @@ Index: code/cgame/cg_local.h
 +//Elimination
 +	int				roundStartTime;	
 +	int				roundtime;
++
++//CTF Elimination
++	qboolean			oneway;
++	int				attackingTeam;
 +
 +//Last Man Standing
 +	int				lms_mode;
@@ -5309,7 +5979,7 @@ Index: code/cgame/cg_local.h
  	int				flagStatus;
 Index: code/cgame/cg_weapons.c
 ===================================================================
---- code/cgame/cg_weapons.c	(revision 1121)
+--- code/cgame/cg_weapons.c	(revision 1126)
 +++ code/cgame/cg_weapons.c	(working copy)
 @@ -1695,6 +1695,9 @@
  	int				c;
@@ -5323,7 +5993,7 @@ Index: code/cgame/cg_weapons.c
  		return;
 Index: code/cgame/cg_players.c
 ===================================================================
---- code/cgame/cg_players.c	(revision 1121)
+--- code/cgame/cg_players.c	(revision 1126)
 +++ code/cgame/cg_players.c	(working copy)
 @@ -314,7 +314,7 @@
  	char *team, *charactersFolder;
@@ -5502,7 +6172,7 @@ Index: code/cgame/cg_players.c
  		}
 Index: code/cgame/cg_info.c
 ===================================================================
---- code/cgame/cg_info.c	(revision 1121)
+--- code/cgame/cg_info.c	(revision 1126)
 +++ code/cgame/cg_info.c	(working copy)
 @@ -261,6 +261,18 @@
  		s = "Harvester";
@@ -5543,7 +6213,7 @@ Index: code/cgame/cg_info.c
  			UI_DrawProportionalString( 320, y, va( "capturelimit %i", value ),
 Index: code/cgame/cg_draw.c
 ===================================================================
---- code/cgame/cg_draw.c	(revision 1121)
+--- code/cgame/cg_draw.c	(revision 1126)
 +++ code/cgame/cg_draw.c	(working copy)
 @@ -390,8 +390,24 @@
  
@@ -5570,7 +6240,7 @@ Index: code/cgame/cg_draw.c
  		} else if( team == TEAM_FREE ) {
  			handle = cgs.media.neutralFlagModel;
  		} else {
-@@ -834,9 +850,221 @@
+@@ -834,9 +850,256 @@
  	return y + BIGCHAR_HEIGHT + 4;
  }
  
@@ -5654,6 +6324,41 @@ Index: code/cgame/cg_draw.c
 +
 +	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
 +	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
++
++	return y + SMALLCHAR_HEIGHT+4;
++}
++
++/*
++=================
++CG_DrawCTFoneway
++=================
++*/
++
++static float CG_DrawCTFoneway( float y ) {
++	char		*s;
++	int		w;
++	vec4_t		color;
++
++	if(cgs.gametype != GT_CTF_ELIMINATION)
++		return y;
++
++	memcpy(color,g_color_table[ColorIndex(COLOR_WHITE)],sizeof(color));
++
++	if(cgs.oneway == 0) {
++		return y; //nothing to draw
++	} else
++	if(cgs.attackingTeam == TEAM_BLUE) {
++		memcpy(color,g_color_table[ColorIndex(COLOR_BLUE)],sizeof(color));
++		s = va("Blue team on offence");
++	} else
++	if(cgs.attackingTeam == TEAM_RED) {
++		memcpy(color,g_color_table[ColorIndex(COLOR_RED)],sizeof(color));
++		s = va("Red team on offence");
++	} else
++		s = va("Unknown team on offence");
++
++	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
++	CG_DrawSmallStringColor( 635 - w, y + 2, s, color);
 +
 +	return y + SMALLCHAR_HEIGHT+4;
 +}
@@ -5792,7 +6497,7 @@ Index: code/cgame/cg_draw.c
  CG_DrawTeamOverlay
  =================
  */
-@@ -1008,7 +1236,22 @@
+@@ -1008,7 +1271,22 @@
  //#endif
  }
  
@@ -5815,7 +6520,7 @@ Index: code/cgame/cg_draw.c
  /*
  =====================
  CG_DrawUpperRight
-@@ -1020,16 +1263,32 @@
+@@ -1020,16 +1298,36 @@
  
  	y = 0;
  
@@ -5829,6 +6534,10 @@ Index: code/cgame/cg_draw.c
 +	else
 +	if ( cgs.gametype == GT_LMS && cg.showScores ) {
 +		y = CG_DrawLMSmode(y);
++	}
++	else
++	if ( cgs.gametype == GT_CTF_ELIMINATION ) {
++		y = CG_DrawCTFoneway(y);
 +	}
 +	
  	if ( cg_drawSnapshot.integer ) {
@@ -5850,7 +6559,7 @@ Index: code/cgame/cg_draw.c
  		y = CG_DrawTimer( y );
  	}
  	if ( cg_drawAttacker.integer ) {
-@@ -1071,7 +1330,7 @@
+@@ -1071,7 +1369,7 @@
  	y1 = y;
  
  	// draw from the right side to left
@@ -5859,7 +6568,7 @@ Index: code/cgame/cg_draw.c
  		x = 640;
  		color[0] = 0.0f;
  		color[1] = 0.0f;
-@@ -1086,7 +1345,7 @@
+@@ -1086,7 +1384,7 @@
  		}
  		CG_DrawBigString( x + 4, y, s, 1.0F);
  
@@ -5868,7 +6577,7 @@ Index: code/cgame/cg_draw.c
  			// Display flag status
  			item = BG_FindItemForPowerup( PW_BLUEFLAG );
  
-@@ -1110,7 +1369,7 @@
+@@ -1110,7 +1408,7 @@
  		}
  		CG_DrawBigString( x + 4, y, s, 1.0F);
  
@@ -5877,7 +6586,7 @@ Index: code/cgame/cg_draw.c
  			// Display flag status
  			item = BG_FindItemForPowerup( PW_REDFLAG );
  
-@@ -1135,7 +1394,7 @@
+@@ -1135,7 +1433,7 @@
  			}
  		}
  #endif
@@ -5886,7 +6595,7 @@ Index: code/cgame/cg_draw.c
  			v = cgs.capturelimit;
  		} else {
  			v = cgs.fraglimit;
-@@ -1327,7 +1586,7 @@
+@@ -1327,7 +1625,7 @@
  
  	y = 480 - ICON_SIZE;
  
@@ -5895,7 +6604,7 @@ Index: code/cgame/cg_draw.c
  		y = CG_DrawTeamOverlay( y, qtrue, qfalse );
  	} 
  
-@@ -1380,7 +1639,7 @@
+@@ -1380,7 +1678,7 @@
  
  	y = 480 - ICON_SIZE;
  
@@ -5904,7 +6613,7 @@ Index: code/cgame/cg_draw.c
  		y = CG_DrawTeamOverlay( y, qfalse, qfalse );
  	} 
  
-@@ -2060,7 +2319,7 @@
+@@ -2060,7 +2358,7 @@
  	if ( cgs.gametype == GT_TOURNAMENT ) {
  		CG_DrawBigString(320 - 15 * 8, 460, "waiting to play", 1.0F);
  	}
@@ -5913,7 +6622,7 @@ Index: code/cgame/cg_draw.c
  		CG_DrawBigString(320 - 39 * 8, 460, "press ESC and use the JOIN menu to play", 1.0F);
  	}
  }
-@@ -2178,7 +2437,7 @@
+@@ -2178,7 +2476,7 @@
  
  
  	if (menuScoreboard == NULL) {
@@ -5922,7 +6631,7 @@ Index: code/cgame/cg_draw.c
  			menuScoreboard = Menus_FindByName("teamscore_menu");
  		} else {
  			menuScoreboard = Menus_FindByName("score_menu");
-@@ -2267,6 +2526,10 @@
+@@ -2267,6 +2565,10 @@
  	const char	*s;
  	int			w;
  
@@ -5933,7 +6642,7 @@ Index: code/cgame/cg_draw.c
  	if ( cg_drawAmmoWarning.integer == 0 ) {
  		return;
  	}
-@@ -2390,6 +2653,14 @@
+@@ -2390,6 +2692,14 @@
  			s = "Team Deathmatch";
  		} else if ( cgs.gametype == GT_CTF ) {
  			s = "Capture the Flag";
@@ -5948,7 +6657,7 @@ Index: code/cgame/cg_draw.c
  #ifdef MISSIONPACK
  		} else if ( cgs.gametype == GT_1FCTF ) {
  			s = "One Flag CTF";
-@@ -2516,7 +2787,7 @@
+@@ -2516,7 +2826,7 @@
  		return;
  	}
  */
@@ -5957,7 +6666,7 @@ Index: code/cgame/cg_draw.c
  		CG_DrawSpectator();
  		CG_DrawCrosshair();
  		CG_DrawCrosshairNames();
-@@ -2550,7 +2821,7 @@
+@@ -2550,7 +2860,7 @@
  			CG_DrawReward();
  		}
      
@@ -5968,7 +6677,7 @@ Index: code/cgame/cg_draw.c
  #endif
 Index: code/cgame/cg_newdraw.c
 ===================================================================
---- code/cgame/cg_newdraw.c	(revision 1121)
+--- code/cgame/cg_newdraw.c	(revision 1126)
 +++ code/cgame/cg_newdraw.c	(working copy)
 @@ -56,7 +56,7 @@
  }
@@ -6084,7 +6793,7 @@ Index: code/cgame/cg_newdraw.c
  }
 Index: code/cgame/cg_consolecmds.c
 ===================================================================
---- code/cgame/cg_consolecmds.c	(revision 1121)
+--- code/cgame/cg_consolecmds.c	(revision 1126)
 +++ code/cgame/cg_consolecmds.c	(working copy)
 @@ -299,7 +299,7 @@
  }
@@ -6097,7 +6806,7 @@ Index: code/cgame/cg_consolecmds.c
  		trap_SendConsoleCommand(va("cmd vsay_team %s\n", VOICECHAT_ONOFFENSE));
 Index: code/cgame/cg_view.c
 ===================================================================
---- code/cgame/cg_view.c	(revision 1121)
+--- code/cgame/cg_view.c	(revision 1126)
 +++ code/cgame/cg_view.c	(working copy)
 @@ -234,7 +234,8 @@
  	VectorCopy( cg.refdefViewAngles, focusAngles );
@@ -6111,7 +6820,7 @@ Index: code/cgame/cg_view.c
  	}
 Index: code/cgame/cg_servercmds.c
 ===================================================================
---- code/cgame/cg_servercmds.c	(revision 1121)
+--- code/cgame/cg_servercmds.c	(revision 1126)
 +++ code/cgame/cg_servercmds.c	(working copy)
 @@ -75,29 +75,45 @@
  	cg.teamScores[0] = atoi( CG_Argv( 2 ) );
@@ -6173,7 +6882,7 @@ Index: code/cgame/cg_servercmds.c
  
  		cg.scores[i].team = cgs.clientinfo[cg.scores[i].client].team;
  	}
-@@ -109,6 +125,16 @@
+@@ -109,6 +125,33 @@
  
  /*
  =================
@@ -6187,14 +6896,31 @@ Index: code/cgame/cg_servercmds.c
 +
 +/*
 +=================
++CG_ParseAttackingTeam
++
++=================
++*/
++static void CG_ParseAttackingTeam( void ) {
++	int temp;
++	temp = atoi( CG_Argv( 1 ) );
++	if(temp==TEAM_RED)
++		cgs.attackingTeam = TEAM_RED;
++	else if (temp==TEAM_BLUE)
++		cgs.attackingTeam = TEAM_BLUE;
++	else
++		cgs.attackingTeam = TEAM_NONE; //Should never happen.
++}
++
++/*
++=================
  CG_ParseTeamInfo
  
  =================
-@@ -147,6 +173,11 @@
+@@ -147,6 +190,11 @@
  
  	info = CG_ConfigString( CS_SERVERINFO );
  	cgs.gametype = atoi( Info_ValueForKey( info, "g_gametype" ) );
-+	//Be default do as normal:
++	//By default do as normal:
 +	cgs.ffa_gt = 0;
 +	//See if ffa gametype
 +	if(cgs.gametype == GT_LMS)	
@@ -6202,17 +6928,18 @@ Index: code/cgame/cg_servercmds.c
  	trap_Cvar_Set("g_gametype", va("%i", cgs.gametype));
  	cgs.dmflags = atoi( Info_ValueForKey( info, "dmflags" ) );
  	cgs.teamflags = atoi( Info_ValueForKey( info, "teamflags" ) );
-@@ -154,6 +185,9 @@
+@@ -154,6 +202,10 @@
  	cgs.capturelimit = atoi( Info_ValueForKey( info, "capturelimit" ) );
  	cgs.timelimit = atoi( Info_ValueForKey( info, "timelimit" ) );
  	cgs.maxclients = atoi( Info_ValueForKey( info, "sv_maxclients" ) );
 +	cgs.roundtime = atoi( Info_ValueForKey( info, "elimination_roundtime" ) );
 +	cgs.instantgib = atoi( Info_ValueForKey( info, "g_instantgib" ) );
 +	cgs.lms_mode = atoi( Info_ValueForKey( info, "g_lms_mode" ) );
++	cgs.oneway = atoi( Info_ValueForKey( info, "elimination_ctf_oneway" ) )? qtrue : qfalse;
  	mapname = Info_ValueForKey( info, "mapname" );
  	Com_sprintf( cgs.mapname, sizeof( cgs.mapname ), "maps/%s.bsp", mapname );
  	Q_strncpyz( cgs.redTeam, Info_ValueForKey( info, "g_redTeam" ), sizeof(cgs.redTeam) );
-@@ -205,7 +239,7 @@
+@@ -205,7 +257,7 @@
  	cgs.scores1 = atoi( CG_ConfigString( CS_SCORES1 ) );
  	cgs.scores2 = atoi( CG_ConfigString( CS_SCORES2 ) );
  	cgs.levelStartTime = atoi( CG_ConfigString( CS_LEVEL_START_TIME ) );
@@ -6221,7 +6948,7 @@ Index: code/cgame/cg_servercmds.c
  		s = CG_ConfigString( CS_FLAGSTATUS );
  		cgs.redflag = s[0] - '0';
  		cgs.blueflag = s[1] - '0';
-@@ -331,7 +365,7 @@
+@@ -331,7 +383,7 @@
  		CG_NewClientInfo( num - CS_PLAYERS );
  		CG_BuildSpectatorString();
  	} else if ( num == CS_FLAGSTATUS ) {
@@ -6230,7 +6957,7 @@ Index: code/cgame/cg_servercmds.c
  			// format is rb where its red/blue, 0 is at base, 1 is taken, 2 is dropped
  			cgs.redflag = str[0] - '0';
  			cgs.blueflag = str[1] - '0';
-@@ -1048,6 +1082,11 @@
+@@ -1048,6 +1100,16 @@
  		return;
  	}
  
@@ -6239,12 +6966,17 @@ Index: code/cgame/cg_servercmds.c
 +		return;
 +	}
 +
++	if ( !strcmp( cmd, "attackingteam" ) ) {
++		CG_ParseAttackingTeam();
++		return;
++	}
++
  	if ( !strcmp( cmd, "tinfo" ) ) {
  		CG_ParseTeamInfo();
  		return;
 Index: code/cgame/cg_scoreboard.c
 ===================================================================
---- code/cgame/cg_scoreboard.c	(revision 1121)
+--- code/cgame/cg_scoreboard.c	(revision 1126)
 +++ code/cgame/cg_scoreboard.c	(working copy)
 @@ -176,8 +176,12 @@
  		Com_sprintf(string, sizeof(string),
@@ -6299,7 +7031,7 @@ Index: code/cgame/cg_scoreboard.c
  		//
 Index: code/cgame/cg_main.c
 ===================================================================
---- code/cgame/cg_main.c	(revision 1121)
+--- code/cgame/cg_main.c	(revision 1126)
 +++ code/cgame/cg_main.c	(working copy)
 @@ -183,6 +183,7 @@
  vmCvar_t	cg_oldPlasma;
@@ -6492,7 +7224,7 @@ Index: code/cgame/cg_main.c
  		count = 0;
 Index: code/ui/ui_main.c
 ===================================================================
---- code/ui/ui_main.c	(revision 1121)
+--- code/ui/ui_main.c	(revision 1126)
 +++ code/ui/ui_main.c	(working copy)
 @@ -64,7 +64,7 @@
  
@@ -6651,7 +7383,7 @@ Index: code/ui/ui_main.c
  	  }
 Index: code/ui/ui_gameinfo.c
 ===================================================================
---- code/ui/ui_gameinfo.c	(revision 1121)
+--- code/ui/ui_gameinfo.c	(revision 1126)
 +++ code/ui/ui_gameinfo.c	(working copy)
 @@ -198,6 +198,18 @@
  			if( strstr( type, "harvester" ) ) {
@@ -6674,7 +7406,7 @@ Index: code/ui/ui_gameinfo.c
  		}
 Index: code/ui/ui_players.c
 ===================================================================
---- code/ui/ui_players.c	(revision 1121)
+--- code/ui/ui_players.c	(revision 1126)
 +++ code/ui/ui_players.c	(working copy)
 @@ -1204,7 +1204,7 @@
  		}
@@ -6687,7 +7419,7 @@ Index: code/ui/ui_players.c
  	else {
 Index: code/client/cl_main.c
 ===================================================================
---- code/client/cl_main.c	(revision 1121)
+--- code/client/cl_main.c	(revision 1126)
 +++ code/client/cl_main.c	(working copy)
 @@ -2656,8 +2656,8 @@
  	Cvar_Get ("snaps", "20", CVAR_USERINFO | CVAR_ARCHIVE );
@@ -6722,7 +7454,7 @@ Index: code/client/cl_main.c
  
 Index: code/client/snd_dma.c
 ===================================================================
---- code/client/snd_dma.c	(revision 1121)
+--- code/client/snd_dma.c	(revision 1126)
 +++ code/client/snd_dma.c	(working copy)
 @@ -364,7 +364,7 @@
  		Com_Memset( s_knownSfx, 0, sizeof( s_knownSfx ) );
@@ -6735,7 +7467,7 @@ Index: code/client/snd_dma.c
  
 Index: code/client/snd_openal.c
 ===================================================================
---- code/client/snd_openal.c	(revision 1121)
+--- code/client/snd_openal.c	(revision 1126)
 +++ code/client/snd_openal.c	(working copy)
 @@ -384,7 +384,7 @@
  	numSfx = 0;

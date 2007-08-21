@@ -719,7 +719,7 @@ void Team_DD_makeA2team( gentity_t *target, int team ) {
 		it = BG_FindItem ("Point A (Blue)");
 	if(team == TEAM_FREE)
 		it = BG_FindItem ("Point A (White)");
-	if (!it) {
+	if (!it || it == NULL) {
 		PrintMsg( NULL, "No item\n");
 		return;
 	}
@@ -1028,7 +1028,7 @@ int Team_TouchDoubleDominationPoint( gentity_t *ent, gentity_t *other, int team 
 
 	updateDDpoints();
 
-	return 1;
+	return 0;
 }
 
 /*

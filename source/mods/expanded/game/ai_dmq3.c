@@ -408,6 +408,16 @@ void BotSetTeamStatus(bot_state_t *bs) {
 		case LTG_ATTACKENEMYBASE:
 			teamtask = TEAMTASK_OFFENSE;
 			break;
+		case LTG_POINTA:
+			if(BotTeam(bs) == TEAM_BLUE)
+				teamtask = TEAMTASK_OFFENSE;
+			else
+				teamtask = TEAMTASK_DEFENSE;
+		case LTG_POINTB:
+			if(BotTeam(bs) == TEAM_RED)
+				teamtask = TEAMTASK_OFFENSE;
+			else
+				teamtask = TEAMTASK_DEFENSE;
 		default:
 			teamtask = TEAMTASK_PATROL;
 			break;
@@ -787,6 +797,53 @@ void BotCTFRetreatGoals(bot_state_t *bs) {
 			BotSetTeamStatus(bs);
 		}
 	}
+}
+
+/*
+==================
+BotDDSeekGoals
+==================
+*/
+
+void BotDDSeekGoals(bot_state_t *bs) {
+
+	/*if (bs->ltgtype == LTG_TEAMHELP ||
+			bs->ltgtype == LTG_TEAMACCOMPANY ||
+			bs->ltgtype == LTG_CAMPORDER ||
+			bs->ltgtype == LTG_PATROL ||
+			bs->ltgtype == LTG_GETITEM) {
+		return;
+	}*/
+
+	if(bs->ltgtype == LTG_POINTA)
+		memcpy(&bs->teamgoal, &ctf_redflag, sizeof(bot_goal_t));
+	if(bs->ltgtype == LTG_POINTB)
+		memcpy(&bs->teamgoal, &ctf_blueflag, sizeof(bot_goal_t));
+
+	if(bs->ltgtype == LTG_POINTA || bs->ltgtype == LTG_POINTB)
+		return;
+
+	if(rand()%2==0)
+		bs->ltgtype = LTG_POINTA;
+	else
+		bs->ltgtype = LTG_POINTB;
+
+	if(bs->ltgtype == LTG_POINTA) {
+		memcpy(&bs->teamgoal, &ctf_redflag, sizeof(bot_goal_t));
+		if(BotTeam(bs) == TEAM_BLUE)
+			BotSetUserInfo(bs, "teamtask", va("%d", TEAMTASK_OFFENSE));
+		else
+			BotSetUserInfo(bs, "teamtask", va("%d", TEAMTASK_DEFENSE));
+	} else
+	if(bs->ltgtype == LTG_POINTB) {
+		memcpy(&bs->teamgoal, &ctf_blueflag, sizeof(bot_goal_t));
+		if(BotTeam(bs) == TEAM_RED)
+			BotSetUserInfo(bs, "teamtask", va("%d", TEAMTASK_OFFENSE));
+		else
+			BotSetUserInfo(bs, "teamtask", va("%d", TEAMTASK_DEFENSE));
+	}
+
+
 }
 
 #ifdef MISSIONPACK
@@ -1358,6 +1415,10 @@ void BotTeamGoals(bot_state_t *bs, int retreat) {
 		}
 #endif
 	}
+
+	if(gametype == GT_DOUBLE_D) //Don't care about retreat
+		BotDDSeekGoals(bs);
+
 	// reset the order time which is used to see if
 	// we decided to refuse an order
 	bs->order_time = 0;
@@ -5407,6 +5468,12 @@ void BotSetupDeathmatchAI(void) {
 			BotAI_Print(PRT_WARNING, "CTF without Red Flag\n");
 		if (trap_BotGetLevelItemGoal(-1, "Blue Flag", &ctf_blueflag) < 0)
 			BotAI_Print(PRT_WARNING, "CTF without Blue Flag\n");
+	}
+	else if (gametype == GT_DOUBLE_D) {
+		if (trap_BotGetLevelItemGoal(-1, "Red Flag", &ctf_redflag) < 0)
+			BotAI_Print(PRT_WARNING, "DD without Point A\n");
+		if (trap_BotGetLevelItemGoal(-1, "Blue Flag", &ctf_blueflag) < 0)
+			BotAI_Print(PRT_WARNING, "DD without Point B\n");
 	}
 #ifdef MISSIONPACK
 	else if (gametype == GT_1FCTF) {
