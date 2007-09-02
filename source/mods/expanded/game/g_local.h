@@ -634,7 +634,6 @@ void G_StartKamikaze( gentity_t *ent );
 //
 void MoveClientToIntermission (gentity_t *client);
 void G_SetStats (gentity_t *ent);
-void DeathmatchScoreboardMessage (gentity_t *client);
 
 //
 // g_cmds.c
@@ -642,6 +641,8 @@ void DeathmatchScoreboardMessage (gentity_t *client);
 
 void DoubleDominationScoreTimeMessage( gentity_t *ent );
 void AttackingTeamMessage( gentity_t *ent );
+void DeathmatchScoreboardMessage (gentity_t *client);
+void EliminationMessage (gentity_t *client);
 
 //
 // g_pweapon.c
@@ -657,6 +658,7 @@ void CheckTeamLeader( int team );
 void G_RunThink (gentity_t *ent);
 void QDECL G_LogPrintf( const char *fmt, ... );
 void SendScoreboardMessageToAllClients( void );
+void SendEliminationMessageToAllClients( void );
 void SendDDtimetakenMessageToAllClients( void );
 void QDECL G_Printf( const char *fmt, ... );
 void QDECL G_Error( const char *fmt, ... );

@@ -91,6 +91,18 @@ void DeathmatchScoreboardMessage( gentity_t *ent ) {
 
 /*
 ==================
+EliminationMessage
+
+==================
+*/
+
+void EliminationMessage(gentity_t *ent) {
+	trap_SendServerCommand( ent-g_entities, va("elimination %i %i %i", 
+		level.teamScores[TEAM_RED], level.teamScores[TEAM_BLUE], level.roundStartTime) );
+}
+
+/*
+==================
 DoubleDominationScoreTime
 
 ==================

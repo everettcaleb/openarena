@@ -1028,20 +1028,20 @@ void ClientThink_real( gentity_t *ent ) {
 	// check for respawning
 	if ( client->ps.stats[STAT_HEALTH] <= 0 ) {
 		// wait for the attack button to be pressed
-		if ( level.time > client->respawnTime ) {
-			// forcerespawn is to prevent users from waiting out powerups
-			if (( g_forcerespawn.integer > 0 && 
-				( level.time - client->respawnTime ) > g_forcerespawn.integer * 1000 )
-				//In Last man standing, we force a quick respawn, since the player must be able to loose health
-				|| (g_gametype.integer==GT_LMS || g_gametype.integer==GT_ELIMINATION || g_gametype.integer==GT_CTF_ELIMINATION) && ( level.time - client->respawnTime )>0) {
-				respawn( ent );
-				return;
-			}
-		
-			// pressing attack or use is the normal respawn method
-			if ( ucmd->buttons & ( BUTTON_ATTACK | BUTTON_USE_HOLDABLE ) ) {
-				respawn( ent );
-			}
+		// forcerespawn is to prevent users from waiting out powerups
+		// In Last man standing, we force a quick respawn, since
+		// the player must be able to loose health
+		// pressing attack or use is the normal respawn method
+		if ( ( level.time > client->respawnTime ) &&
+			( ( ( g_forcerespawn.integer > 0 ) && 
+			( level.time - client->respawnTime  > g_forcerespawn.integer * 1000 ) ) ||
+			( ( ( g_gametype.integer == GT_LMS ) ||
+			( g_gametype.integer == GT_ELIMINATION ) ||
+			( g_gametype.integer == GT_CTF_ELIMINATION ) ) &&
+			( level.time - client->respawnTime > 0 ) ) ||	
+			( ucmd->buttons & ( BUTTON_ATTACK | BUTTON_USE_HOLDABLE ) ) ) ) {
+
+			respawn( ent );
 		}
 		return;
 	}

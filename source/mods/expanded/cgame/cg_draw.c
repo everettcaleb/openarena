@@ -894,7 +894,8 @@ static float CG_DrawDoubleDominationThings( float y ) {
 	w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
 	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
 
-	if(statusB == statusA && statusA == TEAM_RED || statusB == statusA && statusA == TEAM_BLUE) {
+	if( ( ( statusB == statusA ) && ( statusA == TEAM_RED ) ) ||
+		( ( statusB == statusA ) && ( statusA == TEAM_BLUE ) ) ) {
 		s = va("Capture in: %i",(cgs.timetaken+10*1000-cg.time)/1000+1);
 		w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
 		y+=SMALLCHAR_HEIGHT+4;

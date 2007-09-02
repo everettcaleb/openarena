@@ -976,6 +976,23 @@ void SendScoreboardMessageToAllClients( void ) {
 
 /*
 ========================
+SendElimiantionMessageToAllClients
+
+Used to send information important to Elimination
+========================
+*/
+void SendEliminationMessageToAllClients( void ) {
+	int		i;
+
+	for ( i = 0 ; i < level.maxclients ; i++ ) {
+		if ( level.clients[ i ].pers.connected == CON_CONNECTED ) {
+			EliminationMessage( g_entities + i );
+		}
+	}
+}
+
+/*
+========================
 SendDDtimetakenMessageToAllClients
 
 Do this if a team just started dominating.
@@ -1518,7 +1535,7 @@ void StartLMSRound(void) {
 	//If we are enough to start a round:
 	level.roundNumberStarted = level.roundNumber; //Set numbers
 
-	SendScoreboardMessageToAllClients();
+	SendEliminationMessageToAllClients();
 	EnableWeapons();
 }
 
@@ -1548,7 +1565,7 @@ void StartEliminationRound(void) {
 		Team_ReturnFlag( TEAM_RED );
 		Team_ReturnFlag( TEAM_BLUE );
 	}
-	SendScoreboardMessageToAllClients();
+	SendEliminationMessageToAllClients();
 	if(g_elimination_ctf_oneway.integer)
 		SendAttackingTeamMessageToAllClients(); //Ensure that evaryone know who should attack.
 	EnableWeapons();
@@ -1560,7 +1577,7 @@ void EndEliminationRound(void)
 	DisableWeapons();
 	level.roundNumber++;
 	level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
-	SendScoreboardMessageToAllClients();
+	SendEliminationMessageToAllClients();
 	level.roundRespawned = qfalse;
 	if(g_elimination_ctf_oneway.integer)
 		SendAttackingTeamMessageToAllClients();
@@ -1571,7 +1588,7 @@ void RestartEliminationRound(void) {
 	DisableWeapons();
 	level.roundNumberStarted = level.roundNumber-1;
 	level.roundStartTime = level.time+1000*g_elimination_warmup.integer;
-	SendScoreboardMessageToAllClients();
+	SendEliminationMessageToAllClients();
 	level.roundRespawned = qfalse;
 	if(g_elimination_ctf_oneway.integer)
 		SendAttackingTeamMessageToAllClients();
@@ -1694,7 +1711,7 @@ void CheckLMS(void) {
 			level.roundRespawned = qtrue;
 			RespawnAll();
 			DisableWeapons();
-			SendScoreboardMessageToAllClients();
+			SendEliminationMessageToAllClients();
 		}
 
 		if(level.time<=level.roundStartTime && level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer)
@@ -1728,6 +1745,9 @@ CheckElimination
 */
 void CheckElimination(void) {
 	if ( level.numPlayingClients < 1 ) {
+		if( (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION) &&
+			( level.time+1000*g_elimination_warmup.integer-500>level.roundStartTime ))
+			RestartEliminationRound(); //For spectators
 		return;
 	}	
 
@@ -1828,7 +1848,7 @@ void CheckElimination(void) {
 		{
 			level.roundRespawned = qtrue;
 			RespawnAll();
-			SendScoreboardMessageToAllClients();
+			SendEliminationMessageToAllClients();
 		}
 
 		if(level.time<=level.roundStartTime && level.time>level.roundStartTime-1000*g_elimination_activewarmup.integer)

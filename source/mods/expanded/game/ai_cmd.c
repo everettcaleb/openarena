@@ -129,7 +129,10 @@ void BotPrintTeamGoal(bot_state_t *bs) {
 			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna camp for %1.0f secs\n", netname, t);
 			break;
 		}
-		case LTG_PATROL:
+		case LTG_PATROL:type "dd_start_pointb"
+{
+"I'll dominate point B";
+}
 		{
 			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna patrol for %1.0f secs\n", netname, t);
 			break;
@@ -667,7 +670,7 @@ For Double Domination
 ==================
 */
 void BotMatch_TakeA(bot_state_t *bs, bot_match_t *match) {
-	char itemname[MAX_MESSAGE_SIZE];
+// 	char itemname[MAX_MESSAGE_SIZE];
 	char netname[MAX_MESSAGE_SIZE];
 	int client;
 
@@ -675,13 +678,13 @@ void BotMatch_TakeA(bot_state_t *bs, bot_match_t *match) {
 	//if not addressed to this bot
 	if (!BotAddressedToBot(bs, match)) return;
 	//get the match variable
-	trap_BotMatchVariable(match, KEYAREA, itemname, sizeof(itemname));
+	/*trap_BotMatchVariable(match, KEYAREA, itemname, sizeof(itemname));
 	//
 	if (!BotGetMessageTeamGoal(bs, itemname, &bs->teamgoal)) {
 		//BotAI_BotInitialChat(bs, "cannotfind", itemname, NULL);
 		//trap_BotEnterChat(bs->cs, bs->client, CHAT_TEAM);
 		return;
-	}
+	}*/
 	//
 	trap_BotMatchVariable(match, NETNAME, netname, sizeof(netname));
 	//
@@ -716,7 +719,7 @@ For Double Domination
 ==================
 */
 void BotMatch_TakeB(bot_state_t *bs, bot_match_t *match) {
-	char itemname[MAX_MESSAGE_SIZE];
+// 	char itemname[MAX_MESSAGE_SIZE];
 	char netname[MAX_MESSAGE_SIZE];
 	int client;
 
@@ -724,13 +727,13 @@ void BotMatch_TakeB(bot_state_t *bs, bot_match_t *match) {
 	//if not addressed to this bot
 	if (!BotAddressedToBot(bs, match)) return;
 	//get the match variable
-	trap_BotMatchVariable(match, KEYAREA, itemname, sizeof(itemname));
+	/*trap_BotMatchVariable(match, KEYAREA, itemname, sizeof(itemname));
 	//
 	if (!BotGetMessageTeamGoal(bs, itemname, &bs->teamgoal)) {
 		//BotAI_BotInitialChat(bs, "cannotfind", itemname, NULL);
 		//trap_BotEnterChat(bs->cs, bs->client, CHAT_TEAM);
-		return;
-	}
+		//return;
+	}*/
 	//
 	trap_BotMatchVariable(match, NETNAME, netname, sizeof(netname));
 	//
@@ -1556,6 +1559,16 @@ void BotMatch_WhatAreYouDoing(bot_state_t *bs, bot_match_t *match) {
 			break;
 		}
 #endif
+		case LTG_POINTA:
+		{
+			BotAI_BotInitialChat(bs, "dd_pointa", NULL);
+			break;
+		}
+		case LTG_POINTB:
+		{
+			BotAI_BotInitialChat(bs, "dd_pointb", NULL);
+			break;
+		}
 		default:
 		{
 			BotAI_BotInitialChat(bs, "roaming", NULL);

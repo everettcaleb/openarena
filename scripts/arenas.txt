@@ -2,7 +2,7 @@
 map             "oa_rpg3dm2"
 longname        "Trial by Error"
 bots            "kyonshi jenna sarge"
-timelimit       10
+fraglimit       15
 type            "single tourney ffa"
 }
 
@@ -229,7 +229,7 @@ longname	"Some Bases"
 fraglimit	30
 type		"ctf"
 }
-//for the mp menu
+
 {
 map		"oa_ctf4ish"
 bots		"sergei angelyss kyonshi"

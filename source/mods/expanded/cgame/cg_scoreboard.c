@@ -191,8 +191,10 @@ static void CG_DrawClientScore( int y, score_t *score, float *color, float fade,
 
 		localClient = qtrue;
 
-		if ( cg.snap->ps.persistant[PERS_TEAM] == TEAM_SPECTATOR 
-			|| cgs.gametype >= GT_TEAM && cgs.ffa_gt!=1) {
+		if ( ( cg.snap->ps.persistant[PERS_TEAM] == TEAM_SPECTATOR ) ||
+			( ( cgs.gametype >= GT_TEAM ) &&
+			( cgs.ffa_gt != 1 ) ) ) {
+			// Sago: I think this means that it doesn't matter if to players are tied in team game - only team score counts
 			rank = -1;
 		} else {
 			rank = cg.snap->ps.persistant[PERS_RANK] & ~RANK_TIED_FLAG;

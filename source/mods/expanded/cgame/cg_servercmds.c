@@ -125,7 +125,22 @@ static void CG_ParseScores( void ) {
 
 /*
 =================
-CG_ParseScores
+CG_ParseElimination
+
+=================
+*/
+static void CG_ParseElimination( void ) {
+	if(cgs.gametype == GT_ELIMINATION || cgs.gametype == GT_CTF_ELIMINATION)
+	{
+		cgs.scores1 = atoi( CG_Argv( 1 ) );
+		cgs.scores2 = atoi( CG_Argv( 2 ) );
+	}
+	cgs.roundStartTime = atoi( CG_Argv( 3 ) );
+}
+
+/*
+=================
+CG_ParseDDtimetaken
 
 =================
 */
@@ -1102,6 +1117,11 @@ static void CG_ServerCommand( void ) {
 
 	if ( !strcmp( cmd, "ddtaken" ) ) {
 		CG_ParseDDtimetaken();
+		return;
+	}
+
+	if ( !strcmp( cmd, "elimination" ) ) {
+		CG_ParseElimination();
 		return;
 	}
 

@@ -965,8 +965,8 @@ void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 
 	ent->physicsBounce = 0.50;		// items are bouncy
 
-	if (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_LMS || item->giType != IT_TEAM && 
-									(g_instantgib.integer || g_gametype.integer==GT_CTF_ELIMINATION))
+	if (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_LMS || 
+			( item->giType != IT_TEAM && (g_instantgib.integer || g_gametype.integer==GT_CTF_ELIMINATION) ) )
 		ent->s.eFlags |= EF_NODRAW; //Invisible in elimination
 
 	if(g_gametype.integer == GT_DOUBLE_D && (strcmp(ent->classname, "team_CTF_redflag")==0 || strcmp(ent->classname, "team_CTF_blueflag")==0 || strcmp(ent->classname, "team_CTF_neutralflag") == 0 || item->giType == IT_PERSISTANT_POWERUP  ))

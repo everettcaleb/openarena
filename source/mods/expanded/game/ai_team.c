@@ -499,9 +499,26 @@ void BotCTFOrders_FlagNotAtBase(bot_state_t *bs) {
 	int numteammates, defenders, attackers, i;
 	int teammates[MAX_CLIENTS];
 	char name[MAX_NETNAME];
+	qboolean weAreAttacking;
 
 	numteammates = BotSortTeamMatesByBaseTravelTime(bs, teammates, sizeof(teammates));
 	BotSortTeamMatesByTaskPreference(bs, teammates, numteammates);
+
+	weAreAttacking = qfalse;
+
+	//In oneway ctf we must all move out of the base (only one strategi, maybe we can also send some to the enemy base  to meet the flag carier?)
+	//We must be defending
+	if(g_elimination_ctf_oneway.integer > 0) {
+		for (i = 0; i < numteammates; i++) {
+			//
+			ClientName(teammates[i], name, sizeof(name));
+			BotAI_BotInitialChat(bs, "cmd_getflag", name, NULL);
+			BotSayTeamOrder(bs, teammates[i]);
+			BotSayVoiceTeamOrder(bs, teammates[i], VOICECHAT_GETFLAG);
+		}
+		return;
+	}
+
 	//passive strategy
 	if (!(bs->ctfstrategy & CTFS_AGRESSIVE)) {
 		//different orders based on the number of team mates
@@ -791,11 +808,40 @@ void BotCTFOrders_BothFlagsAtBase(bot_state_t *bs) {
 	int numteammates, defenders, attackers, i;
 	int teammates[MAX_CLIENTS];
 	char name[MAX_NETNAME];
+	qboolean weAreAttacking;
 
 	//sort team mates by travel time to base
 	numteammates = BotSortTeamMatesByBaseTravelTime(bs, teammates, sizeof(teammates));
 	//sort team mates by CTF preference
 	BotSortTeamMatesByTaskPreference(bs, teammates, numteammates);
+
+	weAreAttacking = qfalse;
+
+	if(g_elimination_ctf_oneway.integer > 0) {
+		//See if we are attacking:
+		if( ( (level.eliminationSides+level.roundNumber)%2 == 0 ) && (BotTeam(bs) == TEAM_RED))
+			weAreAttacking = qtrue;
+		
+		if(weAreAttacking) {
+			for (i = 0; i < numteammates; i++) {
+				//
+				ClientName(teammates[i], name, sizeof(name));
+				BotAI_BotInitialChat(bs, "cmd_getflag", name, NULL);
+				BotSayTeamOrder(bs, teammates[i]);
+				BotSayVoiceTeamOrder(bs, teammates[i], VOICECHAT_GETFLAG);
+			}
+		} else {
+			for (i = 0; i < numteammates; i++) {
+				//
+				ClientName(teammates[i], name, sizeof(name));
+				BotAI_BotInitialChat(bs, "cmd_defendbase", name, NULL);
+				BotSayTeamOrder(bs, teammates[i]);
+				BotSayVoiceTeamOrder(bs, teammates[i], VOICECHAT_DEFEND);
+			}
+		}
+		return; //Sago: Or the leader will make a counter order.
+	}
+
 	//passive strategy
 	if (!(bs->ctfstrategy & CTFS_AGRESSIVE)) {
 		//different orders based on the number of team mates
@@ -2030,6 +2076,8 @@ int FindHumanTeamLeader(bot_state_t *bs) {
 	return qfalse;
 }
 
+int lastRoundNumber; //used to give new orders every round
+
 /*
 ==================
 BotTeamAI
@@ -2104,11 +2152,12 @@ void BotTeamAI(bot_state_t *bs) {
 		{
 			//if the number of team mates changed or the flag status changed
 			//or someone wants to know what to do
-			if (bs->numteammates != numteammates || bs->flagstatuschanged || bs->forceorders) {
+			if (bs->numteammates != numteammates || bs->flagstatuschanged || bs->forceorders || lastRoundNumber != level.roundNumber) {
 				bs->teamgiveorders_time = FloatTime();
 				bs->numteammates = numteammates;
 				bs->flagstatuschanged = qfalse;
 				bs->forceorders = qfalse;
+				lastRoundNumber = level.roundNumber;
 			}
 			//if there were no flag captures the last 3 minutes
 			if (bs->lastflagcapture_time < FloatTime() - 240) {

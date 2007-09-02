@@ -1725,18 +1725,20 @@ void BotCheckItemPickup(bot_state_t *bs, int *oldinventory) {
 					//trap_BotEnterChat(bs->cs, leader, CHAT_TELL);
 				}
 				else if (g_spSkill.integer <= 3) {
-					if ( bs->ltgtype != LTG_GETFLAG &&
-						 bs->ltgtype != LTG_ATTACKENEMYBASE &&
-						 bs->ltgtype != LTG_HARVEST ) {
-						//
-						if ((gametype != GT_CTF && gametype != GT_CTF_ELIMINATION || (bs->redflagstatus == 0 && bs->blueflagstatus == 0)) &&
-							(gametype != GT_1FCTF || bs->neutralflagstatus == 0) ) {
+					if ( ( bs->ltgtype != LTG_GETFLAG ) &&
+						( bs->ltgtype != LTG_ATTACKENEMYBASE ) &&
+						( bs->ltgtype != LTG_HARVEST ) &&
+						( ( ( gametype != GT_CTF ) &&
+						( gametype != GT_CTF_ELIMINATION ) ) ||
+						( ( bs->redflagstatus == 0 ) &&
+						( bs->blueflagstatus == 0 ) ) ) &&
+						( ( gametype != GT_1FCTF ) ||
+						( bs->neutralflagstatus == 0 ) ) ) {
 							// tell the leader we want to be on offence
 							BotVoiceChat(bs, leader, VOICECHAT_WANTONOFFENSE);
 							//BotAI_BotInitialChat(bs, "wantoffence", NULL);
 							//trap_BotEnterChat(bs->cs, leader, CHAT_TELL);
 						}
-					}
 					bs->teamtaskpreference |= TEAMTP_ATTACKER;
 				}
 			}
@@ -1751,17 +1753,19 @@ void BotCheckItemPickup(bot_state_t *bs, int *oldinventory) {
 					//BotAI_BotInitialChat(bs, "wantdefence", NULL);
 					//trap_BotEnterChat(bs->cs, leader, CHAT_TELL);
 				}
-				else if (g_spSkill.integer <= 3) {
-					if ( bs->ltgtype != LTG_DEFENDKEYAREA ) {
-						//
-						if ((gametype != GT_CTF && gametype != GT_CTF_ELIMINATION || (bs->redflagstatus == 0 && bs->blueflagstatus == 0)) &&
-							(gametype != GT_1FCTF || bs->neutralflagstatus == 0) ) {
-							// tell the leader we want to be on defense
-							BotVoiceChat(bs, -1, VOICECHAT_WANTONDEFENSE);
-							//BotAI_BotInitialChat(bs, "wantdefence", NULL);
-							//trap_BotEnterChat(bs->cs, leader, CHAT_TELL);
-						}
-					}
+				else if ( (g_spSkill.integer <= 3) &&
+					( bs->ltgtype != LTG_DEFENDKEYAREA ) &&
+					( ( ( gametype != GT_CTF ) &&
+					( gametype != GT_CTF_ELIMINATION ) ) ||
+					( ( bs->redflagstatus == 0 ) &&
+					( bs->blueflagstatus == 0 ) ) ) &&
+					( ( gametype != GT_1FCTF ) ||
+					( bs->neutralflagstatus == 0 ) ) ) {
+
+					// tell the leader we want to be on defense
+					BotVoiceChat(bs, -1, VOICECHAT_WANTONDEFENSE);
+					//BotAI_BotInitialChat(bs, "wantdefence", NULL);
+					//trap_BotEnterChat(bs->cs, leader, CHAT_TELL);
 				}
 				bs->teamtaskpreference |= TEAMTP_DEFENDER;
 			}

@@ -1027,10 +1027,19 @@ void ClientUserinfoChanged( int clientNum ) {
 	s = Info_ValueForKey (userinfo, "name");
 	ClientCleanName( s, client->pers.netname, sizeof(client->pers.netname) );
 
-	if ( (client->sess.sessionTeam == TEAM_SPECTATOR) || ((client->isEliminated) || client->ps.pm_type == PM_SPECTATOR) && g_gametype.integer == GT_ELIMINATION ) {
-		if ( client->sess.spectatorState == SPECTATOR_SCOREBOARD ) {
-			Q_strncpyz( client->pers.netname, "scoreboard", sizeof(client->pers.netname) );
-		}
+	// N_G: this condition makes no sense to me and I'm not going to
+	// try finding out what it means, I've added parentheses according to
+	// evaluation rules of the original code so grab a
+	// parentheses pairing highlighting text editor and see for yourself
+	// if you got it right
+	//Sago: One redundant check and CTF Elim and LMS was missing. Not an important function and I might never have noticed, should properly be ||
+	if ( ( ( client->sess.sessionTeam == TEAM_SPECTATOR ) ||
+		( ( ( client->isEliminated ) /*||
+		( client->ps.pm_type == PM_SPECTATOR )*/ ) &&   //Sago: If this is true client.isEliminated or TEAM_SPECTATOR is true to and this is redundant
+		( g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_LMS) ) ) &&
+		( client->sess.spectatorState == SPECTATOR_SCOREBOARD ) ) {
+
+		Q_strncpyz( client->pers.netname, "scoreboard", sizeof(client->pers.netname) );
 	}
 
 	if ( client->pers.connected == CON_CONNECTED ) {
@@ -1319,8 +1328,13 @@ void ClientBegin( int clientNum ) {
 	// locate ent at a spawn point
 	ClientSpawn( ent );
 
-	if ( (client->sess.sessionTeam != TEAM_SPECTATOR) && (!(client->isEliminated)&& (!client->ps.pm_type == PM_SPECTATOR) || 
-		(g_gametype.integer != GT_ELIMINATION && g_gametype.integer != GT_CTF_ELIMINATION && g_gametype.integer != GT_LMS)) ) {
+	// N_G: I'm really sure line 1333 is not what you meant
+	if( ( client->sess.sessionTeam != TEAM_SPECTATOR ) &&
+		( ( !( client->isEliminated ) /*&&
+		( ( !client->ps.pm_type ) == PM_SPECTATOR ) */ ) || //Sago: Yes, it made no sense 
+		( ( g_gametype.integer != GT_ELIMINATION ) &&
+		( g_gametype.integer != GT_CTF_ELIMINATION ) &&
+		( g_gametype.integer != GT_LMS ) ) ) ) {
 		// send event
 		tent = G_TempEntity( ent->client->ps.origin, EV_PLAYER_TELEPORT_IN );
 		tent->s.clientNum = ent->s.clientNum;
@@ -1364,12 +1378,20 @@ void ClientSpawn(gentity_t *ent) {
 	client = ent->client;
 
 	//In Elimination the player should not spawn if he have already spawned in the round (but not for spectators)
-	if(
-		(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION  && !level.intermissiontime) 
-		&& (client->sess.sessionTeam != TEAM_SPECTATOR))
+	// N_G: You've obviously wanted something ELSE
+	//Sago: Yes, the !level.intermissiontime is currently redundant but it might still be the bast place to make the test, CheckElimination in g_main makes sure the next if will fail and the rest of the things this block does might not affect if in Intermission (I'll just test that)
+	if( ( ( g_gametype.integer == GT_ELIMINATION ||
+		g_gametype.integer == GT_CTF_ELIMINATION ) &&
+		!level.intermissiontime  ) &&
+		( client->sess.sessionTeam != TEAM_SPECTATOR ) )
 	{
-		if((level.roundNumber==level.roundNumberStarted)||(level.time<level.roundStartTime-g_elimination_activewarmup.integer*1000)&& 
-			TeamCount( -1, TEAM_BLUE ) && TeamCount( -1, TEAM_RED ))
+		// N_G: Another condition that makes no sense to me, see for
+		// yourself if you really meant this
+		// Sago: I beleive the TeamCount is to make sure people can join even if the game can't start
+		if( ( level.roundNumber == level.roundNumberStarted ) ||
+			( (level.time < level.roundStartTime - g_elimination_activewarmup.integer*1000 ) &&
+			TeamCount( -1, TEAM_BLUE ) &&
+			TeamCount( -1, TEAM_RED )  ) )
 		{	
 			client->sess.spectatorState = SPECTATOR_FREE;
 			client->isEliminated = qtrue;
@@ -1410,7 +1432,7 @@ void ClientSpawn(gentity_t *ent) {
 	// do it before setting health back up, so farthest
 	// ranging doesn't count this client
 	if ((client->sess.sessionTeam == TEAM_SPECTATOR) 
-			/*|| (client->ps.pm_type == PM_SPECTATOR || client->isEliminated ) */ && (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION) ) {
+			|| ( (client->ps.pm_type == PM_SPECTATOR || client->isEliminated )  && (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION) ) ) {
 		spawnPoint = SelectSpectatorSpawnPoint ( spawn_origin, spawn_angles);
 	} else if (g_gametype.integer == GT_DOUBLE_D) {
 		//Double Domination uses special spawn points:
@@ -1615,8 +1637,8 @@ else
 	trap_GetUsercmd( client - level.clients, &ent->client->pers.cmd );
 	SetClientViewAngle( ent, spawn_angles );
 
-	if ( (ent->client->sess.sessionTeam == TEAM_SPECTATOR) || (client->ps.pm_type == PM_SPECTATOR || client->isEliminated) && 
-		(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_LMS) ) {
+	if ( (ent->client->sess.sessionTeam == TEAM_SPECTATOR) || ((client->ps.pm_type == PM_SPECTATOR || client->isEliminated) && 
+		(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_LMS) ) ) {
 
 	} else {
 		G_KillBox( ent );
@@ -1664,8 +1686,8 @@ else
 	ClientThink( ent-g_entities );
 
 	// positively link the client, even if the command times are weird
-	if ( (ent->client->sess.sessionTeam != TEAM_SPECTATOR) || (!client->isEliminated || client->ps.pm_type != PM_SPECTATOR)&& 
-		(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_LMS)) {
+	if ( (ent->client->sess.sessionTeam != TEAM_SPECTATOR) || ( (!client->isEliminated || client->ps.pm_type != PM_SPECTATOR)&& 
+		(g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_CTF_ELIMINATION || g_gametype.integer == GT_LMS) ) ) {
 		BG_PlayerStateToEntityState( &client->ps, &ent->s, qtrue );
 		VectorCopy( ent->client->ps.origin, ent->r.currentOrigin );
 		trap_LinkEntity( ent );
