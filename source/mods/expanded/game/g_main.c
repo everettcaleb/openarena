@@ -115,6 +115,9 @@ vmCvar_t	g_elimination_chain;
 vmCvar_t	g_elimination_mine;
 vmCvar_t	g_elimination_nail;
 #endif
+
+vmCvar_t	g_rockets;
+
 //dmn_clowns suggestions (with my idea of implementing):
 vmCvar_t	g_instantgib;
 vmCvar_t	g_vampire;
@@ -239,6 +242,9 @@ static cvarTable_t		gameCvarTable[] = {
 #endif
 	//Beta 10
 	{ &g_elimination_ctf_oneway, "elimination_ctf_oneway", "0", CVAR_SERVERINFO | CVAR_ARCHIVE| CVAR_NORESTART, 0, qtrue },
+
+	//nexuiz style rocket arena
+	{ &g_rockets, "g_rockets", "0", CVAR_SERVERINFO | CVAR_LATCH | CVAR_NORESTART, 0, qfalse },
 
 	//Instantgib and Vampire thingies
 	{ &g_instantgib, "g_instantgib", "0", CVAR_SERVERINFO | CVAR_LATCH | CVAR_NORESTART, 0, qfalse },

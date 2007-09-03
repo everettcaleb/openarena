@@ -100,7 +100,7 @@ void TossClientItems( gentity_t *self ) {
 		}
 	}
 
-	if (g_instantgib.integer || g_gametype.integer == GT_CTF_ELIMINATION){
+	if (g_instantgib.integer || g_rockets.integer || g_gametype.integer == GT_CTF_ELIMINATION){
 	//Nothing!	
 	}
 	else

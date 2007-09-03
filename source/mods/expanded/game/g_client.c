@@ -1626,6 +1626,13 @@ else
 		}
 	}
 
+	//nexuiz style rocket arena (rocket launcher only)
+	if(g_rockets.integer) 
+	{
+		client->ps.stats[STAT_WEAPONS] = ( 1 << WP_ROCKET_LAUNCHER );
+		client->ps.ammo[WP_ROCKET_LAUNCHER] = 999;
+	}
+
 	G_SetOrigin( ent, spawn_origin );
 	VectorCopy( spawn_origin, client->ps.origin );
 

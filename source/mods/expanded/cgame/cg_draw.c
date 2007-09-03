@@ -2566,8 +2566,8 @@ static void CG_DrawAmmoWarning( void ) {
 	const char	*s;
 	int			w;
 
-	//Don't rapport in instant gib
-	if(cgs.instantgib)
+	//Don't report in instant gib same with RA
+	if(cgs.instantgib || cgs.rockets)
 		return;
 
 	if ( cg_drawAmmoWarning.integer == 0 ) {

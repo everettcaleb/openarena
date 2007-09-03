@@ -420,7 +420,7 @@ void Touch_Item (gentity_t *ent, gentity_t *other, trace_t *trace) {
 	qboolean	predict;
 
 	//instant gib
-	if ((g_instantgib.integer || g_gametype.integer == GT_CTF_ELIMINATION) && ent->item->giType != IT_TEAM)
+	if ((g_instantgib.integer || g_rockets.integer || g_gametype.integer == GT_CTF_ELIMINATION) && ent->item->giType != IT_TEAM)
 		return;
 
 	//Cannot touch flag before round starts
@@ -718,7 +718,7 @@ void FinishSpawningItem( gentity_t *ent ) {
 
 	
 	// powerups don't spawn in for a while (but not in elimination)
-	if(g_gametype.integer != GT_ELIMINATION && g_gametype.integer != GT_CTF_ELIMINATION && g_gametype.integer != GT_LMS && !g_instantgib.integer)	
+	if(g_gametype.integer != GT_ELIMINATION && g_gametype.integer != GT_CTF_ELIMINATION && g_gametype.integer != GT_LMS && !g_instantgib.integer && !g_rockets.integer )	
 	if ( ent->item->giType == IT_POWERUP ) {
 		float	respawn;
 
@@ -834,6 +834,11 @@ void ClearRegisteredItems( void ) {
 		RegisterItem( BG_FindItemForWeapon( WP_GAUNTLET ) );
 		RegisterItem( BG_FindItemForWeapon( WP_MACHINEGUN ) );
 		RegisterItem( BG_FindItemForWeapon( WP_RAILGUN ) );
+	}
+	if(g_rockets.integer) {
+		RegisterItem( BG_FindItemForWeapon( WP_GAUNTLET ) );
+		RegisterItem( BG_FindItemForWeapon( WP_MACHINEGUN ) );
+		RegisterItem( BG_FindItemForWeapon( WP_ROCKET_LAUNCHER ) );
 	}
 	else
 	{
@@ -966,7 +971,7 @@ void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 	ent->physicsBounce = 0.50;		// items are bouncy
 
 	if (g_gametype.integer == GT_ELIMINATION || g_gametype.integer == GT_LMS || 
-			( item->giType != IT_TEAM && (g_instantgib.integer || g_gametype.integer==GT_CTF_ELIMINATION) ) )
+			( item->giType != IT_TEAM && (g_instantgib.integer || g_rockets.integer || g_gametype.integer==GT_CTF_ELIMINATION) ) )
 		ent->s.eFlags |= EF_NODRAW; //Invisible in elimination
 
 	if(g_gametype.integer == GT_DOUBLE_D && (strcmp(ent->classname, "team_CTF_redflag")==0 || strcmp(ent->classname, "team_CTF_blueflag")==0 || strcmp(ent->classname, "team_CTF_neutralflag") == 0 || item->giType == IT_PERSISTANT_POWERUP  ))

@@ -219,6 +219,7 @@ void CG_ParseServerinfo( void ) {
 	cgs.maxclients = atoi( Info_ValueForKey( info, "sv_maxclients" ) );
 	cgs.roundtime = atoi( Info_ValueForKey( info, "elimination_roundtime" ) );
 	cgs.instantgib = atoi( Info_ValueForKey( info, "g_instantgib" ) );
+	cgs.rockets = atoi( Info_ValueForKey( info, "g_rockets" ) );
 	cgs.lms_mode = atoi( Info_ValueForKey( info, "g_lms_mode" ) );
 	cgs.oneway = atoi( Info_ValueForKey( info, "elimination_ctf_oneway" ) )? qtrue : qfalse;
 	mapname = Info_ValueForKey( info, "mapname" );

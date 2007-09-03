@@ -269,8 +269,8 @@ static void CG_TouchItem( centity_t *cent ) {
 	//normally we can
 	canBePicked = qtrue;
 
-	//But in instantgib and CTF_ELIMINATION we normally can't:
-	if(cgs.instantgib || cgs.gametype == GT_CTF_ELIMINATION)
+	//But in instantgib, rocket arena, and CTF_ELIMINATION we normally can't:
+	if(cgs.instantgib || cgs.rockets || cgs.gametype == GT_CTF_ELIMINATION)
 		canBePicked = qfalse;
 
 	if ( !cg_predictItems.integer ) {

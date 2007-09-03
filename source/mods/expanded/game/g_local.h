@@ -822,6 +822,8 @@ extern	vmCvar_t	g_elimination_mine;
 extern	vmCvar_t	g_elimination_nail;
 #endif
 
+extern vmCvar_t		g_rockets;
+
 //new in elimination Beta2
 extern vmCvar_t		g_instantgib;
 extern vmCvar_t		g_vampire;

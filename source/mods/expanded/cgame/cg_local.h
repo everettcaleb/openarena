@@ -1048,6 +1048,9 @@ typedef struct {
 //instantgib:
 	int				instantgib;
 
+//nexuiz style rocket arena
+	int				rockets;
+
 //Double Domination DD
 	int 				timetaken;
 

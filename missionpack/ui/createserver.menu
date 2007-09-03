@@ -574,6 +574,23 @@ itemDef {
 	visible 1 
     }
 
+itemDef {
+      	name rocketarena
+      	style 0	
+      	text "Rocket Arena: "
+	cvar "g_rockets"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	textstyle 6
+      	textscale .22
+      	rect 215 412 117 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_SMALLCOLOR
+	visible 1 
+    }
+
 // GAME TYPE SELECITON !!
 
 itemDef {
