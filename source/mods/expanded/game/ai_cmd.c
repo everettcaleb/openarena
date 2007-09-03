@@ -129,10 +129,7 @@ void BotPrintTeamGoal(bot_state_t *bs) {
 			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna camp for %1.0f secs\n", netname, t);
 			break;
 		}
-		case LTG_PATROL:type "dd_start_pointb"
-{
-"I'll dominate point B";
-}
+		case LTG_PATROL:
 		{
 			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna patrol for %1.0f secs\n", netname, t);
 			break;
@@ -714,7 +711,7 @@ void BotMatch_TakeA(bot_state_t *bs, bot_match_t *match) {
 
 /*
 ==================
-BotMatch_TakeA
+BotMatch_TakeB
 For Double Domination
 ==================
 */
@@ -1923,8 +1920,9 @@ int BotMatchMessage(bot_state_t *bs, char *message) {
 	match.type = 0;
 	//if it is an unknown message
 	if (!trap_BotFindMatch(message, &match, MTCONTEXT_MISC
-											|MTCONTEXT_INITIALTEAMCHAT
-											|MTCONTEXT_CTF)) {
+	|MTCONTEXT_INITIALTEAMCHAT
+	|MTCONTEXT_CTF
+	|MTCONTEXT_DD)) {
 		return qfalse;
 	}
 	//react to the found message
