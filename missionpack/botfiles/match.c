@@ -289,11 +289,6 @@ MTCONTEXT_CTF
 	NETNAME, " got the flag", "!"|"" = (MSG_CTF, ST_1FCTFGOTFLAG);
 } 
 
-MTCONTEXT_DD
-{
-	NETNAME, " got point a", "!"|"" = (MSG_TAKEA, ST_GOTA);
-	NETNAME, " got point b", "!"|"" = (MSG_TAKEB, ST_GOTB);
-
 MTCONTEXT_TIME
 {
 	TIME, " minute"|" min","s"|"" = (MSG_MINUTES, 0);
