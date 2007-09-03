@@ -11,7 +11,7 @@ textures/gothic_block/blocks11b
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -71,7 +71,7 @@ textures/gothic_block/blocks15
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -91,7 +91,7 @@ textures/gothic_block/blocks11d
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -151,7 +151,7 @@ textures/gothic_block/blocks15_relief
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -642,7 +642,7 @@ textures/gothic_trim/metalbase03a_blocks11b4
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -762,7 +762,7 @@ textures/gothic_block/killblock
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -782,7 +782,7 @@ textures/gothic_block/killblock_i2
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -802,7 +802,7 @@ textures/gothic_block/killblock_j2
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
