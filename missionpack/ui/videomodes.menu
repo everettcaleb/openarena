@@ -185,7 +185,7 @@ itemDef {
 
 
 itemDef {
-        	name openal
+	name yourmother
       	style 0	
       	text "Texture Detail:"
 	type ITEM_TYPE_MULTI
@@ -199,7 +199,25 @@ itemDef {
 	textaligny 18        
 	forecolor MP_TEXTCOLOR
 	visible 1 
-    }
+	}
+
+itemDef {
+	name shadows
+	style 0
+	text "Shadows: "
+	type ITEM_TYPE_MULTI
+	cvar "cg_shadows"
+	cvarFloatList { "Blob" 1 "Volumetric" 2 "Planar" 3 }
+	textstyle 6
+	textscale .24
+	rect 54 287 116 24
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	visible 1
+	action { uiScript glCustom }
+	}
 
 
 // other buttons
@@ -246,7 +264,7 @@ itemDef {
       	style 0	
 	type ITEM_TYPE_MULTI
 	cvar "r_colorBits"
-	cvarFloatList { "Desktop" 0 "16bpp" 16 "32bpp" 32 }
+	cvarFloatList { "Desktop" 0 "16bpp" 16 "24bpp" 24 "32bpp" 32 }
 	textstyle 6
       	textscale .22
       	rect 54 364 116 24
@@ -333,7 +351,7 @@ itemDef {
       	rect 215 388 116 24
       	textalign 0		
      	textalignx 6	
-action { uiScript glCustom }
+	action { uiScript glCustom }
 	textaligny 20        
 	forecolor MP_TEXTCOLOR
 	visible 1 
@@ -377,22 +395,24 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	visible 1 
     }
-// GAME TYPE SELECITON !!
 
 itemDef {
-      	name gametypefield
-      	style 0	
-	ownerdraw UI_NETGAMETYPE
-      	text "Type:"
-      	style 0	
+      	name stencilbuffer
+	style 0	
+      	text "Stencil Buffer: "
+	type ITEM_TYPE_MULTI
+	cvar "r_stencilbits"
+	cvarFloatList { "None" 0 "Medium" 2 "High" 8 }
 	textstyle 6
-      	textscale .237
-      	rect 382 156 223 24
+      	textscale .22
+      	rect 215 412 116 24
       	textalign 0		
      	textalignx 6	
-	textaligny 10        
+	action { uiScript glCustom; uiScript update "r_stencilbits" }
+	textaligny 20        
 	forecolor MP_TEXTCOLOR
 	visible 1 
     }
+
 
 }

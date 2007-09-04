@@ -32,6 +32,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define MTCONTEXT_PATROLKEYAREA			64
 #define MTCONTEXT_REPLYCHAT				128
 #define MTCONTEXT_CTF					256
+#define MTCONTEXT_DD				512
 
 //message types
 #define MSG_NEWLEADER					1		//new leader
@@ -67,9 +68,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define MSG_ATTACKENEMYBASE				31		//attack the enemy base
 #define MSG_HARVEST						32		//go harvest
 #define MSG_SUICIDE						33		//order to suicide
-//Double Domination messages
-#define MSG_TAKEA					34
-#define MSG_TAKEB					35
 //
 #define MSG_ME							100
 #define MSG_EVERYONE					101
@@ -87,6 +85,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define MSG_CHATTELL					202
 //
 #define MSG_CTF							300		//ctf message
+
+//Double Domination messages
+#define MSG_TAKEA					400
+#define MSG_TAKEB					401
 
 //command sub types
 #define ST_SOMEWHERE					0
@@ -107,6 +109,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define ST_RETURNEDFLAG					16384
 #define ST_TEAM							32768
 #define ST_1FCTFGOTFLAG					65535
+
+
 //ctf task preferences
 #define ST_DEFENDER						1
 #define ST_ATTACKER						2
@@ -133,5 +137,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define TIME							6
 #define NAME							6
 #define MORE							6
+
 
 
