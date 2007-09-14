@@ -1,6 +1,6 @@
 Index: code/q3_ui/ui_mods.c
 ===================================================================
---- code/q3_ui/ui_mods.c	(revision 1171)
+--- code/q3_ui/ui_mods.c	(revision 1178)
 +++ code/q3_ui/ui_mods.c	(working copy)
 @@ -125,7 +125,7 @@
  
@@ -13,7 +13,7 @@ Index: code/q3_ui/ui_mods.c
  	numdirs = trap_FS_GetFileList( "$modlist", "", dirlist, sizeof(dirlist) );
 Index: code/q3_ui/ui_menu.c
 ===================================================================
---- code/q3_ui/ui_menu.c	(revision 1171)
+--- code/q3_ui/ui_menu.c	(revision 1178)
 +++ code/q3_ui/ui_menu.c	(working copy)
 @@ -221,12 +221,11 @@
  		Menu_Draw( &s_main.menu );		
@@ -44,7 +44,7 @@ Index: code/q3_ui/ui_menu.c
  	}
 Index: code/q3_ui/ui_servers2.c
 ===================================================================
---- code/q3_ui/ui_servers2.c	(revision 1171)
+--- code/q3_ui/ui_servers2.c	(revision 1178)
 +++ code/q3_ui/ui_servers2.c	(working copy)
 @@ -32,16 +32,16 @@
  #include "ui_local.h"
@@ -236,7 +236,7 @@ Index: code/q3_ui/ui_servers2.c
  	g_sortkey = Com_Clamp( 0, 4, ui_browserSortKey.integer );
 Index: code/q3_ui/ui_serverinfo.c
 ===================================================================
---- code/q3_ui/ui_serverinfo.c	(revision 1171)
+--- code/q3_ui/ui_serverinfo.c	(revision 1178)
 +++ code/q3_ui/ui_serverinfo.c	(working copy)
 @@ -128,11 +128,11 @@
  	const char		*s;
@@ -262,7 +262,7 @@ Index: code/q3_ui/ui_serverinfo.c
  	Menu_Draw( &s_serverinfo.menu );
 Index: code/q3_ui/ui_main.c
 ===================================================================
---- code/q3_ui/ui_main.c	(revision 1171)
+--- code/q3_ui/ui_main.c	(revision 1178)
 +++ code/q3_ui/ui_main.c	(working copy)
 @@ -113,6 +113,17 @@
  vmCvar_t	ui_ctf_timelimit;
@@ -302,7 +302,7 @@ Index: code/q3_ui/ui_main.c
  	{ &ui_spScores1, "g_spScores1", "", CVAR_ARCHIVE | CVAR_ROM },
 Index: code/q3_ui/ui_startserver.c
 ===================================================================
---- code/q3_ui/ui_startserver.c	(revision 1171)
+--- code/q3_ui/ui_startserver.c	(revision 1178)
 +++ code/q3_ui/ui_startserver.c	(working copy)
 @@ -98,12 +98,37 @@
  	"Team Deathmatch",
@@ -591,7 +591,7 @@ Index: code/q3_ui/ui_startserver.c
  	Menu_AddItem( &s_serveroptions.menu, &s_serveroptions.pure );
 Index: code/q3_ui/ui_local.h
 ===================================================================
---- code/q3_ui/ui_local.h	(revision 1171)
+--- code/q3_ui/ui_local.h	(revision 1178)
 +++ code/q3_ui/ui_local.h	(working copy)
 @@ -49,6 +49,17 @@
  extern vmCvar_t	ui_ctf_timelimit;
@@ -624,7 +624,7 @@ Index: code/q3_ui/ui_local.h
  #define QM_LOSTFOCUS			2
 Index: code/q3_ui/ui_teamorders.c
 ===================================================================
---- code/q3_ui/ui_teamorders.c	(revision 1171)
+--- code/q3_ui/ui_teamorders.c	(revision 1178)
 +++ code/q3_ui/ui_teamorders.c	(working copy)
 @@ -39,6 +39,7 @@
  #define ID_LIST_BOTS		10
@@ -729,7 +729,7 @@ Index: code/q3_ui/ui_teamorders.c
  
 Index: code/q3_ui/ui_addbots.c
 ===================================================================
---- code/q3_ui/ui_addbots.c	(revision 1171)
+--- code/q3_ui/ui_addbots.c	(revision 1178)
 +++ code/q3_ui/ui_addbots.c	(working copy)
 @@ -333,7 +333,7 @@
  	addBotsMenuInfo.team.generic.y			= y;
@@ -742,7 +742,7 @@ Index: code/q3_ui/ui_addbots.c
  	else {
 Index: code/q3_ui/ui_team.c
 ===================================================================
---- code/q3_ui/ui_team.c	(revision 1171)
+--- code/q3_ui/ui_team.c	(revision 1178)
 +++ code/q3_ui/ui_team.c	(working copy)
 @@ -159,6 +159,7 @@
  	switch( gametype ) {
@@ -765,7 +765,7 @@ Index: code/q3_ui/ui_team.c
  
 Index: code/q3_ui/ui_credits.c
 ===================================================================
---- code/q3_ui/ui_credits.c	(revision 1171)
+--- code/q3_ui/ui_credits.c	(revision 1178)
 +++ code/q3_ui/ui_credits.c	(working copy)
 @@ -63,54 +63,12 @@
  	int		y;
@@ -829,7 +829,7 @@ Index: code/q3_ui/ui_credits.c
  
 Index: code/q3_ui/ui_ingame.c
 ===================================================================
---- code/q3_ui/ui_ingame.c	(revision 1171)
+--- code/q3_ui/ui_ingame.c	(revision 1178)
 +++ code/q3_ui/ui_ingame.c	(working copy)
 @@ -226,7 +226,7 @@
  	s_ingame.teamorders.string				= "TEAM ORDERS";
@@ -842,7 +842,7 @@ Index: code/q3_ui/ui_ingame.c
  	else {
 Index: code/server/sv_ccmds.c
 ===================================================================
---- code/server/sv_ccmds.c	(revision 1171)
+--- code/server/sv_ccmds.c	(revision 1178)
 +++ code/server/sv_ccmds.c	(working copy)
 @@ -430,6 +430,12 @@
  		return;
@@ -874,7 +874,7 @@ Index: code/server/sv_ccmds.c
  		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
 Index: code/server/sv_client.c
 ===================================================================
---- code/server/sv_client.c	(revision 1171)
+--- code/server/sv_client.c	(revision 1178)
 +++ code/server/sv_client.c	(working copy)
 @@ -87,7 +87,17 @@
  		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
@@ -896,7 +896,7 @@ Index: code/server/sv_client.c
  		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
 Index: code/renderer/tr_local.h
 ===================================================================
---- code/renderer/tr_local.h	(revision 1171)
+--- code/renderer/tr_local.h	(revision 1178)
 +++ code/renderer/tr_local.h	(working copy)
 @@ -866,6 +866,8 @@
  	qboolean	projection2D;	// if qtrue, drawstretchpic doesn't need to change modes
@@ -907,7 +907,7 @@ Index: code/renderer/tr_local.h
  	trRefEntity_t	entity2D;	// currentEntity will point at this when doing 2D rendering
  } backEndState_t;
  
-@@ -1317,6 +1319,7 @@
+@@ -1315,6 +1317,7 @@
  
  extern	shaderCommands_t	tess;
  
@@ -915,7 +915,7 @@ Index: code/renderer/tr_local.h
  void RB_BeginSurface(shader_t *shader, int fogNum );
  void RB_EndSurface(void);
  void RB_CheckOverflow( int verts, int indexes );
-@@ -1669,5 +1672,8 @@
+@@ -1667,5 +1670,8 @@
  void R_DoneFreeType( void );
  void RE_RegisterFont(const char *fontName, int pointSize, fontInfo_t *font);
  
@@ -926,9 +926,9 @@ Index: code/renderer/tr_local.h
  #endif //TR_LOCAL_H
 Index: code/renderer/tr_init.c
 ===================================================================
---- code/renderer/tr_init.c	(revision 1171)
+--- code/renderer/tr_init.c	(revision 1178)
 +++ code/renderer/tr_init.c	(working copy)
-@@ -1107,6 +1107,8 @@
+@@ -1095,6 +1095,8 @@
  
  	R_Register();
  
@@ -1390,7 +1390,7 @@ Index: code/renderer/tr_bloom.c
 +
 Index: code/renderer/tr_shadows.c
 ===================================================================
---- code/renderer/tr_shadows.c	(revision 1171)
+--- code/renderer/tr_shadows.c	(revision 1178)
 +++ code/renderer/tr_shadows.c	(working copy)
 @@ -39,7 +39,7 @@
  	int		facing;
@@ -1403,7 +1403,7 @@ Index: code/renderer/tr_shadows.c
  static	int			numEdgeDefs[SHADER_MAX_VERTEXES];
 Index: code/renderer/tr_flares.c
 ===================================================================
---- code/renderer/tr_flares.c	(revision 1171)
+--- code/renderer/tr_flares.c	(revision 1178)
 +++ code/renderer/tr_flares.c	(working copy)
 @@ -79,7 +79,7 @@
  	vec3_t		color;
@@ -1416,7 +1416,7 @@ Index: code/renderer/tr_flares.c
  flare_t		*r_activeFlares, *r_inactiveFlares;
 Index: code/renderer/tr_animation.c
 ===================================================================
---- code/renderer/tr_animation.c	(revision 1171)
+--- code/renderer/tr_animation.c	(revision 1178)
 +++ code/renderer/tr_animation.c	(working copy)
 @@ -431,7 +431,8 @@
  		{
@@ -1430,7 +1430,7 @@ Index: code/renderer/tr_animation.c
  
 Index: code/renderer/tr_backend.c
 ===================================================================
---- code/renderer/tr_backend.c	(revision 1171)
+--- code/renderer/tr_backend.c	(revision 1178)
 +++ code/renderer/tr_backend.c	(working copy)
 @@ -899,7 +899,8 @@
  
@@ -1472,7 +1472,7 @@ Index: code/renderer/tr_backend.c
  		case RC_SCREENSHOT:
 Index: code/qcommon/q_shared.h
 ===================================================================
---- code/qcommon/q_shared.h	(revision 1171)
+--- code/qcommon/q_shared.h	(revision 1178)
 +++ code/qcommon/q_shared.h	(working copy)
 @@ -26,8 +26,8 @@
  // q_shared.h -- included first by ALL program modules.
@@ -1502,7 +1502,7 @@ Index: code/qcommon/q_shared.h
  
 Index: code/qcommon/files.c
 ===================================================================
---- code/qcommon/files.c	(revision 1171)
+--- code/qcommon/files.c	(revision 1178)
 +++ code/qcommon/files.c	(working copy)
 @@ -2790,7 +2790,7 @@
  */
@@ -1532,7 +1532,7 @@ Index: code/qcommon/files.c
  	// busted and error out now, rather than getting an unreadable
 Index: code/qcommon/qcommon.h
 ===================================================================
---- code/qcommon/qcommon.h	(revision 1171)
+--- code/qcommon/qcommon.h	(revision 1178)
 +++ code/qcommon/qcommon.h	(working copy)
 @@ -222,7 +222,7 @@
  
@@ -1562,7 +1562,7 @@ Index: code/qcommon/qcommon.h
  #define	PORT_MASTER			27950
 Index: code/qcommon/qfiles.h
 ===================================================================
---- code/qcommon/qfiles.h	(revision 1171)
+--- code/qcommon/qfiles.h	(revision 1178)
 +++ code/qcommon/qfiles.h	(working copy)
 @@ -35,7 +35,7 @@
  #endif
@@ -1575,7 +1575,7 @@ Index: code/qcommon/qfiles.h
  
 Index: code/qcommon/common.c
 ===================================================================
---- code/qcommon/common.c	(revision 1171)
+--- code/qcommon/common.c	(revision 1178)
 +++ code/qcommon/common.c	(working copy)
 @@ -37,9 +37,9 @@
  #define MAX_NUM_ARGVS	50
@@ -1592,7 +1592,7 @@ Index: code/qcommon/common.c
  #define DEF_COMHUNKMEGS_S	XSTRING(DEF_COMHUNKMEGS)
 Index: code/game/g_spawn.c
 ===================================================================
---- code/game/g_spawn.c	(revision 1171)
+--- code/game/g_spawn.c	(revision 1178)
 +++ code/game/g_spawn.c	(working copy)
 @@ -129,6 +129,8 @@
  void SP_info_player_start (gentity_t *ent);
@@ -1613,7 +1613,7 @@ Index: code/game/g_spawn.c
  	{"info_camp", SP_info_camp},
 Index: code/game/g_team.h
 ===================================================================
---- code/game/g_team.h	(revision 1171)
+--- code/game/g_team.h	(revision 1178)
 +++ code/game/g_team.h	(working copy)
 @@ -53,6 +53,32 @@
  
@@ -1670,7 +1670,7 @@ Index: code/game/g_team.h
 +void Team_ForceGesture(int team);
 Index: code/game/ai_main.h
 ===================================================================
---- code/game/ai_main.h	(revision 1171)
+--- code/game/ai_main.h	(revision 1178)
 +++ code/game/ai_main.h	(working copy)
 @@ -58,6 +58,9 @@
  #define LTG_ATTACKENEMYBASE			13	//attack the enemy base
@@ -1694,7 +1694,7 @@ Index: code/game/ai_main.h
  #define PATROL_REVERSE				2
 Index: code/game/bg_misc.c
 ===================================================================
---- code/game/bg_misc.c	(revision 1171)
+--- code/game/bg_misc.c	(revision 1178)
 +++ code/game/bg_misc.c	(working copy)
 @@ -916,6 +916,108 @@
  	},
@@ -1850,7 +1850,7 @@ Index: code/game/bg_misc.c
  #endif
 Index: code/game/g_local.h
 ===================================================================
---- code/game/g_local.h	(revision 1171)
+--- code/game/g_local.h	(revision 1178)
 +++ code/game/g_local.h	(working copy)
 @@ -252,6 +252,9 @@
  	int			voteCount;			// to prevent people from constantly calling votes
@@ -1997,7 +1997,7 @@ Index: code/game/g_local.h
  int		trap_Milliseconds( void );
 Index: code/game/g_combat.c
 ===================================================================
---- code/game/g_combat.c	(revision 1171)
+--- code/game/g_combat.c	(revision 1178)
 +++ code/game/g_combat.c	(working copy)
 @@ -83,6 +83,10 @@
  	// drop the weapon if not a gauntlet or machinegun
@@ -2135,7 +2135,7 @@ Index: code/game/g_combat.c
  
 Index: code/game/ai_cmd.c
 ===================================================================
---- code/game/ai_cmd.c	(revision 1171)
+--- code/game/ai_cmd.c	(revision 1178)
 +++ code/game/ai_cmd.c	(working copy)
 @@ -134,6 +134,16 @@
  			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna patrol for %1.0f secs\n", netname, t);
@@ -2379,7 +2379,7 @@ Index: code/game/ai_cmd.c
  			BotAI_Print(PRT_MESSAGE, "unknown match type\n");
 Index: code/game/g_arenas.c
 ===================================================================
---- code/game/g_arenas.c	(revision 1171)
+--- code/game/g_arenas.c	(revision 1178)
 +++ code/game/g_arenas.c	(working copy)
 @@ -43,7 +43,7 @@
  	int			playerClientNum;
@@ -2401,7 +2401,7 @@ Index: code/game/g_arenas.c
  			if (level.clients[playerClientNum].sess.sessionTeam	== TEAM_RED) {
 Index: code/game/ai_dmnet.c
 ===================================================================
---- code/game/ai_dmnet.c	(revision 1171)
+--- code/game/ai_dmnet.c	(revision 1178)
 +++ code/game/ai_dmnet.c	(working copy)
 @@ -525,6 +525,59 @@
  			bs->defendaway_time = 0;
@@ -2492,7 +2492,7 @@ Index: code/game/ai_dmnet.c
  				range = 50;
 Index: code/game/g_active.c
 ===================================================================
---- code/game/g_active.c	(revision 1171)
+--- code/game/g_active.c	(revision 1178)
 +++ code/game/g_active.c	(working copy)
 @@ -254,8 +254,9 @@
  		return;
@@ -2667,7 +2667,7 @@ Index: code/game/g_active.c
  	}
 Index: code/game/g_rankings.c
 ===================================================================
---- code/game/g_rankings.c	(revision 1171)
+--- code/game/g_rankings.c	(revision 1178)
 +++ code/game/g_rankings.c	(working copy)
 @@ -104,7 +104,7 @@
  				}
@@ -2680,7 +2680,7 @@ Index: code/game/g_rankings.c
  					SetTeam( ent, "free" );
 Index: code/game/g_mem.c
 ===================================================================
---- code/game/g_mem.c	(revision 1171)
+--- code/game/g_mem.c	(revision 1178)
 +++ code/game/g_mem.c	(working copy)
 @@ -41,7 +41,7 @@
  	}
@@ -2693,7 +2693,7 @@ Index: code/game/g_mem.c
  
 Index: code/game/g_session.c
 ===================================================================
---- code/game/g_session.c	(revision 1171)
+--- code/game/g_session.c	(revision 1178)
 +++ code/game/g_session.c	(working copy)
 @@ -69,6 +69,8 @@
  void G_ReadSessionData( gclient_t *client ) {
@@ -2743,7 +2743,7 @@ Index: code/game/g_session.c
  					level.numNonSpectatorClients >= g_maxGameClients.integer ) {
 Index: code/game/g_main.c
 ===================================================================
---- code/game/g_main.c	(revision 1171)
+--- code/game/g_main.c	(revision 1178)
 +++ code/game/g_main.c	(working copy)
 @@ -94,7 +94,48 @@
  vmCvar_t	g_enableBreath;
@@ -3437,7 +3437,7 @@ Index: code/game/g_main.c
  
 Index: code/game/g_bot.c
 ===================================================================
---- code/game/g_bot.c	(revision 1171)
+--- code/game/g_bot.c	(revision 1178)
 +++ code/game/g_bot.c	(working copy)
 @@ -43,6 +43,7 @@
  	int		spawnTime;
@@ -3476,7 +3476,7 @@ Index: code/game/g_bot.c
  			}
 Index: code/game/bg_pmove.c
 ===================================================================
---- code/game/bg_pmove.c	(revision 1171)
+--- code/game/bg_pmove.c	(revision 1178)
 +++ code/game/bg_pmove.c	(working copy)
 @@ -48,7 +48,6 @@
  
@@ -3576,7 +3576,7 @@ Index: code/game/bg_pmove.c
  	// torso animation
 Index: code/game/g_mover.c
 ===================================================================
---- code/game/g_mover.c	(revision 1171)
+--- code/game/g_mover.c	(revision 1178)
 +++ code/game/g_mover.c	(working copy)
 @@ -857,7 +857,7 @@
  ================
@@ -3589,7 +3589,7 @@ Index: code/game/g_mover.c
  			ent->parent->moverState != MOVER_POS2) {
 Index: code/game/ai_team.c
 ===================================================================
---- code/game/ai_team.c	(revision 1171)
+--- code/game/ai_team.c	(revision 1178)
 +++ code/game/ai_team.c	(working copy)
 @@ -131,7 +131,7 @@
  	int traveltimes[MAX_CLIENTS];
@@ -3871,7 +3871,7 @@ Index: code/game/ai_team.c
  		{
 Index: code/game/g_weapon.c
 ===================================================================
---- code/game/g_weapon.c	(revision 1171)
+--- code/game/g_weapon.c	(revision 1178)
 +++ code/game/g_weapon.c	(working copy)
 @@ -111,7 +111,10 @@
  	}
@@ -3915,7 +3915,7 @@ Index: code/game/g_weapon.c
  	} else {
 Index: code/game/g_misc.c
 ===================================================================
---- code/game/g_misc.c	(revision 1171)
+--- code/game/g_misc.c	(revision 1178)
 +++ code/game/g_misc.c	(working copy)
 @@ -81,7 +81,7 @@
  
@@ -3946,7 +3946,7 @@ Index: code/game/g_misc.c
  }
 Index: code/game/match.h
 ===================================================================
---- code/game/match.h	(revision 1171)
+--- code/game/match.h	(revision 1178)
 +++ code/game/match.h	(working copy)
 @@ -32,6 +32,7 @@
  #define MTCONTEXT_PATROLKEYAREA			64
@@ -3983,7 +3983,7 @@ Index: code/game/match.h
 +
 Index: code/game/ai_vcmd.c
 ===================================================================
---- code/game/ai_vcmd.c	(revision 1171)
+--- code/game/ai_vcmd.c	(revision 1178)
 +++ code/game/ai_vcmd.c	(working copy)
 @@ -71,7 +71,7 @@
  */
@@ -4032,7 +4032,7 @@ Index: code/game/ai_vcmd.c
  #endif
 Index: code/game/bg_local.h
 ===================================================================
---- code/game/bg_local.h	(revision 1171)
+--- code/game/bg_local.h	(revision 1178)
 +++ code/game/bg_local.h	(working copy)
 @@ -73,6 +73,10 @@
  
@@ -4047,7 +4047,7 @@ Index: code/game/bg_local.h
  void PM_AddEvent( int newEvent );
 Index: code/game/g_trigger.c
 ===================================================================
---- code/game/g_trigger.c	(revision 1171)
+--- code/game/g_trigger.c	(revision 1178)
 +++ code/game/g_trigger.c	(working copy)
 @@ -274,12 +274,13 @@
  	if ( !other->client ) {
@@ -4066,7 +4066,7 @@ Index: code/game/g_trigger.c
  
 Index: code/game/g_missile.c
 ===================================================================
---- code/game/g_missile.c	(revision 1171)
+--- code/game/g_missile.c	(revision 1178)
 +++ code/game/g_missile.c	(working copy)
 @@ -137,7 +137,7 @@
  	}
@@ -4079,7 +4079,7 @@ Index: code/game/g_missile.c
  			return;
 Index: code/game/ai_dmq3.c
 ===================================================================
---- code/game/ai_dmq3.c	(revision 1171)
+--- code/game/ai_dmq3.c	(revision 1178)
 +++ code/game/ai_dmq3.c	(working copy)
 @@ -128,7 +128,7 @@
  ==================
@@ -4405,7 +4405,7 @@ Index: code/game/ai_dmq3.c
  		if (trap_BotGetLevelItemGoal(-1, "Neutral Flag", &ctf_neutralflag) < 0)
 Index: code/game/bg_lib.c
 ===================================================================
---- code/game/bg_lib.c	(revision 1171)
+--- code/game/bg_lib.c	(revision 1178)
 +++ code/game/bg_lib.c	(working copy)
 @@ -43,6 +43,7 @@
  static const char rcsid[] =
@@ -4453,7 +4453,7 @@ Index: code/game/bg_lib.c
  
 Index: code/game/bg_lib.h
 ===================================================================
---- code/game/bg_lib.h	(revision 1171)
+--- code/game/bg_lib.h	(revision 1178)
 +++ code/game/bg_lib.h	(working copy)
 @@ -26,13 +26,6 @@
  #ifndef BG_LIB_H
@@ -4471,7 +4471,7 @@ Index: code/game/bg_lib.h
  #endif
 Index: code/game/g_client.c
 ===================================================================
---- code/game/g_client.c	(revision 1171)
+--- code/game/g_client.c	(revision 1178)
 +++ code/game/g_client.c	(working copy)
 @@ -55,6 +55,10 @@
  	SP_info_player_deathmatch( ent );
@@ -5101,7 +5101,7 @@ Index: code/game/g_client.c
  			StopFollowing( &g_entities[i] );
 Index: code/game/g_items.c
 ===================================================================
---- code/game/g_items.c	(revision 1171)
+--- code/game/g_items.c	(revision 1178)
 +++ code/game/g_items.c	(working copy)
 @@ -86,7 +86,7 @@
  
@@ -5285,7 +5285,7 @@ Index: code/game/g_items.c
  		G_SpawnFloat( "noglobalsound", "0", &ent->speed);
 Index: code/game/ai_chat.c
 ===================================================================
---- code/game/ai_chat.c	(revision 1171)
+--- code/game/ai_chat.c	(revision 1178)
 +++ code/game/ai_chat.c	(working copy)
 @@ -53,7 +53,7 @@
  #include "match.h"				//string matching types and vars
@@ -5298,7 +5298,7 @@ Index: code/game/ai_chat.c
  
 Index: code/game/bg_public.h
 ===================================================================
---- code/game/bg_public.h	(revision 1171)
+--- code/game/bg_public.h	(revision 1178)
 +++ code/game/bg_public.h	(working copy)
 @@ -102,11 +102,22 @@
  	//-- team games go after this --
@@ -5366,7 +5366,7 @@ Index: code/game/bg_public.h
  
 Index: code/game/g_cmds.c
 ===================================================================
---- code/game/g_cmds.c	(revision 1171)
+--- code/game/g_cmds.c	(revision 1178)
 +++ code/game/g_cmds.c	(working copy)
 @@ -64,8 +64,9 @@
  		}
@@ -5594,7 +5594,7 @@ Index: code/game/g_cmds.c
  }
 Index: code/game/g_team.c
 ===================================================================
---- code/game/g_team.c	(revision 1171)
+--- code/game/g_team.c	(revision 1178)
 +++ code/game/g_team.c	(working copy)
 @@ -40,6 +40,10 @@
  
@@ -6234,7 +6234,7 @@ Index: code/game/g_team.c
  	}
 Index: code/game/ai_main.c
 ===================================================================
---- code/game/ai_main.c	(revision 1171)
+--- code/game/ai_main.c	(revision 1178)
 +++ code/game/ai_main.c	(working copy)
 @@ -285,7 +285,7 @@
  	else leader = " ";
@@ -6300,7 +6300,7 @@ Index: code/game/ai_main.c
  	if (strlen(buf)) trap_BotLibVarSet("homedir", buf);
 Index: code/botlib/be_ai_chat.c
 ===================================================================
---- code/botlib/be_ai_chat.c	(revision 1171)
+--- code/botlib/be_ai_chat.c	(revision 1178)
 +++ code/botlib/be_ai_chat.c	(working copy)
 @@ -367,26 +367,13 @@
  int BotNextConsoleMessage(int chatstate, bot_consolemessage_t *cm)
@@ -6334,7 +6334,7 @@ Index: code/botlib/be_ai_chat.c
  	return 0;
 Index: code/botlib/be_ai_goal.c
 ===================================================================
---- code/botlib/be_ai_goal.c	(revision 1171)
+--- code/botlib/be_ai_goal.c	(revision 1178)
 +++ code/botlib/be_ai_goal.c	(working copy)
 @@ -103,6 +103,10 @@
  	GT_OBELISK,
@@ -6358,7 +6358,7 @@ Index: code/botlib/be_ai_goal.c
  {
 Index: code/botlib/be_ai_weap.c
 ===================================================================
---- code/botlib/be_ai_weap.c	(revision 1171)
+--- code/botlib/be_ai_weap.c	(revision 1178)
 +++ code/botlib/be_ai_weap.c	(working copy)
 @@ -48,8 +48,8 @@
  //#define DEBUG_AI_WEAP
@@ -6373,7 +6373,7 @@ Index: code/botlib/be_ai_weap.c
  static fielddef_t weaponinfo_fields[] =
 Index: code/cgame/cg_predict.c
 ===================================================================
---- code/cgame/cg_predict.c	(revision 1171)
+--- code/cgame/cg_predict.c	(revision 1178)
 +++ code/cgame/cg_predict.c	(working copy)
 @@ -260,7 +260,19 @@
  */
@@ -6470,7 +6470,7 @@ Index: code/cgame/cg_predict.c
  }
 Index: code/cgame/cg_local.h
 ===================================================================
---- code/cgame/cg_local.h	(revision 1171)
+--- code/cgame/cg_local.h	(revision 1178)
 +++ code/cgame/cg_local.h	(working copy)
 @@ -85,8 +85,8 @@
  
@@ -6553,7 +6553,7 @@ Index: code/cgame/cg_local.h
  int trap_CIN_PlayCinematic( const char *arg0, int xpos, int ypos, int width, int height, int bits);
 Index: code/cgame/cg_weapons.c
 ===================================================================
---- code/cgame/cg_weapons.c	(revision 1171)
+--- code/cgame/cg_weapons.c	(revision 1178)
 +++ code/cgame/cg_weapons.c	(working copy)
 @@ -1695,6 +1695,9 @@
  	int				c;
@@ -6567,7 +6567,7 @@ Index: code/cgame/cg_weapons.c
  		return;
 Index: code/cgame/cg_drawtools.c
 ===================================================================
---- code/cgame/cg_drawtools.c	(revision 1171)
+--- code/cgame/cg_drawtools.c	(revision 1178)
 +++ code/cgame/cg_drawtools.c	(working copy)
 @@ -431,6 +431,10 @@
  }
@@ -6600,7 +6600,7 @@ Index: code/cgame/cg_drawtools.c
  	float	aw;
 Index: code/cgame/cg_players.c
 ===================================================================
---- code/cgame/cg_players.c	(revision 1171)
+--- code/cgame/cg_players.c	(revision 1178)
 +++ code/cgame/cg_players.c	(working copy)
 @@ -314,7 +314,7 @@
  	char *team, *charactersFolder;
@@ -6797,7 +6797,7 @@ Index: code/cgame/cg_players.c
  	// add the mark as a temporary, so it goes directly to the renderer
 Index: code/cgame/cg_event.c
 ===================================================================
---- code/cgame/cg_event.c	(revision 1171)
+--- code/cgame/cg_event.c	(revision 1178)
 +++ code/cgame/cg_event.c	(working copy)
 @@ -25,7 +25,7 @@
  #include "cg_local.h"
@@ -6810,7 +6810,7 @@ Index: code/cgame/cg_event.c
  //==========================================================================
 Index: code/cgame/cg_info.c
 ===================================================================
---- code/cgame/cg_info.c	(revision 1171)
+--- code/cgame/cg_info.c	(revision 1178)
 +++ code/cgame/cg_info.c	(working copy)
 @@ -261,6 +261,18 @@
  		s = "Harvester";
@@ -6851,7 +6851,7 @@ Index: code/cgame/cg_info.c
  			UI_DrawProportionalString( 320, y, va( "capturelimit %i", value ),
 Index: code/cgame/cg_draw.c
 ===================================================================
---- code/cgame/cg_draw.c	(revision 1171)
+--- code/cgame/cg_draw.c	(revision 1178)
 +++ code/cgame/cg_draw.c	(working copy)
 @@ -390,8 +390,24 @@
  
@@ -7424,7 +7424,7 @@ Index: code/cgame/cg_draw.c
  #endif
 Index: code/cgame/cg_newdraw.c
 ===================================================================
---- code/cgame/cg_newdraw.c	(revision 1171)
+--- code/cgame/cg_newdraw.c	(revision 1178)
 +++ code/cgame/cg_newdraw.c	(working copy)
 @@ -20,7 +20,7 @@
  ===========================================================================
@@ -7588,7 +7588,7 @@ Index: code/cgame/cg_newdraw.c
  		float useScale;
 Index: code/cgame/cg_consolecmds.c
 ===================================================================
---- code/cgame/cg_consolecmds.c	(revision 1171)
+--- code/cgame/cg_consolecmds.c	(revision 1178)
 +++ code/cgame/cg_consolecmds.c	(working copy)
 @@ -299,7 +299,7 @@
  }
@@ -7601,7 +7601,7 @@ Index: code/cgame/cg_consolecmds.c
  		trap_SendConsoleCommand(va("cmd vsay_team %s\n", VOICECHAT_ONOFFENSE));
 Index: code/cgame/cg_view.c
 ===================================================================
---- code/cgame/cg_view.c	(revision 1171)
+--- code/cgame/cg_view.c	(revision 1178)
 +++ code/cgame/cg_view.c	(working copy)
 @@ -234,7 +234,8 @@
  	VectorCopy( cg.refdefViewAngles, focusAngles );
@@ -7615,7 +7615,7 @@ Index: code/cgame/cg_view.c
  	}
 Index: code/cgame/cg_servercmds.c
 ===================================================================
---- code/cgame/cg_servercmds.c	(revision 1171)
+--- code/cgame/cg_servercmds.c	(revision 1178)
 +++ code/cgame/cg_servercmds.c	(working copy)
 @@ -25,7 +25,7 @@
  // be a valid snapshot this frame
@@ -7810,7 +7810,7 @@ Index: code/cgame/cg_servercmds.c
  		return;
 Index: code/cgame/cg_scoreboard.c
 ===================================================================
---- code/cgame/cg_scoreboard.c	(revision 1171)
+--- code/cgame/cg_scoreboard.c	(revision 1178)
 +++ code/cgame/cg_scoreboard.c	(working copy)
 @@ -176,8 +176,12 @@
  		Com_sprintf(string, sizeof(string),
@@ -7869,7 +7869,7 @@ Index: code/cgame/cg_scoreboard.c
  		//
 Index: code/cgame/cg_main.c
 ===================================================================
---- code/cgame/cg_main.c	(revision 1171)
+--- code/cgame/cg_main.c	(revision 1178)
 +++ code/cgame/cg_main.c	(working copy)
 @@ -183,6 +183,7 @@
  vmCvar_t	cg_oldPlasma;
@@ -8095,7 +8095,7 @@ Index: code/cgame/cg_main.c
  	memset(buff, 0, sizeof(buff));
 Index: code/ui/ui_main.c
 ===================================================================
---- code/ui/ui_main.c	(revision 1171)
+--- code/ui/ui_main.c	(revision 1178)
 +++ code/ui/ui_main.c	(working copy)
 @@ -64,7 +64,7 @@
  
@@ -8272,7 +8272,7 @@ Index: code/ui/ui_main.c
  				UI_LoadNonIngame();
 Index: code/ui/ui_gameinfo.c
 ===================================================================
---- code/ui/ui_gameinfo.c	(revision 1171)
+--- code/ui/ui_gameinfo.c	(revision 1178)
 +++ code/ui/ui_gameinfo.c	(working copy)
 @@ -198,6 +198,18 @@
  			if( strstr( type, "harvester" ) ) {
@@ -8295,7 +8295,7 @@ Index: code/ui/ui_gameinfo.c
  		}
 Index: code/ui/ui_players.c
 ===================================================================
---- code/ui/ui_players.c	(revision 1171)
+--- code/ui/ui_players.c	(revision 1178)
 +++ code/ui/ui_players.c	(working copy)
 @@ -1204,7 +1204,7 @@
  		}
@@ -8308,7 +8308,7 @@ Index: code/ui/ui_players.c
  	else {
 Index: code/client/cl_main.c
 ===================================================================
---- code/client/cl_main.c	(revision 1171)
+--- code/client/cl_main.c	(revision 1178)
 +++ code/client/cl_main.c	(working copy)
 @@ -2741,8 +2741,8 @@
  	Cvar_Get ("snaps", "20", CVAR_USERINFO | CVAR_ARCHIVE );
@@ -8343,7 +8343,7 @@ Index: code/client/cl_main.c
  
 Index: code/client/snd_dma.c
 ===================================================================
---- code/client/snd_dma.c	(revision 1171)
+--- code/client/snd_dma.c	(revision 1178)
 +++ code/client/snd_dma.c	(working copy)
 @@ -364,7 +364,7 @@
  		Com_Memset( s_knownSfx, 0, sizeof( s_knownSfx ) );
@@ -8356,7 +8356,7 @@ Index: code/client/snd_dma.c
  
 Index: code/client/snd_openal.c
 ===================================================================
---- code/client/snd_openal.c	(revision 1171)
+--- code/client/snd_openal.c	(revision 1178)
 +++ code/client/snd_openal.c	(working copy)
 @@ -384,7 +384,7 @@
  	numSfx = 0;
@@ -8369,7 +8369,7 @@ Index: code/client/snd_openal.c
  
 Index: code/sys/sys_win32.c
 ===================================================================
---- code/sys/sys_win32.c	(revision 1171)
+--- code/sys/sys_win32.c	(revision 1178)
 +++ code/sys/sys_win32.c	(working copy)
 @@ -75,7 +75,7 @@
  			return NULL;
@@ -8382,7 +8382,7 @@ Index: code/sys/sys_win32.c
  		{
 Index: code/sys/sys_unix.c
 ===================================================================
---- code/sys/sys_unix.c	(revision 1171)
+--- code/sys/sys_unix.c	(revision 1178)
 +++ code/sys/sys_unix.c	(working copy)
 @@ -51,9 +51,9 @@
  		{
@@ -8396,636 +8396,3 @@ Index: code/sys/sys_unix.c
  #endif
  			if( mkdir( homePath, 0777 ) )
  			{
-Index: ui/menudef.h
-===================================================================
---- ui/menudef.h	(revision 1120)
-+++ ui/menudef.h	(working copy)
-@@ -1,308 +1,320 @@
--/*
--===========================================================================
--Copyright (C) 1999-2005 Id Software, Inc.
--
--This file is part of Quake III Arena source code.
--
--Quake III Arena source code is free software; you can redistribute it
--and/or modify it under the terms of the GNU General Public License as
--published by the Free Software Foundation; either version 2 of the License,
--or (at your option) any later version.
--
--Quake III Arena source code is distributed in the hope that it will be
--useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--GNU General Public License for more details.
--
--You should have received a copy of the GNU General Public License
--along with Foobar; if not, write to the Free Software
--Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
--===========================================================================
--*/
--
--#define ITEM_TYPE_TEXT 0                  // simple text
--#define ITEM_TYPE_BUTTON 1                // button, basically text with a border 
--#define ITEM_TYPE_RADIOBUTTON 2           // toggle button, may be grouped 
--#define ITEM_TYPE_CHECKBOX 3              // check box
--#define ITEM_TYPE_EDITFIELD 4             // editable text, associated with a cvar
--#define ITEM_TYPE_COMBO 5                 // drop down list
--#define ITEM_TYPE_LISTBOX 6               // scrollable list  
--#define ITEM_TYPE_MODEL 7                 // model
--#define ITEM_TYPE_OWNERDRAW 8             // owner draw, name specs what it is
--#define ITEM_TYPE_NUMERICFIELD 9          // editable text, associated with a cvar
--#define ITEM_TYPE_SLIDER 10               // mouse speed, volume, etc.
--#define ITEM_TYPE_YESNO 11                // yes no cvar setting
--#define ITEM_TYPE_MULTI 12                // multiple list setting, enumerated
--#define ITEM_TYPE_BIND 13		              // multiple list setting, enumerated
--    
--#define ITEM_ALIGN_LEFT 0                 // left alignment
--#define ITEM_ALIGN_CENTER 1               // center alignment
--#define ITEM_ALIGN_RIGHT 2                // right alignment
--
--#define ITEM_TEXTSTYLE_NORMAL 0           // normal text
--#define ITEM_TEXTSTYLE_BLINK 1            // fast blinking
--#define ITEM_TEXTSTYLE_PULSE 2            // slow pulsing
--#define ITEM_TEXTSTYLE_SHADOWED 3         // drop shadow ( need a color for this )
--#define ITEM_TEXTSTYLE_OUTLINED 4         // drop shadow ( need a color for this )
--#define ITEM_TEXTSTYLE_OUTLINESHADOWED 5  // drop shadow ( need a color for this )
--#define ITEM_TEXTSTYLE_SHADOWEDMORE 6         // drop shadow ( need a color for this )
--                          
--#define WINDOW_BORDER_NONE 0              // no border
--#define WINDOW_BORDER_FULL 1              // full border based on border color ( single pixel )
--#define WINDOW_BORDER_HORZ 2              // horizontal borders only
--#define WINDOW_BORDER_VERT 3              // vertical borders only 
--#define WINDOW_BORDER_KCGRADIENT 4        // horizontal border using the gradient bars
--  
--#define WINDOW_STYLE_EMPTY 0              // no background
--#define WINDOW_STYLE_FILLED 1             // filled with background color
--#define WINDOW_STYLE_GRADIENT 2           // gradient bar based on background color 
--#define WINDOW_STYLE_SHADER   3           // gradient bar based on background color 
--#define WINDOW_STYLE_TEAMCOLOR 4          // team color
--#define WINDOW_STYLE_CINEMATIC 5          // cinematic
--
--#define MENU_TRUE 1                       // uh.. true
--#define MENU_FALSE 0                      // and false
--
--#define HUD_VERTICAL				0x00
--#define HUD_HORIZONTAL				0x01
--
--// list box element types
--#define LISTBOX_TEXT  0x00
--#define LISTBOX_IMAGE 0x01
--
--// list feeders
--#define FEEDER_HEADS						0x00			// model heads
--#define FEEDER_MAPS							0x01			// text maps based on game type
--#define FEEDER_SERVERS						0x02			// servers
--#define FEEDER_CLANS						0x03			// clan names
--#define FEEDER_ALLMAPS						0x04			// all maps available, in graphic format
--#define FEEDER_REDTEAM_LIST					0x05			// red team members
--#define FEEDER_BLUETEAM_LIST				0x06			// blue team members
--#define FEEDER_PLAYER_LIST					0x07			// players
--#define FEEDER_TEAM_LIST					0x08			// team members for team voting
--#define FEEDER_MODS							0x09			// team members for team voting
--#define FEEDER_DEMOS 						0x0a			// team members for team voting
--#define FEEDER_SCOREBOARD					0x0b			// team members for team voting
--#define FEEDER_Q3HEADS		 				0x0c			// model heads
--#define FEEDER_SERVERSTATUS					0x0d			// server status
--#define FEEDER_FINDPLAYER					0x0e			// find player
--#define FEEDER_CINEMATICS					0x0f			// cinematics
--
--// display flags
--#define CG_SHOW_BLUE_TEAM_HAS_REDFLAG     0x00000001
--#define CG_SHOW_RED_TEAM_HAS_BLUEFLAG     0x00000002
--#define CG_SHOW_ANYTEAMGAME               0x00000004
--#define CG_SHOW_HARVESTER                 0x00000008
--#define CG_SHOW_ONEFLAG                   0x00000010
--#define CG_SHOW_CTF                       0x00000020
--#define CG_SHOW_OBELISK                   0x00000040
--#define CG_SHOW_HEALTHCRITICAL            0x00000080
--#define CG_SHOW_SINGLEPLAYER              0x00000100
--#define CG_SHOW_TOURNAMENT                0x00000200
--#define CG_SHOW_DURINGINCOMINGVOICE       0x00000400
--#define CG_SHOW_IF_PLAYER_HAS_FLAG				0x00000800
--#define CG_SHOW_LANPLAYONLY								0x00001000
--#define CG_SHOW_MINED											0x00002000
--#define CG_SHOW_HEALTHOK			            0x00004000
--#define CG_SHOW_TEAMINFO			            0x00008000
--#define CG_SHOW_NOTEAMINFO		            0x00010000
--#define CG_SHOW_OTHERTEAMHASFLAG          0x00020000
--#define CG_SHOW_YOURTEAMHASENEMYFLAG      0x00040000
--#define CG_SHOW_ANYNONTEAMGAME            0x00080000
--#define CG_SHOW_2DONLY										0x10000000
--
--
--#define UI_SHOW_LEADER				            0x00000001
--#define UI_SHOW_NOTLEADER			            0x00000002
--#define UI_SHOW_FAVORITESERVERS						0x00000004
--#define UI_SHOW_ANYNONTEAMGAME						0x00000008
--#define UI_SHOW_ANYTEAMGAME								0x00000010
--#define UI_SHOW_NEWHIGHSCORE							0x00000020
--#define UI_SHOW_DEMOAVAILABLE							0x00000040
--#define UI_SHOW_NEWBESTTIME								0x00000080
--#define UI_SHOW_FFA												0x00000100
--#define UI_SHOW_NOTFFA										0x00000200
--#define UI_SHOW_NETANYNONTEAMGAME	 				0x00000400
--#define UI_SHOW_NETANYTEAMGAME		 				0x00000800
--#define UI_SHOW_NOTFAVORITESERVERS				0x00001000
--
--
--
--
--// owner draw types
--// ideally these should be done outside of this file but
--// this makes it much easier for the macro expansion to 
--// convert them for the designers ( from the .menu files )
--#define CG_OWNERDRAW_BASE 1
--#define CG_PLAYER_ARMOR_ICON 1              
--#define CG_PLAYER_ARMOR_VALUE 2
--#define CG_PLAYER_HEAD 3
--#define CG_PLAYER_HEALTH 4
--#define CG_PLAYER_AMMO_ICON 5
--#define CG_PLAYER_AMMO_VALUE 6
--#define CG_SELECTEDPLAYER_HEAD 7
--#define CG_SELECTEDPLAYER_NAME 8
--#define CG_SELECTEDPLAYER_LOCATION 9
--#define CG_SELECTEDPLAYER_STATUS 10
--#define CG_SELECTEDPLAYER_WEAPON 11
--#define CG_SELECTEDPLAYER_POWERUP 12
--
--#define CG_FLAGCARRIER_HEAD 13
--#define CG_FLAGCARRIER_NAME 14
--#define CG_FLAGCARRIER_LOCATION 15
--#define CG_FLAGCARRIER_STATUS 16
--#define CG_FLAGCARRIER_WEAPON 17
--#define CG_FLAGCARRIER_POWERUP 18
--
--#define CG_PLAYER_ITEM 19
--#define CG_PLAYER_SCORE 20
--
--#define CG_BLUE_FLAGHEAD 21
--#define CG_BLUE_FLAGSTATUS 22
--#define CG_BLUE_FLAGNAME 23
--#define CG_RED_FLAGHEAD 24
--#define CG_RED_FLAGSTATUS 25
--#define CG_RED_FLAGNAME 26
--
--#define CG_BLUE_SCORE 27
--#define CG_RED_SCORE 28
--#define CG_RED_NAME 29
--#define CG_BLUE_NAME 30
--#define CG_HARVESTER_SKULLS 31					// only shows in harvester
--#define CG_ONEFLAG_STATUS 32						// only shows in one flag
--#define CG_PLAYER_LOCATION 33
--#define CG_TEAM_COLOR 34
--#define CG_CTF_POWERUP 35
--                                        
--#define CG_AREA_POWERUP	36
--#define CG_AREA_LAGOMETER	37            // painted with old system
--#define CG_PLAYER_HASFLAG 38            
--#define CG_GAME_TYPE 39                 // not done
--
--#define CG_SELECTEDPLAYER_ARMOR 40      
--#define CG_SELECTEDPLAYER_HEALTH 41
--#define CG_PLAYER_STATUS 42
--#define CG_FRAGGED_MSG 43               // painted with old system
--#define CG_PROXMINED_MSG 44             // painted with old system
--#define CG_AREA_FPSINFO 45              // painted with old system
--#define CG_AREA_SYSTEMCHAT 46           // painted with old system
--#define CG_AREA_TEAMCHAT 47             // painted with old system
--#define CG_AREA_CHAT 48                 // painted with old system
--#define CG_GAME_STATUS 49
--#define CG_KILLER 50
--#define CG_PLAYER_ARMOR_ICON2D 51              
--#define CG_PLAYER_AMMO_ICON2D 52
--#define CG_ACCURACY 53
--#define CG_ASSISTS 54
--#define CG_DEFEND 55
--#define CG_EXCELLENT 56
--#define CG_IMPRESSIVE 57
--#define CG_PERFECT 58
--#define CG_GAUNTLET 59
--#define CG_SPECTATORS 60
--#define CG_TEAMINFO 61
--#define CG_VOICE_HEAD 62
--#define CG_VOICE_NAME 63
--#define CG_PLAYER_HASFLAG2D 64            
--#define CG_HARVESTER_SKULLS2D 65					// only shows in harvester
--#define CG_CAPFRAGLIMIT 66	 
--#define CG_1STPLACE 67
--#define CG_2NDPLACE 68
--#define CG_CAPTURES 69
--
--
--
--
--#define UI_OWNERDRAW_BASE 200
--#define UI_HANDICAP 200
--#define UI_EFFECTS 201
--#define UI_PLAYERMODEL 202
--#define UI_CLANNAME 203
--#define UI_CLANLOGO 204
--#define UI_GAMETYPE 205
--#define UI_MAPPREVIEW 206
--#define UI_SKILL 207
--#define UI_BLUETEAMNAME 208
--#define UI_REDTEAMNAME 209
--#define UI_BLUETEAM1 210
--#define UI_BLUETEAM2 211
--#define UI_BLUETEAM3 212
--#define UI_BLUETEAM4 213
--#define UI_BLUETEAM5 214
--#define UI_REDTEAM1 215
--#define UI_REDTEAM2 216
--#define UI_REDTEAM3 217
--#define UI_REDTEAM4 218
--#define UI_REDTEAM5 219
--#define UI_NETSOURCE 220
--#define UI_NETMAPPREVIEW 221
--#define UI_NETFILTER 222
--#define UI_TIER 223
--#define UI_OPPONENTMODEL 224
--#define UI_TIERMAP1 225
--#define UI_TIERMAP2 226
--#define UI_TIERMAP3 227
--#define UI_PLAYERLOGO 228
--#define UI_OPPONENTLOGO 229
--#define UI_PLAYERLOGO_METAL 230
--#define UI_OPPONENTLOGO_METAL 231
--#define UI_PLAYERLOGO_NAME 232
--#define UI_OPPONENTLOGO_NAME 233
--#define UI_TIER_MAPNAME 234
--#define UI_TIER_GAMETYPE 235
--#define UI_ALLMAPS_SELECTION 236
--#define UI_OPPONENT_NAME 237
--#define UI_VOTE_KICK 238
--#define UI_BOTNAME 239
--#define UI_BOTSKILL 240
--#define UI_REDBLUE 241
--#define UI_CROSSHAIR 242
--#define UI_SELECTEDPLAYER 243
--#define UI_MAPCINEMATIC 244
--#define UI_NETGAMETYPE 245
--#define UI_NETMAPCINEMATIC 246
--#define UI_SERVERREFRESHDATE 247
--#define UI_SERVERMOTD 248
--#define UI_GLINFO  249
--#define UI_KEYBINDSTATUS 250
--#define UI_CLANCINEMATIC 251
--#define UI_MAP_TIMETOBEAT 252
--#define UI_JOINGAMETYPE 253
--#define UI_PREVIEWCINEMATIC 254
--#define UI_STARTMAPCINEMATIC 255
--#define UI_MAPS_SELECTION 256
--
--#define VOICECHAT_GETFLAG			"getflag"				// command someone to get the flag
--#define VOICECHAT_OFFENSE			"offense"				// command someone to go on offense
--#define VOICECHAT_DEFEND			"defend"				// command someone to go on defense
--#define VOICECHAT_DEFENDFLAG		"defendflag"			// command someone to defend the flag
--#define VOICECHAT_PATROL			"patrol"				// command someone to go on patrol (roam)
--#define VOICECHAT_CAMP				"camp"					// command someone to camp (we don't have sounds for this one)
--#define VOICECHAT_FOLLOWME			"followme"				// command someone to follow you
--#define VOICECHAT_RETURNFLAG		"returnflag"			// command someone to return our flag
--#define VOICECHAT_FOLLOWFLAGCARRIER	"followflagcarrier"		// command someone to follow the flag carrier
--#define VOICECHAT_YES				"yes"					// yes, affirmative, etc.
--#define VOICECHAT_NO				"no"					// no, negative, etc.
--#define VOICECHAT_ONGETFLAG			"ongetflag"				// I'm getting the flag
--#define VOICECHAT_ONOFFENSE			"onoffense"				// I'm on offense
--#define VOICECHAT_ONDEFENSE			"ondefense"				// I'm on defense
--#define VOICECHAT_ONPATROL			"onpatrol"				// I'm on patrol (roaming)
--#define VOICECHAT_ONCAMPING			"oncamp"				// I'm camping somewhere
--#define VOICECHAT_ONFOLLOW			"onfollow"				// I'm following
--#define VOICECHAT_ONFOLLOWCARRIER	"onfollowcarrier"		// I'm following the flag carrier
--#define VOICECHAT_ONRETURNFLAG		"onreturnflag"			// I'm returning our flag
--#define VOICECHAT_INPOSITION		"inposition"			// I'm in position
--#define VOICECHAT_IHAVEFLAG			"ihaveflag"				// I have the flag
--#define VOICECHAT_BASEATTACK		"baseattack"			// the base is under attack
--#define VOICECHAT_ENEMYHASFLAG		"enemyhasflag"			// the enemy has our flag (CTF)
--#define VOICECHAT_STARTLEADER		"startleader"			// I'm the leader
--#define VOICECHAT_STOPLEADER		"stopleader"			// I resign leadership
--#define VOICECHAT_TRASH				"trash"					// lots of trash talk
--#define VOICECHAT_WHOISLEADER		"whoisleader"			// who is the team leader
--#define VOICECHAT_WANTONDEFENSE		"wantondefense"			// I want to be on defense
--#define VOICECHAT_WANTONOFFENSE		"wantonoffense"			// I want to be on offense
--#define VOICECHAT_KILLINSULT		"kill_insult"			// I just killed you
--#define VOICECHAT_TAUNT				"taunt"					// I want to taunt you
--#define VOICECHAT_DEATHINSULT		"death_insult"			// you just killed me
--#define VOICECHAT_KILLGAUNTLET		"kill_gauntlet"			// I just killed you with the gauntlet
--#define VOICECHAT_PRAISE			"praise"				// you did something good
-+/*
-+===========================================================================
-+Copyright (C) 1999-2005 Id Software, Inc.
-+
-+This file is part of Quake III Arena source code.
-+
-+Quake III Arena source code is free software; you can redistribute it
-+and/or modify it under the terms of the GNU General Public License as
-+published by the Free Software Foundation; either version 2 of the License,
-+or (at your option) any later version.
-+
-+Quake III Arena source code is distributed in the hope that it will be
-+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+GNU General Public License for more details.
-+
-+You should have received a copy of the GNU General Public License
-+along with Foobar; if not, write to the Free Software
-+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-+===========================================================================
-+*/
-+
-+#define ITEM_TYPE_TEXT 0                  // simple text
-+#define ITEM_TYPE_BUTTON 1                // button, basically text with a border 
-+#define ITEM_TYPE_RADIOBUTTON 2           // toggle button, may be grouped 
-+#define ITEM_TYPE_CHECKBOX 3              // check box
-+#define ITEM_TYPE_EDITFIELD 4             // editable text, associated with a cvar
-+#define ITEM_TYPE_COMBO 5                 // drop down list
-+#define ITEM_TYPE_LISTBOX 6               // scrollable list  
-+#define ITEM_TYPE_MODEL 7                 // model
-+#define ITEM_TYPE_OWNERDRAW 8             // owner draw, name specs what it is
-+#define ITEM_TYPE_NUMERICFIELD 9          // editable text, associated with a cvar
-+#define ITEM_TYPE_SLIDER 10               // mouse speed, volume, etc.
-+#define ITEM_TYPE_YESNO 11                // yes no cvar setting
-+#define ITEM_TYPE_MULTI 12                // multiple list setting, enumerated
-+#define ITEM_TYPE_BIND 13		              // multiple list setting, enumerated
-+    
-+#define ITEM_ALIGN_LEFT 0                 // left alignment
-+#define ITEM_ALIGN_CENTER 1               // center alignment
-+#define ITEM_ALIGN_RIGHT 2                // right alignment
-+
-+#define ITEM_TEXTSTYLE_NORMAL 0           // normal text
-+#define ITEM_TEXTSTYLE_BLINK 1            // fast blinking
-+#define ITEM_TEXTSTYLE_PULSE 2            // slow pulsing
-+#define ITEM_TEXTSTYLE_SHADOWED 3         // drop shadow ( need a color for this )
-+#define ITEM_TEXTSTYLE_OUTLINED 4         // drop shadow ( need a color for this )
-+#define ITEM_TEXTSTYLE_OUTLINESHADOWED 5  // drop shadow ( need a color for this )
-+#define ITEM_TEXTSTYLE_SHADOWEDMORE 6         // drop shadow ( need a color for this )
-+                          
-+#define WINDOW_BORDER_NONE 0              // no border
-+#define WINDOW_BORDER_FULL 1              // full border based on border color ( single pixel )
-+#define WINDOW_BORDER_HORZ 2              // horizontal borders only
-+#define WINDOW_BORDER_VERT 3              // vertical borders only 
-+#define WINDOW_BORDER_KCGRADIENT 4        // horizontal border using the gradient bars
-+  
-+#define WINDOW_STYLE_EMPTY 0              // no background
-+#define WINDOW_STYLE_FILLED 1             // filled with background color
-+#define WINDOW_STYLE_GRADIENT 2           // gradient bar based on background color 
-+#define WINDOW_STYLE_SHADER   3           // gradient bar based on background color 
-+#define WINDOW_STYLE_TEAMCOLOR 4          // team color
-+#define WINDOW_STYLE_CINEMATIC 5          // cinematic
-+
-+#define MENU_TRUE 1                       // uh.. true
-+#define MENU_FALSE 0                      // and false
-+
-+#define HUD_VERTICAL				0x00
-+#define HUD_HORIZONTAL				0x01
-+
-+// list box element types
-+#define LISTBOX_TEXT  0x00
-+#define LISTBOX_IMAGE 0x01
-+
-+// list feeders
-+#define FEEDER_HEADS						0x00			// model heads
-+#define FEEDER_MAPS							0x01			// text maps based on game type
-+#define FEEDER_SERVERS						0x02			// servers
-+#define FEEDER_CLANS						0x03			// clan names
-+#define FEEDER_ALLMAPS						0x04			// all maps available, in graphic format
-+#define FEEDER_REDTEAM_LIST					0x05			// red team members
-+#define FEEDER_BLUETEAM_LIST				0x06			// blue team members
-+#define FEEDER_PLAYER_LIST					0x07			// players
-+#define FEEDER_TEAM_LIST					0x08			// team members for team voting
-+#define FEEDER_MODS							0x09			// team members for team voting
-+#define FEEDER_DEMOS 						0x0a			// team members for team voting
-+#define FEEDER_SCOREBOARD					0x0b			// team members for team voting
-+#define FEEDER_Q3HEADS		 				0x0c			// model heads
-+#define FEEDER_SERVERSTATUS					0x0d			// server status
-+#define FEEDER_FINDPLAYER					0x0e			// find player
-+#define FEEDER_CINEMATICS					0x0f			// cinematics
-+
-+// display flags
-+#define CG_SHOW_BLUE_TEAM_HAS_REDFLAG     0x00000001
-+#define CG_SHOW_RED_TEAM_HAS_BLUEFLAG     0x00000002
-+#define CG_SHOW_ANYTEAMGAME               0x00000004
-+#define CG_SHOW_HARVESTER                 0x00000008
-+#define CG_SHOW_ONEFLAG                   0x00000010
-+#define CG_SHOW_CTF                       0x00000020
-+#define CG_SHOW_OBELISK                   0x00000040
-+#define CG_SHOW_HEALTHCRITICAL            0x00000080
-+#define CG_SHOW_SINGLEPLAYER              0x00000100
-+#define CG_SHOW_TOURNAMENT                0x00000200
-+#define CG_SHOW_DURINGINCOMINGVOICE       0x00000400
-+#define CG_SHOW_IF_PLAYER_HAS_FLAG				0x00000800
-+#define CG_SHOW_LANPLAYONLY								0x00001000
-+#define CG_SHOW_MINED											0x00002000
-+#define CG_SHOW_HEALTHOK			            0x00004000
-+#define CG_SHOW_TEAMINFO			            0x00008000
-+#define CG_SHOW_NOTEAMINFO		            0x00010000
-+#define CG_SHOW_OTHERTEAMHASFLAG          0x00020000
-+#define CG_SHOW_YOURTEAMHASENEMYFLAG      0x00040000
-+#define CG_SHOW_ANYNONTEAMGAME            0x00080000
-+#define CG_SHOW_2DONLY										0x10000000
-+
-+
-+#define UI_SHOW_LEADER				            0x00000001
-+#define UI_SHOW_NOTLEADER			            0x00000002
-+#define UI_SHOW_FAVORITESERVERS						0x00000004
-+#define UI_SHOW_ANYNONTEAMGAME						0x00000008
-+#define UI_SHOW_ANYTEAMGAME								0x00000010
-+#define UI_SHOW_NEWHIGHSCORE							0x00000020
-+#define UI_SHOW_DEMOAVAILABLE							0x00000040
-+#define UI_SHOW_NEWBESTTIME								0x00000080
-+#define UI_SHOW_FFA												0x00000100
-+#define UI_SHOW_NOTFFA										0x00000200
-+#define UI_SHOW_NETANYNONTEAMGAME	 				0x00000400
-+#define UI_SHOW_NETANYTEAMGAME		 				0x00000800
-+#define UI_SHOW_NOTFAVORITESERVERS				0x00001000
-+
-+
-+
-+
-+// owner draw types
-+// ideally these should be done outside of this file but
-+// this makes it much easier for the macro expansion to 
-+// convert them for the designers ( from the .menu files )
-+#define CG_OWNERDRAW_BASE 1
-+#define CG_PLAYER_ARMOR_ICON 1              
-+#define CG_PLAYER_ARMOR_VALUE 2
-+#define CG_PLAYER_HEAD 3
-+#define CG_PLAYER_HEALTH 4
-+#define CG_PLAYER_AMMO_ICON 5
-+#define CG_PLAYER_AMMO_VALUE 6
-+#define CG_SELECTEDPLAYER_HEAD 7
-+#define CG_SELECTEDPLAYER_NAME 8
-+#define CG_SELECTEDPLAYER_LOCATION 9
-+#define CG_SELECTEDPLAYER_STATUS 10
-+#define CG_SELECTEDPLAYER_WEAPON 11
-+#define CG_SELECTEDPLAYER_POWERUP 12
-+
-+#define CG_FLAGCARRIER_HEAD 13
-+#define CG_FLAGCARRIER_NAME 14
-+#define CG_FLAGCARRIER_LOCATION 15
-+#define CG_FLAGCARRIER_STATUS 16
-+#define CG_FLAGCARRIER_WEAPON 17
-+#define CG_FLAGCARRIER_POWERUP 18
-+
-+#define CG_PLAYER_ITEM 19
-+#define CG_PLAYER_SCORE 20
-+
-+#define CG_BLUE_FLAGHEAD 21
-+#define CG_BLUE_FLAGSTATUS 22
-+#define CG_BLUE_FLAGNAME 23
-+#define CG_RED_FLAGHEAD 24
-+#define CG_RED_FLAGSTATUS 25
-+#define CG_RED_FLAGNAME 26
-+
-+#define CG_BLUE_SCORE 27
-+#define CG_RED_SCORE 28
-+#define CG_RED_NAME 29
-+#define CG_BLUE_NAME 30
-+#define CG_HARVESTER_SKULLS 31					// only shows in harvester
-+#define CG_ONEFLAG_STATUS 32						// only shows in one flag
-+#define CG_PLAYER_LOCATION 33
-+#define CG_TEAM_COLOR 34
-+#define CG_CTF_POWERUP 35
-+                                        
-+#define CG_AREA_POWERUP	36
-+#define CG_AREA_LAGOMETER	37            // painted with old system
-+#define CG_PLAYER_HASFLAG 38            
-+#define CG_GAME_TYPE 39                 // not done
-+
-+#define CG_SELECTEDPLAYER_ARMOR 40      
-+#define CG_SELECTEDPLAYER_HEALTH 41
-+#define CG_PLAYER_STATUS 42
-+#define CG_FRAGGED_MSG 43               // painted with old system
-+#define CG_PROXMINED_MSG 44             // painted with old system
-+#define CG_AREA_FPSINFO 45              // painted with old system
-+#define CG_AREA_SYSTEMCHAT 46           // painted with old system
-+#define CG_AREA_TEAMCHAT 47             // painted with old system
-+#define CG_AREA_CHAT 48                 // painted with old system
-+#define CG_GAME_STATUS 49
-+#define CG_KILLER 50
-+#define CG_PLAYER_ARMOR_ICON2D 51              
-+#define CG_PLAYER_AMMO_ICON2D 52
-+#define CG_ACCURACY 53
-+#define CG_ASSISTS 54
-+#define CG_DEFEND 55
-+#define CG_EXCELLENT 56
-+#define CG_IMPRESSIVE 57
-+#define CG_PERFECT 58
-+#define CG_GAUNTLET 59
-+#define CG_SPECTATORS 60
-+#define CG_TEAMINFO 61
-+#define CG_VOICE_HEAD 62
-+#define CG_VOICE_NAME 63
-+#define CG_PLAYER_HASFLAG2D 64            
-+#define CG_HARVESTER_SKULLS2D 65					// only shows in harvester
-+#define CG_CAPFRAGLIMIT 66	 
-+#define CG_1STPLACE 67
-+#define CG_2NDPLACE 68
-+#define CG_CAPTURES 69
-+
-+
-+
-+
-+#define UI_OWNERDRAW_BASE 200
-+#define UI_HANDICAP 200
-+#define UI_EFFECTS 201
-+#define UI_PLAYERMODEL 202
-+#define UI_CLANNAME 203
-+#define UI_CLANLOGO 204
-+#define UI_GAMETYPE 205
-+#define UI_MAPPREVIEW 206
-+#define UI_SKILL 207
-+#define UI_BLUETEAMNAME 208
-+#define UI_REDTEAMNAME 209
-+#define UI_BLUETEAM1 210
-+#define UI_BLUETEAM2 211
-+#define UI_BLUETEAM3 212
-+#define UI_BLUETEAM4 213
-+#define UI_BLUETEAM5 214
-+#define UI_REDTEAM1 215
-+#define UI_REDTEAM2 216
-+#define UI_REDTEAM3 217
-+#define UI_REDTEAM4 218
-+#define UI_REDTEAM5 219
-+#define UI_NETSOURCE 220
-+#define UI_NETMAPPREVIEW 221
-+#define UI_NETFILTER 222
-+#define UI_TIER 223
-+#define UI_OPPONENTMODEL 224
-+#define UI_TIERMAP1 225
-+#define UI_TIERMAP2 226
-+#define UI_TIERMAP3 227
-+#define UI_PLAYERLOGO 228
-+#define UI_OPPONENTLOGO 229
-+#define UI_PLAYERLOGO_METAL 230
-+#define UI_OPPONENTLOGO_METAL 231
-+#define UI_PLAYERLOGO_NAME 232
-+#define UI_OPPONENTLOGO_NAME 233
-+#define UI_TIER_MAPNAME 234
-+#define UI_TIER_GAMETYPE 235
-+#define UI_ALLMAPS_SELECTION 236
-+#define UI_OPPONENT_NAME 237
-+#define UI_VOTE_KICK 238
-+#define UI_BOTNAME 239
-+#define UI_BOTSKILL 240
-+#define UI_REDBLUE 241
-+#define UI_CROSSHAIR 242
-+#define UI_SELECTEDPLAYER 243
-+#define UI_MAPCINEMATIC 244
-+#define UI_NETGAMETYPE 245
-+#define UI_NETMAPCINEMATIC 246
-+#define UI_SERVERREFRESHDATE 247
-+#define UI_SERVERMOTD 248
-+#define UI_GLINFO  249
-+#define UI_KEYBINDSTATUS 250
-+#define UI_CLANCINEMATIC 251
-+#define UI_MAP_TIMETOBEAT 252
-+#define UI_JOINGAMETYPE 253
-+#define UI_PREVIEWCINEMATIC 254
-+#define UI_STARTMAPCINEMATIC 255
-+#define UI_MAPS_SELECTION 256
-+
-+#define VOICECHAT_GETFLAG			"getflag"				// command someone to get the flag
-+#define VOICECHAT_OFFENSE			"offense"				// command someone to go on offense
-+#define VOICECHAT_DEFEND			"defend"				// command someone to go on defense
-+#define VOICECHAT_DEFENDFLAG		"defendflag"			// command someone to defend the flag
-+#define VOICECHAT_PATROL			"patrol"				// command someone to go on patrol (roam)
-+#define VOICECHAT_CAMP				"camp"					// command someone to camp (we don't have sounds for this one)
-+#define VOICECHAT_FOLLOWME			"followme"				// command someone to follow you
-+#define VOICECHAT_RETURNFLAG		"returnflag"			// command someone to return our flag
-+#define VOICECHAT_FOLLOWFLAGCARRIER	"followflagcarrier"		// command someone to follow the flag carrier
-+#define VOICECHAT_YES				"yes"					// yes, affirmative, etc.
-+#define VOICECHAT_NO				"no"					// no, negative, etc.
-+#define VOICECHAT_ONGETFLAG			"ongetflag"				// I'm getting the flag
-+#define VOICECHAT_ONOFFENSE			"onoffense"				// I'm on offense
-+#define VOICECHAT_ONDEFENSE			"ondefense"				// I'm on defense
-+#define VOICECHAT_ONPATROL			"onpatrol"				// I'm on patrol (roaming)
-+#define VOICECHAT_ONCAMPING			"oncamp"				// I'm camping somewhere
-+#define VOICECHAT_ONFOLLOW			"onfollow"				// I'm following
-+#define VOICECHAT_ONFOLLOWCARRIER	"onfollowcarrier"		// I'm following the flag carrier
-+#define VOICECHAT_ONRETURNFLAG		"onreturnflag"			// I'm returning our flag
-+#define VOICECHAT_INPOSITION		"inposition"			// I'm in position
-+#define VOICECHAT_IHAVEFLAG			"ihaveflag"				// I have the flag
-+#define VOICECHAT_BASEATTACK		"baseattack"			// the base is under attack
-+#define VOICECHAT_ENEMYHASFLAG		"enemyhasflag"			// the enemy has our flag (CTF)
-+#define VOICECHAT_STARTLEADER		"startleader"			// I'm the leader
-+#define VOICECHAT_STOPLEADER		"stopleader"			// I resign leadership
-+#define VOICECHAT_TRASH				"trash"					// lots of trash talk
-+#define VOICECHAT_WHOISLEADER		"whoisleader"			// who is the team leader
-+#define VOICECHAT_WANTONDEFENSE		"wantondefense"			// I want to be on defense
-+#define VOICECHAT_WANTONOFFENSE		"wantonoffense"			// I want to be on offense
-+#define VOICECHAT_KILLINSULT		"kill_insult"			// I just killed you
-+#define VOICECHAT_TAUNT				"taunt"					// I want to taunt you
-+#define VOICECHAT_DEATHINSULT		"death_insult"			// you just killed me
-+#define VOICECHAT_KILLGAUNTLET		"kill_gauntlet"			// I just killed you with the gauntlet
-+#define VOICECHAT_PRAISE			"praise"				// you did something good
-+
-+// MAKE IT HOW IT LOOKS!!!!
-+
-+//#include "theme_kirkland.h" // you know what this is
-+#include "theme_azure.h" // more ut/ta like 
-+//#include "theme_classic.h" // more like regular menu
-+
-+//#include "lang_english.h" // load english language
-+// #include "ui/lang_fr.h" // load french
-+// #include "ui/lang_de.h" // load german
-+// #include "ui/lang_sp.h" // load spanish
-+// #include "ui/lang_ja.h" // load japanese (won't be for a while unfortunately)
