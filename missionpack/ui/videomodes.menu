@@ -25,22 +25,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // classic H*L style menu
 
 {
-  menuDef
-  {
-    name "videomodes"
-    visible 0
-    fullscreen 1
-    background MP_BACKGROUND	
-    itemFocusSound "ui/assets/hover.wav"	
-    focusColor MP_FOCUSCOLOR
-    rect 0 0 640 480
-    outOfBoundsClick  
-    style 0
-
-    onOpen
-    {
-    
-    }
+menuDef	{
+	name "videomodes"
+	visible 0
+	fullscreen 1
+	background MP_BACKGROUND	
+	focusColor MP_FOCUSCOLOR
+	rect 0 0 640 480
+	outOfBoundsClick  
+	style 0
+	onOpen	{ }
 
 itemDef {
       	name titleness
@@ -122,7 +116,6 @@ itemDef {
 /*
 itemDef {
       	name settin
-	grp serveus
       	style 0
 	type ITEM_TYPE_MULTI
 	text ""
@@ -161,7 +154,6 @@ itemDef {
     }
 itemDef {
       	name mussic
-	grp serveus
       	style 0
 	type ITEM_TYPE_MULTI
 	text ""

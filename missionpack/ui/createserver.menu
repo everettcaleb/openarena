@@ -23,22 +23,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #include "ui/menudef.h"
 
 {
-  menuDef
-  {
-    name "createserver"
-    visible 0
-    fullscreen 1
-    background MP_BACKGROUND	
-    itemFocusSound MP_SND_HOVER		
-    focusColor MP_FOCUSCOLOR
-    rect 0 0 640 480
-    outOfBoundsClick  
-    style 0
 
-    onOpen
-    {
-      uiScript loadArenas;
-    }
+menuDef	{
+	name "createserver"
+	visible 0
+	fullscreen 1
+	background MP_BACKGROUND	
+	focusColor MP_FOCUSCOLOR
+	rect 0 0 640 480
+	outOfBoundsClick  
+	style 0
+	onOpen	{
+		uiScript loadArenas;
+		}
 
 itemDef {
       	name titleness
@@ -55,8 +52,6 @@ itemDef {
 	visible 1 
 	}
 
-// The Bar of Buttons
-
 itemDef {
       	name advoptions
       	text "Adv Options"
@@ -71,11 +66,9 @@ itemDef {
 	backcolor 0 0 0 0
 	forecolor MP_TEXTCOLOR
 	visible 1 
-	      action
-      		{
+	action	{
 	        play MP_SND_SELECT; 
-	       
-      		}
+		}
 	}
 
 itemDef {
@@ -119,159 +112,40 @@ itemDef {
       		}
 	}
 
-/*
-itemDef {
-      	name button4
-      	text "Button4"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 241 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
-	forecolor MP_TEXTCOLOR     
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-
-itemDef {
-      	name button5
-      	text "Button5"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 273 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
-	forecolor MP_TEXTCOLOR     
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-
-itemDef {
-      	name button6
-      	text "Button6"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 305 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20    
-	forecolor MP_TEXTCOLOR    
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-itemDef {
-      	name button7
-      	text "Button7"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 337 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
-	forecolor MP_TEXTCOLOR      
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-
-itemDef {
-      	name button8
-      	text "Button8"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 369 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
-	forecolor MP_TEXTCOLOR      
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-
-itemDef {
-      	name button9
-      	text "Button9"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 401 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
-	forecolor MP_TEXTCOLOR      
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-*/
-// THE LIST OF THE MAPS!
-
-
-    itemDef
-    {
-      name maplist
-      rect 382 174 208 288
-      type ITEM_TYPE_LISTBOX
-      style WINDOW_STYLE_FILLED
-      elementwidth 100
-      elementheight 14
-      textscale .20
-      elementtype LISTBOX_TEXT
-      feeder FEEDER_ALLMAPS
-      textalign 0
-   	background "ui/assets/scrollbar"
-      textaligny 14
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
-      visible 1
-      columns 1
+itemDef	{
+	name maplist
+	rect 382 174 208 288
+	type ITEM_TYPE_LISTBOX
+	style WINDOW_STYLE_FILLED
+	elementwidth 100
+	elementheight 14
+	textscale .20
+	elementtype LISTBOX_TEXT
+	feeder FEEDER_ALLMAPS
+	textalign 0
+	background "ui/assets/scrollbar"
+	textaligny 14
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
+	visible 1
+	columns 1
         2 190 25
-    }
+	}
 
 // map preview... 
 
-    itemDef
-    {
-      name mappreview
-      style WINDOW_STYLE_FILLED
-      ownerdraw UI_STARTMAPCINEMATIC
-      rect 437 40 160 120
-      border 1
-      bordercolor MP_BOX_BORDER
-      visible 1
-    }
+itemDef	{
+	name mappreview
+	style WINDOW_STYLE_FILLED
+	ownerdraw UI_STARTMAPCINEMATIC
+	rect 437 40 160 120
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	}
 
 itemDef {
       	name mappreviewtext
@@ -303,7 +177,8 @@ itemDef {
 	textaligny 18        
 	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
-    }
+	}
+
 itemDef {
 	name settin
 	style WINDOW_STYLE_FILLED
@@ -330,24 +205,24 @@ itemDef {
 
 // MAX PRAYERS
 itemDef {
-      	name maxprayamer
-      	style 0	
-      	text "Max. Players:"
-      	style 0	
+	name maxprayamer
+	style 0	
+	text "Max. Players:"
+	style 0	
 	type 0
 	textstyle 6
-      	textscale .25
-      	rect 212 200 1 1
-      	textalign 0		
-     	textalignx 6	
+	textscale .25
+	rect 212 200 1 1
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
 	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
-    }
+	}
+
 itemDef {
-      	name settin2
-	grp serveus
-      	style WINDOW_STYLE_FILLED
+	name settin2
+	style WINDOW_STYLE_FILLED
 	type ITEM_TYPE_EDITFIELD
 	text ""
 	cvar "sv_maxclients"
@@ -356,18 +231,18 @@ itemDef {
 	background "ui/assets/scrollbar"
 	textstyle 6
 	maxchars 4
-      	textscale .24
-      	rect 212 229 150 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .24
+	rect 212 229 150 24
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
 	visible 1 
-    }
+	}
 // other buttons
 
 
@@ -388,9 +263,8 @@ itemDef {
 	visible 1 
     }
 itemDef {
-      	name settin2
-	grp serveus
-      	style WINDOW_STYLE_FILLED
+	name settin2
+	style WINDOW_STYLE_FILLED
 	type ITEM_TYPE_EDITFIELD
 	text ""
 	cvar "g_password"
@@ -398,214 +272,215 @@ itemDef {
 	maxPaintChars 10
 	background "ui/assets/scrollbar"
 	textstyle 6
-      	textscale .24
-      	rect 212 287 150 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .24
+	rect 212 287 150 24
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
 	visible 1 
-    }
+	}
 // other buttons
 
 itemDef {
-      	name friendly
-      	style 0	
-      	text "Friendly Fire:"
+	name friendly
+	style 0	
+	text "Friendly Fire:"
 	cvar "g_friendlyfire"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_YESNO
 	textstyle 6
-      	textscale .22
-      	rect 54 316 117 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 54 316 117 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
+	}
 
 itemDef {
-      	name pure
-      	style 0	
-      	text "Pure Server:"
+	name pure
+	style 0	
+	text "Pure Server:"
 	cvar "sv_pure"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_YESNO
 	textstyle 6
-      	textscale .22
-      	rect 54 340 116 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 54 340 116 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
+	}
+
 itemDef {
-      	name ded
-      	style 0	
-      	text "Dedicated:"
+	name ded
+	style 0	
+	text "Dedicated:"
 	cvar "sv_pure"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_MULTI
 	cvar "ui_dedicated"
 	cvarFloatList { "No" 0 "LAN" 1 "Internet" 2 }
 	textstyle 6
-      	textscale .22
-      	rect 54 364 116 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 54 364 116 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
+	}
 
 itemDef {
-      	name vamp
-      	text "Vampire:"
+	name vamp
+	text "Vampire:"
 	cvar "g_vampire"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_NUMERICFIELD
 	maxchars 2
 	textstyle 6
-      	textscale .22
+	textscale .22
 	textstyle 6
-      	textscale .22
-      	rect 54 388 116 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 54 388 116 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
+	}
 
 itemDef {
-      	name instantgib
-      	style 0	
-      	text "Instant Gib:"
+	name instantgib
+	style 0	
+	text "Instant Gib:"
 	cvar "g_instantgib"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_YESNO
 	textstyle 6
-      	textscale .22
-      	rect 54 412 117 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 54 412 117 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
+	}
 // row 2 of other buttons
 
 itemDef {
-      	name fraglimit
-      	text "Fraglimit:"
+	name fraglimit
+	text "Fraglimit:"
 	cvar "fraglimit"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_NUMERICFIELD
 	maxchars 5
 	textstyle 6
-      	textscale .22
-      	rect 215 316 117 24
-
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 215 316 117 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
+	}
 
 itemDef {
-      	name timelimit
-      	text "Timelimit:"
+	name timelimit
+	text "Timelimit:"
 	cvar "timelimit"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_NUMERICFIELD
 	maxchars 5
 	textstyle 6
-      	textscale .22
-      	rect 215 340 116 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 215 340 116 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
-itemDef {
-      	name caplimit
-      	text "Capturelimit:"
-	cvar "capturelimit"
-      	style 0	
-	type ITEM_TYPE_NUMERICFIELD
-	maxchars 5
-	textstyle 6
-      	textscale .22
-	textstyle 6
-      	textscale .22
-      	rect 215 364 116 24
-      	textalign 0		
-     	textalignx 6	
-	textaligny 20        
-	forecolor MP_SMALLCOLOR
-	visible 1 
-    }
+	}
 
 itemDef {
-      	name minplayers
-      	text "Minimum Players:"
+	name caplimit
+	text "Capturelimit:"
+	cvar "capturelimit"
+	style 0	
+	type ITEM_TYPE_NUMERICFIELD
+	maxchars 5
+	textstyle 6
+	textscale .22
+	textstyle 6
+	textscale .22
+	rect 215 364 116 24
+	textalign 0		
+	textalignx 6	
+	textaligny 20        
+	forecolor MP_SMALLCOLOR
+	visible 1 
+	}
+
+itemDef {
+	name minplayers
+	text "Minimum Players:"
 	cvar "bot_minplayers"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_NUMERICFIELD
 	maxchars 2
 	textstyle 6
-      	textscale .22
+	textscale .22
 	textstyle 6
-      	textscale .22
-      	rect 215 388 116 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 215 388 116 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
+	}
 
 itemDef {
-      	name rocketarena
-      	style 0	
-      	text "Rocket Arena: "
+	name rocketarena
+	style 0	
+	text "Rocket Arena: "
 	cvar "g_rockets"
-      	style 0	
+	style 0	
 	type ITEM_TYPE_YESNO
 	textstyle 6
-      	textscale .22
-      	rect 215 412 117 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .22
+	rect 215 412 117 24
+	textalign 0		
+	textalignx 6	
 	textaligny 20        
 	forecolor MP_SMALLCOLOR
 	visible 1 
-    }
+	}
 
 // GAME TYPE SELECITON !!
 
 itemDef {
-      	name gametypefield
-      	style 0	
+	name gametypefield
+	style 0	
 	ownerdraw UI_NETGAMETYPE
-      	text "Type:"
-      	style 0	
+	text "Type:"
+	style 0	
 	textstyle 6
-      	textscale .237
-      	rect 382 156 223 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .237
+	rect 382 156 223 24
+	textalign 0		
+	textalignx 6	
 	textaligny 10        
 	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
-    }
+	}
 
 }
