@@ -25,36 +25,26 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // classic H*L style menu
 
 {
-  menuDef
-  {
-    name "player"
-    visible 0
-    fullscreen 1
-    background MP_BACKGROUND
-    itemFocusSound MP_SND_HOVER	
-    focusColor MP_FOCUSCOLOR
-    rect 0 0 640 480
-    outOfBoundsClick  
-    style 0
-
-    onOpen
-    {
-      uiScript loadArenas;
-    }
-// the prayer
-
-
+  menuDef {
+	name player
+	visible 0
+	fullscreen 1
+	background MP_BACKGROUND
+	focusColor MP_FOCUSCOLOR
+	rect 0 0 640 480
+	outOfBoundsClick  
+	style 0
 
 itemDef {
-      	name titleness
-      	text "Customize"
-      	style 0	
+	name titleness
+	text "Customize"
+	style 0	
 	type 0
 	textstyle 6
-      	textscale 1
-      	rect 0 65 1 1
-      	textalign 0		
-     	textalignx 48 	
+	textscale 1
+	rect 0 65 1 1
+	textalign 0		
+	textalignx 48 	
 	textaligny 40        
 	forecolor MP_TITLECOLOR
 	visible 1 
@@ -63,290 +53,147 @@ itemDef {
 // The Bar of Buttons
 
 itemDef {
-      	name advoptions
-      	text "Done"
-      	style 0
+	name advoptions
+	text "Done"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 52 145 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 52 145 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20      
 	backcolor 0 0 0 0
 	forecolor MP_TEXTCOLOR
 	visible 1 
 	      action
-      		{
+		{
 	        play MP_SND_SELECT; 
-	       close player;
+		close player;
 		open main;
-      		}
+		}
 	}
 
 itemDef {
-      	name button2
-      	text "Adv Options"
-      	style 0
+	name button2
+	text "Adv Options"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 52 177 163 34
-      	textalign 0		
-     	textalignx 5 	
+	textscale 0.3
+	rect 52 177 163 34
+	textalign 0		
+	textalignx 5 	
 	textaligny 20   
 	forecolor MP_TEXTCOLOR  
-	visible 1 
-	      action
-      		{
+	visible 1
+	action	{
 	        play MP_SND_SELECT; 
- 		
-      		}
-	}
-/*
-itemDef {
-      	name button3
-      	text "Cancel"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 209 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
-	forecolor MP_TEXTCOLOR    
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-		close createserver;
-		open menu;
-      		}
+		}
 	}
 
-itemDef {
-      	name button4
-      	text "Button4"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 241 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
-	forecolor MP_TEXTCOLOR    
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-
-itemDef {
-      	name button5
-      	text "Button5"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 273 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
-	forecolor MP_TEXTCOLOR    
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-
-itemDef {
-      	name button6
-      	text "Button6"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 305 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20    
-	forecolor MP_TEXTCOLOR   
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-itemDef {
-      	name button7
-      	text "Button7"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 337 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
-	forecolor MP_TEXTCOLOR     
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-
-itemDef {
-      	name button8
-      	text "Button8"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 369 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
-	forecolor MP_TEXTCOLOR     
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-
-itemDef {
-      	name button9
-      	text "Button9"
-      	style 0
-	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 52 401 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
-	forecolor MP_TEXTCOLOR     
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-      		}
-	}
-*/
-// THE LIST OF THE MAPS!
-
-    itemDef
-    {
-      name playerlist
-    //  rect 410 160 169 196
-  rect 578 160 56 196
-group grparenatype	
-      type ITEM_TYPE_LISTBOX
-      style WINDOW_STYLE_FILLED
-      elementwidth 32
-      elementheight 32
-cvarTest "ui_q3model"
+itemDef	{
+	name playerlist
+	rect 578 160 56 196
+	group grparenatype	
+	type ITEM_TYPE_LISTBOX
+	style WINDOW_STYLE_FILLED
+	elementwidth 32
+	elementheight 32
+	cvarTest "ui_q3model"
 	hideCVar { "1" }
-      textscale .20
-      elementtype LISTBOX_IMAGE
-      feeder FEEDER_HEADS
-      textalign 0
-   	background "ui/assets/scrollbar"
-      textaligny 14
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
-      visible 1
-      columns 1
-        2 190 25 ITEM_ALIGN_LEFT
-    }
-    itemDef
-    {
-      name playerlist
-    //  rect 410 160 169 196
-  rect 571 118 56 339
-group grparenatype	
-      type ITEM_TYPE_LISTBOX
-      style WINDOW_STYLE_FILLED
-      elementwidth 32
-      elementheight 32
-cvarTest "ui_q3model"
+	textscale .20
+	elementtype LISTBOX_IMAGE
+	feeder FEEDER_HEADS
+	textalign 0
+	background "ui/assets/scrollbar"
+	textaligny 14
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
+	visible 1
+	columns 1
+	2 190 25
+	}
+
+itemDef	{
+	name playerlist
+	rect 571 118 56 339
+	group grparenatype	
+	type ITEM_TYPE_LISTBOX
+	style WINDOW_STYLE_FILLED
+	elementwidth 32
+	elementheight 32
+	cvarTest "ui_q3model"
 	showCVar { "1" }
-      textscale .20
-      elementtype LISTBOX_IMAGE
-      feeder FEEDER_Q3HEADS
-      textalign 0
-   	background "ui/assets/scrollbar"
-      textaligny 14
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
-      visible 1
-      columns 1
-        2 190 25 ITEM_ALIGN_LEFT
-    }
+	textscale .20
+	elementtype LISTBOX_IMAGE
+	feeder FEEDER_Q3HEADS
+	textalign 0
+	background "ui/assets/scrollbar"
+	textaligny 14
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
+	visible 1
+	columns 1
+	2 190 25
+	}
+
 itemDef {
 	name themodel
 	ownerdraw UI_PLAYERMODEL
-	//rect 410 160 169 196
-rect 361 118 217 339
-
-//rect 0 0 640 480
- style WINDOW_STYLE_FILLED
+	rect 361 118 217 339
+	style WINDOW_STYLE_FILLED
 	style 1
 	decoration 
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
 	visible 1
-    	}
+	}
 
 itemDef {
-      	name mappreviewtext
-      	text "Map:"
-      	style 0	
+	name mappreviewtext
+	text "Model:"
+	style 0	
 	type 0
 	textstyle 6
-      	textscale .237
-      	rect 382 116 1 1
-      	textalign 0		
-     	textalignx 6	
+	textscale .237
+	rect 382 116 1 1
+	textalign 0		
+	textalignx 6	
 	textaligny 0        
 	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
 	}
-// GAME TYPE SELECITON !!
-    
+
 // PLAYER NAME
 itemDef {
-      	name hostnamer
-      	style 0	
-      	text "Player Name"
-      	style 0	
+	name hostnamer
+	style 0	
+	text "Player Name"
+	style 0	
 	type 0
 	textstyle 6
-      	textscale .25
-      	rect 212 137 1 1
-      	textalign 0		
-     	textalignx 6	
+	textscale .25
+	rect 212 137 1 1
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
 	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
-    }
+	}
+
 itemDef {
-      	name settin
-      	style WINDOW_STYLE_FILLED
+	name settin
+	style WINDOW_STYLE_FILLED
 	type ITEM_TYPE_EDITFIELD
 	text ""
 	cvar "ui_Name"
@@ -354,39 +201,39 @@ itemDef {
 	maxPaintChars 10
 	background "ui/assets/scrollbar"
 	textstyle 6
-      	textscale .24
-      	rect 212 166 150 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .24
+	rect 212 166 150 24
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
 	visible 1 
-    }
+	}
 
 
 // MAX PRAYERS
 itemDef {
-      	name hanidcap
-      	style 0	
-      	text "Handicap:"
-      	style 0	
+	name hanidcap
+	style 0	
+	text "Handicap:"
+	style 0	
 	type 0
 	textstyle 6
-      	textscale .25
-      	rect 212 200 1 1
-      	textalign 0		
-     	textalignx 6	
+	textscale .25
+	rect 212 200 1 1
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
 	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
-    }
+	}
+
 itemDef {
       	name settin2
-	grp serveus
       	style 0
 	ownerdraw UI_HANDICAP
 	type ITEM_TYPE_EDITFIELD
@@ -402,32 +249,30 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
 	visible 1 
-    }
-// other buttons
+	}
 
-
-// PASS WORLD
 itemDef {
-      	name password
-      	style 0	
-      	text "Model type:"
-      	style 0	
+	name password
+	style 0	
+	text "Model type:"
+	style 0	
 	type 0
 	textstyle 6
-      	textscale .25
-      	rect 212 263 1 1
-      	textalign 0		
-     	textalignx 6	
+	textscale .25
+	rect 212 263 1 1
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
 	forecolor MP_BOX_HEADERCOLOR
 	visible 1 
-    }
+	}
+
 itemDef {
   	name arenatype
 	type ITEM_TYPE_MULTI	
@@ -442,12 +287,11 @@ itemDef {
       	textalign 0		
      	textalignx 6	
 	textaligny 18        
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
 	visible 1 
-    }
-// other buttons
+	}
 }

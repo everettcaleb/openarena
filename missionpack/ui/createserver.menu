@@ -257,7 +257,7 @@ itemDef {
       outlinecolor  MP_BOX_OUTLINE
       visible 1
       columns 1
-        2 190 25 ITEM_ALIGN_LEFT
+        2 190 25
     }
 
 // map preview... 
@@ -305,9 +305,8 @@ itemDef {
 	visible 1 
     }
 itemDef {
-      	name settin
-	grp serveus
-      	style WINDOW_STYLE_FILLED
+	name settin
+	style WINDOW_STYLE_FILLED
 	type ITEM_TYPE_EDITFIELD
 	text ""
 	cvar "sv_hostname"
@@ -315,18 +314,18 @@ itemDef {
 	maxPaintChars 10
 	background "ui/assets/scrollbar"
 	textstyle 6
-      	textscale .24
-      	rect 212 166 150 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .24
+	rect 212 166 150 24
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
 	visible 1 
-    }
+	}
 
 
 // MAX PRAYERS

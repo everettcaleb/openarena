@@ -26,21 +26,17 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 {
   menuDef
-  {
-    name "joinserver"
-    visible 0
-    fullscreen 1
-    background MP_BACKGROUND	
-    itemFocusSound MP_SND_HOVER	
-    focusColor MP_FOCUSCOLOR
-    rect 0 0 640 480
-    outOfBoundsClick  
-    style 0
-
-    onOpen
-    {
-      uiScript loadArenas;
-    }
+	{
+	name "joinserver"
+	visible 0
+	fullscreen 1
+	background MP_BACKGROUND	
+	focusColor MP_FOCUSCOLOR
+	rect 0 0 640 480
+	style 0
+	onOpen	{
+		uiScript loadArenas;
+		}
 
 itemDef {
       	name titleness
@@ -165,9 +161,8 @@ itemDef {
 
 itemDef {
       	name button6
-      	text "Filter"
+	text "Filter"
       	style 0
-	type 1
 	textstyle 3
       	textscale 0.3
       	rect 52 305 163 34
@@ -176,8 +171,7 @@ itemDef {
 	textaligny 20    
 	forecolor MP_TEXTCOLOR    
 	visible 1 
-	      action
-      		{
+	action	{
 	        play MP_SND_SELECT; 
       		}
 	}
@@ -243,34 +237,32 @@ itemDef {
 // THE LIST OF THE MAPS!
 
 
-    itemDef
-    {
-      name serverlist
-      rect 164 139 465 297
-      type ITEM_TYPE_LISTBOX
-      style WINDOW_STYLE_FILLED
-      elementwidth 450
-      elementheight 14
-      textscale .20
-      elementtype LISTBOX_TEXT
-      feeder FEEDER_SERVERS
-      textalign 0
-   	background "ui/assets/scrollbar"
-      textaligny 14
-      border 1
-      bordercolor   MP_BOX_BORDER
-      forecolor     MP_BOX_FORE
-      backcolor     MP_BOX_BACK
-      outlinecolor  MP_BOX_OUTLINE
-      visible 1
-      //columns 1
-        //2 190 25 ITEM_ALIGN_LEFT
-	columns 5
-	81 40 0 ITEM_ALIGN_LEFT  // name
-	464 40 0 ITEM_ALIGN_LEFT
-	1 40 400 ITEM_ALIGN_LEFT
-	1 40 400 ITEM_ALIGN_LEFT
-	1 40 800 ITEM_ALIGN_LEFT
-    }
+itemDef	{
+	name serverlist
+	rect 164 139 465 297
+	type ITEM_TYPE_LISTBOX
+	style WINDOW_STYLE_FILLED
+	elementwidth 450
+	elementheight 14
+	textscale .20
+	elementtype LISTBOX_TEXT
+	feeder FEEDER_SERVERS
+	textalign 0
+	background "ui/assets/scrollbar"
+	textaligny 14
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
+	visible 1
+	columns 
+	5
+	81 40 0 //name
+	464 40 0 
+	1 40 400 
+	1 40 400 
+	1 40 800 
+	}
 
 }
