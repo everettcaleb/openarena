@@ -37,16 +37,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 menuDef {
-    	name "main"
-	background MP_BACKGROUND	
-    	fullScreen MENU_TRUE				
+	name main
+	background MP_BACKGROUND
+	fullScreen MENU_TRUE
 	rect 0 0 640 480
-    	visible MENU_TRUE
-    	focusColor MP_FOCUSCOLOR			
+	visible MENU_TRUE
+	focusColor MP_FOCUSCOLOR
 
-						
-	onOpen { 
-		setitemcolor fadebox backcolor 0 0 0 1 ; 
+
+	onOpen {
+		setitemcolor fadebox backcolor 0 0 0 1 ;
 		playlooped "music/menu" ;
 		uiScript stopRefresh ;
 		}
@@ -69,66 +69,88 @@ itemDef {
 
 // The Bar of Buttons
 
-itemDef {
-      	name button2
-      	text "New Game"
-      	style 0
+itemDef	{
+	name mouseybar
 	type 1
-	textstyle 3
-      	textscale 0.3
-      	rect 73 177 163 34
-      	textalign 0		
-     	textalignx 5 	
-	textaligny 20   
-	forecolor MP_TEXTCOLOR   
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
- 	
-      		}
+	style 1
+	rect 73 177 640 34
+	visible 1
+	mouseEnter { hide stdta ; show gameselect }
+	mouseExit { hide gameselect ; show stdta }
 	}
 
 itemDef {
-      	name button3
-      	text "Create Server"
-      	style 0
+	name stdta
+	text "Play"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 209 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
-	forecolor MP_TEXTCOLOR    
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-		open createserver;
-		close menu;
-      		}
+	textscale 0.3
+	rect 73 177 163 34
+	textalign 0
+	textalignx 5
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	visible 1
+	}
+
+
+itemDef {
+	name gameselect
+	text "Single Player"
+	style 0
+	type 1
+	textstyle 3
+	textscale 0.3
+	rect 73 177 163 34
+	textalign 0
+	textalignx 5
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	visible 0
+	action {
+		play MP_SND_SELECT;
+		}
 	}
 
 itemDef {
-      	name button4
-      	text "Join Server"
-      	style 0
+	name gameselect
+	text "Start Server"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 241 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 200 177 163 34
+	textalign 0
+	textalignx 5
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	visible 0
+	action	{
+	        play MP_SND_SELECT; 
+		close main;
+		open createserver
+		}
+	}
+
+itemDef {
+	name gameselect
+	text "Multiplayer"
+	style 0
+	type 1
+	textstyle 3
+	textscale 0.3
+	rect 325 177 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20   
 	forecolor MP_TEXTCOLOR    
-	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
-		open joinserver;
-		close menu;
-      		}
+	visible 0 
+	action	{
+		play MP_SND_SELECT; 
+		close main;
+		open joinserver
+		}
 	}
 
 itemDef {
@@ -138,7 +160,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 273 163 34
+      	rect 73 209 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20   
@@ -159,7 +181,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 305 163 34
+      	rect 73 241 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20    
@@ -179,7 +201,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 337 163 34
+      	rect 73 273 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -198,7 +220,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 369 163 34
+      	rect 73 305 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -217,7 +239,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 433 163 34
+      	rect 73 337 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -237,7 +259,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 401 163 34
+      	rect 73 369 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
@@ -252,7 +274,7 @@ itemDef {
 
 itemDef {
       	name warning
-      	text "OPENARENAMISSIONPACK MENU v0.002"
+      	text "OPENARENAMISSIONPACK MENU v0.003"
       	style 0	
 	type 1
 	textstyle 6
