@@ -31,6 +31,8 @@ menuDef {
 	focusColor 1 1 1 1
 	backcolor 0 0 0 0
 	forecolor 0 0 0 1
+	focuscolor MP_FOCUSCOLOR
+	background "ui/assets/errorbg.tga"
 	style 0
 	popup
 	onClose { uiScript clearError }
@@ -38,11 +40,11 @@ menuDef {
 
 itemDef {
 	name etext
-	rect 0 50 320 20	
-	text "Error (esc to Main): "
+	rect 80 150 320 20	
+	text "Error: "
 	textalign 1
 	textstyle 6
-	textalignx 160
+	textalignx 100
 	textaligny 23
 	forecolor 1 1 1 1
 	visible 1
@@ -51,19 +53,34 @@ itemDef {
 	
 itemDef {
 	name emessage
-	rect 60 80 200 270
+	rect 140 160 200 270
 	type ITEM_TYPE_TEXT
 	style 1
 	textstyle 3
+	textalign 1
+	textalignx 110
+	textaligny 23
 	autowrapped
 	cvar "com_errorMessage"
 	textalign ITEM_ALIGN_LEFT
-	textalignx 100
-	textaligny 23
 	forecolor 1 1 1 1
 	visible 1
 	decoration
 	}
+
+itemDef	{
+	name eexit
+	rect 240 440 640 100
+	forecolor MP_TEXTCOLOR
+	text "Exit to Main"
+	style 0
+	type 1
+	textstyle 3
+	textalign 0
+	visible 1
+	action { close error_popmenu ; open main }
+	}
+	
 }
 }
 
