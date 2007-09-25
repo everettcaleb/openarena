@@ -266,7 +266,16 @@ itemDef {
 		uiscript "quit";
       		}
 	}
-
+/* crazy idea
+itemDef	{
+	name modeldec
+	ownerdraw UI_PLAYERMODEL
+	rect 361 118 300 350
+	style 0
+	decoration
+	visible 1
+	}
+*/
 /*itemDef {
 	name button9
 	text "Movies"

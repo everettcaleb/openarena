@@ -22,11 +22,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "ui/menudef.h"
 
-// classic H*L style menu
-
 {
-  menuDef
-	{
+menuDef	{
 	name "joinserver"
 	visible 0
 	fullscreen 1
@@ -37,6 +34,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	onOpen	{
 		uiScript loadArenas;
 		}
+	onEsc { uiScript closeJoin }
+	
 
 itemDef {
       	name titleness
@@ -57,15 +56,14 @@ itemDef {
 
 itemDef {
       	name advoptions
-      	text "Join Server"
+      	text "Join"
       	style 0
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 52 145 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20      
+      	rect 590 450 50 30
+      	textalign 0
+	textaligny 10	
 	backcolor 0 0 0 0
 	forecolor MP_TEXTCOLOR
 	visible 1 
@@ -78,15 +76,14 @@ itemDef {
 
 itemDef {
       	name Create
-      	text "Create Server"
+      	text "Create"
       	style 0
 	type 1
 	textstyle 3
       	textscale 0.27
-      	rect 52 177 163 34
-      	textalign 0		
-     	textalignx 5 	
-	textaligny 20   
+      	rect 360 30 50 30
+      	textalign 0
+	textaligny 10		
 	forecolor MP_TEXTCOLOR   
 	visible 1 
 	      action
@@ -99,19 +96,17 @@ itemDef {
 
 itemDef {
       	name button3
-      	text "View game info"
+      	text "Info"
       	style 0
 	type 1
 	textstyle 3
-      	textscale 0.25
-      	rect 52 209 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
+      	textscale 0.27
+      	rect 500 30 50 34
+      	textalign 0
+	textaligny 10
 	forecolor MP_TEXTCOLOR     
 	visible 1 
-	      action
-      		{
+	action	{
 	        play MP_SND_SELECT; 
 		close createserver;
 		open menu;
@@ -125,16 +120,14 @@ itemDef {
       	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 52 241 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
+      	textscale 0.27
+      	rect 500 65 50 34
+      	textalign 0
+	textaligny 10
 	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
-	        play MP_SND_SELECT; 
 		uiScript RefreshFilter
       		}
 	}
@@ -145,11 +138,10 @@ itemDef {
       	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 52 273 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20   
+      	textscale 0.27
+      	rect 360 65 50 34
+      	textalign 0
+	textaligny 10	
 	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
@@ -161,37 +153,52 @@ itemDef {
 
 itemDef {
       	name button6
-	text "Filter"
       	style 0
+	ownerdraw UI_NETSOURCE
 	textstyle 3
-      	textscale 0.3
-      	rect 52 305 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20    
+      	textscale 0.27
+      	rect 360 100 50 34
+      	textalign 0
+	textaligny 10
 	forecolor MP_TEXTCOLOR    
 	visible 1 
-	action	{
-	        play MP_SND_SELECT; 
-      		}
+	action	{ play MP_SND_SELECT }
 	}
+
 itemDef {
-      	name button7
-      	text "Add Server"
-      	style 0
+	name button7
+	text "Add Server"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 52 337 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
+	textscale 0.27
+	rect 400 450 100 34
+	textalign 0
+	textaligny 10	
 	forecolor MP_TEXTCOLOR      
 	visible 1 
 	      action
-      		{
+		{
 	        play MP_SND_SELECT; 
-      		}
+		}
+	}
+
+itemDef {
+	name faves
+	text "New Flavorit"
+	style 0
+	type 1
+	textstyle 3
+	textscale 0.27
+	rect 180 450 100 34
+	textalign 0
+	textaligny 10		
+	forecolor MP_TEXTCOLOR      
+	visible 1 
+	      action
+		{
+	        play MP_SND_SELECT; 
+		}
 	}
 
 itemDef {
@@ -200,11 +207,10 @@ itemDef {
       	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 52 369 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
+      	textscale 0.27
+      	rect 500 100 50 34
+      	textalign 0
+	textaligny 10
 	forecolor MP_TEXTCOLOR      
 	visible 1 
 	      action
@@ -214,24 +220,23 @@ itemDef {
 	}
 
 itemDef {
-      	name button9
-      	text "Done"
-      	style 0
+	name button9
+	text "Back"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 52 401 163 34
-      	textalign 0		
-     	textalignx 5  	
-	textaligny 20  
+	textscale 0.27
+	rect 20 450 50 34
+	textalign 0
+	textaligny 10	
 	forecolor MP_TEXTCOLOR      
 	visible 1 
 	      action
-      		{
+		{
 	        play MP_SND_SELECT; 
 		close joinserver;
 		open main;
-      		}
+		}
 	}
 
 // THE LIST OF THE MAPS!
@@ -239,7 +244,7 @@ itemDef {
 
 itemDef	{
 	name serverlist
-	rect 164 139 465 297
+	rect 10 139 620 297
 	type ITEM_TYPE_LISTBOX
 	style WINDOW_STYLE_FILLED
 	elementwidth 450
@@ -263,6 +268,7 @@ itemDef	{
 	1 40 400 
 	1 40 400 
 	1 40 800 
+	doubleClick { uiScript JoinServer }
 	}
 
 }
