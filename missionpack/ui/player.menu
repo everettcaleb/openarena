@@ -237,8 +237,7 @@ itemDef {
       	style 0
 	ownerdraw UI_HANDICAP
 	type ITEM_TYPE_EDITFIELD
-	text ""
-	cvar "sv_maxclients"
+	cvar "handicap"
 	maxChars 32
 	maxPaintChars 10
 	background "ui/assets/scrollbar"
