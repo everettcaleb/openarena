@@ -31,9 +31,7 @@ menuDef	{
 	focusColor MP_FOCUSCOLOR
 	rect 0 0 640 480
 	style 0
-	onOpen	{
-		uiScript loadArenas;
-		}
+	onOpen	{ uiScript UpdateFilter }
 	onEsc { uiScript closeJoin }
 	
 
@@ -70,7 +68,7 @@ itemDef {
 	      action
       		{
 	        play MP_SND_SELECT; 
-	       
+		uiScript JoinServer
       		}
 	}
 
@@ -203,7 +201,7 @@ itemDef {
 
 itemDef {
       	name button8
-      	text "Chat Looms"
+	text "Chat Looms"
       	style 0
 	type 1
 	textstyle 3
@@ -263,12 +261,13 @@ itemDef	{
 	visible 1
 	columns 
 	5
-	81 40 0 //name
-	464 40 0 
-	1 40 400 
-	1 40 400 
-	1 40 800 
+	1 40 0 //server-name
+	250 40 0 //map
+	480 40 0  //players
+	375 40 0 // gametype
+	550 40 0 //ping
 	doubleClick { uiScript JoinServer }
 	}
 
+}
 }
