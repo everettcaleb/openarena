@@ -32,75 +32,85 @@ menuDef	{
 	rect 0 0 640 480
 	style 0
 	onOpen	{ uiScript UpdateFilter }
-	onEsc { uiScript closeJoin }
+	onEsc	{ uiScript closeJoin }
 	
-
 itemDef {
-      	name titleness
-      	text "Join Server"
-      	style 0	
+	name titleness
+	text "Open Arena"
+	style 0	
 	type 0
-	textstyle 6
-      	textscale 1
-      	rect 0 65 1 1
-      	textalign 0		
-     	textalignx 48 	
+	textstyle 3
+	textscale 1
+	rect 0 35 1 1
+	textalign 0		
+	textalignx 32	
 	textaligny 40        
 	forecolor MP_TITLECOLOR
 	visible 1 
 	}
 
-// The Bar of Buttons
+itemDef	{
+	name multiplayer
+	text "m        u       l       t       i       p       l       a       y       e        r"
+	style 0
+	type 0
+	textstyle 2
+	textscale .2
+	rect 0 55 1 1
+	textalign 0
+	textalignx 40
+	textaligny 40
+	forecolor MP_TITLECOLOR
+	visible 1
+	}
 
 itemDef {
-      	name advoptions
-      	text "Join"
-      	style 0
+	name advoptions
+	text "Join"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 590 450 50 30
-      	textalign 0
+	textscale 0.3
+	rect 590 450 50 30
+	textalign 0
 	textaligny 10	
 	backcolor 0 0 0 0
 	forecolor MP_TEXTCOLOR
 	visible 1 
-	      action
-      		{
+	action	{
 	        play MP_SND_SELECT; 
 		uiScript JoinServer
-      		}
+		}
 	}
 
 itemDef {
-      	name Create
-      	text "Create"
-      	style 0
+	name Create
+	text "Create"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.27
-      	rect 360 30 50 30
-      	textalign 0
+	textscale 0.27
+	rect 360 30 50 30
+	textalign 0
 	textaligny 10		
 	forecolor MP_TEXTCOLOR   
-	visible 1 
-	      action
-      		{
+	visible 1
+	action	{
 	        play MP_SND_SELECT; 
- 		close joinserver;
+		close joinserver;
 		open createserver;
-      		}
+		}
 	}
 
 itemDef {
-      	name button3
-      	text "Info"
-      	style 0
+	name button3
+	text "Info"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.27
-      	rect 500 30 50 34
-      	textalign 0
+	textscale 0.27
+	rect 500 30 50 10
+	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR     
 	visible 1 
@@ -108,45 +118,42 @@ itemDef {
 	        play MP_SND_SELECT; 
 		close createserver;
 		open menu;
-      		}
+		}
 	}
 
-
 itemDef {
-      	name button4
-      	text "Refresh"
-      	style 0
+	name button4
+	text "Refresh"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.27
-      	rect 500 65 50 34
-      	textalign 0
+	textscale 0.27
+	rect 500 65 50 10
+	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR     
 	visible 1 
-	      action
-      		{
+	action	{
 		uiScript RefreshFilter
-      		}
+		}
 	}
 
 itemDef {
-      	name button5
-      	text "Update"
-      	style 0
+	name button5
+	text "Update"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.27
-      	rect 360 65 50 34
-      	textalign 0
+	textscale 0.27
+	rect 360 65 50 10
+	textalign 0
 	textaligny 10	
 	forecolor MP_TEXTCOLOR     
 	visible 1 
-	      action
-      		{
+	action	{
 	        play MP_SND_SELECT; 
 		uiScript RefreshServers
-      		}
+		}
 	}
 
 itemDef {
@@ -155,7 +162,7 @@ itemDef {
 	ownerdraw UI_NETSOURCE
 	textstyle 3
       	textscale 0.27
-      	rect 360 100 50 34
+      	rect 360 100 50 10
       	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR    
@@ -170,13 +177,12 @@ itemDef {
 	type 1
 	textstyle 3
 	textscale 0.27
-	rect 400 450 100 34
+	rect 400 450 100 10
 	textalign 0
 	textaligny 10	
 	forecolor MP_TEXTCOLOR      
 	visible 1 
-	      action
-		{
+	action	{
 	        play MP_SND_SELECT; 
 		}
 	}
@@ -188,32 +194,32 @@ itemDef {
 	type 1
 	textstyle 3
 	textscale 0.27
-	rect 180 450 100 34
+	rect 180 450 100 10
 	textalign 0
 	textaligny 10		
 	forecolor MP_TEXTCOLOR      
 	visible 1 
-	      action
-		{
+	action	{
 	        play MP_SND_SELECT; 
 		}
 	}
 
 itemDef {
       	name button8
-	text "Chat Looms"
+	text "Type:"
+	ownerdraw UI_JOINGAMETYPE
       	style 0
 	type 1
-	textstyle 3
+	textstyle 6
       	textscale 0.27
-      	rect 500 100 50 34
+      	rect 500 100 50 10
       	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR      
 	visible 1 
-	      action
-      		{
-	        play MP_SND_SELECT; 
+	action	{
+		play MP_SND_SELECT; 
+		uiScript RefreshFilter
       		}
 	}
 
@@ -224,21 +230,17 @@ itemDef {
 	type 1
 	textstyle 3
 	textscale 0.27
-	rect 20 450 50 34
+	rect 20 450 50 10
 	textalign 0
 	textaligny 10	
 	forecolor MP_TEXTCOLOR      
 	visible 1 
-	      action
-		{
+	action	{
 	        play MP_SND_SELECT; 
 		close joinserver;
 		open main;
 		}
 	}
-
-// THE LIST OF THE MAPS!
-
 
 itemDef	{
 	name serverlist
