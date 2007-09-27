@@ -4,12 +4,13 @@ gametypes {
   { "Team Deathmatch" 3 } 
   { "Capture the flag" 4 }
   { "One flag" 5 }
-  { "Over load" 6 }
+  { "Overload" 6 }
   { "Harvester" 7 }
   { "Elimination" 8 }
   { "CTF Elimination" 9 }
   { "Last Man Standing" 10 }
   { "Double Domination" 11 }
+  { "Domination" 12 }
 }
 
 joingametypes {
@@ -19,10 +20,11 @@ joingametypes {
   { "Team Deathmatch" 3 } 
   { "Capture the flag" 4 }
   { "One flag" 5 }
-  { "Over load" 6 }
+  { "Overload" 6 }
   { "Harvester" 7 }
   { "Elimination" 8 }
   { "CTF Elimination" 9 }
   { "Last Man Standing" 10 }
   { "Double Domination" 11 }
+  { "Domination" 12 }
 }
