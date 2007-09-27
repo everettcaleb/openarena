@@ -597,6 +597,13 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 
 	if(g_gametype.integer == GT_DOUBLE_D)
 		Team_SpawnDoubleDominationPoints();
+
+	if(g_gametype.integer == GT_DOMINATION ){
+		level.dom_scoreGiven = 0;
+		for(i=0;i<MAX_DOMINATION_POINTS;i++)
+			level.pointStatusDom[i] = TEAM_NONE;
+		level.domination_points_count = 0; //make sure its not too big
+	}
 }
 
 
@@ -1033,6 +1040,23 @@ void SendAttackingTeamMessageToAllClients( void ) {
 
 /*
 ========================
+SendDominationPointsStatusMessageToAllClients
+
+Used for Standard domination
+========================
+*/
+void SendDominationPointsStatusMessageToAllClients( void ) {
+	int		i;
+
+	for ( i = 0 ; i < level.maxclients ; i++ ) {
+		if ( level.clients[ i ].pers.connected == CON_CONNECTED ) {
+			DominationPointStatusMessage( g_entities + i );
+		}
+	}
+}
+
+/*
+========================
 MoveClientToIntermission
 
 When the intermission starts, this will be called for all players.
@@ -1260,7 +1284,7 @@ Append information about this game to the log file
 void LogExit( const char *string ) {
 	int				i, numSorted;
 	gclient_t		*cl;
-#ifdef MISSIONPACK // bk001205
+#ifdef MISSIONPACK
 	qboolean won = qtrue;
 #endif
 	G_LogPrintf( "Exit: %s\n", string );
@@ -1331,7 +1355,7 @@ wait 10 seconds before going on.
 =================
 */
 void CheckIntermissionExit( void ) {
-	int			ready, notReady;
+	int			ready, notReady, playerCount;
 	int			i;
 	gclient_t	*cl;
 	int			readyMask;
@@ -1344,6 +1368,7 @@ void CheckIntermissionExit( void ) {
 	ready = 0;
 	notReady = 0;
 	readyMask = 0;
+	playerCount = 0;
 	for (i=0 ; i< g_maxclients.integer ; i++) {
 		cl = level.clients + i;
 		if ( cl->pers.connected != CON_CONNECTED ) {
@@ -1353,6 +1378,7 @@ void CheckIntermissionExit( void ) {
 			continue;
 		}
 
+		playerCount++;
 		if ( cl->readyToExit ) {
 			ready++;
 			if ( i < 16 ) {
@@ -1875,6 +1901,39 @@ void CheckElimination(void) {
 		}
 	}
 }
+
+/*
+=============
+CheckDomination
+=============
+*/
+void CheckDomination(void) {
+	int i;
+
+	if ( (level.numPlayingClients < 1) || (g_gametype.integer != GT_DOMINATION) ) {
+		return;
+	}
+
+	//Don't score if we are in intermission. Just plain stupid
+	if(level.intermissiontime)
+		return;
+
+	//Sago: I use if instead of while, since if the server stops for more than 2 seconds people should not be allowed to score anyway
+	if(level.time>=level.dom_scoreGiven*DOM_SECSPERPOINT) {
+		for(i=0;i<level.domination_points_count;i++) {
+			if ( level.pointStatusDom[i] == TEAM_RED )
+				AddTeamScore(level.intermission_origin,TEAM_RED,1);
+			if ( level.pointStatusDom[i] == TEAM_BLUE )
+				AddTeamScore(level.intermission_origin,TEAM_BLUE,1);
+		}
+		level.dom_scoreGiven++;
+		while(level.time>level.dom_scoreGiven*DOM_SECSPERPOINT)
+			level.dom_scoreGiven++;
+		CalculateRanks();
+		
+	}
+}
+
 /*
 =============
 CheckTournament
@@ -2302,6 +2361,12 @@ end = trap_Milliseconds();
 
 	//Check Double Domination
 	CheckDoubleDomination();
+
+	CheckDomination();
+
+	//Sago: I just need to think why I placed this here... they should only spawn once
+	if(g_gametype.integer == GT_DOMINATION)
+		Team_Dom_SpawnPoints();
 
 	// see if it is time to end the level
 	CheckExitRules();

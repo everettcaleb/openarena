@@ -131,6 +131,9 @@ void SP_info_player_deathmatch (gentity_t *ent);
 void SP_info_player_intermission (gentity_t *ent);
 //For Double Domination:
 void SP_info_player_dd (gentity_t *ent);
+//standard domination:
+void SP_domination_point ( gentity_t *ent);
+
 void SP_info_firstplace(gentity_t *ent);
 void SP_info_secondplace(gentity_t *ent);
 void SP_info_thirdplace(gentity_t *ent);
@@ -201,7 +204,12 @@ spawn_t	spawns[] = {
 	{"info_player_start", SP_info_player_start},
 	{"info_player_deathmatch", SP_info_player_deathmatch},
 	{"info_player_intermission", SP_info_player_intermission},
+//Double Domination player spawn:
 	{"info_player_dd", SP_info_player_dd},
+//Standard Domination point spawn:
+	{"domination_point", SP_domination_point},
+
+
 	{"info_null", SP_info_null},
 	{"info_notnull", SP_info_notnull},		// use target_position instead
 	{"info_camp", SP_info_camp},

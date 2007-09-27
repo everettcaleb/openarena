@@ -91,6 +91,33 @@ void DeathmatchScoreboardMessage( gentity_t *ent ) {
 
 /*
 ==================
+DominationPointStatusMessage
+
+==================
+*/
+void DominationPointStatusMessage( gentity_t *ent ) {
+	char		entry[20]; //Will more likely be 2... in fact cannot be more since we are the server
+	char		string[20*(MAX_DOMINATION_POINTS+1)];
+	int			stringlength;
+	int i, j;
+
+	string[0] = 0;
+	stringlength = 0;
+
+	for(i = 0;i<MAX_DOMINATION_POINTS && i<level.domination_points_count; i++) {
+		Com_sprintf (entry, sizeof(entry)," %i",level.pointStatusDom[i]);
+		j = strlen(entry);
+		if (stringlength + j > 20*MAX_DOMINATION_POINTS)
+			break;
+		strcpy (string + stringlength, entry);
+		stringlength += j;
+	}
+
+	trap_SendServerCommand( ent-g_entities, va("domStatus %i%s", level.domination_points_count, string ) );
+}
+
+/*
+==================
 EliminationMessage
 
 ==================
@@ -109,6 +136,34 @@ DoubleDominationScoreTime
 */
 void DoubleDominationScoreTimeMessage( gentity_t *ent ) {
 	trap_SendServerCommand( ent-g_entities, va("ddtaken %i", level.timeTaken));
+}
+
+/*
+==================
+DominationPointNames
+==================
+*/
+
+void DominationPointNamesMessage( gentity_t *ent ) {
+	char text[MAX_DOMINATION_POINTS_NAMES*MAX_DOMINATION_POINTS];
+	int i,j;	
+	qboolean nullFound;
+	for(i=0;i<MAX_DOMINATION_POINTS;i++) {
+		Q_strncpyz(text+i*MAX_DOMINATION_POINTS_NAMES,level.domination_points_names[i],MAX_DOMINATION_POINTS_NAMES-1);
+		if(i!=MAX_DOMINATION_POINTS-1) {
+			//Don't allow "/0"!
+			nullFound = qfalse;
+			for(j=i*MAX_DOMINATION_POINTS_NAMES; j<(i+1)*MAX_DOMINATION_POINTS_NAMES;j++) {
+				if(text[j]==0)
+					nullFound = qtrue;
+				if(nullFound)
+					text[j] = ' ';
+			}
+		}
+		text[MAX_DOMINATION_POINTS_NAMES*MAX_DOMINATION_POINTS-2]=0x19;
+		text[MAX_DOMINATION_POINTS_NAMES*MAX_DOMINATION_POINTS-1]=0;
+	}
+	trap_SendServerCommand( ent-g_entities, va("dompointnames %i \"%s\"", level.domination_points_count, text));
 }
 
 /*

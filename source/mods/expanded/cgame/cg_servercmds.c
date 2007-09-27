@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // be a valid snapshot this frame
 
 #include "cg_local.h"
-#include "../../ui/menudef.h" // bk001205 - for Q3_ui as well
+#include "../../ui/menudef.h"
 
 typedef struct {
 	const char *order;
@@ -46,7 +46,7 @@ static const orderTask_t validOrders[] = {
 
 static const int numValidOrders = sizeof(validOrders) / sizeof(orderTask_t);
 
-#ifdef MISSIONPACK // bk001204
+#ifdef MISSIONPACK
 static int CG_ValidOrder(const char *p) {
 	int i;
 	for (i = 0; i < numValidOrders; i++) {
@@ -147,6 +147,43 @@ CG_ParseDDtimetaken
 static void CG_ParseDDtimetaken( void ) {
 	cgs.timetaken = atoi( CG_Argv( 1 ) );
 }
+
+/*
+=================
+CG_ParseDomPointNames
+=================
+*/
+
+static void CG_ParseDomPointNames( void ) {
+	int i,j;
+	cgs.domination_points_count = atoi( CG_Argv( 1 ) );
+	if(cgs.domination_points_count>=MAX_DOMINATION_POINTS)
+		cgs.domination_points_count = MAX_DOMINATION_POINTS;
+	for(i = 0;i<cgs.domination_points_count;i++) {
+		Q_strncpyz(cgs.domination_points_names[i],CG_Argv(2)+i*MAX_DOMINATION_POINTS_NAMES,MAX_DOMINATION_POINTS_NAMES-1);
+		for(j=MAX_DOMINATION_POINTS_NAMES-1; cgs.domination_points_names[i][j] < '0' && j>0; j--) {
+			cgs.domination_points_names[i][j] = 0;
+		}
+	}
+}
+
+/*
+=================
+CG_ParseDomScores
+=================
+*/
+
+static void CG_ParseDomStatus( void ) {
+	int i;
+	if( cgs.domination_points_count!=atoi( CG_Argv(1) ) ) {
+		cgs.domination_points_count = 0;
+		return;
+	}
+	for(i = 0;i<cgs.domination_points_count;i++) {
+		cgs.domination_points_status[i] = atoi( CG_Argv(2+i) );
+	}
+}
+
 
 /*
 =================
@@ -1118,6 +1155,16 @@ static void CG_ServerCommand( void ) {
 
 	if ( !strcmp( cmd, "ddtaken" ) ) {
 		CG_ParseDDtimetaken();
+		return;
+	}
+
+	if ( !strcmp( cmd, "dompointnames" ) ) {
+		CG_ParseDomPointNames();
+		return;
+	}
+
+	if ( !strcmp( cmd, "domStatus" ) ) {
+		CG_ParseDomStatus();
 		return;
 	}
 

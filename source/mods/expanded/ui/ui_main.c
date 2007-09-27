@@ -85,7 +85,8 @@ static const char *teamArenaGameTypes[] = {
 	"ELIMINATION",
 	"CTFELIMINATION",
 	"LMS",
-	"DD"
+	"DD",
+	"DOM"
 };
 
 static int const numTeamArenaGameTypes = sizeof(teamArenaGameTypes) / sizeof(const char*);
@@ -104,7 +105,8 @@ static const char *teamArenaGameNames[] = {
 	"Elimination",
 	"CTF Elimination",
 	"Last Man Standing",
-	"Double Domination"
+	"Double Domination",
+	"Domination"
 };
 
 static int const numTeamArenaGameNames = sizeof(teamArenaGameNames) / sizeof(const char*);
@@ -212,7 +214,7 @@ intptr_t vmMain( int command, int arg0, int arg1, int arg2, int arg3, int arg4, 
 		  UI_DrawConnectScreen( arg0 );
 		  return 0;
 	  case UI_HASUNIQUECDKEY: // mod authors need to observe this
-	    return qtrue; // bk010117 - change this to qfalse for mods!
+	    return qtrue; // change this to qfalse for mods!
 
 	}
 
@@ -321,7 +323,7 @@ int Text_Height(const char *text, float scale, int limit) {
 	float max;
 	glyphInfo_t *glyph;
 	float useScale;
-	const char *s = text; // bk001206 - unsigned
+	const char *s = text;
 	fontInfo_t *font = &uiInfo.uiDC.Assets.textFont;
 	if (scale <= ui_smallFont.value) {
 		font = &uiInfo.uiDC.Assets.smallFont;
@@ -374,7 +376,7 @@ void Text_Paint(float x, float y, float scale, vec4_t color, const char *text, f
 	}
 	useScale = scale * font->glyphScale;
   if (text) {
-    const char *s = text; // bk001206 - unsigned
+    const char *s = text;
 		trap_R_SetColor( color );
 		memcpy(&newColor[0], &color[0], sizeof(vec4_t));
     len = strlen(text);
@@ -443,7 +445,7 @@ void Text_PaintWithCursor(float x, float y, float scale, vec4_t color, const cha
 	}
 	useScale = scale * font->glyphScale;
   if (text) {
-    const char *s = text; // bk001206 - unsigned
+    const char *s = text;
 		trap_R_SetColor( color );
 		memcpy(&newColor[0], &color[0], sizeof(vec4_t));
     len = strlen(text);
@@ -451,7 +453,7 @@ void Text_PaintWithCursor(float x, float y, float scale, vec4_t color, const cha
 			len = limit;
 		}
 		count = 0;
-		glyph2 = &font->glyphs[ (int) cursor]; // bk001206 - possible signed char
+		glyph2 = &font->glyphs[ (int) cursor];
 		while (s && *s && count < len) {
 			glyph = &font->glyphs[(int)*s]; // TTimo: FIXME: getting nasty warnings without the cast, hopefully this doesn't break the VM build
       //int yadj = Assets.textFont.glyphs[text[i]].bottom + Assets.textFont.glyphs[text[i]].top;
@@ -533,7 +535,7 @@ static void Text_Paint_Limit(float *maxX, float x, float y, float scale, vec4_t 
 	vec4_t newColor;
 	glyphInfo_t *glyph;
   if (text) {
-    const char *s = text; // bk001206 - unsigned
+    const char *s = text;
 		float max = *maxX;
 		float useScale;
 		fontInfo_t *font = &uiInfo.uiDC.Assets.textFont;
@@ -1016,7 +1018,7 @@ void UI_Load(void) {
 }
 
 static const char *handicapValues[] = {"None","95","90","85","80","75","70","65","60","55","50","45","40","35","30","25","20","15","10","5",NULL};
-#ifndef MISSIONPACK // bk001206
+#ifndef MISSIONPACK
 static int numHandicaps = sizeof(handicapValues) / sizeof(const char*);
 #endif
 
@@ -1421,7 +1423,7 @@ static void UI_DrawTierGameType(rectDef_t *rect, float scale, vec4_t color, int 
 }
 
 
-#ifndef MISSIONPACK // bk001206
+#ifndef MISSIONPACK
 static const char *UI_OpponentLeaderName(void) {
   int i = UI_TeamIndexFromName(UI_Cvar_VariableString("ui_opponentName"));
 	return uiInfo.teamList[i].teamMembers[0];
@@ -1450,7 +1452,7 @@ static const int UI_AIIndex(const char *name) {
 }
 #endif
 
-#ifndef MISSIONPACK // bk001206
+#ifndef MISSIONPACK
 static const int UI_AIIndexFromName(const char *name) {
 	int j;
 	for (j = 0; j < uiInfo.aliasCount; j++) {
@@ -1463,14 +1465,14 @@ static const int UI_AIIndexFromName(const char *name) {
 #endif
 
 
-#ifndef MISSIONPACK // bk001206
+#ifndef MISSIONPACK
 static const char *UI_OpponentLeaderHead(void) {
 	const char *leader = UI_OpponentLeaderName();
 	return UI_AIFromName(leader);
 }
 #endif
 
-#ifndef MISSIONPACK // bk001206
+#ifndef MISSIONPACK
 static const char *UI_OpponentLeaderModel(void) {
 	int i;
 	const char *head = UI_OpponentLeaderHead();
@@ -3174,7 +3176,7 @@ static void UI_RunMenuScript(char **args) {
 			trap_Cvar_Set("cg_cameraOrbit", "0");
 			trap_Cvar_Set("ui_singlePlayerActive", "0");
 			trap_Cvar_SetValue( "dedicated", Com_Clamp( 0, 2, ui_dedicated.integer ) );
-			trap_Cvar_SetValue( "g_gametype", Com_Clamp( 0, 13, uiInfo.gameTypes[ui_netGameType.integer].gtEnum ) );
+			trap_Cvar_SetValue( "g_gametype", Com_Clamp( 0, 14, uiInfo.gameTypes[ui_netGameType.integer].gtEnum ) );
 			trap_Cvar_Set("g_redTeam", UI_Cvar_VariableString("ui_teamName"));
 			trap_Cvar_Set("g_blueTeam", UI_Cvar_VariableString("ui_opponentName"));
 			trap_Cmd_ExecuteText( EXEC_APPEND, va( "wait ; wait ; map %s\n", uiInfo.mapList[ui_currentNetMap.integer].mapLoadName ) );
@@ -4906,9 +4908,8 @@ static void UI_Pause(qboolean b) {
 	}
 }
 
-#ifndef MISSIONPACK // bk001206
+#ifndef MISSIONPACK
 static int UI_OwnerDraw_Width(int ownerDraw) {
-  // bk001205 - LCC missing return value
   return 0;
 }
 #endif
@@ -5140,7 +5141,7 @@ void _UI_Init( qboolean inGameLoad ) {
 #if 0
 	if (uiInfo.inGameLoad) {
 		UI_LoadMenus("ui/ingame.txt", qtrue);
-	} else { // bk010222: left this: UI_LoadMenus(menuSet, qtrue);
+	} else {
 	}
 #else 
 	UI_LoadMenus(menuSet, qtrue);
@@ -5706,8 +5707,6 @@ vmCvar_t	ui_realCaptureLimit;
 vmCvar_t	ui_realWarmUp;
 vmCvar_t	ui_serverStatusTimeOut;
 
-
-// bk001129 - made static to avoid aliasing
 static cvarTable_t		cvarTable[] = {
 	{ &ui_ffa_fraglimit, "ui_ffa_fraglimit", "20", CVAR_ARCHIVE },
 	{ &ui_ffa_timelimit, "ui_ffa_timelimit", "0", CVAR_ARCHIVE },
@@ -5830,7 +5829,6 @@ static cvarTable_t		cvarTable[] = {
 
 };
 
-// bk001129 - made static to avoid aliasing
 static int		cvarTableSize = sizeof(cvarTable) / sizeof(cvarTable[0]);
 
 
@@ -5894,7 +5892,7 @@ static void UI_StopServerRefresh( void )
 ArenaServers_MaxPing
 =================
 */
-#ifndef MISSIONPACK // bk001206
+#ifndef MISSIONPACK
 static int ArenaServers_MaxPing( void ) {
 	int		maxPing;
 

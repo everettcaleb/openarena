@@ -42,6 +42,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define	INTERMISSION_DELAY_TIME	1000
 #define	SP_INTERMISSION_DELAY_TIME	5000
 
+#define DOM_SECSPERPOINT	2000
+
 // gentity->flags
 #define	FL_GODMODE				0x00000010
 #define	FL_NOTARGET				0x00000020
@@ -433,6 +435,12 @@ typedef struct {
 	int pointStatusB;			//Status of the BLUE (B) doimination point
 	int timeTaken;				//Time team started having both points
 	//use roundStartTime for telling, then the points respawn
+
+	//Added for standard domination
+	int pointStatusDom[MAX_DOMINATION_POINTS]; //Holds the owner of all the points
+	int dom_scoreGiven;				//Number of times we have provided scores
+	int domination_points_count;
+	char domination_points_names[MAX_DOMINATION_POINTS][MAX_DOMINATION_POINTS_NAMES];
 } level_locals_t;
 
 
@@ -643,6 +651,8 @@ void DoubleDominationScoreTimeMessage( gentity_t *ent );
 void AttackingTeamMessage( gentity_t *ent );
 void DeathmatchScoreboardMessage (gentity_t *client);
 void EliminationMessage (gentity_t *client);
+void DominationPointNamesMessage (gentity_t *client);
+void DominationPointStatusMessage( gentity_t *ent );
 
 //
 // g_pweapon.c
@@ -660,6 +670,7 @@ void QDECL G_LogPrintf( const char *fmt, ... );
 void SendScoreboardMessageToAllClients( void );
 void SendEliminationMessageToAllClients( void );
 void SendDDtimetakenMessageToAllClients( void );
+void SendDominationPointsStatusMessageToAllClients( void );
 void QDECL G_Printf( const char *fmt, ... );
 void QDECL G_Error( const char *fmt, ... );
 

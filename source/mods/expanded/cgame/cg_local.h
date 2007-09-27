@@ -1054,6 +1054,12 @@ typedef struct {
 //Double Domination DD
 	int 				timetaken;
 
+//Domination
+	int domination_points_count;
+	char domination_points_names[MAX_DOMINATION_POINTS][MAX_DOMINATION_POINTS_NAMES];
+	int domination_points_status[MAX_DOMINATION_POINTS];
+
+
 	int				scores1, scores2;		// from configstrings
 	int				redflag, blueflag;		// flag status from configstrings
 	int				flagStatus;

@@ -43,8 +43,12 @@ gentity_t	*neutralObelisk;
 //Some pointers for Double Domination so we don't need GFind (I think it might crash at random times...)
 gentity_t	*ddA;
 gentity_t	*ddB;
+//Pointers for Standard Domination
+gentity_t	*dom_points[MAX_DOMINATION_POINTS];
 
 void Team_SetFlagStatus( int team, flagStatus_t status );
+
+qboolean dominationPointsSpawned;
 
 void Team_InitGame( void ) {
 	memset(&teamgame, 0, sizeof teamgame);
@@ -60,6 +64,8 @@ void Team_InitGame( void ) {
 		ddA = NULL;
 		ddB = NULL;
 		break;
+	case GT_DOMINATION:
+		dominationPointsSpawned = qfalse;
 #ifdef MISSIONPACK
 	case GT_1FCTF:
 		teamgame.flagStatus = -1; // Invalid to force update
@@ -139,37 +145,42 @@ AddTeamScore
 void AddTeamScore(vec3_t origin, int team, int score) {
 	gentity_t	*te;
 
-	te = G_TempEntity(origin, EV_GLOBAL_TEAM_SOUND );
-	te->r.svFlags |= SVF_BROADCAST;
 
-	if ( team == TEAM_RED ) {
-		if ( level.teamScores[ TEAM_RED ] + score == level.teamScores[ TEAM_BLUE ] ) {
-			//teams are tied sound
-			te->s.eventParm = GTS_TEAMS_ARE_TIED;
-		}
-		else if ( level.teamScores[ TEAM_RED ] <= level.teamScores[ TEAM_BLUE ] &&
-					level.teamScores[ TEAM_RED ] + score > level.teamScores[ TEAM_BLUE ]) {
-			// red took the lead sound
-			te->s.eventParm = GTS_REDTEAM_TOOK_LEAD;
-		}
-		else {
-			// red scored sound
-			te->s.eventParm = GTS_REDTEAM_SCORED;
-		}
-	}
-	else {
-		if ( level.teamScores[ TEAM_BLUE ] + score == level.teamScores[ TEAM_RED ] ) {
-			//teams are tied sound
-			te->s.eventParm = GTS_TEAMS_ARE_TIED;
-		}
-		else if ( level.teamScores[ TEAM_BLUE ] <= level.teamScores[ TEAM_RED ] &&
-					level.teamScores[ TEAM_BLUE ] + score > level.teamScores[ TEAM_RED ]) {
-			// blue took the lead sound
-			te->s.eventParm = GTS_BLUETEAM_TOOK_LEAD;
+	if ( g_gametype.integer != GT_DOMINATION ) {
+		te = G_TempEntity(origin, EV_GLOBAL_TEAM_SOUND );
+		te->r.svFlags |= SVF_BROADCAST;
+
+	
+	
+		if ( team == TEAM_RED ) {
+			if ( level.teamScores[ TEAM_RED ] + score == level.teamScores[ TEAM_BLUE ] ) {
+				//teams are tied sound
+				te->s.eventParm = GTS_TEAMS_ARE_TIED;
+			}
+			else if ( level.teamScores[ TEAM_RED ] <= level.teamScores[ TEAM_BLUE ] &&
+						level.teamScores[ TEAM_RED ] + score > level.teamScores[ TEAM_BLUE ]) {
+				// red took the lead sound
+				te->s.eventParm = GTS_REDTEAM_TOOK_LEAD;
+			}
+			else {
+				// red scored sound
+				te->s.eventParm = GTS_REDTEAM_SCORED;
+			}
 		}
 		else {
-			// blue scored sound
-			te->s.eventParm = GTS_BLUETEAM_SCORED;
+			if ( level.teamScores[ TEAM_BLUE ] + score == level.teamScores[ TEAM_RED ] ) {
+				//teams are tied sound
+				te->s.eventParm = GTS_TEAMS_ARE_TIED;
+			}
+			else if ( level.teamScores[ TEAM_BLUE ] <= level.teamScores[ TEAM_RED ] &&
+						level.teamScores[ TEAM_BLUE ] + score > level.teamScores[ TEAM_RED ]) {
+				// blue took the lead sound
+				te->s.eventParm = GTS_BLUETEAM_TOOK_LEAD;
+			}
+			else {
+				// blue scored sound
+				te->s.eventParm = GTS_BLUETEAM_SCORED;
+			}
 		}
 	}
 	level.teamScores[ team ] += score;
@@ -679,16 +690,101 @@ gentity_t *Team_ResetFlag( int team ) {
 	return rent;
 }
 
+//Functions for Domination
+
+void Team_Dom_SpawnPoints( void ) {
+	char *c;
+	gentity_t *flag;
+	int i;
+	gitem_t			*it;
+	
+	if(dominationPointsSpawned)
+		return;
+	dominationPointsSpawned = qtrue;
+
+	it = NULL;
+	it = BG_FindItem ("Neutral domination point");
+	if(it == NULL) {
+		PrintMsg( NULL, "No domination item\n");
+		return;
+	} else {
+		PrintMsg( NULL, "Domination item found\n");
+	}
+	i = 0;
+	c = "domination_point";
+	
+	//return; Just to test, the lines below crashes game
+	
+	while ((flag = G_Find (flag, FOFS(classname), c)) != NULL) {
+		if(i>=MAX_DOMINATION_POINTS)
+			break;
+		//domination_points_names[i] = flag->message;
+		Q_strncpyz(level.domination_points_names[i],flag->message,MAX_DOMINATION_POINTS_NAMES-1);
+		PrintMsg( NULL, "Domination point \'%s\' found\n",level.domination_points_names[i]);		
+		dom_points[i] = G_Spawn();
+		VectorCopy( flag->r.currentOrigin, dom_points[i]->s.origin );
+		dom_points[i]->classname = it->classname;
+		G_SpawnItem(dom_points[i], it);
+		FinishSpawningItem(dom_points[i] );
+		
+		i++;
+	}
+	level.domination_points_count = i;
+}
+
+int getDomPointNumber( gentity_t *point ) {
+	int i;
+	for(i=1;i<MAX_DOMINATION_POINTS && i<level.domination_points_count;i++) {
+		if(dom_points[i] == NULL)
+			return 0; //Not found, just return first, so we don't crash
+		if(dom_points[i] == point)
+			return i;
+	}
+	return 0;
+}
+
+void Team_Dom_TakePoint( gentity_t *point, int team ) {
+	gitem_t			*it;
+	vec3_t			origin;
+	int i;
+	i = getDomPointNumber(point);
+	if(i<0)
+		i = 0;
+	if(i>=MAX_DOMINATION_POINTS)
+		i = MAX_DOMINATION_POINTS - 1;
+
+	it = NULL;
+	VectorCopy( point->r.currentOrigin, origin );
+
+	if(team == TEAM_RED) {
+		it = BG_FindItem ("Red domination point");
+		PrintMsg( NULL, "Red took \'%s\'\n",level.domination_points_names[i]);
+	} else
+	if(team == TEAM_BLUE) {
+		it = BG_FindItem ("Blue domination point");
+		PrintMsg( NULL, "Blue took \'%s\'\n",level.domination_points_names[i]);
+	}
+	if (!it || it == NULL) {
+		PrintMsg( NULL, "No item\n");
+		return;
+	}
+
+	G_FreeEntity(point);
+
+	point = G_Spawn();
+
+	VectorCopy( origin, point->s.origin );
+	point->classname = it->classname;
+	dom_points[i] = point;
+	G_SpawnItem(point, it);
+	FinishSpawningItem( point );
+	level.pointStatusDom[i] = team;
+	SendDominationPointsStatusMessageToAllClients();
+}
+
 //Functions for Double Domination
 
 void Team_DD_RemovePointAgfx( void ) {
-	/*gentity_t *ent;
-	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAblue")) != NULL)
-		G_FreeEntity(ent);
-	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAred")) != NULL)
-		G_FreeEntity(ent);
-	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointAwhite")) != NULL)
-		G_FreeEntity(ent);*/
 	if(ddA!=NULL) {
 		G_FreeEntity(ddA);
 		ddA = NULL;
@@ -696,13 +792,6 @@ void Team_DD_RemovePointAgfx( void ) {
 }
 
 void Team_DD_RemovePointBgfx( void ) {
-	/*gentity_t *ent;
-	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBblue")) != NULL)
-		G_FreeEntity(ent);
-	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBred")) != NULL)
-		G_FreeEntity(ent);
-	while ((ent = G_Find (ent, FOFS(classname), "team_DD_pointBwhite")) != NULL) {
-		G_FreeEntity(ent);*/
 	if(ddB!=NULL) {
 		G_FreeEntity(ddB);
 		ddB = NULL;
@@ -1214,6 +1303,10 @@ int Pickup_Team( gentity_t *ent, gentity_t *other ) {
 		return 0;
 	}
 #endif
+	if ( g_gametype.integer == GT_DOMINATION ) {
+		Team_Dom_TakePoint(ent, cl->sess.sessionTeam);
+		return 0;
+	}
 	// figure out what team this flag is
 	if( strcmp(ent->classname, "team_CTF_redflag") == 0 ) {
 		team = TEAM_RED;

@@ -59,6 +59,10 @@ void SP_info_player_start(gentity_t *ent) {
 void SP_info_player_dd(gentity_t *ent) {
 }
 
+//One for Standard Domination, not really a player spawn point
+void SP_domination_point(gentity_t *ent) {
+}
+
 /*QUAKED info_player_intermission (1 0 1) (-16 -16 -24) (16 16 32)
 The intermission will be viewed from this point.  Target an info_notnull for the view direction.
 */
@@ -1344,6 +1348,12 @@ void ClientBegin( int clientNum ) {
 		}
 	}
 	G_LogPrintf( "ClientBegin: %i\n", clientNum );
+
+	//Send domination point names:
+	if(g_gametype.integer == GT_DOMINATION) {
+		DominationPointNamesMessage(ent);
+		DominationPointStatusMessage(ent);
+	}
 
 	// count current clients and rank for scoreboard
 	CalculateRanks();

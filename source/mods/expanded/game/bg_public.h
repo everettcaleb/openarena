@@ -51,6 +51,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define CROUCH_VIEWHEIGHT	12
 #define	DEAD_VIEWHEIGHT		-16
 
+//Domination points
+#define MAX_DOMINATION_POINTS 6
+#define MAX_DOMINATION_POINTS_NAMES 20
+
 //
 // config strings are a general means of communicating variable length strings
 // from the server to all connected clients.
@@ -116,6 +120,7 @@ typedef enum {
 	GT_CTF_ELIMINATION,		// ctf elimination
 	GT_LMS,				// Last man standing
 	GT_DOUBLE_D,			// Double Domination
+	GT_DOMINATION,			// Standard domination 12
 	GT_MAX_GAME_TYPE
 	
 } gametype_t;
@@ -324,6 +329,14 @@ typedef enum {
 	DD_POINTBBLUE,
 	DD_POINTBWHITE
 } doubled_t;
+
+typedef enum {
+	DOM_NONE,
+
+	DOM_POINTRED,
+	DOM_POINTBLUE,
+	DOM_POINTWHITE
+} domination_t;
 
 
 typedef enum {

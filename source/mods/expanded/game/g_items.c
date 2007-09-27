@@ -876,6 +876,11 @@ void ClearRegisteredItems( void ) {
 		RegisterItem( BG_FindItem( "Point B (White)" ) );
 	}
 
+	if(g_gametype.integer == GT_DOMINATION ) {
+		RegisterItem( BG_FindItem( "Neutral domination point" ) );
+		RegisterItem( BG_FindItem( "Red domination point" ) );
+		RegisterItem( BG_FindItem( "Blue domination point" ) );
+	}
 	
 }
 

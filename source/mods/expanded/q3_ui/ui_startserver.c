@@ -102,6 +102,7 @@ static const char *gametype_items[] = {
 	"CTF Elimination",
 	"Last Man Standing",
 	"Double Domination",
+	"Domination",
 	NULL
 };
 
@@ -113,7 +114,8 @@ static int gametype_remap[] = {
 		GT_ELIMINATION, 	
 		GT_CTF_ELIMINATION, 	
 		GT_LMS, 		
-		GT_DOUBLE_D };		
+		GT_DOUBLE_D,
+		GT_DOMINATION };		
 
 static int gametype_remap2[] = {
 		0, 
@@ -127,7 +129,8 @@ static int gametype_remap2[] = {
 		4, 
 		5, 
 		6, 
-		7 };		//this works and should increment for more gametypes
+		7,
+		8 };		//this works and should increment for more gametypes
 
 // use ui_servers2.c definition
 extern const char* punkbuster_items[];
@@ -194,6 +197,10 @@ static int GametypeBits( char *string ) {
 		}
 		if( Q_stricmp( token, "dd" ) == 0 ) {
 			bits |= 1 << GT_DOUBLE_D;
+			continue;
+		}
+		if( Q_stricmp( token, "dom" ) == 0 ) {
+			bits |= 1 << GT_DOMINATION;
 			continue;
 		}
 }

@@ -108,6 +108,8 @@ void Team_FreeEntity(gentity_t *ent);
 gentity_t *SelectCTFSpawnPoint ( team_t team, int teamstate, vec3_t origin, vec3_t angles );
 //For Double_D
 gentity_t *SelectDoubleDominationSpawnPoint ( vec3_t origin, vec3_t angles );
+//For Standard D
+void Team_Dom_SpawnPoints( void );
 gentity_t *Team_GetLocation(gentity_t *ent);
 qboolean Team_GetLocationMsg(gentity_t *ent, char *loc, int loclen);
 void TeamplayInfoMessage( gentity_t *ent );

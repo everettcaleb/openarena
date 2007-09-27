@@ -1018,6 +1018,59 @@ Only in DD games
 /* sounds */ ""
 	},
 
+//Now things for standard domination:
+
+/*QUAKED 
+Only in Domination games
+*/
+	{
+		"team_dom_pointWhite",
+		NULL,
+        { "models/dpoints/a_white.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/icona_white",
+/* pickup */	"Neutral domination point",
+		0,
+		IT_TEAM,
+		DOM_POINTWHITE,
+/* precache */ "",
+/* sounds */ ""
+	},
+
+/*QUAKED 
+Only in Domination games
+*/
+	{
+		"team_dom_pointRed",
+		NULL,
+        { "models/dpoints/a_red.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/icona_red",
+/* pickup */	"Red domination point",
+		0,
+		IT_TEAM,
+		DOM_POINTRED,
+/* precache */ "",
+/* sounds */ ""
+	},
+
+/*QUAKED 
+Only in Domination games
+*/
+	{
+		"team_dom_pointBlue",
+		NULL,
+        { "models/dpoints/a_blue.md3",
+		NULL, NULL, NULL },
+/* icon */		"icons/icona_blue",
+/* pickup */	"Blue domination point",
+		0,
+		IT_TEAM,
+		DOM_POINTBLUE,
+/* precache */ "",
+/* sounds */ ""
+	},
+
 	// end of list marker
 	{NULL}
 };
@@ -1272,6 +1325,18 @@ qboolean BG_CanItemBeGrabbed( int gametype, const entityState_t *ent, const play
 				return qtrue;
 		}
 
+		if( gametype == GT_DOMINATION ) {
+			if(item->giTag == DOM_POINTWHITE)
+				return qtrue;
+			if (ps->persistant[PERS_TEAM] == TEAM_RED) {
+				if(item->giTag == DOM_POINTBLUE)
+					return qtrue;
+			} else if (ps->persistant[PERS_TEAM] == TEAM_BLUE) {
+				if(item->giTag == DOM_POINTRED)
+					return qtrue;
+			}
+		}
+
 #ifdef MISSIONPACK
 		if( gametype == GT_HARVESTER ) {
 			return qtrue;
@@ -1290,7 +1355,7 @@ qboolean BG_CanItemBeGrabbed( int gametype, const entityState_t *ent, const play
             Com_Error( ERR_DROP, "BG_CanItemBeGrabbed: IT_BAD" );
         default:
 #ifndef Q3_VM
-#ifndef NDEBUG // bk0001204
+#ifndef NDEBUG
           Com_Printf("BG_CanItemBeGrabbed: unknown enum %d\n", item->giType );
 #endif
 #endif

@@ -180,6 +180,8 @@ void TeamMain_MenuInit( void ) {
 	case GT_CTF:
 	case GT_ELIMINATION:
 	case GT_CTF_ELIMINATION:
+	case GT_DOUBLE_D:
+	case GT_DOMINATION:
 		s_teammain.joingame.generic.flags |= QMF_GRAYED;
 	
 		break;

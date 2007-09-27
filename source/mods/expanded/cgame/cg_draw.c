@@ -989,6 +989,41 @@ static float CG_DrawEliminationDeathMessage( float y ) {
 
 /*
 =================
+CG_DrawDomStatus
+=================
+*/
+
+static float CG_DrawDomStatus( float y ) {
+	int 		i,w; 
+	char		*s;
+	vec4_t		color;
+	
+	for(i = 0;i < cgs.domination_points_count;i++) {
+		switch(cgs.domination_points_status[i]) {
+			case TEAM_RED:
+				memcpy(color,g_color_table[ColorIndex(COLOR_RED)],sizeof(color));
+				break;
+			case TEAM_BLUE:
+				memcpy(color,g_color_table[ColorIndex(COLOR_BLUE)],sizeof(color));
+				break;
+			default:
+				memcpy(color,g_color_table[ColorIndex(COLOR_WHITE)],sizeof(color));
+				break;			
+		}
+		
+		s = va("%s",cgs.domination_points_names[i]);
+		w = CG_DrawStrlen( s ) * SMALLCHAR_WIDTH;
+		CG_DrawSmallStringColor( 635 - w, y + 2, s, color);
+		y += SMALLCHAR_HEIGHT+4;
+			
+	}
+
+	return y;
+}
+
+
+/*
+=================
 CG_DrawEliminationTimer
 =================
 */
@@ -1312,6 +1347,10 @@ static void CG_DrawUpperRight( void ) {
 	else
 	if ( cgs.gametype == GT_CTF_ELIMINATION ) {
 		y = CG_DrawCTFoneway(y);
+	}
+	else
+	if ( cgs.gametype == GT_DOMINATION ) {
+		y = CG_DrawDomStatus(y);
 	}
 	
 	if ( cg_drawSnapshot.integer ) {
@@ -1947,18 +1986,18 @@ static void CG_DrawDisconnect( void ) {
 	int			cmdNum;
 	usercmd_t	cmd;
 	const char		*s;
-	int			w;  // bk010215 - FIXME char message[1024];
+	int			w;
 
 	// draw the phone jack if we are completely past our buffers
 	cmdNum = trap_GetCurrentCmdNumber() - CMD_BACKUP + 1;
 	trap_GetUserCmd( cmdNum, &cmd );
 	if ( cmd.serverTime <= cg.snap->ps.commandTime
-		|| cmd.serverTime > cg.time ) {	// special check for map_restart // bk 0102165 - FIXME
+		|| cmd.serverTime > cg.time ) {	// special check for map_restart
 		return;
 	}
 
 	// also add text in center of screen
-	s = "Connection Interrupted"; // bk 010215 - FIXME
+	s = "Connection Interrupted";
 	w = CG_DrawStrlen( s ) * BIGCHAR_WIDTH;
 	CG_DrawBigString( 320 - w/2, 100, s, 1.0F);
 
@@ -2137,8 +2176,8 @@ static void CG_DrawCenterString( void ) {
 	char	*start;
 	int		l;
 	int		x, y, w;
-#ifdef MISSIONPACK // bk010221 - unused else
-  int h;
+#ifdef MISSIONPACK
+	int h;
 #endif
 	float	*color;
 

@@ -38,7 +38,7 @@ static char		*ui_botInfos[MAX_BOTS];
 static int		ui_numArenas;
 static char		*ui_arenaInfos[MAX_ARENAS];
 
-#ifndef MISSIONPACK // bk001206
+#ifndef MISSIONPACK
 static int		ui_numSinglePlayerArenas;
 static int		ui_numSpecialSinglePlayerArenas;
 #endif
@@ -209,6 +209,9 @@ void UI_LoadArenas( void ) {
 			}
 			if( strstr( type, "dd" ) ) {
 				uiInfo.mapList[uiInfo.mapCount].typeBits |= (1 << GT_DOUBLE_D);
+			}
+			if( strstr( type, "dom" ) ) {
+				uiInfo.mapList[uiInfo.mapCount].typeBits |= (1 << GT_DOMINATION);
 			}
 		} else {
 			uiInfo.mapList[uiInfo.mapCount].typeBits |= (1 << GT_FFA);

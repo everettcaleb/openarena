@@ -100,6 +100,7 @@ MULTIPLAYER MENU (SERVER BROWSER)
 #define GAMES_CTF_ELIMINATION		6
 #define GAMES_LMS			7
 #define GAMES_DOUBLE_D			8
+#define GAMES_DOMINATION		9
 
 
 static const char *master_items[] = {
@@ -148,6 +149,7 @@ static char* gamenames[] = {
 	"CTF Elimination",
 	"Last Man Standing",
 	"Double Domination",
+	"Domination",
 	"???",			// unknown
 	NULL
 };
@@ -545,6 +547,11 @@ static void ArenaServers_UpdateMenu( void ) {
 
 		case GAMES_DOUBLE_D:
 			if( servernodeptr->gametype != GT_DOUBLE_D ) {
+				continue;
+			}
+			break;
+		case GAMES_DOMINATION:
+			if( servernodeptr->gametype != GT_DOMINATION ) {
 				continue;
 			}
 			break;
@@ -1091,6 +1098,10 @@ static void ArenaServers_StartRefresh( void )
 		case GAMES_DOUBLE_D:
 			strcpy( myargs, " dd" );
 			break;
+
+		case GAMES_DOMINATION:
+			strcpy( myargs, " dom" );
+			break;
 		}
 
 
@@ -1635,10 +1646,10 @@ static void ArenaServers_MenuInit( void ) {
 		value--;
 	g_arenaservers.master.curvalue = value;
 
-	g_gametype = Com_Clamp( 0, 5, ui_browserGameType.integer );
+	g_gametype = Com_Clamp( 0, 7, ui_browserGameType.integer );
 	g_arenaservers.gametype.curvalue = g_gametype;
 
-	g_sortkey = Com_Clamp( 0, 4, ui_browserSortKey.integer );
+	g_sortkey = Com_Clamp( 0, 7, ui_browserSortKey.integer );
 	g_arenaservers.sortkey.curvalue = g_sortkey;
 
 	g_fullservers = Com_Clamp( 0, 1, ui_browserShowFull.integer );
