@@ -4,7 +4,7 @@
   index="1"
   name="Open Arena"
   enginepath_win32="C:/Program Files/OpenArena/"
-  enginepath_linux="/home/justme/oa/"
+  enginepath_linux="/usr/openarena/"
   enginepath_macos="/Applications/OpenArena/"
   engine_win32="openarena.exe"
   engine_linux="ioquake3.x86"
