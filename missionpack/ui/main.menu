@@ -104,7 +104,8 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	visible 0
 	action {
-		play MP_SND_SELECT;
+//		close main;
+//		open skirmish
 		}
 	}
 

@@ -2,10 +2,10 @@
 <!--
 build commands
 [RadiantPath]: path to Radiant .. C:\Program Files\Gtkradiant
-[EnginePath]: path to the engine .. /home/justme/oa
+[EnginePath]: path to the engine .. /usr/bin/openarena
 -->
 <project version="2.0">
-<var name="q3map2">"[RadiantPath]oamap.[ExecutableType]" -v<cond value="[MonitorAddress]"> -connect [MonitorAddress]</cond> -fs_basepath "[EnginePath]"<cond value="[GameName]"> -fs_game baseoa </cond></var>
+<var name="q3map2">"[RadiantPath]oamap.[ExecutableType]" -v<cond value="[MonitorAddress]"> -connect [MonitorAddress]</cond> -fs_basepath "[EnginePath]"<cond value="[GameName]"> -game quake3 </cond></var> <!-- change to oa if using patched q3map2 -->
 <build name="Q3Map2: (single) BSP -meta -flares">
 <command>[q3map2] -patchmeta -meta -flares "[MapFile]"</command>
 </build>
