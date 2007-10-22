@@ -1,6 +1,6 @@
 Index: code/q3_ui/ui_mods.c
 ===================================================================
---- code/q3_ui/ui_mods.c	(revision 1187)
+--- code/q3_ui/ui_mods.c	(revision 1198)
 +++ code/q3_ui/ui_mods.c	(working copy)
 @@ -106,8 +106,44 @@
  }
@@ -58,7 +58,7 @@ Index: code/q3_ui/ui_mods.c
  	numdirs = trap_FS_GetFileList( "$modlist", "", dirlist, sizeof(dirlist) );
 Index: code/q3_ui/ui_menu.c
 ===================================================================
---- code/q3_ui/ui_menu.c	(revision 1187)
+--- code/q3_ui/ui_menu.c	(revision 1198)
 +++ code/q3_ui/ui_menu.c	(working copy)
 @@ -221,12 +221,11 @@
  		Menu_Draw( &s_main.menu );		
@@ -89,7 +89,7 @@ Index: code/q3_ui/ui_menu.c
  	}
 Index: code/q3_ui/ui_servers2.c
 ===================================================================
---- code/q3_ui/ui_servers2.c	(revision 1187)
+--- code/q3_ui/ui_servers2.c	(revision 1198)
 +++ code/q3_ui/ui_servers2.c	(working copy)
 @@ -32,16 +32,16 @@
  #include "ui_local.h"
@@ -296,7 +296,7 @@ Index: code/q3_ui/ui_servers2.c
  	g_fullservers = Com_Clamp( 0, 1, ui_browserShowFull.integer );
 Index: code/q3_ui/ui_main.c
 ===================================================================
---- code/q3_ui/ui_main.c	(revision 1187)
+--- code/q3_ui/ui_main.c	(revision 1198)
 +++ code/q3_ui/ui_main.c	(working copy)
 @@ -113,6 +113,17 @@
  vmCvar_t	ui_ctf_timelimit;
@@ -336,7 +336,7 @@ Index: code/q3_ui/ui_main.c
  	{ &ui_spScores1, "g_spScores1", "", CVAR_ARCHIVE | CVAR_ROM },
 Index: code/q3_ui/ui_startserver.c
 ===================================================================
---- code/q3_ui/ui_startserver.c	(revision 1187)
+--- code/q3_ui/ui_startserver.c	(revision 1198)
 +++ code/q3_ui/ui_startserver.c	(working copy)
 @@ -98,12 +98,40 @@
  	"Team Deathmatch",
@@ -632,7 +632,7 @@ Index: code/q3_ui/ui_startserver.c
  	Menu_AddItem( &s_serveroptions.menu, &s_serveroptions.pure );
 Index: code/q3_ui/ui_qmenu.c
 ===================================================================
---- code/q3_ui/ui_qmenu.c	(revision 1187)
+--- code/q3_ui/ui_qmenu.c	(revision 1198)
 +++ code/q3_ui/ui_qmenu.c	(working copy)
 @@ -327,6 +327,7 @@
  		if (b->shader)
@@ -644,7 +644,7 @@ Index: code/q3_ui/ui_qmenu.c
  		      && (Menu_ItemAtCursor( b->generic.parent ) == b))
 Index: code/q3_ui/ui_local.h
 ===================================================================
---- code/q3_ui/ui_local.h	(revision 1187)
+--- code/q3_ui/ui_local.h	(revision 1198)
 +++ code/q3_ui/ui_local.h	(working copy)
 @@ -26,7 +26,7 @@
  #include "../qcommon/q_shared.h"
@@ -695,7 +695,7 @@ Index: code/q3_ui/ui_local.h
  
 Index: code/q3_ui/ui_teamorders.c
 ===================================================================
---- code/q3_ui/ui_teamorders.c	(revision 1187)
+--- code/q3_ui/ui_teamorders.c	(revision 1198)
 +++ code/q3_ui/ui_teamorders.c	(working copy)
 @@ -39,6 +39,7 @@
  #define ID_LIST_BOTS		10
@@ -800,7 +800,7 @@ Index: code/q3_ui/ui_teamorders.c
  
 Index: code/q3_ui/ui_addbots.c
 ===================================================================
---- code/q3_ui/ui_addbots.c	(revision 1187)
+--- code/q3_ui/ui_addbots.c	(revision 1198)
 +++ code/q3_ui/ui_addbots.c	(working copy)
 @@ -333,7 +333,7 @@
  	addBotsMenuInfo.team.generic.y			= y;
@@ -813,7 +813,7 @@ Index: code/q3_ui/ui_addbots.c
  	else {
 Index: code/q3_ui/ui_team.c
 ===================================================================
---- code/q3_ui/ui_team.c	(revision 1187)
+--- code/q3_ui/ui_team.c	(revision 1198)
 +++ code/q3_ui/ui_team.c	(working copy)
 @@ -47,6 +47,16 @@
  
@@ -855,7 +855,7 @@ Index: code/q3_ui/ui_team.c
  
 Index: code/q3_ui/ui_credits.c
 ===================================================================
---- code/q3_ui/ui_credits.c	(revision 1187)
+--- code/q3_ui/ui_credits.c	(revision 1198)
 +++ code/q3_ui/ui_credits.c	(working copy)
 @@ -63,54 +63,12 @@
  	int		y;
@@ -919,7 +919,7 @@ Index: code/q3_ui/ui_credits.c
  
 Index: code/q3_ui/ui_ingame.c
 ===================================================================
---- code/q3_ui/ui_ingame.c	(revision 1187)
+--- code/q3_ui/ui_ingame.c	(revision 1198)
 +++ code/q3_ui/ui_ingame.c	(working copy)
 @@ -226,7 +226,7 @@
  	s_ingame.teamorders.string				= "TEAM ORDERS";
@@ -932,7 +932,7 @@ Index: code/q3_ui/ui_ingame.c
  	else {
 Index: code/renderer/tr_local.h
 ===================================================================
---- code/renderer/tr_local.h	(revision 1187)
+--- code/renderer/tr_local.h	(revision 1198)
 +++ code/renderer/tr_local.h	(working copy)
 @@ -866,6 +866,8 @@
  	qboolean	projection2D;	// if qtrue, drawstretchpic doesn't need to change modes
@@ -962,7 +962,7 @@ Index: code/renderer/tr_local.h
  #endif //TR_LOCAL_H
 Index: code/renderer/tr_init.c
 ===================================================================
---- code/renderer/tr_init.c	(revision 1187)
+--- code/renderer/tr_init.c	(revision 1198)
 +++ code/renderer/tr_init.c	(working copy)
 @@ -1095,6 +1095,8 @@
  
@@ -973,460 +973,9 @@ Index: code/renderer/tr_init.c
  	max_polys = r_maxpolys->integer;
  	if (max_polys < MAX_POLYS)
  		max_polys = MAX_POLYS;
-Index: code/renderer/tr_bloom.c
-===================================================================
---- code/renderer/tr_bloom.c	(revision 0)
-+++ code/renderer/tr_bloom.c	(revision 0)
-@@ -0,0 +1,446 @@
-+/*
-+Copyright (C) 1997-2001 Id Software, Inc.
-+
-+This program is free software; you can redistribute it and/or
-+modify it under the terms of the GNU General Public License
-+as published by the Free Software Foundation; either version 2
-+of the License, or (at your option) any later version.
-+
-+This program is distributed in the hope that it will be useful,
-+but WITHOUT ANY WARRANTY; without even the implied warranty of
-+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
-+
-+See the GNU General Public License for more details.
-+
-+You should have received a copy of the GNU General Public License
-+along with this program; if not, write to the Free Software
-+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-+
-+*/
-+// tr_bloom.c: 2D lighting post process effect
-+
-+#include "tr_local.h"
-+
-+
-+static cvar_t *r_bloom;
-+static cvar_t *r_bloom_sample_size;
-+static cvar_t *r_bloom_fast_sample;
-+static cvar_t *r_bloom_alpha;
-+static cvar_t *r_bloom_darken;
-+static cvar_t *r_bloom_intensity;
-+static cvar_t *r_bloom_diamond_size;
-+
-+/* 
-+============================================================================== 
-+ 
-+						LIGHT BLOOMS
-+ 
-+============================================================================== 
-+*/ 
-+
-+static float Diamond8x[8][8] =
-+{ 
-+	{ 0.0f, 0.0f, 0.0f, 0.1f, 0.1f, 0.0f, 0.0f, 0.0f, },
-+	{ 0.0f, 0.0f, 0.2f, 0.3f, 0.3f, 0.2f, 0.0f, 0.0f, },
-+	{ 0.0f, 0.2f, 0.4f, 0.6f, 0.6f, 0.4f, 0.2f, 0.0f, },
-+	{ 0.1f, 0.3f, 0.6f, 0.9f, 0.9f, 0.6f, 0.3f, 0.1f, },
-+	{ 0.1f, 0.3f, 0.6f, 0.9f, 0.9f, 0.6f, 0.3f, 0.1f, },
-+	{ 0.0f, 0.2f, 0.4f, 0.6f, 0.6f, 0.4f, 0.2f, 0.0f, },
-+	{ 0.0f, 0.0f, 0.2f, 0.3f, 0.3f, 0.2f, 0.0f, 0.0f, },
-+	{ 0.0f, 0.0f, 0.0f, 0.1f, 0.1f, 0.0f, 0.0f, 0.0f  }
-+};
-+
-+static float Diamond6x[6][6] =
-+{ 
-+	{ 0.0f, 0.0f, 0.1f, 0.1f, 0.0f, 0.0f, },
-+	{ 0.0f, 0.3f, 0.5f, 0.5f, 0.3f, 0.0f, }, 
-+	{ 0.1f, 0.5f, 0.9f, 0.9f, 0.5f, 0.1f, },
-+	{ 0.1f, 0.5f, 0.9f, 0.9f, 0.5f, 0.1f, },
-+	{ 0.0f, 0.3f, 0.5f, 0.5f, 0.3f, 0.0f, },
-+	{ 0.0f, 0.0f, 0.1f, 0.1f, 0.0f, 0.0f  }
-+};
-+
-+static float Diamond4x[4][4] =
-+{  
-+	{ 0.3f, 0.4f, 0.4f, 0.3f, },
-+	{ 0.4f, 0.9f, 0.9f, 0.4f, },
-+	{ 0.4f, 0.9f, 0.9f, 0.4f, },
-+	{ 0.3f, 0.4f, 0.4f, 0.3f  }
-+};
-+
-+static struct {
-+	struct {
-+		image_t	*texture;
-+		int		width, height;
-+		float	readW, readH;
-+	} effect;
-+	struct {
-+		image_t	*texture;
-+		int		width, height;
-+		float	readW, readH;
-+	} screen;
-+	struct {
-+		int		width, height;
-+	} work;
-+	qboolean started;
-+} bloom;
-+
-+
-+static void ID_INLINE R_Bloom_Quad( int width, int height, float texX, float texY, float texWidth, float texHeight ) {
-+	int x = 0;
-+	int y = 0;
-+	x = 0;
-+	y += glConfig.vidHeight - height;
-+	width += x;
-+	height += y;
-+	
-+	texWidth += texX;
-+	texHeight += texY;
-+
-+	qglBegin( GL_QUADS );							
-+	qglTexCoord2f(	texX,						texHeight	);	
-+	qglVertex2f(	x,							y	);
-+
-+	qglTexCoord2f(	texX,						texY	);				
-+	qglVertex2f(	x,							height	);	
-+
-+	qglTexCoord2f(	texWidth,					texY	);				
-+	qglVertex2f(	width,						height	);	
-+
-+	qglTexCoord2f(	texWidth,					texHeight	);	
-+	qglVertex2f(	width,						y	);				
-+	qglEnd ();
-+}
-+
-+
-+/*
-+=================
-+R_Bloom_InitTextures
-+=================
-+*/
-+static void R_Bloom_InitTextures( void )
-+{
-+	byte	*data;
-+
-+	// find closer power of 2 to screen size 
-+	for (bloom.screen.width = 1;bloom.screen.width< glConfig.vidWidth;bloom.screen.width *= 2);
-+	for (bloom.screen.height = 1;bloom.screen.height < glConfig.vidHeight;bloom.screen.height *= 2);
-+
-+	bloom.screen.readW = glConfig.vidWidth / (float)bloom.screen.width;
-+	bloom.screen.readH = glConfig.vidHeight / (float)bloom.screen.height;
-+
-+	// find closer power of 2 to effect size 
-+	bloom.work.width = r_bloom_sample_size->integer;
-+	bloom.work.height = bloom.work.width * ( glConfig.vidWidth / glConfig.vidHeight );
-+
-+	for (bloom.effect.width = 1;bloom.effect.width < bloom.work.width;bloom.effect.width *= 2);
-+	for (bloom.effect.height = 1;bloom.effect.height < bloom.work.height;bloom.effect.height *= 2);
-+
-+	bloom.effect.readW = bloom.work.width / (float)bloom.effect.width;
-+	bloom.effect.readH = bloom.work.height / (float)bloom.effect.height;
-+
-+
-+	// disable blooms if we can't handle a texture of that size
-+	if( bloom.screen.width > glConfig.maxTextureSize ||
-+		bloom.screen.height > glConfig.maxTextureSize ||
-+		bloom.effect.width > glConfig.maxTextureSize ||
-+		bloom.effect.height > glConfig.maxTextureSize ||
-+		bloom.work.width > glConfig.vidWidth ||
-+		bloom.work.height > glConfig.vidHeight
-+	) {
-+		ri.Cvar_Set( "r_bloom", "0" );
-+		Com_Printf( S_COLOR_YELLOW"WARNING: 'R_InitBloomTextures' too high resolution for light bloom, effect disabled\n" );
-+		return;
-+	}
-+
-+	data = ri.Hunk_AllocateTempMemory( bloom.screen.width * bloom.screen.height * 4 );
-+	Com_Memset( data, 0, bloom.screen.width * bloom.screen.height * 4 );
-+	bloom.screen.texture = R_CreateImage( "***bloom screen texture***", data, bloom.screen.width, bloom.screen.height, qfalse, qfalse, qfalse );
-+	ri.Hunk_FreeTempMemory( data );
-+
-+	data = ri.Hunk_AllocateTempMemory( bloom.effect.width * bloom.effect.height * 4 );
-+	Com_Memset( data, 0, bloom.effect.width * bloom.effect.height * 4 );
-+	bloom.effect.texture = R_CreateImage( "***bloom effect texture***", data, bloom.effect.width, bloom.effect.height, qfalse, qfalse, qfalse );
-+	ri.Hunk_FreeTempMemory( data );
-+	bloom.started = qtrue;
-+}
-+
-+/*
-+=================
-+R_InitBloomTextures
-+=================
-+*/
-+void R_InitBloomTextures( void )
-+{
-+	if( !r_bloom->integer )
-+		return;
-+	memset( &bloom, 0, sizeof( bloom ));
-+	R_Bloom_InitTextures ();
-+}
-+
-+/*
-+=================
-+R_Bloom_DrawEffect
-+=================
-+*/
-+static void R_Bloom_DrawEffect( void )
-+{
-+	GL_Bind( bloom.effect.texture );
-+	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ONE );
-+	qglColor4f( r_bloom_alpha->value, r_bloom_alpha->value, r_bloom_alpha->value, 1.0f );
-+	R_Bloom_Quad( glConfig.vidWidth, glConfig.vidHeight, 0, 0, bloom.effect.readW, bloom.effect.readW );
-+}
-+
-+
-+/*
-+=================
-+R_Bloom_GeneratexDiamonds
-+=================
-+*/
-+static void R_Bloom_WarsowEffect( void )
-+{
-+	int		i, j, k;
-+	float	intensity, scale, *diamond;
-+
-+
-+	qglColor4f( 1.0f, 1.0f, 1.0f, 1.0f );
-+	//Take the backup texture and downscale it
-+	GL_Bind( bloom.screen.texture );
-+	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
-+	R_Bloom_Quad( bloom.work.width, bloom.work.height, 0, 0, bloom.screen.readW, bloom.screen.readH );
-+	//Copy downscaled framebuffer into a texture
-+	GL_Bind( bloom.effect.texture );
-+	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
-+	// darkening passes with repeated filter
-+	if( r_bloom_darken->integer ) {
-+		int i;
-+		GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_DST_COLOR | GLS_DSTBLEND_ZERO );
-+
-+		for( i = 0; i < r_bloom_darken->integer; i++ ) {
-+			R_Bloom_Quad( bloom.work.width, bloom.work.height, 
-+				0, 0, 
-+				bloom.effect.readW, bloom.effect.readH );
-+		}
-+		qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
-+	}
-+	/* Copy the result to the effect texture */
-+	GL_Bind( bloom.effect.texture );
-+	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
-+
-+	// bluring passes, warsow uses a repeated semi blend on a selectable diamond grid
-+	qglColor4f( 1.0f, 1.0f, 1.0f, 1.0f );
-+	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ONE_MINUS_SRC_COLOR );
-+	if( r_bloom_diamond_size->integer > 7 || r_bloom_diamond_size->integer <= 3 ) {
-+		if( r_bloom_diamond_size->integer != 8 )
-+			ri.Cvar_Set( "r_bloom_diamond_size", "8" );
-+	} else if( r_bloom_diamond_size->integer > 5 ) {
-+		if( r_bloom_diamond_size->integer != 6 )
-+			ri.Cvar_Set( "r_bloom_diamond_size", "6" );
-+	} else if( r_bloom_diamond_size->integer > 3 ) {
-+		if( r_bloom_diamond_size->integer != 4 )
-+			ri.Cvar_Set( "r_bloom_diamond_size", "4" );
-+	}
-+
-+	switch( r_bloom_diamond_size->integer ) {
-+		case 4:
-+			k = 2;
-+			diamond = &Diamond4x[0][0];
-+			scale = r_bloom_intensity->value * 0.8f;
-+			break;
-+		case 6:
-+			k = 3;
-+			diamond = &Diamond6x[0][0];
-+			scale = r_bloom_intensity->value * 0.5f;
-+			break;
-+		default:
-+//		case 8:
-+			k = 4;
-+			diamond = &Diamond8x[0][0];
-+			scale = r_bloom_intensity->value * 0.3f;
-+			break;
-+	}
-+
-+	for( i = 0; i < r_bloom_diamond_size->integer; i++ ) {
-+		for( j = 0; j < r_bloom_diamond_size->integer; j++, diamond++ ) {
-+			float x, y;
-+			intensity =  *diamond * scale;
-+			if( intensity < 0.01f )
-+				continue;
-+			qglColor4f( intensity, intensity, intensity, 1.0 );
-+			x = (i - k) * ( 2 / 640.0f ) * bloom.effect.readW;
-+			y = (j - k) * ( 2 / 480.0f ) * bloom.effect.readH;
-+
-+			R_Bloom_Quad( bloom.work.width, bloom.work.height, x, y, bloom.effect.readW, bloom.effect.readH );
-+		}
-+	}
-+	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
-+}											
-+
-+/*
-+=================
-+R_Bloom_BackupScreen
-+Backup the full original screen to a texture for downscaling and later restoration
-+=================
-+*/
-+static void R_Bloom_BackupScreen( void ) {
-+	GL_Bind( bloom.screen.texture );
-+	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, glConfig.vidWidth, glConfig.vidHeight );
-+}
-+/*
-+=================
-+R_Bloom_RestoreScreen
-+Restore the temporary framebuffer section we used with the backup texture
-+=================
-+*/
-+static void R_Bloom_RestoreScreen( void ) {
-+	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
-+	GL_Bind( bloom.screen.texture );
-+	qglColor4f( 1, 1, 1, 1 );
-+	R_Bloom_Quad( bloom.work.width, bloom.work.height, 0, 0,
-+		bloom.work.width / (float)bloom.screen.width,
-+		bloom.work.height / (float)bloom.screen.height );
-+}
-+ 
-+
-+/*
-+=================
-+R_Bloom_DownsampleView
-+Scale the copied screen back to the sample size used for subsequent passes
-+=================
-+*/
-+static void R_Bloom_DownsampleView( void )
-+{
-+	/* TODO, Provide option to control the color strength here */
-+//	qglColor4f( r_bloom_darken->value, r_bloom_darken->value, r_bloom_darken->value, 1.0f );
-+	qglColor4f( 1.0f, 1.0f, 1.0f, 1.0f );
-+	GL_Bind( bloom.screen.texture );
-+	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
-+	//Downscale it
-+	R_Bloom_Quad( bloom.work.width, bloom.work.height, 0, 0, bloom.screen.readW, bloom.screen.readH );
-+#if 1
-+	GL_Bind( bloom.effect.texture );
-+	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
-+	// darkening passes
-+	if( r_bloom_darken->integer ) {
-+		int i;
-+		GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_DST_COLOR | GLS_DSTBLEND_ZERO );
-+
-+		for( i = 0; i < r_bloom_darken->integer; i++ ) {
-+			R_Bloom_Quad( bloom.work.width, bloom.work.height, 
-+				0, 0, 
-+				bloom.effect.readW, bloom.effect.readH );
-+		}
-+		qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
-+	}
-+#endif
-+	/* Copy the result to the effect texture */
-+	GL_Bind( bloom.effect.texture );
-+	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
-+}
-+
-+static void R_Bloom_CreateEffect( void ) {
-+	int dir, x;
-+	int range;
-+
-+	//First step will zero dst, rest will one add
-+	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
-+//	GL_Bind( bloom.screen.texture );
-+	GL_Bind( bloom.effect.texture );
-+	range = 4;
-+	for (dir = 0;dir < 2;dir++)
-+	{
-+		// blend on at multiple vertical offsets to achieve a vertical blur
-+		// TODO: do offset blends using GLSL
-+		for (x = -range;x <= range;x++)
-+		{
-+			float xoffset, yoffset, r;
-+			if (!dir){
-+				xoffset = 0;
-+				yoffset = x*1.5;
-+			} else {
-+				xoffset = x*1.5;
-+				yoffset = 0;
-+			}
-+			xoffset /= bloom.work.width;
-+			yoffset /= bloom.work.height;
-+			// this r value looks like a 'dot' particle, fading sharply to
-+			// black at the edges
-+			// (probably not realistic but looks good enough)
-+			//r = ((range*range+1)/((float)(x*x+1)))/(range*2+1);
-+			//r = (dir ? 1.0f : brighten)/(range*2+1);
-+			r = 2.0f /(range*2+1)*(1 - x*x/(float)(range*range));
-+//			r *= r_bloom_darken->value;
-+			qglColor4f(r, r, r, 1);
-+			R_Bloom_Quad( bloom.work.width, bloom.work.height, 
-+				xoffset, yoffset, 
-+				bloom.effect.readW, bloom.effect.readH );
-+//				bloom.screen.readW, bloom.screen.readH );
-+			GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ONE );
-+		}
-+	}
-+	GL_Bind( bloom.effect.texture );
-+	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
-+}
-+
-+/*
-+=================
-+R_BloomScreen
-+=================
-+*/
-+void R_BloomScreen( void )
-+{
-+	if( !r_bloom->integer )
-+		return;
-+	if ( backEnd.doneBloom )
-+		return;
-+	if ( !backEnd.doneSurfaces )
-+		return;
-+	backEnd.doneBloom = qtrue;
-+	if( !bloom.started ) {
-+		R_Bloom_InitTextures();
-+		if( !bloom.started )
-+			return;
-+	}
-+
-+	if ( !backEnd.projection2D )
-+		RB_SetGL2D();
-+#if 0
-+	// set up full screen workspace
-+	GL_TexEnv( GL_MODULATE );
-+	qglScissor( 0, 0, glConfig.vidWidth, glConfig.vidHeight );
-+	qglViewport( 0, 0, glConfig.vidWidth, glConfig.vidHeight );
-+	qglMatrixMode( GL_PROJECTION );
-+    qglLoadIdentity ();
-+	qglOrtho( 0, glConfig.vidWidth, glConfig.vidHeight, 0, 0, 1 );
-+	qglMatrixMode( GL_MODELVIEW );
-+    qglLoadIdentity ();
-+
-+	GL_Cull( CT_TWO_SIDED );
-+#endif
-+
-+	qglColor4f( 1, 1, 1, 1 );
-+
-+	//Backup the old screen in a texture
-+	R_Bloom_BackupScreen();
-+	// create the bloom texture using one of a few methods
-+	R_Bloom_WarsowEffect ();
-+//	R_Bloom_CreateEffect();
-+	// restore the screen-backup to the screen
-+	R_Bloom_RestoreScreen();
-+	// Do the final pass using the bloom texture for the final effect
-+	R_Bloom_DrawEffect ();
-+}
-+
-+
-+void R_BloomInit( void ) {
-+	memset( &bloom, 0, sizeof( bloom ));
-+
-+	r_bloom = ri.Cvar_Get( "r_bloom", "0", CVAR_ARCHIVE );
-+	r_bloom_alpha = ri.Cvar_Get( "r_bloom_alpha", "0.3", CVAR_ARCHIVE );
-+	r_bloom_diamond_size = ri.Cvar_Get( "r_bloom_diamond_size", "8", CVAR_ARCHIVE );
-+	r_bloom_intensity = ri.Cvar_Get( "r_bloom_intensity", "1.3", CVAR_ARCHIVE );
-+	r_bloom_darken = ri.Cvar_Get( "r_bloom_darken", "4", CVAR_ARCHIVE );
-+	r_bloom_sample_size = ri.Cvar_Get( "r_bloom_sample_size", "128", CVAR_ARCHIVE|CVAR_LATCH );
-+	r_bloom_fast_sample = ri.Cvar_Get( "r_bloom_fast_sample", "0", CVAR_ARCHIVE|CVAR_LATCH );
-+}
-+
 Index: code/renderer/tr_shadows.c
 ===================================================================
---- code/renderer/tr_shadows.c	(revision 1187)
+--- code/renderer/tr_shadows.c	(revision 1198)
 +++ code/renderer/tr_shadows.c	(working copy)
 @@ -39,7 +39,7 @@
  	int		facing;
@@ -1439,7 +988,7 @@ Index: code/renderer/tr_shadows.c
  static	int			numEdgeDefs[SHADER_MAX_VERTEXES];
 Index: code/renderer/tr_flares.c
 ===================================================================
---- code/renderer/tr_flares.c	(revision 1187)
+--- code/renderer/tr_flares.c	(revision 1198)
 +++ code/renderer/tr_flares.c	(working copy)
 @@ -79,7 +79,7 @@
  	vec3_t		color;
@@ -1452,7 +1001,7 @@ Index: code/renderer/tr_flares.c
  flare_t		*r_activeFlares, *r_inactiveFlares;
 Index: code/renderer/tr_backend.c
 ===================================================================
---- code/renderer/tr_backend.c	(revision 1187)
+--- code/renderer/tr_backend.c	(revision 1198)
 +++ code/renderer/tr_backend.c	(working copy)
 @@ -899,7 +899,8 @@
  
@@ -1494,7 +1043,7 @@ Index: code/renderer/tr_backend.c
  		case RC_SCREENSHOT:
 Index: code/server/sv_ccmds.c
 ===================================================================
---- code/server/sv_ccmds.c	(revision 1187)
+--- code/server/sv_ccmds.c	(revision 1198)
 +++ code/server/sv_ccmds.c	(working copy)
 @@ -430,6 +430,12 @@
  		return;
@@ -1526,7 +1075,7 @@ Index: code/server/sv_ccmds.c
  		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
 Index: code/server/sv_client.c
 ===================================================================
---- code/server/sv_client.c	(revision 1187)
+--- code/server/sv_client.c	(revision 1198)
 +++ code/server/sv_client.c	(working copy)
 @@ -87,7 +87,17 @@
  		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
@@ -1548,7 +1097,7 @@ Index: code/server/sv_client.c
  		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
 Index: code/game/g_spawn.c
 ===================================================================
---- code/game/g_spawn.c	(revision 1187)
+--- code/game/g_spawn.c	(revision 1198)
 +++ code/game/g_spawn.c	(working copy)
 @@ -129,6 +129,11 @@
  void SP_info_player_start (gentity_t *ent);
@@ -1577,7 +1126,7 @@ Index: code/game/g_spawn.c
  	{"info_camp", SP_info_camp},
 Index: code/game/g_team.h
 ===================================================================
---- code/game/g_team.h	(revision 1187)
+--- code/game/g_team.h	(revision 1198)
 +++ code/game/g_team.h	(working copy)
 @@ -53,6 +53,32 @@
  
@@ -1636,7 +1185,7 @@ Index: code/game/g_team.h
 +void Team_ForceGesture(int team);
 Index: code/game/ai_main.h
 ===================================================================
---- code/game/ai_main.h	(revision 1187)
+--- code/game/ai_main.h	(revision 1198)
 +++ code/game/ai_main.h	(working copy)
 @@ -58,6 +58,9 @@
  #define LTG_ATTACKENEMYBASE			13	//attack the enemy base
@@ -1660,7 +1209,7 @@ Index: code/game/ai_main.h
  #define PATROL_REVERSE				2
 Index: code/game/bg_misc.c
 ===================================================================
---- code/game/bg_misc.c	(revision 1187)
+--- code/game/bg_misc.c	(revision 1198)
 +++ code/game/bg_misc.c	(working copy)
 @@ -916,6 +916,161 @@
  	},
@@ -1872,7 +1421,7 @@ Index: code/game/bg_misc.c
  			return qtrue;
 Index: code/game/g_local.h
 ===================================================================
---- code/game/g_local.h	(revision 1187)
+--- code/game/g_local.h	(revision 1198)
 +++ code/game/g_local.h	(working copy)
 @@ -42,6 +42,8 @@
  #define	INTERMISSION_DELAY_TIME	1000
@@ -2037,7 +1586,7 @@ Index: code/game/g_local.h
  int		trap_Milliseconds( void );
 Index: code/game/g_combat.c
 ===================================================================
---- code/game/g_combat.c	(revision 1187)
+--- code/game/g_combat.c	(revision 1198)
 +++ code/game/g_combat.c	(working copy)
 @@ -83,6 +83,10 @@
  	// drop the weapon if not a gauntlet or machinegun
@@ -2167,7 +1716,7 @@ Index: code/game/g_combat.c
  		targ->health = targ->health - take;
 Index: code/game/ai_cmd.c
 ===================================================================
---- code/game/ai_cmd.c	(revision 1187)
+--- code/game/ai_cmd.c	(revision 1198)
 +++ code/game/ai_cmd.c	(working copy)
 @@ -134,6 +134,16 @@
  			BotAI_Print(PRT_MESSAGE, "%s: I'm gonna patrol for %1.0f secs\n", netname, t);
@@ -2411,7 +1960,7 @@ Index: code/game/ai_cmd.c
  			BotAI_Print(PRT_MESSAGE, "unknown match type\n");
 Index: code/game/g_arenas.c
 ===================================================================
---- code/game/g_arenas.c	(revision 1187)
+--- code/game/g_arenas.c	(revision 1198)
 +++ code/game/g_arenas.c	(working copy)
 @@ -85,7 +85,7 @@
  		}
@@ -2424,7 +1973,7 @@ Index: code/game/g_arenas.c
  			if (level.clients[playerClientNum].sess.sessionTeam	== TEAM_RED) {
 Index: code/game/ai_dmnet.c
 ===================================================================
---- code/game/ai_dmnet.c	(revision 1187)
+--- code/game/ai_dmnet.c	(revision 1198)
 +++ code/game/ai_dmnet.c	(working copy)
 @@ -525,6 +525,59 @@
  			bs->defendaway_time = 0;
@@ -2515,7 +2064,7 @@ Index: code/game/ai_dmnet.c
  				range = 50;
 Index: code/game/g_active.c
 ===================================================================
---- code/game/g_active.c	(revision 1187)
+--- code/game/g_active.c	(revision 1198)
 +++ code/game/g_active.c	(working copy)
 @@ -254,8 +254,9 @@
  		return;
@@ -2690,7 +2239,7 @@ Index: code/game/g_active.c
  	}
 Index: code/game/g_rankings.c
 ===================================================================
---- code/game/g_rankings.c	(revision 1187)
+--- code/game/g_rankings.c	(revision 1198)
 +++ code/game/g_rankings.c	(working copy)
 @@ -104,7 +104,7 @@
  				}
@@ -2701,9 +2250,22 @@ Index: code/game/g_rankings.c
  					(g_gametype.integer < GT_TEAM) )
  				{
  					SetTeam( ent, "free" );
+Index: code/game/g_mem.c
+===================================================================
+--- code/game/g_mem.c	(revision 1198)
++++ code/game/g_mem.c	(working copy)
+@@ -28,7 +28,7 @@
+ #include "g_local.h"
+ 
+ 
+-#define POOLSIZE	(256 * 1024)
++#define POOLSIZE	(512 * 2048)
+ 
+ static char		memoryPool[POOLSIZE];
+ static int		allocPoint;
 Index: code/game/g_session.c
 ===================================================================
---- code/game/g_session.c	(revision 1187)
+--- code/game/g_session.c	(revision 1198)
 +++ code/game/g_session.c	(working copy)
 @@ -106,7 +106,7 @@
  	sess = &client->sess;
@@ -2724,7 +2286,7 @@ Index: code/game/g_session.c
  					level.numNonSpectatorClients >= g_maxGameClients.integer ) {
 Index: code/game/g_bot.c
 ===================================================================
---- code/game/g_bot.c	(revision 1187)
+--- code/game/g_bot.c	(revision 1198)
 +++ code/game/g_bot.c	(working copy)
 @@ -405,7 +405,7 @@
  	minplayers = bot_minplayers.integer;
@@ -2755,7 +2317,7 @@ Index: code/game/g_bot.c
  			}
 Index: code/game/g_main.c
 ===================================================================
---- code/game/g_main.c	(revision 1187)
+--- code/game/g_main.c	(revision 1198)
 +++ code/game/g_main.c	(working copy)
 @@ -94,7 +94,48 @@
  vmCvar_t	g_enableBreath;
@@ -3478,7 +3040,7 @@ Index: code/game/g_main.c
  
 Index: code/game/bg_pmove.c
 ===================================================================
---- code/game/bg_pmove.c	(revision 1187)
+--- code/game/bg_pmove.c	(revision 1198)
 +++ code/game/bg_pmove.c	(working copy)
 @@ -48,7 +48,6 @@
  
@@ -3578,7 +3140,7 @@ Index: code/game/bg_pmove.c
  	// torso animation
 Index: code/game/ai_team.c
 ===================================================================
---- code/game/ai_team.c	(revision 1187)
+--- code/game/ai_team.c	(revision 1198)
 +++ code/game/ai_team.c	(working copy)
 @@ -131,7 +131,7 @@
  	int traveltimes[MAX_CLIENTS];
@@ -3860,7 +3422,7 @@ Index: code/game/ai_team.c
  		{
 Index: code/game/g_weapon.c
 ===================================================================
---- code/game/g_weapon.c	(revision 1187)
+--- code/game/g_weapon.c	(revision 1198)
 +++ code/game/g_weapon.c	(working copy)
 @@ -111,7 +111,10 @@
  	}
@@ -3904,7 +3466,7 @@ Index: code/game/g_weapon.c
  	} else {
 Index: code/game/g_misc.c
 ===================================================================
---- code/game/g_misc.c	(revision 1187)
+--- code/game/g_misc.c	(revision 1198)
 +++ code/game/g_misc.c	(working copy)
 @@ -81,7 +81,7 @@
  
@@ -3935,7 +3497,7 @@ Index: code/game/g_misc.c
  }
 Index: code/game/match.h
 ===================================================================
---- code/game/match.h	(revision 1187)
+--- code/game/match.h	(revision 1198)
 +++ code/game/match.h	(working copy)
 @@ -32,6 +32,7 @@
  #define MTCONTEXT_PATROLKEYAREA			64
@@ -3972,7 +3534,7 @@ Index: code/game/match.h
 +
 Index: code/game/ai_vcmd.c
 ===================================================================
---- code/game/ai_vcmd.c	(revision 1187)
+--- code/game/ai_vcmd.c	(revision 1198)
 +++ code/game/ai_vcmd.c	(working copy)
 @@ -71,7 +71,7 @@
  */
@@ -4021,7 +3583,7 @@ Index: code/game/ai_vcmd.c
  #endif
 Index: code/game/bg_local.h
 ===================================================================
---- code/game/bg_local.h	(revision 1187)
+--- code/game/bg_local.h	(revision 1198)
 +++ code/game/bg_local.h	(working copy)
 @@ -73,6 +73,10 @@
  
@@ -4036,7 +3598,7 @@ Index: code/game/bg_local.h
  void PM_AddEvent( int newEvent );
 Index: code/game/g_trigger.c
 ===================================================================
---- code/game/g_trigger.c	(revision 1187)
+--- code/game/g_trigger.c	(revision 1198)
 +++ code/game/g_trigger.c	(working copy)
 @@ -274,12 +274,13 @@
  	if ( !other->client ) {
@@ -4055,7 +3617,7 @@ Index: code/game/g_trigger.c
  
 Index: code/game/g_missile.c
 ===================================================================
---- code/game/g_missile.c	(revision 1187)
+--- code/game/g_missile.c	(revision 1198)
 +++ code/game/g_missile.c	(working copy)
 @@ -137,7 +137,7 @@
  	}
@@ -4068,7 +3630,7 @@ Index: code/game/g_missile.c
  			return;
 Index: code/game/ai_dmq3.c
 ===================================================================
---- code/game/ai_dmq3.c	(revision 1187)
+--- code/game/ai_dmq3.c	(revision 1198)
 +++ code/game/ai_dmq3.c	(working copy)
 @@ -128,7 +128,7 @@
  ==================
@@ -4386,7 +3948,7 @@ Index: code/game/ai_dmq3.c
  		if (trap_BotGetLevelItemGoal(-1, "Neutral Flag", &ctf_neutralflag) < 0)
 Index: code/game/g_client.c
 ===================================================================
---- code/game/g_client.c	(revision 1187)
+--- code/game/g_client.c	(revision 1198)
 +++ code/game/g_client.c	(working copy)
 @@ -55,6 +55,14 @@
  	SP_info_player_deathmatch( ent );
@@ -5033,7 +4595,7 @@ Index: code/game/g_client.c
  			StopFollowing( &g_entities[i] );
 Index: code/game/g_items.c
 ===================================================================
---- code/game/g_items.c	(revision 1187)
+--- code/game/g_items.c	(revision 1198)
 +++ code/game/g_items.c	(working copy)
 @@ -86,7 +86,7 @@
  
@@ -5222,7 +4784,7 @@ Index: code/game/g_items.c
  		G_SpawnFloat( "noglobalsound", "0", &ent->speed);
 Index: code/game/bg_public.h
 ===================================================================
---- code/game/bg_public.h	(revision 1187)
+--- code/game/bg_public.h	(revision 1198)
 +++ code/game/bg_public.h	(working copy)
 @@ -51,6 +51,10 @@
  #define CROUCH_VIEWHEIGHT	12
@@ -5311,7 +4873,7 @@ Index: code/game/bg_public.h
  
 Index: code/game/g_cmds.c
 ===================================================================
---- code/game/g_cmds.c	(revision 1187)
+--- code/game/g_cmds.c	(revision 1198)
 +++ code/game/g_cmds.c	(working copy)
 @@ -64,8 +64,9 @@
  		}
@@ -5594,7 +5156,7 @@ Index: code/game/g_cmds.c
  }
 Index: code/game/g_team.c
 ===================================================================
---- code/game/g_team.c	(revision 1187)
+--- code/game/g_team.c	(revision 1198)
 +++ code/game/g_team.c	(working copy)
 @@ -40,18 +40,32 @@
  
@@ -6403,7 +5965,7 @@ Index: code/game/g_team.c
  	}
 Index: code/game/ai_main.c
 ===================================================================
---- code/game/ai_main.c	(revision 1187)
+--- code/game/ai_main.c	(revision 1198)
 +++ code/game/ai_main.c	(working copy)
 @@ -285,7 +285,7 @@
  	else leader = " ";
@@ -6469,7 +6031,7 @@ Index: code/game/ai_main.c
  	if (strlen(buf)) trap_BotLibVarSet("homedir", buf);
 Index: code/qcommon/q_shared.h
 ===================================================================
---- code/qcommon/q_shared.h	(revision 1187)
+--- code/qcommon/q_shared.h	(revision 1198)
 +++ code/qcommon/q_shared.h	(working copy)
 @@ -26,8 +26,8 @@
  // q_shared.h -- included first by ALL program modules.
@@ -6499,7 +6061,7 @@ Index: code/qcommon/q_shared.h
  
 Index: code/qcommon/files.c
 ===================================================================
---- code/qcommon/files.c	(revision 1187)
+--- code/qcommon/files.c	(revision 1198)
 +++ code/qcommon/files.c	(working copy)
 @@ -2790,7 +2790,7 @@
  */
@@ -6529,7 +6091,7 @@ Index: code/qcommon/files.c
  	// busted and error out now, rather than getting an unreadable
 Index: code/qcommon/qcommon.h
 ===================================================================
---- code/qcommon/qcommon.h	(revision 1187)
+--- code/qcommon/qcommon.h	(revision 1198)
 +++ code/qcommon/qcommon.h	(working copy)
 @@ -222,7 +222,7 @@
  
@@ -6559,7 +6121,7 @@ Index: code/qcommon/qcommon.h
  #define	PORT_MASTER			27950
 Index: code/qcommon/qfiles.h
 ===================================================================
---- code/qcommon/qfiles.h	(revision 1187)
+--- code/qcommon/qfiles.h	(revision 1198)
 +++ code/qcommon/qfiles.h	(working copy)
 @@ -35,7 +35,7 @@
  #endif
@@ -6572,7 +6134,7 @@ Index: code/qcommon/qfiles.h
  
 Index: code/qcommon/common.c
 ===================================================================
---- code/qcommon/common.c	(revision 1187)
+--- code/qcommon/common.c	(revision 1198)
 +++ code/qcommon/common.c	(working copy)
 @@ -37,9 +37,9 @@
  #define MAX_NUM_ARGVS	50
@@ -6589,7 +6151,7 @@ Index: code/qcommon/common.c
  #define DEF_COMHUNKMEGS_S	XSTRING(DEF_COMHUNKMEGS)
 Index: code/botlib/be_ai_goal.c
 ===================================================================
---- code/botlib/be_ai_goal.c	(revision 1187)
+--- code/botlib/be_ai_goal.c	(revision 1198)
 +++ code/botlib/be_ai_goal.c	(working copy)
 @@ -103,6 +103,10 @@
  	GT_OBELISK,
@@ -6604,7 +6166,7 @@ Index: code/botlib/be_ai_goal.c
  
 Index: code/cgame/cg_predict.c
 ===================================================================
---- code/cgame/cg_predict.c	(revision 1187)
+--- code/cgame/cg_predict.c	(revision 1198)
 +++ code/cgame/cg_predict.c	(working copy)
 @@ -260,7 +260,19 @@
  */
@@ -6701,7 +6263,7 @@ Index: code/cgame/cg_predict.c
  }
 Index: code/cgame/cg_local.h
 ===================================================================
---- code/cgame/cg_local.h	(revision 1187)
+--- code/cgame/cg_local.h	(revision 1198)
 +++ code/cgame/cg_local.h	(working copy)
 @@ -85,8 +85,8 @@
  
@@ -6790,7 +6352,7 @@ Index: code/cgame/cg_local.h
  int trap_CIN_PlayCinematic( const char *arg0, int xpos, int ypos, int width, int height, int bits);
 Index: code/cgame/cg_weapons.c
 ===================================================================
---- code/cgame/cg_weapons.c	(revision 1187)
+--- code/cgame/cg_weapons.c	(revision 1198)
 +++ code/cgame/cg_weapons.c	(working copy)
 @@ -1695,6 +1695,9 @@
  	int				c;
@@ -6804,7 +6366,7 @@ Index: code/cgame/cg_weapons.c
  		return;
 Index: code/cgame/cg_players.c
 ===================================================================
---- code/cgame/cg_players.c	(revision 1187)
+--- code/cgame/cg_players.c	(revision 1198)
 +++ code/cgame/cg_players.c	(working copy)
 @@ -314,7 +314,7 @@
  	char *team, *charactersFolder;
@@ -6983,7 +6545,7 @@ Index: code/cgame/cg_players.c
  		}
 Index: code/cgame/cg_info.c
 ===================================================================
---- code/cgame/cg_info.c	(revision 1187)
+--- code/cgame/cg_info.c	(revision 1198)
 +++ code/cgame/cg_info.c	(working copy)
 @@ -261,6 +261,21 @@
  		s = "Harvester";
@@ -7027,7 +6589,7 @@ Index: code/cgame/cg_info.c
  			UI_DrawProportionalString( 320, y, va( "capturelimit %i", value ),
 Index: code/cgame/cg_draw.c
 ===================================================================
---- code/cgame/cg_draw.c	(revision 1187)
+--- code/cgame/cg_draw.c	(revision 1198)
 +++ code/cgame/cg_draw.c	(working copy)
 @@ -390,8 +390,24 @@
  
@@ -7606,7 +7168,7 @@ Index: code/cgame/cg_draw.c
  #endif
 Index: code/cgame/cg_newdraw.c
 ===================================================================
---- code/cgame/cg_newdraw.c	(revision 1187)
+--- code/cgame/cg_newdraw.c	(revision 1198)
 +++ code/cgame/cg_newdraw.c	(working copy)
 @@ -56,7 +56,7 @@
  }
@@ -7722,7 +7284,7 @@ Index: code/cgame/cg_newdraw.c
  }
 Index: code/cgame/cg_consolecmds.c
 ===================================================================
---- code/cgame/cg_consolecmds.c	(revision 1187)
+--- code/cgame/cg_consolecmds.c	(revision 1198)
 +++ code/cgame/cg_consolecmds.c	(working copy)
 @@ -299,7 +299,7 @@
  }
@@ -7735,7 +7297,7 @@ Index: code/cgame/cg_consolecmds.c
  		trap_SendConsoleCommand(va("cmd vsay_team %s\n", VOICECHAT_ONOFFENSE));
 Index: code/cgame/cg_view.c
 ===================================================================
---- code/cgame/cg_view.c	(revision 1187)
+--- code/cgame/cg_view.c	(revision 1198)
 +++ code/cgame/cg_view.c	(working copy)
 @@ -234,7 +234,8 @@
  	VectorCopy( cg.refdefViewAngles, focusAngles );
@@ -7749,7 +7311,7 @@ Index: code/cgame/cg_view.c
  	}
 Index: code/cgame/cg_servercmds.c
 ===================================================================
---- code/cgame/cg_servercmds.c	(revision 1187)
+--- code/cgame/cg_servercmds.c	(revision 1198)
 +++ code/cgame/cg_servercmds.c	(working copy)
 @@ -75,29 +75,45 @@
  	cg.teamScores[0] = atoi( CG_Argv( 2 ) );
@@ -7973,7 +7535,7 @@ Index: code/cgame/cg_servercmds.c
  		return;
 Index: code/cgame/cg_scoreboard.c
 ===================================================================
---- code/cgame/cg_scoreboard.c	(revision 1187)
+--- code/cgame/cg_scoreboard.c	(revision 1198)
 +++ code/cgame/cg_scoreboard.c	(working copy)
 @@ -176,8 +176,12 @@
  		Com_sprintf(string, sizeof(string),
@@ -8032,7 +7594,7 @@ Index: code/cgame/cg_scoreboard.c
  		//
 Index: code/cgame/cg_main.c
 ===================================================================
---- code/cgame/cg_main.c	(revision 1187)
+--- code/cgame/cg_main.c	(revision 1198)
 +++ code/cgame/cg_main.c	(working copy)
 @@ -556,7 +556,11 @@
  	cgs.media.countPrepareTeamSound = trap_S_RegisterSound( "sound/feedback/prepare_team.wav", qtrue );
@@ -8215,7 +7777,7 @@ Index: code/cgame/cg_main.c
  		count = 0;
 Index: code/ui/ui_main.c
 ===================================================================
---- code/ui/ui_main.c	(revision 1187)
+--- code/ui/ui_main.c	(revision 1198)
 +++ code/ui/ui_main.c	(working copy)
 @@ -64,7 +64,7 @@
  
@@ -8404,7 +7966,7 @@ Index: code/ui/ui_main.c
  				UI_LoadNonIngame();
 Index: code/ui/ui_gameinfo.c
 ===================================================================
---- code/ui/ui_gameinfo.c	(revision 1187)
+--- code/ui/ui_gameinfo.c	(revision 1198)
 +++ code/ui/ui_gameinfo.c	(working copy)
 @@ -198,6 +198,21 @@
  			if( strstr( type, "harvester" ) ) {
@@ -8430,7 +7992,7 @@ Index: code/ui/ui_gameinfo.c
  		}
 Index: code/client/cl_main.c
 ===================================================================
---- code/client/cl_main.c	(revision 1187)
+--- code/client/cl_main.c	(revision 1198)
 +++ code/client/cl_main.c	(working copy)
 @@ -2741,8 +2741,8 @@
  	Cvar_Get ("snaps", "20", CVAR_USERINFO | CVAR_ARCHIVE );
@@ -8443,7 +8005,7 @@ Index: code/client/cl_main.c
  	Cvar_Get ("g_redTeam", "Stroggs", CVAR_SERVERINFO | CVAR_ARCHIVE);
  	Cvar_Get ("g_blueTeam", "Pagans", CVAR_SERVERINFO | CVAR_ARCHIVE);
  	Cvar_Get ("color1",  "4", CVAR_USERINFO | CVAR_ARCHIVE );
-@@ -3653,7 +3653,7 @@
+@@ -3654,7 +3654,7 @@
  =================
  */
  qboolean CL_CDKeyValidate( const char *key, const char *checksum ) {
@@ -8452,7 +8014,7 @@ Index: code/client/cl_main.c
  	byte	sum;
  	char	chs[3];
  	int i, len;
-@@ -3707,8 +3707,8 @@
+@@ -3708,8 +3708,8 @@
  	if (!checksum) {
  		return qtrue;
  	}
@@ -8465,7 +8027,7 @@ Index: code/client/cl_main.c
  
 Index: code/client/snd_dma.c
 ===================================================================
---- code/client/snd_dma.c	(revision 1187)
+--- code/client/snd_dma.c	(revision 1198)
 +++ code/client/snd_dma.c	(working copy)
 @@ -364,7 +364,7 @@
  		Com_Memset( s_knownSfx, 0, sizeof( s_knownSfx ) );
@@ -8478,7 +8040,7 @@ Index: code/client/snd_dma.c
  
 Index: code/client/snd_openal.c
 ===================================================================
---- code/client/snd_openal.c	(revision 1187)
+--- code/client/snd_openal.c	(revision 1198)
 +++ code/client/snd_openal.c	(working copy)
 @@ -384,7 +384,7 @@
  	numSfx = 0;
@@ -8491,7 +8053,7 @@ Index: code/client/snd_openal.c
  
 Index: code/sys/sys_win32.c
 ===================================================================
---- code/sys/sys_win32.c	(revision 1187)
+--- code/sys/sys_win32.c	(revision 1198)
 +++ code/sys/sys_win32.c	(working copy)
 @@ -75,7 +75,7 @@
  			return NULL;
@@ -8504,7 +8066,7 @@ Index: code/sys/sys_win32.c
  		{
 Index: code/sys/sys_unix.c
 ===================================================================
---- code/sys/sys_unix.c	(revision 1187)
+--- code/sys/sys_unix.c	(revision 1198)
 +++ code/sys/sys_unix.c	(working copy)
 @@ -51,9 +51,9 @@
  		{
