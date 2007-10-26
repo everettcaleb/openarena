@@ -766,3 +766,24 @@ textures/base_floor/clangspot2
 		rgbGen identity
 	}
 }
+
+textures/proto2/tin_panel
+{
+	surfaceparm metalsteps
+	{
+		map textures/effects/tinfx.tga
+		blendfunc filter
+		tcgen environment
+		rgbgen identity
+	}
+	{
+		map textures/proto2/tin_panel.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc gl_dst_color gl_zero
+		rgbgen identity
+	}
+}
