@@ -227,6 +227,7 @@ textures/liquids/lavahelldark
 		map textures/liquids/lavahell3.tga
 		tcmod scroll -.005 .001
 		tcMod turb .2 -0.03 0 0.1
+		tcMod scale 0.25 0.25
 	}
 
 }
