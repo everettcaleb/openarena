@@ -266,8 +266,8 @@ void CG_RailTrail (clientInfo_t *ci, vec3_t start, vec3_t end) {
 
 	if (cg_oldRail.integer != 0) {
 		// nudge down a bit so it isn't exactly in center
-		re->origin[2] -= 8;
-		re->oldorigin[2] -= 8;
+		re->origin[1] -= 0.25;
+		re->oldorigin[1] -= 0.25;
 		return;
 	}
 	skip = -1;

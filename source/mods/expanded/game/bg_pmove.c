@@ -48,6 +48,7 @@ float	pm_spectatorfriction = 5.0f;
 
 int		c_pmove = 0;
 
+
 /*
 ===============
 PM_AddEvent
@@ -233,14 +234,11 @@ static void PM_Friction( void ) {
 ==============
 PM_Accelerate
 
-TODO: bunny hoping
-
 Handles user intended acceleration
 ==============
 */
 static void PM_Accelerate( vec3_t wishdir, float wishspeed, float accel ) {
 #if 1
-
 	// q2 style
 	int			i;
 	float		addspeed, accelspeed, currentspeed;
@@ -360,8 +358,6 @@ PM_CheckJump
 =============
 */
 static qboolean PM_CheckJump( void ) {
-
-
 	if ( pm->ps->pm_flags & PMF_RESPAWNED ) {
 		return qfalse;		// don't allow jump until all buttons are up
 	}
@@ -371,16 +367,12 @@ static qboolean PM_CheckJump( void ) {
 		return qfalse;
 	}
 
-
 	// must wait for jump to be released
 	if ( pm->ps->pm_flags & PMF_JUMP_HELD ) {
 		// clear upmove so cmdscale doesn't lower running speed
 		pm->cmd.upmove = 0;
 		return qfalse;
 	}
-
-	
-
 
 	pml.groundPlane = qfalse;		// jumping away
 	pml.walking = qfalse;
@@ -1542,9 +1534,6 @@ static void PM_TorsoAnimation( void ) {
 PM_Weapon
 
 Generates weapon events and modifes the weapon counter
-
-Elimination TODO:
-Make this thing stop during warmup (done)
 ==============
 */
 static void PM_Weapon( void ) {

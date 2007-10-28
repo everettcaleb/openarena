@@ -1286,7 +1286,7 @@ int Team_TouchEnemyFlag( gentity_t *ent, gentity_t *other, int team ) {
 int Pickup_Team( gentity_t *ent, gentity_t *other ) {
 	int team;
 	gclient_t *cl = other->client;
-	
+
 #ifdef MISSIONPACK
 	if( g_gametype.integer == GT_OBELISK ) {
 		// there are no team items that can be picked up in obelisk

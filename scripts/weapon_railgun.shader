@@ -110,9 +110,10 @@ railDisc
 {
 	cull disable
 	{
-		map models/weapons2/railgun/f_railgun2.tga
+		clampmap models/weapons2/railgun/f_railgun3.tga
 		blendfunc add
-		rgbGen entity
+		rgbGen vertex
+		tcmod rotate 130
 	}
 }
 
