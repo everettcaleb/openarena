@@ -79,7 +79,7 @@ itemDef {
 	visible 1 
 	action	{
 	        play MP_SND_SELECT; 
-		uiScript JoinServer
+		uiScript JoinServer;
 		}
 	}
 
@@ -116,7 +116,7 @@ itemDef {
 	visible 1 
 	action	{
 	        play MP_SND_SELECT; 
-		close createserver;
+		close joinserver;
 		open menu;
 		}
 	}
@@ -134,7 +134,7 @@ itemDef {
 	forecolor MP_TEXTCOLOR     
 	visible 1 
 	action	{
-		uiScript RefreshFilter
+		uiScript RefreshFilter;
 		}
 	}
 
@@ -152,7 +152,7 @@ itemDef {
 	visible 1 
 	action	{
 	        play MP_SND_SELECT; 
-		uiScript RefreshServers
+		uiScript RefreshServers;
 		}
 	}
 
@@ -210,18 +210,18 @@ itemDef {
 	ownerdraw UI_JOINGAMETYPE
       	style 0
 	type 1
-	textstyle 6
+	textstyle 3
       	textscale 0.27
-      	rect 500 100 50 10
+      	rect 500 100 140 10
       	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR      
 	visible 1 
 	action	{
 		play MP_SND_SELECT; 
-		uiScript RefreshFilter
+		uiScript ServerSort;
       		}
-	}
+	}//d_c FIXME:  not displaying properly
 
 itemDef {
 	name button9
@@ -266,9 +266,113 @@ itemDef	{
 	1 40 0 //server-name
 	250 40 0 //map
 	480 40 0  //players
-	375 40 0 // gametype
+	360 40 0 // gametype
 	550 40 0 //ping
 	doubleClick { uiScript JoinServer }
+	}
+
+itemDef	{
+	name serversort
+	text "Server Name"
+	style 0
+	type ITEM_TYPE_BUTTON
+	textscale .25
+	textalign 0
+	textaligny 10
+	rect 25 127 110 10
+	forecolor 1 1 1 1
+	visible 1
+	action 	{
+		uiScript ServerSort 0;
+		setitemcolor serversort forecolor MP_FOCUSCOLOR;
+		setitemcolor mapsort forecolor 1 1 1 1;
+		setitemcolor playersort forecolor 1 1 1 1;
+		setitemcolor gtsort forecolor 1 1 1 1;
+		setitemcolor pingsort forecolor 1 1 1 1
+		}
+	}
+
+itemDef	{
+	name mapsort
+	text "Map"
+	style 0
+	type ITEM_TYPE_BUTTON
+	textscale .25
+	textalign 0
+	textaligny 10
+	rect 275 127 110 10
+	forecolor 1 1 1 1
+	visible 1
+	action	{
+		uiscript ServerSort 1;
+		setitemcolor mapsort forecolor MP_FOCUSCOLOR;
+		setitemcolor serversort forecolor 1 1 1 1;
+		setitemcolor playersort forecolor 1 1 1 1;
+		setitemcolor gtsort forecolor 1 1 1 1;
+		setitemcolor pingsort forecolor 1 1 1 1
+		}
+	}
+
+itemDef	{
+	name playersort
+	text "Players"
+	style 0
+	type ITEM_TYPE_BUTTON
+	textscale .25
+	textalign 0
+	textaligny 10
+	rect 490 127 50 10
+	forecolor 1 1 1 1
+	visible 1
+	action	{
+		uiscript ServerSort 2;
+		setitemcolor playersort forecolor MP_FOCUSCOLOR;
+		setitemcolor serversort forecolor 1 1 1 1;
+		setitemcolor mapsort forecolor 1 1 1 1;
+		setitemcolor gtsort forecolor 1 1 1 1;
+		setitemcolor pingsort forecolor 1 1 1 1
+		}
+	}
+
+itemDef	{
+	name gtsort
+	text "Game Type"
+	style 0
+	type ITEM_TYPE_BUTTON
+	textscale .25
+	textalign 0
+	textaligny 10
+	rect 375 127 110 10
+	forecolor 1 1 1 1
+	visible 1
+	action	{
+		uiscript ServerSort 3;
+		setitemcolor gtsort forecolor MP_FOCUSCOLOR;
+		setitemcolor serversort forecolor 1 1 1 1;
+		setitemcolor mapsort forecolor 1 1 1 1;
+		setitemcolor playersort forecolor 1 1 1 1;
+		setitemcolor pingsort forecolor 1 1 1 1
+		}
+	}
+
+itemDef	{
+	name pingsort
+	text "Ping"
+	style 0
+	type ITEM_TYPE_BUTTON
+	textscale .25
+	textalign 0
+	textaligny 10
+	rect 560 127 40 10
+	visible 1
+	action	{
+		uiscript ServerSort 4;
+		setitemcolor pingsort forecolor MP_FOCUSCOLOR;
+		setitemcolor serversort forecolor 1 1 1 1;
+		setitemcolor mapsort forecolor 1 1 1 1;
+		setitemcolor playersort forecolor 1 1 1 1;
+		setitemcolor gtsort forecolor 1 1 1 1
+		}
 	}
 
 }

@@ -41,7 +41,7 @@ MULTIPLAYER MENU (SERVER BROWSER)
 #define MAX_LOCALSERVERS		124
 #define MAX_STATUSLENGTH		64
 #define MAX_LEAGUELENGTH		28
-#define MAX_LISTBOXWIDTH		62
+#define MAX_LISTBOXWIDTH		64
 
 #define ART_BACK0				"menu/art/back_0"
 #define ART_BACK1				"menu/art/back_1"
