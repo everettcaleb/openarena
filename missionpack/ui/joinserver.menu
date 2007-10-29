@@ -183,7 +183,7 @@ itemDef {
 	forecolor MP_TEXTCOLOR      
 	visible 1 
 	action	{
-	        play MP_SND_SELECT; 
+	        play MP_SND_SELECT;
 		}
 	}
 
@@ -200,7 +200,8 @@ itemDef {
 	forecolor MP_TEXTCOLOR      
 	visible 1 
 	action	{
-	        play MP_SND_SELECT; 
+	        play MP_SND_SELECT;
+//not yet		open createfavorite_popmenu
 		}
 	}
 
