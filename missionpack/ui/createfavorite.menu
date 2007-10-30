@@ -1,0 +1,140 @@
+/*
+===========================================================================
+Copyright (C) 2007 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Foobar; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+{
+menuDef	{
+	name createfavorite
+	visible 0
+	fullscreen 0
+	rect 200 150 235 235
+	focuscolor MP_FOCUSCOLOR
+	style 1
+	popup
+	onEsc	{
+		close createfavorite;
+		open joinserver
+		}
+
+itemDef	{
+	name servername
+	text "Name"
+	style 0
+	decoration
+	textscale .2
+	rect 100 62 59 10
+	textalign 1
+	textaligny 10
+	forecolor MP_TEXTCOLOR
+	visible 1
+	}
+
+itemDef	{
+	name snameenter
+	text ":"
+	maxchars 15
+	textscale .2
+	type 4
+	cvar "ui_favoritename"
+	rect 60 81 120 10
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	visible 1
+	mouseenter	{
+			setitemcolor snameenter forecolor MP_FOCUSCOLOR
+			}
+	mouseexit	{
+			setitemcolor snameenter forecolor 1 1 1 1
+			}
+	}
+
+itemDef	{
+	name addy
+	text "IP Address"
+	style 0
+	decoration
+	textscale .2
+	type 4
+	rect 99 111 70 20
+	textalign 1
+	textaligny 10
+	forecolor MP_TEXTCOLOR
+	visible 1
+	}
+
+itemDef	{
+	name adentry
+	text ":"
+	maxchars 21
+	textscale .2
+	type 4
+	cvar "ui_favoriteAddress"
+	rect 60 131 120 10
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	visible 1
+	mouseenter	{
+			setitemcolor adentry forecolor MP_FOCUSCOLOR
+			}
+	mouseexit	{
+			setitemcolor adentry forecolor 1 1 1 1
+			}
+	}
+
+itemDef	{
+	name aaight
+	text "Add"
+	type 1
+	textscale .2
+	style ITEM_TYPE_BUTTON
+	rect 120 168 30 10
+	textalign 1
+	textaligny 10
+	forecolor MP_TEXTCOLOR
+	visible 1
+	action	{
+		uiScript CreateFavorite;
+		close createfavorite;
+		open joinserver
+		}
+	}
+
+itemDef	{
+	name hellno
+	text "Back"
+	type 1
+	textscale .2
+	style ITEM_TYPE_BUTTON
+	rect 70 168 30 10
+	textalign 1
+	textaligny 10
+	forecolor MP_TEXTCOLOR
+	visible 1
+	action	{
+		close createfavorite;
+		open joinserver
+		}
+	}
+}
+}

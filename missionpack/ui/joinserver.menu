@@ -71,7 +71,7 @@ itemDef {
 	type 1
 	textstyle 3
 	textscale 0.3
-	rect 590 450 50 30
+	rect 590 450 50 10
 	textalign 0
 	textaligny 10	
 	backcolor 0 0 0 0
@@ -90,7 +90,7 @@ itemDef {
 	type 1
 	textstyle 3
 	textscale 0.27
-	rect 360 30 50 30
+	rect 360 30 50 10
 	textalign 0
 	textaligny 10		
 	forecolor MP_TEXTCOLOR   
@@ -116,8 +116,7 @@ itemDef {
 	visible 1 
 	action	{
 	        play MP_SND_SELECT; 
-		close joinserver;
-		open menu;
+		open serverinfo;
 		}
 	}
 
@@ -128,7 +127,7 @@ itemDef {
 	type 1
 	textstyle 3
 	textscale 0.27
-	rect 500 65 50 10
+	rect 500 50 50 10
 	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR     
@@ -145,7 +144,7 @@ itemDef {
 	type 1
 	textstyle 3
 	textscale 0.27
-	rect 360 65 50 10
+	rect 360 50 50 10
 	textalign 0
 	textaligny 10	
 	forecolor MP_TEXTCOLOR     
@@ -162,7 +161,7 @@ itemDef {
 	ownerdraw UI_NETSOURCE
 	textstyle 3
       	textscale 0.27
-      	rect 360 100 50 10
+      	rect 360 70 50 10
       	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR    
@@ -184,6 +183,7 @@ itemDef {
 	visible 1 
 	action	{
 	        play MP_SND_SELECT;
+		uiScript CreateFavorite
 		}
 	}
 
@@ -201,7 +201,7 @@ itemDef {
 	visible 1 
 	action	{
 	        play MP_SND_SELECT;
-//not yet		open createfavorite_popmenu
+		open createfavorite
 		}
 	}
 
@@ -213,7 +213,7 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.27
-      	rect 500 100 140 10
+      	rect 500 70 140 10
       	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR      
@@ -222,7 +222,7 @@ itemDef {
 		play MP_SND_SELECT; 
 		uiScript ServerSort;
       		}
-	}//d_c FIXME:  not displaying properly
+	}//d_c FIXME:  UI_JOINGAMETYPE broken
 
 itemDef {
 	name button9
