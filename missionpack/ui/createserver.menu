@@ -142,7 +142,7 @@ itemDef	{
 	name mappreview
 	style WINDOW_STYLE_FILLED
 	ownerdraw UI_STARTMAPCINEMATIC
-	rect 437 40 160 120
+	rect 437 30 160 120
 	border 1
 	bordercolor MP_BOX_BORDER
 	visible 1
