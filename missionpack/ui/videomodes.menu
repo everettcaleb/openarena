@@ -35,6 +35,10 @@ menuDef	{
 	outOfBoundsClick  
 	style 0
 	onOpen	{ }
+	onEsc	{
+		close videomodes;
+		open configuration;
+		}
 
 itemDef {
       	name titleness

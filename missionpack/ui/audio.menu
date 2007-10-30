@@ -33,6 +33,10 @@ menuDef	{
 	outOfBoundsClick  
 	style 0
 	onOpen	{ }
+	onEsc	{
+		close audio;
+		open configuration;
+		}
 
 itemDef {
       	name titleness

@@ -30,9 +30,13 @@ menuDef	{
 	background MP_BACKGROUND	
 	focusColor MP_FOCUSCOLOR
 	rect 0 0 640 480
-	outOfBoundsClick  
 	style 0
 	onOpen { }
+	onEsc	{ 
+		close configuration;
+		open main
+		}
+
 
 itemDef {
       	name titleness

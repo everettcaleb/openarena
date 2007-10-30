@@ -36,6 +36,10 @@ menuDef	{
 	onOpen	{
 		uiScript loadArenas;
 		}
+	onEsc	{
+		close createserver;
+		open main;
+		}
 
 itemDef {
       	name titleness
