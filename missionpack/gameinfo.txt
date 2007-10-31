@@ -17,14 +17,14 @@ joingametypes {
   { "Don't care" -1 }
   { "Deathmatch" 0 }
   { "Tournament" 1 }
-  { "Team Deathmatch" 3 } 
-  { "Capture the flag" 4 }
+  { "Team DM" 3 } 
+  { "CTF" 4 }
   { "One flag" 5 }
   { "Overload" 6 }
   { "Harvester" 7 }
-  { "Elimination" 8 }
-  { "CTF Elimination" 9 }
-  { "Last Man Standing" 10 }
-  { "Double Domination" 11 }
-  { "Domination" 12 }
+  { "Elim" 8 }
+  { "CTF Elim" 9 }
+  { "LMS" 10 }
+  { "Double D" 11 }
+  { "Dom" 12 }
 }

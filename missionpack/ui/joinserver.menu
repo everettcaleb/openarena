@@ -120,6 +120,40 @@ itemDef {
 		}
 	}
 
+itemDef	{
+	name empty
+	text "Show Empty:"
+	type ITEM_TYPE_YESNO
+	cvar "ui_browserShowEmpty"
+	textstyle 3
+	textscale 0.27
+	rect 360 90 50 10
+	textalign 0
+	textaligny 10
+	forecolor MP_TEXTCOLOR
+	visible 1
+	action	{
+		uiScript RefreshFilter;
+		}
+	}
+
+itemDef	{
+	name full
+	text "Show Full:"
+	type ITEM_TYPE_YESNO
+	cvar "ui_browserShowFull"
+	textstyle 3
+	textscale 0.27
+	rect 500 90 50 10
+	textalign 0
+	textaligny 10
+	forecolor MP_TEXTCOLOR
+	visible 1
+	action	{
+		uiScript RefreshFilter;
+		}
+	}
+
 itemDef {
 	name button4
 	text "Refresh"
@@ -210,7 +244,6 @@ itemDef {
 	text "Type:"
 	ownerdraw UI_JOINGAMETYPE
       	style 0
-	type 1
 	textstyle 3
       	textscale 0.27
       	rect 500 70 140 10
@@ -222,7 +255,7 @@ itemDef {
 		play MP_SND_SELECT; 
 		uiScript ServerSort;
       		}
-	}//d_c FIXME:  UI_JOINGAMETYPE broken
+	}
 
 itemDef {
 	name button9
