@@ -2,8 +2,8 @@
 
 teams {
   { "Killers" "ui/assets/killers"  "Clint" "John" "Harry" "Bruce" "Fred"  }
-  { "Cyborgs" "ui/assets/cyborgs" "Robby" "Zapper" "Wrench" "Diskette" "Bad Ass Motherboard" }
-  { "Summer" "ui/assets/summer"  "Tanisha" "Rai" "Babe2" "Babe3" "Hunk"  }
+  { "Cyborgs" "ui/assets/cyborgs" "Robby" "Zapper" "Wrench" "Diskette" "ZippyMcGee" }
+  { "Summer" "ui/assets/summer"  "Jim" "Bob" "Jimbob" "Mother" "Hunk"  }
 }
 characters {
   { "Sergei"  "male" }

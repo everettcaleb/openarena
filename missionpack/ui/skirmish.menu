@@ -1,0 +1,107 @@
+/*
+===========================================================================
+Copyright (C) 2007 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Open Arena; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+
+{
+menuDef	{
+	name skirmish
+	visible 0
+	fullscreen 1
+	rect 0 0 640 480
+	focusColor MP_FOCUSCOLOR
+	background MP_BACKGROUND
+	onEsc 	{
+		close skirmish;
+		open main
+		}
+	onOpen	{
+		uiScript loadGameInfo;
+		uiScript updateSPMenu;
+		}
+
+itemDef	{
+	name type
+	style 1
+	ownerdraw UI_GAMETYPE
+	textstyle 3
+	text "Type: "
+	rect 0 20 50 10
+	textalign 0
+	textaligny 10
+	textscale .2
+	forecolor MP_TEXTCOLOR
+	visible 1
+	}
+
+itemDef	{
+	name skill
+	style 1
+	ownerdraw UI_SKILL
+	textstyle 3
+	text "Skill: "
+	rect 0 40 50 10
+	textalign 0
+	textaligny 10
+	textscale .2
+	forecolor MP_TEXTCOLOR
+	visible 1
+	}
+
+itemDef	{
+	name opponent
+	style 1
+	ownerdraw UI_OPPONENT_NAME
+	textstyle 3
+	text "Opponent: "
+	rect 0 60 50 10
+	textalign 0
+	textaligny 10
+	textscale .2
+	forecolor MP_TEXTCOLOR
+	visible 1
+	}
+
+itemDef	{
+	name maps
+	rect 510 10 120 380
+	type ITEM_TYPE_LISTBOX
+	style WINDOW_STYLE_FILLED
+	elementwidth 100
+	elementheight 75
+	elementtype LISTBOX_IMAGE
+	feeder FEEDER_MAPS
+	visible 1
+	border 1
+	bordercolor   0.25 0.25 0.25 0.7
+	forecolor     1 1 1 1
+	backcolor     0 0 0 0.5
+	outlinecolor  1 0.5 0.1 0.3
+	doubleclick { uiScript skirmishStart }
+	mouseenter { setitemcolor maps bordercolor .4 .2 .2 1; }
+	mouseexit { setitemcolor maps bordercolor   0.25 0.25 0.25 0.7 }
+
+	}
+
+
+}
+}

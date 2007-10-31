@@ -104,8 +104,8 @@ itemDef {
 	forecolor MP_TEXTCOLOR
 	visible 0
 	action {
-//		close main;
-//		open skirmish
+		close main;
+		open skirmish
 		}
 	}
 
