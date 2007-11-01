@@ -63,20 +63,20 @@ maps	{
 	{ "Suction" "suction" "3" "sergei" 2 "0" 4 "110" 9 "110" 11 "110" }
 
 	//tournament + elimination + lms
-	{ "Trial by Error" "oa_rpg3dm2" "4" "Grunt" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "Aggressor" "aggressor" "1" "Major" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "Place of Two Deaths" "oa_dm1" "1" "kyonshi" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "Claustrophobopolis" "oa_dm2" "1" "Angelyss" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "The Abandoned Base" "oa_dm3" "1" "Jenna" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "The Bad Place" "oa_dm4" "1" "merman" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "The Cistern" "oa_dm5" "1" "grism" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "The Dark Zone" "oa_dm6" "1" "sergei" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "nameless" "oa_dm7" "1" "beret" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "Fan" "fan" "1" "Tanisha" 2 "0" 1 "180" 8 "110" 10 "110" }
+	{ "Trial by Error" "oa_rpg3dm2" "4" "Grunt" 2 "0" 1 "180" 8 "110" }
+	{ "Aggressor" "aggressor" "1" "Major" 2 "0" 1 "240" 8 "110" }
+	{ "Place of Two Deaths" "oa_dm1" "1" "kyonshi" 2 "0" 1 "180" 8 "110" }
+	{ "Claustrophobopolis" "oa_dm2" "1" "Angelyss" 2 "0" 1 "240" 8 "110" }
+	{ "The Abandoned Base" "oa_dm3" "1" "Jenna" 2 "0" 1 "240" 8 "110" }
+	{ "The Bad Place" "oa_dm4" "1" "merman" 2 "0" 1 "180" 8 "110" }
+	{ "The Cistern" "oa_dm5" "1" "grism" 2 "0" 1 "180" 8 "110" }
+	{ "The Dark Zone" "oa_dm6" "1" "sergei" 2 "0" 1 "180" 8 "110" }
+	{ "nameless" "oa_dm7" "1" "beret" 2 "0" 1 "180" 8 "110" }
+	{ "Fan" "fan" "1" "Tanisha" 2 "0" 1 "180" 8 "110" }
 	{ "The Space Spire" "czest1tourney" "1" "skelebot" 2 "0" 1 "180" }
-	{ "Kaooos" "kaos2" "4" "Sergei" 2 "0" 8 "240" 8 "240" 10 "240" }
-	{ "DM6ish" "dm6ish" "4" "Sergei" 2 "0" 8 "240" 8 "240" 10 "240" }
-	{ "Monastery" "czest1dm" "4" "Sergei" 2 "0" 8 "240" 8 "240" 10 "240" }
+	{ "Kaooos" "kaos2" "4" "Sergei" 2 "0" 8 "240" 8 "240" }
+	{ "DM6ish" "dm6ish" "4" "Sergei" 2 "0" 8 "240" 8 "240" }
+	{ "Monastery" "czest1dm" "4" "Sergei" 2 "0" 8 "240" 8 "240" }
 	
 	
 }

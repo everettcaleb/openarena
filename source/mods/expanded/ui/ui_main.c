@@ -1041,6 +1041,8 @@ static void UI_SetCapFragLimits(qboolean uiVars) {
 		cap = 4;
 	} else if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_HARVESTER) {
 		cap = 15;
+	} else if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS) {
+		frag = 5;
 	}
 	if (uiVars) {
 		trap_Cvar_Set("ui_captureLimit", va("%d", cap));
@@ -1762,7 +1764,8 @@ static void UI_DrawBotName(rectDef_t *rect, float scale, vec4_t color, int textS
 			value = 0;
 		}
 		text = uiInfo.characterList[value].name;
-	} else {
+	}
+	if (game < GT_TEAM || game == GT_LMS )  {
 		if (value >= UI_GetNumBots()) {
 			value = 0;
 		}
@@ -2353,7 +2356,7 @@ static qboolean UI_GameType_HandleKey(int flags, float *special, int key, qboole
 			}
 		}
     
-		if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_TOURNAMENT) {
+		if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_TOURNAMENT || uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS ) {
 			trap_Cvar_Set("ui_Q3Model", "1");
 		} else {
 			trap_Cvar_Set("ui_Q3Model", "0");
@@ -2480,7 +2483,7 @@ static qboolean UI_TeamMember_HandleKey(int flags, float *special, int key, qboo
 			value++;
 		}
 
-		if (ui_actualNetGameType.integer >= GT_TEAM) {
+		if (ui_actualNetGameType.integer >= GT_TEAM && ui_actualNetGameType.integer != GT_LMS) {
 			if (value >= uiInfo.characterCount + 2) {
 				value = 0;
 			} else if (value < 0) {
@@ -2578,7 +2581,8 @@ static qboolean UI_BotName_HandleKey(int flags, float *special, int key) {
 			} else if (value < 0) {
 				value = uiInfo.characterCount + 2 - 1;
 			}
-		} else {
+		}
+		if ( game < GT_TEAM || game == GT_LMS ) {
 			if (value >= UI_GetNumBots() + 2) {
 				value = 0;
 			} else if (value < 0) {
@@ -3021,6 +3025,16 @@ static void UI_StartSkirmish(qboolean next) {
 		trap_Cvar_Set("sv_maxClients", "2");
 		Com_sprintf( buff, sizeof(buff), "wait ; addbot %s %f "", %i \n", uiInfo.mapList[ui_currentMap.integer].opponentName, skill, delay);
 		trap_Cmd_ExecuteText( EXEC_APPEND, buff );
+	} 
+	// bad hack but it populates the map with bots
+	if (g == GT_LMS ) {
+		temp = uiInfo.mapList[ui_currentMap.integer].teamMembers + 1;
+		trap_Cvar_Set("sv_maxClients", va("%d", temp));
+		for (i =0; i < uiInfo.mapList[ui_currentMap.integer].teamMembers; i++) {
+			Com_sprintf( buff, sizeof(buff), "addbot %s %f %s %i %s\n", UI_AIFromName(uiInfo.teamList[k].teamMembers[i]), skill, (g == GT_FFA) ? "" : "Blue", delay, uiInfo.teamList[k].teamMembers[i]);
+			trap_Cmd_ExecuteText( EXEC_APPEND, buff );
+			delay += 500;
+		}
 	} else {
 		temp = uiInfo.mapList[ui_currentMap.integer].teamMembers * 2;
 		trap_Cvar_Set("sv_maxClients", va("%d", temp));
@@ -3036,8 +3050,11 @@ static void UI_StartSkirmish(qboolean next) {
 			delay += 500;
 		}
 	}
-	if (g >= GT_TEAM ) {
+	if (g >= GT_TEAM && g !=GT_LMS ) {
 		trap_Cmd_ExecuteText( EXEC_APPEND, "wait 5; team Red\n" );
+	}
+	if (g ==GT_LMS ) {
+		trap_Cmd_ExecuteText( EXEC_APPEND, "wait 5; team Free\n" );
 	}
 }
 
@@ -3563,7 +3580,9 @@ static int UI_MapCountByGameType(qboolean singlePlayer) {
 	if (game == GT_TEAM) {
 		game = GT_FFA;
 	}
-
+	if ( game == GT_LMS ) {
+		game = GT_FFA;
+	}
 	for (i = 0; i < uiInfo.mapCount; i++) {
 		uiInfo.mapList[i].active = qfalse;
 		if ( uiInfo.mapList[i].typeBits & (1 << game)) {
