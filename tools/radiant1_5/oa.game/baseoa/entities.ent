@@ -1993,7 +1993,7 @@ Nailgun ammo. Gives the player 25 by default.
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 -------- NOTES --------
@@ -2015,7 +2015,7 @@ Prox Launcher ammo. Gives the player 5 by default.
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 -------- NOTES --------
@@ -2037,7 +2037,7 @@ Chaingun ammo. Gives the player 100 by default.
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 -------- NOTES --------
@@ -2066,7 +2066,7 @@ One use kamikaze item that can be picked up and used later. Does an initial wave
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 -------- NOTES --------
@@ -2087,7 +2087,7 @@ Invulnerability. Creates an energy shield that protects the player against all w
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 -------- NOTES --------
@@ -2120,7 +2120,7 @@ Scout power-up.  Player moves at 2/3 haste speed.  Increases rate of fire. Lasts
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 <flag key="REDTEAM" name="Red Team Only" bit="1">only players on the red team may pick up this item.</flag>
@@ -2144,7 +2144,7 @@ Guard power-up.  Gives player 200 regenerating health and 200 armor (without dec
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 <flag key="REDTEAM" name="Red Team Only" bit="1">only players on the red team may pick up this item.</flag>
@@ -2168,7 +2168,7 @@ Doubler power-up.  Doubles the damage of player's weapons.  Lasts until death.
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 <flag key="REDTEAM" name="Red Team Only" bit="1">only players on the red team may pick up this item.</flag>
@@ -2182,7 +2182,7 @@ When the random key is set, its value is used to calculate a minimum and a maxim
 <point name="item_ammoregen" color="0.3 0.3 1" box="16 -16 -16 16 16 16" model="models/powerups/ammo.md3">
 Ammo Regen power-up. Slowly regenerates ammo count for all weapons currently possessed by the player.
 -------- KEYS --------
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 <real key="wait" name="Respawn Delay">time in seconds before the item respawns after being picked up (default 0, -1 = never respawn).</real>
 <real key="random" name="Respawn Delay Variance">random time variance in seconds added or subtracted from "wait" delay (default 0 - see Notes).</real>
 <string key="team" name="Team Name">set this to team items. Teamed items will respawn randomly after team master is picked up (see Notes).</string>
@@ -2192,7 +2192,7 @@ Ammo Regen power-up. Slowly regenerates ammo count for all weapons currently pos
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 <flag key="REDTEAM" name="Red Team Only" bit="1">only players on the red team may pick up this item.</flag>
@@ -2214,7 +2214,7 @@ TEAM ARENA TEAMPLAY ENTITIES [NEW]
 Neutral flag (One Flag CTF only).
 -------- KEYS --------
 <angle key="angle" name="Facing Angle">an angle facing needs to be set for this entity. This item has a specific facing.</angle>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 </point>
@@ -2223,7 +2223,7 @@ Neutral flag (One Flag CTF only).
 Red team Obelisk. Used for Overload, CTF, Oneflag, and Harvester game types for various functions. Facing needs to be set.
 -------- KEYS --------
 <angle key="angle" name="Facing Angle">an angle facing needs to be set for this entity. This item has a specific facing.</angle>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- NOTES --------
 Do not assign a gametype to this item unless the location of your CTF flags and your Overload obelisk will be different. It is used in all four team game types. The game will call for it as needed.
 -------- SPAWNFLAGS --------
@@ -2234,7 +2234,7 @@ Do not assign a gametype to this item unless the location of your CTF flags and 
 Blue team Obelisk. Used for Overload and Harvester game types. Facing needs to be set.
 -------- KEYS --------
 <angle key="angle" name="Facing Angle">an angle facing needs to be set for this entity. This item has a specific facing.</angle>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- NOTES --------
 Do not assign a gametype to this item. It is used in all four team game types. the The game will call for it as needed.
 </point>
@@ -2242,7 +2242,7 @@ Do not assign a gametype to this item. It is used in all four team game types. t
 <point name="team_neutralobelisk" color="1 .2 1" box="16 -16 0 16 16 88" model="models/powerups/obelisk/obelisk.md3">
 Neutral Obelisk (Harvester only).
 -------- KEYS --------
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 </point>
 
  
@@ -2267,7 +2267,7 @@ Chaingun. A rapid fire instant hit weapon.
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 -------- NOTES --------
@@ -2310,7 +2310,7 @@ Proximity Mine Launcher. Lobs a mine which checks for proximity of a player or a
 <boolean key="notfree" name="Hidden For FFA">when set to 1, entity will not spawn in "Free for all" and "Tournament" modes.</boolean>
 <boolean key="notteam" name="Hidden For Teamplay">when set to 1, entity will not spawn in "Teamplay" and "CTF" modes.</boolean>
 <boolean key="notsingle" name="Hidden For SP">when set to 1, entity will not spawn in Single Player mode (bot play mode).</boolean>
-<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
+<string key="gametype" name="Game Type">the valid values are ffa, tournament, single, team, ctf, oneflag, obelisk, harvester, elim, ctfelim, lms, dd, dom.. Once a value for this key is set, it will ONLY appear in the listed gametype(s). Separate gametypes by commas.</string>
 -------- SPAWNFLAGS --------
 <flag key="SUSPENDED" name="No Drop To Floor" bit="0">item will spawn where it was placed in map and won't drop to the floor.</flag>
 -------- NOTES --------

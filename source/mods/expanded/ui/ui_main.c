@@ -2489,7 +2489,7 @@ static qboolean UI_TeamMember_HandleKey(int flags, float *special, int key, qboo
 			} else if (value < 0) {
 				value = uiInfo.characterCount + 2 - 1;
 			}
-		} else {
+		} else if (ui_actualNetGameType.integer < GT_TEAM || ui_actualNetGameType.integer == GT_LMS) {
 			if (value >= UI_GetNumBots() + 2) {
 				value = 0;
 			} else if (value < 0) {
@@ -3053,7 +3053,7 @@ static void UI_StartSkirmish(qboolean next) {
 	if (g >= GT_TEAM && g !=GT_LMS ) {
 		trap_Cmd_ExecuteText( EXEC_APPEND, "wait 5; team Red\n" );
 	}
-	if (g ==GT_LMS ) {
+	if (g == GT_LMS ) {
 		trap_Cmd_ExecuteText( EXEC_APPEND, "wait 5; team Free\n" );
 	}
 }
