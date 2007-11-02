@@ -37539,3 +37539,39 @@
 "classname" "item_quad"
 "origin" "-152 16 832"
 }
+// entity 55
+{
+"classname" "team_dom_pointWhite"
+"origin" "504 -280 648"
+"gametype" "dom"
+}
+// entity 56
+{
+"classname" "team_dom_pointWhite"
+"origin" "1320 208 248"
+"gametype" "dom"
+}
+// entity 57
+{
+"classname" "team_dom_pointWhite"
+"origin" "736 -1264 304"
+"gametype" "dom"
+}
+// entity 58
+{
+"classname" "team_dom_pointWhite"
+"origin" "-760 -872 472"
+"gametype" "dom"
+}
+// entity 59
+{
+"classname" "team_dom_pointWhite"
+"origin" "-1464 -656 200"
+"gametype" "dom"
+}
+// entity 60
+{
+"classname" "team_dom_pointWhite"
+"origin" "-1592 1056 576"
+"gametype" "dom"
+}

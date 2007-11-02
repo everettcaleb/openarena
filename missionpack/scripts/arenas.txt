@@ -258,3 +258,10 @@ bots		"sergei angelyss kyonshi"
 longname	"Holy Wars"
 type		"ctf ctfelimination elimination dd"
 }
+
+{
+map		"islanddm"
+bots		"sergei angelyss kyonshi"
+longname	"islanddm"
+type		"single ffa dom"
+}
