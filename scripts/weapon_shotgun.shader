@@ -20,3 +20,14 @@ models/weapons2/shotgun/shotgun_laser
 		blendfunc add
 	}
 }
+
+models/weapons2/shells/sgunshell_2
+{
+	deformVertexes autosprite
+    {
+        map models/weapons2/shells/sgunshell_2
+        rgbGen lightingDiffuse
+	blendFunc blend
+    }
+
+}
