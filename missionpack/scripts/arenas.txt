@@ -249,14 +249,14 @@ type		"ctf ctfelimination elimination dd"
 map		"czest2ctf"
 bots		"sergei angelyss kyonshi"
 longname	"The Bridge of Despair"
-type		"ctf ctfelimination elimination dd"
+type		"ctf oneflag harvester overload ctfelimination elimination dd"
 }
 
 {
 map		"czest3ctf"
 bots		"sergei angelyss kyonshi"
 longname	"Holy Wars"
-type		"ctf ctfelimination elimination dd"
+type		"ctf oneflag harvester overload ctfelimination elimination dd"
 }
 
 {

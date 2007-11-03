@@ -4170,15 +4170,3 @@
 "classname" "misc_portal_surface"
 "origin" "1736 -312 -144"
 }
-// entity 144
-{
-"classname" "team_DD_pointBwhite"
-"origin" "3136 -448 480"
-"gametype" "dd"
-}
-// entity 145
-{
-"classname" "team_DD_pointAwhite"
-"origin" "128 -448 488"
-"gametype" "dd"
-}

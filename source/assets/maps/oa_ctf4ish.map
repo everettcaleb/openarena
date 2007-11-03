@@ -7271,57 +7271,45 @@ gothic_trim/zinc_shiny
 }
 // entity 156
 {
-"classname" "team_DD_pointAwhite"
-"origin" "-1800 0 1568"
-"gametype" "dd"
-}
-// entity 157
-{
-"classname" "team_DD_pointBwhite"
-"origin" "1784 0 1576"
-"gametype" "dd"
-}
-// entity 158
-{
 "classname" "info_player_dd"
 "origin" "-8 752 1512"
 }
-// entity 159
+// entity 157
 {
 "classname" "info_player_dd"
 "origin" "-8 256 1136"
 }
-// entity 160
+// entity 158
 {
 "classname" "info_player_dd"
 "origin" "-8 176 1136"
 }
-// entity 161
+// entity 159
 {
 "classname" "info_player_dd"
 "origin" "-8 -152 1136"
 }
+// entity 160
+{
+"classname" "info_player_dd"
+"origin" "-8 -256 1136"
+}
+// entity 161
+{
+"classname" "info_player_dd"
+"origin" "-8 -256 1136"
+}
 // entity 162
-{
-"classname" "info_player_dd"
-"origin" "-8 -256 1136"
-}
-// entity 163
-{
-"classname" "info_player_dd"
-"origin" "-8 -256 1136"
-}
-// entity 164
 {
 "classname" "info_player_dd"
 "origin" "-8 -752 1512"
 }
-// entity 165
+// entity 163
 {
 "classname" "item_health_large"
 "origin" "1498 -442 1330"
 }
-// entity 166
+// entity 164
 {
 "classname" "item_health_large"
 "origin" "1058 166 1074"
