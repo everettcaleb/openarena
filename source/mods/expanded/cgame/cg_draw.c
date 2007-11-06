@@ -561,7 +561,10 @@ static void CG_DrawStatusBar( void ) {
 	}
 
 	// draw the team background
-	CG_DrawTeamBackground( 0, 420, 640, 60, 0.33f, cg.snap->ps.persistant[PERS_TEAM] );
+	if ( !(cg.snap->ps.pm_flags & PMF_FOLLOW) ) //If not following anybody:
+		CG_DrawTeamBackground( 0, 420, 640, 60, 0.33f, cg.snap->ps.persistant[PERS_TEAM] );
+	else //Sago: If we follow find the teamcolor of the guy we follow. It might not be our own team!
+		CG_DrawTeamBackground( 0, 420, 640, 60, 0.33f, cgs.clientinfo[ cg.snap->ps.clientNum ].team );
 
 	cent = &cg_entities[cg.snap->ps.clientNum];
 	ps = &cg.snap->ps;
@@ -976,7 +979,7 @@ CG_DrawEliminationDeathMessage
 =================
 */
 
-static float CG_DrawEliminationDeathMessage( float y ) {
+/*static float CG_DrawEliminationDeathMessage( float y ) {
 	char		*s;
 	int			w;
 
@@ -985,7 +988,7 @@ static float CG_DrawEliminationDeathMessage( float y ) {
 	CG_DrawSmallString( 635 - w, y + 2, s, 1.0F);
 
 	return y + SMALLCHAR_HEIGHT+4;
-}
+}*/
 
 /*
 =================
@@ -1361,8 +1364,8 @@ static void CG_DrawUpperRight( void ) {
 	}
 	if (cgs.gametype==GT_ELIMINATION || cgs.gametype == GT_CTF_ELIMINATION || cgs.gametype==GT_LMS) {
 		y = CG_DrawEliminationTimer( y );
-		if (cgs.clientinfo[ cg.clientNum ].isDead)
-			y = CG_DrawEliminationDeathMessage( y);
+	/*if (cgs.clientinfo[ cg.clientNum ].isDead)
+			y = CG_DrawEliminationDeathMessage( y);*/
 	}
 
 	y = CG_DrawFollowMessage( y );

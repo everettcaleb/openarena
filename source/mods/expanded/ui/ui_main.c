@@ -1041,6 +1041,8 @@ static void UI_SetCapFragLimits(qboolean uiVars) {
 		cap = 4;
 	} else if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_HARVESTER) {
 		cap = 15;
+	} else if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_ELIMINATION) {
+		frag = 5;
 	} else if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS) {
 		frag = 5;
 	}

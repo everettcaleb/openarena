@@ -176,10 +176,10 @@ static void CG_DrawClientScore( int y, score_t *score, float *color, float fade,
 		Com_sprintf(string, sizeof(string),
 			" SPECT %3i %4i %s", score->ping, score->time, ci->name);
 	} else {
-		if(ci->isDead)
-			Com_sprintf(string, sizeof(string),
-				"%5i %4i %4i %s *DEAD*", score->score, score->ping, score->time, ci->name);
-		else
+		if(cgs.gametype == GT_LMS)
+ 			Com_sprintf(string, sizeof(string),
+ 				"%5i %4i %4i %s *%i*", score->score, score->ping, score->time, ci->name, ci->isDead);
+ 		else
 			Com_sprintf(string, sizeof(string),
 				"%5i %4i %4i %s", score->score, score->ping, score->time, ci->name);
 	}

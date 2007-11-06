@@ -301,7 +301,7 @@ typedef struct {
 	int				captures;
 	qboolean	perfect;
 	int				team;
-	qboolean			isDead;
+	int			isDead;
 } score_t;
 
 // each client has an associated clientInfo_t
@@ -376,7 +376,7 @@ typedef struct {
 
 	sfxHandle_t		sounds[MAX_CUSTOM_SOUNDS];
 
-	qboolean		isDead;
+	int		isDead;
 } clientInfo_t;
 
 
