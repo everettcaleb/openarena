@@ -115,7 +115,8 @@ static int gametype_remap[] = {
 		GT_CTF_ELIMINATION, 	
 		GT_LMS, 		
 		GT_DOUBLE_D,
-		GT_DOMINATION };		
+		GT_DOMINATION
+		 };		
 
 static int gametype_remap2[] = {
 		0, 

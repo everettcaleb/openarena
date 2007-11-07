@@ -120,6 +120,7 @@ static const char *servertype_items[] = {
 	"CTF Elimination",
 	"Last Man Standing",
 	"Double Domination",
+	"Domination",
 	NULL
 };
 

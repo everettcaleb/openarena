@@ -2214,25 +2214,25 @@ static qboolean UI_OwnerDrawVisible(int flags) {
 			flags &= ~UI_SHOW_NOTFAVORITESERVERS;
 		} 
 		if (flags & UI_SHOW_ANYTEAMGAME) {
-			if (uiInfo.gameTypes[ui_gameType.integer].gtEnum <= GT_TEAM && uiInfo.gameTypes[ui_gameType.integer].gtEnum != GT_LMS ) {
+			if (uiInfo.gameTypes[ui_gameType.integer].gtEnum <= GT_TEAM || uiInfo.gameTypes[ui_gameType.integer].gtEnum != GT_LMS ) {
 				vis = qfalse;
 			}
 			flags &= ~UI_SHOW_ANYTEAMGAME;
 		} 
 		if (flags & UI_SHOW_ANYNONTEAMGAME) {
-			if (uiInfo.gameTypes[ui_gameType.integer].gtEnum > GT_TEAM || uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS ) {
+			if (uiInfo.gameTypes[ui_gameType.integer].gtEnum > GT_TEAM && uiInfo.gameTypes[ui_gameType.integer].gtEnum != GT_LMS ) {
 				vis = qfalse;
 			}
 			flags &= ~UI_SHOW_ANYNONTEAMGAME;
 		} 
 		if (flags & UI_SHOW_NETANYTEAMGAME) {
-			if (uiInfo.gameTypes[ui_netGameType.integer].gtEnum <= GT_TEAM && uiInfo.gameTypes[ui_gameType.integer].gtEnum != GT_LMS ) {
+			if (uiInfo.gameTypes[ui_netGameType.integer].gtEnum <= GT_TEAM || uiInfo.gameTypes[ui_gameType.integer].gtEnum != GT_LMS ) {
 				vis = qfalse;
 			}
 			flags &= ~UI_SHOW_NETANYTEAMGAME;
 		} 
 		if (flags & UI_SHOW_NETANYNONTEAMGAME) {
-			if (uiInfo.gameTypes[ui_netGameType.integer].gtEnum > GT_TEAM || uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS ) {
+			if (uiInfo.gameTypes[ui_netGameType.integer].gtEnum > GT_TEAM &&  uiInfo.gameTypes[ui_gameType.integer].gtEnum != GT_LMS ) {
 				vis = qfalse;
 			}
 			flags &= ~UI_SHOW_NETANYNONTEAMGAME;
@@ -4838,8 +4838,8 @@ static qboolean MapList_Parse(char **p) {
 			while (1) {
 				token = COM_ParseExt(p, qtrue);
 				if (token[0] >= '0' && token[0] <= '9') {
-					uiInfo.mapList[uiInfo.mapCount].typeBits |= (1 << (token[0] - 0x030));
-					if (!Int_Parse(p, &uiInfo.mapList[uiInfo.mapCount].timeToBeat[token[0] - 0x30])) {
+					uiInfo.mapList[uiInfo.mapCount].typeBits |= (1 << (atoi(token)));
+					if (!Int_Parse(p, &uiInfo.mapList[uiInfo.mapCount].timeToBeat[atoi(token)])) {
 						return qfalse;
 					}
 				} else {

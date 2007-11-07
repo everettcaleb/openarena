@@ -52,7 +52,7 @@ joingametypes {
   { "Dom" 12 }
 
 }
-// english name, map name, vs count, par times per gametype, valid gametypes* (*might not be necessary)
+// english name, map name, vs count, par times per gametype
 maps	{
 	//team maps
 	{ "Some Bases" "oa_bases3" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
@@ -79,5 +79,6 @@ maps	{
 	{ "DM6ish" "dm6ish" "4" "Sergei" 2 "0" 8 "240" 8 "240" 10 "110" }
 	{ "Monastery" "czest1dm" "4" "Sergei" 2 "0" 8 "240" 8 "240" 10 "110" }
 	
-	{ "Suction" "suction" "3" "sergei" 2 "0" 4 "110" 9 "110" 10 "0" 11 "110" 12 "0" }
+	{ "Suction" "suction" "3" "sergei" 2 "0" 4 "110" 9 "110" 10 "0" 11 "110" }
+	{ "IslandDM" "islanddm" "5" "Angelyss" 1 "120" 2 "0" 9 "180" 12" 180" }
 }
