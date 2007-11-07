@@ -55,13 +55,13 @@ joingametypes {
 // english name, map name, vs count, par times per gametype, valid gametypes* (*might not be necessary)
 maps	{
 	//team maps
-	{ "Some Bases" "oa_bases3" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
-	{ "Free Space" "oa_ctf4ish" "3" "sergei" 2 "0" 4 "110" 5 "120" 6 "180" 7 "110" 8 "110" 9 "110" 11 "110" }
-	{ "Some Better Bases" "oa_bases5" "4" "sergei" 2 "0" 4 "110" 8 "110" 9 "110" 11 "110" }
-	{ "Sago's Castle 2" "oasago2f2" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "110" 7 "110" 8 "110" 9 "110" 11 "110" }
-	{ "The Bridge of Despair" "czest2ctf" "4" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 11 "110" }
-	{ "Holy Wars" "czest3ctf" "4" "sergei" 2 "0" 4 "180" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 11 "110" }
-	{ "Hydrocapture" "hydronex" "4" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 11 "110" }
+	{ "Some Bases" "oa_bases3" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
+	{ "Free Space" "oa_ctf4ish" "3" "sergei" 2 "0" 4 "110" 5 "120" 6 "180" 7 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
+	{ "Some Better Bases" "oa_bases5" "4" "sergei" 2 "0" 4 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
+	{ "Sago's Castle 2" "oasago2f2" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "110" 7 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
+	{ "The Bridge of Despair" "czest2ctf" "4" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 10 "0" 11 "110" }
+	{ "Holy Wars" "czest3ctf" "5" "sergei" 2 "0" 4 "180" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 10 "0" 11 "110" }
+	{ "Hydrocapture" "hydronex" "5" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 10 "0" 11 "110" }
 	
 	//tournament + elimination + lms
 	{ "Trial by Error" "oa_rpg3dm2" "4" "Grunt" 2 "0" 1 "180" 8 "110" 10 "110" }

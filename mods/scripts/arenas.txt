@@ -17,11 +17,11 @@ type		"single ffa tourney team sp elimination lms"
 
 
 {
-	map "oa_ctf2"
+	map "islanddm"
 	bots "kyonshi"
-	longname "OA_CTF2"
+	longname "islanddm"
 	fraglimit 20
-	type "single ffa tourney team sp ctf  elimination ctfelimination lms dd"
+	type "single ffa team sp elimination lms dom"
 }
 
 
