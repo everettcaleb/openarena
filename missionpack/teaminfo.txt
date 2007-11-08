@@ -23,12 +23,19 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 // Team Clan Things
 
 teams {
+//team name, icon, 5 team members
   { "Killers" "ui/assets/killers"  "Clint" "John" "Harry" "Bruce" "Fred"  }
   { "Cyborgs" "ui/assets/cyborgs" "Robby" "Zapper" "Wrench" "Diskette" "ZippyMcGee" }
   { "Summer" "ui/assets/summer"  "Jim" "Bob" "Jimbob" "Mother" "Hunk"  }
   { "Scumm" "ui/assets/scumm" "^2CH3470R" "^4Joe" "^6D1z^4Suk0rz" "^1named^7player" "^7Mr^3McGoo" }
 }
 characters {
+//character name, gender
   { "Sergei"  "male" }
   { "Kyonshi"  "female" }
 }
+/*
+aliases	{
+//character name, bot alias, preferred action (a - all purpose, d - defense, o - offense
+}
+*/
