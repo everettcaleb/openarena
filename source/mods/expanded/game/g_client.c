@@ -1503,7 +1503,7 @@ void ClientSpawn(gentity_t *ent) {
 	}
 	eventSequence = client->ps.eventSequence;
 
-	memset (client, 0, sizeof(*client)); // bk FIXME: Com_Memset?
+	Com_Memset (client, 0, sizeof(*client));
 
 	client->pers = saved;
 	client->sess = savedSess;
