@@ -37236,7 +37236,7 @@
 // entity 2
 {
 "classname" "info_player_start"
-"origin" "1360 0 616"
+"origin" "1360 0 352"
 }
 // entity 3
 {
@@ -37541,37 +37541,43 @@
 }
 // entity 55
 {
-"classname" "team_dom_pointWhite"
-"origin" "504 -280 648"
+"classname" "domination_point"
+"origin" "736 -1264 304"
 "gametype" "dom"
+"message" "3"
 }
 // entity 56
 {
-"classname" "team_dom_pointWhite"
-"origin" "1320 208 248"
+"classname" "domination_point"
+"origin" "-760 -872 472"
 "gametype" "dom"
+"message" "4"
 }
 // entity 57
 {
-"classname" "team_dom_pointWhite"
-"origin" "736 -1264 304"
+"classname" "domination_point"
+"origin" "-1464 -656 200"
 "gametype" "dom"
+"message" "5"
 }
 // entity 58
 {
-"classname" "team_dom_pointWhite"
-"origin" "-760 -872 472"
+"classname" "domination_point"
+"origin" "504 -280 648"
 "gametype" "dom"
+"message" "2"
 }
 // entity 59
 {
-"classname" "team_dom_pointWhite"
-"origin" "-1464 -656 200"
+"classname" "domination_point"
+"origin" "1320 208 248"
 "gametype" "dom"
+"message" "1"
 }
 // entity 60
 {
-"classname" "team_dom_pointWhite"
+"classname" "domination_point"
 "origin" "-1592 1056 576"
 "gametype" "dom"
+"message" "6"
 }

@@ -1594,20 +1594,11 @@ Red team respawning position for CTF games. This is where Red team players respa
 </point>
 
 
-<point name="team_dom_pointWhite" color="1 1 1" box="-16 -16 -24 16 16 32">
+<point name="domination_point" color="1 1 1" box="-16 -16 -24 16 16 32">
 Domination point for normal domination.
 -------- KEYS --------
 </point>
 
-<point name="team_DD_pointAwhite" color="1 1 1" box="-16 -16 -24 16 16 32">
-Domination point for double domination.
--------- KEYS --------
-</point>
-
-<point name="team_DD_pointBwhite" color="1 1 1" box="-16 -16 -24 16 16 32">
-Domination point for double domination.
--------- KEYS --------
-</point>
 
 <!--
 =============================================================================
