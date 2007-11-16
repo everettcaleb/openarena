@@ -1,0 +1,51 @@
+/*
+===========================================================================
+Copyright (C) 2007 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Open Arena; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+
+{
+MenuDef	{
+	name endOfGame
+	visible 0
+	fullscreen 1
+	rect 0 0 640 480
+	background MP_BACKGROUND
+	focuscolor MP_FOCUSCOLOR
+	onClose {uiScript updateSPMenu; }
+	onEsc { close endOfGame; open skirmish; }
+	onOpen { close ingame; }
+
+itemDef	{
+	name next
+	text "Next"
+	textscale .2
+	type ITEM_TYPE_BUTTON
+	rect 10 10 50 10
+	textalign 0
+	textaligny 10
+	forecolor MP_TEXTCOLOR
+	visible 1
+	action { uiScript nextSkirmish; close endOfGame; close ingame }
+	}
+}
+}
+
