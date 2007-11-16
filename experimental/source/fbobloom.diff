@@ -1,0 +1,1203 @@
+Index: code/sdl/sdl_glimp.c
+===================================================================
+--- code/sdl/sdl_glimp.c	(revision 1212)
++++ code/sdl/sdl_glimp.c	(working copy)
+@@ -85,6 +85,38 @@
+ void (APIENTRYP qglLockArraysEXT) (GLint first, GLsizei count);
+ void (APIENTRYP qglUnlockArraysEXT) (void);
+ 
++//does anyone smarter than me know howto set this up nicer?
++//added framebuffer extensions
++void (APIENTRYP qglGenFramebuffers )(GLsizei, GLuint *);
++void (APIENTRYP qglBindFramebuffer )(GLenum, GLuint);
++void (APIENTRYP qglGenRenderbuffers )(GLsizei, GLuint *);
++void (APIENTRYP qglBindRenderbuffer )(GLenum, GLuint);
++void (APIENTRYP qglRenderbufferStorage )(GLenum, GLenum, GLsizei, GLsizei);
++void (APIENTRYP qglFramebufferRenderbuffer )(GLenum, GLenum, GLenum, GLuint);
++void (APIENTRYP qglFramebufferTexture2D )(GLenum, GLenum, GLenum, GLuint, GLint);
++GLenum (APIENTRYP qglCheckFramebufferStatus )(GLenum);
++void (APIENTRYP qglDeleteFramebuffers )(GLsizei, const GLuint *);
++void (APIENTRYP qglDeleteRenderbuffers )(GLsizei, const GLuint *);
++
++//added fragment/vertex program extensions
++void (APIENTRYP qglAttachShader) (GLuint, GLuint);
++void (APIENTRYP qglBindAttribLocation) (GLuint, GLuint, const GLchar *);
++void (APIENTRYP qglCompileShader) (GLuint);
++GLuint (APIENTRYP qglCreateProgram) (void);
++GLuint (APIENTRYP qglCreateShader) (GLenum);
++void (APIENTRYP qglDeleteProgram) (GLuint);
++void (APIENTRYP qglDeleteShader) (GLuint);
++void (APIENTRYP qglShaderSource) (GLuint, GLsizei, const GLchar* *, const GLint *);
++void (APIENTRYP qglLinkProgram) (GLuint);
++void (APIENTRYP qglUseProgram) (GLuint);	
++GLint (APIENTRYP qglGetUniformLocation) (GLuint, const GLchar *);
++void (APIENTRYP qglUniform1f) (GLint, GLfloat);
++void (APIENTRYP qglUniform2f) (GLint, GLfloat, GLfloat);
++void (APIENTRYP qglUniform1i) (GLint, GLint);
++void (APIENTRYP qglGetProgramiv) (GLuint, GLenum, GLint *);
++void (APIENTRYP qglGetProgramInfoLog) (GLuint, GLsizei, GLsizei *, GLchar *);
++void (APIENTRYP qglGetShaderiv) (GLuint, GLenum, GLint *);
++void (APIENTRYP qglGetShaderInfoLog) (GLuint, GLsizei, GLsizei *, GLchar *);
+ /*
+ ===============
+ GLimp_Shutdown
+@@ -475,6 +507,75 @@
+ 	{
+ 		ri.Printf( PRINT_ALL, "...GL_EXT_texture_filter_anisotropic not found\n" );
+ 	}
++
++	qglGenFramebuffers = NULL;
++	qglBindFramebuffer = NULL;
++	qglGenRenderbuffers = NULL;
++	qglBindRenderbuffer = NULL;
++	qglRenderbufferStorage = NULL;
++	qglFramebufferRenderbuffer = NULL;
++	qglFramebufferTexture2D = NULL;
++	qglCheckFramebufferStatus = NULL;
++	qglDeleteFramebuffers = NULL;
++	qglDeleteRenderbuffers =NULL;
++			//added fragment/vertex program extensions
++	qglAttachShader = NULL;
++	qglBindAttribLocation = NULL;
++	qglCompileShader = NULL;
++	qglCreateProgram = NULL;
++	qglCreateShader = NULL;
++	qglDeleteProgram = NULL;
++	qglDeleteShader = NULL;
++	qglShaderSource = NULL;
++	qglLinkProgram = NULL;
++	qglUseProgram =NULL;
++	qglGetUniformLocation = NULL;
++	qglUniform1f = NULL;
++	qglUniform2f = NULL;
++	qglUniform1i = NULL;
++	qglGetProgramiv = NULL;
++	qglGetProgramInfoLog = NULL;
++	qglGetShaderiv =NULL;
++	qglGetShaderInfoLog = NULL;
++			
++
++	if ( strstr( glConfig.extensions_string, "GL_EXT_framebuffer_object" ) )
++	{
++	
++		//if ( r_framebuffer->integer ) {
++			qglGenFramebuffers = ( void (APIENTRY *  )(GLsizei, GLuint *) ) SDL_GL_GetProcAddress( "glGenFramebuffersEXT");
++			qglBindFramebuffer = ( void (APIENTRY *  )(GLenum, GLuint) ) SDL_GL_GetProcAddress( "glBindFramebufferEXT");
++			qglGenRenderbuffers = ( void (APIENTRY *  )(GLsizei, GLuint *) ) SDL_GL_GetProcAddress( "glGenRenderbuffersEXT");
++			qglBindRenderbuffer = ( void (APIENTRY *  )(GLenum, GLuint) ) SDL_GL_GetProcAddress( "glBindRenderbufferEXT");
++			qglRenderbufferStorage = ( void (APIENTRY *  )(GLenum, GLenum, GLsizei, GLsizei) ) SDL_GL_GetProcAddress( "glRenderbufferStorageEXT");
++			qglFramebufferRenderbuffer = ( void (APIENTRY *  )(GLenum, GLenum, GLenum, GLuint) ) SDL_GL_GetProcAddress( "glFramebufferRenderbufferEXT");
++			qglFramebufferTexture2D = ( void (APIENTRY *  )(GLenum, GLenum, GLenum, GLuint, GLint) ) SDL_GL_GetProcAddress( "glFramebufferTexture2DEXT");
++			qglCheckFramebufferStatus = ( GLenum (APIENTRY *)(GLenum) ) SDL_GL_GetProcAddress( "glCheckFramebufferStatusEXT");
++			qglDeleteFramebuffers = ( void (APIENTRY * )(GLsizei, const GLuint *) ) SDL_GL_GetProcAddress( "glDeleteFramebuffersEXT");
++			qglDeleteRenderbuffers = ( void (APIENTRY * )(GLsizei, const GLuint *) ) SDL_GL_GetProcAddress( "glDeleteRenderbuffersEXT");
++
++			//added fragment/vertex program extensions
++			qglAttachShader = ( void (APIENTRY * ) (GLuint, GLuint) ) SDL_GL_GetProcAddress( "glAttachShader");
++			qglBindAttribLocation = ( void (APIENTRY * ) (GLuint, GLuint, const GLchar *) ) SDL_GL_GetProcAddress( "glBindAttribLocation");
++			qglCompileShader = ( void (APIENTRY * ) (GLuint) ) SDL_GL_GetProcAddress( "glCompileShader");
++			qglCreateProgram = ( GLuint (APIENTRY * ) (void) ) SDL_GL_GetProcAddress( "glCreateProgram");
++			qglCreateShader = ( GLuint (APIENTRY * ) (GLenum) ) SDL_GL_GetProcAddress( "glCreateShader");
++			qglDeleteProgram = ( void (APIENTRY * ) (GLuint) ) SDL_GL_GetProcAddress( "glDeleteProgram");
++			qglDeleteShader = ( void (APIENTRY * ) (GLuint) ) SDL_GL_GetProcAddress( "glDeleteShader");
++			qglShaderSource = ( void (APIENTRY * ) (GLuint, GLsizei, const GLchar* *, const GLint *) ) SDL_GL_GetProcAddress( "glShaderSource");
++			qglLinkProgram = ( void (APIENTRY * ) (GLuint) ) SDL_GL_GetProcAddress( "glLinkProgram");
++			qglUseProgram = ( void (APIENTRY * ) (GLuint) ) SDL_GL_GetProcAddress( "glUseProgram");
++			qglGetUniformLocation = ( GLint (APIENTRY * ) (GLuint, const GLchar *) ) SDL_GL_GetProcAddress( "glGetUniformLocation");
++			qglUniform1f = ( void (APIENTRY * ) (GLint, GLfloat) ) SDL_GL_GetProcAddress( "glUniform1f");
++			qglUniform2f = ( void (APIENTRY * ) (GLint, GLfloat, GLfloat) ) SDL_GL_GetProcAddress( "glUniform2f");
++			qglUniform1i = ( void (APIENTRY * ) (GLint, GLint) ) SDL_GL_GetProcAddress( "glUniform1i");
++			qglGetProgramiv = ( void (APIENTRY * ) (GLuint, GLenum, GLint *) ) SDL_GL_GetProcAddress( "glGetProgramiv");
++			qglGetProgramInfoLog = ( void (APIENTRY * ) (GLuint, GLsizei, GLsizei *, GLchar *) ) SDL_GL_GetProcAddress( "glGetProgramInfoLog");
++			qglGetShaderiv = ( void (APIENTRY * ) (GLuint, GLenum, GLint *) ) SDL_GL_GetProcAddress( "glGetShaderiv");
++			qglGetShaderInfoLog = ( void (APIENTRY * ) (GLuint, GLsizei, GLsizei *, GLchar *) ) SDL_GL_GetProcAddress( "glGetShaderInfoLog");
++			
++		//}
++	}
+ }
+ 
+ #define R_MODE_FALLBACK 3 // 640 * 480
+Index: code/renderer/tr_local.h
+===================================================================
+--- code/renderer/tr_local.h	(revision 1212)
++++ code/renderer/tr_local.h	(working copy)
+@@ -1048,6 +1048,8 @@
+ extern cvar_t	*r_ext_texture_filter_anisotropic;
+ extern cvar_t	*r_ext_max_anisotropy;
+ 
++extern cvar_t   *r_framebuffer;
++
+ extern	cvar_t	*r_nobind;						// turns off binding to appropriate textures
+ extern	cvar_t	*r_singleShader;				// make most world faces use default shader
+ extern	cvar_t	*r_roundImagesDown;
+@@ -1246,6 +1248,19 @@
+ /*
+ ====================================================================
+ 
++FRAMEBUFFER RENDER PATH SPECIFIC FUNCTIONS AND STATE VARIABLES
++
++====================================================================
++*/
++void 		R_FrameBufferBind( void );
++void 		R_FrameBufferUnBind( void );
++void		R_FrameBuffer_Init( void );
++void		R_FrameBuffer_EndFrame( void );
++void		R_FrameBuffer_Shutdown( void );
++
++/*
++====================================================================
++
+ IMPLEMENTATION SPECIFIC FUNCTIONS
+ 
+ ====================================================================
+Index: code/renderer/tr_init.c
+===================================================================
+--- code/renderer/tr_init.c	(revision 1212)
++++ code/renderer/tr_init.c	(working copy)
+@@ -1129,6 +1129,7 @@
+ 
+ 	R_InitFreeType();
+ 
++	R_FrameBuffer_Init();
+ 
+ 	err = qglGetError();
+ 	if ( err != GL_NO_ERROR )
+Index: code/renderer/tr_glslprogs.c
+===================================================================
+--- code/renderer/tr_glslprogs.c	(revision 0)
++++ code/renderer/tr_glslprogs.c	(revision 0)
+@@ -0,0 +1,255 @@
++/*
++ *      tr_glslprogs.c
++ *      
++ *      Copyright 2007 Gord Allott <gordallott@gmail.com>
++ *      
++ *      This program is free software; you can redistribute it and/or modify
++ *      it under the terms of the GNU General Public License as published by
++ *      the Free Software Foundation; either version 2 of the License, or
++ *      (at your option) any later version.
++ *      
++ *      This program is distributed in the hope that it will be useful,
++ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *      GNU General Public License for more details.
++ *      
++ *      You should have received a copy of the GNU General Public License
++ *      along with this program; if not, write to the Free Software
++ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
++ *      MA 02110-1301, USA.
++ */
++
++#include "tr_glslprogs.h"
++//for all the glsl source its best if we keep them in the mainline code unless
++//someone (not me!) wants to impliment them into the q3 mainline pak code
++//and of course provide a 'standard library' for paks that don't have the glsl
++//sources in them. this would allow mod authors to code their own effects but 
++//meh, they might as well just hack them into the source and send the changes
++//upstream.
++
++//when implimenting glsl code try and stick to the carmark q3 coding style ie, 
++//variables go myVariable and stuff. also end lines with \n\ instead of \ as it 
++//makes debugging glsl code 15,823x easier. (looks nasty either way...)
++
++
++//this vertex shader is basically complete, we shouldn't really need anything 
++//else(?). it just maps the vertex position to a screen position. 
++const char *glslBase_vert = "\n\
++void main() {\n\
++  gl_TexCoord[0] = gl_MultiTexCoord0;\n\
++  gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;\n\
++}\
++";
++
++const char *glslGauss9 = "\n\
++#define NK9_0 0.17857142857142855\n\
++#define NK9_1 0.1607142857142857\n\
++#define NK9_2 0.14285714285714285\n\
++#define NK9_3 0.071428571428571425\n\
++#define NK9_4 0.035714285714285712\n\
++\
++vec4 GaussPass(sampler2D src, vec2 coord, vec2 blrsize) {\n\
++  //blrsize is the size (in texture coordinates) of the blur kernel\n\
++\n\
++  vec4 accum;\n\
++  vec2 step, pos;\n\
++  step = blrsize / 9.0;\n\
++  pos = coord - (step * 4.0);\n\
++\n\
++  accum  = texture2D(src, pos) * NK9_4; pos += step;\n\
++  accum += texture2D(src, pos) * NK9_3; pos += step;\n\
++  accum += texture2D(src, pos) * NK9_2; pos += step;\n\
++  accum += texture2D(src, pos) * NK9_1; pos += step;\n\
++  accum += texture2D(src, pos) * NK9_0; pos += step;\n\
++  accum += texture2D(src, pos) * NK9_1; pos += step;\n\
++  accum += texture2D(src, pos) * NK9_2; pos += step;\n\
++  accum += texture2D(src, pos) * NK9_3; pos += step;\n\
++  accum += texture2D(src, pos) * NK9_4; pos += step;\n\
++\n\
++  return accum;\n\
++\n\
++}\n\
++";
++
++
++const char *glslGauss7 = "\n\
++#define NK7_0 0.19230769230769229\n\
++#define NK7_1 0.18269230769230768\n\
++#define NK7_2 0.15384615384615385\n\
++#define NK7_3 0.067307692307692304\n\
++\n\
++vec4 GaussPass(sampler2D src, vec2 coord, vec2 blrsize) {\n\
++  //blrsize is the size (in texture coordinates) of the blur kernel\n\
++\n\
++  vec4 accum;\n\
++  vec2 step, pos;\n\
++  step = blrsize / 7.0;\n\
++  pos = coord - (step * 3.0);\n\
++\n\
++  accum  = texture2D(src, pos) * NK7_3; pos += step;\n\
++  accum += texture2D(src, pos) * NK7_2; pos += step;\n\
++  accum += texture2D(src, pos) * NK7_1; pos += step;\n\
++  accum += texture2D(src, pos) * NK7_0; pos += step;\n\
++  accum += texture2D(src, pos) * NK7_1; pos += step;\n\
++  accum += texture2D(src, pos) * NK7_2; pos += step;\n\
++  accum += texture2D(src, pos) * NK7_3; pos += step;\n\
++  \n\
++  return accum;\n\
++\n\
++}\n\
++";
++
++const char *glslGauss5 = "\n\
++#define NK5_0 0.33333333\n\
++#define NK5_1 0.26666666\n\
++#define NK5_2 0.06666666\n\
++\n\
++vec4 GaussPass(sampler2D src, vec2 coord, vec2 blrsize) {\n\
++  //blrsize is the size (in texture coordinates) of the blur kernel\n\
++  \n\
++  vec4 accum;\n\
++  vec2 step, pos;\n\
++  step = blrsize / 5.0;\n\
++  pos = coord - (step * 2.0);\n\
++  \n\
++  accum  = texture2D(src, pos) * NK5_2; pos += step;\n\
++  accum += texture2D(src, pos) * NK5_1; pos += step;\n\
++  accum += texture2D(src, pos) * NK5_0; pos += step;\n\
++  accum += texture2D(src, pos) * NK5_1; pos += step;\n\
++  accum += texture2D(src, pos) * NK5_2; pos += step;\n\
++  \n\
++  return accum;\n\
++  \n\
++}\n\
++";
++
++const char *glslBlurMain = "\n\
++uniform sampler2D srcSampler;\n\
++uniform vec2 blurSize;\n\
++void main()\n\
++{\n\
++  gl_FragColor = GaussPass(srcSampler, gl_TexCoord[0].xy, blurSize);\n\
++}\n\
++";
++//FIXME this uses exp() and thus requires a card that supports glsl 1.10..
++//i think that nearly all do as long as they are using upto date drivers but
++//there should still be some sort of fallback system. perhaps this should wait
++//to see if there are any bugreports?
++//its prolly not accelerated on most cards anyway so a code based implimentation
++//would prolly work just as well...
++const char *glslSigScreen = "\n\
++#version 110\n\
++uniform sampler2D srcSampler;\n\
++uniform sampler2D blurSampler;\n\
++//#define sharpness 0.75 \n\
++uniform float     sharpness;\n\
++//#define brightness 0.85\n\
++uniform float     brightness;\n\
++#define SIGMOIDAL_BASE          2.0\n\
++#define SIGMOIDAL_RANGE         20.0\n\
++\n\
++void main()\n\
++{\n\
++	\n\
++  vec4 blurcolor 	= texture2D( blurSampler, gl_TexCoord[0].xy);\n\
++  vec4 basecolor 	= texture2D( srcSampler, gl_TexCoord[0].xy);\n\
++  \n\
++  vec4 val = 1.0 / (1.0 + exp (-(SIGMOIDAL_BASE + (sharpness * SIGMOIDAL_RANGE)) * (blurcolor - 0.5)));\n\
++  val = val * brightness;\n\
++  \n\
++  gl_FragColor = 1.0 - ((1.0 - basecolor) * (1.0 - val));\n\
++}\n\
++";
++
++const char *glslSobel = "\n\
++float sobel(sampler2D tex, vec2 basecoord, vec2 texel_size) {\n\
++  /* computes a sobel value from the surrounding pixels */\n\
++  vec4 hori, vert;\n\
++  //vec2 basecoord = coord;\n\
++  float stepw, steph;\n\
++  stepw = texel_size.x;\n\
++  steph = texel_size.y;\n\
++  \n\
++  vert  = texture2D(tex, basecoord + vec2(-stepw, -steph)) * -1.0;\n\
++  vert += texture2D(tex, basecoord + vec2(-stepw,  0.0  )) * -2.0;\n\
++  vert += texture2D(tex, basecoord + vec2(-stepw, +steph)) * -1.0;\n\
++  \n\
++  vert += texture2D(tex, basecoord + vec2( stepw, -steph)) * 1.0;\n\
++  vert += texture2D(tex, basecoord + vec2( stepw,  0.0  )) * 2.0;\n\
++  vert += texture2D(tex, basecoord + vec2( stepw, +steph)) * 1.0;\n\
++  \n\
++  hori  = texture2D(tex, basecoord + vec2(-stepw, -steph)) * -1.0;\n\
++  hori += texture2D(tex, basecoord + vec2( 0.0  , -steph)) * -2.0;\n\
++  hori += texture2D(tex, basecoord + vec2(+stepw, -steph)) * -1.0;\n\
++\n\
++  hori += texture2D(tex, basecoord + vec2(-stepw,  steph)) * 1.0;\n\
++  hori += texture2D(tex, basecoord + vec2( 0.0  ,  steph)) * 2.0;\n\
++  hori += texture2D(tex, basecoord + vec2(+stepw,  steph)) * 1.0;\n\
++\n\
++  /* could use dist() but this is more compatible */\n\
++  return sqrt(float((vert * vert) + (hori * hori)));\n\
++  \n\
++}\n\
++";
++
++const char *glslToonColour = "\n\
++vec4 ToonColour(vec4 incolour) {\n\
++\n\
++  vec3 huetemp;\n\
++  huetemp.x = 0.0;\n\
++  huetemp.y = 0.0;\n\
++  huetemp.z = 0.0;\n\
++\n\
++  huetemp.x = incolour.x + incolour.y + incolour.z;\n\
++  huetemp.y = 1.0 / huetemp.x;\n\
++  \n\
++  /* multiply the pixel colourby 1 / sumrgb */\n\
++  incolour = incolour * huetemp.y;\n\
++  /* get the  tones */\n\
++  \n\
++  if (huetemp.x > 0.2) {\n\
++    huetemp.z = 0.4;\n\
++   \n\
++  } else {\n\
++    huetemp.z = 0.0;\n\
++  }\n\
++  \n\
++  if (huetemp.x > 0.4) {\n\
++    huetemp.y = 0.8;\n\
++  } else {\n\
++    huetemp.y = 0.0;\n\
++  }\n\
++  \n\
++  if (huetemp.x > 1.5) {\n\
++    huetemp.x = 1.5;\n\
++  } else {\n\
++    huetemp.x = 0.0;\n\
++  }\n\
++\n\
++  \n\
++  /* sum the huetones */\n\
++  \n\
++  huetemp.x = huetemp.x + huetemp.y + huetemp.z;\n\
++  \n\
++  /* multiply the pixel colour with the resulting intensity */\n\
++  \n\
++  incolour = incolour * huetemp.x;\n\
++\n\
++  return vec4(incolour);\n\
++}\n\
++";
++
++const char *glslRotoscope = "\n\
++uniform vec2 texelSize;\n\
++uniform sampler2D srcSampler;\n\
++void main()\n\
++{\n\
++\n\
++  float fragsobel = sobel(srcSampler, gl_TexCoord[0].xy, texelSize);\n\
++  vec4 final_color = ToonColour(texture2D(srcSampler, gl_TexCoord[0].xy));\n\
++\n\
++  fragsobel = 1.0 - clamp(fragsobel - 0.2, 0.0, 1.0);\n\
++  gl_FragColor = final_color * fragsobel;\n\
++\n\
++}\n\
++";
+Index: code/renderer/tr_glslprogs.h
+===================================================================
+--- code/renderer/tr_glslprogs.h	(revision 0)
++++ code/renderer/tr_glslprogs.h	(revision 0)
+@@ -0,0 +1,41 @@
++/*
++ *      tr_glslprogs.h
++ *      
++ *      Copyright 2007 Gord Allott <gordallott@gmail.com>
++ *      
++ *      This program is free software; you can redistribute it and/or modify
++ *      it under the terms of the GNU General Public License as published by
++ *      the Free Software Foundation; either version 2 of the License, or
++ *      (at your option) any later version.
++ *      
++ *      This program is distributed in the hope that it will be useful,
++ *      but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ *      GNU General Public License for more details.
++ *      
++ *      You should have received a copy of the GNU General Public License
++ *      along with this program; if not, write to the Free Software
++ *      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
++ *      MA 02110-1301, USA.
++ */
++
++#ifndef TR_GLSLPROGS_H
++#define TR_GLSLPROGS_H
++
++//basicly the idea here is to just store fragments of glsl source files so that
++//we can reuse the code in different programs. the problem with glsl is that 
++//there is no defined way of 'including' code from other places. so we will 
++//just have to live with this for now
++
++
++extern const char *glslBase_vert;
++extern const char *glslGauss9; 
++extern const char *glslGauss7;
++extern const char *glslGauss5;
++extern const char *glslBlurMain;
++extern const char *glslSigScreen;
++extern const char *glslToonColour;
++extern const char *glslSobel;
++extern const char *glslRotoscope;
++
++#endif //TR_GLSLPROGS_H
+Index: code/renderer/qgl.h
+===================================================================
+--- code/renderer/qgl.h	(revision 1212)
++++ code/renderer/qgl.h	(working copy)
+@@ -39,7 +39,37 @@
+ extern void (APIENTRYP qglLockArraysEXT) (GLint first, GLsizei count);
+ extern void (APIENTRYP qglUnlockArraysEXT) (void);
+ 
++//added framebuffer extensions
++extern void (APIENTRYP qglGenFramebuffers )(GLsizei, GLuint *);
++extern void (APIENTRYP qglBindFramebuffer )(GLenum, GLuint);
++extern void (APIENTRYP qglGenRenderbuffers )(GLsizei, GLuint *);
++extern void (APIENTRYP qglBindRenderbuffer )(GLenum, GLuint);
++extern void (APIENTRYP qglRenderbufferStorage )(GLenum, GLenum, GLsizei, GLsizei);
++extern void (APIENTRYP qglFramebufferRenderbuffer )(GLenum, GLenum, GLenum, GLuint);
++extern void (APIENTRYP qglFramebufferTexture2D )(GLenum, GLenum, GLenum, GLuint, GLint);
++extern GLenum (APIENTRYP qglCheckFramebufferStatus )(GLenum);
++extern void (APIENTRYP qglDeleteFramebuffers )(GLsizei, const GLuint *);
++extern void (APIENTRYP qglDeleteRenderbuffers )(GLsizei, const GLuint *);
+ 
++//added fragment/vertex program extensions
++extern  void (APIENTRYP qglAttachShader) (GLuint, GLuint);
++extern  void (APIENTRYP qglBindAttribLocation) (GLuint, GLuint, const GLchar *);
++extern  void (APIENTRYP qglCompileShader) (GLuint);
++extern GLuint (APIENTRYP qglCreateProgram) (void);
++extern GLuint (APIENTRYP qglCreateShader) (GLenum);
++extern void (APIENTRYP qglDeleteProgram) (GLuint);
++extern void (APIENTRYP qglDeleteShader) (GLuint);
++extern void (APIENTRYP qglShaderSource) (GLuint, GLsizei, const GLchar* *, const GLint *);
++extern void (APIENTRYP qglLinkProgram) (GLuint);
++extern void (APIENTRYP qglUseProgram) (GLuint);	
++extern GLint (APIENTRYP qglGetUniformLocation) (GLuint, const GLchar *);
++extern void (APIENTRYP qglUniform1f) (GLint, GLfloat);
++extern void (APIENTRYP qglUniform2f) (GLint, GLfloat, GLfloat);
++extern void (APIENTRYP qglUniform1i) (GLint, GLint);
++extern void (APIENTRYP qglGetProgramiv) (GLuint, GLenum, GLint *);
++extern void (APIENTRYP qglGetProgramInfoLog) (GLuint, GLsizei, GLsizei *, GLchar *);
++extern void (APIENTRYP qglGetShaderiv) (GLuint, GLenum, GLint *);
++extern void (APIENTRYP qglGetShaderInfoLog) (GLuint, GLsizei, GLsizei *, GLchar *);
+ //===========================================================================
+ 
+ #define qglAccum glAccum
+@@ -378,3 +408,4 @@
+ #define qglViewport glViewport
+ 
+ #endif
++
+Index: code/renderer/tr_framebuffer.c
+===================================================================
+--- code/renderer/tr_framebuffer.c	(revision 0)
++++ code/renderer/tr_framebuffer.c	(revision 0)
+@@ -0,0 +1,607 @@
++/*
++Copyright (C) 1997-2001 Id Software, Inc.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++// tr_framebuffer.c: framebuffer object rendering path code
++// Okay i am going to try and document what I doing here, appologies to anyone 
++// that already understands this. basically the idea is that normally everything
++// opengl renders will be rendered into client memory, that is the space the 
++// graphics card reserves for anything thats going to be sent to the monitor.
++// Using this method we instead redirect all the rendering to a seperate bit of 
++// memory called a frame buffer. 
++// we can then bind this framebuffer to a texture and render that texture to the
++// client memory again so that the image will be sent to the monitor. this 
++// redirection allows for some neat effects to be applied.
++
++// Some ideas for what to use this path for:
++//		- Bloom
++//		- Image Blur when the player is hit 
++//		- Depth of field blur (should work if the zbuffer for the framebuffer is
++//							   bound to a shadowmap texture or something)
++//		- Rotoscope cartoon effects (edge detect + colour mapping)
++//		- Fake anti-aliasing. (edge detect and blur positive matches)
++//		- Motion blur (HARD - would require motion information from q3 to be 
++//					   accesible from the fragment shader)
++//		- special effects for certain powerups 
++
++
++#include "tr_local.h"
++#include "tr_glslprogs.h"
++#include "qgl.h"
++
++//set to 1 if we want a framebuffer.
++cvar_t *r_framebuffer;
++//set to 1 if we want bloom
++static cvar_t *r_framebuffer_bloom;
++//needs to be non-zero. is the size of the 'blur' image. higher values = more quality
++static cvar_t *r_framebuffer_blur_size;
++//how much we blur the blur image, in percentage 
++static cvar_t *r_framebuffer_blur_ammount;
++
++//'sharpness' of the fading between dark and light for the bloom
++static cvar_t *r_framebuffer_bloom_sharpness;
++//'brightness' of the bloom
++static cvar_t *r_framebuffer_bloom_brightness;
++
++static cvar_t *r_framebuffer_rotoscope;
++
++struct glslobj {
++	const char **vertex_glsl;
++	int vert_numSources;
++	const char **fragment_glsl;
++	int frag_numSources;
++	GLuint vertex;
++	GLuint fragment;
++	GLuint program;
++} glslobj;
++
++struct fbuffer {
++	//if true then the framebuffer object is ready to be used
++	qboolean 			isReady;
++	GLuint				texture;
++	GLuint				buffer;
++	GLuint				depth;
++	GLuint				stencil;
++	GLuint				packedDepthStencil;
++} fbuffer;
++
++qboolean fbufferEffects_needbuf = 0; //is set if effects need to create their 
++									 //own framebuffer
++qboolean needBlur = 0;				 //is set if effects need a blur
++struct fbuffer screenFbuffer;
++struct fbuffer backFbuffer;
++struct fbuffer *srcBuffer;				//we need to dynamically link these up
++struct fbuffer *blurBuffer;	
++struct fbuffer *destBuffer;
++
++//two functions to bind and unbind the main framebuffer, generally just to be
++//called externaly
++void R_FrameBufferBind(void) {
++	if (r_framebuffer->integer != 1) {
++		return;
++	}
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, screenFbuffer.buffer);
++}
++
++void R_FrameBufferUnBind(void) {
++	if (r_framebuffer->integer != 1) {
++		return;
++	}
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
++}
++void R_SetGL2DSize (int width, int height) {
++
++	// set 2D virtual screen size
++	qglViewport( 0, 0, width, height );
++	qglScissor( 0, 0, width, height );
++	qglMatrixMode(GL_PROJECTION);
++    qglLoadIdentity ();
++	qglOrtho (0, width, height, 0, 0, 1);
++	qglMatrixMode(GL_MODELVIEW);
++    qglLoadIdentity ();
++
++	GL_State( GLS_DEPTHTEST_DISABLE );
++	qglDisable( GL_BLEND );
++}
++
++void R_DrawQuadMT( GLuint tex1, GLuint tex2, int width, int height ) {
++	qglEnable(GL_TEXTURE_2D);
++	if ( glState.currenttextures[1] != tex2 ) {
++		GL_SelectTexture( 1 );
++		qglBindTexture(GL_TEXTURE_2D, tex2); 
++		glState.currenttextures[1] = tex2; 
++		}
++	if ( glState.currenttextures[0] != tex1 ) {
++		GL_SelectTexture( 0 );
++		qglBindTexture(GL_TEXTURE_2D, tex1);
++		glState.currenttextures[0] = tex1; 
++	}
++	  
++	qglBegin(GL_QUADS);
++	  qglMultiTexCoord2fARB(GL_TEXTURE0, 0.0, 1.0); qglMultiTexCoord2fARB(GL_TEXTURE1, 0.0, 1.0); qglVertex2f(0.0  , 0.0   );	
++	  qglMultiTexCoord2fARB(GL_TEXTURE0, 1.0, 1.0); qglMultiTexCoord2fARB(GL_TEXTURE1, 1.0, 1.0); qglVertex2f(width, 0.0   );	
++	  qglMultiTexCoord2fARB(GL_TEXTURE0, 1.0, 0.0); qglMultiTexCoord2fARB(GL_TEXTURE1, 1.0, 0.0); qglVertex2f(width, height);	
++	  qglMultiTexCoord2fARB(GL_TEXTURE0, 0.0, 0.0); qglMultiTexCoord2fARB(GL_TEXTURE1, 0.0, 0.0); qglVertex2f(0.0  , height);	
++	qglEnd();	;
++	
++	qglActiveTextureARB(GL_TEXTURE0);
++	//qglDisable(GL_TEXTURE_2D);
++}
++
++void R_DrawQuad( GLuint tex, int width, int height) {
++	qglEnable(GL_TEXTURE_2D);
++	if ( glState.currenttextures[0] != tex ) {
++		GL_SelectTexture( 0 );
++		qglBindTexture(GL_TEXTURE_2D, tex);
++		glState.currenttextures[0] = tex; 
++	};
++
++	qglBegin(GL_QUADS);
++	  qglTexCoord2f(0.0, 1.0); qglVertex2f(0.0  , 0.0   );	
++	  qglTexCoord2f(1.0, 1.0); qglVertex2f(width, 0.0   );	
++	  qglTexCoord2f(1.0, 0.0); qglVertex2f(width, height);	
++	  qglTexCoord2f(0.0, 0.0); qglVertex2f(0.0  , height);	
++	qglEnd();	
++}
++// for shader debugging
++void printShaderInfoLog(GLuint obj)
++{
++    int infologLength = 0;
++    int charsWritten  = 0;
++    char *infoLog;
++
++	qglGetShaderiv(obj, GL_INFO_LOG_LENGTH,&infologLength);
++
++    if (infologLength > 1)
++    {
++        infoLog = (char *)malloc(infologLength);
++        qglGetShaderInfoLog(obj, infologLength, &charsWritten, infoLog);
++		ri.Printf( PRINT_ALL, "----- Shader InfoLog -----\n" );;
++		ri.Printf( PRINT_ALL, infoLog );
++        free(infoLog);
++    }
++}
++
++void printProgramInfoLog(GLuint obj)
++{
++    int infologLength = 0;
++    int charsWritten  = 0;
++    char *infoLog;
++
++	qglGetProgramiv(obj, GL_INFO_LOG_LENGTH,&infologLength);
++
++    if (infologLength > 1)
++    {
++        infoLog = (char *)malloc(infologLength);
++        qglGetProgramInfoLog(obj, infologLength, &charsWritten, infoLog);
++		ri.Printf( PRINT_ALL, "----- Program InfoLog -----\n" );;
++		ri.Printf( PRINT_ALL, infoLog );
++        free(infoLog);
++    }
++}
++
++//yes I realise that this fbuffer code looks awful... it always does, bleh
++void R_FrameBufferCreate_ZS(struct fbuffer *buffer, int width, int height) {
++	// creates a framebuffer WITH a z/stencil buffer. 
++	// the z and stencil buffer both share the same 32-bit buffer (24 for z, 
++	// 8 for stencil) which might be a problem but there is no seperate stencil
++	// buffer available in most drivers. (non i have seen support it)
++
++	qglGenFramebuffers(1, &(buffer->buffer));
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, buffer->buffer);	
++	//create our depth buffer
++
++	qglGenRenderbuffers(1, &(buffer->packedDepthStencil));
++
++	qglBindRenderbuffer(GL_RENDERBUFFER_EXT, buffer->packedDepthStencil);
++	//now we setup the depth buffer to the correct data size
++
++	qglRenderbufferStorage(GL_RENDERBUFFER_EXT, GL_DEPTH_STENCIL_NV, 
++								width, height);
++
++	qglFramebufferRenderbuffer(		GL_FRAMEBUFFER_EXT, 
++									GL_DEPTH_ATTACHMENT_EXT,
++									GL_RENDERBUFFER_EXT, 
++									buffer->packedDepthStencil);
++
++	qglFramebufferRenderbuffer(		GL_FRAMEBUFFER_EXT, 
++									GL_STENCIL_ATTACHMENT_EXT,
++									GL_RENDERBUFFER_EXT, 
++									buffer->packedDepthStencil);
++			
++	qglGenTextures(1, &(buffer->texture));
++	qglBindTexture(GL_TEXTURE_2D, buffer->texture);
++	qglTexImage2D(	GL_TEXTURE_2D, 0, GL_RGBA8,  
++				  	width, height, 
++				 	0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
++	
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
++	
++	//shall we link our texture to the frame buffer? yes!
++	qglFramebufferTexture2D(	GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT,
++								GL_TEXTURE_2D, buffer->texture, 0);
++	
++	GLenum status = qglCheckFramebufferStatus(GL_FRAMEBUFFER_EXT);
++	if (!(status == GL_FRAMEBUFFER_COMPLETE_EXT)) {
++		ri.Printf( PRINT_ALL, "Texture Buffer Setup Failed :(\n");	
++		exit(-1);
++	}
++}
++
++void R_FrameBufferCreate_Z(struct fbuffer *buffer, int width, int height) {
++	// creates a framebuffer WITH a z buffer. 
++
++	qglGenFramebuffers(1, &(buffer->buffer));
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, buffer->buffer);	
++	//create our depth buffer
++
++	qglGenRenderbuffers(1, &(buffer->depth));
++
++	qglBindRenderbuffer(GL_RENDERBUFFER_EXT, buffer->depth);
++	//now we setup the depth buffer to the correct data size
++
++	qglRenderbufferStorage(GL_RENDERBUFFER_EXT, GL_DEPTH_COMPONENT, 
++								width, height);
++
++	qglFramebufferRenderbuffer(		GL_FRAMEBUFFER_EXT, 
++									GL_DEPTH_ATTACHMENT_EXT,
++									GL_RENDERBUFFER_EXT, 
++									buffer->depth);
++			
++	qglGenTextures(1, &(buffer->texture));
++	qglBindTexture(GL_TEXTURE_2D, buffer->texture);
++	qglTexImage2D(	GL_TEXTURE_2D, 0, GL_RGBA8,  
++				  	width, height, 
++				 	0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
++	
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
++	
++	//shall we link our texture to the frame buffer? yes!
++	qglFramebufferTexture2D(	GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT,
++								GL_TEXTURE_2D, buffer->texture, 0);
++	
++	GLenum status = qglCheckFramebufferStatus(GL_FRAMEBUFFER_EXT);
++	if (!(status == GL_FRAMEBUFFER_COMPLETE_EXT)) {
++		ri.Printf( PRINT_ALL, "Texture Buffer Setup Failed :(\n");	
++		exit(-1);
++	}
++}
++
++void R_FrameBufferCreate(struct fbuffer *buffer, int width, int height) {
++	qglGenFramebuffers(1, &(buffer->buffer));
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, buffer->buffer);	
++							
++	qglGenTextures(1, &(buffer->texture));
++	qglBindTexture(GL_TEXTURE_2D, buffer->texture);
++	qglTexImage2D(	GL_TEXTURE_2D, 0, GL_RGBA8,  
++				  	width, height, 
++				 	0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
++	
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
++	qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
++	
++	//shall we link our texture to the frame buffer? yes!
++	qglFramebufferTexture2D(	GL_FRAMEBUFFER_EXT, GL_COLOR_ATTACHMENT0_EXT,
++								GL_TEXTURE_2D, buffer->texture, 0);
++	
++	GLenum status = qglCheckFramebufferStatus(GL_FRAMEBUFFER_EXT);
++	if (!(status == GL_FRAMEBUFFER_COMPLETE_EXT)) {
++		ri.Printf( PRINT_ALL, "Texture Buffer Setup Failed :(\n");	
++		exit(-1);
++	}
++}
++
++void R_Build_glsl(struct glslobj *obj) {
++	GLuint vert_shader, frag_shader, program;
++	
++	vert_shader = qglCreateShader(GL_VERTEX_SHADER);
++	frag_shader = qglCreateShader(GL_FRAGMENT_SHADER);
++	
++	qglShaderSource(vert_shader, obj->vert_numSources, obj->vertex_glsl, NULL);
++	qglShaderSource(frag_shader, obj->frag_numSources, obj->fragment_glsl, NULL);
++
++	printShaderInfoLog(vert_shader);
++	printShaderInfoLog(frag_shader);
++
++	qglCompileShader(vert_shader);
++	qglCompileShader(frag_shader);
++
++	program = qglCreateProgram();
++	qglAttachShader(program, vert_shader);
++	qglAttachShader(program, frag_shader);
++	qglLinkProgram(program);
++
++	printProgramInfoLog(program);
++
++	obj->vertex = vert_shader;
++	obj->fragment = frag_shader;
++	obj->program = program;
++
++}
++
++struct fbuffer blurFbufferA;
++struct fbuffer blurFbufferB;
++struct glslobj glslBlur;
++
++void R_FrameBuffer_BlurInit( void ) {
++	//inits our blur code;
++	if ( needBlur != 1 ) {
++		return;
++	}
++	if ( r_framebuffer_blur_size->integer < 2 ) {
++		return;
++	}
++	int fb_size = r_framebuffer_blur_size->integer;
++	//create two framebuffers for two pass gaussian blur.
++	R_FrameBufferCreate(&blurFbufferA, fb_size,  fb_size);
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
++	R_FrameBufferCreate(&blurFbufferB, fb_size,  fb_size);
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
++	
++	//create our glsl shader
++	glslBlur.vert_numSources = 1;
++	glslBlur.frag_numSources = 2;
++	
++	glslBlur.vertex_glsl = malloc(sizeof(char *) * glslBlur.vert_numSources); 
++	glslBlur.vertex_glsl[0] = glslBase_vert;
++	
++	glslBlur.fragment_glsl = malloc(sizeof(char *) * glslBlur.frag_numSources); 
++	glslBlur.fragment_glsl[0] = glslGauss9;
++	glslBlur.fragment_glsl[1] = glslBlurMain;
++
++	R_Build_glsl(&glslBlur);
++	
++}
++
++void R_FrameBuffer_BlurDraw( void ) {
++	if ( r_framebuffer_blur_size->integer < 2 ) {
++		return;
++	}
++	
++	if ( needBlur != 1 ) {
++		return;
++	}
++	
++	int fb_size = r_framebuffer_blur_size->integer;
++	GLuint program, loc;
++	// first we draw the framebuffer into the blur buffer before any fragment
++	// programs are used is quicker, the rational behind this is that we want 
++	// as many texels to fit inside the texture cache as possible for the 
++	// gaussian sampling
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, blurFbufferB.buffer);
++	R_SetGL2DSize(fb_size, fb_size);		
++	qglUseProgram(0);
++	R_DrawQuad(	screenFbuffer.texture, fb_size, fb_size);
++	
++	//now we do the first gaussian pass
++	
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, blurFbufferA.buffer);
++	R_SetGL2DSize(fb_size, fb_size);		
++	
++	program = glslBlur.program;
++	qglUseProgram(0);
++	qglUseProgram(program);
++	
++	//find and set the samplers
++	//set the texture number... silly this really. oh well thats glsl
++	loc = qglGetUniformLocation(program, "srcSampler");
++	qglUniform1i(loc, 0);
++	loc = qglGetUniformLocation(program, "blurSize");
++	qglUniform2f(loc, r_framebuffer_blur_ammount->value / 100.0, 0.0);
++	
++	R_DrawQuad(	blurFbufferB.texture, fb_size, fb_size);
++		
++	//we do the second pass of the blur here
++	loc = qglGetUniformLocation(program, "blurSize");
++	qglUniform2f(loc, 0.0, r_framebuffer_blur_ammount->value / 100.0);
++	
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, blurFbufferB.buffer);
++	R_SetGL2DSize(fb_size, fb_size);
++			
++	R_DrawQuad(	blurFbufferA.texture, fb_size, fb_size);
++	
++}
++struct glslobj glslRoto;
++struct fbuffer rotoFbuffer;
++void R_FrameBuffer_RotoInit( void ) {
++	
++	// check to see if we need to create a framebuffer for this (only if there
++	// is a shader running after this)
++	 
++	//create our glsl shader
++	glslRoto.vert_numSources = 1;
++	glslRoto.frag_numSources = 3;
++	
++	glslRoto.vertex_glsl = malloc(sizeof(char *) * glslRoto.vert_numSources); 
++	glslRoto.vertex_glsl[0] = glslBase_vert;
++	
++	glslRoto.fragment_glsl = malloc(sizeof(char *) * glslRoto.frag_numSources); 
++	glslRoto.fragment_glsl[0] = glslSobel;
++	glslRoto.fragment_glsl[1] = glslToonColour;
++	glslRoto.fragment_glsl[2] = glslRotoscope;
++	
++	R_Build_glsl(&glslRoto);
++}
++
++void R_FrameBuffer_RotoDraw( void ) { 
++	GLuint program, loc;
++	program = glslRoto.program;
++	qglUseProgram(0);
++	qglUseProgram(program);
++	
++	R_SetGL2DSize(glConfig.vidWidth, glConfig.vidHeight);
++	
++	//find and set the samplers
++	loc = qglGetUniformLocation(program, "srcSampler");
++	qglUniform1i(loc, 0);
++	loc = qglGetUniformLocation(program, "texelSize");
++	qglUniform2f(loc, 1.0 / glConfig.vidWidth, 1.0 / glConfig.vidHeight);
++	
++	R_DrawQuad(	srcBuffer->texture, glConfig.vidWidth, glConfig.vidHeight);
++	qglUseProgram(0);
++}
++
++struct glslobj glslBloom;
++
++void R_FrameBuffer_BloomInit( void ) {
++	//we need blur for this
++	needBlur = 1;
++	//create our glsl shader
++	glslBloom.vert_numSources = 1;
++	glslBloom.frag_numSources = 1;
++	glslBloom.vertex_glsl = malloc(sizeof(char *) * glslBlur.frag_numSources); 
++	glslBloom.vertex_glsl[0] = glslBase_vert;
++	glslBloom.fragment_glsl = malloc(sizeof(char *) * glslBlur.frag_numSources); 
++	glslBloom.fragment_glsl[0] = glslSigScreen;
++
++	R_Build_glsl(&glslBloom);
++}
++
++void R_FrameBuffer_BloomDraw( void ) {
++	GLuint program, loc;
++	program = glslBloom.program;
++	qglUseProgram(0);
++	qglUseProgram(program);
++	
++	R_SetGL2DSize(glConfig.vidWidth, glConfig.vidHeight);
++	
++	//find and set the samplers
++	loc = qglGetUniformLocation(program, "srcSampler");
++	qglUniform1i(loc, 0);
++	loc = qglGetUniformLocation(program, "blurSampler");
++	qglUniform1i(loc, 1);
++	loc = qglGetUniformLocation(program, "brightness");
++	qglUniform1f(loc, r_framebuffer_bloom_brightness->value);
++	loc = qglGetUniformLocation(program, "sharpness");
++	qglUniform1f(loc, r_framebuffer_bloom_sharpness->value);
++	
++	R_DrawQuadMT(	srcBuffer->texture, blurBuffer->texture, 
++					glConfig.vidWidth, glConfig.vidHeight);
++	qglUseProgram(0);
++	//quick test to just see the blur
++	//R_DrawQuad(blurFbufferB.texture, glConfig.vidWidth, glConfig.vidHeight);
++	//R_DrawQuad(screenFbuffer.texture, glConfig.vidWidth, glConfig.vidHeight);
++}
++
++void R_FrameBuffer_Draw( void ) {
++	//draws the framebuffer to the screen, pretty simple really.
++	R_DrawQuad(	screenFbuffer.texture, glConfig.vidWidth, glConfig.vidHeight);
++}
++
++void R_FrameBuffer_Init( void ) {
++	r_framebuffer = ri.Cvar_Get( "r_framebuffer", "0", CVAR_ARCHIVE | CVAR_LATCH);	
++	r_framebuffer_bloom = ri.Cvar_Get( "r_framebuffer_bloom", "0", CVAR_ARCHIVE | CVAR_LATCH);
++	r_framebuffer_blur_size = ri.Cvar_Get( "r_framebuffer_blur_size", "128", CVAR_ARCHIVE | CVAR_LATCH);
++	r_framebuffer_blur_ammount = ri.Cvar_Get( "r_framebuffer_blur_ammount", "7", CVAR_ARCHIVE);
++	r_framebuffer_bloom_sharpness = ri.Cvar_Get( "r_framebuffer_bloom_sharpness", "0.75", CVAR_ARCHIVE );
++	r_framebuffer_bloom_brightness = ri.Cvar_Get( "r_framebuffer_bloom_brightness", "0.85", CVAR_ARCHIVE );
++	r_framebuffer_rotoscope = ri.Cvar_Get( "r_framebuffer_rotoscope", "0", CVAR_ARCHIVE | CVAR_LATCH);
++
++	if (r_framebuffer->integer != 1) {
++		return;
++	}
++	ri.Printf( PRINT_ALL, "----- Enabling FrameBuffer Path -----\n" );
++
++	//create the framebuffer texture space
++	if (glConfig.stencilBits > 0) {
++		R_FrameBufferCreate_ZS(&screenFbuffer, glConfig.vidWidth, glConfig.vidHeight);
++	} else {
++		R_FrameBufferCreate_Z(&screenFbuffer, glConfig.vidWidth, glConfig.vidHeight);
++	}
++
++	if (r_framebuffer_bloom->integer == 1) {
++		//we have to create two fullscreen framebuffers when bloom is used in
++		//combination with any other effects
++		//FIXME make this just happen when bloom is used with another effect
++		R_FrameBufferCreate(&backFbuffer, glConfig.vidWidth, glConfig.vidHeight);
++		qglBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
++	}
++
++	//init our effects
++	if (r_framebuffer_rotoscope->integer == 1) {
++		R_FrameBuffer_RotoInit();
++	}
++	
++	if (r_framebuffer_bloom->integer == 1) {
++		R_FrameBuffer_BloomInit();
++	}
++	//we don't need an if here, if any effects before need a blur then this 
++	//auto detects that its needed
++	R_FrameBuffer_BlurInit();
++
++	
++}
++							
++								
++//This could perhaps be sped up by pushing the multisample/whatever attributes
++//and turning things like that off (we have no need for them at all). then use a
++//pop to turn them back on. a job for someone who is more familiar with the q3a
++//engine though please. -- gord
++void R_FrameBuffer_EndFrame( void ) {
++	if (r_framebuffer->integer != 1) {
++		return;
++	}
++	
++	GL_State( GLS_DEPTHTEST_DISABLE );
++	GL_State( GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
++	
++	qboolean screenDrawDone = 0;
++	qglColor4f( 1, 1, 1, 1 );
++	
++	srcBuffer = &screenFbuffer;
++	blurBuffer = &blurFbufferB;
++	//call the blur code, it auto detects weather its needed :)
++	R_FrameBuffer_BlurDraw(); 
++	if (r_framebuffer_rotoscope->integer == 1) {
++		if (r_framebuffer_bloom->integer == 1) {
++			qglBindFramebuffer(GL_FRAMEBUFFER_EXT, backFbuffer.buffer);
++			R_FrameBuffer_RotoDraw();
++			srcBuffer = &backFbuffer;
++		}
++		else {
++			qglBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
++			R_FrameBuffer_RotoDraw();
++			screenDrawDone = 1;
++		}
++	}
++	if (r_framebuffer_bloom->integer == 1) {
++		qglBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
++		R_FrameBuffer_BloomDraw();
++		screenDrawDone = 1;
++	}
++	
++	if (screenDrawDone == 0) {
++		qglBindFramebuffer(GL_FRAMEBUFFER_EXT, 0);
++		R_FrameBuffer_Draw();
++	}
++
++	//Finally we re-bind our framebuffer so everything gets rendered into it.
++	qglBindFramebuffer(GL_FRAMEBUFFER_EXT, screenFbuffer.buffer);
++	
++}
++void R_FrameBuffer_Shutdown( void ) {
++	ri.Printf( PRINT_ALL, "----- Disabling FrameBuffer Path -----\n" );
++}
+Index: code/renderer/tr_backend.c
+===================================================================
+--- code/renderer/tr_backend.c	(revision 1212)
++++ code/renderer/tr_backend.c	(working copy)
+@@ -1028,7 +1028,7 @@
+ 		ri.Hunk_FreeTempMemory( stencilReadback );
+ 	}
+ 
+-
++	R_FrameBuffer_EndFrame(); //draws our framebuffer if we are using that
+ 	if ( !glState.finishCalled ) {
+ 		qglFinish();
+ 	}
+@@ -1078,11 +1078,16 @@
+ 		case RC_SWAP_BUFFERS:
+ 			data = RB_SwapBuffers( data );
+ 			break;
++		//these two use a hack to let them copy the framebuffer effects too
+ 		case RC_SCREENSHOT:
++			R_FrameBufferUnBind();
+ 			data = RB_TakeScreenshotCmd( data );
++			R_FrameBufferBind();
+ 			break;
+ 		case RC_VIDEOFRAME:
++			R_FrameBufferUnBind();
+ 			data = RB_TakeVideoFrameCmd( data );
++			R_FrameBufferBind();
+ 			break;
+ 
+ 		case RC_END_OF_LIST:
+Index: code/null/null_glimp.c
+===================================================================
+--- code/null/null_glimp.c	(revision 1212)
++++ code/null/null_glimp.c	(working copy)
+@@ -31,7 +31,39 @@
+ void ( * qglLockArraysEXT)( int, int);
+ void ( * qglUnlockArraysEXT) ( void );
+ 
++//added framebuffer extensions
++ void ( * qglGenFramebuffers )(GLsizei, GLuint *);
++ void ( * qglBindFramebuffer )(GLenum, GLuint);
++ void ( * glGenRenderbuffers )(GLsizei, GLuint *);
++ void ( * glBindRenderbuffer )(GLenum, GLuint);
++ void ( * glRenderbufferStorage )(GLenum, GLenum, GLsizei, GLsizei);
++ void ( * glFramebufferRenderbuffer )(GLenum, GLenum, GLenum, GLuint);
++ void ( * glFramebufferTexture2D )(GLenum, GLenum, GLenum, GLuint, GLint);
++ GLenum ( * glCheckFramebufferStatus )(GLenum);
++ void ( * glDeleteFramebuffers )(GLsizei, const GLuint *);
++ void ( * glDeleteRenderbuffers )(GLsizei, const GLuint *);
+ 
++//added fragment/vertex program extensions
++ void ( * glAttachShader) (GLuint, GLuint);
++ void ( * glBindAttribLocation) (GLuint, GLuint, const GLchar *);
++ void ( * glCompileShader) (GLuint);
++GLuint ( * glCreateProgram) (void);
++GLuint ( * glCreateShader) (GLenum);
++void ( * glDeleteProgram) (GLuint);
++void ( * glDeleteShader) (GLuint);
++void ( * glShaderSource) (GLuint, GLsizei, const GLchar* *, const GLint *);
++void ( * glLinkProgram) (GLuint);
++void ( * glUseProgram) (GLuint);	
++GLint ( * glGetUniformLocation) (GLuint, const GLchar *);
++void ( * glUniform1f) (GLint, GLfloat);
++void ( * glUniform2f) (GLint, GLfloat, GLfloat);
++void ( * glUniform1i) (GLint, GLint);
++void ( * glGetProgramiv) (GLuint, GLenum, GLint *);
++void ( * glGetProgramInfoLog) (GLuint, GLsizei, GLsizei *, GLchar *);
++void ( * glGetShaderiv) (GLuint, GLenum, GLint *);
++void ( * glGetShaderInfoLog) (GLuint, GLsizei, GLsizei *, GLchar *);
++
++
+ void		GLimp_EndFrame( void ) {
+ }
+ 

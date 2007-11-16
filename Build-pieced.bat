@@ -4,6 +4,8 @@ zip -9r pak0.pk3 COPYING
 zip -9r pak0.pk3 README
 zip -9r pak0.pk3 LINUXNOTES
 zip -9r pak0.pk3 CHANGES
+zip -9r pak0.pk3 OGGVORBIS.README.txt
+zip -9r pak0.pk3 SDL.README.txt
 zip -9r pak0.pk3 productid.txt
 zip -9r pak0.pk3 gfx/*.* -x *svn*
 zip -9r pak0.pk3 icons/*.* -x *svn*
