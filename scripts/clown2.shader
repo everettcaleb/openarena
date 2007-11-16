@@ -792,15 +792,14 @@ textures/proto2/concrete_blue
 {
 	surfaceparm metalsteps
 	{
-		map textures/effects/tin_blue.tga
-		tcgen environment
-		blendfunc filter
+		map $lightmap
 		rgbgen identity
 	}
 	{
 		map textures/proto2/concrete_blue.tga
-		blendfunc blend
-		rgbgen identity
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen identitylighting
+		alphagen lightingspecular
 	}
 	{
 		map $lightmap
@@ -813,21 +812,16 @@ textures/proto2/concrete_red
 {
 	surfaceparm metalsteps
 	{
-		map textures/effects/tin_red.tga
-		tcgen environment
-		blendfunc filter
+		map $lightmap
 		rgbgen identity
 	}
 	{
 		map textures/proto2/concrete_red.tga
-		blendfunc blend
-		rgbgen identity
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen identitylighting
+		alphagen lightingspecular
 	}
-	{
-		map $lightmap
-		blendfunc gl_dst_color gl_zero
-		rgbgen identity
-	}
+
 }
 
 textures/proto2/concrete_bluenfx
