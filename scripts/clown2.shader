@@ -787,3 +787,73 @@ textures/proto2/tin_panel
 		rgbgen identity
 	}
 }
+
+textures/proto2/concrete_blue
+{
+	surfaceparm metalsteps
+	{
+		map textures/effects/tin_blue.tga
+		tcgen environment
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/proto2/concrete_blue.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc gl_dst_color gl_zero
+		rgbgen identity
+	}
+}
+
+textures/proto2/concrete_red
+{
+	surfaceparm metalsteps
+	{
+		map textures/effects/tin_red.tga
+		tcgen environment
+		blendfunc filter
+		rgbgen identity
+	}
+	{
+		map textures/proto2/concrete_red.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc gl_dst_color gl_zero
+		rgbgen identity
+	}
+}
+
+textures/proto2/concrete_bluenfx
+{
+	qer_editorimage textures/proto2/concrete_blue.tga
+	surfaceparm metalsteps
+	{
+		map textures/proto2/concrete_blue.tga
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+	}
+}
+
+textures/proto2/concrete_rednfx
+{
+	qer_editorimage textures/proto2/concrete_red.tga
+	surfaceparm metalsteps
+	{
+		map textures/proto2/concrete_red.tga
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+	}
+}
