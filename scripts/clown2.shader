@@ -851,3 +851,23 @@ textures/proto2/concrete_rednfx
 		blendfunc filter
 	}
 }
+
+textures/proto2/concrete01wetwall
+{
+	{
+		map textures/liquids/proto_gruel3.tga
+		tcmod scale 5 5
+		tcmod scroll 0 -0.2
+		rgbgen identity
+	}
+	{
+		map textures/proto2/concrete01wetwall.tga
+		blendfunc blend
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendfunc filter
+		rgbgen identity
+	}
+}
