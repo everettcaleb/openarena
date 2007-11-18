@@ -81,7 +81,7 @@ itemDef {
 	textaligny 20   
 	forecolor MP_TEXTCOLOR   
 	visible 1 
-	      action
+	action
       		{
 	        play "ui/assets/select.wav"; 
  		close ingame;
@@ -101,11 +101,12 @@ itemDef {
 	textaligny 20   
 	forecolor MP_TEXTCOLOR    
 	visible 1 
-	      action
+	action
       		{
 	        play "ui/assets/select.wav"; 
 		close ingame;
 		exec "disconnect";
+		exec "killserver";
       		}
 	}
 
