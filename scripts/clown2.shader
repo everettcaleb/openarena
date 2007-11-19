@@ -871,3 +871,71 @@ textures/proto2/concrete01wetwall
 		rgbgen identity
 	}
 }
+
+textures/base_wall/patch10beatup_spec
+{
+	qer_editorimage textures/base_wall/patch10_beatup4_alpha.tga
+	surfaceparm metalsteps
+	{
+		map $lightmap
+		rgbgen identity
+	}
+	{
+		map textures/base_wall/patch10_beatup4_alpha.tga
+		blendfunc gl_dst_color gl_src_alpha
+		rgbgen identitylighting
+		alphagen lightingspecular
+	}
+}
+
+textures/base_wall/patch10shiny_trans
+{
+	qer_editorimage textures/base_wall/patch10.jpg
+	surfaceparm nonsolid
+	{
+		map textures/base_wall/patch10.jpg
+		rgbGen identity
+		
+	}
+	{
+		map textures/base_wall/chrome_env.jpg
+		tcGen environment 
+		rgbGen oneminusvertex
+		tcmod scale .5 .5
+	}
+	{
+		map textures/base_wall/patch10.jpg
+		blendFunc add
+		rgbGen identity
+		
+	}
+	{
+		map $lightmap
+		blendFunc filter
+		rgbGen identity
+	}
+}
+
+textures/base_wall2/space_concrete
+{
+	qer_editorimage textures/base_wall2/space_panel_alt.tga
+	{
+		map textures/base_wall/concrete1.tga
+		rgbgen identity
+	}
+	{
+		map textures/base_wall2/space_panel_alt.tga
+		blendfunc filter
+		tcmod scale .1 .1
+	}
+	{
+		map textures/base_wall2/space_panel_alt2.tga
+		blendfunc filter
+		tcmod scale .03 .03
+	}
+	{
+		map $lightmap
+		rgbgen identity
+		blendfunc filter
+	}
+}
