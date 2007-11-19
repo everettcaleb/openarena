@@ -13,7 +13,7 @@ textures/gothic_block/blocks11b
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -33,7 +33,7 @@ textures/gothic_block/blocks17
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -53,7 +53,7 @@ textures/gothic_block/blocks17e
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -73,7 +73,7 @@ textures/gothic_block/blocks15
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -93,7 +93,7 @@ textures/gothic_block/blocks11d
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -113,7 +113,7 @@ textures/gothic_block/blocks18b
 	{
 		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -133,7 +133,7 @@ textures/gothic_block/blocks18d
 	{
 		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -153,7 +153,7 @@ textures/gothic_block/blocks15_relief
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -173,7 +173,7 @@ textures/gothic_block/blocks15_blue
 	{
 		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -204,7 +204,7 @@ textures/gothic_block/blocks17_ow
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -764,7 +764,7 @@ textures/gothic_block/killblock
 	{
 		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -784,7 +784,7 @@ textures/gothic_block/killblock_i2
 	{
 		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -804,7 +804,7 @@ textures/gothic_block/killblock_j2
 	{
 		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -824,7 +824,7 @@ textures/gothic_block/xblocks_10
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
