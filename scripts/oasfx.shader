@@ -174,23 +174,22 @@ textures/sfx/portal_sfx
 	surfaceparm nolightmap
 	
 	{
-		map textures/sfx/portal_sfx3.tga
+		map textures/acc_dm3/portal_sfx.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		depthWrite
 	}
 	{
-		map textures/sfx/portal_sfx1.tga
-		blendfunc add
-		tcMod rotate -360
-		rgbgen wave inversesawtooth 0 .5 .2 .5
-	}
-	{
-		map textures/oa_fogs/kc_fogcloud3.jpg
+		map textures/oa_fogs/kc_fogcloud3.tga
 		blendfunc gl_src_alpha gl_one_minus_src_alpha
-		alphagen portal 512
+		alphagen portal 1024
 		rgbGen identity	
 		tcmod rotate .1 
 		tcmod scroll .04 .01
+	}
+	{
+		map textures/acc_dm3/fx_tintedportal.jpg
+		rgbgen identity
+		blendFunc filter
 	}
 }
 
