@@ -939,3 +939,90 @@ textures/base_wall2/space_concrete
 		blendfunc filter
 	}
 }
+
+textures/base_wall2/scuffs1
+{
+	surfaceparm trans
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	polygonoffset
+	{
+		map textures/base_wall2/scuffs1.tga
+		blendfunc filter
+		rgbgen identity
+	}
+}
+
+textures/proto2/blue_zot
+{
+	qer_editorimage textures/proto2/blue_zot.tga
+	deformvertexes autosprite2
+	deformvertexes move 0.23 0.2 0.3 sin 0 5 0 1
+	deformvertexes move 0.3 0 0.3 sin 0 5 0 10
+	surfaceparm nomarks
+	surfaceparm nonsolid
+	surfaceparm trans
+	surfaceparm nolightmap
+	{
+		map textures/proto2/blue_zot.tga
+		blendfunc add
+		rgbgen identity
+	}
+}
+
+textures/proto2/red_zot
+{
+	qer_editorimage textures/proto2/red_zot.tga
+	deformvertexes autosprite2
+	deformvertexes move 0.23 0.2 0.3 sin 0 5 0 1
+	deformvertexes move 0.3 0 0.3 sin 0 5 0 10
+	surfaceparm nomarks
+	surfaceparm nonsolid
+	surfaceparm trans
+	surfaceparm nolightmap
+	{
+		map textures/proto2/red_zot.tga
+		blendfunc add
+		rgbgen identity
+	}
+}
+
+textures/proto2/blue_zot2
+{
+	qer_editorimage textures/proto2/blue_zot2.tga
+	q3map_lightimage textures/proto2/blue_zot2.tga
+	q3map_surfacelight 100
+	deformvertexes autosprite2
+	deformvertexes move 0.23 0.2 0.3 sin 0 5 0 1
+	deformvertexes move 0.3 0 0.3 sin 0 5 0 10
+	surfaceparm nomarks
+	surfaceparm nonsolid
+	surfaceparm trans
+	surfaceparm nolightmap
+	cull none
+	{
+		map textures/proto2/blue_zot2.tga
+		blendfunc add
+		rgbgen identity
+	}
+}
+
+textures/proto2/red_zot2
+{
+	qer_editorimage textures/proto2/red_zot2.tga
+	q3map_lightimage textures/proto2/red_zot2.tga
+	q3map_surfacelight 100
+	deformvertexes autosprite2
+	deformvertexes move 0.23 0.2 0.3 sin 0 5 0 1
+	deformvertexes move 0.3 0 0.3 sin 0 5 0 10
+	surfaceparm nomarks
+	surfaceparm nonsolid
+	surfaceparm trans
+	surfaceparm nolightmap
+	cull none
+	{
+		map textures/proto2/red_zot2.tga
+		blendfunc add
+		rgbgen identity
+	}
+}

@@ -1474,3 +1474,42 @@ textures/evil8_floor/e8clangfloor05c
 	}
 }
 
+textures/dsi/weapspawn01
+{
+	surfaceparm nomarks
+	surfaceparm trans
+	surfaceparm pointlight
+	nopicmip
+	polygonoffset
+	{
+		clampmap textures/dsi/weapspawn01.tga
+		blendfunc add
+		rgbGen Vertex
+		tcMod rotate 45
+	}
+	{
+		map textures/dsi/weapspawn01_glow.tga
+		blendfunc add
+		rgbGen Vertex
+	}
+}
+
+textures/dsi/dsiglass
+{
+	qer_editorimage textures/dsi/dsiglass.tga
+	surfaceparm trans
+	cull disable
+	qer_trans 0.5
+	{
+		map textures/effects/tinfx.tga
+		blendfunc add
+		rgbGen identity
+		tcGen environment 
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+}

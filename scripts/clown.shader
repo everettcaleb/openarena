@@ -128,7 +128,8 @@ textures/clown/red_1
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	q3map_surfacelight 30
-	cull none	
+//	cull none
+	polygonoffset	
 	{
 		map textures/clown/red_1.tga
 		blendFunc GL_DST_COLOR GL_ZERO
@@ -150,7 +151,8 @@ textures/clown/red_2
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	q3map_surfacelight 30
-	cull none	
+	//cull none
+	polygonoffset	
 	{
 		map textures/clown/red_2.tga
 		blendFunc GL_DST_COLOR GL_ZERO
@@ -172,7 +174,8 @@ textures/clown/red_3
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	q3map_surfacelight 30
-	cull none	
+//	cull none
+	polygonoffset	
 	{
 		map textures/clown/red_3.tga
 		blendFunc GL_DST_COLOR GL_ZERO
@@ -194,7 +197,8 @@ textures/clown/blue_1
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	q3map_surfacelight 30
-	cull none	
+//	cull none
+	polygonoffset	
 	{
 		map textures/clown/blue_1.tga
 		blendFunc GL_DST_COLOR GL_ZERO
@@ -216,7 +220,8 @@ textures/clown/blue_2
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	q3map_surfacelight 30
-	cull none	
+//	cull none
+	polygonoffset	
 	{
 		map textures/clown/blue_2.tga
 		blendFunc GL_DST_COLOR GL_ZERO
@@ -238,7 +243,8 @@ textures/clown/blue_3
 	surfaceparm nomarks
 	surfaceparm nolightmap
 	q3map_surfacelight 30
-	cull none	
+//	cull none
+	polygonoffset
 	{
 		map textures/clown/blue_3.tga
 		blendFunc GL_DST_COLOR GL_ZERO

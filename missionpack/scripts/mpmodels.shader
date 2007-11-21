@@ -36,7 +36,7 @@ models/powerups/orb/r_orb
 {
 	cull none
 	{
-		map textures/effects/redfx.tga
+		map textures/effects/tin_red.tga
 		tcgen environment
 		tcmod turb 1 1 .5 1
 		blendfunc add
@@ -48,7 +48,7 @@ models/powerups/orb/b_orb
 {	
 	cull none
 	{
-		map textures/effects/quadmap2.tga
+		map textures/effects/tin_blue.tga
 		tcgen environment
 		tcmod turb 1 1 .5 1
 		blendfunc add
