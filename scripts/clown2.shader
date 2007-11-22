@@ -963,6 +963,7 @@ textures/proto2/blue_zot
 	surfaceparm nonsolid
 	surfaceparm trans
 	surfaceparm nolightmap
+	cull none
 	{
 		map textures/proto2/blue_zot.tga
 		blendfunc add
@@ -980,6 +981,7 @@ textures/proto2/red_zot
 	surfaceparm nonsolid
 	surfaceparm trans
 	surfaceparm nolightmap
+	cull none
 	{
 		map textures/proto2/red_zot.tga
 		blendfunc add
@@ -1024,5 +1026,97 @@ textures/proto2/red_zot2
 		map textures/proto2/red_zot2.tga
 		blendfunc add
 		rgbgen identity
+	}
+}
+
+textures/proto2/blueflare
+{
+	deformvertexes autosprite
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	cull none
+	{
+		clampmap textures/proto2/blueflare.tga
+		tcmod rotate 25
+		blendfunc add
+		rgbgen identity
+	}
+}
+
+textures/proto2/blueflare2
+{
+	deformvertexes autosprite2
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	cull none
+	{
+		map textures/proto2/blueflare2.tga
+		blendfunc add
+		rgbgen identity
+	}
+}
+
+textures/proto2/redflare
+{
+	deformvertexes autosprite
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	cull none
+	{
+		clampmap textures/proto2/redflare.tga
+		tcmod rotate 25
+		blendfunc add
+		rgbgen identity
+	}
+}
+
+textures/proto2/redflare2
+{
+	deformvertexes autosprite2
+	surfaceparm trans
+	surfaceparm nonsolid
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	cull none
+	{
+		map textures/proto2/redflare2.tga
+		blendfunc add
+		rgbgen identity
+	}
+}
+
+textures/ctf2/blueteam01
+{
+	surfaceparm trans
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	polygonoffset
+	cull none
+	{
+		map textures/ctf2/blueteam01.tga
+		alphafunc GE128
+		blendFunc GL_DST_COLOR GL_ONE
+		rgbgen wave sin .9 1 0 .1
+	}
+}
+
+textures/ctf2/redteam01
+{
+	surfaceparm trans
+	surfaceparm nomarks
+	surfaceparm nolightmap
+	polygonoffset
+	cull none
+	{
+		map textures/ctf2/redteam01.tga
+		alphafunc GE128
+		blendFunc GL_DST_COLOR GL_ONE
+		rgbgen wave sin .9 1 0 .1
 	}
 }
