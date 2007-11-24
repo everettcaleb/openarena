@@ -24,43 +24,39 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 {
   assetGlobalDef {
-    	font "gfx/2d/bigchars" 16				
-    	smallFont "gfx/2d/bigchars" 12				
-    	bigFont "gfx/2d/bigchars" 20				
-	cursor "ui/assets/cursor"			
-	itemFocusSound "ui/assets/hover.wav"		
-	shadowColor 0.0 0.0 0.0 0.25			
-  	}
-							   
+	font "gfx/2d/bigchars" 16
+	smallFont "gfx/2d/bigchars" 12
+	bigFont "gfx/2d/bigchars" 20
+	cursor "ui/assets/cursor"
+	itemFocusSound "ui/assets/hover.wav"
+	shadowColor 0.0 0.0 0.0 0.25
+	}
 
 
 
 
 menuDef {
-    	name "ingame"
+	name "ingame"
 	background "ui/assets/ingame"		
-    	fullScreen 0				
+	fullScreen 0				
 	rect 0 0 640 480
-    	visible MENU_TRUE
-	focusColor MP_FOCUSCOLOR				
-
-						
-	onOpen { 
+	visible MENU_TRUE
+	focusColor MP_FOCUSCOLOR	
+	onOpen	{ 
 		setitemcolor fadebox backcolor 0 0 0 1 ; 
 		uiScript stopRefresh ;
 		}
-		
 
 itemDef {
-      	name titleness
-      	text "Missionpack"
-      	style 0	
+	name titleness
+	text "Missionpack"
+	style 0	
 	type 0
 	textstyle 6
-      	textscale .5
-      	rect 0 15 1 1
-      	textalign 0		
-     	textalignx 48 	
+	textscale .5
+	rect 0 15 1 1
+	textalign 0		
+	textalignx 48 	
 	textaligny 90        
 	forecolor MP_TITLECOLOR
 	visible 1 
@@ -69,83 +65,78 @@ itemDef {
 // The Bar of Buttons
 
 itemDef {
-      	name button2
-      	text "Back to Game"
-      	style 0
+	name button2
+	text "Back to Game"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 110 163 34
-      	textalign 0		
-     	textalignx 5 	
+	textscale 0.3
+	rect 73 110 163 34
+	textalign 0		
+	textalignx 5 	
 	textaligny 20   
 	forecolor MP_TEXTCOLOR   
 	visible 1 
-	action
-      		{
+	action	{
 	        play "ui/assets/select.wav"; 
- 		close ingame;
-      		}
+		close ingame;
+		}
 	}
 
 itemDef {
-      	name button3
-      	text "Disconnect"
-      	style 0
+	name button3
+	text "Disconnect"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 142 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 73 142 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20   
 	forecolor MP_TEXTCOLOR    
 	visible 1 
-	action
-      		{
+	action	{
 	        play "ui/assets/select.wav"; 
 		close ingame;
 		exec "disconnect";
-		exec "killserver";
-      		}
+		}
 	}
 
 itemDef {
-      	name button4
-      	text "Join Server"
-      	style 0
+	name button4
+	text "Join Server"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 174 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 73 174 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20   
 	forecolor MP_TEXTCOLOR    
 	visible 1 
-	      action
-      		{
+	action	{
 	        play "ui/assets/select.wav"; 
 		open ingame_joinserver;
 		close ingame;
-      		}
+		}
 	}
 
 itemDef {
-      	name button5
-      	text "Add Bot"
-      	style 0
+	name button5
+	text "Add Bot"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 206 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 73 206 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20   
 	forecolor MP_TEXTCOLOR    
 	visible 1 
-	      action
-      		{
+	action	{
 	        play "ui/assets/select.wav"; 
 		open ingame_addbot;
 		close ingame;
@@ -154,64 +145,62 @@ itemDef {
 
 
 itemDef {
-      	name button6
-      	text "Configuration"
-      	style 0
+	name button6
+	text "Configuration"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 238 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 73 238 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20   
 	forecolor MP_TEXTCOLOR    
 	visible 1 
-	      action
-      		{
+	action	{
 	        play "ui/assets/select.wav"; 
 		open ingame_configuration;
 		close ingame;
-      		}
+		}
 	}
 
 itemDef {
-      	name button7
-      	text "Player"
-      	style 0
+	name button7
+	text "Player"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 270 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 73 270 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20    
 	forecolor MP_TEXTCOLOR   
 	visible 1 
-	      action
-      		{
+	action	{
 	        play "ui/assets/select.wav"; 
 		open ingame_player;
 		close ingame;
-      		}
+		}
 	}
+	
 itemDef {
-      	name button8
-      	text "Call Vote"
-      	style 0
+	name button8
+	text "Call Vote"
+	style 0
 	type 1
 	textstyle 3
-      	textscale 0.3
-      	rect 73 302 163 34
-      	textalign 0		
-     	textalignx 5  	
+	textscale 0.3
+	rect 73 302 163 34
+	textalign 0		
+	textalignx 5  	
 	textaligny 20  
 	forecolor MP_TEXTCOLOR     
 	visible 1 
-	      action
-      		{
+	action	{
 	        play "ui/assets/select.wav"; 
 		
-      		}
+		}
 	}
 
 itemDef {
@@ -227,8 +216,7 @@ itemDef {
 	textaligny 20  
 	forecolor MP_TEXTCOLOR     
 	visible 1
-	action
-		{
+	action	{
 	        play "ui/assets/select.wav"; 
 		}
 	}
@@ -246,8 +234,7 @@ itemDef {
 	textaligny 20  
 	forecolor MP_TEXTCOLOR     
 	visible 1
-	action
-		{
+	action	{
 	        play "ui/assets/select.wav"; 
 		uiscript "quit";
 		}
@@ -255,7 +242,7 @@ itemDef {
 
 itemDef {
 	name warning
-	text "OPENARENAMISSIONPACK MENU v0.002"
+	text "OPENARENAMISSIONPACK MENU v0.003"
 	style 0	
 	type 1
 	textstyle 6
@@ -267,14 +254,6 @@ itemDef {
 	forecolor 1 1 1 1
 	visible 1 
 	}
-
-
-
-
-
-}
-}
-}
 }
 }
 }
