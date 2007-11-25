@@ -644,7 +644,7 @@ textures/gothic_trim/metalbase03a_blocks11b4
 	{
 		map textures/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -704,7 +704,7 @@ textures/gothic_door/xian_dm3arch
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 8
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -724,7 +724,7 @@ textures/gothic_door/xian_tourneyarch_med1b
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 16 16
+		tcMod scale .1 .1
 		detail
 	}
 }
@@ -744,7 +744,7 @@ textures/gothic_door/xian_tourneyarch_tall2b
 	{
 		map textures/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 16
+		tcMod scale .1 .1
 		detail
 	}
 }
