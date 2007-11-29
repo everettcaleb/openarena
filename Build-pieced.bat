@@ -99,6 +99,7 @@ zip pak2-players-mature.pk3 -d models/players/skelebot/*.*
 zip pak2-players-mature.pk3 -d models/players/beret/*.*
 zip pak2-players-mature.pk3 -d models/players/tony/*.*
 zip pak2-players-mature.pk3 -d models/players/merman/*.*
+zip pak2-players-mature.pk3 -d models/players/assassin/*.*
 
 zip pak2-players.pk3 -d models/players/hnt/*.*
 zip pak2-players.pk3 -d models/players/angelyss/*.*
