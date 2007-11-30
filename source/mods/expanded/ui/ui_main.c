@@ -1044,6 +1044,10 @@ static void UI_SetCapFragLimits(qboolean uiVars) {
 		frag = 5;
 	} else if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS) {
 		frag = 5;
+	} else if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_FFA) {
+		frag = 20;
+	} else if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_TEAM) {
+		frag = 30;
 	}
 	if (uiVars) {
 		trap_Cvar_Set("ui_captureLimit", va("%d", cap));
@@ -2346,9 +2350,7 @@ static qboolean UI_GameType_HandleKey(int flags, float *special, int key, qboole
 			//nasty hack
 			if (ui_gameType.integer < 0) {
       				ui_gameType.integer = uiInfo.numGameTypes - 1;
-				} else if (ui_gameType.integer >= uiInfo.numGameTypes) {
-      					ui_gameType.integer = 0;
-					}
+				}
 				} else {
 				ui_gameType.integer++;
 				if (ui_gameType.integer >= uiInfo.numGameTypes) {
@@ -2356,7 +2358,7 @@ static qboolean UI_GameType_HandleKey(int flags, float *special, int key, qboole
 					}
 				}
     
-		if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_TOURNAMENT || uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS ) {
+		if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_TOURNAMENT | GT_LMS | GT_FFA) {
 			trap_Cvar_Set("ui_Q3Model", "1");
 		} else {
 			trap_Cvar_Set("ui_Q3Model", "0");
@@ -3021,6 +3023,14 @@ static void UI_StartSkirmish(qboolean next) {
 
 	delay = 500;
 
+	if ( g == GT_FFA)	{
+		for (i = 0; i < PLAYERS_PER_TEAM; i++) {
+		int bot = trap_Cvar_VariableValue( va("ui_blueteam%i", i+1));
+		trap_Cvar_Set("sv_maxClients", va("%d", temp));
+		Com_sprintf( buff, sizeof(buff), "addbot %s %f \n", UI_GetBotNameByNumber(bot-2), skill); }
+		trap_Cmd_ExecuteText( EXEC_APPEND, buff );
+	}
+
 	if (g == GT_TOURNAMENT) {
 		trap_Cvar_Set("sv_maxClients", "2");
 		Com_sprintf( buff, sizeof(buff), "wait ; addbot %s %f "", %i \n", uiInfo.mapList[ui_currentMap.integer].opponentName, skill, delay);
@@ -3576,6 +3586,10 @@ static int UI_MapCountByGameType(qboolean singlePlayer) {
 	game = singlePlayer ? uiInfo.gameTypes[ui_gameType.integer].gtEnum : uiInfo.gameTypes[ui_netGameType.integer].gtEnum;
 	if (game == GT_SINGLE_PLAYER) {
 		game++;
+	}
+	//wtf?!?
+	if (game == GT_TEAM) {
+		game = GT_FFA;
 	}
 	for (i = 0; i < uiInfo.mapCount; i++) {
 		uiInfo.mapList[i].active = qfalse;
