@@ -55,31 +55,31 @@ joingametypes {
 // english name, map name, vs count, par times per gametype
 maps	{
 	//team maps
-	{ "Some Bases" "oa_bases3" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
-	{ "Free Space" "oa_ctf4ish" "3" "sergei" 2 "0" 4 "110" 5 "120" 6 "180" 7 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
+	{ "Some Bases" "oa_bases3" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "120" 7 "110" 8 "110" 9 "110" 11 "110" }
+	{ "Free Space" "oa_ctf4ish" "3" "sergei" 2 "0" 4 "110" 5 "120" 6 "180" 7 "110" 8 "110" 9 "110" 11 "110" }
 	{ "Some Better Bases" "oa_bases5" "4" "sergei" 2 "0" 4 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
-	{ "Sago's Castle 2" "oasago2f2" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "110" 7 "110" 8 "110" 9 "110" 10 "0" 11 "110" }
-	{ "The Bridge of Despair" "czest2ctf" "4" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 10 "0" 11 "110" }
-	{ "Holy Wars" "czest3ctf" "5" "sergei" 2 "0" 4 "180" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 10 "0" 11 "110" }
-	{ "Where Fears Collide" "oa_spirit3ctfduel1" "3" "sergei" 2 "0" 4 "180" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 10 "0" 11 "110" }
-	{ "Hydrocapture" "hydronex" "5" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 10 "0" 11 "110" }
+	{ "Sago's Castle 2" "oasago2f2" "3" "sergei" 2 "0" 4 "110" 5 "110" 6 "110" 7 "110" 8 "110" 9 "110" 11 "110" }
+	{ "The Bridge of Despair" "czest2ctf" "4" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 11 "110" }
+	{ "Holy Wars" "czest3ctf" "5" "sergei" 2 "0" 4 "180" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 11 "110" }
+	{ "Where Fears Collide" "oa_spirit3ctfduel1" "3" "sergei" 2 "0" 4 "180" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 11 "110" }
+	{ "Hydrocapture" "hydronex" "5" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 11 "110" }
 	
 	//tournament + elimination + lms
-	{ "Trial by Error" "oa_rpg3dm2" "4" "Grunt" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "Aggressor" "aggressor" "1" "Major" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "Place of Two Deaths" "oa_dm1" "1" "kyonshi" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "Claustrophobopolis" "oa_dm2" "1" "Angelyss" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "The Abandoned Base" "oa_dm3" "1" "Jenna" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "The Bad Place" "oa_dm4" "1" "merman" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "The Cistern" "oa_dm5" "1" "grism" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "The Dark Zone" "oa_dm6" "1" "sergei" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "nameless" "oa_dm7" "1" "beret" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "Fan" "fan" "1" "Tanisha" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "The Space Spire" "czest1tourney" "1" "skelebot" 2 "0" 1 "180" 10 "110" }
-	{ "Kaooos" "kaos2" "4" "Sergei" 2 "0" 8 "240" 8 "240" 10 "110" }
-	{ "DM6ish" "dm6ish" "4" "Sergei" 2 "0" 8 "240" 8 "240" 10 "110" }
-	{ "Monastery" "czest1dm" "4" "Sergei" 2 "0" 8 "240" 8 "240" 10 "110" }
+	{ "Trial by Error" "oa_rpg3dm2" "4" "Grunt" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
+	{ "Aggressor" "aggressor" "1" "Major" 0 "200" 3 "100" 2 "0" 1 "240" 8 "110" 10 "110" }
+	{ "Place of Two Deaths" "oa_dm1" "1" "kyonshi" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
+	{ "Claustrophobopolis" "oa_dm2" "1" "Angelyss" 0 "200" 3 "100" 2 "0" 1 "240" 8 "110" 10 "110" }
+	{ "The Abandoned Base" "oa_dm3" "1" "Jenna" 0 "200" 3 "100" 2 "0" 1 "240" 8 "110" 10 "110" }
+	{ "The Bad Place" "oa_dm4" "1" "merman" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
+	{ "The Cistern" "oa_dm5" "1" "grism" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
+	{ "The Dark Zone" "oa_dm6" "1" "sergei" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
+	{ "nameless" "oa_dm7" "1" "beret" 0 "200" 2 "0" 3 "100" 1 "180" 8 "110" 10 "110" }
+	{ "Fan" "fan" "1" "Tanisha" 2 "0" 0 "200" 3 "100" 1 "180" 8 "110" 10 "110" }
+	{ "The Space Spire" "czest1tourney" 0 "200" "1" "skelebot" 2 "0" 3 "100" 1 "180" 10 "110" }
+	{ "Kaooos" "kaos2" "4" "Sergei" 2 0 3 "100" "200" "0" 8 "240" 8 "240" 10 "110" }
+	{ "DM6ish" "dm6ish" "4" "Sergei" 2 0 "200" 3 "100" "0" 8 "240" 8 "240" 10 "110" }
+	{ "Monastery" "czest1dm" "4" "Sergei" 0 "200" 2 "0" 3 "100" 8 "240" 8 "240" 10 "110" }
 	
 	{ "Suction" "suction" "3" "sergei" 2 "0" 4 "110" 9 "110" 10 "0" 11 "110" }
-	{ "IslandDM" "islanddm" "5" "Angelyss" 1 "120" 2 "0" 9 "180" 12" 180" }
+	{ "IslandDM" "islanddm" "5" "Angelyss" 0 "200" 1 "120" 2 "0" 9 "180" 12" 180" }
 }
