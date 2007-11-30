@@ -89,6 +89,14 @@ type		"ctf ctfelimination elimination dd"
 }
 
 {
+map		"oa_spirit3ctfduel1"
+bots		"sarge gargoyle"
+longname	"Where Fears Collide"
+fraglimit	20
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+
+{
 map		"oa_bases5"
 bots		"sarge gargoyle"
 longname	"Some better bases"

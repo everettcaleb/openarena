@@ -1182,3 +1182,90 @@ textures/sfx2/red_launchpad
 		rgbgen wave square 0 .7 0 1.4
 	}
 }
+
+textures/sfx2/blue_jumpad
+{
+	qer_editorimage textures/sfx2/jump_pad02.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx2/b_blur.tga
+		tcmod rotate 100
+		rgbgen identity
+	}
+	{
+		clampmap textures/sfx/jcb2.tga
+		blendfunc add
+		tcmod rotate 100
+		tcmod stretch sin 1.2 .8 0 1.4
+		rgbgen wave square .5 .5 .25 1.4
+	}
+	{
+		map textures/sfx2/jump_pad02.tga
+		blendfunc blend
+		alphafunc GE128
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		rgbGen identity
+	}
+}
+
+textures/sfx2/red_jumpad
+{
+	qer_editorimage textures/sfx2/jump_pad02.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx2/r_blur.tga
+		tcmod rotate 100
+		rgbgen identity
+	}
+	{
+		clampmap textures/sfx/jcr2.tga
+		blendfunc add
+		tcmod rotate 100
+		tcmod stretch sin 1.2 .8 0 1.4
+		rgbgen wave square .5 .5 .25 1.4
+	}
+	{
+		map textures/sfx2/jump_pad02.tga
+		blendfunc blend
+		alphafunc GE128
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		rgbGen identity
+	}
+}
+
+textures/sfx2/ntrl_jumpad
+{
+	qer_editorimage textures/sfx2/jump_pad02.tga
+	surfaceparm nomarks
+	{
+		map textures/sfx2/n_blur.tga
+		tcmod rotate 100
+		rgbgen identity
+	}
+	{
+		clampmap textures/sfx/jc2.tga
+		blendfunc add
+		tcmod rotate 100
+		tcmod stretch sin 1.2 .8 0 1.4
+		rgbgen wave square .5 .5 .25 1.4
+	}
+	{
+		map textures/sfx2/jump_pad02.tga
+		blendfunc blend
+		alphafunc GE128
+		rgbgen identity
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		rgbGen identity
+	}
+}
