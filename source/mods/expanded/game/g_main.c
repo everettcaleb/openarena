@@ -566,7 +566,7 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 	G_FindTeams();
 
 	// make sure we have flags for CTF, etc
-	if( g_gametype.integer >= GT_TEAM && (g_ffa_gt!=1)) {
+	if( g_gametype.integer >= GT_TEAM && g_gametype.integer != GT_LMS ) {
 		G_CheckTeamItems();
 	}
 
@@ -1302,7 +1302,7 @@ void LogExit( const char *string ) {
 		numSorted = 32;
 	}
 
-	if ( g_gametype.integer >= GT_TEAM && g_ffa_gt!=1) {
+	if ( g_gametype.integer >= GT_TEAM && g_gametype.integer != GT_LMS) {
 		G_LogPrintf( "red:%i  blue:%i\n",
 			level.teamScores[TEAM_RED], level.teamScores[TEAM_BLUE] );
 	}

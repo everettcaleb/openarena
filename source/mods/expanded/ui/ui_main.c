@@ -2357,7 +2357,7 @@ static qboolean UI_GameType_HandleKey(int flags, float *special, int key, qboole
 					}
 				}
     
-		if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_TOURNAMENT | GT_LMS | GT_FFA) {
+		if (uiInfo.gameTypes[ui_gameType.integer].gtEnum == (GT_TOURNAMENT | GT_LMS | GT_FFA)) {
 			trap_Cvar_Set("ui_Q3Model", "1");
 		} else {
 			trap_Cvar_Set("ui_Q3Model", "0");
@@ -3008,7 +3008,11 @@ static void UI_StartSkirmish(qboolean next) {
 	trap_Cvar_Set("cg_cameraOrbit", "0");
 	trap_Cvar_Set("cg_thirdPerson", "0");
 	trap_Cvar_Set("cg_drawTimer", "1");
+	if ( g == GT_LMS ) {
+		trap_Cvar_Set("g_doWarmup", "0");
+	} else { 
 	trap_Cvar_Set("g_doWarmup", "1");
+	}
 	trap_Cvar_Set("g_warmup", "15");
 	trap_Cvar_Set("sv_pure", "0");
 	trap_Cvar_Set("g_friendlyFire", "0");
@@ -3023,7 +3027,8 @@ static void UI_StartSkirmish(qboolean next) {
 	delay = 500;
 	//this needs to be far more random
 	if ( g == GT_FFA)	{
-		for (i = 0; i < PLAYERS_PER_TEAM; i++) {
+		temp = uiInfo.mapList[ui_currentMap.integer].teamMembers + 1;
+		for (i = 0; i < uiInfo.mapList[ui_currentMap.integer].teamMembers; i++) {
 		int bot = trap_Cvar_VariableValue( va("ui_blueteam%i", i+1));
 		trap_Cvar_Set("sv_maxClients", va("%d", temp));
 		Com_sprintf( buff, sizeof(buff), "addbot %s %f \n", UI_GetBotNameByNumber(bot-2), skill); }
@@ -3035,6 +3040,7 @@ static void UI_StartSkirmish(qboolean next) {
 		Com_sprintf( buff, sizeof(buff), "wait ; addbot %s %f "", %i \n", uiInfo.mapList[ui_currentMap.integer].opponentName, skill, delay);
 		trap_Cmd_ExecuteText( EXEC_APPEND, buff );
 	} 
+
 	// bad hack but it populates the map with bots
 	if (g == GT_LMS ) {
 		temp = uiInfo.mapList[ui_currentMap.integer].teamMembers + 1;
