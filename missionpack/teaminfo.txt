@@ -26,7 +26,7 @@ teams {
 //team name, icon, 5 team members
   { "Killers" "ui/assets/killers"  "Clint" "John" "Harry" "Bruce" "Fred"  }
   { "Cyborgs" "ui/assets/cyborgs" "Robby" "Zapper" "Wrench" "Diskette" "ZippyMcGee" }
-  { "Summer" "ui/assets/summer"  "Jim" "Bob" "Jimbob" "Mother" "Hunk"  }
+  { "Summer" "ui/assets/summer"  "Jim" "Bob" "Jimbob" "Mother" "Sweety"  }
   { "Scumm" "ui/assets/scumm" "^2CH3470R" "^4Joe" "^6D1z^4Suk0rz" "^1named^7player" "^7Mr^3McGoo" }
 }
 characters {
@@ -34,8 +34,28 @@ characters {
   { "Sergei"  "male" }
   { "Kyonshi"  "female" }
 }
-/*
+
 aliases	{
 //character name, bot alias, preferred action (a - all purpose, d - defense, o - offense
+	{ "^2CH3470R" "grunt" 		a	}
+	{ "^4Joe" "tony"		a	}
+	{ "^6D1z^4Suk0rz" "beret"	a	}
+	{ "^1named^7player" "kyonshi"	a	}
+	{ "^7Mr^3McGoo" "grism"		a	}
+	{ "Jim" "penguin"		a	}
+	{ "Bob" "liz"			a	}
+	{ "Jimbob" "gargoyle"		a	}
+	{ "Mother" "major"		a	}
+	{ "Sweety" "angelyss"		a	}
+	{ "Robby" "merman"		a	}
+	{ "Zapper" "rai"		a	}
+	{ "Wrench" "ayumi"		a	}
+	{ "Diskette" "widowe"		a	}
+	{ "ZippyMcGee" "skelebot"	a	}
+	{ "Clint" "tanisha"		a	}
+	{ "John" "nekoyumi"		a	}
+	{ "Harry" "liz"			a	}
+	{ "Bruce" "beret"		a	}
+	{ "Fred" "major"		a	}
+
 }
-*/

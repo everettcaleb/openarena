@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 gametypes {
   { "Deathmatch" 0 }
   { "Tournament" 1 }
-  { "Team Deathmatch" 3 } 
+  { "Team Deathmatch" 3 } //any and all maps marked for ffa will be team
   { "Capture the flag" 4 }
   { "One flag" 5 }
   { "Overload" 6 }
@@ -40,7 +40,7 @@ joingametypes {
   { "Don't care" -1 }
   { "Deathmatch" 0 }
   { "Tournament" 1 }
-  { "Team DM" 3 } 
+  { "Team DM" 3 } //any and all maps marked for ffa will be team
   { "CTF" 4 }
   { "One flag" 5 }
   { "Overload" 6 }
@@ -65,21 +65,27 @@ maps	{
 	{ "Hydrocapture" "hydronex" "5" "sergei" 2 "0" 4 "110" 5 "180" 6 "180" 7 "180" 8 "110" 9 "110" 11 "110" }
 	
 	//tournament + elimination + lms
-	{ "Trial by Error" "oa_rpg3dm2" "4" "Grunt" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "Aggressor" "aggressor" "1" "Major" 0 "200" 3 "100" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "Place of Two Deaths" "oa_dm1" "1" "kyonshi" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "Claustrophobopolis" "oa_dm2" "1" "Angelyss" 0 "200" 3 "100" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "The Abandoned Base" "oa_dm3" "1" "Jenna" 0 "200" 3 "100" 2 "0" 1 "240" 8 "110" 10 "110" }
-	{ "The Bad Place" "oa_dm4" "1" "merman" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "The Cistern" "oa_dm5" "1" "grism" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "The Dark Zone" "oa_dm6" "1" "sergei" 0 "200" 3 "100" 2 "0" 1 "180" 8 "110" 10 "110" }
-	{ "nameless" "oa_dm7" "1" "beret" 0 "200" 2 "0" 3 "100" 1 "180" 8 "110" 10 "110" }
-	{ "Fan" "fan" "1" "Tanisha" 2 "0" 0 "200" 3 "100" 1 "180" 8 "110" 10 "110" }
-	{ "The Space Spire" "czest1tourney" 0 "200" "1" "skelebot" 2 "0" 3 "100" 1 "180" 10 "110" }
-	{ "Kaooos" "kaos2" "4" "Sergei" 2 0 3 "100" "200" "0" 8 "240" 10 "110" }
-	{ "DM6ish" "dm6ish" "4" "Sergei" 2 0 "200" 3 "100" "0" 8 "240" 10 "110" }
-	{ "Monastery" "czest1dm" "4" "Sergei" 0 "200" 2 "0" 3 "100" 8 "240" 10 "110" }
-	
+	{ "Trial by Error" "oa_rpg3dm2" "2" "Grunt" 0 "200" 2 "0"8 "110" 10 "110" }
+	{ "Aggressor" "aggressor" "1" "Major" 2 "0" 1 "240" }
+	{ "Place of Two Deaths" "oa_dm1" "2" "kyonshi" 0 "200" 2 "0" 8 "110" 10 "110" }
+	{ "Claustrophobopolis" "oa_dm2" "2" "Angelyss" 0 "200" 2 "0" 8 "110" 10 "110" }
+	{ "The Abandoned Base" "oa_dm3" "3" "Jenna" 0 "200" 2 "0" 8 "110" 10 "110" }
+	{ "The Bad Place" "oa_dm4" "2" "merman" 0 "200" 2 "0" 8 "110" 10 "110" }
+	{ "The Cistern" "oa_dm5" "2" "grism" 0 "200" 2 "0" 8 "110" 10 "110" }
+	{ "The Dark Zone" "oa_dm6" "1" "sergei" 2 "0" 1 "180" }
+	{ "nameless" "oa_dm7" "2" "beret" 0 "200" 2 "0" 8 "110" 10 "110" }
+	{ "Fan" "fan" "1" "Tanisha" 2 "0" 1 "180" }
+	{ "The Space Spire" "czest1tourney" "1" "skelebot" 2 "0" 1 "180" }
+	{ "Kaooos" "kaos2" "2" "Sergei" 0" 160" 2 "200" 8 "240" 10 "110" }
+	{ "DM6ish" "dm6ish" "2" "Sergei" 0 "200" 2 "200" 8 "240" 10 "110" }
+	{ "Monastery" "czest1dm" "2" "Sergei" 0 "200" 2 "0" 8 "240" 10 "110" }
+	{ "DM4ISHish" "dm4ish" "2" "Merman" 0 "200" 2 "0" 8 "240" 10 "110" }
+	{ "House of Pancakes" "ce1m7" "1" "Beret" 2 "0" 1 "180" }
+	{ "Projectile Vomit" "oa_pvomit" "2" "Kyonshi" 0 "200" 2 "0" 8 "240" 10 "110" }
+	{ "Shine" "oa_shine" "2" "Tony" 0 "200" 2 "0" 8 "240" 10 "110" }
+	{ "Suspended" "suspended" "2" "Gargoyle" 0 "200" 2 "0" 8 "240" 10 "110" }
+	{ "Strange House" "oa_shouse" "2" "Grism" 0 "200" 2 "0" 8 "240" 10 "110" }
+
 	{ "Suction" "suction" "3" "sergei" 2 "0" 4 "110" 9 "110" 10 "0" 11 "110" }
-	{ "IslandDM" "islanddm" "5" "Angelyss" 0 "200" 1 "120" 2 "0" 9 "180" 12" 180" }
+	{ "IslandDM" "islanddm" "5" "Angelyss" 0 "200" 2 "0" 9 "180" 12" 180" }
 }

@@ -124,7 +124,6 @@ static const int numSortKeys = sizeof(sortKeys) / sizeof(const char*);
 static char* netnames[] = {
 	"???",
 	"UDP",
-	"IPX",
 	NULL
 };
 
@@ -3022,7 +3021,7 @@ static void UI_StartSkirmish(qboolean next) {
 	}
 
 	delay = 500;
-
+	//this needs to be far more random
 	if ( g == GT_FFA)	{
 		for (i = 0; i < PLAYERS_PER_TEAM; i++) {
 		int bot = trap_Cvar_VariableValue( va("ui_blueteam%i", i+1));
