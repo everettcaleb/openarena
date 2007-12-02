@@ -1165,6 +1165,79 @@ textures/skies2/nebula2
 	skyparms env/nebulae/nebulae 2048 -
 }
 
+textures/skies2/nebula
+{
+	qer_editorimage textures/skies/nebulae2.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/nebulae2.jpg
+	q3map_surfacelight 70
+	q3map_sun .5 .5 .5 90 315 40
+	skyparms env/nebulae/nebulae2 2048 -
+}
+
+textures/skies2/nebula3nolit
+{
+	qer_editorimage textures/skies/nebulae.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	skyparms env/nebulae/nebulae2 2048 -
+}
+
+textures/skies2/nebula3halflit
+{
+	qer_editorimage textures/skies/nebulae.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/nebulae.jpg
+	q3map_surfacelight 150
+	q3map_sun .5 .5 .5 90 315 40
+	skyparms env/nebulae/nebulae2 2048 -
+}
+
+textures/skies2/nebula3
+{
+	qer_editorimage textures/skies/nebulae.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/nebulae.jpg
+	q3map_surfacelight 300
+	q3map_sun .5 .5 .5 90 315 40
+	skyparms env/nebulae/nebulae2 2048 -
+}
+
+textures/skies2/nebulax
+{
+	qer_editorimage textures/skies/nebulae.jpg
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	skyparms env/nebulae/nebulae2 2048 -
+}
+
+textures/skies2/x_nebula3
+{
+	qer_editorimage textures/skies/nebulae.jpg
+	q3map_lightsubdivide 512
+	surfaceparm noimpact
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	surfaceparm sky
+	q3map_lightimage textures/skies/nebulae2.jpg
+	q3map_surfacelight 200
+	q3map_sun .5 .5 .5 90 315 40
+	skyparms env/nebulae/nebulae2 2048 -
+}
+
 textures/skies/xproto_sky_tourney2
 {
 	qer_editorimage textures/skies/intelredclouds.tga
