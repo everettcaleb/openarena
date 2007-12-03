@@ -1186,11 +1186,14 @@ textures/sfx2/red_launchpad
 textures/sfx2/blue_jumpad
 {
 	qer_editorimage textures/sfx2/jump_pad02.tga
+	q3map_lightimage textures/sfx2/b_blur.tga
+	surfaceparm nodamage
 	surfaceparm nomarks
+	q3map_surfacelight 30
 	{
 		map textures/sfx2/b_blur.tga
-		tcmod rotate 100
-		rgbgen identity
+		tcmod rotate 300
+		rgbgen identity	
 	}
 	{
 		clampmap textures/sfx/jcb2.tga
@@ -1202,12 +1205,11 @@ textures/sfx2/blue_jumpad
 	{
 		map textures/sfx2/jump_pad02.tga
 		blendfunc blend
-		alphafunc GE128
 		rgbgen identity
 	}
 	{
 		map $lightmap
-		blendFunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		blendFunc filter
 		rgbGen identity
 	}
 }
@@ -1215,10 +1217,13 @@ textures/sfx2/blue_jumpad
 textures/sfx2/red_jumpad
 {
 	qer_editorimage textures/sfx2/jump_pad02.tga
+	q3map_lightimage textures/sfx2/r_blur.tga
+	surfaceparm nodamage
 	surfaceparm nomarks
+	q3map_surfacelight 30
 	{
 		map textures/sfx2/r_blur.tga
-		tcmod rotate 100
+		tcmod rotate 300
 		rgbgen identity
 	}
 	{
@@ -1231,12 +1236,11 @@ textures/sfx2/red_jumpad
 	{
 		map textures/sfx2/jump_pad02.tga
 		blendfunc blend
-		alphafunc GE128
 		rgbgen identity
 	}
 	{
 		map $lightmap
-		blendFunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		blendFunc filter
 		rgbGen identity
 	}
 }
@@ -1244,10 +1248,13 @@ textures/sfx2/red_jumpad
 textures/sfx2/ntrl_jumpad
 {
 	qer_editorimage textures/sfx2/jump_pad02.tga
+	q3map_lightimage textures/sfx2/n_blur.tga
+	surfaceparm nodamage
 	surfaceparm nomarks
+	q3map_surfacelight 30
 	{
 		map textures/sfx2/n_blur.tga
-		tcmod rotate 100
+		tcmod rotate 300
 		rgbgen identity
 	}
 	{
@@ -1260,12 +1267,11 @@ textures/sfx2/ntrl_jumpad
 	{
 		map textures/sfx2/jump_pad02.tga
 		blendfunc blend
-		alphafunc GE128
 		rgbgen identity
 	}
 	{
 		map $lightmap
-		blendFunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
+		blendFunc filter
 		rgbGen identity
 	}
 }
