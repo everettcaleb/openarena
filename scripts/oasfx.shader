@@ -25,7 +25,7 @@ textures/sfx/xflame3
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	cull disable
-	deformVertexes autosprite
+	deformVertexes autosprite2
 	tessSize 64
 	
 	{
@@ -50,7 +50,7 @@ textures/sfx/xflame4
 	surfaceparm nomarks
 	cull disable
 	q3map_surfacelight 400
-	deformVertexes autosprite
+	deformVertexes autosprite2
 	{
 		animmap 10 textures/sfx/flame1.tga textures/sfx/flame3.tga textures/sfx/flame5.tga textures/sfx/flame7.tga 
 		blendfunc gl_src_alpha gl_one
@@ -364,7 +364,7 @@ textures/sfx/flame1dark
 	surfaceparm nomarks
 	cull disable
 	q3map_surfacelight 100
-	
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/flame1.tga textures/sfx/flame3.tga textures/sfx/flame5.tga textures/sfx/flame7.tga 
 		blendfunc gl_src_alpha gl_one
@@ -385,6 +385,7 @@ textures/sfx/flame1km
 	cull disable
 	q3map_surfacelight 6000
 	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
 		blendfunc gl_src_alpha gl_one
@@ -403,7 +404,7 @@ textures/sfx/flame1side
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	cull disable
-	
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
 		blendfunc gl_src_alpha gl_one
@@ -411,6 +412,91 @@ textures/sfx/flame1side
 	}
 	{
 		animmap 10 textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga textures/sfx/flame1.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/mkc_bigflame
+{
+	qer_editorimage textures/sfx/flame2.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_lightimage textures/sfx/flame1.tga
+	q3map_surfacelight 500
+	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga textures/sfx/flame1.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/xflame2_2250
+{
+	qer_editorimage textures/sfx/flame2.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_lightimage textures/sfx/flame1.tga
+	q3map_surfacelight 2250
+	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga textures/sfx/flame1.tga
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/xflame2_1800
+{
+	qer_editorimage textures/sfx/flame5.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	q3map_lightimage textures/sfx/flame1.tga
+	q3map_surfacelight 1800
+	q3map_flare textures/sfx/flameflare
+	deformVertexes wave 194 sin 0 1 0 .6
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame3.tga textures/sfx/flame5.tga textures/sfx/flame7.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame4.tga textures/sfx/flame6.tga textures/sfx/flame8.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave sawtooth 0 1 0 10 
+	}
+}
+
+textures/sfx/xflame2_nolight
+{
+	qer_editorimage textures/sfx/flame5.tga
+	surfaceparm nolightmap
+	surfaceparm nomarks
+	cull disable
+	deformVertexes wave 194 sin 0 1 0 .6
+	{
+		animmap 10 textures/sfx/flame1.tga textures/sfx/flame3.tga textures/sfx/flame5.tga textures/sfx/flame7.tga 
+		blendfunc gl_src_alpha gl_one
+		alphaGen wave inversesawtooth 0 1 0 10 
+	}
+	{
+		animmap 10 textures/sfx/flame2.tga textures/sfx/flame4.tga textures/sfx/flame6.tga textures/sfx/flame8.tga 
 		blendfunc gl_src_alpha gl_one
 		alphaGen wave sawtooth 0 1 0 10 
 	}
@@ -424,6 +510,7 @@ textures/sfx/flameanim_dimmer
 	cull disable
 	q3map_surfacelight 1000
 	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
 		blendfunc gl_src_alpha gl_one
@@ -444,6 +531,7 @@ textures/sfx/flameanim_blue
 	cull disable
 	q3map_surfacelight 2000
 	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/b_flame1.tga textures/sfx/b_flame2.tga textures/sfx/b_flame3.tga textures/sfx/b_flame4.tga textures/sfx/b_flame5.tga textures/sfx/b_flame6.tga textures/sfx/b_flame7.tga textures/sfx/b_flame8.tga 
 		blendfunc gl_src_alpha gl_one
@@ -467,7 +555,7 @@ textures/sfx/flameanim_blue_nolight
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	cull disable
-
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/b_flame1.tga textures/sfx/b_flame2.tga textures/sfx/b_flame3.tga textures/sfx/b_flame4.tga textures/sfx/b_flame5.tga textures/sfx/b_flame6.tga textures/sfx/b_flame7.tga textures/sfx/b_flame8.tga 
 		blendfunc gl_src_alpha gl_one
@@ -493,6 +581,7 @@ textures/sfx/flameanim_blue_pj
 	cull disable
 	q3map_surfacelight 2000
 	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/b_flame1.tga textures/sfx/b_flame3.tga textures/sfx/b_flame5.tga textures/sfx/b_flame7.tga 
 		blendfunc gl_src_alpha gl_one
@@ -513,6 +602,7 @@ textures/sfx/flameanim_green_pj
 	cull disable
 	q3map_surfacelight 2000
 	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/g_flame1.tga textures/sfx/g_flame3.tga textures/sfx/g_flame5.tga textures/sfx/g_flame7.tga 
 		blendfunc gl_src_alpha gl_one
@@ -538,6 +628,7 @@ textures/sfx/flameanim_red
 	cull disable
 	q3map_surfacelight 2000
 	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/r_flame1.tga textures/sfx/r_flame3.tga textures/sfx/r_flame5.tga textures/sfx/r_flame7.tga 
 		blendfunc gl_src_alpha gl_one
@@ -556,7 +647,7 @@ textures/sfx/flameanim_red_nolight
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	cull disable
-	
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/r_flame1.tga textures/sfx/r_flame3.tga textures/sfx/r_flame5.tga textures/sfx/r_flame7.tga 
 		blendfunc gl_src_alpha gl_one
@@ -577,6 +668,7 @@ textures/sfx/flameanim_red_pj
 	cull disable
 	q3map_surfacelight 1500
 	q3map_flare flareShader-lava
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/r_flame1.tga textures/sfx/r_flame3.tga textures/sfx/r_flame5.tga textures/sfx/r_flame7.tga 
 		blendfunc gl_src_alpha gl_one
@@ -770,6 +862,7 @@ textures/sfx/flame2
 	cull disable
 	q3map_surfacelight 3787
 	q3map_flare textures/sfx/flameflare
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 8 textures/sfx/flame1.tga textures/sfx/flame2.tga textures/sfx/flame3.tga textures/sfx/flame4.tga textures/sfx/flame5.tga textures/sfx/flame6.tga textures/sfx/flame7.tga textures/sfx/flame8.tga 
 		blendfunc gl_src_alpha gl_one
@@ -790,6 +883,7 @@ textures/sfx/xflame2
 	cull disable
 	q3map_surfacelight 3787
 	q3map_flare textures/sfx/flameflare
+	deformVertexes wave 194 sin 0 1 0 .6
 	{
 		animmap 10 textures/sfx/flame1.tga textures/sfx/flame3.tga textures/sfx/flame5.tga textures/sfx/flame7.tga 
 		blendfunc gl_src_alpha gl_one

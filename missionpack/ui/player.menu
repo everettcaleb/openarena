@@ -34,6 +34,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	rect 0 0 640 480
 	outOfBoundsClick  
 	style 0
+	onOpen	{
+		uiScript update "ui_getname";
+		}
 	onEsc	{
 		close player;
 		open main;
@@ -182,7 +185,7 @@ itemDef {
 itemDef {
 	name hostnamer
 	style 0	
-	text "Player Name"
+	text "Player Name:"
 	style 0	
 	type 0
 	textstyle 6
@@ -238,7 +241,7 @@ itemDef {
 
 itemDef {
       	name settin2
-      	style 0
+      	style WINDOW_STYLE_FILLED
 	ownerdraw UI_HANDICAP
 	type ITEM_TYPE_EDITFIELD
 	text ""
@@ -263,7 +266,6 @@ itemDef {
 
 itemDef {
 	name password
-	style 0	
 	text "Model type:"
 	style 0	
 	type 0
@@ -298,4 +300,44 @@ itemDef {
 	outlinecolor  MP_BOX_OUTLINE
 	visible 1 
 	}
+
+itemDef	{
+	name teamname
+	style 0
+	text "Team Name:"
+	cvarTest "ui_q3model"
+	showCvar { "0" }
+	type 0
+	textstyle 6
+	textscale .25
+	rect 212 326 1 1
+	textalign 0
+	textalignx 6
+	textaligny 18
+	forecolor MP_BOX_HEADERCOLOR
+	visible 1
+	}
+
+itemDef	{
+	name teamshit
+	ownerdraw UI_CLANNAME
+	text ""
+	style WINDOW_STYLE_FILLED
+	background "ui/assets/scrollbar"
+	textstyle 6
+	textscale .24
+	rect 212 350 1 1
+	textalign 0
+	textalignx 6
+	textaligny 18
+	border 1
+	bordercolor   MP_BOX_BORDER
+	forecolor     MP_BOX_FORE
+	backcolor     MP_BOX_BACK
+	outlinecolor  MP_BOX_OUTLINE
+	visible 1
+	cvarTest "ui_q3model"
+	showCvar { "0" }
+	}
+}
 }
