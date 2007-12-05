@@ -151,7 +151,7 @@ itemDef	{
 	2 190 25
 	}
 
-itemDef {
+itemDef	{
 	name themodel
 	ownerdraw UI_PLAYERMODEL
 	rect 361 118 217 339
@@ -166,7 +166,7 @@ itemDef {
 	visible 1
 	}
 
-itemDef {
+itemDef	{
 	name mappreviewtext
 	text "Model:"
 	style 0	
@@ -178,11 +178,12 @@ itemDef {
 	textalignx 6	
 	textaligny 0        
 	forecolor MP_BOX_HEADERCOLOR
-	visible 1 
+	visible 1
+	decoration
 	}
 
 // PLAYER NAME
-itemDef {
+itemDef	{
 	name hostnamer
 	style 0	
 	text "Player Name:"
@@ -195,10 +196,11 @@ itemDef {
 	textalignx 6	
 	textaligny 18        
 	forecolor MP_BOX_HEADERCOLOR
-	visible 1 
+	visible 1
+	decoration
 	}
 
-itemDef {
+itemDef	{
 	name settin
 	style WINDOW_STYLE_FILLED
 	type ITEM_TYPE_EDITFIELD
@@ -223,7 +225,7 @@ itemDef {
 
 
 // MAX PRAYERS
-itemDef {
+itemDef	{
 	name hanidcap
 	style 0	
 	text "Handicap:"
@@ -236,12 +238,13 @@ itemDef {
 	textalignx 6	
 	textaligny 18        
 	forecolor MP_BOX_HEADERCOLOR
-	visible 1 
+	visible 1
+	decoration
 	}
 
-itemDef {
-      	name settin2
-      	style WINDOW_STYLE_FILLED
+itemDef	{
+	name settin2
+	style WINDOW_STYLE_FILLED
 	ownerdraw UI_HANDICAP
 	type ITEM_TYPE_EDITFIELD
 	text ""
@@ -251,10 +254,10 @@ itemDef {
 	background "ui/assets/scrollbar"
 	textstyle 6
 	maxchars 4
-      	textscale .24
-      	rect 212 229 150 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .24
+	rect 212 229 150 24
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
 	border 1
 	bordercolor   MP_BOX_BORDER
@@ -264,7 +267,7 @@ itemDef {
 	visible 1 
 	}
 
-itemDef {
+itemDef	{
 	name password
 	text "Model type:"
 	style 0	
@@ -276,22 +279,23 @@ itemDef {
 	textalignx 6	
 	textaligny 18        
 	forecolor MP_BOX_HEADERCOLOR
-	visible 1 
+	visible 1
+	decoration
 	}
 
-itemDef {
-  	name arenatype
+itemDef	{
+	name arenatype
 	type ITEM_TYPE_MULTI	
 	cvar "ui_q3model"
 	cvarFloatList { "Team Game" 0 "DM Game" 1 }
 	text ""
-      	style WINDOW_STYLE_FILLED
+	style WINDOW_STYLE_FILLED
 	background "ui/assets/scrollbar"
 	textstyle 6
-      	textscale .24
-      	rect 212 287 150 24
-      	textalign 0		
-     	textalignx 6	
+	textscale .24
+	rect 212 287 150 24
+	textalign 0		
+	textalignx 6	
 	textaligny 18        
 	border 1
 	bordercolor   MP_BOX_BORDER
@@ -305,8 +309,6 @@ itemDef	{
 	name teamname
 	style 0
 	text "Team Name:"
-	cvarTest "ui_q3model"
-	showCvar { "0" }
 	type 0
 	textstyle 6
 	textscale .25
@@ -316,15 +318,19 @@ itemDef	{
 	textaligny 18
 	forecolor MP_BOX_HEADERCOLOR
 	visible 1
+	cvarTest "ui_q3model"
+	showCvar { "0" }
 	}
 
 itemDef	{
 	name teamshit
+	style 1
+	type 1
 	ownerdraw UI_CLANNAME
 	text ""
 	textstyle 6
 	textscale .24
-	rect 212 350 1 1
+	rect 212 350 150 24
 	textalign 0
 	textalignx 6
 	textaligny 18
