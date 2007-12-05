@@ -92,8 +92,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define	DEFAULT_TEAM_HEAD		"sarge"
 #endif
 
-#define DEFAULT_REDTEAM_NAME		"Stroggs"
-#define DEFAULT_BLUETEAM_NAME		"Pagans"
+#define DEFAULT_REDTEAM_NAME		"Cyborgs"
+#define DEFAULT_BLUETEAM_NAME		"Heathens"
 
 typedef enum {
 	FOOTSTEP_NORMAL,
