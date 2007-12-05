@@ -24,64 +24,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 {
 MenuDef	{
-	name endOfGame
-	visible 0
-	fullscreen 1
+	name Connect
 	rect 0 0 640 480
 	background MP_BACKGROUND
-	focuscolor MP_FOCUSCOLOR
-	onClose { uiScript updateSPMenu; }
-	onEsc { close endOfGame; open skirmish; }
-	onOpen { close ingame; }
-
-itemDef	{
-	name next
-	text "Next"
-	textscale .25
-	type ITEM_TYPE_BUTTON
-	rect 450 440 20 10
-	textalign 0
-	textaligny 10
-	forecolor MP_TEXTCOLOR
-	visible 1
-	action { uiScript nextSkirmish; close endOfGame; close main }
+	style WINDOW_STYLE_SHADER
+	fullscreen 0
 	}
-
-itemDef	{
-	name tomain
-	text "Back"
-	textscale .25
-	type ITEM_TYPE_BUTTON
-	rect 300 440 20 10
-	textalign 0
-	textaligny 10
-	forecolor MP_TEXTCOLOR
-	visible 1
-	action	{
-		close endofgame;
-		open skirmish;
-		}
-	}
-
-itemDef	{
-	name playagain
-	text "Replay"
-	textscale .25
-	type ITEM_TYPE_BUTTON
-	rect 150 440 20 10
-	textalign 0
-	textaligny 10
-	forecolor MP_TEXTCOLOR
-	visible 1
-	action {
-		close endofgame;
-		close skirmish;
-		uiScript skirmishStart;
-		}
-	}
-
-
-
-}
 }
 
