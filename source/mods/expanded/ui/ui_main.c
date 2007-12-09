@@ -2216,7 +2216,7 @@ static qboolean UI_OwnerDrawVisible(int flags) {
 			flags &= ~UI_SHOW_NOTFAVORITESERVERS;
 		} 
 		if (flags & UI_SHOW_ANYTEAMGAME) {
-			if (uiInfo.gameTypes[ui_gameType.integer].gtEnum <= GT_TEAM || uiInfo.gameTypes[ui_gameType.integer].gtEnum != GT_LMS ) {
+			if (uiInfo.gameTypes[ui_gameType.integer].gtEnum <= GT_TEAM || uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS ) {
 				vis = qfalse;
 			}
 			flags &= ~UI_SHOW_ANYTEAMGAME;
@@ -2228,7 +2228,7 @@ static qboolean UI_OwnerDrawVisible(int flags) {
 			flags &= ~UI_SHOW_ANYNONTEAMGAME;
 		} 
 		if (flags & UI_SHOW_NETANYTEAMGAME) {
-			if (uiInfo.gameTypes[ui_netGameType.integer].gtEnum <= GT_TEAM || uiInfo.gameTypes[ui_gameType.integer].gtEnum != GT_LMS ) {
+			if (uiInfo.gameTypes[ui_netGameType.integer].gtEnum <= GT_TEAM || uiInfo.gameTypes[ui_gameType.integer].gtEnum == GT_LMS ) {
 				vis = qfalse;
 			}
 			flags &= ~UI_SHOW_NETANYTEAMGAME;
@@ -3614,12 +3614,12 @@ static int UI_MapCountByGameType(qboolean singlePlayer) {
 qboolean UI_hasSkinForBase(const char *base, const char *team) {
 	char	test[1024];
 	
-	Com_sprintf( test, sizeof( test ), "models/players/%s/%s/lower_default.skin", base, team );
+	Com_sprintf( test, sizeof( test ), "models/players/%s/%s/lower_red.skin", base, team );
 
 	if (trap_FS_FOpenFile(test, NULL, FS_READ)) {
 		return qtrue;
 	}
-	Com_sprintf( test, sizeof( test ), "models/players/characters/%s/%s/lower_default.skin", base, team );
+	Com_sprintf( test, sizeof( test ), "models/players/characters/%s/%s/lower_red.skin", base, team );
 
 	if (trap_FS_FOpenFile(test, NULL, FS_READ)) {
 		return qtrue;

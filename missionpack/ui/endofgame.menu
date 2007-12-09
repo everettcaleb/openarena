@@ -37,12 +37,14 @@ MenuDef	{
 itemDef	{
 	name next
 	text "Next"
+	textstyle 6
 	textscale .25
 	type ITEM_TYPE_BUTTON
-	rect 450 440 20 10
+	rect 450 50 20 10
 	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
 	visible 1
 	action { uiScript nextSkirmish; close endOfGame; close main }
 	}
@@ -50,12 +52,14 @@ itemDef	{
 itemDef	{
 	name tomain
 	text "Back"
+	textstyle 6
 	textscale .25
 	type ITEM_TYPE_BUTTON
-	rect 300 440 20 10
+	rect 295 50 20 10
 	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
 	visible 1
 	action	{
 		close endofgame;
@@ -66,12 +70,14 @@ itemDef	{
 itemDef	{
 	name playagain
 	text "Replay"
+	textstyle 6
 	textscale .25
 	type ITEM_TYPE_BUTTON
-	rect 150 440 20 10
+	rect 140 50 20 10
 	textalign 0
 	textaligny 10
 	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
 	visible 1
 	action {
 		close endofgame;
@@ -80,7 +86,226 @@ itemDef	{
 		}
 	}
 
+itemDef	{
+	name title
+	text "SCORES"
+	rect 320 125 128 10
+	textstyle 6
+	textscale .5
+	textalign 1
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
 
+itemDef	{
+	name mapshit
+	type 4
+	text "Map: "
+	cvar "ui_scoremap"
+	rect 270 160 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name fraglimit
+	type 4
+	text "Frag limit: "
+	cvar "ui_fraglimit"
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME
+	rect 270 180 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name caplimit
+	type 4
+	text "Capture limit: "
+	cvar "ui_capturelimit"
+	ownerdrawflag UI_SHOW_ANYTEAMGAME
+	rect 270 180 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name time
+	text "Time to Beat: "
+	ownerdraw UI_MAP_TIMETOBEAT
+	rect 270 200 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name skill
+	type 9
+	text "Skill: "
+	cvar "g_spSkill"
+	rect 270 220 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name gscore
+	type 9
+	text "Map Score: "
+	cvar "ui_scoreTeam2"
+	rect 270 260 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name gtime
+	type 9
+	text "Time: "
+	cvar "ui_scoreTime2"
+	rect 270 280 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name bscore
+	type 9
+	text "Score: "
+	cvar "ui_scoreBase2"
+	rect 270 300 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name tbonus
+	type 9
+	text "Time Bonus: "
+	cvar "ui_scoreTimeBonus2"
+	rect 270 320 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name sobonus
+	type 9
+	text "Shutout Bonus: "
+	cvar "ui_scoreShutoutBonus2"
+	rect 270 340 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name skbonus
+	type 9
+	text "Skill Bonus"
+	cvar "ui_scoreSkillBonus2"
+	rect 270 360 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name ascore
+	type 9
+	text "Total Score: "
+	cvar "ui_scoreScore2"
+	rect 270 380 128 10
+	textscale .2
+	textstyle 6
+	textalign 0
+	textaligny 10
+	forecolor 1 1 1 1
+	backcolor 0 0 0 0
+	decoration
+	visible 1
+	}
+
+itemDef	{
+	name newhighscoreshit
+	text "New High Score"
+	ownerdrawflag UI_SHOW_NEWHIGHSCORE
+	rect 320 80 128 10
+	textscale .3
+	textstyle 1
+	textalign 1
+	textaligny 10
+	forecolor 1 0.847 0 0.7
+	decoration
+	visible 1
+	}
 
 }
 }
