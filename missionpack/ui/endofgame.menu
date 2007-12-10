@@ -29,7 +29,6 @@ MenuDef	{
 	fullscreen 1
 	rect 0 0 640 480
 	background MP_BACKGROUND
-	focuscolor MP_FOCUSCOLOR
 	onClose { uiScript updateSPMenu; }
 	onEsc { close endOfGame; open skirmish; }
 	onOpen { close ingame; }
@@ -306,6 +305,277 @@ itemDef	{
 	decoration
 	visible 1
 	}
+
+itemDef	{
+	name assist
+	style 3
+	background "ui/assets/medal_assist.tga"
+	ownerdrawflag UI_SHOW_ANYTEAMGAME
+	rect 150 130 25 25
+	type 1
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/assist.wav"
+		}
+	}
+
+itemDef	{
+	name perfect
+	style 3
+	background "ui/assets/medal_perfect.tga"
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME
+	rect 150 130 25 25
+	type 1
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/perfect.wav"
+		}
+	}
+
+itemDef	{
+	name tsissa
+	type 4
+	style 3
+	background "ui/assets/medal_assist.tga"
+	ownerdrawflag UI_SHOW_ANYTEAMGAME
+	cvar "ui_scoreAssists2"
+	text ""
+	textscale .2
+	forecolor 1 1 1 1
+	textalign 1
+	textalignx 13
+	textaligny 35
+	rect 150 130 25 25
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/assist.wav"
+		}
+	}
+
+itemDef	{
+	name tcefrep
+	type 4
+	style 3
+	background "ui/assets/medal_perfect.tga"
+	ownerdrawflag UI_SHOW_ANYNONTEAMGAME
+	cvar "ui_scorePerfect2"
+	text ""
+	textscale .2
+	forecolor 1 1 1 1
+	textalign 1
+	textalignx 13
+	textaligny 35
+	rect 150 130 25 25
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/perfect.wav"
+		}
+	}
+
+itemDef	{
+	name accuracy
+	style 3
+	background "ui/assets/medal_accuracy.tga"
+	rect 150 170 25 25
+	type 1
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/accuracy.wav"
+		}
+	}
+
+itemDef	{
+	name ycarucca
+	type 4
+	style 3
+	background "ui/assets/medal_accuracy.tga"
+	rect 150 170 25 25
+	cvar "ui_scoreAccuracy2"
+	text ""
+	forecolor 1 1 1 1
+	textscale .2
+	textalign 1
+	textalignx 13
+	textaligny 35
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/accuracy.wav"
+		}
+	}
+
+itemDef	{
+	name ehxcsellent
+	style 3
+	background "ui/assets/medal_excellent.tga"
+	rect 150 210 25 25
+	type 1
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/excellent.wav"
+		}
+	}
+
+itemDef	{
+	name tnellescxhe
+	type 4
+	style 3
+	background "ui/assets/medal_excellent.tga"
+	rect 150 210 25 25
+	cvar "ui_scoreExcellents2"
+	text ""
+	forecolor 1 1 1 1
+	textscale .2
+	textalign 1
+	textalignx 13
+	textaligny 35
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/excellent.wav"
+		}
+	}
+
+itemDef	{
+	name gauntlet
+	style 3
+	background "ui/assets/medal_gauntlet.tga"
+	rect 150 250 25 25
+	type 1
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/gauntlet.wav"
+		}
+	}
+
+itemDef	{
+	name teltnuag
+	type 4
+	style 3
+	background "ui/assets/medal_gauntlet.tga"
+	rect 150 250 25 25
+	cvar "ui_scoreGauntlets2"
+	text ""
+	forecolor 1 1 1 1	
+	textscale .2
+	textalign 1
+	textalignx 13
+	textaligny 35
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/gauntlet.wav"
+		}
+	}
+
+itemDef	{
+	name impressive
+	style 3
+	background "ui/assets/medal_impressive.tga"
+	rect 150 290 25 25
+	type 1
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/impressive.wav"
+		}
+	}
+
+itemDef	{
+	name evisserpmi
+	type 4
+	style 3
+	background "ui/assets/medal_impressive.tga"
+	rect 150 290 25 25
+	cvar "ui_scoreImpressives2"
+	text ""
+	textscale .2
+	forecolor 1 1 1 1
+	textalign 1
+	textalignx 13
+	textaligny 35
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/impressive.wav"
+		}
+	}
+
+itemDef	{
+	name defense
+	style 3
+	background "ui/assets/medal_defend.tga"
+	ownerdrawflag UI_SHOW_ANYTEAMGAME
+	rect 150 330 25 25
+	type 1
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/defense.wav"
+		}
+	}
+
+itemDef	{
+	name esnefed
+	type 4
+	style 3
+	background "ui/assets/medal_defend.tga"
+	ownerdrawflag UI_SHOW_ANYTEAMGAME
+	rect 150 330 25 25
+	cvar "ui_scoreDefends2"
+	text ""
+	forecolor 1 1 1 1
+	textscale .2
+	textalign 1
+	textalignx 13
+	textaligny 35
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	action	{
+		exec "play sound/feedback/defense.wav"
+		}
+	}
+
+itemDef	{
+	name capture
+	type 4
+	style 3
+	background "ui/assets/medal_capture.tga"
+	ownerdrawflag UI_SHOW_ANYTEAMGAME
+	rect 150 3 25 25
+	cvar "ui_scoreCaptures2"
+	text ""
+	textscale .2
+	forecolor 1 1 1 1
+	textalign 1
+	textalignx 13
+	textaligny 35
+	border 1
+	bordercolor MP_BOX_BORDER
+	visible 1
+	}
+
 
 }
 }
