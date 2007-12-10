@@ -563,7 +563,7 @@ itemDef	{
 	style 3
 	background "ui/assets/medal_capture.tga"
 	ownerdrawflag UI_SHOW_ANYTEAMGAME
-	rect 150 3 25 25
+	rect 150 370 25 25
 	cvar "ui_scoreCaptures2"
 	text ""
 	textscale .2
