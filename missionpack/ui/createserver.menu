@@ -328,10 +328,9 @@ itemDef {
 itemDef {
 	name ded
 	style 0	
+	type ITEM_TYPE_MULTI
 	text "Dedicated:"
 	cvar "sv_pure"
-	style 0	
-	type ITEM_TYPE_MULTI
 	cvar "ui_dedicated"
 	cvarFloatList { "No" 0 "LAN" 1 "Internet" 2 }
 	textstyle 6
@@ -346,10 +345,10 @@ itemDef {
 
 itemDef {
 	name vamp
+	type ITEM_TYPE_NUMERICFIELD
 	text "Vampire:"
 	cvar "g_vampire"
 	style 0	
-	type ITEM_TYPE_NUMERICFIELD
 	maxchars 2
 	textstyle 6
 	textscale .22

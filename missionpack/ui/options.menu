@@ -1,0 +1,444 @@
+/*
+===========================================================================
+Copyright (C) 2007 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Open Arena; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+
+// classic H*L style menu
+
+{
+menuDef	{
+	name options
+	visible 0
+	fullscreen 1
+	background MP_BACKGROUND	
+	focusColor MP_FOCUSCOLOR
+	rect 0 0 640 480
+	outOfBoundsClick  
+	style 0
+	onEsc	{
+		close options;
+		open configuration;
+		}
+
+itemDef {
+      	name titleness
+      	text "Game Options"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale 1
+      	rect 0 65 1 1
+      	textalign 0		
+     	textalignx 48 	
+	textaligny 40        
+	forecolor MP_TITLECOLOR
+	visible 1 
+	}
+
+// The Bar of Buttons
+
+itemDef {
+      	name button1
+      	text "Apply"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 145 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20      
+	backcolor 0 0 0 0
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	      action
+      		{
+	        play "ui/assets/select.wav"; 
+		close options;
+	       	open configuration;
+		}
+	}
+
+itemDef {
+      	name button2
+      	text "Done"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 177 163 34
+      	textalign 0		
+     	textalignx 5 	
+	textaligny 20   
+	forecolor MP_TEXTCOLOR 
+	visible 1 
+	      action
+      		{
+	        play "ui/assets/select.wav"; 
+		close options;
+		open configuration;
+ 		}
+	}
+// the audio controls
+
+itemDef {
+	name crosshair
+	text "Crosshair: "
+	ownerdraw UI_CROSSHAIR
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	textstyle 6
+	textscale .25
+	rect 212 180 20 20
+	textalign 0
+	textalignx 6
+	textaligny 18
+	visible 1 
+    }
+
+
+itemDef {
+	name simpleitems
+	type ITEM_TYPE_YESNO
+      	style 0	
+      	text "Simple Items: "
+	cvar "cg_simpleitems"
+	textstyle 6
+      	textscale .22
+      	rect 212 287 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+itemDef {
+	name shadows
+	type ITEM_TYPE_YESNO
+	style 0
+	text "Marks on Walls: "
+	cvar "cg_marks"
+	textstyle 6
+	textscale .22
+	rect 54 287 116 24
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1
+	}
+
+
+// other buttons
+
+itemDef {
+      	name frares
+	type ITEM_TYPE_YESNO
+      	text "Floating Scores: "
+	cvar "cg_scorePlums"
+      	style 0	
+	textstyle 6
+      	textscale .22
+      	rect 54 311 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+itemDef {
+	name pure
+	type ITEM_TYPE_MULTI
+	text "Ejecting Brass: "
+	cvar "cg_brassTime"
+	cvarFloatList	{ "High" 2500 "Medium" 1250 "Low" 625 "Off" 0 }
+	textstyle 6
+	textscale .22
+	rect 54 335 116 24
+	textalign 0		
+	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+itemDef {
+      	name ded
+	type ITEM_TYPE_YESNO
+      	text "Dynamic Lights: "
+      	style 0	
+	cvar "r_dynamiclight"
+	textstyle 6
+      	textscale .22
+      	rect 54 359 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+// row 2 of other buttons
+
+itemDef {
+	name fraglimit
+	type ITEM_TYPE_YESNO
+	text "Identify Target: "
+	style 0	
+	cvar "cg_drawCrosshairNames"
+	textstyle 6
+	textscale .22
+	rect 215 311 116 24
+	textalign 0		
+	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+itemDef {
+	name timelimit
+	type ITEM_TYPE_YESNO
+	text "Draw Gun: "
+	style 0	
+	cvar "cg_drawGun"
+	textstyle 6
+	textscale .22
+	rect 215 335 116 24
+	textalign 0
+	textalignx 6
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+itemDef {
+	name caplimit
+	type ITEM_TYPE_YESNO
+	text "Low Quality Sky: "
+	cvar "r_fastsky"
+	style 0	
+	maxchars 5
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 215 359 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+itemDef {
+      	name minplayers
+	type ITEM_TYPE_YESNO
+      	text "Sync Every Frame: "
+	cvar "weapon 5"
+      	style 0	
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 215 383 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+    }
+
+itemDef {
+	name bloom
+	type ITEM_TYPE_YESNO
+	text "Force Models: "
+	cvar "cg_forceModel"
+	style 0	
+	maxchars 2
+	textstyle 6
+	textscale .22
+	textstyle 6
+	textscale .22
+	rect 54 407 116 24
+	textalign 0		
+	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+itemDef {
+      	name minfayers
+	type ITEM_TYPE_YESNO
+      	text "Draw Team Overlay: "
+	cvar "cg_drawTeamOverlay"
+      	style 0	
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 54 383 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+    }
+
+itemDef {
+      	name stencilbuffer
+	style 0	
+	type ITEM_TYPE_YESNO
+      	text "Auto Download: "
+	cvar "cl_allowdownload"
+	textstyle 6
+      	textscale .22
+      	rect 215 407 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1 
+	}
+
+itemDef	{
+	name timer
+	style 0
+	type ITEM_TYPE_YESNO
+	text "Show Timer: "
+	cvar "cg_drawTimer"
+	rect 376 287 116 24
+	textstyle 6
+	textscale .22
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1
+	}
+
+itemDef	{
+	name voice
+	style 0
+	type ITEM_TYPE_YESNO
+	text "Voices Off: "
+	cvar "cg_NoVoiceChats"
+	rect 376 311 116 24
+	textstyle 6
+	textscale .22
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1
+	}
+
+itemDef	{
+	name taunts
+	style 0
+	type ITEM_TYPE_YESNO
+	text "Taunts Off: "
+	cvar "cg_NoTaunt"
+	rect 376 335 116 24
+	textstyle 6
+	textscale .22
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1
+	}
+
+itemDef	{
+	name vtext
+	style 0
+	type ITEM_TYPE_YESNO
+	text "Voice Text Off: "
+	cvar "cg_NoVoiceText"
+	rect 376 359 116 24
+	textstyle 6
+	textscale .22
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1
+	}
+
+itemDef	{
+	name tchat
+	style 0
+	type ITEM_TYPE_YESNO
+	text "Team Chats Only: "
+	cvar "cg_teamChatsOnly"
+	rect 376 383 116 24
+	textstyle 6
+	textscale .22
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1
+	}
+
+itemDef	{
+	name status
+	type ITEM_TYPE_MULTI
+	text "Status Bar: "
+	cvar "cg_hudfiles"
+	cvarStrList { Normal "ui/hud.txt" Small "ui/hud2.txt" }
+	rect 376 407 116 24
+	textstyle 6
+	textscale .22
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	backcolor 0 0 0 0
+	visible 1
+	}
+
+
+}
+}

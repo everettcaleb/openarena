@@ -135,7 +135,7 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+
       		}
 	}
 
@@ -154,7 +154,9 @@ itemDef {
 	visible 1 
 	      action
       		{
-	        play "ui/assets/select.wav"; 
+	        play "ui/assets/select.wav";
+	        open options;
+		close configuration;
       		}
 	}
 
