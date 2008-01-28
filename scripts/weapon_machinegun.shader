@@ -1,3 +1,27 @@
+
+models/weapons2/machinegun/f_machinegun2
+{
+	cull disable
+	{
+		clampmap models/weapons2/machinegun/f_machinegun2
+		blendfunc add
+		rgbGen identity
+		tcMod rotate 5288
+	}
+
+}
+models/weapons2/machinegun/f_machinegun3
+{
+	deformVertexes autosprite
+	{
+		clampmap models/weapons2/machinegun/f_machinegun3
+		blendfunc add
+		rgbGen identity
+		tcMod rotate 8288
+	}
+
+}
+
 models/weapons2/machinegun/muzzlside
 {
 	cull disable
@@ -86,4 +110,3 @@ models/weapons2/machinegun/tommy
 		rgbGen lightingDiffuse
 	}
 }
-
