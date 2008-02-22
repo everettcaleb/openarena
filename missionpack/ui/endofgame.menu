@@ -29,6 +29,7 @@ MenuDef	{
 	fullscreen 1
 	rect 0 0 640 480
 	background MP_BACKGROUND
+	focuscolor MP_FOCUSCOLOR
 	onClose { uiScript updateSPMenu; }
 	onEsc { close endOfGame; open skirmish; }
 	onOpen { close ingame; }
@@ -316,6 +317,8 @@ itemDef	{
 	border 1
 	bordercolor MP_BOX_BORDER
 	visible 1
+	mouseenter { setcolor forecolor 1 1 1 1; }
+	mouseexit { setcolor forecolor 1 1 1 0; }
 	action	{
 		exec "play sound/feedback/assist.wav"
 		}
@@ -424,6 +427,7 @@ itemDef	{
 	border 1
 	bordercolor MP_BOX_BORDER
 	visible 1
+	mouseenter { setcolor forecolor 1 1 1 1; }
 	action	{
 		exec "play sound/feedback/excellent.wav"
 		}

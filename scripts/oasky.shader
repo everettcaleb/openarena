@@ -298,6 +298,7 @@ textures/sky_void
 {
 	surfaceparm noimpact
 	surfaceparm nolightmap
+	surfaceparm nomarks
 	surfaceparm sky
 	{
 		map gfx/colors/black.tga
