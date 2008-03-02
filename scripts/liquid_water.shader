@@ -4,7 +4,6 @@ textures/liquids/hydrowater
 	surfaceparm trans
 	surfaceparm water
 	cull disable
-	tessSize 32
 	fogparms ( 0.215686 0.278431 0.333333 ) 1024
 	{
 		map textures/liquids/pool2.tga
@@ -37,7 +36,6 @@ textures/liquids/islewater
 	surfaceparm trans
 	surfaceparm water
 	cull disable
-	tessSize 128
 	fogparms ( 0.345098 0.513726 0.788235 ) 1024
 	{
 		map textures/liquids/pool2.tga
@@ -308,7 +306,7 @@ textures/liquids/clear_ripple3
 	surfaceparm nonsolid
 	surfaceparm water
 	cull disable
-	deformVertexes wave 32 sin .25 .25 0 .5	
+	deformVertexes wave 64 sin .25 .25 0 .5	
 		
 	{ 
 		map textures/liquids/pool3d_5.jpg
@@ -376,7 +374,7 @@ textures/liquids/clear_ripple2
 	surfaceparm nonsolid
 	surfaceparm water
 	cull disable
-	deformVertexes wave 24 sin .25 .25 0 .5	
+	deformVertexes wave 64 sin .25 .25 0 .5	
 		
 	{ 
 		map textures/liquids/pool3d_5.jpg
@@ -451,7 +449,7 @@ textures/liquids/calm_poollight
 	surfaceparm water
 	cull disable
 	q3map_surfacelight 100
-	deformVertexes wave 32 sin .25 .25 0 .5	
+	deformVertexes wave 64 sin .25 .25 0 .5	
 		
 	{ 
 		map textures/liquids/pool3d_5.jpg
@@ -526,7 +524,6 @@ textures/liquids/hydrowater2
 	surfaceparm water
 	cull disable
 	deformVertexes wave 256 sin 0 7 0 0.4
-	tessSize 32
 	fogparms ( 0.215686 0.278431 0.333333 ) 1024
 	{
 		map textures/liquids/pool2.tga
@@ -559,7 +556,6 @@ textures/liquids2/clear_calm1v
 	surfaceparm nonsolid
 	surfaceparm water
 	cull none
-	tessSize 32
 	fogparms ( 0.215686 0.278431 0.333333 ) 512
 	{ 
 		map textures/liquids/pool3d_5e.jpg
@@ -600,7 +596,6 @@ textures/liquids2/clear_ripple1_q3dm1v
 	surfaceparm nonsolid
 	surfaceparm water
 	cull none
-	tessSize 32
 	fogparms ( 0.215686 0.278431 0.333333 ) 512
 	deformvertexes wave 128 sin .5 .5 .5 .5
 	{ 
@@ -643,7 +638,6 @@ textures/liquids2/clear_ripple1_q3dm1light
 	surfaceparm water
 	cull none
 	q3map_surfacelight 100
-	tessSize 32
 	fogparms ( 0.215686 0.278431 0.333333 ) 1024
 	deformvertexes wave 256 sin .5 .5 .5 .5
 	{ 
@@ -720,9 +714,8 @@ textures/liquids/oldacid
 	surfaceparm trans
 	surfaceparm water
 	cull disable
-	deformVertexes wave 12 sin 0 3 0 0.2 
-	deformVertexes wave 24 sin 0 7 0 0.6 
-	tessSize 16
+	deformVertexes wave 32 sin 0 3 0 0.2 
+	deformVertexes wave 64 sin 0 7 0 0.6 
 	q3map_surfacelight 333
 	{
 		map textures/liquids/slime7.tga
@@ -758,7 +751,7 @@ textures/liquids/slime1
 	surfaceparm nolightmap
 	surfaceparm trans
 	q3map_surfacelight 150
-	deformVertexes wave 32 sin .25 .25 0 .5	
+	deformVertexes wave 64 sin .25 .25 0 .5	
 	{
 		map textures/liquids/slime8.jpg
 		tcmod turb .05 -0.5 0 0.02
@@ -781,7 +774,7 @@ textures/liquids/slime1_2000
 	surfaceparm nolightmap
 	surfaceparm trans
 	q3map_surfacelight 2000
-	deformVertexes wave 32 sin .25 .25 0 .5	
+	deformVertexes wave 64 sin .25 .25 0 .5	
 	{
 		map textures/liquids/slime8.jpg
 		tcmod turb .05 -0.5 0 0.02
@@ -834,7 +827,7 @@ textures/liquids/slime2
 	surfaceparm nolightmap
 	surfaceparm trans
 	q3map_surfacelight 150
-	deformVertexes wave 32 sin .25 .25 0 .5	
+	deformVertexes wave 64 sin .25 .25 0 .5	
 	{
 		map textures/liquids/slime8.jpg
 		tcmod turb .05 -0.5 0 0.02
@@ -864,7 +857,7 @@ textures/liquids/slime3
 	surfaceparm nolightmap
 	surfaceparm trans
 	q3map_surfacelight 150
-	deformVertexes wave 32 sin .25 .25 0 .5	
+	deformVertexes wave 64 sin .25 .25 0 .5	
 	{
 		map textures/liquids/slime9.jpg
 		tcmod scale .5 .5
