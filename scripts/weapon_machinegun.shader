@@ -10,6 +10,8 @@ models/weapons2/machinegun/f_machinegun2
 	}
 
 }
+
+
 models/weapons2/machinegun/f_machinegun3
 {
 	deformVertexes autosprite
