@@ -238,7 +238,7 @@ type		"ctf"
 }
 
 {
-map		"oasago2f4"
+map		"oasago2"
 bots		"merman sergei kyonshi"
 longname	"Sago's Castle 2"
 fraglimit	"20"
