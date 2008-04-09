@@ -258,3 +258,11 @@ bots		"sergei angelyss kyonshi"
 longname	"Holy Wars"
 type		"ctf"
 }
+
+
+{
+map	"oa_minia"
+longname	"Mini Arena"
+bots	"liz major"
+type	"ffa team tourney"
+}
