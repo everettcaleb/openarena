@@ -1,73 +1,80 @@
-
+//eh
 sprites/friend
 {
 	nomipmaps
-	nopicmip
 	{
 		map sprites/friend1.tga
-		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		blendfunc blend
 	}
 }
 
 sprites/foe
 {
 	nomipmaps
-	nopicmip
 	{
 		map sprites/foe2.tga
-		blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		blendfunc blend
 	}
 }
 
 models/flags/b_flag
 {
-	deformvertexes wave 80 sin 2 8 0 3
-	deformvertexes wave 20 square 0 2 0.5 .2
-	cull none
+	cull disable
+	deformVertexes wave 80 sin 2 8 0 3 
+	deformVertexes wave 20 square 0 2 0.5 0.2 
 	{
-		map textures/sfx/proto_zzztblu3.jpg
-		tcgen environment
-		tcmod turb 1 1 .5 .3
-		rgbgen identity
+		map textures/sfx/proto_zzztblu3.tga
+		rgbGen identity
+		tcMod turb 1 1 0.5 0.3
+		tcGen environment 
 	}
 	{
 		map models/flags/b_flag.tga
-		alphafunc GE128
-		depthwrite
-		depthfunc equal
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+	{
+		map textures/effects/flagenv.tga
+		blendfunc gl_dst_color gl_src_color
+		tcGen environment 
 	}
 }
 
 models/flags/pole
 {
 	{
-		map textures/base_wall/chrome_env.jpg
+		map textures/base_wall/chrome_env.tga
+		rgbGen lightingDiffuse
+		tcMod scale 0.5 0.5
 		tcGen environment 
-		rgbGen lightingdiffuse
-		tcmod scale .5 .5
 	}
 	{
 		map models/flags/pole.tga
 		blendfunc filter
-		rgbgen identity
+		rgbGen identity
 	}
 }
 
 models/flags/r_flag
 {
-	deformvertexes wave 80 sin 2 8 0 3
-	deformvertexes wave 20 square 0 2 0.5 .2
-	cull none
+	cull disable
+	deformVertexes wave 80 sin 2 8 0 3 
+	deformVertexes wave 20 square 0 2 0.5 0.2 
 	{
-		map textures/sfx/proto_zzzt.jpg
-		tcgen environment
-		tcmod turb 1 1 .5 .3
-		rgbgen identity
+		map textures/sfx/proto_zzzt.tga
+		rgbGen identity
+		tcMod turb 1 1 0.5 0.3
+		tcGen environment 
 	}
 	{
 		map models/flags/r_flag.tga
-		alphafunc GE128
-		depthwrite
-		depthfunc equal
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+	{
+		map textures/effects/flagenv.tga
+		blendfunc gl_dst_color gl_src_color
+		tcGen environment 
 	}
 }
+

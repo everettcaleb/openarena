@@ -1,27 +1,23 @@
-
 models/weapons2/machinegun/f_machinegun2
 {
 	cull disable
 	{
-		clampmap models/weapons2/machinegun/f_machinegun2
+		clampmap models/weapons2/machinegun/f_machinegun2.tga
 		blendfunc add
 		rgbGen identity
 		tcMod rotate 5288
 	}
-
 }
-
 
 models/weapons2/machinegun/f_machinegun3
 {
 	deformVertexes autosprite
 	{
-		clampmap models/weapons2/machinegun/f_machinegun3
+		clampmap models/weapons2/machinegun/f_machinegun3.tga
 		blendfunc add
 		rgbGen identity
 		tcMod rotate 8288
 	}
-
 }
 
 models/weapons2/machinegun/muzzlside
@@ -95,20 +91,13 @@ models/weapons2/machinegun/skin
 	}
 }
 
-models/weapons2/machinegun/tommy
+models/weapons2/machinegun/sight
 {
+	cull disable
 	{
-		map models/weapons2/machinegun/tomtex.tga
+		map models/weapons2/machinegun/sight.tga
 		rgbGen lightingDiffuse
-	}
-	{
-		map models/weapons2/machinegun/woodspec.tga
-		blendfunc gl_dst_color gl_src_color
-		tcGen environment 
-	}
-	{
-		map models/weapons2/machinegun/tomtex.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
+		alphaFunc GE128
 	}
 }
+
