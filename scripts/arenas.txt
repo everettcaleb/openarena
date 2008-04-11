@@ -264,5 +264,54 @@ type		"ctf"
 map	"oa_minia"
 longname	"Mini Arena"
 bots	"liz major"
-type	"ffa team tourney"
+type	"ffa team tourney sp"
+}
+
+{
+map	"oa_koth1"
+longname	"Repulsion"
+bots	"gargoyle skelebot grism major sarge"
+fraglimit   20
+type	"single ffa team sp"
+}
+
+{
+map	"wrackdm17"
+longname	"Never Ending Yard"
+bots	"grunt grism rai"
+fraglimit   15
+type	"single ffa team tourney sp"
+}
+
+{
+map	"sleekgrinder"
+longname	"Repulsion"
+bots	"tony grism grunt sarge"
+fraglimit   20
+type	"single ffa team sp"
+}
+
+{
+map	"slimefac"
+longname	"Slime Facility"
+bots	"skelebot"
+fraglimit   10
+type	"single tourney ffa team sp"
+}
+
+{
+map	"ctf_inyard"
+longname	"Inner Yard"
+bots	"skelebot grism major kyonshi rai"
+fraglimit   25
+capturelimit 10
+type	"ctf"
+}
+
+{
+map	"ctf_compromise"
+longname	"Foul Compromise"
+bots	"gargoyle sarge beret liz merman"
+fraglimit   25
+type	"ctf"
 }
