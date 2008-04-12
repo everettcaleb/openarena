@@ -8,6 +8,40 @@ models/players/hnt/clothes
 	}
 }
 
+models/players/hnt/neko1
+{
+	cull disable
+	{
+		map models/players/hnt/neko1.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/hnt/neko4
+{
+	{
+		map models/players/hnt/neko1.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/neko4.tga
+		rgbGen lightingDiffuse
+		depthWrite
+		alphaFunc GE128
+	}
+}
+
+models/players/hnt/neko2
+{
+	cull disable
+	{
+		map models/players/hnt/neko2.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
 models/players/hnt/drkclothes
 {
 	cull disable
@@ -167,6 +201,7 @@ models/players/hnt/redclothes_gray
 		alphaFunc GE128
 	}
 }
+
 models/players/hnt/hair
 {
 	cull disable
@@ -235,7 +270,6 @@ models/players/hnt/azsuit_blue
 		rgbGen lightingDiffuse
 	}
 }
-
 
 models/players/hnt/azsuit_red
 {

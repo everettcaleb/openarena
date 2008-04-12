@@ -88,8 +88,8 @@ aifile	bots/ayumi_c.c
 
 
 {
-name		Nekoyumi
-model		ayumi/neko
+name		Nekoyss
+model		angelyss/neko
 aifile	bots/ayumi_c.c
 }
 
