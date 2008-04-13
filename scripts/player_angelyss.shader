@@ -24,11 +24,41 @@ models/players/hnt/neko4
 		map models/players/hnt/neko1.tga
 		rgbGen lightingDiffuse
 	}
+}
+
+models/players/hnt/redneko4
+{
 	{
-		map models/players/hnt/neko4.tga
+		map models/players/hnt/redneko1.tga
 		rgbGen lightingDiffuse
-		depthWrite
+	}
+}
+
+models/players/hnt/redneko1
+{
+	cull disable
+	{
+		map models/players/hnt/redneko1.tga
+		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+}
+
+models/players/hnt/blueneko1
+{
+	cull disable
+	{
+		map models/players/hnt/blueneko1.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/hnt/blueneko4
+{
+	{
+		map models/players/hnt/blueneko1.tga
+		rgbGen lightingDiffuse
 	}
 }
 
@@ -37,6 +67,26 @@ models/players/hnt/neko2
 	cull disable
 	{
 		map models/players/hnt/neko2.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/hnt/blueneko2
+{
+	cull disable
+	{
+		map models/players/hnt/blueneko2.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/hnt/redneko2
+{
+	cull disable
+	{
+		map models/players/hnt/redneko2.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}

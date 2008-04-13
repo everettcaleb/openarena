@@ -90,7 +90,7 @@ aifile	bots/ayumi_c.c
 {
 name		Nekoyss
 model		angelyss/neko
-aifile	bots/ayumi_c.c
+aifile	bots/neko_c.c
 }
 
 {
