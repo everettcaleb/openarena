@@ -29,7 +29,7 @@ models/weapons2/machinegun/muzzlside
 	}
 }
 
-models/weapons2/shells/mgunshell_2
+models/weapons2/shells/mgunshell
 {
 	cull disable
 	{
