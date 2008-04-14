@@ -141,6 +141,13 @@ aifile	bots/sarge_c.c
 
 {
 name		Grunt
-model		gargoyle/tech
+model		smarine
+aifile	bots/grunt_c.c
+}
+
+
+{
+name		S_Marine
+model		smarine/orange
 aifile	bots/grunt_c.c
 }
