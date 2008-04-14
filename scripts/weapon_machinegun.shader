@@ -29,14 +29,26 @@ models/weapons2/machinegun/muzzlside
 	}
 }
 
-bulletCase
+models/weapons2/shells/mgunshell_2
 {
 	cull disable
 	{
 		map models/weapons2/shells/mgunshell.tga
 		rgbGen lightingDiffuse
-		tcGen environment 
+		
 	}
+}
+
+
+models/weapons2/shells/mgunshell_2
+{
+	deformVertexes autosprite
+    {
+        map models/weapons2/shells/mgunshell_2
+        rgbGen lightingDiffuse
+	blendFunc blend
+    }
+
 }
 
 shellCase
