@@ -51,9 +51,9 @@ aifile	bots/angelyss_c.c
 }
 
 {
-name		Sly
-model		angelyss/sly
-aifile	bots/sly_c.c
+name		Assassin
+model		assassin
+aifile	bots/sergei_c.c
 }
 
 {
@@ -94,21 +94,9 @@ aifile	bots/neko_c.c
 }
 
 {
-name		Jenna
-model		ayumi/jenna
-aifile	bots/jenna_c.c
-}
-
-{
 name		Arachna
 model		arachna
 aifile	bots/arachna_c.c
-}
-
-{
-name		Widowe
-model		arachna/widowe
-aifile	bots/widowe_c.c
 }
 
 {
