@@ -96,13 +96,14 @@ fraglimit	30
 type		"ctf"
 }
 
-{
-map		"suction"
-bots		"sarge gargoyle"
-longname	"Suction"
-fraglimit	30
-type		"ctf"
-}
+// removed due to creator of map criticising project by him making a intentionally 'shitty' level and that oa accepts anything crappy and this is "proof". stroggi can bite me.
+//{
+//map		"suction"
+//bots		"sarge gargoyle"
+//longname	"Suction"
+//fraglimit	30
+//type		"ctf"
+//}
 
 
 
@@ -212,13 +213,15 @@ type		"single ffa sp tourney"
 }
 
 // commented out due to very ugly texturing
-{
-map		"q3dm6ish"
-bots		"tony skelebot beret liz"
-longname	"Q3DM6ish"
-fraglimit	20
-type		"single ffa tourney team sp"
-}
+// i don't care if it's a "good map" and needs to be included
+// it makes our game ugly
+//{
+//map		"q3dm6ish"
+//bots		"tony skelebot beret liz"
+//longname	"Q3DM6ish"
+//fraglimit	20
+//type		"single ffa tourney team sp"
+//}
 
 
 // ctf maps
