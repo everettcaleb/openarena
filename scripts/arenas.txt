@@ -51,7 +51,7 @@ map             "oa_spirit3"
 longname        "Where Fears Collide"
 bots            "nekoyss assassin smarine"
 fraglimit	20
-type            "single tourney ffa sp"
+type            "single tourney ffa ctf sp"
 }
 
 {
