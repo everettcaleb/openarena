@@ -46,6 +46,13 @@ fraglimit	20
 type            "single tourney ffa sp"
 }
 
+{
+map             "oa_spirit3ctfduel1"
+longname        "Where Fears Collide"
+bots            "nekoyss assassin smarine"
+fraglimit	20
+type            "single tourney ffa sp"
+}
 
 {
 map			"dm4ish"
@@ -308,6 +315,14 @@ longname	"Inner Yard"
 bots	"skelebot grism major kyonshi rai"
 fraglimit   25
 capturelimit 10
+type	"ctf"
+}
+
+{
+map	"ctf_compromise"
+longname	"Foul Compromise"
+bots	"gargoyle sarge beret liz merman"
+fraglimit   25
 type	"ctf"
 }
 
