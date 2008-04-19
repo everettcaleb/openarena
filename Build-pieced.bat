@@ -92,7 +92,6 @@ zip pak2-players-mature.pk3 -d models/players/sergei/*.*
 zip pak2-players-mature.pk3 -d models/players/kyonshi/*.*
 zip pak2-players-mature.pk3 -d models/players/liz/*.*
 zip pak2-players-mature.pk3 -d models/players/major/*.*
-zip pak2-players-mature.pk3 -d models/players/ayumi/*.*
 zip pak2-players-mature.pk3 -d models/players/penguin/*.*
 zip pak2-players-mature.pk3 -d models/players/gargoyle/*.*
 zip pak2-players-mature.pk3 -d models/players/skelebot/*.*
@@ -105,7 +104,7 @@ zip pak2-players-mature.pk3 -d models/players/smarine/*.*
 zip pak2-players.pk3 -d models/players/hnt/*.*
 zip pak2-players.pk3 -d models/players/angelyss/*.*
 zip pak2-players.pk3 -d models/players/arachna/*.*
-
+zip pak2-players.pk3 -d models/players/ayumi/*.*
 
 zip -9r pak2-players.pk3 sound/player/*.* -x *svn*
 zip -9r pak2-players.pk3 scripts/player_*.* -x *svn*
