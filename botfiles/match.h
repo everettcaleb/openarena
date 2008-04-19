@@ -85,6 +85,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 #define MSG_CTF							300		//ctf message
 
+//Double Domination messages
+#define MSG_TAKEA					90
+#define MSG_TAKEB					91
+
 //command sub types
 #define ST_SOMEWHERE					0
 #define ST_NEARITEM						1

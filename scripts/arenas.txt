@@ -3,7 +3,7 @@ map             "oa_rpg3dm2"
 longname        "Trial by Error"
 bots            "kyonshi jenna sarge"
 fraglimit       15
-type            "single tourney ffa"
+type            "single tourney ffa elimination lms"
 }
 
 {
@@ -11,7 +11,7 @@ map			"aggressor"
 bots		"jenna kyonshi grunt"
 longname	"Aggressor"
 fraglimit	20
-type		"single ffa tourney team sp"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -19,7 +19,7 @@ map			"dm6ish"
 bots		"grism major rai"
 longname	"DM6ish"
 fraglimit	20
-type		"single ffa tourney team sp"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -27,7 +27,7 @@ map			"kaos2"
 bots		"rai kyonshi grism dark"
 longname	"Kaooos"
 fraglimit	20
-type		"single ffa tourney team sp"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -35,7 +35,7 @@ map			"czest1dm"
 bots		"gargoyle kyonshi ayumi tony skelebot"
 longname	"Monastery"
 fraglimit	20
-type		"single ffa tourney team sp"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -43,7 +43,7 @@ map             "ce1m7"
 longname        "House of Cheethon"
 bots            "sarge grism grunt gargoyle"
 fraglimit	20
-type            "single tourney ffa sp"
+type            "single tourney ffa sp elimination lms"
 }
 
 {
@@ -51,7 +51,7 @@ map             "oa_spirit3"
 longname        "Where Fears Collide"
 bots            "nekoyss assassin smarine"
 fraglimit	20
-type            "single tourney ffa ctf sp"
+type            "single tourney ffa ctf sp elimination lms ctfelimination"
 }
 
 {
@@ -59,7 +59,7 @@ map			"dm4ish"
 bots		"angelyss beret liz merman"
 longname	"DM4ishish"
 fraglimit	30
-type		"single ffa tourney team sp"
+type		"single ffa tourney team sp elimination lms"
 }
 
 {
@@ -74,7 +74,7 @@ map             "fan"
 longname        "Fan"
 bots            "kyonshi arachna"
 fraglimit	20
-type            "single tourney ffa sp"
+type            "single tourney ffa sp elimination lms"
 }
 
 // for a multiple of 4
@@ -92,7 +92,7 @@ map		"hydronex"
 bots		"sarge gargoyle"
 longname	"Hydrocapture"
 fraglimit	30
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
@@ -100,10 +100,9 @@ map		"oa_bases5"
 bots		"sarge gargoyle"
 longname	"Some better bases"
 fraglimit	30
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
-// removed due to creator of map criticising project by him making a intentionally 'shitty' level and that oa accepts anything crappy and this is "proof". stroggi can bite me.
 //{
 //map		"suction"
 //bots		"sarge gargoyle"
@@ -120,7 +119,7 @@ map		"delta"
 bots		"merman major"
 longname	"mission over mars"
 fraglimit	"20"
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
@@ -128,7 +127,7 @@ map		"oa_dm1"
 bots		"kyonshi major merman"
 longname	"Place of Two Deaths"
 fraglimit	"25"
-type		"single ffa sp team"
+type		"single ffa sp team elimination lms"
 }
 
 {
@@ -136,7 +135,7 @@ map		"oa_dm2"
 bots		"sergei kyonshi major merman"
 longname	"Claustrophobopolis"
 fraglimit	"30"
-type		"single ffa sp team"
+type		"single ffa sp team elimination lms"
 }
 
 {
@@ -144,7 +143,7 @@ map		"oa_dm3"
 bots		"sergei kyonshi major merman penguin"
 longname	"The Abandoned Base"
 fraglimit	"30"
-type		"single ffa sp team"
+type		"single ffa sp team elimination lms"
 }
 
 {
@@ -152,7 +151,7 @@ map		"oa_dm4"
 bots		"sergei angelyss gargoyle major"
 longname	"The Bad Place"
 fraglimit	"30"
-type		"single ffa sp tourney"
+type		"single ffa sp tourney elimination lms"
 }
 
 {
@@ -160,7 +159,7 @@ map		"oa_dm5"
 bots		"merman major sarge grunt"
 longname	"The Cistern"
 fraglimit	"30"
-type		"single ffa sp team"
+type		"single ffa sp team elimination lms"
 }
 
 {
@@ -168,7 +167,7 @@ map		"oa_dm6"
 bots		"merman"
 longname	"The Dark Zone"
 fraglimit	"10"
-type		"sp tourney"
+type		"sp tourney elimination lms"
 }
 
 {
@@ -176,7 +175,7 @@ map		"oa_dm7"
 bots		"angelyss ayumi kyonshi sergei"
 longname	"nameless"
 fraglimit	"15"
-type		"single ffa tourney sp"
+type		"single ffa tourney sp elimination lms"
 }
 
 {
@@ -184,7 +183,7 @@ map		"oa_pvomit"
 bots		"merman kyonshi gargoyle"
 longname	"Projectile Vomit"
 fraglimit	"25"
-type		"single ffa tourney sp"
+type		"single ffa tourney sp elimination lms"
 }
 
 {
@@ -192,7 +191,7 @@ map		"oa_shine"
 bots		"major angelyss kyonshi"
 longname	"Shine"
 fraglimit	"30"
-type		"single ffa sp"
+type		"single ffa sp elimination lms"
 }
 
 {
@@ -200,7 +199,7 @@ map		"suspended"
 bots		"merman angelyss gargoyle"
 longname	"Suspended"
 fraglimit	"20"
-type		"single ffa tourney sp"
+type		"single ffa tourney sp elimination lms"
 }
 
 {
@@ -208,7 +207,7 @@ map		"oa_shouse"
 bots		"merman sergei kyonshi"
 longname	"Strange House"
 fraglimit	"20"
-type		"single ffa sp"
+type		"single ffa sp elimination lms"
 }
 
 {
@@ -216,7 +215,7 @@ map		"czest1tourney"
 bots		"merman sergei kyonshi"
 longname	"The Space Spire"
 fraglimit	"20"
-type		"single ffa sp tourney"
+type		"single ffa sp tourney elimination lms"
 }
 
 // commented out due to very ugly texturing
@@ -237,14 +236,14 @@ map			"oa_bases3"
 bots		"tux"
 longname	"Some Bases"
 fraglimit	30
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
 map		"oa_ctf4ish"
 bots		"sergei angelyss kyonshi"
 longname	"Free Space"
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
@@ -252,21 +251,21 @@ map		"oasago2"
 bots		"merman sergei kyonshi"
 longname	"Sago's Castle 2"
 fraglimit	"20"
-type		"ctf"
+type		"ctf elimination ctfelimination dd"
 }
 
 {
 map		"czest2ctf"
 bots		"sergei angelyss kyonshi"
 longname	"The Bridge of Despair"
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 {
 map		"czest3ctf"
 bots		"sergei angelyss kyonshi"
 longname	"Holy Wars"
-type		"ctf"
+type		"ctf elimination ctfelimination"
 }
 
 
@@ -274,7 +273,7 @@ type		"ctf"
 map	"oa_minia"
 longname	"Mini Arena"
 bots	"liz major"
-type	"ffa team tourney sp"
+type	"ffa team tourney sp elimination lms"
 }
 
 {
@@ -282,7 +281,7 @@ map	"oa_koth1"
 longname	"Repulsion"
 bots	"gargoyle skelebot grism major sarge"
 fraglimit   20
-type	"single ffa team sp"
+type	"single ffa team sp elimination lms"
 }
 
 {
@@ -290,7 +289,7 @@ map	"wrackdm17"
 longname	"Never Ending Yard"
 bots	"grunt grism rai"
 fraglimit   15
-type	"single ffa team tourney sp"
+type	"single ffa team tourney sp elimination lms"
 }
 
 {
@@ -298,7 +297,7 @@ map	"sleekgrinder"
 longname	"Repulsion"
 bots	"tony grism grunt sarge"
 fraglimit   20
-type	"single ffa team sp"
+type	"single ffa team sp elimination lms"
 }
 
 {
@@ -306,7 +305,7 @@ map	"slimefac"
 longname	"Slime Facility"
 bots	"skelebot"
 fraglimit   10
-type	"single tourney ffa team sp"
+type	"single tourney ffa team sp elimination lms"
 }
 
 {
@@ -315,7 +314,7 @@ longname	"Inner Yard"
 bots	"skelebot grism major kyonshi rai"
 fraglimit   25
 capturelimit 10
-type	"ctf"
+type	"ctf elimination ctfelimination"
 }
 
 {
@@ -323,13 +322,5 @@ map	"ctf_compromise"
 longname	"Foul Compromise"
 bots	"gargoyle sarge beret liz merman"
 fraglimit   25
-type	"ctf"
-}
-
-{
-map	"ctf_compromise"
-longname	"Foul Compromise"
-bots	"gargoyle sarge beret liz merman"
-fraglimit   25
-type	"ctf"
+type	"ctf elimination ctfelimination"
 }

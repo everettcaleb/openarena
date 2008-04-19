@@ -702,4 +702,37 @@ mins		{-13,-13,-13}
 maxs		{13,13,13}
 }
 
+//Domination points:
+iteminfo "team_dom_pointWhite"
+{
+name		"Neutral domination point"
+model		"models/dpoints/a_white.md3"
+modelindex	MODELINDEX_POINTWHITE
+type		FLAGI
+index		INVENTORY_POINTWHITE
+mins		{-13,-13,-13}
+maxs		{13,13,13}
+}
+
+iteminfo "team_dom_pointBlue"
+{
+name		"Blue domination point"
+model		"models/dpoints/a_blue.md3"
+modelindex	MODELINDEX_POINTBLUE
+type		FLAGI
+index		INVENTORY_POINTBLUE
+mins		{-13,-13,-13}
+maxs		{13,13,13}
+}
+
+iteminfo "team_dom_pointRed"
+{
+name		"Red domination point"
+model		"models/dpoints/a_red.md3"
+modelindex	MODELINDEX_POINTRED
+type		FLAGI
+index		INVENTORY_POINTRED
+mins		{-13,-13,-13}
+maxs		{13,13,13}
+}
 
