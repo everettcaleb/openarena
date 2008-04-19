@@ -51,7 +51,7 @@ map             "oa_spirit3"
 longname        "Where Fears Collide"
 bots            "nekoyss assassin smarine"
 fraglimit	20
-type            "single tourney ffa ctf sp elimination lms ctfelimination"
+type            "single tourney ffa ctf sp elimination lms ctfelimination dd"
 }
 
 {
@@ -92,7 +92,7 @@ map		"hydronex"
 bots		"sarge gargoyle"
 longname	"Hydrocapture"
 fraglimit	30
-type		"ctf elimination ctfelimination"
+type		"ctf elimination ctfelimination dd"
 }
 
 {
@@ -236,14 +236,14 @@ map			"oa_bases3"
 bots		"tux"
 longname	"Some Bases"
 fraglimit	30
-type		"ctf elimination ctfelimination"
+type		"ctf elimination ctfelimination dd"
 }
 
 {
 map		"oa_ctf4ish"
 bots		"sergei angelyss kyonshi"
 longname	"Free Space"
-type		"ctf elimination ctfelimination"
+type		"ctf elimination ctfelimination dd"
 }
 
 {
@@ -258,14 +258,14 @@ type		"ctf elimination ctfelimination dd"
 map		"czest2ctf"
 bots		"sergei angelyss kyonshi"
 longname	"The Bridge of Despair"
-type		"ctf elimination ctfelimination"
+type		"ctf elimination ctfelimination dd"
 }
 
 {
 map		"czest3ctf"
 bots		"sergei angelyss kyonshi"
 longname	"Holy Wars"
-type		"ctf elimination ctfelimination"
+type		"ctf elimination ctfelimination dd"
 }
 
 

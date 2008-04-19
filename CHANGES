@@ -8,6 +8,12 @@
 - Text font (bigchars.tga) used by console and hud messages now doesn't bleed anymore
 - Special characters added for text font (bigchars.tga) used by some mods
 - lots of maps, at least 8!
+- Elimination and CTF eliminaiton game types
+- Double domination game type
+- Last Man Standing game type
+- Instant Gib option
+- All Rockets option
+- Unlagged tracehits option
 - Alt-tab working
 - Classic Grism aren't teamskins anymore
 - A lot of the block textures were reworked and improved
