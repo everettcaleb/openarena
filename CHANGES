@@ -4,9 +4,12 @@
 - New player skin : Angelyss/Neko
 - New player skin : Grism/Indigo
 - Ayumi/Neko, Angelyss/Sly have been atticed due to quality reasons.
-- Current music scrapped due to license issues. (No source)
-- lots of maps
+- Current music scrapped due to license issues. (No source, and license)
+- Text font (bigchars.tga) used by console and hud messages now doesn't bleed anymore
+- Special characters added for text font (bigchars.tga) used by some mods
+- lots of maps, at least 8!
 - Alt-tab working
+- Classic Grism aren't teamskins anymore
 - A lot of the block textures were reworked and improved
 - A lot of other stuff we forgot.
 
