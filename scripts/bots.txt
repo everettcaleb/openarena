@@ -85,6 +85,12 @@ name		Ayumi
 model		ayumi
 aifile	bots/ayumi_c.c
 }
+{
+name		Jenna
+model		ayumi/jenna
+aifile	bots/ayumi_c.c
+}
+
 
 
 {
