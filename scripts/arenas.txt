@@ -92,7 +92,7 @@ map		"hydronex"
 bots		"sarge gargoyle"
 longname	"Hydrocapture"
 fraglimit	30
-type		"ctf elimination ctfelimination dd"
+type		"ctf elimination ctfelimination"
 }
 
 {
