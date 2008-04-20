@@ -80,6 +80,10 @@ zip pak0.pk3 -d models/players/tony/*.*
 zip pak0.pk3 -d models/players/penguin/*.*
 zip pak0.pk3 -d models/players/gargoyle/*.*
 zip pak0.pk3 -d models/players/merman/*.*
+zip pak0.pk3 -d models/players/smarine/*.*
+zip pak0.pk3 -d models/players/assassin/*.*
+zip pak0.pk3 -d models/players/slshish/*.*
+zip pak0.pk3 -d models/players/dmo/*.*
 
 
 zip -9r pak2-players.pk3 models/players/*.* -x *svn*
