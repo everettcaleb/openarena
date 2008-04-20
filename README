@@ -1,4 +1,4 @@
-==OPENARENA Readme -	 7/7/2007==
+==OPENARENA Readme -	 4/20/2008==
 
 http://openarena.ws
 
@@ -11,7 +11,7 @@ http://openarena.ws
 * 250MB of hard drive space
 
 ===OTHER NOTES===
-This is ioq3 based now, so some changes and weirdities have been introduced. Your config and screenshots (And probably downloaded maps) may appear in a folder where your user profile data is kept. 
+This is ioq3 based now, so some changes and weirdities have been introduced. Your config and screenshots (And probably downloaded maps) may appear in a folder where your user profile data is kept.  Mouse and keyboard input may not be exactly like it used to be either.
 
 ===Source===
 Source for content is available at http://openarena.ws/svn/source/
@@ -23,14 +23,26 @@ For credits, read the CREDITS file.
 ===There's some missing textures===
 Yeah :(
 
-===Where did OA_BASES3 (The CTF level) go?===
-It's back! And better than ever !!!
+===I WAITED SO LONG FOR THIS YOU OWE ME MONEY.===
+$0 budget, spare time, and less than 6 active contributors kinda make things hard :)
+
+===YOU STOLE THOSE QUAKE MAPS!!! IM TELLING ID SOFTWARE YOUR IN BIG TORUBLE MISTER.===
+John Romero released them under the GNU GPL v2, and since they're timeless deathmatch classics we couldn't resist porting a few of them over. If you're going to pull a [citation needed], here's a URL for you:
+http://rome.ro/2006_10_01_archive.html
+
+Be sure to check the license in the ZIP file.
 
 ===Where did q3dm6ish go?===
 The texturing was pretty bad, and since I finally realized the original textures that Aardappel made used for it were in Public Domain so i'll just reimport the old map structures with old textures and convert that later.
 
 ===Where did void4 go?===
-Textures mysteriously broke :\
+Textures mysteriously broke :\ it's also a bad level
+
+===Where did Ayumi\Neko go?===
+Her skin sucked, and Ayumi is going through a change into a new mesh so this skin would be abandoned in advance. Plus neko looks better on angelyss anyway :)
+
+===This game is a big crap! Everything is not consistent!! its to wacky and fruty!!!===
+Well, the original game is also as equally as inconsistent and wacky (and due to this we are free to have so much creative variety in this one), we're just not paid hundred-thousands to work on it to make it 'look good'.
 
 ===I don't like Angelyss and Arachna! Too much!!!===
 You can remove pak2-players-mature.pk3 from your baseoa directory. Be warned though, you won't be able to join pure servers without using this pk3 file.
