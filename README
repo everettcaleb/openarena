@@ -1,4 +1,4 @@
-==OPENARENA Readme -	 4/20/2008==
+==OPENARENA Readme -	 5/29/2008==
 
 http://openarena.ws
 
@@ -9,6 +9,8 @@ http://openarena.ws
 * 64MB of system memory
 * OpenGL supported video card with 16MB of video memory. (Voodoo Banshee, TNT and up)
 * 250MB of hard drive space
+
+We recommend a 700MHz Pentium III / Athlon with a Geforce2 64mb.
 
 ===OTHER NOTES===
 This is ioq3 based now, so some changes and weirdities have been introduced. Your config and screenshots (And probably downloaded maps) may appear in a folder where your user profile data is kept.  Mouse and keyboard input may not be exactly like it used to be either.
