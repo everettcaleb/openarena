@@ -1,3 +1,14 @@
+0.7.7 (5/28/2008)
+- Fixed "Getting stuck bug"
+- Fixed logging bug
+- Fixed UI crash
+- Fixed overflow in Multiplayer list + Some of beast's changes to server list (longer names)
+- Instantgib and All rockets disabled during single player startup
+- Clears nextmap after single player
+- Windows only: new SDL.dll allows Caps Lock and Num Luck to be used as keys.
+- Using protocol number 69, this should only now show servers running 0.7.7
+
+
 0.7.6 (4/20/2008)
 - New player model : Assassin
 - New player model : Smarine
