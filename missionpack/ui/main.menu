@@ -15,7 +15,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with Open Arena; if not, write to the Free Software
+along with Foobar; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
@@ -24,23 +24,29 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 {
   assetGlobalDef {
-	font "gfx/2d/bigchars" 16
-	smallFont "gfx/2d/bigchars" 12
-	bigFont "gfx/2d/bigchars" 20
-	cursor "ui/assets/cursor"
-	shadowColor 0.0 0.0 0.0 0.25
-	}
+    	font "gfx/2d/bigchars" 16				
+    	smallFont "gfx/2d/bigchars" 12				
+    	bigFont "gfx/2d/bigchars" 20				
+	cursor "ui/assets/cursor"			
+	itemFocusSound MP_SND_HOVER		
+	shadowColor 0.0 0.0 0.0 0.25			
+  	}
+							   
+
+
 
 
 menuDef {
-	name main
-	background MP_BACKGROUND
-	fullScreen MENU_TRUE
+    	name "main"
+	background MP_BACKGROUND	
+    	fullScreen MENU_TRUE				
 	rect 0 0 640 480
-	visible MENU_TRUE
-	focusColor MP_FOCUSCOLOR
-	onOpen {
-		setitemcolor fadebox backcolor 0 0 0 1 ;
+    	visible MENU_TRUE
+    	focusColor MP_FOCUSCOLOR			
+
+						
+	onOpen { 
+		setitemcolor fadebox backcolor 0 0 0 1 ; 
 		playlooped "music/menu" ;
 		uiScript stopRefresh ;
 		}
@@ -63,189 +69,145 @@ itemDef {
 
 // The Bar of Buttons
 
-itemDef	{
-	name mouseybar
-	type 1
-	style 1
-	rect 73 177 425 34
-	visible 1
-	mouseEnter { hide stdta ; show gameselect }
-	mouseExit { hide gameselect ; show stdta }
-	decoration
-	}
-
 itemDef {
-	name stdta
-	text "Play"
-	style 0
+      	name button2
+      	text "New Game"
+      	style 0
 	type 1
 	textstyle 3
-	textscale 0.3
-	rect 73 177 100 34
-	textalign 0
-	textalignx 5
-	textaligny 20
-	forecolor MP_TEXTCOLOR
-	visible 1
-	}
-
-
-itemDef {
-	name gameselect
-	text "Single Player"
-	style 0
-	type 1
-	textstyle 3
-	textscale 0.3
-	rect 73 177 125 34
-	textalign 0
-	textalignx 5
-	textaligny 20
-	forecolor MP_TEXTCOLOR
-	visible 0
-	action {
-		close main;
-		open skirmish
-		}
-	}
-
-itemDef {
-	name gameselect
-	text "Start Server"
-	style 0
-	type 1
-	textstyle 3
-	textscale 0.3
-	rect 200 177 125 34
-	textalign 0
-	textalignx 5
-	textaligny 20
-	forecolor MP_TEXTCOLOR
-	visible 0
-	action	{
-		close main;
-		open createserver
-		}
-	}
-
-itemDef {
-	name gameselect
-	text "Multiplayer"
-	style 0
-	type 1
-	textstyle 3
-	textscale 0.3
-	rect 325 177 115 34
-	textalign 0		
-	textalignx 5  	
+      	textscale 0.3
+      	rect 73 177 163 34
+      	textalign 0		
+     	textalignx 5 	
 	textaligny 20   
-	forecolor MP_TEXTCOLOR
-	visible 0 
-	action	{
-		close main;
-		open joinserver
-		}
-	}
-
-itemDef {
-	name gameselect
-	text "Mods"
-	style 0
-	type 1
-	textstyle 3
-	textscale 0.3
-	rect 440 177 30 34
-	textalign 0
-	textalignx 5
-	textaligny 20
-	forecolor MP_TEXTCOLOR
-	visible 0
-	action	{
-		play MP_SND_SELECT;
-		}
-	}
-
-itemDef	{
-	name mousebar2
-	type 1
-	style 1
-	rect 73 209 350 34
-	visible 1
-	mouseEnter { hide config ; show configops }
-	mouseExit { hide configops ; show config }
-	decoration
-	}
-
-itemDef {
-	name config
-	text "Configure"
-	style 0
-	type 1
-	textstyle 3
-	textscale 0.3
-	rect 73 209 163 34
-	textalign 0
-	textalignx 5
-	textaligny 20
-	forecolor MP_TEXTCOLOR
-	visible 1 
-	}
-
-itemDef	{
-	name configops
-	text "Configure Game"
-	style 0
-	type 1
-	textstyle 3
-	textscale 0.3
-	textalign 0
-	textalignx 5
-	textaligny 20
-	rect 73 209 163 34
-	forecolor MP_TEXTCOLOR
-	visible 0
-	action	{
-		close main;
-		open configuration
-		}
-	}
-
-itemDef {
-	name configops
-	text "Player Model"
-	style 0
-	type 1
-	textstyle 3
-	textscale 0.3
-	rect 250 209 163 34
-	textalign 0		
-	textalignx 5  	
-	textaligny 20    
-	forecolor MP_TEXTCOLOR
-	visible 0 
-	action	{
-		close menu;
-		open player
-		}
-	}
-
-itemDef {
-	name button8
-	text "Help"
-	style 0
-	type 1
-	textstyle 3
-	textscale 0.3
-	rect 73 241 163 34
-	textalign 0		
-	textalignx 5  	
-	textaligny 20  
-	forecolor MP_TEXTCOLOR
+	forecolor MP_TEXTCOLOR   
 	visible 1 
 	      action
-		{
+      		{
 	        play MP_SND_SELECT; 
-		}
+ 	
+      		}
+	}
+
+itemDef {
+      	name button3
+      	text "Create Server"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 73 209 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor MP_TEXTCOLOR    
+	visible 1 
+	      action
+      		{
+	        play MP_SND_SELECT; 
+		open createserver;
+		close menu;
+      		}
+	}
+
+itemDef {
+      	name button4
+      	text "Join Server"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 73 241 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor MP_TEXTCOLOR    
+	visible 1 
+	      action
+      		{
+	        play MP_SND_SELECT; 
+		open joinserver;
+		close menu;
+      		}
+	}
+
+itemDef {
+      	name button5
+      	text "Configuration"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 73 273 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20   
+	forecolor MP_TEXTCOLOR    
+	visible 1 
+	      action
+      		{
+	        play MP_SND_SELECT; 
+		open configuration;
+		close menu;
+      		}
+	}
+
+itemDef {
+      	name button6
+      	text "Player"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 73 305 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20    
+	forecolor MP_TEXTCOLOR   
+	visible 1 
+	      action
+      		{
+	        play MP_SND_SELECT; 
+		open player;
+		close menu;
+      		}
+	}
+itemDef {
+      	name button7
+      	text "Custom game"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 73 337 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20  
+	forecolor MP_TEXTCOLOR     
+	visible 1 
+	      action
+      		{
+	        play MP_SND_SELECT; 
+      		}
+	}
+
+itemDef {
+      	name button8
+      	text "Help"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 73 369 163 34
+      	textalign 0		
+     	textalignx 5  	
+	textaligny 20  
+	forecolor MP_TEXTCOLOR     
+	visible 1 
+	      action
+      		{
+	        play MP_SND_SELECT; 
+      		}
 	}
 
 itemDef {
@@ -255,11 +217,11 @@ itemDef {
 	type 1
 	textstyle 3
       	textscale 0.3
-      	rect 73 273 163 34
+      	rect 73 433 163 34
       	textalign 0		
      	textalignx 5  	
 	textaligny 20  
-	forecolor MP_TEXTCOLOR
+	forecolor MP_TEXTCOLOR     
 	visible 1 
 	      action
       		{
@@ -267,39 +229,30 @@ itemDef {
 		uiscript "quit";
       		}
 	}
-/* crazy idea
-itemDef	{
-	name modeldec
-	ownerdraw UI_PLAYERMODEL
-	rect 361 118 300 350
-	style 0
-	decoration
-	visible 1
-	}
-*/
-/*itemDef {
-	name button9
-	text "Movies"
-	style 0
+
+itemDef {
+      	name button9
+      	text "Movies"
+      	style 0
 	type 1
 	textstyle 3
-	textscale 0.3
-	rect 73 337 163 34
-	textalign 0		
-	textalignx 5  	
+      	textscale 0.3
+      	rect 73 401 163 34
+      	textalign 0		
+     	textalignx 5  	
 	textaligny 20  
-	forecolor MP_TEXTCOLOR
+	forecolor MP_TEXTCOLOR     
 	visible 1 
-	action
-		{
+	      action
+      		{
 	        play MP_SND_SELECT; 
-		}
-	}*/
+      		}
+	}
 
 
 itemDef {
       	name warning
-      	text "OPENARENAMISSIONPACK MENU v0.003"
+      	text "oamp-menu v0.5 - WORK IN PROGRESS, lots of broken menus beware!"
       	style 0	
 	type 1
 	textstyle 6

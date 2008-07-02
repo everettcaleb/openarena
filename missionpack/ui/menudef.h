@@ -317,7 +317,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 // MAKE IT HOW IT LOOKS!!!!
 
-// #include "theme_kirkland.h" // you know what this is
+// #include "ui/theme_kirkland.h" // you know what this is
 #include "ui/theme_azure.h" // more ut/ta like 
-// #include "theme_classic.h" // more like regular menu
+// #include "ui/theme_classic.h" // more like regular menu
+// #include "ui/theme_greenie.h" // more like regular menu
 // please remember to add a new line at the end of a file

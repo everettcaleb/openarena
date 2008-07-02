@@ -1,0 +1,1123 @@
+/*
+===========================================================================
+Copyright (C) 2007-2008 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Open Arena; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+
+// Note that the vertical position of the bindings are increment by 12px
+// so we're consistent and even and such UNLIKE THOSE OTHER GUYS WE WON'T
+// NAME AT ALL BUT NOT EVEN A CLUE ON WHO WE WERE REFERRING TO YOU FIGURE
+// IT OUT ARGH
+{
+menuDef	{
+	name "controls"
+	visible 0
+	fullscreen 1
+	background MP_BACKGROUND	
+	focusColor MP_FOCUSCOLOR
+	rect 0 0 640 480
+	outOfBoundsClick  
+	style 0
+	onOpen	{ }
+	onEsc	{
+		close controls;
+		open configuration;
+		}
+
+itemDef {
+      	name titleness
+      	text "Controls"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale 1
+      	rect 0 65 1 1
+      	textalign 0		
+     	textalignx 48 	
+	textaligny 40        
+	forecolor MP_TITLECOLOR
+	visible 1 
+	}
+
+// The Bar of Buttons
+
+itemDef {
+      	name button2
+      	text "Done"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 177 163 34
+      	textalign 0		
+     	textalignx 5 	
+	textaligny 20   
+	forecolor MP_TEXTCOLOR 
+	visible 1 
+	      action
+      		{
+	        play "ui/assets/select.wav"; 
+		open configuration;
+ 		close controls;
+      		}
+	}
+
+// Movement Group
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Aiming"
+	textstyle 6
+      	textscale .25
+      	rect 215 312 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Mouse Sensitivity"
+	textstyle 6
+      	textscale .20
+      	rect 215 332 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name aiman
+      	style 0
+	type ITEM_TYPE_SLIDER
+	text ""
+	cvarfloat "sensitivity" 3 0 20
+	background "ui/assets/scrollbar"
+	textstyle 6
+      	textscale .24
+      	rect 215 347 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+       forecolor     MP_TEXTCOLOR
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Turn Left: "
+	type ITEM_TYPE_BIND
+	cvar "+left"
+	textstyle 6
+      	textscale .20
+      	rect 215 376 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Turn Right: "
+	type ITEM_TYPE_BIND
+	cvar "+right"
+	textstyle 6
+      	textscale .20
+       	rect 215 388 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Look Up: "
+	type ITEM_TYPE_BIND
+	cvar "+lookup"
+	textstyle 6
+      	textscale .20
+      	rect 215 400 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Look Down: "
+	type ITEM_TYPE_BIND
+	cvar "+lookdown"
+	textstyle 6
+      	textscale .20
+      	rect 215 412 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10       
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Center View: "
+	type ITEM_TYPE_BIND
+	cvar "centerview"
+	textstyle 6
+      	textscale .20
+      	rect 215 424 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10       
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Zoom: "
+	type ITEM_TYPE_BIND
+	cvar "+zoom"
+	textstyle 6
+      	textscale .20
+      	rect 215 436 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10       
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Mouse look (hold): "
+	type ITEM_TYPE_BIND
+	cvar "+mlook"
+	textstyle 6
+      	textscale .20
+      	rect 215 448 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10       
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Free Look: "
+	type ITEM_TYPE_YESNO
+	cvar "cl_freelook"
+	textstyle 6
+      	textscale .20
+      	rect 215 460 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10       
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+// Movement
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Movement"
+	textstyle 6
+      	textscale .25
+      	rect 415 324 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Forward: "
+	type ITEM_TYPE_BIND
+	cvar "+forward"
+	textstyle 6
+      	textscale .20
+      	rect 415 400 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Backpedal: "
+	type ITEM_TYPE_BIND
+	cvar "+back"
+	textstyle 6
+      	textscale .20
+      	rect 415 412 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Strafe Left: "
+	type ITEM_TYPE_BIND
+	cvar "+moveleft"
+	textstyle 6
+      	textscale .20
+      	rect 415 424 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Strafe Right: "
+	type ITEM_TYPE_BIND
+	cvar "+moveright"
+	textstyle 6
+      	textscale .20
+      	rect 415 436 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Jump: "
+	type ITEM_TYPE_BIND
+	cvar "+moveup"
+	textstyle 6
+      	textscale .20
+      	rect 415 448 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Crouch: "
+	type ITEM_TYPE_BIND
+	cvar "+movedown"
+	textstyle 6
+      	textscale .20
+      	rect 415 460 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Strafe: "
+	type ITEM_TYPE_BIND
+	cvar "+strafe"
+	textstyle 6
+      	textscale .20
+      	rect 415 336 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Run/Walk : "
+	type ITEM_TYPE_BIND
+	cvar "+speed"
+	textstyle 6
+      	textscale .20
+      	rect 415 348 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name looking
+	style 0	
+	group movements
+      	text "Always Run: "
+	type ITEM_TYPE_YESNO
+	cvar "cl_run"
+	textstyle 6
+      	textscale .20
+      	rect 415 360 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+
+// Weapons
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Weapons"
+	textstyle 6
+      	textscale .25
+      	rect 415 112 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Gauntlet:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 1"
+	textstyle 6
+      	textscale .20
+      	rect 415 124 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Machinegun:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 2"
+	textstyle 6
+      	textscale .20
+      	rect 415 136 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Shotgun:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 3"
+	textstyle 6
+      	textscale .20
+      	rect 415 148 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Grenade Launcher:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 4"
+	textstyle 6
+      	textscale .20
+      	rect 415 160 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Rocket Launcher:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 5"
+	textstyle 6
+      	textscale .20
+      	rect 415 172 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Lightning Gun:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 6"
+	textstyle 6
+      	textscale .20
+      	rect 415 184 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Rail Gun:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 7"
+	textstyle 6
+      	textscale .20
+      	rect 415 196 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Plasma Gun:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 8"
+	textstyle 6
+      	textscale .20
+      	rect 415 208 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "BFG:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 9"
+	textstyle 6
+      	textscale .20
+      	rect 415 220 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Nailgun:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 11"
+	textstyle 6
+      	textscale .20
+      	rect 415 232 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Prox Mine:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 12"
+	textstyle 6
+      	textscale .20
+      	rect 415 244 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Chaingun:"
+	type ITEM_TYPE_BIND
+	cvar "weapon 13"
+	textstyle 6
+      	textscale .20
+      	rect 415 256 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Previous Weapon:"
+	type ITEM_TYPE_BIND
+	cvar "weapprev"
+	textstyle 6
+      	textscale .20
+      	rect 415 268 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Next Weapon:"
+	type ITEM_TYPE_BIND
+	cvar "weapnext"
+	textstyle 6
+      	textscale .20
+      	rect 415 280 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Auto weapon switch:"
+	type ITEM_TYPE_YESNO
+	cvar "cg_autoswitch"
+	textstyle 6
+      	textscale .20
+      	rect 415 292 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+// Miscy (aka CRAP!!!! CRAP CRAP CRAP I have to do this still because
+// it is my sworn duty as the openarena leader to build it and they
+// will come. I better gawsh darn hope they will come because if I
+// don't cut past my laziness and don't do it they'll never come.
+// You know what I mean son!?  Well I'd better build this and hope-
+// fully, they will and I mean oh bloody argh jeez freakin' well
+// come.  But when i'm told to not do it, is when *I* want to come.
+// No Frankie, I don't get that either.  You're a creepy *camper*
+// and I *jumping peppers* this menu file. *frumple*
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Miscellanus"
+	textstyle 6
+      	textscale .25
+      	rect 215 112 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Score card:"
+	type ITEM_TYPE_BIND
+	cvar "+scores"
+	textstyle 6
+      	textscale .20
+      	rect 215 124 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Scroll card up:"
+	type ITEM_TYPE_BIND
+	cvar "scoresUp"
+	textstyle 6
+      	textscale .20
+      	rect 215 136 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Scroll card down:"
+	type ITEM_TYPE_BIND
+	cvar "scoresDown"
+	textstyle 6
+      	textscale .20
+      	rect 215 148 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Chat:"
+	type ITEM_TYPE_BIND
+	cvar "messagemode"
+	textstyle 6
+      	textscale .20
+      	rect 215 160 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Chat to team only:"
+	type ITEM_TYPE_BIND
+	cvar "messagemode2"
+	textstyle 6
+      	textscale .20
+      	rect 215 172 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Chat to your target only:"
+	type ITEM_TYPE_BIND
+	cvar "messagemode3"
+	textstyle 6
+      	textscale .20
+      	rect 215 184 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Chat to your attacker:"
+	type ITEM_TYPE_BIND
+	cvar "messagemode4"
+	textstyle 6
+      	textscale .20
+      	rect 215 196 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Taunt by gesture:"
+	type ITEM_TYPE_BIND
+	cvar "+button3"
+	textstyle 6
+      	textscale .20
+      	rect 215 208 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name weapons
+	style 0	
+	group weapons
+      	text "Taunt by voice:"
+	type ITEM_TYPE_BIND
+	cvar "tauntTaunt"
+	textstyle 6
+      	textscale .20
+      	rect 215 220 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+
+// Orders, for when you want to yell at your stupid morons of a
+// team audibly to slap the sense into their console-brained or
+// high fov'd super picmip'd minds. When looking at the chat area
+// just isn't GOSHDARN well enough. You know this reminds me of a
+// time where I had to type out every team command letter by letter
+// in the team chat. What was a frag fest became GameTeachesTyping
+// 6.0 as I struggle to get every word into the chat. Unfortunately
+// this was a bad time to chat as the flag carrier was already half-
+// way into the enemy base. In a rush, I typed out the words:
+// "hry pot g;sh nsvl!!!! HRY POT G;SH NSVL!!!!!!!"
+// Apparently this did not get the message through. We lost the flag.
+// This is why the keybinds for vocal team orders exist.
+
+
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Orders"
+	textstyle 6
+      	textscale .25
+      	rect 45 200 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Cornifm:"
+	type ITEM_TYPE_BIND
+	cvar "confirmOrder"
+	textstyle 6
+      	textscale .20
+       	rect 45 212 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Deny:"
+	type ITEM_TYPE_BIND
+	cvar "denyOrder"
+	textstyle 6
+      	textscale .20
+       	rect 45 224 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Task Offence:"
+	type ITEM_TYPE_BIND
+	cvar "taskOffense"
+	textstyle 6
+      	textscale .20
+       	rect 45 236 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Task Defence:"
+	type ITEM_TYPE_BIND
+	cvar "taskDefense"
+	textstyle 6
+      	textscale .20
+       	rect 45 248 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Task Patrol:"
+	type ITEM_TYPE_BIND
+	cvar "taskPatrol"
+	textstyle 6
+      	textscale .20
+       	rect 45 260 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Task Camp:"
+	type ITEM_TYPE_BIND
+	cvar "taskCamp"
+	textstyle 6
+      	textscale .20
+       	rect 45 272 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Task Follow:"
+	type ITEM_TYPE_BIND
+	cvar "taskFollow"
+	textstyle 6
+      	textscale .20
+       	rect 45 284 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Task Retrieve:"
+	type ITEM_TYPE_BIND
+	cvar "taskRetrieve"
+	textstyle 6
+      	textscale .20
+       	rect 45 296 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Task Escort:"
+	type ITEM_TYPE_BIND
+	cvar "taskEscort"
+	textstyle 6
+      	textscale .20
+       	rect 45 308 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "I GOT FLAG!:"
+	type ITEM_TYPE_BIND
+	cvar "taskOwnFlag"
+	textstyle 6
+      	textscale .20
+       	rect 45 320 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Task Suicide:"
+	type ITEM_TYPE_BIND
+	cvar "taskSuicide"
+	textstyle 6
+      	textscale .20
+       	rect 45 332 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Next member:"
+	type ITEM_TYPE_BIND
+	cvar "nextTeamMember"
+	textstyle 6
+      	textscale .20
+       	rect 45 344 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name orders
+	style 0	
+	group orders
+      	text "Next order:"
+	type ITEM_TYPE_BIND
+	cvar "nextOrder"
+	textstyle 6
+      	textscale .20
+       	rect 45 356 116 12
+      	textalign 0		
+     	textalignx 0	
+	textaligny 10        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+}
+
+ 

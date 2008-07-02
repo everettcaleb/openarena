@@ -16,6 +16,8 @@
 	loadMenu { "ui/help.menu" }
 	loadMenu { "ui/configuration.menu" }
 	loadMenu { "ui/videomodes.menu" }
+	loadMenu { "ui/contentcontrol.menu" }
+
 	loadMenu { "ui/ordershelp.menu" }
  	loadMenu { "ui/mod.menu" }
 	loadMenu { "ui/demo.menu" }

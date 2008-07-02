@@ -1,0 +1,370 @@
+/*
+===========================================================================
+Copyright (C) 2007 Open Arena Team
+
+This file is part of Open Arena.
+
+Open Arena is free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+Open Arena is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Open Arena; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+===========================================================================
+*/
+
+#include "ui/menudef.h"
+
+// classic H*L style menu
+
+{
+menuDef	{
+	name "contentcontrol"
+	visible 0
+	fullscreen 1
+	background MP_BACKGROUND	
+	focusColor MP_FOCUSCOLOR
+	rect 0 0 640 480
+	outOfBoundsClick  
+	style 0
+	onOpen	{ }
+	onEsc	{
+		close contentcontrol;
+		open configuration;
+		}
+
+itemDef {
+      	name titleness
+      	text "Content Control"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale 1
+      	rect 0 65 1 1
+      	textalign 0		
+     	textalignx 48 	
+	textaligny 40        
+	forecolor MP_TITLECOLOR
+	visible 1 
+	}
+
+// The Bar of Buttons
+
+itemDef {
+      	name button2
+      	text "Done"
+      	style 0
+	type 1
+	textstyle 3
+      	textscale 0.3
+      	rect 52 177 163 34
+      	textalign 0		
+     	textalignx 5 	
+	textaligny 20   
+	forecolor MP_TEXTCOLOR 
+	visible 1 
+	      action
+      		{
+	        play "ui/assets/select.wav"; 
+		open configuration;
+ 		close contentcontrol;
+      		}
+	}
+// the content controls
+
+itemDef {
+      	name volume
+      	style 0	
+      	text "Quality:"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 137 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+
+// MAX PRAYERS
+itemDef {
+      	name maxprayamer
+      	style 0	
+      	text "Blood:"
+      	style 0	
+	type 0
+	textstyle 6
+      	textscale .25
+      	rect 212 200 1 1
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+itemDef {
+      	name mussic
+      	style 0
+	type ITEM_TYPE_MULTI
+	text ""
+	cvar "com_blood"
+	cvarFloatList { "Clean" 0 "Violent" 1}
+	background "ui/assets/scrollbar"
+	textstyle 6
+      	textscale .24
+      	rect 212 229 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+    
+      forecolor     MP_TEXTCOLOR
+      backcolor     0.0 0.0 0.0 1
+      outlinecolor  1   0.5   0.01   0.3
+	visible 1 
+    }
+// other buttons
+
+
+
+itemDef {
+	name yourmother
+      	style 0	
+      	text "Show gibs:"
+	type ITEM_TYPE_MULTI
+	cvar "cg_showGibs"
+	cvarFloatList { "Hide gibs" 0 "MMM FRESH MEAT" 1 }
+	textstyle 6
+      	textscale .24
+      	rect 212 287 150 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 18        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	}
+/*
+itemDef {
+	name shadows
+	style 0
+	text "Shadows: "
+	type ITEM_TYPE_MULTI
+	cvar "cg_shadows"
+	cvarFloatList { "Blob" 1 "Volumetric" 2 "Planar" 3 }
+	textstyle 6
+	textscale .24
+	rect 54 287 116 24
+	textalign 0
+	textalignx 6
+	textaligny 20
+	forecolor MP_TEXTCOLOR
+	visible 1
+	action { uiScript glCustom }
+	}
+
+
+// other buttons
+
+itemDef {
+      	name frares
+      	style 0	
+      	text "Fullscreen:"
+	cvar "r_fullscreen"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	textstyle 6
+      	textscale .22
+      	rect 54 316 117 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	action { uiScript glCustom }
+    }
+
+itemDef {
+      	name pure
+      	style 0	
+      	text "GL Extensions:"
+	cvar "r_allowExtensions"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	textstyle 6
+      	textscale .22
+      	rect 54 340 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	action { uiScript glCustom }
+    }
+itemDef {
+      	name ded
+      	style 0	
+      	text "Color Depth:"
+      	style 0	
+	type ITEM_TYPE_MULTI
+	cvar "r_colorBits"
+	cvarFloatList { "Desktop" 0 "16bpp" 16 "24bpp" 24 "32bpp" 32 }
+	textstyle 6
+      	textscale .22
+      	rect 54 364 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	action { uiScript glCustom }
+    }
+
+// row 2 of other buttons
+
+itemDef {
+      	name fraglimit
+      	text "Multitexturing:"
+      	style 0	
+	type ITEM_TYPE_MULTI
+
+	cvar "r_vertexLight"
+	cvarFloatList { "Yes" 0 "No" 1 }
+	textstyle 6
+      	textscale .22
+      	rect 215 316 117 24
+
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	action { uiScript glCustom }
+    }
+
+itemDef {
+      	name timelimit
+      	text "Model Detail:"
+      	style 0	
+	type ITEM_TYPE_MULTI
+	cvar "r_lodBias"
+	cvarFloatList { "Insane" -50 "High" 0 "Medium" 1 "Low" 2 "Minimum" 50}
+	textstyle 6
+      	textscale .22
+      	rect 215 340 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+action {
+	uiScript glCustom ; uiScript update "r_lodbias"
+	}
+	visible 1 
+    }
+itemDef {
+      	name caplimit
+      	text "Texture filter:"
+	type ITEM_TYPE_MULTI
+	cvar "r_texturemode"
+	cvarStrList { "Bilinear", "GL_LINEAR_MIPMAP_NEAREST", "Trilinear", "GL_LINEAR_MIPMAP_LINEAR"  }
+      	style 0	
+	maxchars 5
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 215 364 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name minplayers
+      	text "Flares:"
+	cvar "r_flares"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 215 388 116 24
+      	textalign 0		
+     	textalignx 6	
+	action { uiScript glCustom }
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+	name bloom
+	text "Bloom:"
+	cvar "r_bloom"
+	style 0	
+	type ITEM_TYPE_YESNO
+	maxchars 2
+	textstyle 6
+	textscale .22
+	textstyle 6
+	textscale .22
+	rect 54 412 116 24
+	textalign 0		
+	textalignx 6	
+	action { uiScript glCustom }
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+	}
+
+itemDef {
+      	name minfayers
+      	text "Detail Texturing:"
+	cvar "r_detailTextures"
+      	style 0	
+	type ITEM_TYPE_YESNO
+	maxchars 2
+	textstyle 6
+      	textscale .22
+	textstyle 6
+      	textscale .22
+      	rect 54 388 116 24
+      	textalign 0		
+     	textalignx 6	
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+
+itemDef {
+      	name stencilbuffer
+	style 0	
+      	text "Stencil Buffer: "
+	type ITEM_TYPE_MULTI
+	cvar "r_stencilbits"
+	cvarFloatList { "None" 0 "Medium" 2 "High" 8 }
+	textstyle 6
+      	textscale .22
+      	rect 215 412 116 24
+      	textalign 0		
+     	textalignx 6	
+	action { uiScript glCustom; uiScript update "r_stencilbits" }
+	textaligny 20        
+	forecolor MP_TEXTCOLOR
+	visible 1 
+    }
+*/
+
+}

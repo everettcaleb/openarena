@@ -72,7 +72,8 @@ itemDef {
 	      action
       		{
 	        play "ui/assets/select.wav"; 
-	       
+	       		open controls;
+		close configuration;
       		}
 	}
 
@@ -135,7 +136,9 @@ itemDef {
 	visible 1 
 	      action
       		{
-
+	        play "ui/assets/select.wav"; 
+		open contentcontrol;
+		close configuration;
       		}
 	}
 
