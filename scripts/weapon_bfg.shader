@@ -34,7 +34,7 @@ f_bfg1
 	}
 }
 
-models\weapons2\bfg\bfgbody
+models/weapons2/bfg/bfgbody
 {
 	cull disable
 	{
@@ -48,7 +48,7 @@ models\weapons2\bfg\bfgbody
 	}
 }
 
-models\weapons2\bfg\bfgtube
+models/weapons2/bfg/bfgtube
 {
 	cull disable
 	{
