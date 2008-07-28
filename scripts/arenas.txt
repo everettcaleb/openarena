@@ -103,6 +103,15 @@ fraglimit	30
 type		"ctf elimination ctfelimination"
 }
 
+{
+map			"oa_bases7"
+bots		"tux"
+longname	"Some Awful Bases"
+fraglimit	30
+type		"ctf elimination ctfelimination dd"
+}
+
+
 //{
 //map		"suction"
 //bots		"sarge gargoyle"
