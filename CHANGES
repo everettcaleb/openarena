@@ -1,3 +1,18 @@
+0.8.0 (8/8/2008)
+- Initial release of 'missionpack'
+- New player model : Sorceress
+- New map: oa_bases7
+- oa_bases3 recompiled with fast water (should perform 632% faster)
+- Classic version of oa_bases3 snuck in :)
+- Bot file for oa_bases3plus2
+- oa_minia updated
+- New lightning effect
+- New sound effects for shotgun, railgun, and weapon switching
+- New Kyonshi voices, courtesy of aeri_s
+- Beret greatly improved, in skin and animation 
+- Better mouse control (still not perfect especially with lower framerates)
+- Other stuff like random asset polish
+
 0.7.7 (5/28/2008)
 - Fixed "Getting stuck bug"
 - Fixed logging bug

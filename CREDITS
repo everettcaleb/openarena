@@ -28,8 +28,9 @@ Kaz		- Skins
 next_ghost	- Code cleanup
 haste		- Unlagged code
 kit89		- Models, maps
-pixie		- Voices (Kyonshi, Major)
-RottKing	- Voices (Merman)
+pixie		- Voices (Major, Angelyss, Arachna, Sorceress)
+aeri_s		- Voices (Kyonshi)
+RottKing	- Voices (Merman, Beret, Sarge, Skelebot, Sergei)
 Vondur		- Map (kaos)
 Tyrann		- Map (Aggressor)
 Ed		- Map (Conversion of e1m7)
@@ -41,7 +42,8 @@ baconfish	- Model (Penguin player)
 sago007		- Maps (dm7 conversion, oasago2f2), code (oax mod, gametypes: elimination, ctf_elimination, 
 								lms, double domination, domination)
 sp1r1t		- Map (oa_spirit3ctfduel1)
-kick52		- Textures
+kick52		- Textures, bug reporting
+Kaelis		- Models (Missionpack overload core)
 NASA and STScI	- Skybox images (Planetary Nebula NGC 3132, Reflection Nebula NGC 1999, 
 			Spiral Galaxy NGC 4622)
 stroggi		- Map (Suction), shaders, textures
@@ -55,8 +57,9 @@ modDB, mancubus.net, Quake3World, Doomworld,
 Polycount, Gna!, id software, Galbraith
 Games, Linux Game Tome, Inside3D.com, 
 deathz0r, Wudan, ibrown, Tr3b, MilesTeg,
-John Romero, American McGee,
-jitspoe, Blender, modplug, freepats, Willis, Kurt Vonnegut,
+John Romero, American McGee, pdsound.org
+jitspoe, Blender, modplug, freepats, Willis, 
+Wesley Willis, Kurt Russell, Kurt Vonnegut,
 Sindwiller (for the huge tri-licensed photograph pack)
 and The Church of the Subgenius 
 
