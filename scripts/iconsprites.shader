@@ -360,9 +360,7 @@ icons/iconr_red
 	}
 }
 
-//
-// health icons
-//
+
 icons/iconh_green
 {
 	nopicmip
@@ -388,11 +386,7 @@ icons/iconh_red
 		map icons/iconh_red.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
-        //{
-	//	clampmap icons/iconh_red2.tga
-	//	blendFunc blend
-        //        tcMod stretch sin .04 1 0 1
-	//}
+
 }
 
 icons/iconh_mega
@@ -458,9 +452,6 @@ gfx/2d/cursor
     }
 }
 
-//==========================================================================
-
-
 sprites/balloon3
 {
 	{
@@ -495,7 +486,7 @@ waterBubble
 }
 
 
-flareShader
+Grareflaader
 {
 	cull none
 	{
@@ -504,7 +495,7 @@ flareShader
 		rgbGen vertex
 	}
 }
-sun
+boens
 {
 	cull none
 	{
@@ -513,29 +504,6 @@ sun
 		rgbGen vertex
 	}
 }
-
-lightningBolt
-{
-	cull none
-	{
-		map gfx/misc/lightning3.tga
-		blendFunc GL_ONE GL_ONE
-//                rgbgen wave sin 1 5.1 0 7.1
-                rgbgen wave sin 1 0.5 0 7.1
-                 tcmod scale  2 1
-		tcMod scroll -5 0
-	}
-    {
-		map gfx/misc/lightning3.tga
-		blendFunc GL_ONE GL_ONE
-//                rgbgen wave sin 1 8.3 0 8.1
-                rgbgen wave sin 1 0.8 0 8.1
-                tcmod scale  -1.3 -1
-		tcMod scroll -7.2 0
-	}
-}
-
-// shader used on the occasional machinegun bullet tracers
 gfx/misc/tracer
 {
 	cull none
@@ -545,14 +513,9 @@ gfx/misc/tracer
 	}
 }
 
-//
-// wall marks
-// use blendFunc GL_ZERO GL_ONE_MINUS_SRC_COLOR so that
-// their "contribution" can be damped down in fog volumes
-// with distance
 bloodMark
 {
-	nopicmip			// make sure a border remains
+	nopicmip			
 	polygonOffset
 	{
 		clampmap gfx/damage/blood_stain.tga
@@ -565,8 +528,8 @@ bloodMark
 bloodTrail
 {
         
-	nopicmip			// make sure a border remains
-	entityMergable		// allow all the sprites to be merged together
+	nopicmip			
+	entityMergable		
 	{
 		//clampmap gfx/misc/blood.tga
                 clampmap gfx/damage/blood_spurt.tga
@@ -575,10 +538,6 @@ bloodTrail
 		alphaGen	vertex
 	}
 }
-
-//===============================================================
-
-// scoreboard header tabs
 
 scoreboardName
 {
@@ -619,9 +578,6 @@ scoreboardPing
 		blendfunc blend
 	}
 }
-
-//===============================================================
-
 gfx/2d/crosshair
 {
 	nopicmip

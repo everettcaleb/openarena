@@ -47,24 +47,8 @@ bulletExplosion
 {
 	cull disable
 	{
-		clampmap models/weaphits/bullet2.tga
-		blendfunc gl_one gl_src_alpha
-		rgbGen wave inversesawtooth 0 1 0 1.65 
-		tcMod rotate 67
-		tcMod stretch sawtooth 0.1 1.4 0 1.5 
-	}
-	{
-		map textures/oafx/spark1.tga
-		blendfunc gl_one gl_src_alpha
-		rgbGen wave inversesawtooth 0 1 0 2.8 
-		tcMod scroll -1.5 0
-	}
-	{
-		map textures/oafx/spark3.tga
-		blendfunc gl_src_alpha gl_dst_alpha
-		rgbGen lightingDiffuse
-		tcMod scroll 0 -0.7
-		alphaGen wave sawtooth 1 -1 0 1.6 
+		animmap 12 models/weaphits/bullet_0000.tga models/weaphits/bullet_0001.tga models/weaphits/bullet_0002.tga models/weaphits/bullet_0003.tga models/weaphits/bullet_0004.tga models/weaphits/bullet_0005.tga models/weaphits/bullet_0006.tga models/weaphits/bullet_0007.tga 
+		blendfunc add
 	}
 }
 
