@@ -11,11 +11,28 @@ models/weapons2/plasma/skin
 {
 	{
 		map models/weapons2/plasma/skin.tga
-		rgbGen lightingDiffuse
+		rgbGen identity
+//		rgbGen lightingDiffuse
+ 	}	
+	{
+//		map textures/effects/envmapblue.jpg
+//		map textures/effects/redflagmap.jpg
+//		map textures/effects/skinspec2.tga
+		map textures/effects/tinfx2d.tga
+//		map textures/effects/tinfx2.tga
+		blendfunc add
+		tcMod scroll 1 0
+		tcMod scale 2 2
+		rgbGen identity
+//		rgbGen lightingDiffuse
+//		tcGen environment
 	}
 	{
 		map models/weapons2/plasma/skin.tga
-		blendfunc gl_one_minus_src_alpha gl_one
+//		blendfunc filter
+		alphaFunc GE128
+		rgbGen lightingDiffuse
+//		rgbGen identity
 	}
 }
 
