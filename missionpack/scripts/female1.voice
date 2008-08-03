@@ -1,0 +1,199 @@
+male
+
+getflag		
+{
+	sound\voices\kyonshi\getthatflag.ogg	"Get that flag!"
+}
+
+offense	
+{
+	sound\voices\kyonshi\youronoffense.ogg	"You are on offense."
+}
+
+defend		
+{
+	sound\voices\kyonshi\defendthebase.ogg	"Defend the base."
+}
+
+defendflag		
+{
+	sound\voices\kyonshi\defendourflag.ogg	"Defend our flag."
+}
+
+patrol		
+{
+	sound\voices\kyonshi\gopatrolthearea.ogg	"Go patrol the area"
+}
+
+followme		
+{
+	sound\voices\kyonshi\followme.ogg	"Follow me."
+	sound\voices\kyonshi\coverme.ogg	"Cover me."
+}
+
+yes
+{
+	sound\voices\kyonshi\yes.ogg	"Yes."
+	sound\voices\kyonshi\affirmative.ogg	"Affirmative."
+	sound\voices\kyonshi\okay.ogg	"Okay"
+}
+
+no
+{
+	sound\voices\kyonshi\no.ogg	"No."
+	sound\voices\kyonshi\negative.ogg	"Negative."
+}
+
+ihaveflag	
+{
+	sound\voices\kyonshi\ihavetheflag.ogg	"I have the flag!"
+}
+
+baseattack		
+{
+	sound\voices\kyonshi\ourbaseisunderattack.ogg	"Our base is under attack!"
+}
+
+enemyhasflag	
+{
+	sound\voices\kyonshi\theyhaveourflag.ogg	"They have our flag!"
+
+}
+
+ongetflag		
+{
+	sound\voices\kyonshi\gettingourflag.ogg	"Getting our flag" // oops, this was supposed to be for one flag ctf but we didn't have a getting the flag...
+}
+
+onoffense	
+{
+	sound\voices\kyonshi\iwanttoattack.ogg	"I want to attack!"
+	sound\voices\kyonshi\imgoingin.ogg	"I'm goin' in"
+}
+
+ondefense	
+{
+	sound\voices\kyonshi\illcoverourbase.ogg	"I'll cover our base"
+}
+
+onpatrol	
+{
+	sound\voices\kyonshi\justroamingaround.ogg	"Just roaming around"
+}
+
+startleader		
+{
+	sound\voices\kyonshi\imtheleader.ogg	"I'm the leader"
+}
+
+stopleader		
+{
+	sound\voices\kyonshi\idontwanttobeleaderanymo.ogg	"I don't want to be the leader anymore."
+}
+
+kill_insult
+{
+	sound\voices\kyonshi\loser.ogg	"Loser."
+	sound\voices\kyonshi\heh.ogg	"Heh"
+	sound\voices\kyonshi\hadtohurt.ogg	"That had to hurt."
+	sound\voices\kyonshi\eatthat.ogg	"Eat that!"
+	sound\voices\kyonshi\die.ogg	"Die"
+	sound\voices\kyonshi\boom.ogg	"Boom!"
+	sound\voices\kyonshi\yousuck.ogg	"You suck"
+	sound\voices\kyonshi\suckitdown.ogg "Suck it down"
+	sound\voices\kyonshi\youlikethat.ogg "You like that?"
+
+}
+
+taunt {
+	sound\voices\kyonshi\whereareyou.ogg	"Where are you?"
+	sound\voices\kyonshi\guesswhatihave.ogg	"Guess what I have!"	
+	sound\voices\kyonshi\whowantstodie.ogg	"Hehehe, who wants to die?"
+
+
+}
+
+death_insult {
+	sound\voices\kyonshi\ugh.ogg	"Ugh"
+	sound\voices\kyonshi\jerk.ogg	"Jerk"
+	sound\voices\kyonshi\heh.ogg	"Heh"
+	sound\voices\kyonshi\waiter.ogg "Waiter."
+}
+
+kill_gauntlet {
+	sound\voices\kyonshi\yoursource.ogg	"Your source has been opened"
+}
+
+praise {
+	sound\voices\kyonshi\idontwanttobeleaderanymo.ogg	"I don't want to be the leader anymore."
+	}
+
+
+camp		
+{
+	sound\voices\kyonshi\camphere.ogg	"Camp here."
+
+}
+
+returnflag		
+{
+	sound\voices\kyonshi\getourflag.ogg	"Get our flag!"
+
+}
+
+whoisleader			
+{
+	sound\voices\kyonshi\whoisourleader.ogg	"Who is our leader?"
+
+}
+
+followflagcarrier		
+{
+	sound\voices\kyonshi\keepupwiththecarrier.ogg	"Keep up with the carrier."
+}
+
+inposition			
+{
+	sound\voices\kyonshi\iminposition.ogg	"I'm in position."
+}
+
+wantondefense		
+{
+	sound\voices\kyonshi\iwanttodefend.ogg	"I want to defend."
+}
+
+wantonoffense		
+{
+	sound\voices\kyonshi\iwanttoattack.ogg	"I want to attack."
+}
+
+wantonpatrol	
+{
+	sound\voices\kyonshi\iwannaroamaround.ogg	"I want to roam around."
+}
+
+oncamp 
+{
+	sound\voices\kyonshi\imcampinhere.ogg	"I'm campin here"
+}
+
+onfollow
+{
+	sound\voices\kyonshi\imfollowing.ogg	"I'm following"
+}
+
+onfollowcarrier
+{
+	sound\voices\kyonshi\followingthecarrier.ogg	"Following the carrier."
+}
+
+onreturnflag
+{
+	sound\voices\kyonshi\gettingourflag.ogg	"Getting our flag!"
+}
+
+harvest 
+{
+	sound\voices\kyonshi\getsomeskulls.ogg	"Get some skulls"
+
+}
