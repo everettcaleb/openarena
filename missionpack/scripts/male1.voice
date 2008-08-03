@@ -1,0 +1,199 @@
+male
+
+getflag		
+{
+	sound\voices\festivoxmale\getthatflag.ogg	"Get that flag!"
+}
+
+offense	
+{
+	sound\voices\festivoxmale\youronoffense.ogg	"You are on offense."
+}
+
+defend		
+{
+	sound\voices\festivoxmale\defendthebase.ogg	"Defend the base."
+}
+
+defendflag		
+{
+	sound\voices\festivoxmale\defendourflag.ogg	"Defend our flag."
+}
+
+patrol		
+{
+	sound\voices\festivoxmale\gopatrolthearea.ogg	"Go patrol the area"
+}
+
+followme		
+{
+	sound\voices\festivoxmale\followme.ogg	"Follow me."
+	sound\voices\festivoxmale\coverme.ogg	"Cover me."
+}
+
+yes
+{
+	sound\voices\festivoxmale\yes.ogg	"Yes."
+	sound\voices\festivoxmale\affirmative.ogg	"Affirmative."
+	sound\voices\festivoxmale\okay.ogg	"Okay"
+}
+
+no
+{
+	sound\voices\festivoxmale\no.ogg	"No."
+	sound\voices\festivoxmale\negative.ogg	"Negative."
+}
+
+ihaveflag	
+{
+	sound\voices\festivoxmale\ihavetheflag.ogg	"I have the flag!"
+}
+
+baseattack		
+{
+	sound\voices\festivoxmale\ourbaseisunderattack.ogg	"Our base is under attack!"
+}
+
+enemyhasflag	
+{
+	sound\voices\festivoxmale\theyhaveourflag.ogg	"They have our flag!"
+
+}
+
+ongetflag		
+{
+	sound\voices\festivoxmale\gettingourflag.ogg	"Getting our flag" // oops, this was supposed to be for one flag ctf but we didn't have a getting the flag...
+}
+
+onoffense	
+{
+	sound\voices\festivoxmale\iwanttoattack.ogg	"I want to attack!"
+	sound\voices\festivoxmale\imgoingin.ogg	"I'm goin' in"
+}
+
+ondefense	
+{
+	sound\voices\festivoxmale\illcoverourbase.ogg	"I'll cover our base"
+}
+
+onpatrol	
+{
+	sound\voices\festivoxmale\justroamingaround.ogg	"Just roaming around"
+}
+
+startleader		
+{
+	sound\voices\festivoxmale\imtheleader.ogg	"I'm the leader"
+}
+
+stopleader		
+{
+	sound\voices\festivoxmale\idontwanttobeleaderanymo.ogg	"I don't want to be the leader anymore."
+}
+
+kill_insult
+{
+	sound\voices\festivoxmale\loser.ogg	"Loser."
+	sound\voices\festivoxmale\heh.ogg	"Heh"
+	sound\voices\festivoxmale\hadtohurt.ogg	"That had to hurt."
+	sound\voices\festivoxmale\eatthat.ogg	"Eat that!"
+	sound\voices\festivoxmale\die.ogg	"Die"
+	sound\voices\festivoxmale\boom.ogg	"Boom!"
+	sound\voices\festivoxmale\yousuck.ogg	"You suck"
+	sound\voices\festivoxmale\suckitdown.ogg "Suck it down"
+	sound\voices\festivoxmale\youlikethat.ogg "You like that?"
+
+}
+
+taunt {
+	sound\voices\festivoxmale\whereareyou.ogg	"Where are you?"
+	sound\voices\festivoxmale\guesswhatihave.ogg	"Guess what I have!"	
+	sound\voices\festivoxmale\whowantstodie.ogg	"Hehehe, who wants to die?"
+
+
+}
+
+death_insult {
+	sound\voices\festivoxmale\ugh.ogg	"Ugh"
+	sound\voices\festivoxmale\jerk.ogg	"Jerk"
+	sound\voices\festivoxmale\heh.ogg	"Heh"
+	sound\voices\festivoxmale\waiter.ogg "Waiter."
+}
+
+kill_gauntlet {
+	sound\voices\festivoxmale\yoursource.ogg	"Your source has been opened"
+}
+
+praise {
+	sound\voices\festivoxmale\idontwanttobeleaderanymo.ogg	"I don't want to be the leader anymore."
+	}
+
+
+camp		
+{
+	sound\voices\festivoxmale\camphere.ogg	"Camp here."
+
+}
+
+returnflag		
+{
+	sound\voices\festivoxmale\getourflag.ogg	"Get our flag!"
+
+}
+
+whoisleader			
+{
+	sound\voices\festivoxmale\whoisourleader.ogg	"Who is our leader?"
+
+}
+
+followflagcarrier		
+{
+	sound\voices\festivoxmale\keepupwiththecarrier.ogg	"Keep up with the carrier."
+}
+
+inposition			
+{
+	sound\voices\festivoxmale\iminposition.ogg	"I'm in position."
+}
+
+wantondefense		
+{
+	sound\voices\festivoxmale\iwanttodefend.ogg	"I want to defend."
+}
+
+wantonoffense		
+{
+	sound\voices\festivoxmale\iwanttoattack.ogg	"I want to attack."
+}
+
+wantonpatrol	
+{
+	sound\voices\festivoxmale\iwannaroamaround.ogg	"I want to roam around."
+}
+
+oncamp 
+{
+	sound\voices\festivoxmale\imcampinhere.ogg	"I'm campin here"
+}
+
+onfollow
+{
+	sound\voices\festivoxmale\imfollowing.ogg	"I'm following"
+}
+
+onfollowcarrier
+{
+	sound\voices\festivoxmale\followingthecarrier.ogg	"Following the carrier."
+}
+
+onreturnflag
+{
+	sound\voices\festivoxmale\gettingourflag.ogg	"Getting our flag!"
+}
+
+harvest 
+{
+	sound\voices\festivoxmale\getsomeskulls.ogg	"Get some skulls"
+
+}

@@ -1,0 +1,53 @@
+{
+map		"oa_spirit3ctfduel1"
+bots		"sarge gargoyle"
+longname	"Where Fears Collide"
+fraglimit	20
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+{
+map			"oa_bases3"
+bots		"tux"
+longname	"Some Bases"
+fraglimit	30
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+
+{
+map			"oa_bases7"
+bots		"tux"
+longname	"Some Awful Bases"
+fraglimit	30
+type		"ctf oneflag harvester overload elimination ctfelimination dd"
+}
+
+
+{
+map		"oa_ctf4ish"
+bots		"sergei angelyss kyonshi"
+longname	"Free Space"
+type		"ctf oneflag harvester overload ctfelimination dd elimination"
+}
+
+{
+map		"oasago2"
+bots		"merman sergei kyonshi"
+longname	"Sago's Castle 2"
+fraglimit	"20"
+type		"ctf oneflag harvester overload ctfelimination elimination dd"
+}
+
+{
+map		"czest2ctf"
+bots		"sergei angelyss kyonshi"
+longname	"The Bridge of Despair"
+type		"ctf oneflag harvester overload ctfelimination elimination dd"
+}
+
+{
+map		"czest3ctf"
+bots		"sergei angelyss kyonshi"
+longname	"Holy Wars"
+type		"ctf oneflag harvester overload ctfelimination elimination dd"
+}
+
