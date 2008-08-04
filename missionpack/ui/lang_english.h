@@ -20,4 +20,4 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ===========================================================================
 */
 
-#define MISSIONPACK_TITLE			"MissingNoPack"
+#define MISSIONPACK_TITLE			"The Mission Pack"

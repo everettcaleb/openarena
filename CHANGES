@@ -7,10 +7,12 @@
 - Bot file for oa_bases3plus2
 - oa_minia updated
 - New lightning effect
+- New plasma gun model and skin 
 - New sound effects for shotgun, railgun, and weapon switching
 - New Kyonshi voices, courtesy of aeri_s
 - Beret greatly improved, in skin and animation 
 - Better mouse control (still not perfect especially with lower framerates)
+- All TGAs that had broken headers are now corrected 
 - Other stuff like random asset polish
 
 0.7.7 (5/28/2008)

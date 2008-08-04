@@ -252,7 +252,7 @@ itemDef {
 
 itemDef {
       	name warning
-      	text "oamp-menu v0.5 - WORK IN PROGRESS, lots of broken menus beware!"
+      	text "WORK IN PROGRESS, lots of broken and missing menus; beware!"
       	style 0	
 	type 1
 	textstyle 6

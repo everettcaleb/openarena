@@ -143,7 +143,7 @@ itemDef {
       		}
 	}
 
-
+/*
 itemDef {
 	name button6
 	text "Configuration"
@@ -183,7 +183,7 @@ itemDef {
 		close ingame;
 		}
 	}
-	
+
 itemDef {
 	name button8
 	text "Call Vote"
@@ -220,7 +220,7 @@ itemDef {
 	        play "ui/assets/select.wav"; 
 		}
 	}
-
+*/
 itemDef {
 	name button11
 	text "Quit"
@@ -242,7 +242,7 @@ itemDef {
 
 itemDef {
 	name warning
-	text "OPENARENAMISSIONPACK MENU v0.003"
+	text "Menus are missing and broken! Work in progress! :("
 	style 0	
 	type 1
 	textstyle 6
