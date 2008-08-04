@@ -5887,13 +5887,13 @@ gothic_trim/zinc_shiny
 {
 "classname" "team_CTF_redflag"
 "origin" "-1792 -2 1545"
-"gametype" "oneflag, ctf, ctfelim"
+"gametype" "oneflag, ctf, ctfelimination, dd"
 }
 // entity 8
 {
 "classname" "team_CTF_blueflag"
 "origin" "1792 -2 1545"
-"gametype" "oneflag, ctf, ctfelim"
+"gametype" "oneflag, ctf, ctfelimination, dd"
 }
 // entity 9
 {
@@ -6379,7 +6379,7 @@ gothic_trim/zinc_shiny
 // entity 49
 {
 "classname" "team_neutralobelisk"
-"origin" "0 0 1055"
+"origin" "0 0 1048"
 "gametype" "oneflag, harvester"
 }
 // entity 50
@@ -7249,14 +7249,13 @@ gothic_trim/zinc_shiny
 // entity 152
 {
 "classname" "team_blueobelisk"
-"origin" "1792 0 1528"
+"origin" "1792 0 1519"
 "angle" "180"
 }
 // entity 153
 {
 "classname" "team_redobelisk"
-"origin" "-1792 0 1528"
-"angle" "0"
+"origin" "-1792 0 1519"
 }
 // entity 154
 {
