@@ -238,6 +238,24 @@ type		"single ffa sp tourney elimination lms"
 //type		"single ffa tourney team sp"
 //}
 
+// Instead we have this awesome version courtesy of TRaK
+{
+map		"q3dm6ish_v2"
+longname	"q3dm6ish v2"
+bots		"major sarge"
+timelimit	"20"
+type		"single ffa tourney team sp lms elimination"
+}
+
+// This map is by TRaK of course, but for aesthetics we don't really need author names in the menu arena file
+{
+map        "schism-b2"
+bots       "sarge assassin"
+longname   "Schism"
+fraglimit  20
+type       "single ffa tourney team sp lms elimination"
+}
+
 
 // ctf maps
 {
