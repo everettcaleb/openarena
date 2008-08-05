@@ -1,6 +1,6 @@
 /*
 ===========================================================================
-Copyright (C) 2007 Open Arena Team
+Copyright (C) 2008 Open Arena Team
 
 This file is part of Open Arena.
 
@@ -85,7 +85,5 @@ maps	{
 	{ "Shine" "oa_shine" "3" "Tony" 0 "200" 2 "0" 8 "240" 10 "110" }
 	{ "Suspended" "suspended" "3" "Gargoyle" 0 "200" 2 "0" 8 "240" 10 "110" }
 	{ "Strange House" "oa_shouse" "3" "Grism" 0 "200" 2 "0" 8 "240" 10 "110" }
-
-	{ "Suction" "suction" "3" "sergei" 2 "0" 4 "110" 9 "110" 10 "0" 11 "110" }
 	{ "IslandDM" "islanddm" "4" "Angelyss" 0 "200" 2 "0" 9 "180" 12" 180" }
 }
