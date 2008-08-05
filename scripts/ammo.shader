@@ -1,17 +1,10 @@
- // // // // SHADERS FOR OPEN ARENA AMMOBOX POWERUPS 
+// // // // SHADERS FOR OPEN ARENA AMMOBOX POWERUPS 
 // // // //  jzero --> johnzero@verizon.net
-
 // 1.machinegun
 models/powerups/ammo/machammo
 {
-	{	
-		map textures/effects/envmap2.tga
-		rgbGen identity
-		tcGen environment
-	}
 	{
 		map models/powerups/ammo/ammobox.tga
-		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 	{
@@ -33,14 +26,8 @@ models/powerups/ammo/machammo2
 // 2.shotgun
 models/powerups/ammo/shotammo
 {
-	{	
-		map textures/effects/envmap2.tga
-		rgbGen identity
-		tcGen environment
-	}
 	{
 		map models/powerups/ammo/ammobox.tga
-		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 	{
@@ -62,14 +49,8 @@ models/powerups/ammo/shotammo2
 // 3.grenade launcher
 models/powerups/ammo/grenammo
 {
-	{	
-		map textures/effects/envmap2.tga
-		rgbGen identity
-		tcGen environment
-	}
 	{
 		map models/powerups/ammo/ammobox.tga
-		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 	{
@@ -91,14 +72,8 @@ models/powerups/ammo/grenammo2
 // 4.lightning gun
 models/powerups/ammo/lighammo
 {
-	{	
-		map textures/effects/envmap2.tga
-		rgbGen identity
-		tcGen environment
-	}
 	{
 		map models/powerups/ammo/ammobox.tga
-		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 	{
@@ -120,20 +95,14 @@ models/powerups/ammo/lighammo2
 // 5.plasma gun
 models/powerups/ammo/plasammo
 {
-	{	
-		map textures/effects/envmap2.tga
-		rgbGen identity
-		tcGen environment
-	}
 	{
 		map models/powerups/ammo/ammobox.tga
-		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 	{
 		map models/powerups/ammo/ammolights.tga
 		blendfunc blend
-		rgbGen const ( .8 0 1 )
+		rgbGen const ( 0.8 0 1 )
 		alphaGen wave sawtooth 0 1 0 1 
 	}
 }
@@ -149,14 +118,8 @@ models/powerups/ammo/plasammo2
 //6.rocket launcher
 models/powerups/ammo/rockammo
 {
-	{	
-		map textures/effects/envmap2.tga
-		rgbGen identity
-		tcGen environment
-	}
 	{
 		map models/powerups/ammo/ammobox.tga
-		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 	{
@@ -178,14 +141,8 @@ models/powerups/ammo/rockammo2
 //7. railgun
 models/powerups/ammo/railammo
 {
-	{	
-		map textures/effects/envmap2.tga
-		rgbGen identity
-		tcGen environment
-	}
 	{
 		map models/powerups/ammo/ammobox.tga
-		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 	{
@@ -204,18 +161,11 @@ models/powerups/ammo/railammo2
 	}
 }
 
-
 //8. BFG
 models/powerups/ammo/bfgammo
 {
-	{	
-		map textures/effects/envmap2.tga
-		rgbGen identity
-		tcGen environment
-	}
 	{
 		map models/powerups/ammo/ammobox.tga
-		blendfunc blend
 		rgbGen lightingDiffuse
 	}
 	{
@@ -233,3 +183,4 @@ models/powerups/ammo/bfgammo2
 		rgbGen identity
 	}
 }
+

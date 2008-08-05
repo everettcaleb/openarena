@@ -248,3 +248,69 @@ runeDoubler
 	}
 }
 
+models/powerups/ammo/vulcammo
+{
+	{
+		map models/powerups/ammo/ammobox.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/powerups/ammo/ammolights.tga
+		blendfunc blend
+		rgbGen const ( 0.560784 0.560784 0.560784 )
+		alphaGen wave sawtooth 0 1 0 1 
+	}
+}
+
+models/powerups/ammo/nailammo
+{
+	{
+		map models/powerups/ammo/ammobox.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/powerups/ammo/ammolights.tga
+		blendfunc blend
+		rgbGen const ( 1 0.309804 0.309804 )
+		alphaGen wave sawtooth 0 1 0 1 
+	}
+}
+
+models/powerups/ammo/proxammo
+{
+	{
+		map models/powerups/ammo/ammobox.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/powerups/ammo/ammolights.tga
+		blendfunc blend
+		rgbGen const ( 0.921569 0.819608 0.588235 )
+		alphaGen wave sawtooth 0 1 0 1 
+	}
+}
+
+models/powerups/ammo/vulcammo2
+{
+	{
+		map models/powerups/ammo/vulcammo.tga
+		rgbGen identity
+	}
+}
+
+models/powerups/ammo/nailammo2
+{
+	{
+		map models/powerups/ammo/nailammo.tga
+		rgbGen identity
+	}
+}
+
+models/powerups/ammo/proxammo2
+{
+	{
+		map models/powerups/ammo/proxammo.tga
+		rgbGen identity
+	}
+}
+
