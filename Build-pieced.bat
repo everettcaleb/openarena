@@ -108,6 +108,7 @@ zip pak2-players-mature.pk3 -d models/players/smarine/*.*
 zip pak2-players.pk3 -d models/players/hnt/*.*
 zip pak2-players.pk3 -d models/players/angelyss/*.*
 zip pak2-players.pk3 -d models/players/arachna/*.*
+zip pak2-players.pk3 -d models/players/sorceress/*.*
 zip pak2-players.pk3 -d models/players/ayumi/*.*
 
 zip -9r pak2-players.pk3 sound/player/*.* -x *svn*
