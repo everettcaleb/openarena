@@ -1,0 +1,82 @@
+diff -ru ./cgame/cg_local.h ../../code/cgame/cg_local.h
+--- ./cgame/cg_local.h	2008-07-26 13:38:48.000000000 +0200
++++ ../../code/cgame/cg_local.h	2008-04-21 18:52:41.000000000 +0200
+@@ -65,7 +65,7 @@
+ #define	GIANT_WIDTH			32
+ #define	GIANT_HEIGHT		48
+ 
+-#define	NUM_CROSSHAIRS		10
++#define	NUM_CROSSHAIRS		70
+ 
+ #define TEAM_OVERLAY_MAXNAME_WIDTH	12
+ #define TEAM_OVERLAY_MAXLOCATION_WIDTH	16
+diff -ru ./cgame/cg_main.c ../../code/cgame/cg_main.c
+--- ./cgame/cg_main.c	2008-07-26 13:38:48.000000000 +0200
++++ ../../code/cgame/cg_main.c	2008-04-21 19:06:19.000000000 +0200
+@@ -896,8 +896,11 @@
+ 	cgs.media.tracerShader = trap_R_RegisterShader( "gfx/misc/tracer" );
+ 	cgs.media.selectShader = trap_R_RegisterShader( "gfx/2d/select" );
+ 
+-	for ( i = 0 ; i < NUM_CROSSHAIRS ; i++ ) {
+-		cgs.media.crosshairShader[i] = trap_R_RegisterShader( va("gfx/2d/crosshair%c", 'a'+i) );
++	for (i = 0; i < NUM_CROSSHAIRS; i++ ) {
++		if (i < 10)
++			cgs.media.crosshairShader[i] = trap_R_RegisterShader( va("gfx/2d/crosshair%c", 'a'+i) );
++		else
++			cgs.media.crosshairShader[i] = trap_R_RegisterShader( va("gfx/2d/crosshair%02d", i - 10) );
+ 	}
+ 
+ 	cgs.media.backTileShader = trap_R_RegisterShader( "gfx/2d/backtile" );
+diff -ru ./q3_ui/ui_preferences.c ../../code/q3_ui/ui_preferences.c
+--- ./q3_ui/ui_preferences.c	2008-07-26 13:38:48.000000000 +0200
++++ ../../code/q3_ui/ui_preferences.c	2008-04-21 19:05:46.000000000 +0200
+@@ -37,7 +37,7 @@
+ #define ID_ALLOWDOWNLOAD		137
+ #define ID_BACK					138
+ 
+-#define	NUM_CROSSHAIRS			10
++#define	NUM_CROSSHAIRS			70
+ 
+ 
+ typedef struct {
+@@ -468,7 +468,11 @@
+ 	trap_R_RegisterShaderNoMip( ART_BACK0 );
+ 	trap_R_RegisterShaderNoMip( ART_BACK1 );
+ 	for( n = 0; n < NUM_CROSSHAIRS; n++ ) {
+-		s_preferences.crosshairShader[n] = trap_R_RegisterShaderNoMip( va("gfx/2d/crosshair%c", 'a' + n ) );
++                if (n < 10)
++			s_preferences.crosshairShader[n] = trap_R_RegisterShaderNoMip( va("gfx/2d/crosshair%c", 'a' + n ) );
++		else
++			s_preferences.crosshairShader[n] = trap_R_RegisterShaderNoMip( va("gfx/2d/crosshair%02d", n - 10) );
++			
+ 	}
+ }
+ 
+diff -ru ./ui/ui_main.c ../../code/ui/ui_main.c
+--- ./ui/ui_main.c	2008-07-26 13:38:48.000000000 +0200
++++ ../../code/ui/ui_main.c	2008-04-21 19:05:51.000000000 +0200
+@@ -218,7 +218,10 @@
+ 	uiInfo.uiDC.Assets.sliderThumb = trap_R_RegisterShaderNoMip( ASSET_SLIDER_THUMB );
+ 
+ 	for( n = 0; n < NUM_CROSSHAIRS; n++ ) {
+-		uiInfo.uiDC.Assets.crosshairShader[n] = trap_R_RegisterShaderNoMip( va("gfx/2d/crosshair%c", 'a' + n ) );
++		if (n < 10)
++			uiInfo.uiDC.Assets.crosshairShader[n] = trap_R_RegisterShaderNoMip( va("gfx/2d/crosshair%c", 'a' + n ) );
++		else
++			uiInfo.uiDC.Assets.crosshairShader[n] = trap_R_RegisterShaderNoMip( va("gfx/2d/crosshair%02d", n - 10) );
+ 	}
+ 
+ 	uiInfo.newHighScoreSound = trap_S_RegisterSound("sound/feedback/voc_newhighscore.wav", qfalse);
+Only in ../../code/ui: ui_main.c~
+diff -ru ./ui/ui_shared.h ../../code/ui/ui_shared.h
+--- ./ui/ui_shared.h	2008-07-26 13:38:49.000000000 +0200
++++ ../../code/ui/ui_shared.h	2008-04-21 18:52:20.000000000 +0200
+@@ -82,7 +82,7 @@
+ #define SLIDER_HEIGHT 16.0
+ #define SLIDER_THUMB_WIDTH 12.0
+ #define SLIDER_THUMB_HEIGHT 20.0
+-#define	NUM_CROSSHAIRS			10
++#define	NUM_CROSSHAIRS			70
+ 
+ typedef struct {
+   const char *command;
