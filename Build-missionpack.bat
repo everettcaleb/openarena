@@ -10,6 +10,7 @@ cd missionpack
 ..\zip -9r ../pak5-TA.pk3 models/mapobjects/ -x *svn*
 ..\zip -9r ../pak5-TA.pk3 models/flags/ -x *svn*
 ..\zip -9r ../pak5-TA.pk3 models/dpoints/ -x *svn*
+..\zip -9r ../pak5-TA.pk3 sound/items/ -x *svn*
+..\zip -9r ../pak5-TA.pk3 sound/weapons/ -x *svn*
 ..\zip -9r ../pak5-TA.pk3 scripts/*.shader -x *svn*
-
 zip -9r pak5-TA.pk3 fonts/*.* -x *svn*
