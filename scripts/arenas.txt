@@ -351,3 +351,12 @@ bots	"gargoyle sarge beret liz merman"
 fraglimit   25
 type	"ctf elimination ctfelimination"
 }
+
+{
+map "pul1ctf"
+bots "gargoyle sergei sarge"
+longname "der koberwascher"
+fraglimit "20"
+capturelimit "8"
+type "ctf elimination ctfelimination dd""
+}
