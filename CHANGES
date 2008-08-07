@@ -1,5 +1,6 @@
 0.8.0 (8/8/2008)
 - Initial release of 'missionpack'
+- Missionpack weapons added back into baseoa (this means NAILGUNS, PROXIMITY MINES AND CHAINGUNS in non-missionpack mode!)
 - New player model : Sorceress
 - New map: oa_bases7
 - oa_bases3 recompiled with fast water (should perform 632% faster)
@@ -14,7 +15,7 @@
 - New Kyonshi voices, courtesy of aeri_s
 - Ayumi optimized, at the cost of the Jenna skin :(
 - Beret greatly improved, in skin and animation and taunt sound
-- Better mouse control (still not perfect, especially with lower framerates)
+- Better mouse control (it'd better be)
 - All TGAs that had broken headers are now corrected 
 - Other stuff like random asset polish
 

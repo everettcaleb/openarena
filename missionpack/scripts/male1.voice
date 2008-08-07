@@ -7,7 +7,7 @@ getflag
 
 offense	
 {
-	sound\voices\rott\youronoffense.ogg	"You are on offense."
+	sound\voices\rott\youreonoffense.ogg	"You are on offense."
 }
 
 defend		
@@ -17,12 +17,12 @@ defend
 
 defendflag		
 {
-	sound\voices\rott\defendourflag.ogg	"Defend our flag."
+	sound\voices\rott\defendflag.ogg	"Defend our flag."
 }
 
 patrol		
 {
-	sound\voices\rott\gopatrolthearea.ogg	"Go patrol the area"
+	sound\voices\rott\gopatrol.ogg	"Go patrol the area"
 }
 
 followme		
@@ -46,17 +46,17 @@ no
 
 ihaveflag	
 {
-	sound\voices\rott\ihavetheflag.ogg	"I have the flag!"
+	sound\voices\rott\haveflag.ogg	"I have the flag!"
 }
 
 baseattack		
 {
-	sound\voices\rott\ourbaseisunderattack.ogg	"Our base is under attack!"
+	sound\voices\rott\baseunderattack.ogg	"Our base is under attack!"
 }
 
 enemyhasflag	
 {
-	sound\voices\rott\theyhaveourflag.ogg	"They have our flag!"
+	sound\voices\rott\haveourflag.ogg	"They have our flag!"
 
 }
 
@@ -67,18 +67,18 @@ ongetflag
 
 onoffense	
 {
-	sound\voices\rott\iwanttoattack.ogg	"I want to attack!"
+	sound\voices\rott\wanttoattack.ogg	"I want to attack!"
 	sound\voices\rott\imgoingin.ogg	"I'm goin' in"
 }
 
 ondefense	
 {
-	sound\voices\rott\illcoverourbase.ogg	"I'll cover our base"
+	sound\voices\rott\illcoverbase.ogg	"I'll cover our base"
 }
 
 onpatrol	
 {
-	sound\voices\rott\justroamingaround.ogg	"Just roaming around"
+	sound\voices\rott\justroaming.ogg	"Just roaming around"
 }
 
 startleader		
@@ -88,7 +88,7 @@ startleader
 
 stopleader		
 {
-	sound\voices\rott\idontwanttobeleaderanymo.ogg	"I don't want to be the leader anymore."
+	sound\voices\rott\dontwannabeleader.ogg	"I don't want to be the leader anymore."
 }
 
 kill_insult
@@ -123,44 +123,44 @@ camp
 
 returnflag		
 {
-	sound\voices\rott\getourflag.ogg	"Get our flag!"
+	sound\voices\rott\getflag.ogg	"Get our flag!"
 
 }
 
 whoisleader			
 {
-	sound\voices\rott\whoisourleader.ogg	"Who is our leader?"
+	sound\voices\rott\whoisleader.ogg	"Who is our leader?"
 
 }
 
 followflagcarrier		
 {
-	sound\voices\rott\keepupwiththecarrier.ogg	"Keep up with the carrier."
+	sound\voices\rott\keepupcarrier.ogg	"Keep up with the carrier."
 }
 
 inposition			
 {
-	sound\voices\rott\iminposition.ogg	"I'm in position."
+	sound\voices\rott\inposition.ogg	"I'm in position."
 }
 
 wantondefense		
 {
-	sound\voices\rott\iwanttodefend.ogg	"I want to defend."
+	sound\voices\rott\wanttodefend.ogg	"I want to defend."
 }
 
 wantonoffense		
 {
-	sound\voices\rott\iwanttoattack.ogg	"I want to attack."
+	sound\voices\rott\wanttoattack.ogg	"I want to attack."
 }
 
 wantonpatrol	
 {
-	sound\voices\rott\iwannaroamaround.ogg	"I want to roam around."
+	sound\voices\rott\wanttoroam.ogg	"I want to roam around."
 }
 
 oncamp 
 {
-	sound\voices\rott\imcampinhere.ogg	"I'm campin here"
+	sound\voices\rott\imcampinghere.ogg	"I'm campin here"
 }
 
 onfollow
@@ -170,7 +170,7 @@ onfollow
 
 onfollowcarrier
 {
-	sound\voices\rott\followingthecarrier.ogg	"Following the carrier."
+	sound\voices\rott\followingcarrier.ogg	"Following the carrier."
 }
 
 onreturnflag
