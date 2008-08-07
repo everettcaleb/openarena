@@ -145,3 +145,9 @@ name		S_Marine
 model		smarine/orange
 aifile	bots/grunt_c.c
 }
+
+{
+name		Sorceress
+model		sorceress/blue
+aifile	bots/major_c.c
+}
