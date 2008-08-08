@@ -17,6 +17,16 @@ models/players/gargoyle/membranecray
 	}
 }
 
+models/players/gargoyle/wings-stone
+{
+	cull disable
+	{
+		map models/players/gargoyle/wings-stone.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
 models/players/gargoyle/membranecrayyellow
 {
 	cull disable
@@ -168,7 +178,6 @@ models/players/gargoyle/baredold
 }
 
 // TEAM SKIN EXPLOSION
-
 models/players/gargoyle/morphedgarg_red
 {
 	{
@@ -195,3 +204,4 @@ models/players/gargoyle/morphedwings_red
 		blendfunc add
 	}
 }
+
