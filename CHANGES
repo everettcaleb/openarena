@@ -1,24 +1,24 @@
 0.8.0 (8/8/2008)
+- Better mouse control (it'd better be)
 - Initial release of 'missionpack'
 - Missionpack weapons added back into baseoa (this means NAILGUNS, PROXIMITY MINES AND CHAINGUNS in non-missionpack mode!)
+- New announcer voices from Fuzztooth
 - New player model : Sorceress
 - New map: oa_bases7
 - New map: pul1ctf
 - New map: schism
-- New announcer voices
+- q3dm6ish retextured by TRaK, and is back in the maps menu
 - oa_bases3 recompiled with fast water (should perform 632% faster)
 - Classic version of oa_bases3 snuck in :)
-- Bot file for oa_bases3plus2
 - oa_minia updated
 - dm6ish updated (retextured, and bots aren't dumb at the door anymore)
-- q3dm6ish retextured by TRaK, and is back in the maps menu
-- New plasma gun model and skin 
+- New plasma gun model and skin from enki
 - New sound effects for shotgun, railgun, and weapon switching
 - New CTF event sounds
 - New Kyonshi voices, courtesy of aeri_s
 - Ayumi optimized, at the cost of the Jenna skin :(
 - Beret greatly improved, in skin and animation and taunt sound
-- Better mouse control (it'd better be)
+- Some simple stress and flyby demo files (intended for timedemo)
 - All TGAs that had broken headers are now corrected 
 - Other stuff like random asset polish
 
