@@ -1,3 +1,14 @@
+0.8.1 (10/25/2008)
+- Uses protocol 71
+- Single player campaign re-organized (Thanks cosmo)
+- 'Depreciated' client for Windows 9X in addition (lacks ipv6 support)
+- New hitsound
+- New map: ps37ctf
+- New map: am_galevish
+- Space Marine should no longer crash on old client
+- Chaingun works in unlagged now
+- non-Free texture folders from previous release removed (this also removes the schism and q3dm6ish-v2 map)
+
 0.8.0 (8/8/2008)
 - Better mouse control (it'd better be)
 - Initial release of 'missionpack'

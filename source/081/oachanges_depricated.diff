@@ -1,0 +1,4189 @@
+Index: misc/quake3.ico
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: misc/quake3.icns
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: misc/quake3.svg
+===================================================================
+--- misc/quake3.svg	(revision 1432)
++++ misc/quake3.svg	(working copy)
+@@ -1,67 +1,15 @@
+-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+-<!-- Created with Inkscape (http://www.inkscape.org/) -->
+-<svg
+-   xmlns:svg="http://www.w3.org/2000/svg"
+-   xmlns="http://www.w3.org/2000/svg"
+-   xmlns:xlink="http://www.w3.org/1999/xlink"
+-   version="1.0"
+-   width="64"
+-   height="64"
+-   id="svg1306">
+-  <defs
+-     id="defs1308">
+-    <linearGradient
+-       id="linearGradient2180">
+-      <stop
+-         style="stop-color:#ff0000;stop-opacity:1"
+-         offset="0"
+-         id="stop2182" />
+-      <stop
+-         style="stop-color:#590000;stop-opacity:1"
+-         offset="1"
+-         id="stop2184" />
+-    </linearGradient>
+-    <linearGradient
+-       x1="14.860399"
+-       y1="19.054131"
+-       x2="15.042735"
+-       y2="59"
+-       id="linearGradient2190"
+-       xlink:href="#linearGradient2180"
+-       gradientUnits="userSpaceOnUse" />
+-    <linearGradient
+-       x1="14.860399"
+-       y1="19.054131"
+-       x2="15.042735"
+-       y2="59"
+-       id="linearGradient2194"
+-       xlink:href="#linearGradient2180"
+-       gradientUnits="userSpaceOnUse" />
+-    <linearGradient
+-       x1="32"
+-       y1="64.091171"
+-       x2="32"
+-       y2="0"
+-       id="linearGradient3077"
+-       xlink:href="#linearGradient2180"
+-       gradientUnits="userSpaceOnUse" />
+-  </defs>
+-  <g
+-     id="layer1">
+-    <g
+-       id="g1327">
+-      <path
+-         d="M 34.538626,32.090265 L 32.538627,64 L 30.538626,32 L 32.538627,0 L 34.538626,32.090265 z "
+-         style="opacity:1;fill:url(#linearGradient3077);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5261631;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+-         id="path1329" />
+-      <path
+-         d="M 28.059562,59 L 25.612281,34.036677 C 25.612281,34.036677 2.1281775,31.218199 2.0010765,25.064561 C 1.9155925,21.016997 6.9421265,19.095215 9.6946005,19.095215 C 12.000721,19.095215 4.2082195,19.143464 4.1713675,24.287073 C 4.1405475,28.679913 29.3599,30.346963 29.3599,30.346963 L 28.059562,59 z "
+-         style="fill:url(#linearGradient2190);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+-         id="path1307" />
+-      <path
+-         d="M 36.940438,59 L 39.387719,34.036677 C 39.387719,34.036677 62.871823,31.218199 62.998924,25.064561 C 63.084408,21.016997 58.057873,19.095215 55.305399,19.095215 C 52.999279,19.095215 60.79178,19.143464 60.828632,24.287073 C 60.859452,28.679913 35.6401,30.346963 35.6401,30.346963 L 36.940438,59 z "
+-         style="fill:url(#linearGradient2194);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+-         id="path2192" />
+-    </g>
+-  </g>
+-</svg>
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
++<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
++<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
++	 width="317.984px" height="239.988px" viewBox="0 0 317.984 239.988" enable-background="new 0 0 317.984 239.988"
++	 xml:space="preserve">
++<polygon stroke="#000000" points="160.232,156.905 149.096,134.604 160.232,108.905 171.368,134.604 "/>
++<path stroke="#000000" d="M196.093,223.061h36.675c-6.949-3.088-11.195-9.266-11.195-9.266l-61.094-200.64L99.386,214.012
++	c0,0-4.247,6.177-11.196,9.266h36.675c0,0-8.133-4.373-11.466-8.373l47.08-166.108l47.081,165.892
++	C204.226,218.688,196.093,223.061,196.093,223.061z"/>
++<path stroke="#000000" d="M159.803,41.445c-79.848,0-144.578,25.235-144.578,56.364c0,27.275,49.692,50.023,115.705,55.239
++	l6.145-21.681C69.945,128.203,14.779,111.32,20.631,90.325c6.435-23.087,62.31-46.087,139.172-46.087
++	c76.863,0,134.93,24.667,139.173,46.087c4.205,21.229-48.878,37.722-115.079,40.987l6.137,21.623
++	c65.333-5.419,114.347-28.039,114.347-55.126C304.381,66.681,239.651,41.445,159.803,41.445z"/>
++</svg>
+Index: misc/quake3.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: Makefile.local
+===================================================================
+--- Makefile.local	(revision 0)
++++ Makefile.local	(revision 0)
+@@ -0,0 +1,19 @@
++#This file defines the standard variables used by Open Arena.  
++
++COPYDIR="/usr/local/games/openarena"
++
++#We want openAL
++USE_OPENAL=1
++
++#Next we want to bind openAL on runtime. SDL sound will be used if openAL is not installed
++USE_OPENAL_DLOPEN=1
++
++#We want vorbis support!
++USE_CODEC_VORBIS=1
++
++#Open Arena is a standalone game
++BUILD_STANDALONE=1
++
++#We don't want to build the game logic... only the engine
++BUILD_GAME_SO = 0
++BUILD_GAME_QVM = 0
+Index: code/q3_ui/ui_mods.c
+===================================================================
+--- code/q3_ui/ui_mods.c	(revision 1432)
++++ code/q3_ui/ui_mods.c	(working copy)
+@@ -125,7 +125,7 @@
+ 
+ 	// always start off with baseq3
+ 	s_mods.list.numitems = 1;
+-	s_mods.list.itemnames[0] = s_mods.descriptionList[0] = "Quake III Arena";
++	s_mods.list.itemnames[0] = s_mods.descriptionList[0] = "OpenArena";
+ 	s_mods.fs_gameList[0] = "";
+ 
+ 	numdirs = trap_FS_GetFileList( "$modlist", "", dirlist, sizeof(dirlist) );
+Index: code/sdl/sdl_icon.h
+===================================================================
+--- code/sdl/sdl_icon.h	(revision 1432)
++++ code/sdl/sdl_icon.h	(working copy)
+@@ -12,121 +12,122 @@
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0w\0\0\377w\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0w\0\0\377w\0\0"
+-  "\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0w\0\0\377w\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0w\0"
+-  "\0\377w\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0w\0\0\377w\0\0\377\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\13\32"
++  "\22\0\13\32\17\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0w\0\0\377w\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0flW\0glR\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\210\0\0\377\210\0\0\377"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\1\220\220\244\0\200\210\234\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\210\0\0\377\210\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\1\0\0\0\21\0\22?&\0Sj<\0WV@\204\342\342\352z\344\343\345"
++  "\0YY@\0Oj<\0\21>&\0\0\0\20\0\0\0\1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\12\33'\0L\177e\0A\200x\0""6~p\0J\177l\0PwU\0\26L1\0"
++  "\0\0\30\0\40\40J\311\316\316\354\276\317\317\356\0\25\30A\0\0\0\30\0\27L"
++  "2\0OwU\0H\177l\0""8\177p\0A\200y\0K\177e\0\12\33&\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\20(%\0""2\177x\0G\233"
++  "\201\0""6rX\0\0\5\27\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\177"
++  "\177\207L\206\205\253@\206\206\253\0yx}\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\10\30\0""6sY\0I\236\202\0""3\177w\0\20(#\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\2\17\33\0\27\217\205\0\30n`\0\0\0\13\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\311\323\323\4"
++  "eba\0]^b\0\241\251\305\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\13\0\26ob\0\32\220\203\0\1\17\31\0\0\0\0\1\0"
++  "\40'\0\13\264\216\0\0\0\12\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\0\0\40\0\377\377\374\2\0\0\34\0\0\0"
++  "\33\0\377\377\371\0\0\0\26\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\12\0\16\266\221\0\0\40%\0\5zy\0"
++  "\0\0\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\3[ik\0\265\306\320\0\0\0\0\0\0\0\0\4\267\310\316\3"
++  """7^\\\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\5\1\6zv\2\17\202\207\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\210\0\0\377\210\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\1\221\235\267\0q\177\212\0\0\0\0\0\0\0\0\1g\177\205\2}\217\247\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\231\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\210\0\0\377\210\0\0"
+-  "\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\231\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\252\0\0"
+-  "\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\231\0\0\377\210\0\0\377\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\21\205\210\1+\212\237\1,@[\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\14\0\336\377\365"
++  "\6\30*A\0\0\0\0\0\0\0\0\5\34%<\0\274\345\353\0\0\0\4\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0+A^\2(\211"
++  "\234\2\5.7\0\265\377\372\1\217\240\254\6\32':\0\0\0\1\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\33""9N\0\333\362\361\0\0\0\7\0\0""3"
++  "8\2\1""44\0\0\0\4\0\301\364\353\2\22$=\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\6\37&<\5\230\245\256\1\256\377\372\2\1&4\0"
++  "\0\0\0\0%Eh\0\331\377\372\0\377\377\376\3\302\332\337\5{\214\231\0""8I[\0"
++  "\0\20.\0\0\0\7\0\0\0\0\0\0\0\0\0\0\0\0\7z\217\235\6\221\230\260\0\0\0\0\5"
++  "\205\232\252\3{\226\246\0\0\0\0\7\214\235\247\1a\177\205\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\10\0\0\20/\0""9K\\\6{\214\232\1\305\336\340\0\377\377\376"
++  "\0\320\377\371\3$?d\0\0\0\0\0\0\0\0\0\0\0\0\6\5*7\3\202\257\302\3\362\377"
++  "\376#\377\377\377?\377\377\377<\377\377\377\24\347\377\367\0\265\274\331"
++  "\0\203\233\270\1\177\177\237\0\333\325\353\0Ubh\5\10\30\40\0\373\377\372"
++  "\2\371\377\371\0\0\0\34\0>Y]\5\323\330\341\0\177\177\240\0\177\234\271\0"
++  "\265\274\332\25\352\377\370<\377\377\377=\377\377\377#\377\377\377\3\361"
++  "\377\376\3}\256\301\2\7+4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\5\0\"6\0U\177\223\0\223\337\337\32\344\377\376G\377\377\377e\377\377\377"
++  "\271\377\377\377\363\377\377\377\17\362\377\376\6\5\24\"\1\0\0\14\1\252\346"
++  "\355\0\247\347\352\0\0\0\12\5\0\0\30\3\352\377\374\343\377\377\377\265\377"
++  "\377\377d\377\377\377G\377\377\377\31\344\377\376\1\221\337\336\2Q\177\222"
++  "\3\0\32""5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\1\0\0\0!\0\13""4R\12Bt~\0\177\177\2422\277\277\341"
++  "\0\214\311\330\0\0\0\0\0\0\0\0\1\0Z\205\1\0Z\200\0\0\0\0\0\0\0\0\0\205\253"
++  "\313\31\277\277\334\2\202\177\242\12Au}\0\13""3Q\0\0\0\40\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\252\0\0\377\0\0\0\0\273\0\0\377\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\244\277\321\5"
++  """3\177\223\0\0\0\0\0\0\0\0\0\0\0\31\0\0\0\26\0\0\0\0\0\0\0\0\5$z\203\3\207"
++  "\246\275\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\231\0\0\377\231\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\5\0\0\37\0\222\377\375\3\0.J\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\34;\0d\377\373\1\0\0\27\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\273\0\0\377\314\0\0\377\231\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\231\0\0\377\231\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\231\0\0"
+-  "\377\314\0\0\377\0\0\0\0\335\0\0\377\314\0\0\377\231\0\0\377\0\0\0\0\0\0"
++  "\0\0\0\0\7\7cl\0T\365\366\2\0\0\14\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\5\3;\356\356\5\3[h\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\231\0\0\377\231\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\231\0\0\377\314\0\0\377\335"
+-  "\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\231\0\0\377\314\0\0\377\335\0\0\377\335"
+-  "\0\0\377\273\0\0\377\231\0\0\377\210\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\231\0\0\377\252\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\252\0\0\377\273\0\0\377\335\0\0\377\335\0\0"
+-  "\377\314\0\0\377\231\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\252\0\0\377\314\0\0\377\314\0\0\377\314\0\0\377\314\0\0\377"
+-  "\314\0\0\377\314\0\0\377\314\0\0\377\314\0\0\377\0\0\0\0\252\0\0\377\252"
+-  "\0\0\377\0\0\0\0\314\0\0\377\314\0\0\377\314\0\0\377\314\0\0\377\314\0\0"
+-  "\377\314\0\0\377\314\0\0\377\314\0\0\377\252\0\0\377\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0,\225\270\0)\227\272"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\4\32\177"
++  "\254\2(\244\274\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\210\0\0\377\231\0\0\377\273\0\0\377\314\0\0\377\314"
+-  "\0\0\377\0\0\0\0\252\0\0\377\252\0\0\377\0\0\0\0\314\0\0\377\314\0\0\377"
+-  "\273\0\0\377\231\0\0\377\210\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\3\0\0\20\0L\367\370\6\3kv\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\6\0ch\1O\373\373\1\0\0\27\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\210\0\0\377"
+-  "\273\0\0\377\0\0\0\0\252\0\0\377\252\0\0\377\0\0\0\0\273\0\0\377\210\0\0"
+-  "\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\3\0""8"
++  "X\0~\377\376\2\0\4.\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\4\0\0$\0w\377\376\2\4\\i\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0w\0\0\377\273\0\0\377"
+-  "\0\0\0\0\231\0\0\377\252\0\0\377\0\0\0\0\273\0\0\377w\0\0\377\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1\4\7\212\265\2<\343\362\0\0\0\5\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\1""5\330"
++  "\350\13\14\242\311\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\4\0\0\0V\6\2H\214\0\0]\210\0\0\0\\\0\0\0\10\0\0\0\0\0\0\0\0\0\0"
++  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\5\0\0\0L\0\0R\210\0\0D\210\0\0\0b\0\0"
++  "\0\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\252\0\0\377\0\0\0\0\231\0\0"
+-  "\377\231\0\0\377\0\0\0\0\252\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\252\0\0\377\0\0\0\0\210\0\0\377\231\0\0\377"
+-  "\0\0\0\0\252\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\231\0\0\377\0\0\0\0\210\0\0\377\210\0\0\377\0\0\0\0\231\0\0"
+-  "\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\231"
+-  "\0\0\377\0\0\0\0w\0\0\377\210\0\0\377\0\0\0\0\231\0\0\377\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\210\0\0\377\0\0\0\0\210"
+-  "\0\0\377\210\0\0\377\0\0\0\0\210\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\210\0\0\377\0\0\0\0w\0\0\377\210\0\0\377"
+-  "\0\0\0\0\210\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0w\0\0\377\0\0\0\0w\0\0\377w\0\0\377\0\0\0\0w\0\0\377\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+   "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0w\0\0\377\0\0\0\0"
+-  "w\0\0\377w\0\0\377\0\0\0\0w\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0w\0\0\377\0\0\0\0w\0\0\377w\0\0\377\0\0\0\0w\0"
+-  "\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0f\0\0\377f\0\0\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0f\0\0\377f\0\0\377"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+-  "\0\0\0\0\0\0\0\0",
++  "\0\0",
+ };
+ 
+Index: code/sdl/sdl_input.c
+===================================================================
+--- code/sdl/sdl_input.c	(revision 1432)
++++ code/sdl/sdl_input.c	(working copy)
+@@ -41,6 +41,11 @@
+ #define MACOS_X_CURSOR_HACK
+ #endif
+ 
++//Sago's Windows acceleration hack! (Basically Windows has the same problem as Mac OS X)
++#ifdef _WIN32
++#define WIN_ACCELERATION_HACK
++#endif
++
+ #ifdef MACOS_X_ACCELERATION_HACK
+ #include <IOKit/IOTypes.h>
+ #include <IOKit/hidsystem/IOHIDLib.h>
+@@ -67,6 +72,10 @@
+ static cvar_t *in_joystickDebug     = NULL;
+ static cvar_t *in_joystickThreshold = NULL;
+ 
++#ifdef WIN_ACCELERATION_HACK
++static DWORD org_mouseInfo[3];
++#endif
++
+ /*
+ ===============
+ IN_TranslateSDLToQ3Key
+@@ -249,9 +258,27 @@
+ */
+ static void IN_ActivateMouse( void )
+ {
++#ifdef WIN_ACCELERATION_HACK
++	DWORD mouseInfo[3];
++#endif
++
+ 	if (!mouseAvailable || !SDL_WasInit( SDL_INIT_VIDEO ) )
+ 		return;
+ 
++#ifdef WIN_ACCELERATION_HACK
++	if (!mouseActive) 
++	{
++		SystemParametersInfo(SPI_GETMOUSE, NULL, &mouseInfo, SPIF_UPDATEINIFILE);
++		org_mouseInfo[0]=mouseInfo[0];
++		org_mouseInfo[1]=mouseInfo[1];
++		org_mouseInfo[2]=mouseInfo[2];
++		if(mouseInfo[2]!=0) {
++			mouseInfo[2]=0; //Kill Acceleration
++			SystemParametersInfo(SPI_SETMOUSE, NULL, &mouseInfo, SPIF_UPDATEINIFILE);
++		}
++	}
++#endif
++
+ #ifdef MACOS_X_ACCELERATION_HACK
+ 	if (!mouseActive) // mac os x mouse accel hack
+ 	{
+@@ -326,6 +353,11 @@
+ 	if (!mouseAvailable || !SDL_WasInit( SDL_INIT_VIDEO ) )
+ 		return;
+ 
++#ifdef WIN_ACCELERATION_HACK
++	if (mouseActive && org_mouseInfo[2]!=0)
++		SystemParametersInfo(SPI_SETMOUSE, NULL, &org_mouseInfo, SPIF_UPDATEINIFILE);
++#endif
++
+ #ifdef MACOS_X_ACCELERATION_HACK
+ 	if (mouseActive) // mac os x mouse accel hack
+ 	{
+Index: code/renderer/tr_local.h
+===================================================================
+--- code/renderer/tr_local.h	(revision 1432)
++++ code/renderer/tr_local.h	(working copy)
+@@ -871,6 +871,8 @@
+ 	qboolean	projection2D;	// if qtrue, drawstretchpic doesn't need to change modes
+ 	byte		color2D[4];
+ 	qboolean	vertexes2D;		// shader needs to be finished
++	qboolean	doneBloom;		// done bloom this frame
++	qboolean	doneSurfaces;   // done any 3d surfaces already
+ 	trRefEntity_t	entity2D;	// currentEntity will point at this when doing 2D rendering
+ } backEndState_t;
+ 
+@@ -1328,6 +1330,7 @@
+ 
+ extern	shaderCommands_t	tess;
+ 
++void RB_SetGL2D (void);
+ void RB_BeginSurface(shader_t *shader, int fogNum );
+ void RB_EndSurface(void);
+ void RB_CheckOverflow( int verts, int indexes );
+@@ -1708,5 +1711,8 @@
+ void R_DoneFreeType( void );
+ void RE_RegisterFont(const char *fontName, int pointSize, fontInfo_t *font);
+ 
++//Bloom Stuff
++void R_BloomInit( void );
++void R_BloomScreen( void );
+ 
+ #endif //TR_LOCAL_H
+Index: code/renderer/tr_init.c
+===================================================================
+--- code/renderer/tr_init.c	(revision 1432)
++++ code/renderer/tr_init.c	(working copy)
+@@ -1083,6 +1083,8 @@
+ 
+ 	R_Register();
+ 
++	R_BloomInit();
++
+ 	max_polys = r_maxpolys->integer;
+ 	if (max_polys < MAX_POLYS)
+ 		max_polys = MAX_POLYS;
+Index: code/renderer/tr_bloom.c
+===================================================================
+--- code/renderer/tr_bloom.c	(revision 0)
++++ code/renderer/tr_bloom.c	(revision 0)
+@@ -0,0 +1,446 @@
++/*
++Copyright (C) 1997-2001 Id Software, Inc.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++// tr_bloom.c: 2D lighting post process effect
++
++#include "tr_local.h"
++
++
++static cvar_t *r_bloom;
++static cvar_t *r_bloom_sample_size;
++static cvar_t *r_bloom_fast_sample;
++static cvar_t *r_bloom_alpha;
++static cvar_t *r_bloom_darken;
++static cvar_t *r_bloom_intensity;
++static cvar_t *r_bloom_diamond_size;
++
++/* 
++============================================================================== 
++ 
++						LIGHT BLOOMS
++ 
++============================================================================== 
++*/ 
++
++static float Diamond8x[8][8] =
++{ 
++	{ 0.0f, 0.0f, 0.0f, 0.1f, 0.1f, 0.0f, 0.0f, 0.0f, },
++	{ 0.0f, 0.0f, 0.2f, 0.3f, 0.3f, 0.2f, 0.0f, 0.0f, },
++	{ 0.0f, 0.2f, 0.4f, 0.6f, 0.6f, 0.4f, 0.2f, 0.0f, },
++	{ 0.1f, 0.3f, 0.6f, 0.9f, 0.9f, 0.6f, 0.3f, 0.1f, },
++	{ 0.1f, 0.3f, 0.6f, 0.9f, 0.9f, 0.6f, 0.3f, 0.1f, },
++	{ 0.0f, 0.2f, 0.4f, 0.6f, 0.6f, 0.4f, 0.2f, 0.0f, },
++	{ 0.0f, 0.0f, 0.2f, 0.3f, 0.3f, 0.2f, 0.0f, 0.0f, },
++	{ 0.0f, 0.0f, 0.0f, 0.1f, 0.1f, 0.0f, 0.0f, 0.0f  }
++};
++
++static float Diamond6x[6][6] =
++{ 
++	{ 0.0f, 0.0f, 0.1f, 0.1f, 0.0f, 0.0f, },
++	{ 0.0f, 0.3f, 0.5f, 0.5f, 0.3f, 0.0f, }, 
++	{ 0.1f, 0.5f, 0.9f, 0.9f, 0.5f, 0.1f, },
++	{ 0.1f, 0.5f, 0.9f, 0.9f, 0.5f, 0.1f, },
++	{ 0.0f, 0.3f, 0.5f, 0.5f, 0.3f, 0.0f, },
++	{ 0.0f, 0.0f, 0.1f, 0.1f, 0.0f, 0.0f  }
++};
++
++static float Diamond4x[4][4] =
++{  
++	{ 0.3f, 0.4f, 0.4f, 0.3f, },
++	{ 0.4f, 0.9f, 0.9f, 0.4f, },
++	{ 0.4f, 0.9f, 0.9f, 0.4f, },
++	{ 0.3f, 0.4f, 0.4f, 0.3f  }
++};
++
++static struct {
++	struct {
++		image_t	*texture;
++		int		width, height;
++		float	readW, readH;
++	} effect;
++	struct {
++		image_t	*texture;
++		int		width, height;
++		float	readW, readH;
++	} screen;
++	struct {
++		int		width, height;
++	} work;
++	qboolean started;
++} bloom;
++
++
++static void ID_INLINE R_Bloom_Quad( int width, int height, float texX, float texY, float texWidth, float texHeight ) {
++	int x = 0;
++	int y = 0;
++	x = 0;
++	y += glConfig.vidHeight - height;
++	width += x;
++	height += y;
++	
++	texWidth += texX;
++	texHeight += texY;
++
++	qglBegin( GL_QUADS );							
++	qglTexCoord2f(	texX,						texHeight	);	
++	qglVertex2f(	x,							y	);
++
++	qglTexCoord2f(	texX,						texY	);				
++	qglVertex2f(	x,							height	);	
++
++	qglTexCoord2f(	texWidth,					texY	);				
++	qglVertex2f(	width,						height	);	
++
++	qglTexCoord2f(	texWidth,					texHeight	);	
++	qglVertex2f(	width,						y	);				
++	qglEnd ();
++}
++
++
++/*
++=================
++R_Bloom_InitTextures
++=================
++*/
++static void R_Bloom_InitTextures( void )
++{
++	byte	*data;
++
++	// find closer power of 2 to screen size 
++	for (bloom.screen.width = 1;bloom.screen.width< glConfig.vidWidth;bloom.screen.width *= 2);
++	for (bloom.screen.height = 1;bloom.screen.height < glConfig.vidHeight;bloom.screen.height *= 2);
++
++	bloom.screen.readW = glConfig.vidWidth / (float)bloom.screen.width;
++	bloom.screen.readH = glConfig.vidHeight / (float)bloom.screen.height;
++
++	// find closer power of 2 to effect size 
++	bloom.work.width = r_bloom_sample_size->integer;
++	bloom.work.height = bloom.work.width * ( glConfig.vidWidth / glConfig.vidHeight );
++
++	for (bloom.effect.width = 1;bloom.effect.width < bloom.work.width;bloom.effect.width *= 2);
++	for (bloom.effect.height = 1;bloom.effect.height < bloom.work.height;bloom.effect.height *= 2);
++
++	bloom.effect.readW = bloom.work.width / (float)bloom.effect.width;
++	bloom.effect.readH = bloom.work.height / (float)bloom.effect.height;
++
++
++	// disable blooms if we can't handle a texture of that size
++	if( bloom.screen.width > glConfig.maxTextureSize ||
++		bloom.screen.height > glConfig.maxTextureSize ||
++		bloom.effect.width > glConfig.maxTextureSize ||
++		bloom.effect.height > glConfig.maxTextureSize ||
++		bloom.work.width > glConfig.vidWidth ||
++		bloom.work.height > glConfig.vidHeight
++	) {
++		ri.Cvar_Set( "r_bloom", "0" );
++		Com_Printf( S_COLOR_YELLOW"WARNING: 'R_InitBloomTextures' too high resolution for light bloom, effect disabled\n" );
++		return;
++	}
++
++	data = ri.Hunk_AllocateTempMemory( bloom.screen.width * bloom.screen.height * 4 );
++	Com_Memset( data, 0, bloom.screen.width * bloom.screen.height * 4 );
++	bloom.screen.texture = R_CreateImage( "***bloom screen texture***", data, bloom.screen.width, bloom.screen.height, qfalse, qfalse, qfalse );
++	ri.Hunk_FreeTempMemory( data );
++
++	data = ri.Hunk_AllocateTempMemory( bloom.effect.width * bloom.effect.height * 4 );
++	Com_Memset( data, 0, bloom.effect.width * bloom.effect.height * 4 );
++	bloom.effect.texture = R_CreateImage( "***bloom effect texture***", data, bloom.effect.width, bloom.effect.height, qfalse, qfalse, qfalse );
++	ri.Hunk_FreeTempMemory( data );
++	bloom.started = qtrue;
++}
++
++/*
++=================
++R_InitBloomTextures
++=================
++*/
++void R_InitBloomTextures( void )
++{
++	if( !r_bloom->integer )
++		return;
++	memset( &bloom, 0, sizeof( bloom ));
++	R_Bloom_InitTextures ();
++}
++
++/*
++=================
++R_Bloom_DrawEffect
++=================
++*/
++static void R_Bloom_DrawEffect( void )
++{
++	GL_Bind( bloom.effect.texture );
++	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ONE );
++	qglColor4f( r_bloom_alpha->value, r_bloom_alpha->value, r_bloom_alpha->value, 1.0f );
++	R_Bloom_Quad( glConfig.vidWidth, glConfig.vidHeight, 0, 0, bloom.effect.readW, bloom.effect.readW );
++}
++
++
++/*
++=================
++R_Bloom_GeneratexDiamonds
++=================
++*/
++static void R_Bloom_WarsowEffect( void )
++{
++	int		i, j, k;
++	float	intensity, scale, *diamond;
++
++
++	qglColor4f( 1.0f, 1.0f, 1.0f, 1.0f );
++	//Take the backup texture and downscale it
++	GL_Bind( bloom.screen.texture );
++	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
++	R_Bloom_Quad( bloom.work.width, bloom.work.height, 0, 0, bloom.screen.readW, bloom.screen.readH );
++	//Copy downscaled framebuffer into a texture
++	GL_Bind( bloom.effect.texture );
++	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
++	// darkening passes with repeated filter
++	if( r_bloom_darken->integer ) {
++		int i;
++		GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_DST_COLOR | GLS_DSTBLEND_ZERO );
++
++		for( i = 0; i < r_bloom_darken->integer; i++ ) {
++			R_Bloom_Quad( bloom.work.width, bloom.work.height, 
++				0, 0, 
++				bloom.effect.readW, bloom.effect.readH );
++		}
++		qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
++	}
++	/* Copy the result to the effect texture */
++	GL_Bind( bloom.effect.texture );
++	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
++
++	// bluring passes, warsow uses a repeated semi blend on a selectable diamond grid
++	qglColor4f( 1.0f, 1.0f, 1.0f, 1.0f );
++	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ONE_MINUS_SRC_COLOR );
++	if( r_bloom_diamond_size->integer > 7 || r_bloom_diamond_size->integer <= 3 ) {
++		if( r_bloom_diamond_size->integer != 8 )
++			ri.Cvar_Set( "r_bloom_diamond_size", "8" );
++	} else if( r_bloom_diamond_size->integer > 5 ) {
++		if( r_bloom_diamond_size->integer != 6 )
++			ri.Cvar_Set( "r_bloom_diamond_size", "6" );
++	} else if( r_bloom_diamond_size->integer > 3 ) {
++		if( r_bloom_diamond_size->integer != 4 )
++			ri.Cvar_Set( "r_bloom_diamond_size", "4" );
++	}
++
++	switch( r_bloom_diamond_size->integer ) {
++		case 4:
++			k = 2;
++			diamond = &Diamond4x[0][0];
++			scale = r_bloom_intensity->value * 0.8f;
++			break;
++		case 6:
++			k = 3;
++			diamond = &Diamond6x[0][0];
++			scale = r_bloom_intensity->value * 0.5f;
++			break;
++		default:
++//		case 8:
++			k = 4;
++			diamond = &Diamond8x[0][0];
++			scale = r_bloom_intensity->value * 0.3f;
++			break;
++	}
++
++	for( i = 0; i < r_bloom_diamond_size->integer; i++ ) {
++		for( j = 0; j < r_bloom_diamond_size->integer; j++, diamond++ ) {
++			float x, y;
++			intensity =  *diamond * scale;
++			if( intensity < 0.01f )
++				continue;
++			qglColor4f( intensity, intensity, intensity, 1.0 );
++			x = (i - k) * ( 2 / 640.0f ) * bloom.effect.readW;
++			y = (j - k) * ( 2 / 480.0f ) * bloom.effect.readH;
++
++			R_Bloom_Quad( bloom.work.width, bloom.work.height, x, y, bloom.effect.readW, bloom.effect.readH );
++		}
++	}
++	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
++}											
++
++/*
++=================
++R_Bloom_BackupScreen
++Backup the full original screen to a texture for downscaling and later restoration
++=================
++*/
++static void R_Bloom_BackupScreen( void ) {
++	GL_Bind( bloom.screen.texture );
++	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, glConfig.vidWidth, glConfig.vidHeight );
++}
++/*
++=================
++R_Bloom_RestoreScreen
++Restore the temporary framebuffer section we used with the backup texture
++=================
++*/
++static void R_Bloom_RestoreScreen( void ) {
++	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
++	GL_Bind( bloom.screen.texture );
++	qglColor4f( 1, 1, 1, 1 );
++	R_Bloom_Quad( bloom.work.width, bloom.work.height, 0, 0,
++		bloom.work.width / (float)bloom.screen.width,
++		bloom.work.height / (float)bloom.screen.height );
++}
++ 
++
++/*
++=================
++R_Bloom_DownsampleView
++Scale the copied screen back to the sample size used for subsequent passes
++=================
++*/
++/*static void R_Bloom_DownsampleView( void )
++{
++	// TODO, Provide option to control the color strength here /
++//	qglColor4f( r_bloom_darken->value, r_bloom_darken->value, r_bloom_darken->value, 1.0f );
++	qglColor4f( 1.0f, 1.0f, 1.0f, 1.0f );
++	GL_Bind( bloom.screen.texture );
++	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
++	//Downscale it
++	R_Bloom_Quad( bloom.work.width, bloom.work.height, 0, 0, bloom.screen.readW, bloom.screen.readH );
++#if 1
++	GL_Bind( bloom.effect.texture );
++	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
++	// darkening passes
++	if( r_bloom_darken->integer ) {
++		int i;
++		GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_DST_COLOR | GLS_DSTBLEND_ZERO );
++
++		for( i = 0; i < r_bloom_darken->integer; i++ ) {
++			R_Bloom_Quad( bloom.work.width, bloom.work.height, 
++				0, 0, 
++				bloom.effect.readW, bloom.effect.readH );
++		}
++		qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
++	}
++#endif
++	// Copy the result to the effect texture /
++	GL_Bind( bloom.effect.texture );
++	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
++}
++
++static void R_Bloom_CreateEffect( void ) {
++	int dir, x;
++	int range;
++
++	//First step will zero dst, rest will one add
++	GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ZERO );
++//	GL_Bind( bloom.screen.texture );
++	GL_Bind( bloom.effect.texture );
++	range = 4;
++	for (dir = 0;dir < 2;dir++)
++	{
++		// blend on at multiple vertical offsets to achieve a vertical blur
++		// TODO: do offset blends using GLSL
++		for (x = -range;x <= range;x++)
++		{
++			float xoffset, yoffset, r;
++			if (!dir){
++				xoffset = 0;
++				yoffset = x*1.5;
++			} else {
++				xoffset = x*1.5;
++				yoffset = 0;
++			}
++			xoffset /= bloom.work.width;
++			yoffset /= bloom.work.height;
++			// this r value looks like a 'dot' particle, fading sharply to
++			// black at the edges
++			// (probably not realistic but looks good enough)
++			//r = ((range*range+1)/((float)(x*x+1)))/(range*2+1);
++			//r = (dir ? 1.0f : brighten)/(range*2+1);
++			r = 2.0f /(range*2+1)*(1 - x*x/(float)(range*range));
++//			r *= r_bloom_darken->value;
++			qglColor4f(r, r, r, 1);
++			R_Bloom_Quad( bloom.work.width, bloom.work.height, 
++				xoffset, yoffset, 
++				bloom.effect.readW, bloom.effect.readH );
++//				bloom.screen.readW, bloom.screen.readH );
++			GL_State( GLS_DEPTHTEST_DISABLE | GLS_SRCBLEND_ONE | GLS_DSTBLEND_ONE );
++		}
++	}
++	GL_Bind( bloom.effect.texture );
++	qglCopyTexSubImage2D( GL_TEXTURE_2D, 0, 0, 0, 0, 0, bloom.work.width, bloom.work.height );
++}*/
++
++/*
++=================
++R_BloomScreen
++=================
++*/
++void R_BloomScreen( void )
++{
++	if( !r_bloom->integer )
++		return;
++	if ( backEnd.doneBloom )
++		return;
++	if ( !backEnd.doneSurfaces )
++		return;
++	backEnd.doneBloom = qtrue;
++	if( !bloom.started ) {
++		R_Bloom_InitTextures();
++		if( !bloom.started )
++			return;
++	}
++
++	if ( !backEnd.projection2D )
++		RB_SetGL2D();
++#if 0
++	// set up full screen workspace
++	GL_TexEnv( GL_MODULATE );
++	qglScissor( 0, 0, glConfig.vidWidth, glConfig.vidHeight );
++	qglViewport( 0, 0, glConfig.vidWidth, glConfig.vidHeight );
++	qglMatrixMode( GL_PROJECTION );
++    qglLoadIdentity ();
++	qglOrtho( 0, glConfig.vidWidth, glConfig.vidHeight, 0, 0, 1 );
++	qglMatrixMode( GL_MODELVIEW );
++    qglLoadIdentity ();
++
++	GL_Cull( CT_TWO_SIDED );
++#endif
++
++	qglColor4f( 1, 1, 1, 1 );
++
++	//Backup the old screen in a texture
++	R_Bloom_BackupScreen();
++	// create the bloom texture using one of a few methods
++	R_Bloom_WarsowEffect ();
++//	R_Bloom_CreateEffect();
++	// restore the screen-backup to the screen
++	R_Bloom_RestoreScreen();
++	// Do the final pass using the bloom texture for the final effect
++	R_Bloom_DrawEffect ();
++}
++
++
++void R_BloomInit( void ) {
++	memset( &bloom, 0, sizeof( bloom ));
++
++	r_bloom = ri.Cvar_Get( "r_bloom", "0", CVAR_ARCHIVE );
++	r_bloom_alpha = ri.Cvar_Get( "r_bloom_alpha", "0.3", CVAR_ARCHIVE );
++	r_bloom_diamond_size = ri.Cvar_Get( "r_bloom_diamond_size", "8", CVAR_ARCHIVE );
++	r_bloom_intensity = ri.Cvar_Get( "r_bloom_intensity", "1.3", CVAR_ARCHIVE );
++	r_bloom_darken = ri.Cvar_Get( "r_bloom_darken", "4", CVAR_ARCHIVE );
++	r_bloom_sample_size = ri.Cvar_Get( "r_bloom_sample_size", "128", CVAR_ARCHIVE|CVAR_LATCH );
++	r_bloom_fast_sample = ri.Cvar_Get( "r_bloom_fast_sample", "0", CVAR_ARCHIVE|CVAR_LATCH );
++}
++
+Index: code/renderer/tr_backend.c
+===================================================================
+--- code/renderer/tr_backend.c	(revision 1432)
++++ code/renderer/tr_backend.c	(working copy)
+@@ -943,7 +943,8 @@
+ 
+ 	backEnd.refdef = cmd->refdef;
+ 	backEnd.viewParms = cmd->viewParms;
+-
++	//TODO Maybe check for rdf_noworld stuff but q3mme has full 3d ui
++	backEnd.doneSurfaces = qtrue;
+ 	RB_RenderDrawSurfList( cmd->drawSurfs, cmd->numDrawSurfs );
+ 
+ 	return (const void *)(cmd + 1);
+@@ -1118,7 +1119,8 @@
+ 	GLimp_EndFrame();
+ 
+ 	backEnd.projection2D = qfalse;
+-
++	backEnd.doneBloom = qfalse;
++	backEnd.doneSurfaces = qfalse;
+ 	return (const void *)(cmd + 1);
+ }
+ 
+@@ -1147,6 +1149,8 @@
+ 			data = RB_SetColor( data );
+ 			break;
+ 		case RC_STRETCH_PIC:
++			//Check if it's time for BLOOM!
++			R_BloomScreen();
+ 			data = RB_StretchPic( data );
+ 			break;
+ 		case RC_DRAW_SURFS:
+@@ -1156,6 +1160,8 @@
+ 			data = RB_DrawBuffer( data );
+ 			break;
+ 		case RC_SWAP_BUFFERS:
++			//Check if it's time for BLOOM!
++			R_BloomScreen();
+ 			data = RB_SwapBuffers( data );
+ 			break;
+ 		case RC_SCREENSHOT:
+Index: code/server/sv_ccmds.c
+===================================================================
+--- code/server/sv_ccmds.c	(revision 1432)
++++ code/server/sv_ccmds.c	(working copy)
+@@ -433,10 +433,22 @@
+ 		return;
+ 	}
+ 
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+-		if ( !NET_StringToAdr( AUTHORIZE_SERVER_NAME, &svs.authorizeAddress, NA_IP ) ) {
++		if ( !NET_StringToAdr( AUTHORIZE_SERVER_NAME, &svs.authorizeAddress) ) {
+ 			Com_Printf( "Couldn't resolve address\n" );
+ 			return;
+ 		}
+@@ -487,10 +499,22 @@
+ 		return;
+ 	}
+ 
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
++	if(strlen(AUTHORIZE_SERVER_NAME) < 1)
++	{
++		Com_Printf("Ban function disabled due to lack of authorizing server.\n");
++		return;
++	}
++
+ 	// look up the authorize server's IP
+ 	if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+-		if ( !NET_StringToAdr( AUTHORIZE_SERVER_NAME, &svs.authorizeAddress, NA_IP ) ) {
++		if ( !NET_StringToAdr( AUTHORIZE_SERVER_NAME, &svs.authorizeAddress) ) {
+ 			Com_Printf( "Couldn't resolve address\n" );
+ 			return;
+ 		}
+@@ -567,7 +591,7 @@
+ 			
+ 			*newlinepos = '\0';
+ 			
+-			if(NET_StringToAdr(curpos + 2, &serverBans[index].ip, NA_UNSPEC))
++			if(NET_StringToAdr(curpos + 2, &serverBans[index].ip))
+ 			{
+ 				serverBans[index].isexception = !(curpos[0] == '0');
+ 				serverBans[index].subnet = atoi(maskpos);
+@@ -577,11 +601,6 @@
+ 				{
+ 					serverBans[index].subnet = 32;
+ 				}
+-				else if(serverBans[index].ip.type == NA_IP6 &&
+-					(serverBans[index].subnet < 0 || serverBans[index].subnet > 128))
+-				{
+-					serverBans[index].subnet = 128;
+-				}
+ 			}
+ 			
+ 			curpos = newlinepos + 1;
+@@ -636,7 +655,7 @@
+ 			suffix++;
+ 		}
+ 		
+-		if(!NET_StringToAdr(banstring, &ip, NA_UNSPEC))
++		if(!NET_StringToAdr(banstring, &ip))
+ 		{
+ 			Com_Printf("Error: Invalid address %s\n", banstring);
+ 			return;
+@@ -669,7 +688,7 @@
+ 			suffix = NULL;
+ 	}
+ 
+-	if(ip.type != NA_IP && ip.type != NA_IP6)
++	if(ip.type != NA_IP)
+ 	{
+ 		Com_Printf("Error: Can ban players connected via the internet only.\n");
+ 		return;
+Index: code/server/sv_client.c
+===================================================================
+--- code/server/sv_client.c	(revision 1432)
++++ code/server/sv_client.c	(working copy)
+@@ -81,79 +81,9 @@
+ 		i = oldest;
+ 	}
+ 
+-#ifdef STANDALONE
+-	if(Cvar_VariableIntegerValue("com_standalone"))
+-	{
+ 		challenge->pingTime = svs.time;
+ 		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
+-	}
+-#else
+-	// if they are on a lan address, send the challengeResponse immediately
+-	if ( Sys_IsLANAddress( from ) ) {
+-		challenge->pingTime = svs.time;
+-		NET_OutOfBandPrint( NS_SERVER, from, "challengeResponse %i", challenge->challenge );
+-		return;
+-	}
+-
+-	// Drop the authorize stuff if this client is coming in via v6 as the auth server does not support ipv6.
+-	if(challenge->adr.type == NA_IP)
+-	{
+-		// look up the authorize server's IP
+-		if ( !svs.authorizeAddress.ip[0] && svs.authorizeAddress.type != NA_BAD ) {
+-			Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+-			if ( !NET_StringToAdr( AUTHORIZE_SERVER_NAME, &svs.authorizeAddress, NA_IP ) ) {
+-				Com_Printf( "Couldn't resolve address\n" );
+-				return;
+-			}
+-			svs.authorizeAddress.port = BigShort( PORT_AUTHORIZE );
+-			Com_Printf( "%s resolved to %i.%i.%i.%i:%i\n", AUTHORIZE_SERVER_NAME,
+-				svs.authorizeAddress.ip[0], svs.authorizeAddress.ip[1],
+-				svs.authorizeAddress.ip[2], svs.authorizeAddress.ip[3],
+-				BigShort( svs.authorizeAddress.port ) );
+-		}
+-
+-		// if they have been challenging for a long time and we
+-		// haven't heard anything from the authorize server, go ahead and
+-		// let them in, assuming the id server is down
+-		if ( svs.time - challenge->firstTime > AUTHORIZE_TIMEOUT ) {
+-			Com_DPrintf( "authorize server timed out\n" );
+-
+-			challenge->pingTime = svs.time;
+-			NET_OutOfBandPrint( NS_SERVER, challenge->adr, 
+-				"challengeResponse %i", challenge->challenge );
+-			return;
+-		}
+-
+-		// otherwise send their ip to the authorize server
+-		if ( svs.authorizeAddress.type != NA_BAD ) {
+-			cvar_t	*fs;
+-			char	game[1024];
+-
+-			Com_DPrintf( "sending getIpAuthorize for %s\n", NET_AdrToString( from ));
+-		
+-			strcpy(game, BASEGAME);
+-			fs = Cvar_Get ("fs_game", "", CVAR_INIT|CVAR_SYSTEMINFO );
+-			if (fs && fs->string[0] != 0) {
+-				strcpy(game, fs->string);
+-			}
+-		
+-			// the 0 is for backwards compatibility with obsolete sv_allowanonymous flags
+-			// getIpAuthorize <challenge> <IP> <game> 0 <auth-flag>
+-			NET_OutOfBandPrint( NS_SERVER, svs.authorizeAddress,
+-				"getIpAuthorize %i %i.%i.%i.%i %s 0 %s",  svs.challenges[i].challenge,
+-				from.ip[0], from.ip[1], from.ip[2], from.ip[3], game, sv_strictAuth->string );
+-		}
+-	}
+-	else
+-	{
+-		challenge->pingTime = svs.time;
+-		
+-		NET_OutOfBandPrint( NS_SERVER, challenge->adr, 
+-			"challengeResponse %i", challenge->challenge );
+-	}
+-#endif
+ }
+-
+ #ifndef STANDALONE
+ /*
+ ====================
+@@ -244,8 +174,6 @@
+ 	
+ 	if(from->type == NA_IP)
+ 		addrlen = sizeof(from->ip);
+-	else if(from->type == NA_IP6)
+-		addrlen = sizeof(from->ip6);
+ 	else
+ 		return qfalse;
+ 
+@@ -262,17 +190,11 @@
+ 		
+ 		if(curban->isexception == isexception && from->type == curban->ip.type)
+ 		{
+-			if(from->type == NA_IP)
+-			{
+-				addrfrom = from->ip;
+-				addrban = curban->ip.ip;
+-			}
+-			else
+-			{
+-				addrfrom = from->ip6;
+-				addrban = curban->ip.ip6;
+-			}
+ 			
++			addrfrom = from->ip;
++			addrban = curban->ip.ip;
++			
++			
+ 			differed = qfalse;
+ 			curbyte = 0;
+ 			
+Index: code/server/sv_init.c
+===================================================================
+--- code/server/sv_init.c	(revision 1432)
++++ code/server/sv_init.c	(working copy)
+@@ -287,8 +287,6 @@
+ 
+ 	Cvar_Set( "sv_running", "1" );
+ 	
+-	// Join the ipv6 multicast group now that a map is running so clients can scan for us on the local network.
+-	NET_JoinMulticast6();
+ }
+ 
+ 
+@@ -744,8 +742,6 @@
+ 
+ 	Com_Printf( "----- Server Shutdown (%s) -----\n", finalmsg );
+ 
+-	NET_LeaveMulticast6();
+-
+ 	if ( svs.clients && !com_errorEntered ) {
+ 		SV_FinalMessage( finalmsg );
+ 	}
+Index: code/server/sv_main.c
+===================================================================
+--- code/server/sv_main.c	(revision 1432)
++++ code/server/sv_main.c	(working copy)
+@@ -234,10 +234,12 @@
+ 	static netadr_t	adr[MAX_MASTER_SERVERS];
+ 	int			i;
+ 
++#ifndef DEDICATED
+ 	// "dedicated 1" is for lan play, "dedicated 2" is for inet public play
+ 	if ( !com_dedicated || com_dedicated->integer != 2 ) {
+ 		return;		// only dedicated servers send heartbeats
+ 	}
++#endif
+ 
+ 	// if not time yet, don't send anything
+ 	if ( svs.time < svs.nextHeartbeatTime ) {
+@@ -259,7 +261,7 @@
+ 			sv_master[i]->modified = qfalse;
+ 	
+ 			Com_Printf( "Resolving %s\n", sv_master[i]->string );
+-			if ( !NET_StringToAdr( sv_master[i]->string, &adr[i], NA_UNSPEC ) ) {
++			if ( !NET_StringToAdr( sv_master[i]->string, &adr[i]) ) {
+ 				// if the address failed to resolve, clear it
+ 				// so we don't take repeated dns hits
+ 				Com_Printf( "Couldn't resolve address: %s\n", sv_master[i]->string );
+@@ -270,7 +272,7 @@
+ 			if ( !strchr( sv_master[i]->string, ':' ) ) {
+ 				adr[i].port = BigShort( PORT_MASTER );
+ 			}
+-			Com_Printf( "%s resolved to %s\n", sv_master[i]->string, NET_AdrToStringwPort(adr[i]));
++			Com_Printf( "%s resolved to %s\n", sv_master[i]->string, NET_AdrToString(adr[i]));
+ 		}
+ 
+ 
+@@ -410,6 +412,10 @@
+ 		va("%i", sv_maxclients->integer - sv_privateClients->integer ) );
+ 	Info_SetValueForKey( infostring, "gametype", va("%i", sv_gametype->integer ) );
+ 	Info_SetValueForKey( infostring, "pure", va("%i", sv_pure->integer ) );
++	//Sago's things:
++	Info_SetValueForKey( infostring, "g_needpass", va("%i", (int)Cvar_VariableValue("g_needpass") ) );
++	Info_SetValueForKey( infostring, "g_humanplayers", va("%i", (int)Cvar_VariableValue("g_humanplayers") ) );
++	//Sago's end
+ 
+ #ifdef USE_VOIP
+ 	if (sv_voip->integer) {
+Index: code/qcommon/net_chan.c
+===================================================================
+--- code/qcommon/net_chan.c	(revision 1432)
++++ code/qcommon/net_chan.c	(working copy)
+@@ -460,7 +460,75 @@
+ 
+ //==============================================================================
+ 
++/*
++===================
++NET_CompareBaseAdr
+ 
++Compares without the port
++===================
++*/
++qboolean	NET_CompareBaseAdr (netadr_t a, netadr_t b)
++{
++	if (a.type != b.type)
++		return qfalse;
++
++	if (a.type == NA_LOOPBACK)
++		return qtrue;
++
++	if (a.type == NA_IP)
++	{
++		if (a.ip[0] == b.ip[0] && a.ip[1] == b.ip[1] && a.ip[2] == b.ip[2] && a.ip[3] == b.ip[3])
++			return qtrue;
++		return qfalse;
++	}
++
++	Com_Printf ("NET_CompareBaseAdr: bad address type\n");
++	return qfalse;
++}
++
++const char	*NET_AdrToString (netadr_t a)
++{
++	static	char	s[64];
++
++	if (a.type == NA_LOOPBACK) {
++		Com_sprintf (s, sizeof(s), "loopback");
++	} else if (a.type == NA_BOT) {
++		Com_sprintf (s, sizeof(s), "bot");
++	} else if (a.type == NA_IP) {
++		Com_sprintf (s, sizeof(s), "%i.%i.%i.%i:%hu",
++			a.ip[0], a.ip[1], a.ip[2], a.ip[3], BigShort(a.port));
++	}
++
++	return s;
++}
++
++
++qboolean	NET_CompareAdr (netadr_t a, netadr_t b)
++{
++	if (a.type != b.type)
++		return qfalse;
++
++	if (a.type == NA_LOOPBACK)
++		return qtrue;
++
++	if (a.type == NA_IP)
++	{
++		if (a.ip[0] == b.ip[0] && a.ip[1] == b.ip[1] && a.ip[2] == b.ip[2] && a.ip[3] == b.ip[3] && a.port == b.port)
++			return qtrue;
++		return qfalse;
++	}
++
++	Com_Printf ("NET_CompareAdr: bad address type\n");
++	return qfalse;
++}
++
++
++qboolean	NET_IsLocalAddress( netadr_t adr ) {
++	return adr.type == NA_LOOPBACK;
++}
++
++
++
+ /*
+ =============================================================================
+ 
+@@ -673,68 +741,46 @@
+ NET_StringToAdr
+ 
+ Traps "localhost" for loopback, passes everything else to system
+-return 0 on address not found, 1 on address found with port, 2 on address found without port.
+ =============
+ */
+-int NET_StringToAdr( const char *s, netadr_t *a, netadrtype_t family )
+-{
+-	char	base[MAX_STRING_CHARS], *search;
+-	char	*port = NULL;
++qboolean	NET_StringToAdr( const char *s, netadr_t *a ) {
++	qboolean	r;
++	char	base[MAX_STRING_CHARS];
++	char	*port;
+ 
+ 	if (!strcmp (s, "localhost")) {
+ 		Com_Memset (a, 0, sizeof(*a));
+ 		a->type = NA_LOOPBACK;
+-// as NA_LOOPBACK doesn't require ports report port was given.
+-		return 1;
++		return qtrue;
+ 	}
+ 
++	// look for a port number
+ 	Q_strncpyz( base, s, sizeof( base ) );
+-	
+-	if(*base == '[' || Q_CountChar(base, ':') > 1)
+-	{
+-		// This is an ipv6 address, handle it specially.
+-		search = strchr(base, ']');
+-		if(search)
+-		{
+-			*search = '\0';
+-			search++;
++	port = strstr( base, ":" );
++	if ( port ) {
++		*port = 0;
++		port++;
++	}
+ 
+-			if(*search == ':')
+-				port = search + 1;
+-		}
+-		
+-		if(*base == '[')
+-			search = base + 1;
+-		else
+-			search = base;
++	r = Sys_StringToAdr( base, a );
++
++	if ( !r ) {
++		a->type = NA_BAD;
++		return qfalse;
+ 	}
+-	else
+-	{
+-		// look for a port number
+-		port = strchr( base, ':' );
+-		
+-		if ( port ) {
+-			*port = '\0';
+-			port++;
+-		}
+-		
+-		search = base;
+-	}
+ 
+-	if(!Sys_StringToAdr(search, a, family))
+-	{
++	// inet_addr returns this if out of range
++	if ( a->ip[0] == 255 && a->ip[1] == 255 && a->ip[2] == 255 && a->ip[3] == 255 ) {
+ 		a->type = NA_BAD;
+-		return 0;
++		return qfalse;
+ 	}
+ 
+-	if(port)
+-	{
+-		a->port = BigShort((short) atoi(port));
+-		return 1;
++	if ( port ) {
++		a->port = BigShort( (short)atoi( port ) );
++	} else {
++		a->port = BigShort( PORT_SERVER );
+ 	}
+-	else
+-	{
+-		a->port = BigShort(PORT_SERVER);
+-		return 2;
+-	}
++
++	return qtrue;
+ }
++
+Index: code/qcommon/q_shared.h
+===================================================================
+--- code/qcommon/q_shared.h	(revision 1432)
++++ code/qcommon/q_shared.h	(working copy)
+@@ -27,10 +27,10 @@
+ // A user mod should never modify this file
+ 
+ #ifdef STANDALONE
+-  #define PRODUCT_NAME			"iofoo3"
+-  #define BASEGAME			"foobar"
+-  #define CLIENT_WINDOW_TITLE     	"changeme"
+-  #define CLIENT_WINDOW_MIN_TITLE 	"changeme2"
++  #define PRODUCT_NAME			"ioq3+oa"
++  #define BASEGAME			"baseoa"
++  #define CLIENT_WINDOW_TITLE     	"OpenArena"
++  #define CLIENT_WINDOW_MIN_TITLE 	"OA"
+ #else
+   #define PRODUCT_NAME			"ioq3"
+   #define BASEGAME			"baseq3"
+Index: code/qcommon/files.c
+===================================================================
+--- code/qcommon/files.c	(revision 1432)
++++ code/qcommon/files.c	(working copy)
+@@ -2850,7 +2850,7 @@
+ */
+ static void FS_CheckPak0( void )
+ {
+-	searchpath_t	*path;
++	/*searchpath_t	*path;
+ 	qboolean founddemo = qfalse;
+ 	unsigned foundPak = 0;
+ 
+@@ -2939,7 +2939,7 @@
+ 	
+ 	if(foundPak & 1)
+ 		Cvar_Set("com_standalone", "0");
+-}
++}*/
+ #endif
+ 
+ /*
+Index: code/qcommon/net_ip.c
+===================================================================
+--- code/qcommon/net_ip.c	(revision 1432)
++++ code/qcommon/net_ip.c	(working copy)
+@@ -24,21 +24,9 @@
+ #include "../qcommon/qcommon.h"
+ 
+ #ifdef _WIN32
+-#include <winsock2.h>
+-#include <ws2tcpip.h>
+-#if WINVER < 0x501
+-#include <wspiapi.h>
+-#else
+-#include <ws2spi.h>
+-#endif
++#include <winsock.h>
+ 
+ typedef int socklen_t;
+-#ifdef ADDRESS_FAMILY
+-#define sa_family_t	ADDRESS_FAMILY
+-#else
+-typedef unsigned short sa_family_t;
+-#endif
+-
+ #define EAGAIN				WSAEWOULDBLOCK
+ #define EADDRNOTAVAIL	WSAEADDRNOTAVAIL
+ #define EAFNOSUPPORT	WSAEAFNOSUPPORT
+@@ -59,14 +47,17 @@
+ #include <errno.h>
+ #include <netdb.h>
+ #include <netinet/in.h>
+-#include <sys/socket.h>
+-#include <net/if.h>
+ #include <sys/ioctl.h>
++#include <sys/socket.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <unistd.h>
+-#if !defined(__sun) && !defined(__sgi)
+-#include <ifaddrs.h>
++
++#ifdef MACOS_X
++#include <sys/sockio.h>
++#include <net/if.h>
++#include <net/if_types.h>
++#include <net/if_dl.h>         // for 'struct sockaddr_dl'
+ #endif
+ 
+ #ifdef __sun
+@@ -83,65 +74,24 @@
+ #endif
+ 
+ static qboolean usingSocks = qfalse;
+-static int networkingEnabled = 0;
++static qboolean networkingEnabled = qfalse;
+ 
+-#define NET_ENABLEV4		0x01
+-#define NET_ENABLEV6		0x02
+-// if this flag is set, always attempt ipv6 connections instead of ipv4 if a v6 address is found.
+-#define NET_PRIOV6		0x04
+-// disables ipv6 multicast support if set.
+-#define NET_DISABLEMCAST	0x08
++static cvar_t	*net_noudp;
+ 
+-static cvar_t	*net_enabled;
+-
+ static cvar_t	*net_socksEnabled;
+ static cvar_t	*net_socksServer;
+ static cvar_t	*net_socksPort;
+ static cvar_t	*net_socksUsername;
+ static cvar_t	*net_socksPassword;
+-
+-static cvar_t	*net_ip;
+-static cvar_t	*net_ip6;
+-static cvar_t	*net_port;
+-static cvar_t	*net_port6;
+-static cvar_t	*net_mcast6addr;
+-static cvar_t	*net_mcast6iface;
+-
+ static struct sockaddr	socksRelayAddr;
+ 
+-static SOCKET	ip_socket = INVALID_SOCKET;
+-static SOCKET	ip6_socket = INVALID_SOCKET;
+-static SOCKET	socks_socket = INVALID_SOCKET;
+-static SOCKET	multicast6_socket = INVALID_SOCKET;
++static SOCKET	ip_socket;
++static SOCKET	socks_socket;
+ 
+-// Keep track of currently joined multicast group.
+-static struct ipv6_mreq curgroup;
+-// And the currently bound address.
+-static struct sockaddr_in6 boundto;
++#define	MAX_IPS		16
++static	int		numIP;
++static	byte	localIP[MAX_IPS][4];
+ 
+-#ifndef IF_NAMESIZE
+-  #define IF_NAMESIZE 16
+-#endif
+-
+-// use an admin local address per default so that network admins can decide on how to handle quake3 traffic.
+-#define NET_MULTICAST_IP6 "ff04::696f:7175:616b:6533"
+-
+-#define	MAX_IPS		32
+-
+-typedef struct
+-{
+-	char ifname[IF_NAMESIZE];
+-	
+-	netadrtype_t type;
+-	sa_family_t family;
+-	struct sockaddr_storage addr;
+-	struct sockaddr_storage netmask;
+-} nip_localaddr_t;
+-
+-static nip_localaddr_t localIP[MAX_IPS];
+-static int numIP;
+-
+-
+ //=============================================================================
+ 
+ 
+@@ -206,6 +156,8 @@
+ }
+ 
+ static void NetadrToSockadr( netadr_t *a, struct sockaddr *s ) {
++	memset( s, 0, sizeof(*s) );
++
+ 	if( a->type == NA_BROADCAST ) {
+ 		((struct sockaddr_in *)s)->sin_family = AF_INET;
+ 		((struct sockaddr_in *)s)->sin_port = a->port;
+@@ -216,17 +168,6 @@
+ 		((struct sockaddr_in *)s)->sin_addr.s_addr = *(int *)&a->ip;
+ 		((struct sockaddr_in *)s)->sin_port = a->port;
+ 	}
+-	else if( a->type == NA_IP6 ) {
+-		((struct sockaddr_in6 *)s)->sin6_family = AF_INET6;
+-		((struct sockaddr_in6 *)s)->sin6_addr = * ((struct in6_addr *) &a->ip6);
+-		((struct sockaddr_in6 *)s)->sin6_port = a->port;
+-	}
+-	else if(a->type == NA_MULTICAST6)
+-	{
+-		((struct sockaddr_in6 *)s)->sin6_family = AF_INET6;
+-		((struct sockaddr_in6 *)s)->sin6_addr = curgroup.ipv6mr_multiaddr;
+-		((struct sockaddr_in6 *)s)->sin6_port = a->port;
+-	}
+ }
+ 
+ 
+@@ -236,235 +177,50 @@
+ 		*(int *)&a->ip = ((struct sockaddr_in *)s)->sin_addr.s_addr;
+ 		a->port = ((struct sockaddr_in *)s)->sin_port;
+ 	}
+-	else if(s->sa_family == AF_INET6)
+-	{
+-		a->type = NA_IP6;
+-		memcpy(a->ip6, &((struct sockaddr_in6 *)s)->sin6_addr, sizeof(a->ip6));
+-		a->port = ((struct sockaddr_in6 *)s)->sin6_port;
+-	}
+ }
+ 
+ 
+-static struct addrinfo *SearchAddrInfo(struct addrinfo *hints, sa_family_t family)
+-{
+-	while(hints)
+-	{
+-		if(hints->ai_family == family)
+-			return hints;
+-
+-		hints = hints->ai_next;
+-	}
+-	
+-	return NULL;
+-}
+-
+ /*
+ =============
+ Sys_StringToSockaddr
+ =============
+ */
+-static qboolean Sys_StringToSockaddr(const char *s, struct sockaddr *sadr, int sadr_len, sa_family_t family)
+-{
+-	struct addrinfo hints, *res = NULL, *search;
+-	struct addrinfo *hintsp;
+-	int retval;
++static qboolean Sys_StringToSockaddr( const char *s, struct sockaddr *sadr ) {
++	struct hostent	*h;
+ 	
+-	memset(sadr, '\0', sizeof(*sadr));
+-	memset(&hints, '\0', sizeof(hints));
++	memset( sadr, 0, sizeof( *sadr ) );
+ 
+-	// workaround for buggy MacOSX getaddrinfo implementation that doesn't handle AF_UNSPEC in hints correctly.
+-	if(family == AF_UNSPEC)
+-		hintsp = NULL;
+-	else
+-	{
+-		hintsp = &hints;
+-		hintsp->ai_family = family;
+-	}
+-	
+-	retval = getaddrinfo(s, NULL, hintsp, &res);
++	((struct sockaddr_in *)sadr)->sin_family = AF_INET;
++	((struct sockaddr_in *)sadr)->sin_port = 0;
+ 
+-	if(!retval)
+-	{
+-		if(family == AF_UNSPEC)
+-		{
+-			// Decide here and now which protocol family to use
+-			if((net_enabled->integer & NET_ENABLEV6) && (net_enabled->integer & NET_PRIOV6))
+-				search = SearchAddrInfo(res, AF_INET6);
+-			else
+-				search = SearchAddrInfo(res, AF_INET);
+-			
+-			if(!search)
+-			{
+-				if((net_enabled->integer & NET_ENABLEV6) &&
+-				   (net_enabled->integer & NET_PRIOV6) &&
+-				   (net_enabled->integer & NET_ENABLEV4))
+-					search = SearchAddrInfo(res, AF_INET);
+-				else if(net_enabled->integer & NET_ENABLEV6)
+-					search = SearchAddrInfo(res, AF_INET6);
+-			}
++	if( s[0] >= '0' && s[0] <= '9' ) {
++		*(int *)&((struct sockaddr_in *)sadr)->sin_addr = inet_addr(s);
++	} else {
++		if( ( h = gethostbyname( s ) ) == 0 ) {
++			return 0;
+ 		}
+-		else
+-			search = SearchAddrInfo(res, family);
+-
+-		if(search)
+-		{
+-			if(res->ai_addrlen > sadr_len)
+-				res->ai_addrlen = sadr_len;
+-				
+-			memcpy(sadr, res->ai_addr, res->ai_addrlen);
+-			freeaddrinfo(res);
+-			
+-			return qtrue;
+-		}
+-		else
+-			Com_Printf("Sys_StringToSockaddr: Error resolving %s: No address of required type found.\n", s);
++		*(int *)&((struct sockaddr_in *)sadr)->sin_addr = *(int *)h->h_addr_list[0];
+ 	}
+-	else
+-		Com_Printf("Sys_StringToSockaddr: Error resolving %s: %s\n", s, gai_strerror(retval));
+ 	
+-	if(res)
+-		freeaddrinfo(res);
+-	
+-	return qfalse;
++	return qtrue;
+ }
+ 
+ /*
+ =============
+-Sys_SockaddrToString
+-=============
+-*/
+-static void Sys_SockaddrToString(char *dest, int destlen, struct sockaddr *input, int inputlen)
+-{
+-	getnameinfo(input, inputlen, dest, destlen, NULL, 0, NI_NUMERICHOST);
+-}
+-
+-/*
+-=============
+ Sys_StringToAdr
+ =============
+ */
+-qboolean Sys_StringToAdr( const char *s, netadr_t *a, netadrtype_t family ) {
+-	struct sockaddr_storage sadr;
+-	sa_family_t fam;
++qboolean Sys_StringToAdr( const char *s, netadr_t *a ) {
++	struct sockaddr sadr;
+ 	
+-	switch(family)
+-	{
+-		case NA_IP:
+-			fam = AF_INET;
+-		break;
+-		case NA_IP6:
+-			fam = AF_INET6;
+-		break;
+-		default:
+-			fam = AF_UNSPEC;
+-		break;
+-	}
+-	if( !Sys_StringToSockaddr(s, (struct sockaddr *) &sadr, sizeof(sadr), fam ) ) {
++	if ( !Sys_StringToSockaddr( s, &sadr ) ) {
+ 		return qfalse;
+ 	}
+ 	
+-	SockadrToNetadr( (struct sockaddr *) &sadr, a );
++	SockadrToNetadr( &sadr, a );
+ 	return qtrue;
+ }
+ 
+-/*
+-===================
+-NET_CompareBaseAdr
+-
+-Compares without the port
+-===================
+-*/
+-qboolean	NET_CompareBaseAdr (netadr_t a, netadr_t b)
+-{
+-	if (a.type != b.type)
+-		return qfalse;
+-
+-	if (a.type == NA_LOOPBACK)
+-		return qtrue;
+-
+-	if (a.type == NA_IP)
+-	{
+-		if(!memcmp(a.ip, b.ip, sizeof(a.ip)))
+-			return qtrue;
+-		
+-		return qfalse;
+-	}
+-	
+-	if (a.type == NA_IP6)
+-	{
+-		if(!memcmp(a.ip6, b.ip6, sizeof(a.ip6)))
+-				  return qtrue;
+-		
+-		return qfalse;
+-	}
+-
+-	Com_Printf ("NET_CompareBaseAdr: bad address type\n");
+-	return qfalse;
+-}
+-
+-const char	*NET_AdrToString (netadr_t a)
+-{
+-	static	char	s[NET_ADDRSTRMAXLEN];
+-
+-	if (a.type == NA_LOOPBACK) {
+-		Com_sprintf (s, sizeof(s), "loopback");
+-	} else if (a.type == NA_BOT) {
+-		Com_sprintf (s, sizeof(s), "bot");
+-	}
+-	else if (a.type == NA_IP || a.type == NA_IP6)
+-	{
+-		struct sockaddr_storage sadr;
+-	
+-		memset(&sadr, 0, sizeof(sadr));
+-		NetadrToSockadr(&a, (struct sockaddr *) &sadr);
+-		Sys_SockaddrToString(s, sizeof(s), (struct sockaddr *) &sadr, sizeof(sadr));
+-	}
+-
+-	return s;
+-}
+-
+-const char	*NET_AdrToStringwPort (netadr_t a)
+-{
+-	static	char	s[NET_ADDRSTRMAXLEN];
+-
+-	if (a.type == NA_LOOPBACK) {
+-		Com_sprintf (s, sizeof(s), "loopback");
+-	} else if (a.type == NA_BOT) {
+-		Com_sprintf (s, sizeof(s), "bot");
+-	}
+-	else if (a.type == NA_IP || a.type == NA_IP6)
+-	{
+-		if(a.type == NA_IP)
+-			Com_sprintf(s, sizeof(s), "%s:%hu", NET_AdrToString(a), ntohs(a.port));
+-		else if(a.type == NA_IP6)
+-			Com_sprintf(s, sizeof(s), "[%s]:%hu", NET_AdrToString(a), ntohs(a.port));
+-	}
+-
+-	return s;
+-}
+-
+-
+-qboolean	NET_CompareAdr (netadr_t a, netadr_t b)
+-{
+-	if(!NET_CompareBaseAdr(a, b))
+-		return qfalse;
+-	
+-	if (a.type == NA_IP || a.type == NA_IP6)
+-	{
+-		if (a.port == b.port)
+-			return qtrue;
+-	}
+-	else
+-		return qtrue;
+-		
+-	return qfalse;
+-}
+-
+-
+-qboolean	NET_IsLocalAddress( netadr_t adr ) {
+-	return adr.type == NA_LOOPBACK;
+-}
+-
+ //=============================================================================
+ 
+ /*
+@@ -480,116 +236,56 @@
+ 
+ qboolean Sys_GetPacket( netadr_t *net_from, msg_t *net_message ) {
+ 	int 	ret;
+-	struct sockaddr_storage from;
++	struct sockaddr from;
+ 	socklen_t	fromlen;
+ 	int		err;
+ 
++	if( !ip_socket ) {
++		return qfalse;
++	}
++
++	fromlen = sizeof(from);
+ #ifdef _DEBUG
+ 	recvfromCount++;		// performance check
+ #endif
+-	
+-	if(ip_socket != INVALID_SOCKET)
++	ret = recvfrom( ip_socket, net_message->data, net_message->maxsize, 0, (struct sockaddr *)&from, &fromlen );
++	if (ret == SOCKET_ERROR)
+ 	{
+-		fromlen = sizeof(from);
+-		ret = recvfrom( ip_socket, (void *)net_message->data, net_message->maxsize, 0, (struct sockaddr *) &from, &fromlen );
+-		
+-		if (ret == SOCKET_ERROR)
+-		{
+-			err = socketError;
++		err = socketError;
+ 
+-			if( err != EAGAIN && err != ECONNRESET )
+-				Com_Printf( "NET_GetPacket: %s\n", NET_ErrorString() );
++		if( err == EAGAIN || err == ECONNRESET ) {
++			return qfalse;
+ 		}
+-		else
+-		{
+-
+-			memset( ((struct sockaddr_in *)&from)->sin_zero, 0, 8 );
+-		
+-			if ( usingSocks && memcmp( &from, &socksRelayAddr, fromlen ) == 0 ) {
+-				if ( ret < 10 || net_message->data[0] != 0 || net_message->data[1] != 0 || net_message->data[2] != 0 || net_message->data[3] != 1 ) {
+-					return qfalse;
+-				}
+-				net_from->type = NA_IP;
+-				net_from->ip[0] = net_message->data[4];
+-				net_from->ip[1] = net_message->data[5];
+-				net_from->ip[2] = net_message->data[6];
+-				net_from->ip[3] = net_message->data[7];
+-				net_from->port = *(short *)&net_message->data[8];
+-				net_message->readcount = 10;
+-			}
+-			else {
+-				SockadrToNetadr( (struct sockaddr *) &from, net_from );
+-				net_message->readcount = 0;
+-			}
+-		
+-			if( ret == net_message->maxsize ) {
+-				Com_Printf( "Oversize packet from %s\n", NET_AdrToString (*net_from) );
+-				return qfalse;
+-			}
+-			
+-			net_message->cursize = ret;
+-			return qtrue;
+-		}
++		Com_Printf( "NET_GetPacket: %s\n", NET_ErrorString() );
++		return qfalse;
+ 	}
+-	
+-	if(ip6_socket != INVALID_SOCKET)
+-	{
+-		fromlen = sizeof(from);
+-		ret = recvfrom(ip6_socket, (void *)net_message->data, net_message->maxsize, 0, (struct sockaddr *) &from, &fromlen);
+-		
+-		if (ret == SOCKET_ERROR)
+-		{
+-			err = socketError;
+ 
+-			if( err != EAGAIN && err != ECONNRESET )
+-				Com_Printf( "NET_GetPacket: %s\n", NET_ErrorString() );
++	memset( ((struct sockaddr_in *)&from)->sin_zero, 0, 8 );
++
++	if ( usingSocks && memcmp( &from, &socksRelayAddr, fromlen ) == 0 ) {
++		if ( ret < 10 || net_message->data[0] != 0 || net_message->data[1] != 0 || net_message->data[2] != 0 || net_message->data[3] != 1 ) {
++			return qfalse;
+ 		}
+-		else
+-		{
+-			SockadrToNetadr((struct sockaddr *) &from, net_from);
+-			net_message->readcount = 0;
+-		
+-			if(ret == net_message->maxsize)
+-			{
+-				Com_Printf( "Oversize packet from %s\n", NET_AdrToString (*net_from) );
+-				return qfalse;
+-			}
+-			
+-			net_message->cursize = ret;
+-			return qtrue;
+-		}
++		net_from->type = NA_IP;
++		net_from->ip[0] = net_message->data[4];
++		net_from->ip[1] = net_message->data[5];
++		net_from->ip[2] = net_message->data[6];
++		net_from->ip[3] = net_message->data[7];
++		net_from->port = *(short *)&net_message->data[8];
++		net_message->readcount = 10;
+ 	}
++	else {
++		SockadrToNetadr( &from, net_from );
++		net_message->readcount = 0;
++	}
+ 
+-	if(multicast6_socket != INVALID_SOCKET && multicast6_socket != ip6_socket)
+-	{
+-		fromlen = sizeof(from);
+-		ret = recvfrom(multicast6_socket, (void *)net_message->data, net_message->maxsize, 0, (struct sockaddr *) &from, &fromlen);
+-		
+-		if (ret == SOCKET_ERROR)
+-		{
+-			err = socketError;
+-
+-			if( err != EAGAIN && err != ECONNRESET )
+-				Com_Printf( "NET_GetPacket: %s\n", NET_ErrorString() );
+-		}
+-		else
+-		{
+-			SockadrToNetadr((struct sockaddr *) &from, net_from);
+-			net_message->readcount = 0;
+-		
+-			if(ret == net_message->maxsize)
+-			{
+-				Com_Printf( "Oversize packet from %s\n", NET_AdrToString (*net_from) );
+-				return qfalse;
+-			}
+-			
+-			net_message->cursize = ret;
+-			return qtrue;
+-		}
++	if( ret == net_message->maxsize ) {
++		Com_Printf( "Oversize packet from %s\n", NET_AdrToString (*net_from) );
++		return qfalse;
+ 	}
+-	
+-	
+-	return qfalse;
++
++	net_message->cursize = ret;
++	return qtrue;
+ }
+ 
+ //=============================================================================
+@@ -602,26 +298,20 @@
+ ==================
+ */
+ void Sys_SendPacket( int length, const void *data, netadr_t to ) {
+-	int				ret = SOCKET_ERROR;
+-	struct sockaddr_storage	addr;
++	int				ret;
++	struct sockaddr	addr;
+ 
+-	if( to.type != NA_BROADCAST && to.type != NA_IP && to.type != NA_IP6 && to.type != NA_MULTICAST6)
+-	{
++	if( to.type != NA_BROADCAST && to.type != NA_IP ) {
+ 		Com_Error( ERR_FATAL, "Sys_SendPacket: bad address type" );
+ 		return;
+ 	}
+ 
+-	if( (ip_socket == INVALID_SOCKET && to.type == NA_IP) ||
+-		(ip6_socket == INVALID_SOCKET && to.type == NA_IP6) ||
+-		(ip6_socket == INVALID_SOCKET && to.type == NA_MULTICAST6) )
++	if( !ip_socket ) {
+ 		return;
++	}
+ 
+-	if(to.type == NA_MULTICAST6 && (net_enabled->integer & NET_DISABLEMCAST))
+-		return;
++	NetadrToSockadr( &to, &addr );
+ 
+-	memset(&addr, 0, sizeof(addr));
+-	NetadrToSockadr( &to, (struct sockaddr *) &addr );
+-
+ 	if( usingSocks && to.type == NA_IP ) {
+ 		socksBuf[0] = 0;	// reserved
+ 		socksBuf[1] = 0;
+@@ -633,10 +323,7 @@
+ 		ret = sendto( ip_socket, socksBuf, length+10, 0, &socksRelayAddr, sizeof(socksRelayAddr) );
+ 	}
+ 	else {
+-		if(addr.ss_family == AF_INET)
+-			ret = sendto( ip_socket, data, length, 0, (struct sockaddr *) &addr, sizeof(struct sockaddr_in) );
+-		else if(addr.ss_family == AF_INET6)
+-			ret = sendto( ip6_socket, data, length, 0, (struct sockaddr *) &addr, sizeof(struct sockaddr_in6) );
++		ret = sendto( ip_socket, data, length, 0, &addr, sizeof(addr) );
+ 	}
+ 	if( ret == SOCKET_ERROR ) {
+ 		int err = socketError;
+@@ -666,76 +353,62 @@
+ ==================
+ */
+ qboolean Sys_IsLANAddress( netadr_t adr ) {
+-	int		index, run, addrsize;
+-	qboolean differed;
+-	byte *compareadr, *comparemask, *compareip;
++	int		i;
+ 
+ 	if( adr.type == NA_LOOPBACK ) {
+ 		return qtrue;
+ 	}
+ 
+-	if( adr.type == NA_IP )
+-	{
+-		// RFC1918:
+-		// 10.0.0.0        -   10.255.255.255  (10/8 prefix)
+-		// 172.16.0.0      -   172.31.255.255  (172.16/12 prefix)
+-		// 192.168.0.0     -   192.168.255.255 (192.168/16 prefix)
+-		if(adr.ip[0] == 10)
+-			return qtrue;
+-		if(adr.ip[0] == 172 && (adr.ip[1]&0xf0) == 16)
+-			return qtrue;
+-		if(adr.ip[0] == 192 && adr.ip[1] == 168)
+-			return qtrue;
++	if( adr.type != NA_IP ) {
++		return qfalse;
++	}
+ 
+-		if(adr.ip[0] == 127)
+-			return qtrue;
++	// RFC1918:
++	// 10.0.0.0        -   10.255.255.255  (10/8 prefix)
++	// 172.16.0.0      -   172.31.255.255  (172.16/12 prefix)
++	// 192.168.0.0     -   192.168.255.255 (192.168/16 prefix)
++	if(adr.ip[0] == 10)
++		return qtrue;
++	if(adr.ip[0] == 172 && (adr.ip[1]&0xf0) == 16)
++		return qtrue;
++	if(adr.ip[0] == 192 && adr.ip[1] == 168)
++		return qtrue;
++
++	// choose which comparison to use based on the class of the address being tested
++	// any local adresses of a different class than the address being tested will fail based on the first byte
++	// FIXME tma 28/08/07 Try and make this work for arbitrary subnet masks somehow
++
++	if( adr.ip[0] == 127 && adr.ip[1] == 0 && adr.ip[2] == 0 && adr.ip[3] == 1 ) {
++		return qtrue;
+ 	}
+-	else if(adr.type == NA_IP6)
+-	{
+-		if(adr.ip6[0] == 0xfe && (adr.ip6[1] & 0xc0) == 0x80)
+-			return qtrue;
+-		if((adr.ip6[0] & 0xfe) == 0xfc)
+-			return qtrue;
+-	}
+-	
+-	// Now compare against the networks this computer is member of.
+-	for(index = 0; index < numIP; index++)
+-	{
+-		if(localIP[index].type == adr.type)
+-		{
+-			if(adr.type == NA_IP)
+-			{
+-				compareip = (byte *) &((struct sockaddr_in *) &localIP[index].addr)->sin_addr.s_addr;
+-				comparemask = (byte *) &((struct sockaddr_in *) &localIP[index].netmask)->sin_addr.s_addr;
+-				compareadr = adr.ip;
+-				
+-				addrsize = sizeof(adr.ip);
+-			}
+-			else
+-			{
+-				compareip = (byte *) &((struct sockaddr_in6 *) &localIP[index].addr)->sin6_addr;
+-				comparemask = (byte *) &((struct sockaddr_in6 *) &localIP[index].netmask)->sin6_addr;
+-				compareadr = adr.ip6;
+-				
+-				addrsize = sizeof(adr.ip6);
+-			}
+ 
+-			differed = qfalse;
+-			for(run = 0; run < addrsize; run++)
+-			{
+-				if((compareip[run] & comparemask[run]) != (compareadr[run] & comparemask[run]))
+-				{
+-					differed = qtrue;
+-					break;
+-				}
++	// Class A
++	if( (adr.ip[0] & 0x80) == 0x00 ) {
++		for ( i = 0 ; i < numIP ; i++ ) {
++			if( adr.ip[0] == localIP[i][0] ) {
++				return qtrue;
+ 			}
+-			
+-			if(!differed)
++		}
++
++		return qfalse;
++	}
++
++	// Class B
++	if( (adr.ip[0] & 0xc0) == 0x80 ) {
++		for ( i = 0 ; i < numIP ; i++ ) {
++			if( adr.ip[0] == localIP[i][0] && adr.ip[1] == localIP[i][1] ) {
+ 				return qtrue;
++			}
++		}
++		return qfalse;
++	}
+ 
++	// Class C
++	for ( i = 0 ; i < numIP ; i++ ) {
++		if( adr.ip[0] == localIP[i][0] && adr.ip[1] == localIP[i][1] && adr.ip[2] == localIP[i][2] ) {
++			return qtrue;
+ 		}
+ 	}
+-	
+ 	return qfalse;
+ }
+ 
+@@ -746,16 +419,9 @@
+ */
+ void Sys_ShowIP(void) {
+ 	int i;
+-	char addrbuf[NET_ADDRSTRMAXLEN];
+ 
+-	for(i = 0; i < numIP; i++)
+-	{
+-		Sys_SockaddrToString(addrbuf, sizeof(addrbuf), (struct sockaddr *) &localIP[i].addr, sizeof((*localIP).addr));
+-
+-		if(localIP[i].type == NA_IP)
+-			Com_Printf( "IP: %s\n", addrbuf);
+-		else if(localIP[i].type == NA_IP6)
+-			Com_Printf( "IP6: %s\n", addrbuf);
++	for (i = 0; i < numIP; i++) {
++		Com_Printf( "IP: %i.%i.%i.%i\n", localIP[i][0], localIP[i][1], localIP[i][2], localIP[i][3] );
+ 	}
+ }
+ 
+@@ -768,53 +434,45 @@
+ NET_IPSocket
+ ====================
+ */
+-int NET_IPSocket( char *net_interface, int port, int *err ) {
++int NET_IPSocket( char *net_interface, int port ) {
+ 	SOCKET				newsocket;
+ 	struct sockaddr_in	address;
+ 	qboolean			_true = qtrue;
+ 	int					i = 1;
++	int					err;
+ 
+-	*err = 0;
+-
+ 	if( net_interface ) {
+ 		Com_Printf( "Opening IP socket: %s:%i\n", net_interface, port );
+ 	}
+ 	else {
+-		Com_Printf( "Opening IP socket: 0.0.0.0:%i\n", port );
++		Com_Printf( "Opening IP socket: localhost:%i\n", port );
+ 	}
+ 
+-	if( ( newsocket = socket( PF_INET, SOCK_DGRAM, IPPROTO_UDP ) ) == INVALID_SOCKET ) {
+-		*err = socketError;
+-		Com_Printf( "WARNING: NET_IPSocket: socket: %s\n", NET_ErrorString() );
+-		return newsocket;
++	if( ( newsocket = socket( AF_INET, SOCK_DGRAM, IPPROTO_UDP ) ) == INVALID_SOCKET ) {
++		err = socketError;
++		if( err != EAFNOSUPPORT ) {
++			Com_Printf( "WARNING: UDP_OpenSocket: socket: %s\n", NET_ErrorString() );
++		}
++		return 0;
+ 	}
++
+ 	// make it non-blocking
+ 	if( ioctlsocket( newsocket, FIONBIO, (u_long *)&_true ) == SOCKET_ERROR ) {
+-		Com_Printf( "WARNING: NET_IPSocket: ioctl FIONBIO: %s\n", NET_ErrorString() );
+-		*err = socketError;
+-		closesocket(newsocket);
+-		return INVALID_SOCKET;
++		Com_Printf( "WARNING: UDP_OpenSocket: ioctl FIONBIO: %s\n", NET_ErrorString() );
++		return 0;
+ 	}
+ 
+ 	// make it broadcast capable
+-	if( setsockopt( newsocket, SOL_SOCKET, SO_BROADCAST, (char *) &i, sizeof(i) ) == SOCKET_ERROR ) {
+-		Com_Printf( "WARNING: NET_IPSocket: setsockopt SO_BROADCAST: %s\n", NET_ErrorString() );
+-
+-		// it is not that bad if this one fails.
+-//		return newsocket;
++	if( setsockopt( newsocket, SOL_SOCKET, SO_BROADCAST, (char *)&i, sizeof(i) ) == SOCKET_ERROR ) {
++		Com_Printf( "WARNING: UDP_OpenSocket: setsockopt SO_BROADCAST: %s\n", NET_ErrorString() );
++		return 0;
+ 	}
+ 
+-	if( !net_interface || !net_interface[0]) {
+-		address.sin_family = AF_INET;
++	if( !net_interface || !net_interface[0] || !Q_stricmp(net_interface, "localhost") ) {
+ 		address.sin_addr.s_addr = INADDR_ANY;
+ 	}
+-	else
+-	{
+-		if(!Sys_StringToSockaddr( net_interface, (struct sockaddr *)&address, sizeof(address), AF_INET))
+-		{
+-			closesocket(newsocket);
+-			return INVALID_SOCKET;
+-		}
++	else {
++		Sys_StringToSockaddr( net_interface, (struct sockaddr *)&address );
+ 	}
+ 
+ 	if( port == PORT_ANY ) {
+@@ -824,204 +482,20 @@
+ 		address.sin_port = htons( (short)port );
+ 	}
+ 
+-	if( bind( newsocket, (void *)&address, sizeof(address) ) == SOCKET_ERROR ) {
+-		Com_Printf( "WARNING: NET_IPSocket: bind: %s\n", NET_ErrorString() );
+-		*err = socketError;
+-		closesocket( newsocket );
+-		return INVALID_SOCKET;
+-	}
++	address.sin_family = AF_INET;
+ 
+-	return newsocket;
+-}
+-
+-/*
+-====================
+-NET_IP6Socket
+-====================
+-*/
+-int NET_IP6Socket( char *net_interface, int port, struct sockaddr_in6 *bindto, int *err ) {
+-	SOCKET				newsocket;
+-	struct sockaddr_in6	address;
+-	qboolean			_true = qtrue;
+-
+-	*err = 0;
+-
+-	if( net_interface )
+-	{
+-		// Print the name in brackets if there is a colon:
+-		if(Q_CountChar(net_interface, ':'))
+-			Com_Printf( "Opening IP6 socket: [%s]:%i\n", net_interface, port );
+-		else
+-			Com_Printf( "Opening IP6 socket: %s:%i\n", net_interface, port );
+-	}
+-	else
+-		Com_Printf( "Opening IP6 socket: [::]:%i\n", port );
+-
+-	if( ( newsocket = socket( PF_INET6, SOCK_DGRAM, IPPROTO_UDP ) ) == INVALID_SOCKET ) {
+-		*err = socketError;
+-		Com_Printf( "WARNING: NET_IP6Socket: socket: %s\n", NET_ErrorString() );
+-		return newsocket;
+-	}
+-
+-	// make it non-blocking
+-	if( ioctlsocket( newsocket, FIONBIO, (u_long *)&_true ) == SOCKET_ERROR ) {
+-		Com_Printf( "WARNING: NET_IP6Socket: ioctl FIONBIO: %s\n", NET_ErrorString() );
+-		*err = socketError;
+-		closesocket(newsocket);
+-		return INVALID_SOCKET;
+-	}
+-
+-#ifdef IPV6_V6ONLY
+-	{
+-		int i;
+-
+-		// ipv4 addresses should not be allowed to connect via this socket.
+-		if(setsockopt(newsocket, IPPROTO_IPV6, IPV6_V6ONLY, (char *) &i, sizeof(i)) == SOCKET_ERROR)
+-		{
+-			// win32 systems don't seem to support this anyways.
+-			Com_DPrintf("WARNING: NET_IP6Socket: setsockopt IPV6_V6ONLY: %s\n", NET_ErrorString());
+-		}
+-	}
+-#endif
+-
+-	if( !net_interface || !net_interface[0]) {
+-		address.sin6_family = AF_INET6;
+-		address.sin6_addr = in6addr_any;
+-	}
+-	else
+-	{
+-		if(!Sys_StringToSockaddr( net_interface, (struct sockaddr *)&address, sizeof(address), AF_INET6))
+-		{
+-			closesocket(newsocket);
+-			return INVALID_SOCKET;
+-		}
+-	}
+-
+-	if( port == PORT_ANY ) {
+-		address.sin6_port = 0;
+-	}
+-	else {
+-		address.sin6_port = htons( (short)port );
+-	}
+-
+ 	if( bind( newsocket, (void *)&address, sizeof(address) ) == SOCKET_ERROR ) {
+-		Com_Printf( "WARNING: NET_IP6Socket: bind: %s\n", NET_ErrorString() );
+-		*err = socketError;
++		Com_Printf( "WARNING: UDP_OpenSocket: bind: %s\n", NET_ErrorString() );
+ 		closesocket( newsocket );
+-		return INVALID_SOCKET;
++		return 0;
+ 	}
+-	
+-	if(bindto)
+-		*bindto = address;
+ 
+ 	return newsocket;
+ }
+ 
+-/*
+-====================
+-NET_SetMulticast
+-Set the current multicast group
+-====================
+-*/
+-void NET_SetMulticast6(void)
+-{
+-	struct sockaddr_in6 addr;
+ 
+-	if(!*net_mcast6addr->string || !Sys_StringToSockaddr(net_mcast6addr->string, (struct sockaddr *) &addr, sizeof(addr), AF_INET6))
+-	{
+-		Com_Printf("WARNING: NET_JoinMulticast6: Incorrect multicast address given, "
+-			   "please set cvar %s to a sane value.\n", net_mcast6addr->name);
+-		
+-		Cvar_SetValue(net_enabled->name, net_enabled->integer | NET_DISABLEMCAST);
+-		
+-		return;
+-	}
+-	
+-	memcpy(&curgroup.ipv6mr_multiaddr, &addr.sin6_addr, sizeof(curgroup.ipv6mr_multiaddr));
+-
+-	if(*net_mcast6iface->string)
+-	{
+-#ifdef _WIN32
+-		curgroup.ipv6mr_interface = atoi(net_mcast6iface->string);
+-#else
+-		curgroup.ipv6mr_interface = if_nametoindex(net_mcast6iface->string);
+-#endif
+-	}
+-	else
+-		curgroup.ipv6mr_interface = 0;
+-}
+-
+ /*
+ ====================
+-NET_JoinMulticast
+-Join an ipv6 multicast group
+-====================
+-*/
+-void NET_JoinMulticast6(void)
+-{
+-	int err;
+-	
+-	if(ip6_socket == INVALID_SOCKET || multicast6_socket != INVALID_SOCKET || (net_enabled->integer & NET_DISABLEMCAST))
+-		return;
+-	
+-	if(IN6_IS_ADDR_MULTICAST(&boundto.sin6_addr) || IN6_IS_ADDR_UNSPECIFIED(&boundto.sin6_addr))
+-	{
+-		// The way the socket was bound does not prohibit receiving multi-cast packets. So we don't need to open a new one.
+-		multicast6_socket = ip6_socket;
+-	}
+-	else
+-	{
+-		if((multicast6_socket = NET_IP6Socket(net_mcast6addr->string, ntohs(boundto.sin6_port), NULL, &err)) == INVALID_SOCKET)
+-		{
+-			// If the OS does not support binding to multicast addresses, like WinXP, at least try with the normal file descriptor.
+-			multicast6_socket = ip6_socket;
+-		}
+-	}
+-	
+-	if(curgroup.ipv6mr_interface)
+-	{
+-		if (setsockopt(multicast6_socket, IPPROTO_IPV6, IPV6_MULTICAST_IF,
+-			       (char *) &curgroup.ipv6mr_interface, sizeof(curgroup.ipv6mr_interface)) < 0)
+-		{
+-        	        Com_Printf("NET_JoinMulticast6: Couldn't set scope on multicast socket: %s\n", NET_ErrorString());
+-
+-        	        if(multicast6_socket != ip6_socket)
+-        	        {
+-        	        	closesocket(multicast6_socket);
+-        	        	multicast6_socket = INVALID_SOCKET;
+-        	        	return;
+-			}
+-		}
+-        }
+-
+-        if (setsockopt(multicast6_socket, IPPROTO_IPV6, IPV6_JOIN_GROUP, (char *) &curgroup, sizeof(curgroup)))
+-        {
+-        	Com_Printf("NET_JoinMulticast6: Couldn't join multicast group: %s\n", NET_ErrorString());
+-        	
+-       	        if(multicast6_socket != ip6_socket)
+-       	        {
+-       	        	closesocket(multicast6_socket);
+-       	        	multicast6_socket = INVALID_SOCKET;
+-       	        	return;
+-		}
+-	}
+-}
+-
+-void NET_LeaveMulticast6()
+-{
+-	if(multicast6_socket != INVALID_SOCKET)
+-	{
+-		if(multicast6_socket != ip6_socket)
+-			closesocket(multicast6_socket);
+-		else
+-			setsockopt(multicast6_socket, IPPROTO_IPV6, IPV6_LEAVE_GROUP, (char *) &curgroup, sizeof(curgroup));
+-
+-		multicast6_socket = INVALID_SOCKET;
+-	}
+-}
+-
+-/*
+-====================
+ NET_OpenSocks
+ ====================
+ */
+@@ -1085,14 +559,14 @@
+ 	if ( rfc1929 ) {
+ 		buf[2] = 2;		// method #2 - method id #02: username/password
+ 	}
+-	if ( send( socks_socket, (void *)buf, len, 0 ) == SOCKET_ERROR ) {
++	if ( send( socks_socket, buf, len, 0 ) == SOCKET_ERROR ) {
+ 		err = socketError;
+ 		Com_Printf( "NET_OpenSocks: send: %s\n", NET_ErrorString() );
+ 		return;
+ 	}
+ 
+ 	// get the response
+-	len = recv( socks_socket, (void *)buf, 64, 0 );
++	len = recv( socks_socket, buf, 64, 0 );
+ 	if ( len == SOCKET_ERROR ) {
+ 		err = socketError;
+ 		Com_Printf( "NET_OpenSocks: recv: %s\n", NET_ErrorString() );
+@@ -1132,14 +606,14 @@
+ 		}
+ 
+ 		// send it
+-		if ( send( socks_socket, (void *)buf, 3 + ulen + plen, 0 ) == SOCKET_ERROR ) {
++		if ( send( socks_socket, buf, 3 + ulen + plen, 0 ) == SOCKET_ERROR ) {
+ 			err = socketError;
+ 			Com_Printf( "NET_OpenSocks: send: %s\n", NET_ErrorString() );
+ 			return;
+ 		}
+ 
+ 		// get the response
+-		len = recv( socks_socket, (void *)buf, 64, 0 );
++		len = recv( socks_socket, buf, 64, 0 );
+ 		if ( len == SOCKET_ERROR ) {
+ 			err = socketError;
+ 			Com_Printf( "NET_OpenSocks: recv: %s\n", NET_ErrorString() );
+@@ -1162,14 +636,14 @@
+ 	buf[3] = 1;		// address type: IPV4
+ 	*(int *)&buf[4] = INADDR_ANY;
+ 	*(short *)&buf[8] = htons( (short)port );		// port
+-	if ( send( socks_socket, (void *)buf, 10, 0 ) == SOCKET_ERROR ) {
++	if ( send( socks_socket, buf, 10, 0 ) == SOCKET_ERROR ) {
+ 		err = socketError;
+ 		Com_Printf( "NET_OpenSocks: send: %s\n", NET_ErrorString() );
+ 		return;
+ 	}
+ 
+ 	// get the response
+-	len = recv( socks_socket, (void *)buf, 64, 0 );
++	len = recv( socks_socket, buf, 64, 0 );
+ 	if( len == SOCKET_ERROR ) {
+ 		err = socketError;
+ 		Com_Printf( "NET_OpenSocks: recv: %s\n", NET_ErrorString() );
+@@ -1202,106 +676,161 @@
+ NET_GetLocalAddress
+ =====================
+ */
+-void NET_AddLocalAddress(char *ifname, struct sockaddr *addr, struct sockaddr *netmask)
+-{
+-	int addrlen;
+-	sa_family_t family;
+-	
+-	// only add addresses that have all required info.
+-	if(!addr || !netmask || !ifname)
+-		return;
+-	
+-	family = addr->sa_family;
++#ifdef MACOS_X
++// Don't do a forward mapping from the hostname of the machine to the IP.
++// The reason is that we might have obtained an IP address from DHCP and
++// there might not be any name registered for the machine.  On Mac OS X,
++// the machine name defaults to 'localhost' and NetInfo has 127.0.0.1
++// listed for this name.  Instead, we want to get a list of all the IP
++// network interfaces on the machine. This code adapted from
++// OmniNetworking.
+ 
+-	if(numIP < MAX_IPS)
+-	{
+-		if(family == AF_INET)
+-		{
+-			addrlen = sizeof(struct sockaddr_in);
+-			localIP[numIP].type = NA_IP;
+-		}
+-		else if(family == AF_INET6)
+-		{
+-			addrlen = sizeof(struct sockaddr_in6);
+-			localIP[numIP].type = NA_IP6;
+-		}
+-		else
+-			return;
+-		
+-		Q_strncpyz(localIP[numIP].ifname, ifname, sizeof(localIP[numIP].ifname));
+-	
+-		localIP[numIP].family = family;
++#ifdef _SIZEOF_ADDR_IFREQ
++	// tjw: OSX 10.4 does not have sa_len
++	#define IFR_NEXT(ifr)	\
++	((struct ifreq *) ((char *) ifr + _SIZEOF_ADDR_IFREQ(*ifr)))
++#else
++	// tjw: assume that once upon a time some version did have sa_len
++	#define IFR_NEXT(ifr)	\
++	((struct ifreq *) ((char *) (ifr) + sizeof(*(ifr)) + \
++	MAX(0, (int) (ifr)->ifr_addr.sa_len - (int) sizeof((ifr)->ifr_addr))))
++#endif
+ 
+-		memcpy(&localIP[numIP].addr, addr, addrlen);
+-		memcpy(&localIP[numIP].netmask, netmask, addrlen);
+-		
+-		numIP++;
++void NET_GetLocalAddress( void ) {
++	struct ifreq requestBuffer[MAX_IPS], *linkInterface, *inetInterface;
++	struct ifconf ifc;
++	struct ifreq ifr;
++	struct sockaddr_dl *sdl;
++	int interfaceSocket;
++	int family;
++
++	// Set this early so we can just return if there is an error
++	numIP = 0;
++
++	ifc.ifc_len = sizeof(requestBuffer);
++	ifc.ifc_buf = (caddr_t)requestBuffer;
++
++	// Since we get at this info via an ioctl, we need a temporary little socket.
++	// This will only get AF_INET interfaces, but we probably don't care about
++	// anything else.  If we do end up caring later, we should add a
++	// ONAddressFamily and at a -interfaces method to it.
++	family = AF_INET;
++	if ((interfaceSocket = socket(family, SOCK_DGRAM, 0)) < 0) {
++		Com_Printf("NET_GetLocalAddress: Unable to create temporary socket, errno = %d\n", errno);
++		return;
+ 	}
+-}
+ 
+-#if defined(__linux__) || defined(MACOSX) || defined(__BSD__)
+-void NET_GetLocalAddress(void)
+-{
+-	struct ifaddrs *ifap, *search;
++	if (ioctl(interfaceSocket, SIOCGIFCONF, &ifc) != 0) {
++		Com_Printf("NET_GetLocalAddress: Unable to get list of network interfaces, errno = %d\n", errno);
++		return;
++	}
+ 
+-	if(getifaddrs(&ifap))
+-		Com_Printf("NET_GetLocalAddress: Unable to get list of network interfaces: %s\n", NET_ErrorString());
+-	else
+-	{
+-		for(search = ifap; search; search = search->ifa_next)
+-		{
+-			// Only add interfaces that are up.
+-			if(ifap->ifa_flags & IFF_UP)
+-				NET_AddLocalAddress(search->ifa_name, search->ifa_addr, search->ifa_netmask);
++	linkInterface = (struct ifreq *) ifc.ifc_buf;
++	while ((char *) linkInterface < &ifc.ifc_buf[ifc.ifc_len]) {
++		unsigned int nameLength;
++
++		// The ioctl returns both the entries having the address (AF_INET)
++		// and the link layer entries (AF_LINK).  The AF_LINK entry has the
++		// link layer address which contains the interface type.  This is the
++		// only way I can see to get this information.  We cannot assume that
++		// we will get bot an AF_LINK and AF_INET entry since the interface
++		// may not be configured.  For example, if you have a 10Mb port on
++		// the motherboard and a 100Mb card, you may not configure the
++		// motherboard port.
++
++		// For each AF_LINK entry...
++		if (linkInterface->ifr_addr.sa_family == AF_LINK) {
++			// if there is a matching AF_INET entry
++			inetInterface = (struct ifreq *) ifc.ifc_buf;
++			while ((char *) inetInterface < &ifc.ifc_buf[ifc.ifc_len]) {
++				if (inetInterface->ifr_addr.sa_family == AF_INET &&
++						!strncmp(inetInterface->ifr_name, linkInterface->ifr_name,
++							sizeof(linkInterface->ifr_name))) {
++
++					for (nameLength = 0; nameLength < IFNAMSIZ; nameLength++)
++						if (!linkInterface->ifr_name[nameLength])
++							break;
++
++					sdl = (struct sockaddr_dl *)&linkInterface->ifr_addr;
++					// Skip loopback interfaces
++					if (sdl->sdl_type != IFT_LOOP) {
++						// Get the local interface address
++						strncpy(ifr.ifr_name, inetInterface->ifr_name, sizeof(ifr.ifr_name));
++						if (ioctl(interfaceSocket, SIOCGIFADDR, (caddr_t)&ifr) < 0) {
++							Com_Printf("NET_GetLocalAddress: Unable to get local address "
++									"for interface '%s', errno = %d\n", inetInterface->ifr_name, errno);
++						} else {
++							struct sockaddr_in *sin;
++							int ip;
++
++							sin = (struct sockaddr_in *)&ifr.ifr_addr;
++
++							ip = ntohl(sin->sin_addr.s_addr);
++							localIP[ numIP ][0] = (ip >> 24) & 0xff;
++							localIP[ numIP ][1] = (ip >> 16) & 0xff;
++							localIP[ numIP ][2] = (ip >>  8) & 0xff;
++							localIP[ numIP ][3] = (ip >>  0) & 0xff;
++							Com_Printf( "IP: %i.%i.%i.%i (%s)\n",
++									localIP[ numIP ][0], localIP[ numIP ][1],
++									localIP[ numIP ][2], localIP[ numIP ][3],
++									inetInterface->ifr_name);
++							numIP++;
++						}
++					}
++
++					// We will assume that there is only one AF_INET entry per AF_LINK entry.
++					// What happens when we have an interface that has multiple IP addresses, or
++					// can that even happen?
++					// break;
++				}
++				inetInterface = IFR_NEXT(inetInterface);
++			}
+ 		}
+-	
+-		freeifaddrs(ifap);
+-		
+-		Sys_ShowIP();
++		linkInterface = IFR_NEXT(linkInterface);
+ 	}
++
++	close(interfaceSocket);
+ }
+ #else
+ void NET_GetLocalAddress( void ) {
+ 	char				hostname[256];
+-	struct addrinfo		hint;
+-	struct addrinfo 	*res = NULL;
+-	struct addrinfo 	*search;
+-	struct sockaddr_in mask4;
+-	struct sockaddr_in6 mask6;
++	struct hostent		*hostInfo;
++	int					error;
++	char				*p;
++	int					ip;
++	int					n;
+ 
+-	if(gethostname( hostname, 256 ) == SOCKET_ERROR)
++	if( gethostname( hostname, 256 ) == SOCKET_ERROR ) {
++		error = socketError;
+ 		return;
++	}
+ 
+-	Com_Printf( "Hostname: %s\n", hostname );
+-	
+-	memset(&hint, 0, sizeof(hint));
+-	
+-	hint.ai_family = AF_UNSPEC;
+-	hint.ai_socktype = SOCK_DGRAM;
+-	
+-	if(getaddrinfo(hostname, NULL, &hint, &res))
+- 		return;
++	hostInfo = gethostbyname( hostname );
++	if( !hostInfo ) {
++		error = socketError;
++		return;
++	}
+ 
+-	/* On operating systems where it's more difficult to find out the configured interfaces, we'll just assume a
+-	 * netmask with all bits set. */
+-	
+-	memset(&mask4, 0, sizeof(mask4));
+-	memset(&mask6, 0, sizeof(mask6));
+-	mask4.sin_family = AF_INET;
+-	memset(&mask4.sin_addr.s_addr, 0xFF, sizeof(mask4.sin_addr.s_addr));
+-	mask6.sin6_family = AF_INET6;
+-	memset(&mask6.sin6_addr, 0xFF, sizeof(mask6.sin6_addr));
++	Com_Printf( "Hostname: %s\n", hostInfo->h_name );
++	n = 0;
++	while( ( p = hostInfo->h_aliases[n++] ) != NULL ) {
++		Com_Printf( "Alias: %s\n", p );
++	}
+ 
+-	// add all IPs from returned list.
+-	for(search = res; search; search = search->ai_next)
+-	{
+-		if(search->ai_family == AF_INET)
+-			NET_AddLocalAddress("", search->ai_addr, (struct sockaddr *) &mask4);
+-		else if(search->ai_family == AF_INET6)
+-			NET_AddLocalAddress("", search->ai_addr, (struct sockaddr *) &mask6);
++	if ( hostInfo->h_addrtype != AF_INET ) {
++		return;
+ 	}
+-	
+-	Sys_ShowIP();
++
++	numIP = 0;
++	while( ( p = hostInfo->h_addr_list[numIP] ) != NULL && numIP < MAX_IPS ) {
++		ip = ntohl( *(int *)p );
++		localIP[ numIP ][0] = p[0];
++		localIP[ numIP ][1] = p[1];
++		localIP[ numIP ][2] = p[2];
++		localIP[ numIP ][3] = p[3];
++		Com_Printf( "IP: %i.%i.%i.%i\n", ( ip >> 24 ) & 0xff, ( ip >> 16 ) & 0xff, ( ip >> 8 ) & 0xff, ip & 0xff );
++		numIP++;
++	}
+ }
+ #endif
+ 
+@@ -1311,67 +840,28 @@
+ ====================
+ */
+ void NET_OpenIP( void ) {
+-	int		i;
+-	int		err;
++	cvar_t	*ip;
+ 	int		port;
+-	int		port6;
++	int		i;
+ 
+-	net_ip = Cvar_Get( "net_ip", "0.0.0.0", CVAR_LATCH );
+-	net_ip6 = Cvar_Get( "net_ip6", "::", CVAR_LATCH );
+-	net_port = Cvar_Get( "net_port", va( "%i", PORT_SERVER ), CVAR_LATCH );
+-	net_port6 = Cvar_Get( "net_port6", va( "%i", PORT_SERVER ), CVAR_LATCH );
+-	
+-	port = net_port->integer;
+-	port6 = net_port6->integer;
++	ip = Cvar_Get( "net_ip", "localhost", CVAR_LATCH );
++	port = Cvar_Get( "net_port", va( "%i", PORT_SERVER ), CVAR_LATCH )->integer;
+ 
+-	NET_GetLocalAddress();
+-
+ 	// automatically scan for a valid port, so multiple
+ 	// dedicated servers can be started without requiring
+ 	// a different net_port for each one
+-
+-	if(net_enabled->integer & NET_ENABLEV6)
+-	{
+-		for( i = 0 ; i < 10 ; i++ )
+-		{
+-			ip6_socket = NET_IP6Socket(net_ip6->string, port6 + i, &boundto, &err);
+-			if (ip6_socket != INVALID_SOCKET)
+-			{
+-				Cvar_SetValue( "net_port6", port6 + i );
+-				break;
++	for( i = 0 ; i < 10 ; i++ ) {
++		ip_socket = NET_IPSocket( ip->string, port + i );
++		if ( ip_socket ) {
++			Cvar_SetValue( "net_port", port + i );
++			if ( net_socksEnabled->integer ) {
++				NET_OpenSocks( port + i );
+ 			}
+-			else
+-			{
+-				if(err == EAFNOSUPPORT)
+-					break;
+-			}
++			NET_GetLocalAddress();
++			return;
+ 		}
+-		if(ip6_socket == INVALID_SOCKET)
+-			Com_Printf( "WARNING: Couldn't bind to a v6 ip address.\n");
+ 	}
+-
+-	if(net_enabled->integer & NET_ENABLEV4)
+-	{
+-		for( i = 0 ; i < 10 ; i++ ) {
+-			ip_socket = NET_IPSocket( net_ip->string, port + i, &err );
+-			if (ip_socket != INVALID_SOCKET) {
+-				Cvar_SetValue( "net_port", port + i );
+-
+-				if (net_socksEnabled->integer)
+-					NET_OpenSocks( port + i );
+-
+-				break;
+-			}
+-			else
+-			{
+-				if(err == EAFNOSUPPORT)
+-					break;
+-			}
+-		}
+-		
+-		if(ip_socket == INVALID_SOCKET)
+-			Com_Printf( "WARNING: Couldn't bind to a v4 ip address.\n");
+-	}
++	Com_Printf( "WARNING: Couldn't allocate IP port\n");
+ }
+ 
+ 
+@@ -1388,30 +878,12 @@
+ 
+ 	modified = qfalse;
+ 
+-	if( net_enabled && net_enabled->modified ) {
++	if( net_noudp && net_noudp->modified ) {
+ 		modified = qtrue;
+ 	}
+-	
+-#ifdef DEDICATED
+-	// I want server owners to explicitly turn on ipv6 support.
+-	net_enabled = Cvar_Get( "net_enabled", "1", CVAR_LATCH | CVAR_ARCHIVE );
+-#else
+-	/* End users have it enabled so they can connect to ipv6-only hosts, but ipv4 will be
+-	 * used if available due to ping */
+-	net_enabled = Cvar_Get( "net_enabled", "3", CVAR_LATCH | CVAR_ARCHIVE );
+-#endif
++	net_noudp = Cvar_Get( "net_noudp", "0", CVAR_LATCH | CVAR_ARCHIVE );
+ 
+-	// Some cvars for configuring multicast options which facilitates scanning for servers on local subnets.
+-	if( net_mcast6addr && net_mcast6addr->modified ) {
+-		modified = qtrue;
+-	}
+-	net_mcast6addr = Cvar_Get( "net_mcast6addr", NET_MULTICAST_IP6, CVAR_LATCH | CVAR_ARCHIVE );
+ 
+-	if( net_mcast6iface && net_mcast6iface->modified ) {
+-		modified = qtrue;
+-	}
+-	net_mcast6iface = Cvar_Get( "net_mcast6iface", "0", CVAR_LATCH | CVAR_ARCHIVE );
+-
+ 	if( net_socksEnabled && net_socksEnabled->modified ) {
+ 		modified = qtrue;
+ 	}
+@@ -1455,8 +927,8 @@
+ 	// get any latched changes to cvars
+ 	modified = NET_GetCvars();
+ 
+-	if( !net_enabled->integer ) {
+-		enableNetworking = 0;
++	if( net_noudp->integer ) {
++		enableNetworking = qfalse;
+ 	}
+ 
+ 	// if enable state is the same and no cvars were modified, we have nothing to do
+@@ -1487,37 +959,20 @@
+ 	}
+ 
+ 	if( stop ) {
+-		if ( ip_socket != INVALID_SOCKET ) {
++		if ( ip_socket && ip_socket != INVALID_SOCKET ) {
+ 			closesocket( ip_socket );
+-			ip_socket = INVALID_SOCKET;
++			ip_socket = 0;
+ 		}
+ 
+-		if(multicast6_socket)
+-		{
+-			if(multicast6_socket != ip6_socket)
+-				closesocket(multicast6_socket);
+-				
+-			multicast6_socket = INVALID_SOCKET;
+-		}
+-
+-		if ( ip6_socket != INVALID_SOCKET ) {
+-			closesocket( ip6_socket );
+-			ip6_socket = INVALID_SOCKET;
+-		}
+-
+-		if ( socks_socket != INVALID_SOCKET ) {
++		if ( socks_socket && socks_socket != INVALID_SOCKET ) {
+ 			closesocket( socks_socket );
+-			socks_socket = INVALID_SOCKET;
++			socks_socket = 0;
+ 		}
+-		
+ 	}
+ 
+-	if( start )
+-	{
+-		if (net_enabled->integer)
+-		{
++	if( start ) {
++		if (! net_noudp->integer ) {
+ 			NET_OpenIP();
+-			NET_SetMulticast6();
+ 		}
+ 	}
+ }
+@@ -1578,34 +1033,18 @@
+ void NET_Sleep( int msec ) {
+ 	struct timeval timeout;
+ 	fd_set	fdset;
+-	int highestfd = -1;
+ 
+ 	if (!com_dedicated->integer)
+ 		return; // we're not a server, just run full speed
+ 
+-	if (ip_socket == INVALID_SOCKET && ip6_socket == INVALID_SOCKET)
++	if (!ip_socket)
+ 		return;
+ 
+ 	if (msec < 0 )
+ 		return;
+ 
+ 	FD_ZERO(&fdset);
+-
+-	if(ip_socket != INVALID_SOCKET)
+-	{
+-		FD_SET(ip_socket, &fdset);
+-
+-		if(ip_socket > highestfd)
+-			highestfd = ip_socket;
+-	}
+-	if(ip6_socket != INVALID_SOCKET)
+-	{
+-		FD_SET(ip6_socket, &fdset);
+-		
+-		if(ip6_socket > highestfd)
+-			highestfd = ip6_socket;
+-	}
+-
++	FD_SET(ip_socket, &fdset);
+ 	timeout.tv_sec = msec/1000;
+ 	timeout.tv_usec = (msec%1000)*1000;
+ 	select(ip_socket+1, &fdset, NULL, NULL, &timeout);
+Index: code/qcommon/qcommon.h
+===================================================================
+--- code/qcommon/qcommon.h	(revision 1432)
++++ code/qcommon/qcommon.h	(working copy)
+@@ -136,10 +136,7 @@
+ 	NA_BAD,					// an address lookup failed
+ 	NA_LOOPBACK,
+ 	NA_BROADCAST,
+-	NA_IP,
+-	NA_IP6,
+-	NA_MULTICAST6,
+-	NA_UNSPEC
++	NA_IP
+ } netadrtype_t;
+ 
+ typedef enum {
+@@ -147,12 +144,10 @@
+ 	NS_SERVER
+ } netsrc_t;
+ 
+-#define NET_ADDRSTRMAXLEN 48	// maximum length of an IPv6 address string including trailing '\0'
+ typedef struct {
+ 	netadrtype_t	type;
+ 
+ 	byte	ip[4];
+-	byte	ip6[16];
+ 
+ 	unsigned short	port;
+ } netadr_t;
+@@ -170,8 +165,7 @@
+ qboolean	NET_CompareBaseAdr (netadr_t a, netadr_t b);
+ qboolean	NET_IsLocalAddress (netadr_t adr);
+ const char	*NET_AdrToString (netadr_t a);
+-const char      *NET_AdrToStringwPort (netadr_t a);
+-int		NET_StringToAdr ( const char *s, netadr_t *a, netadrtype_t family);
++qboolean	NET_StringToAdr ( const char *s, netadr_t *a);
+ qboolean	NET_GetLoopPacket (netsrc_t sock, netadr_t *net_from, msg_t *net_message);
+ void		NET_JoinMulticast6(void);
+ void		NET_LeaveMulticast6(void);
+@@ -231,17 +225,21 @@
+ ==============================================================
+ */
+ 
+-#define	PROTOCOL_VERSION	68
++//Open Arena up to 0.7.6 used 68
++//Open Arena 0.7.7 uses 69
++//Open Arena 0.8.0 uses 70
++//Open Arena 0.8.1+ uses 71
++#define	PROTOCOL_VERSION	71
+ // 1.31 - 67
+ 
+ // maintain a list of compatible protocols for demo playing
+ // NOTE: that stuff only works with two digits protocols
+ extern int demo_protocols[];
+ 
+-#define	UPDATE_SERVER_NAME	"update.quake3arena.com"
++#define	UPDATE_SERVER_NAME	""
+ // override on command line, config files etc.
+ #ifndef MASTER_SERVER_NAME
+-#define MASTER_SERVER_NAME	"master.quake3arena.com"
++#define MASTER_SERVER_NAME	"dpmaster.deathmask.net"
+ #endif
+ 
+ #ifndef STANDALONE
+@@ -1043,7 +1041,7 @@
+ void	Sys_SendPacket( int length, const void *data, netadr_t to );
+ qboolean Sys_GetPacket( netadr_t *net_from, msg_t *net_message );
+ 
+-qboolean	Sys_StringToAdr( const char *s, netadr_t *a, netadrtype_t family );
++qboolean	Sys_StringToAdr( const char *s, netadr_t *a);
+ //Does NOT parse port numbers, only base addresses.
+ 
+ qboolean	Sys_IsLANAddress (netadr_t adr);
+Index: code/qcommon/common.c
+===================================================================
+--- code/qcommon/common.c	(revision 1432)
++++ code/qcommon/common.c	(working copy)
+@@ -32,13 +32,13 @@
+ #endif
+ 
+ int demo_protocols[] =
+-{ 66, 67, 68, 0 };
++{ 66, 67, 68, 69, 70, 71, 0 };
+ 
+ #define MAX_NUM_ARGVS	50
+ 
+ #define MIN_DEDICATED_COMHUNKMEGS 1
+ #define MIN_COMHUNKMEGS		56
+-#define DEF_COMHUNKMEGS		64
++#define DEF_COMHUNKMEGS		128
+ #define DEF_COMZONEMEGS		24
+ #define XSTRING(x)				STRING(x)
+ #define STRING(x)					#x
+Index: code/client/snd_codec.c
+===================================================================
+--- code/client/snd_codec.c	(revision 1432)
++++ code/client/snd_codec.c	(working copy)
+@@ -131,6 +131,69 @@
+ 	codecs = codec;
+ }
+ 
++
++// STOLEN FROM IOSTVOY by thilo!!!!  HA HA HA but it works :(
++qboolean S_TheCheckExtension(char *filename)
++{
++	fileHandle_t hnd;
++	char fn[MAX_QPATH];
++	int stringlen = strlen(filename);
++	char *extptr;
++	
++	strncpy(fn, filename, stringlen+1);
++	extptr = strrchr(fn, '.');
++
++	if(!extptr)
++	{
++		extptr = &fn[stringlen];
++		
++		extptr[0] = '.';
++		extptr[1] = 'w';
++		extptr[2] = 'a';
++		extptr[3] = 'v';
++		extptr[4] = '\0';
++		
++		stringlen += 4;
++	}
++	
++	FS_FOpenFileRead(fn, &hnd, qtrue);
++
++	if(!hnd)
++	{
++		if(!strcmp(++extptr, "wav"))
++		{
++			extptr[0] = 'o';
++			extptr[1] = 'g';
++			extptr[2] = 'g';
++
++			FS_FOpenFileRead(fn, &hnd, qtrue);
++			
++			if(!hnd)
++				return qfalse;
++		}
++		else
++			return qfalse;
++	}
++	
++	FS_FCloseFile(hnd);
++	strcpy(filename, fn);
++
++	return qtrue;
++}
++
++qboolean S_TheGetFileName(char *filename)
++{
++	char fn[MAX_QPATH];
++//	qboolean dschoermen = qfalse;
++
++	strncpy(fn, filename, sizeof(fn) - 10);
++
++	if(S_TheCheckExtension(filename))
++		return qtrue;
++	
++	return qfalse;
++}
++
+ /*
+ =================
+ S_CodecLoad
+@@ -141,16 +204,23 @@
+ 	snd_codec_t *codec;
+ 	char fn[MAX_QPATH];
+ 
+-	codec = S_FindCodecForFile(filename);
++	// GO LOAD IT
++	strncpy(fn, filename, sizeof(fn));
++	if(!S_TheGetFileName(fn))
++		return NULL;
++        codec = S_FindCodecForFile(fn);
++	// codec = S_FindCodecForFile(filename);
+ 	if(!codec)
+ 	{
+ 		Com_Printf("Unknown extension for %s\n", filename);
+ 		return NULL;
+ 	}
+ 
+-	strncpy(fn, filename, sizeof(fn));
+-	COM_DefaultExtension(fn, sizeof(fn), codec->ext);
++//	strncpy(fn, filename, sizeof(fn));
++//	COM_DefaultExtension(fn, sizeof(fn), codec->ext);
+ 
++
++
+ 	return codec->load(fn, info);
+ }
+ 
+Index: code/client/client.h
+===================================================================
+--- code/client/client.h	(revision 1432)
++++ code/client/client.h	(working copy)
+@@ -295,7 +295,9 @@
+ 	int			maxPing;
+ 	int			ping;
+ 	qboolean	visible;
+-	int			punkbuster;
++	int		g_humanplayers;
++	int		g_needpass;
++	//int			punkbuster;
+ } serverInfo_t;
+ 
+ typedef struct {
+Index: code/client/cl_main.c
+===================================================================
+--- code/client/cl_main.c	(revision 1432)
++++ code/client/cl_main.c	(working copy)
+@@ -1081,7 +1081,7 @@
+ 		Key_SetCatcher( 0 );
+ 		SCR_UpdateScreen();
+ 		clc.connectTime = -RETRANSMIT_TIMEOUT;
+-		NET_StringToAdr( cls.servername, &clc.serverAddress, NA_UNSPEC);
++		NET_StringToAdr( cls.servername, &clc.serverAddress);
+ 		// we don't need a challenge on the localhost
+ 
+ 		CL_CheckForResend();
+@@ -1277,7 +1277,7 @@
+ 		return;
+ 	}
+ 	Com_Printf( "Resolving %s\n", UPDATE_SERVER_NAME );
+-	if ( !NET_StringToAdr( UPDATE_SERVER_NAME, &cls.updateServer, NA_IP ) ) {
++	if ( !NET_StringToAdr( UPDATE_SERVER_NAME, &cls.updateServer) ) {
+ 		Com_Printf( "Couldn't resolve address\n" );
+ 		return;
+ 	}
+@@ -1348,7 +1348,7 @@
+ 
+ 	if ( !cls.authorizeServer.port ) {
+ 		Com_Printf( "Resolving %s\n", AUTHORIZE_SERVER_NAME );
+-		if ( !NET_StringToAdr( AUTHORIZE_SERVER_NAME, &cls.authorizeServer, NA_IP ) ) {
++		if ( !NET_StringToAdr( AUTHORIZE_SERVER_NAME, &cls.authorizeServer) ) {
+ 			Com_Printf( "Couldn't resolve address\n" );
+ 			return;
+ 		}
+@@ -1484,10 +1484,9 @@
+ 	char	*server;
+ 	const char	*serverString;
+ 	int argc = Cmd_Argc();
+-	netadrtype_t family = NA_UNSPEC;
+ 
+ 	if ( argc != 2 && argc != 3 ) {
+-		Com_Printf( "usage: connect [-4|-6] server\n");
++		Com_Printf( "usage: connect [-4] server\n");
+ 		return;	
+ 	}
+ 	
+@@ -1495,13 +1494,6 @@
+ 		server = Cmd_Argv(1);
+ 	else
+ 	{
+-		if(!strcmp(Cmd_Argv(1), "-4"))
+-			family = NA_IP;
+-		else if(!strcmp(Cmd_Argv(1), "-6"))
+-			family = NA_IP6;
+-		else
+-			Com_Printf( "warning: only -4 or -6 as address type understood.\n");
+-		
+ 		server = Cmd_Argv(2);
+ 	}
+ 
+@@ -1527,7 +1519,7 @@
+ 
+ 	Q_strncpyz( cls.servername, server, sizeof(cls.servername) );
+ 
+-	if (!NET_StringToAdr(cls.servername, &clc.serverAddress, family) ) {
++	if (!NET_StringToAdr(cls.servername, &clc.serverAddress) ) {
+ 		Com_Printf ("Bad server address\n");
+ 		cls.state = CA_DISCONNECTED;
+ 		return;
+@@ -1536,7 +1528,7 @@
+ 		clc.serverAddress.port = BigShort( PORT_SERVER );
+ 	}
+ 
+-	serverString = NET_AdrToStringwPort(clc.serverAddress);
++	serverString = NET_AdrToString(clc.serverAddress);
+ 
+ 	Com_Printf( "%s resolved to %s\n", cls.servername, serverString);
+ 
+@@ -1605,7 +1597,7 @@
+ 
+ 			return;
+ 		}
+-		NET_StringToAdr (rconAddress->string, &to, NA_UNSPEC);
++		NET_StringToAdr (rconAddress->string, &to);
+ 		if (to.port == 0) {
+ 			to.port = BigShort (PORT_SERVER);
+ 		}
+@@ -2215,15 +2207,7 @@
+ 		}
+ 		else
+ 		{
+-			buffptr++;
+-
+-			if (buffend - buffptr < sizeof(addresses[numservers].ip6) + sizeof(addresses[numservers].port) + 1)
+ 				break;
+-			
+-			for(i = 0; i < sizeof(addresses[numservers].ip6); i++)
+-				addresses[numservers].ip6[i] = *buffptr++;
+-			
+-			addresses[numservers].type = NA_IP6;
+ 		}
+ 			
+ 		// parse out port
+@@ -2288,7 +2272,7 @@
+ 
+ 	c = Cmd_Argv(0);
+ 
+-	Com_DPrintf ("CL packet %s: %s\n", NET_AdrToStringwPort(from), c);
++	Com_DPrintf ("CL packet %s: %s\n", NET_AdrToString(from), c);
+ 
+ 	// challenge from the server we are connecting to
+ 	if ( !Q_stricmp(c, "challengeResponse") ) {
+@@ -2321,8 +2305,8 @@
+ 		}
+ 		if ( !NET_CompareBaseAdr( from, clc.serverAddress ) ) {
+ 			Com_Printf( "connectResponse from a different address.  Ignored.\n" );
+-			Com_Printf( "%s should have been %s\n", NET_AdrToStringwPort( from ), 
+-				NET_AdrToStringwPort( clc.serverAddress ) );
++			Com_Printf( "%s should have been %s\n", NET_AdrToString( from ), 
++				NET_AdrToString( clc.serverAddress ) );
+ 			return;
+ 		}
+ 		Netchan_Setup (NS_CLIENT, &clc.netchan, from, Cvar_VariableValue( "net_qport" ) );
+@@ -2408,7 +2392,7 @@
+ 	}
+ 
+ 	if ( msg->cursize < 4 ) {
+-		Com_Printf ("%s: Runt packet\n", NET_AdrToStringwPort( from ));
++		Com_Printf ("%s: Runt packet\n", NET_AdrToString( from ));
+ 		return;
+ 	}
+ 
+@@ -2417,7 +2401,7 @@
+ 	//
+ 	if ( !NET_CompareAdr( from, clc.netchan.remoteAddress ) ) {
+ 		Com_DPrintf ("%s:sequenced packet without connection\n"
+-			, NET_AdrToStringwPort( from ) );
++			, NET_AdrToString( from ) );
+ 		// FIXME: send a client disconnect?
+ 		return;
+ 	}
+@@ -3238,7 +3222,9 @@
+ 			server->netType = atoi(Info_ValueForKey(info, "nettype"));
+ 			server->minPing = atoi(Info_ValueForKey(info, "minping"));
+ 			server->maxPing = atoi(Info_ValueForKey(info, "maxping"));
+-			server->punkbuster = atoi(Info_ValueForKey(info, "punkbuster"));
++			server->g_humanplayers = atoi(Info_ValueForKey(info, "g_humanplayers"));
++			server->g_needpass = atoi(Info_ValueForKey(info, "g_needpass"));
++			//server->punkbuster = atoi(Info_ValueForKey(info, "punkbuster"));
+ 		}
+ 		server->ping = ping;
+ 	}
+@@ -3307,9 +3293,6 @@
+ 				case NA_IP:
+ 					type = 1;
+ 					break;
+-				case NA_IP6:
+-					type = 2;
+-					break;
+ 				default:
+ 					type = 0;
+ 					break;
+@@ -3356,14 +3339,14 @@
+ 	cls.localServers[i].game[0] = '\0';
+ 	cls.localServers[i].gameType = 0;
+ 	cls.localServers[i].netType = from.type;
+-	cls.localServers[i].punkbuster = 0;
++	//cls.localServers[i].punkbuster = 0;
+ 									 
+ 	Q_strncpyz( info, MSG_ReadString( msg ), MAX_INFO_STRING );
+ 	if (strlen(info)) {
+ 		if (info[strlen(info)-1] != '\n') {
+ 			strncat(info, "\n", sizeof(info) - 1);
+ 		}
+-		Com_Printf( "%s: %s", NET_AdrToStringwPort( from ), info );
++		Com_Printf( "%s: %s", NET_AdrToString( from ), info );
+ 	}
+ }
+ 
+@@ -3421,7 +3404,7 @@
+ 		return qfalse;
+ 	}
+ 	// get the address
+-	if ( !NET_StringToAdr( serverAddress, &to, NA_UNSPEC) ) {
++	if ( !NET_StringToAdr( serverAddress, &to) ) {
+ 		return qfalse;
+ 	}
+ 	serverStatus = CL_GetServerStatus( to );
+@@ -3596,8 +3579,6 @@
+ 
+ 			to.type = NA_BROADCAST;
+ 			NET_SendPacket( NS_CLIENT, strlen( message ), message, to );
+-			to.type = NA_MULTICAST6;
+-			NET_SendPacket( NS_CLIENT, strlen( message ), message, to );
+ 		}
+ 	}
+ }
+@@ -3630,14 +3611,14 @@
+ 	// reset the list, waiting for response
+ 	// -1 is used to distinguish a "no response"
+ 
+-	i = NET_StringToAdr(masteraddress, &to, NA_UNSPEC);
++	i = NET_StringToAdr(masteraddress, &to);
+ 	
+ 	if(!i)
+ 	{
+ 		Com_Printf( "CL_GlobalServers_f: Error: could not resolve address of master %s\n", masteraddress);
+ 		return;	
+ 	}
+-	else if(i == 2)
++		to.type = NA_IP;
+ 		to.port = BigShort(PORT_MASTER);
+ 
+ 	Com_Printf("Requesting servers from master %s...\n", masteraddress);
+@@ -3676,7 +3657,7 @@
+ 		return;
+ 	}
+ 
+-	str = NET_AdrToStringwPort( cl_pinglist[n].adr );
++	str = NET_AdrToString( cl_pinglist[n].adr );
+ 	Q_strncpyz( buf, str, buflen );
+ 
+ 	time = cl_pinglist[n].time;
+@@ -3836,12 +3817,11 @@
+ 	ping_t*		pingptr;
+ 	char*		server;
+ 	int			argc;
+-	netadrtype_t	family = NA_UNSPEC;
+ 
+ 	argc = Cmd_Argc();
+ 
+ 	if ( argc != 2 && argc != 3 ) {
+-		Com_Printf( "usage: ping [-4|-6] server\n");
++		Com_Printf( "usage: ping [-4] server\n");
+ 		return;	
+ 	}
+ 	
+@@ -3849,19 +3829,12 @@
+ 		server = Cmd_Argv(1);
+ 	else
+ 	{
+-		if(!strcmp(Cmd_Argv(1), "-4"))
+-			family = NA_IP;
+-		else if(!strcmp(Cmd_Argv(1), "-6"))
+-			family = NA_IP6;
+-		else
+-			Com_Printf( "warning: only -4 or -6 as address type understood.\n");
+-		
+ 		server = Cmd_Argv(2);
+ 	}
+ 
+ 	Com_Memset( &to, 0, sizeof(netadr_t) );
+ 
+-	if ( !NET_StringToAdr( server, &to, family ) ) {
++	if ( !NET_StringToAdr( server, &to) ) {
+ 		return;
+ 	}
+ 
+@@ -3991,7 +3964,6 @@
+ 	char		*server;
+ 	serverStatus_t *serverStatus;
+ 	int			argc;
+-	netadrtype_t	family = NA_UNSPEC;
+ 
+ 	argc = Cmd_Argc();
+ 
+@@ -4000,7 +3972,7 @@
+ 		if (cls.state != CA_ACTIVE || clc.demoplaying)
+ 		{
+ 			Com_Printf ("Not connected to a server.\n");
+-			Com_Printf( "usage: serverstatus [-4|-6] server\n");
++			Com_Printf( "usage: serverstatus [-4] server\n");
+ 			return;
+ 		}
+ 
+@@ -4015,18 +3987,11 @@
+ 			server = Cmd_Argv(1);
+ 		else
+ 		{
+-			if(!strcmp(Cmd_Argv(1), "-4"))
+-				family = NA_IP;
+-			else if(!strcmp(Cmd_Argv(1), "-6"))
+-				family = NA_IP6;
+-			else
+-				Com_Printf( "warning: only -4 or -6 as address type understood.\n");
+-		
+ 			server = Cmd_Argv(2);
+ 		}
+ 
+ 		toptr = &to;
+-		if ( !NET_StringToAdr( server, toptr, family ) )
++		if ( !NET_StringToAdr( server, toptr) )
+ 			return;
+ 	}
+ 
+@@ -4054,61 +4019,7 @@
+ =================
+ */
+ qboolean CL_CDKeyValidate( const char *key, const char *checksum ) {
+-	char	ch;
+-	byte	sum;
+-	char	chs[3];
+-	int i, len;
+ 
+-	len = strlen(key);
+-	if( len != CDKEY_LEN ) {
+-		return qfalse;
+-	}
+-
+-	if( checksum && strlen( checksum ) != CDCHKSUM_LEN ) {
+-		return qfalse;
+-	}
+-
+-	sum = 0;
+-	// for loop gets rid of conditional assignment warning
+-	for (i = 0; i < len; i++) {
+-		ch = *key++;
+-		if (ch>='a' && ch<='z') {
+-			ch -= 32;
+-		}
+-		switch( ch ) {
+-		case '2':
+-		case '3':
+-		case '7':
+-		case 'A':
+-		case 'B':
+-		case 'C':
+-		case 'D':
+-		case 'G':
+-		case 'H':
+-		case 'J':
+-		case 'L':
+-		case 'P':
+-		case 'R':
+-		case 'S':
+-		case 'T':
+-		case 'W':
+-			sum += ch;
+-			continue;
+-		default:
+-			return qfalse;
+-		}
+-	}
+-
+-	sprintf(chs, "%02x", sum);
+-	
+-	if (checksum && !Q_stricmp(chs, checksum)) {
+-		return qtrue;
+-	}
+-
+-	if (!checksum) {
+-		return qtrue;
+-	}
+-
+-	return qfalse;
++	return qtrue;
+ }
+ #endif
+Index: code/client/snd_dma.c
+===================================================================
+--- code/client/snd_dma.c	(revision 1432)
++++ code/client/snd_dma.c	(working copy)
+@@ -400,7 +400,7 @@
+ 		Com_Memset( s_knownSfx, 0, sizeof( s_knownSfx ) );
+ 		Com_Memset(sfxHash, 0, sizeof(sfx_t *)*LOOP_HASH);
+ 
+-		S_Base_RegisterSound("sound/feedback/hit.wav", qfalse);		// changed to a sound in baseq3
++		S_Base_RegisterSound("sound/misc/silence.wav", qfalse);		// changed to a sound in baseoa
+ 	}
+ }
+ 
+Index: code/client/snd_openal.c
+===================================================================
+--- code/client/snd_openal.c	(revision 1432)
++++ code/client/snd_openal.c	(working copy)
+@@ -384,7 +384,7 @@
+ 	numSfx = 0;
+ 
+ 	// Load the default sound, and lock it
+-	default_sfx = S_AL_BufferFind("sound/feedback/hit.wav");
++	default_sfx = S_AL_BufferFind("sound/misc/silence.wav");
+ 	S_AL_BufferUse(default_sfx);
+ 	knownSfx[default_sfx].isLocked = qtrue;
+ 
+Index: code/client/cl_ui.c
+===================================================================
+--- code/client/cl_ui.c	(revision 1432)
++++ code/client/cl_ui.c	(working copy)
+@@ -146,7 +146,7 @@
+ 			break;
+ 	}
+ 	if (servers && *count < max) {
+-		NET_StringToAdr( address, &adr, NA_IP );
++		NET_StringToAdr( address, &adr);
+ 		for ( i = 0; i < *count; i++ ) {
+ 			if (NET_CompareAdr(servers[i].adr, adr)) {
+ 				break;
+@@ -190,7 +190,7 @@
+ 	}
+ 	if (servers) {
+ 		netadr_t comp;
+-		NET_StringToAdr( addr, &comp, NA_IP );
++		NET_StringToAdr( addr, &comp);
+ 		for (i = 0; i < *count; i++) {
+ 			if (NET_CompareAdr( comp, servers[i].adr)) {
+ 				int j = i;
+@@ -236,20 +236,20 @@
+ 	switch (source) {
+ 		case AS_LOCAL :
+ 			if (n >= 0 && n < MAX_OTHER_SERVERS) {
+-				Q_strncpyz(buf, NET_AdrToStringwPort( cls.localServers[n].adr) , buflen );
++				Q_strncpyz(buf, NET_AdrToString( cls.localServers[n].adr) , buflen );
+ 				return;
+ 			}
+ 			break;
+ 		case AS_MPLAYER:
+ 		case AS_GLOBAL :
+ 			if (n >= 0 && n < MAX_GLOBAL_SERVERS) {
+-				Q_strncpyz(buf, NET_AdrToStringwPort( cls.globalServers[n].adr) , buflen );
++				Q_strncpyz(buf, NET_AdrToString( cls.globalServers[n].adr) , buflen );
+ 				return;
+ 			}
+ 			break;
+ 		case AS_FAVORITES :
+ 			if (n >= 0 && n < MAX_OTHER_SERVERS) {
+-				Q_strncpyz(buf, NET_AdrToStringwPort( cls.favoriteServers[n].adr) , buflen );
++				Q_strncpyz(buf, NET_AdrToString( cls.favoriteServers[n].adr) , buflen );
+ 				return;
+ 			}
+ 			break;
+@@ -297,7 +297,9 @@
+ 		Info_SetValueForKey( info, "gametype", va("%i",server->gameType));
+ 		Info_SetValueForKey( info, "nettype", va("%i",server->netType));
+ 		Info_SetValueForKey( info, "addr", NET_AdrToString(server->adr));
+-		Info_SetValueForKey( info, "punkbuster", va("%i", server->punkbuster));
++		//Info_SetValueForKey( info, "punkbuster", va("%i", server->punkbuster));
++		Info_SetValueForKey( info, "g_needpass", va("%i",server->g_needpass));
++		Info_SetValueForKey( info, "g_humanplayers", va("%i",server->g_humanplayers));
+ 		Q_strncpyz(buf, info, buflen);
+ 	} else {
+ 		if (buf) {
+@@ -973,6 +975,12 @@
+ 	case UI_SET_CDKEY:
+ 		CLUI_SetCDKey( VMA(1) );
+ 		return 0;
++#else
++	case UI_GET_CDKEY:
++		return 0;
++
++	case UI_SET_CDKEY:
++		return 0;
+ #endif
+ 	
+ 	case UI_SET_PBCLSTATUS:
+@@ -1058,6 +1066,9 @@
+ #ifndef STANDALONE
+ 	case UI_VERIFY_CDKEY:
+ 		return CL_CDKeyValidate(VMA(1), VMA(2));
++#else
++	case UI_VERIFY_CDKEY:
++		return 1;
+ #endif
+ 
+ 		
+Index: code/sys/sys_win32.c
+===================================================================
+--- code/sys/sys_win32.c	(revision 1432)
++++ code/sys/sys_win32.c	(working copy)
+@@ -75,7 +75,7 @@
+ 			return NULL;
+ 		}
+ 		Q_strncpyz( homePath, szPath, sizeof( homePath ) );
+-		Q_strcat( homePath, sizeof( homePath ), "\\Quake3" );
++		Q_strcat( homePath, sizeof( homePath ), "\\OpenArena" );
+ 		FreeLibrary(shfolder);
+ 		if( !CreateDirectory( homePath, NULL ) )
+ 		{
+Index: code/sys/sys_unix.c
+===================================================================
+--- code/sys/sys_unix.c	(revision 1432)
++++ code/sys/sys_unix.c	(working copy)
+@@ -53,9 +53,9 @@
+ 		{
+ 			Q_strncpyz( homePath, p, sizeof( homePath ) );
+ #ifdef MACOS_X
+-			Q_strcat( homePath, sizeof( homePath ), "/Library/Application Support/Quake3" );
++			Q_strcat( homePath, sizeof( homePath ), "/Library/Application Support/OpenArena" );
+ #else
+-			Q_strcat( homePath, sizeof( homePath ), "/.q3a" );
++			Q_strcat( homePath, sizeof( homePath ), "/.openarena" );
+ #endif
+ 			if( mkdir( homePath, 0777 ) )
+ 			{
+Index: Makefile
+===================================================================
+--- Makefile	(revision 1432)
++++ Makefile	(working copy)
+@@ -98,7 +98,7 @@
+ endif
+ 
+ ifndef USE_OPENAL
+-USE_OPENAL=1
++USE_OPENAL=0
+ endif
+ 
+ ifndef USE_OPENAL_DLOPEN
+@@ -257,14 +257,14 @@
+   ifeq ($(ARCH),x86_64)
+     OPTIMIZE = -O3 -fomit-frame-pointer -ffast-math -funroll-loops \
+       -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -fstrength-reduce
++      -fstrength-reduce -fstack-protector -D_FORTIFY_SOURCE=2
+     # experimental x86_64 jit compiler! you need GNU as
+     HAVE_VM_COMPILED = true
+   else
+   ifeq ($(ARCH),i386)
+-    OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math \
++    OPTIMIZE = -O3 -mtune=generic -fomit-frame-pointer -ffast-math \
+       -funroll-loops -falign-loops=2 -falign-jumps=2 \
+-      -falign-functions=2 -fstrength-reduce
++      -falign-functions=2 -fstrength-reduce -fstack-protector -D_FORTIFY_SOURCE=2
+     HAVE_VM_COMPILED=true
+   else
+   ifeq ($(ARCH),ppc)
+@@ -424,7 +424,7 @@
+     -DUSE_ICON
+ 
+   # Require Windows XP or later
+-  BASE_CFLAGS += -DWINVER=0x501
++  #BASE_CFLAGS += -DWINVER=0x501
+ 
+   ifeq ($(USE_OPENAL),1)
+     BASE_CFLAGS += -DUSE_OPENAL
+@@ -469,7 +469,12 @@
+   endif
+ 
+   ifeq ($(USE_CODEC_VORBIS),1)
+-    CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
++#Sago: Here I get vorbis to compile in Windows:
++    ifeq ($(PLATFORM),mingw32)
++      CLIENT_LDFLAGS += $(LIBSDIR)/win32/libvorbisfile.a $(LIBSDIR)/win32/libvorbis.a $(LIBSDIR)/win32/libogg.a
++    else
++      CLIENT_LDFLAGS += -lvorbisfile -lvorbis -logg
++    endif
+   endif
+ 
+   ifeq ($(ARCH),x86)
+@@ -770,21 +775,21 @@
+ TARGETS =
+ 
+ ifneq ($(BUILD_SERVER),0)
+-  TARGETS += $(B)/ioq3ded.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/oa_ded.$(ARCH)$(BINEXT)
+ endif
+ 
+ ifneq ($(BUILD_CLIENT),0)
+-  TARGETS += $(B)/ioquake3.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/openarena.$(ARCH)$(BINEXT)
+   ifneq ($(BUILD_CLIENT_SMP),0)
+-    TARGETS += $(B)/ioquake3-smp.$(ARCH)$(BINEXT)
++    TARGETS += $(B)/openarena-smp.$(ARCH)$(BINEXT)
+   endif
+ endif
+ 
+ ifneq ($(BUILD_GAME_SO),0)
+   TARGETS += \
+-    $(B)/baseq3/cgame$(ARCH).$(SHLIBEXT) \
+-    $(B)/baseq3/qagame$(ARCH).$(SHLIBEXT) \
+-    $(B)/baseq3/ui$(ARCH).$(SHLIBEXT)     \
++    $(B)/baseoa/cgame$(ARCH).$(SHLIBEXT) \
++    $(B)/baseoa/qagame$(ARCH).$(SHLIBEXT) \
++    $(B)/baseoa/ui$(ARCH).$(SHLIBEXT)     \
+     $(B)/missionpack/cgame$(ARCH).$(SHLIBEXT) \
+     $(B)/missionpack/qagame$(ARCH).$(SHLIBEXT) \
+     $(B)/missionpack/ui$(ARCH).$(SHLIBEXT)
+@@ -793,9 +798,9 @@
+ ifneq ($(BUILD_GAME_QVM),0)
+   ifneq ($(CROSS_COMPILING),1)
+     TARGETS += \
+-      $(B)/baseq3/vm/cgame.qvm \
+-      $(B)/baseq3/vm/qagame.qvm \
+-      $(B)/baseq3/vm/ui.qvm \
++      $(B)/baseoa/vm/cgame.qvm \
++      $(B)/baseoa/vm/qagame.qvm \
++      $(B)/baseoa/vm/ui.qvm \
+       $(B)/missionpack/vm/qagame.qvm \
+       $(B)/missionpack/vm/cgame.qvm \
+       $(B)/missionpack/vm/ui.qvm
+@@ -945,7 +950,7 @@
+ # an informational message, then start building
+ targets: makedirs
+ 	@echo ""
+-	@echo "Building ioquake3 in $(B):"
++	@echo "Building openarena in $(B):"
+ 	@echo "  PLATFORM: $(PLATFORM)"
+ 	@echo "  ARCH: $(ARCH)"
+ 	@echo "  VERSION: $(VERSION)"
+@@ -981,12 +986,12 @@
+ 	@if [ ! -d $(B)/client ];then $(MKDIR) $(B)/client;fi
+ 	@if [ ! -d $(B)/clientsmp ];then $(MKDIR) $(B)/clientsmp;fi
+ 	@if [ ! -d $(B)/ded ];then $(MKDIR) $(B)/ded;fi
+-	@if [ ! -d $(B)/baseq3 ];then $(MKDIR) $(B)/baseq3;fi
+-	@if [ ! -d $(B)/baseq3/cgame ];then $(MKDIR) $(B)/baseq3/cgame;fi
+-	@if [ ! -d $(B)/baseq3/game ];then $(MKDIR) $(B)/baseq3/game;fi
+-	@if [ ! -d $(B)/baseq3/ui ];then $(MKDIR) $(B)/baseq3/ui;fi
+-	@if [ ! -d $(B)/baseq3/qcommon ];then $(MKDIR) $(B)/baseq3/qcommon;fi
+-	@if [ ! -d $(B)/baseq3/vm ];then $(MKDIR) $(B)/baseq3/vm;fi
++	@if [ ! -d $(B)/baseoa ];then $(MKDIR) $(B)/baseoa;fi
++	@if [ ! -d $(B)/baseoa/cgame ];then $(MKDIR) $(B)/baseoa/cgame;fi
++	@if [ ! -d $(B)/baseoa/game ];then $(MKDIR) $(B)/baseoa/game;fi
++	@if [ ! -d $(B)/baseoa/ui ];then $(MKDIR) $(B)/baseoa/ui;fi
++	@if [ ! -d $(B)/baseoa/qcommon ];then $(MKDIR) $(B)/baseoa/qcommon;fi
++	@if [ ! -d $(B)/baseoa/vm ];then $(MKDIR) $(B)/baseoa/vm;fi
+ 	@if [ ! -d $(B)/missionpack ];then $(MKDIR) $(B)/missionpack;fi
+ 	@if [ ! -d $(B)/missionpack/cgame ];then $(MKDIR) $(B)/missionpack/cgame;fi
+ 	@if [ ! -d $(B)/missionpack/game ];then $(MKDIR) $(B)/missionpack/game;fi
+@@ -1306,6 +1311,7 @@
+   \
+   $(B)/client/tr_animation.o \
+   $(B)/client/tr_backend.o \
++  $(B)/client/tr_bloom.o \
+   $(B)/client/tr_bsp.o \
+   $(B)/client/tr_cmds.o \
+   $(B)/client/tr_curve.o \
+@@ -1438,12 +1444,12 @@
+ Q3POBJ_SMP += \
+   $(B)/clientsmp/sdl_glimp.o
+ 
+-$(B)/ioquake3.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
++$(B)/openarena.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) \
+ 		$(LDFLAGS) $(LIBSDLMAIN)
+ 
+-$(B)/ioquake3-smp.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
++$(B)/openarena-smp.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
+ 		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+@@ -1570,7 +1576,7 @@
+     $(B)/ded/con_tty.o
+ endif
+ 
+-$(B)/ioq3ded.$(ARCH)$(BINEXT): $(Q3DOBJ)
++$(B)/oa_ded.$(ARCH)$(BINEXT): $(Q3DOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
+ 
+@@ -1581,40 +1587,40 @@
+ #############################################################################
+ 
+ Q3CGOBJ_ = \
+-  $(B)/baseq3/cgame/cg_main.o \
+-  $(B)/baseq3/cgame/bg_misc.o \
+-  $(B)/baseq3/cgame/bg_pmove.o \
+-  $(B)/baseq3/cgame/bg_slidemove.o \
+-  $(B)/baseq3/cgame/bg_lib.o \
+-  $(B)/baseq3/cgame/cg_consolecmds.o \
+-  $(B)/baseq3/cgame/cg_draw.o \
+-  $(B)/baseq3/cgame/cg_drawtools.o \
+-  $(B)/baseq3/cgame/cg_effects.o \
+-  $(B)/baseq3/cgame/cg_ents.o \
+-  $(B)/baseq3/cgame/cg_event.o \
+-  $(B)/baseq3/cgame/cg_info.o \
+-  $(B)/baseq3/cgame/cg_localents.o \
+-  $(B)/baseq3/cgame/cg_marks.o \
+-  $(B)/baseq3/cgame/cg_players.o \
+-  $(B)/baseq3/cgame/cg_playerstate.o \
+-  $(B)/baseq3/cgame/cg_predict.o \
+-  $(B)/baseq3/cgame/cg_scoreboard.o \
+-  $(B)/baseq3/cgame/cg_servercmds.o \
+-  $(B)/baseq3/cgame/cg_snapshot.o \
+-  $(B)/baseq3/cgame/cg_view.o \
+-  $(B)/baseq3/cgame/cg_weapons.o \
++  $(B)/baseoa/cgame/cg_main.o \
++  $(B)/baseoa/cgame/bg_misc.o \
++  $(B)/baseoa/cgame/bg_pmove.o \
++  $(B)/baseoa/cgame/bg_slidemove.o \
++  $(B)/baseoa/cgame/bg_lib.o \
++  $(B)/baseoa/cgame/cg_consolecmds.o \
++  $(B)/baseoa/cgame/cg_draw.o \
++  $(B)/baseoa/cgame/cg_drawtools.o \
++  $(B)/baseoa/cgame/cg_effects.o \
++  $(B)/baseoa/cgame/cg_ents.o \
++  $(B)/baseoa/cgame/cg_event.o \
++  $(B)/baseoa/cgame/cg_info.o \
++  $(B)/baseoa/cgame/cg_localents.o \
++  $(B)/baseoa/cgame/cg_marks.o \
++  $(B)/baseoa/cgame/cg_players.o \
++  $(B)/baseoa/cgame/cg_playerstate.o \
++  $(B)/baseoa/cgame/cg_predict.o \
++  $(B)/baseoa/cgame/cg_scoreboard.o \
++  $(B)/baseoa/cgame/cg_servercmds.o \
++  $(B)/baseoa/cgame/cg_snapshot.o \
++  $(B)/baseoa/cgame/cg_view.o \
++  $(B)/baseoa/cgame/cg_weapons.o \
+   \
+-  $(B)/baseq3/qcommon/q_math.o \
+-  $(B)/baseq3/qcommon/q_shared.o
++  $(B)/baseoa/qcommon/q_math.o \
++  $(B)/baseoa/qcommon/q_shared.o
+ 
+-Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseq3/cgame/cg_syscalls.o
++Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseoa/cgame/cg_syscalls.o
+ Q3CGVMOBJ = $(Q3CGOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/cgame$(ARCH).$(SHLIBEXT): $(Q3CGOBJ)
++$(B)/baseoa/cgame$(ARCH).$(SHLIBEXT): $(Q3CGOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3CGOBJ)
+ 
+-$(B)/baseq3/vm/cgame.qvm: $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm $(Q3ASM)
++$(B)/baseoa/vm/cgame.qvm: $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm $(Q3ASM)
+ 	$(echo_cmd) "Q3ASM $@"
+ 	$(Q)$(Q3ASM) -o $@ $(Q3CGVMOBJ) $(CGDIR)/cg_syscalls.asm
+ 
+@@ -1669,49 +1675,49 @@
+ #############################################################################
+ 
+ Q3GOBJ_ = \
+-  $(B)/baseq3/game/g_main.o \
+-  $(B)/baseq3/game/ai_chat.o \
+-  $(B)/baseq3/game/ai_cmd.o \
+-  $(B)/baseq3/game/ai_dmnet.o \
+-  $(B)/baseq3/game/ai_dmq3.o \
+-  $(B)/baseq3/game/ai_main.o \
+-  $(B)/baseq3/game/ai_team.o \
+-  $(B)/baseq3/game/ai_vcmd.o \
+-  $(B)/baseq3/game/bg_misc.o \
+-  $(B)/baseq3/game/bg_pmove.o \
+-  $(B)/baseq3/game/bg_slidemove.o \
+-  $(B)/baseq3/game/bg_lib.o \
+-  $(B)/baseq3/game/g_active.o \
+-  $(B)/baseq3/game/g_arenas.o \
+-  $(B)/baseq3/game/g_bot.o \
+-  $(B)/baseq3/game/g_client.o \
+-  $(B)/baseq3/game/g_cmds.o \
+-  $(B)/baseq3/game/g_combat.o \
+-  $(B)/baseq3/game/g_items.o \
+-  $(B)/baseq3/game/g_mem.o \
+-  $(B)/baseq3/game/g_misc.o \
+-  $(B)/baseq3/game/g_missile.o \
+-  $(B)/baseq3/game/g_mover.o \
+-  $(B)/baseq3/game/g_session.o \
+-  $(B)/baseq3/game/g_spawn.o \
+-  $(B)/baseq3/game/g_svcmds.o \
+-  $(B)/baseq3/game/g_target.o \
+-  $(B)/baseq3/game/g_team.o \
+-  $(B)/baseq3/game/g_trigger.o \
+-  $(B)/baseq3/game/g_utils.o \
+-  $(B)/baseq3/game/g_weapon.o \
++  $(B)/baseoa/game/g_main.o \
++  $(B)/baseoa/game/ai_chat.o \
++  $(B)/baseoa/game/ai_cmd.o \
++  $(B)/baseoa/game/ai_dmnet.o \
++  $(B)/baseoa/game/ai_dmq3.o \
++  $(B)/baseoa/game/ai_main.o \
++  $(B)/baseoa/game/ai_team.o \
++  $(B)/baseoa/game/ai_vcmd.o \
++  $(B)/baseoa/game/bg_misc.o \
++  $(B)/baseoa/game/bg_pmove.o \
++  $(B)/baseoa/game/bg_slidemove.o \
++  $(B)/baseoa/game/bg_lib.o \
++  $(B)/baseoa/game/g_active.o \
++  $(B)/baseoa/game/g_arenas.o \
++  $(B)/baseoa/game/g_bot.o \
++  $(B)/baseoa/game/g_client.o \
++  $(B)/baseoa/game/g_cmds.o \
++  $(B)/baseoa/game/g_combat.o \
++  $(B)/baseoa/game/g_items.o \
++  $(B)/baseoa/game/g_mem.o \
++  $(B)/baseoa/game/g_misc.o \
++  $(B)/baseoa/game/g_missile.o \
++  $(B)/baseoa/game/g_mover.o \
++  $(B)/baseoa/game/g_session.o \
++  $(B)/baseoa/game/g_spawn.o \
++  $(B)/baseoa/game/g_svcmds.o \
++  $(B)/baseoa/game/g_target.o \
++  $(B)/baseoa/game/g_team.o \
++  $(B)/baseoa/game/g_trigger.o \
++  $(B)/baseoa/game/g_utils.o \
++  $(B)/baseoa/game/g_weapon.o \
+   \
+-  $(B)/baseq3/qcommon/q_math.o \
+-  $(B)/baseq3/qcommon/q_shared.o
++  $(B)/baseoa/qcommon/q_math.o \
++  $(B)/baseoa/qcommon/q_shared.o
+ 
+-Q3GOBJ = $(Q3GOBJ_) $(B)/baseq3/game/g_syscalls.o
++Q3GOBJ = $(Q3GOBJ_) $(B)/baseoa/game/g_syscalls.o
+ Q3GVMOBJ = $(Q3GOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/qagame$(ARCH).$(SHLIBEXT): $(Q3GOBJ)
++$(B)/baseoa/qagame$(ARCH).$(SHLIBEXT): $(Q3GOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3GOBJ)
+ 
+-$(B)/baseq3/vm/qagame.qvm: $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm $(Q3ASM)
++$(B)/baseoa/vm/qagame.qvm: $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm $(Q3ASM)
+ 	$(echo_cmd) "Q3ASM $@"
+ 	$(Q)$(Q3ASM) -o $@ $(Q3GVMOBJ) $(GDIR)/g_syscalls.asm
+ 
+@@ -1773,59 +1779,59 @@
+ #############################################################################
+ 
+ Q3UIOBJ_ = \
+-  $(B)/baseq3/ui/ui_main.o \
+-  $(B)/baseq3/ui/bg_misc.o \
+-  $(B)/baseq3/ui/bg_lib.o \
+-  $(B)/baseq3/ui/ui_addbots.o \
+-  $(B)/baseq3/ui/ui_atoms.o \
+-  $(B)/baseq3/ui/ui_cdkey.o \
+-  $(B)/baseq3/ui/ui_cinematics.o \
+-  $(B)/baseq3/ui/ui_confirm.o \
+-  $(B)/baseq3/ui/ui_connect.o \
+-  $(B)/baseq3/ui/ui_controls2.o \
+-  $(B)/baseq3/ui/ui_credits.o \
+-  $(B)/baseq3/ui/ui_demo2.o \
+-  $(B)/baseq3/ui/ui_display.o \
+-  $(B)/baseq3/ui/ui_gameinfo.o \
+-  $(B)/baseq3/ui/ui_ingame.o \
+-  $(B)/baseq3/ui/ui_loadconfig.o \
+-  $(B)/baseq3/ui/ui_menu.o \
+-  $(B)/baseq3/ui/ui_mfield.o \
+-  $(B)/baseq3/ui/ui_mods.o \
+-  $(B)/baseq3/ui/ui_network.o \
+-  $(B)/baseq3/ui/ui_options.o \
+-  $(B)/baseq3/ui/ui_playermodel.o \
+-  $(B)/baseq3/ui/ui_players.o \
+-  $(B)/baseq3/ui/ui_playersettings.o \
+-  $(B)/baseq3/ui/ui_preferences.o \
+-  $(B)/baseq3/ui/ui_qmenu.o \
+-  $(B)/baseq3/ui/ui_removebots.o \
+-  $(B)/baseq3/ui/ui_saveconfig.o \
+-  $(B)/baseq3/ui/ui_serverinfo.o \
+-  $(B)/baseq3/ui/ui_servers2.o \
+-  $(B)/baseq3/ui/ui_setup.o \
+-  $(B)/baseq3/ui/ui_sound.o \
+-  $(B)/baseq3/ui/ui_sparena.o \
+-  $(B)/baseq3/ui/ui_specifyserver.o \
+-  $(B)/baseq3/ui/ui_splevel.o \
+-  $(B)/baseq3/ui/ui_sppostgame.o \
+-  $(B)/baseq3/ui/ui_spskill.o \
+-  $(B)/baseq3/ui/ui_startserver.o \
+-  $(B)/baseq3/ui/ui_team.o \
+-  $(B)/baseq3/ui/ui_teamorders.o \
+-  $(B)/baseq3/ui/ui_video.o \
++  $(B)/baseoa/ui/ui_main.o \
++  $(B)/baseoa/ui/bg_misc.o \
++  $(B)/baseoa/ui/bg_lib.o \
++  $(B)/baseoa/ui/ui_addbots.o \
++  $(B)/baseoa/ui/ui_atoms.o \
++  $(B)/baseoa/ui/ui_cdkey.o \
++  $(B)/baseoa/ui/ui_cinematics.o \
++  $(B)/baseoa/ui/ui_confirm.o \
++  $(B)/baseoa/ui/ui_connect.o \
++  $(B)/baseoa/ui/ui_controls2.o \
++  $(B)/baseoa/ui/ui_credits.o \
++  $(B)/baseoa/ui/ui_demo2.o \
++  $(B)/baseoa/ui/ui_display.o \
++  $(B)/baseoa/ui/ui_gameinfo.o \
++  $(B)/baseoa/ui/ui_ingame.o \
++  $(B)/baseoa/ui/ui_loadconfig.o \
++  $(B)/baseoa/ui/ui_menu.o \
++  $(B)/baseoa/ui/ui_mfield.o \
++  $(B)/baseoa/ui/ui_mods.o \
++  $(B)/baseoa/ui/ui_network.o \
++  $(B)/baseoa/ui/ui_options.o \
++  $(B)/baseoa/ui/ui_playermodel.o \
++  $(B)/baseoa/ui/ui_players.o \
++  $(B)/baseoa/ui/ui_playersettings.o \
++  $(B)/baseoa/ui/ui_preferences.o \
++  $(B)/baseoa/ui/ui_qmenu.o \
++  $(B)/baseoa/ui/ui_removebots.o \
++  $(B)/baseoa/ui/ui_saveconfig.o \
++  $(B)/baseoa/ui/ui_serverinfo.o \
++  $(B)/baseoa/ui/ui_servers2.o \
++  $(B)/baseoa/ui/ui_setup.o \
++  $(B)/baseoa/ui/ui_sound.o \
++  $(B)/baseoa/ui/ui_sparena.o \
++  $(B)/baseoa/ui/ui_specifyserver.o \
++  $(B)/baseoa/ui/ui_splevel.o \
++  $(B)/baseoa/ui/ui_sppostgame.o \
++  $(B)/baseoa/ui/ui_spskill.o \
++  $(B)/baseoa/ui/ui_startserver.o \
++  $(B)/baseoa/ui/ui_team.o \
++  $(B)/baseoa/ui/ui_teamorders.o \
++  $(B)/baseoa/ui/ui_video.o \
+   \
+-  $(B)/baseq3/qcommon/q_math.o \
+-  $(B)/baseq3/qcommon/q_shared.o
++  $(B)/baseoa/qcommon/q_math.o \
++  $(B)/baseoa/qcommon/q_shared.o
+ 
+ Q3UIOBJ = $(Q3UIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
+ Q3UIVMOBJ = $(Q3UIOBJ_:%.o=%.asm)
+ 
+-$(B)/baseq3/ui$(ARCH).$(SHLIBEXT): $(Q3UIOBJ)
++$(B)/baseoa/ui$(ARCH).$(SHLIBEXT): $(Q3UIOBJ)
+ 	$(echo_cmd) "LD $@"
+ 	$(Q)$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(Q3UIOBJ)
+ 
+-$(B)/baseq3/vm/ui.qvm: $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm $(Q3ASM)
++$(B)/baseoa/vm/ui.qvm: $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm $(Q3ASM)
+ 	$(echo_cmd) "Q3ASM $@"
+ 	$(Q)$(Q3ASM) -o $@ $(Q3UIVMOBJ) $(UIDIR)/ui_syscalls.asm
+ 
+@@ -1933,16 +1939,16 @@
+ ## GAME MODULE RULES
+ #############################################################################
+ 
+-$(B)/baseq3/cgame/bg_%.o: $(GDIR)/bg_%.c
++$(B)/baseoa/cgame/bg_%.o: $(GDIR)/bg_%.c
+ 	$(DO_CGAME_CC)
+ 
+-$(B)/baseq3/cgame/%.o: $(CGDIR)/%.c
++$(B)/baseoa/cgame/%.o: $(CGDIR)/%.c
+ 	$(DO_CGAME_CC)
+ 
+-$(B)/baseq3/cgame/bg_%.asm: $(GDIR)/bg_%.c $(Q3LCC)
++$(B)/baseoa/cgame/bg_%.asm: $(GDIR)/bg_%.c $(Q3LCC)
+ 	$(DO_CGAME_Q3LCC)
+ 
+-$(B)/baseq3/cgame/%.asm: $(CGDIR)/%.c $(Q3LCC)
++$(B)/baseoa/cgame/%.asm: $(CGDIR)/%.c $(Q3LCC)
+ 	$(DO_CGAME_Q3LCC)
+ 
+ $(B)/missionpack/cgame/bg_%.o: $(GDIR)/bg_%.c
+@@ -1958,10 +1964,10 @@
+ 	$(DO_CGAME_Q3LCC_MISSIONPACK)
+ 
+ 
+-$(B)/baseq3/game/%.o: $(GDIR)/%.c
++$(B)/baseoa/game/%.o: $(GDIR)/%.c
+ 	$(DO_GAME_CC)
+ 
+-$(B)/baseq3/game/%.asm: $(GDIR)/%.c $(Q3LCC)
++$(B)/baseoa/game/%.asm: $(GDIR)/%.c $(Q3LCC)
+ 	$(DO_GAME_Q3LCC)
+ 
+ $(B)/missionpack/game/%.o: $(GDIR)/%.c
+@@ -1971,16 +1977,16 @@
+ 	$(DO_GAME_Q3LCC_MISSIONPACK)
+ 
+ 
+-$(B)/baseq3/ui/bg_%.o: $(GDIR)/bg_%.c
++$(B)/baseoa/ui/bg_%.o: $(GDIR)/bg_%.c
+ 	$(DO_UI_CC)
+ 
+-$(B)/baseq3/ui/%.o: $(Q3UIDIR)/%.c
++$(B)/baseoa/ui/%.o: $(Q3UIDIR)/%.c
+ 	$(DO_UI_CC)
+ 
+-$(B)/baseq3/ui/bg_%.asm: $(GDIR)/bg_%.c $(Q3LCC)
++$(B)/baseoa/ui/bg_%.asm: $(GDIR)/bg_%.c $(Q3LCC)
+ 	$(DO_UI_Q3LCC)
+ 
+-$(B)/baseq3/ui/%.asm: $(Q3UIDIR)/%.c $(Q3LCC)
++$(B)/baseoa/ui/%.asm: $(Q3UIDIR)/%.c $(Q3LCC)
+ 	$(DO_UI_Q3LCC)
+ 
+ $(B)/missionpack/ui/bg_%.o: $(GDIR)/bg_%.c
+@@ -1996,10 +2002,10 @@
+ 	$(DO_UI_Q3LCC_MISSIONPACK)
+ 
+ 
+-$(B)/baseq3/qcommon/%.o: $(CMDIR)/%.c
++$(B)/baseoa/qcommon/%.o: $(CMDIR)/%.c
+ 	$(DO_SHLIB_CC)
+ 
+-$(B)/baseq3/qcommon/%.asm: $(CMDIR)/%.c $(Q3LCC)
++$(B)/baseoa/qcommon/%.asm: $(CMDIR)/%.c $(Q3LCC)
+ 	$(DO_Q3LCC)
+ 
+ $(B)/missionpack/qcommon/%.o: $(CMDIR)/%.c
+@@ -2020,32 +2026,32 @@
+ 
+ 
+ copyfiles: release
+-	@if [ ! -d $(COPYDIR)/baseq3 ]; then echo "You need to set COPYDIR to where your Quake3 data is!"; fi
+-	-$(MKDIR) -p -m 0755 $(COPYDIR)/baseq3
++	@if [ ! -d $(COPYDIR)/baseoa ]; then echo "You need to set COPYDIR to where your Quake3 data is!"; fi
++	-$(MKDIR) -p -m 0755 $(COPYDIR)/baseoa
+ 	-$(MKDIR) -p -m 0755 $(COPYDIR)/missionpack
+ 
+ ifneq ($(BUILD_CLIENT),0)
+-	$(INSTALL) -s -m 0755 $(BR)/ioquake3.$(ARCH)$(BINEXT) $(COPYDIR)/ioquake3.$(ARCH)$(BINEXT)
++	$(INSTALL) -s -m 0755 $(BR)/openarena.$(ARCH)$(BINEXT) $(COPYDIR)/openarena.$(ARCH)$(BINEXT)
+ endif
+ 
+ # Don't copy the SMP until it's working together with SDL.
+ #ifneq ($(BUILD_CLIENT_SMP),0)
+-#	$(INSTALL) -s -m 0755 $(BR)/ioquake3-smp.$(ARCH)$(BINEXT) $(COPYDIR)/ioquake3-smp.$(ARCH)$(BINEXT)
++#	$(INSTALL) -s -m 0755 $(BR)/openarena-smp.$(ARCH)$(BINEXT) $(COPYDIR)/openarena-smp.$(ARCH)$(BINEXT)
+ #endif
+ 
+ ifneq ($(BUILD_SERVER),0)
+-	@if [ -f $(BR)/ioq3ded.$(ARCH)$(BINEXT) ]; then \
+-		$(INSTALL) -s -m 0755 $(BR)/ioq3ded.$(ARCH)$(BINEXT) $(COPYDIR)/ioq3ded.$(ARCH)$(BINEXT); \
++	@if [ -f $(BR)/oa_ded.$(ARCH)$(BINEXT) ]; then \
++		$(INSTALL) -s -m 0755 $(BR)/oa_ded.$(ARCH)$(BINEXT) $(COPYDIR)/oa_ded.$(ARCH)$(BINEXT); \
+ 	fi
+ endif
+ 
+ ifneq ($(BUILD_GAME_SO),0)
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/cgame$(ARCH).$(SHLIBEXT) \
+-					$(COPYDIR)/baseq3/.
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/qagame$(ARCH).$(SHLIBEXT) \
+-					$(COPYDIR)/baseq3/.
+-	$(INSTALL) -s -m 0755 $(BR)/baseq3/ui$(ARCH).$(SHLIBEXT) \
+-					$(COPYDIR)/baseq3/.
++	$(INSTALL) -s -m 0755 $(BR)/baseoa/cgame$(ARCH).$(SHLIBEXT) \
++					$(COPYDIR)/baseoa/.
++	$(INSTALL) -s -m 0755 $(BR)/baseoa/qagame$(ARCH).$(SHLIBEXT) \
++					$(COPYDIR)/baseoa/.
++	$(INSTALL) -s -m 0755 $(BR)/baseoa/ui$(ARCH).$(SHLIBEXT) \
++					$(COPYDIR)/baseoa/.
+ 	-$(MKDIR) -p -m 0755 $(COPYDIR)/missionpack
+ 	$(INSTALL) -s -m 0755 $(BR)/missionpack/cgame$(ARCH).$(SHLIBEXT) \
+ 					$(COPYDIR)/missionpack/.
+@@ -2099,10 +2105,10 @@
+ endif
+ 
+ dist:
+-	rm -rf ioquake3-$(VERSION)
+-	svn export . ioquake3-$(VERSION)
+-	tar --owner=root --group=root --force-local -cjf ioquake3-$(VERSION).tar.bz2 ioquake3-$(VERSION)
+-	rm -rf ioquake3-$(VERSION)
++	rm -rf openarena-$(VERSION)
++	svn export . openarena-$(VERSION)
++	tar --owner=root --group=root --force-local -cjf openarena-$(VERSION).tar.bz2 openarena-$(VERSION)
++	rm -rf openarena-$(VERSION)
+ 
+ #############################################################################
+ # DEPENDENCIES

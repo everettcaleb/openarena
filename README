@@ -1,22 +1,40 @@
-==OPENARENA Readme -	 8/8/2008==
+==OPENARENA Readme -	 10/22/2008==
 
 http://openarena.ws
 
-:Thank you for downloading OpenArena!
+Thank you for downloading OpenArena!
 
 ===SYSTEM REQUIREMENTS===
+
 * Pentium II 233MHz / AMD K6-2 300MHz or equally powerful processor
 * 64MB of system memory
 * OpenGL supported video card with 16MB of video memory. (Voodoo Banshee, TNT and up)
-* 250MB of hard drive space
+* 300MB of hard drive space
 
-We recommend a 700MHz Pentium III / Athlon with a Geforce2 64mb.
+We recommend a 700MHz Pentium III / Athlon with a Geforce2 64mb. 
 
-===OTHER NOTES===
-This is ioq3 based now, so some changes and weirdities have been introduced. Your config and screenshots (And probably downloaded maps) may appear in a folder where your user profile data is kept.  Mouse and keyboard input may not be exactly like it used to be either.
+===User Data===
+
+	Screenshots, configurations, and demos that are produced are in a local data directory rather than the game's own directory, if it is supported by the OS.
+
+Where you'll probably find it-
+	Windows 98/ME:
+		C:\Windows\AppData\OpenArena\
+	Windows NT/2000/XP:
+		C:\Documents and Settings\Username\Application Data\OpenArena\
+	Linux:
+		/home/username/.openarena/
+	Mac OS X:
+
+===Legacy Client===
+
+	By popular demand (popular = 1 person :( ), starting with OA 0.8.1 now ships with a new client based off the older 0.7.1 version.  Due to it being based on an old version (from before the whole ioq3 SDL fiasco) it is not officially supported by the OpenArena team.  Your mileage may vary.
+
+	To use this, copy the client from the 'legacy' directory to the upper level, and start it.  For compatibility, please don't delete the other. This is only an alternative if you prefer the 'old style' pre-SDL input and video performance.
 
 ===Source===
 Source for content is available at http://openarena.ws/svn/source/
+The engine source is also there as well as the VMs source.
 
 ===CREDITS===
 For credits, read the CREDITS file.
@@ -35,10 +53,16 @@ James and Janet aren't modeled yet, so for the gameplay code to even function we
 John Romero released them under the GNU GPL v2, and since they're timeless deathmatch classics we couldn't resist porting a few of them over. If you're going to pull a [citation needed], here's a URL for you:
 http://rome.ro/2006_10_01_archive.html
 
-Be sure to check the license in the ZIP file.
+Be sure to check the license in the ZIP file.  Oh by the way, this isn't what I would call "content scavenging", since the license here allows modification and sharing of the changes and source.
+
+===BUT THIS IS SCAVENGED CRAP!!!! YOUR A UNTALENTED HACK===
+...
+
+===Where did q3dm6ish-v2 and schism go?===
+In early October it was confirmed by cgtextures.com that their textures were not Free so the maps currently using the offending textures are removed.
 
 ===Where did q3dm6ish go?===
-As if! It's here and looking AWESOME thanks to TRaK.
+Oh no it's gone off the list due to quality reasons!!! Sorry :(
 
 ===Where did void4 go?===
 Textures mysteriously broke :\ it's also a bad level
