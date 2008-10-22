@@ -1,0 +1,7 @@
+{
+map             "ps37ctf"
+bots            ""
+longname        "ps37ctf"
+fraglimit       "10"
+type            "ctf  overload"
+}
