@@ -1,9 +1,10 @@
-0.8.1 (10/25/2008)
+0.8.1 (10/31/2008)
 - Uses protocol 71
 - Single player campaign re-organized (Thanks cosmo)
 - 'Depreciated' client for Windows 9X in addition (lacks ipv6 support)
 - New hitsound
 - New map: ps37ctf
+- New map: ctf_gate1
 - New map: am_galevish
 - Space Marine should no longer crash on old client
 - Chaingun works in unlagged now

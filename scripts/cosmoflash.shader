@@ -776,6 +776,26 @@ textures/cosmo_light/ironcrosslt1_3k
     }
 }
 
+textures/cosmo_light/crystalwhite_5k
+{
+	qer_editorimage textures/cosmo_sfx/diamond.white.tga
+	surfaceparm nomarks
+    q3map_lightimage textures/cosmo_sfx/diamond.white.tga
+	q3map_surfacelight 7500
+	{
+		map textures/cosmo_sfx/diamond.white.tga
+        blendFunc GL_ONE GL_ZERO
+		rgbgen identity
+	}
+    {
+		map textures/base_trim/tinfx.jpg
+		tcGen environment
+		blendfunc add
+		rgbGen vertex
+	}
+}
+
+
 
 /* DETAILS */
 textures/cosmo_floor/sand02
