@@ -845,3 +845,224 @@ gfx/2d/numbers/minus_32b
 }
 
 
+// missionpack icons
+
+icons/iconw_chaingun
+{
+	nopicmip
+	{
+		map icons/iconw_chaingun.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconw_chaingun_cl1
+{
+	nopicmip
+	{
+		map icons/iconw_chaingun_cl1.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconw_chaingun_cl2
+{
+	nopicmip
+	{
+		map icons/iconw_chaingun_cl2.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconw_grapple
+{
+	nopicmip
+	{
+		map icons/iconw_grapple.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconw_kamikaze
+{
+	nopicmip
+	{
+		map icons/iconw_kamikaze.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconw_nailgun
+{
+	nopicmip
+	{
+		map icons/iconw_nailgun.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconw_proxlauncher
+{
+	nopicmip
+	{
+		map icons/iconw_proxlauncher.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/icona_chaingun
+{
+	nopicmip
+	{
+		map icons/icona_chaingun.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+icons/icona_proxlauncher
+{
+	nopicmip
+	{
+		map icons/icona_proxlauncher.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+icons/icona_nailgun
+{
+	nopicmip
+	{
+		map icons/icona_nailgun.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+icons/guard
+{
+	nopicmip
+	{
+		map icons/guard.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/doubler
+{
+	nopicmip
+	{
+		map icons/doubler.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/ammo_regen
+{
+	nopicmip
+	{
+		map icons/ammo_regen.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/scout
+{
+	nopicmip
+	{
+		map icons/scout.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+
+icons/icona_red
+{
+	nopicmip
+	{
+		map icons/icona_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/icona_blue
+{
+	nopicmip
+	{
+		map icons/icona_blue.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/icona_white
+{
+	nopicmip
+	{
+		map icons/icona_white.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconb_red
+{
+	nopicmip
+	{
+		map icons/iconb_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconb_blue
+{
+	nopicmip
+	{
+		map icons/iconb_blue.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconb_white
+{
+	nopicmip
+	{
+		map icons/iconb_white.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/icona_red
+{
+	nopicmip
+	{
+		map icons/icona_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/icona_blue
+{
+	nopicmip
+	{
+		map icons/icona_blue.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconf_blu
+{
+	nopicmip
+	{
+		map icons/iconf_blu.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/iconf_red
+{
+	nopicmip
+	{
+		map icons/iconf_red.tga
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
