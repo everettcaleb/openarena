@@ -386,12 +386,3 @@ type            "ctf"
 //type       "single ffa tourney team sp lms elimination"
 //}
 
-{
-map	"am_galmevish"
-longname	"GalMevish by Armageddon_Man"
-author		"Luciano 'Armageddon_Man' Balducchi"
-bots	"skelebot grism kyonshi grunt"
-timelimit    15
-fraglimit    50
-type	"tourney ffa lms elimination"
-}
