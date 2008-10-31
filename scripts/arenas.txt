@@ -296,13 +296,6 @@ type		    "ctf elimination ctfelimination"
 }
 
 {
-map             "ctf_gate1"
-longname        "Outer Gates"
-bots            "liz assassin smarine grism"
-type            "ctf ctfelimination dd harvester overload oneflag"
-}
-
-{
 map			    "oa_bases3"
 bots		    "tux"
 longname	    "Some Bases"
@@ -392,3 +385,13 @@ type            "ctf"
 //fraglimit  20
 //type       "single ffa tourney team sp lms elimination"
 //}
+
+{
+map	"am_galmevish"
+longname	"GalMevish by Armageddon_Man"
+author		"Luciano 'Armageddon_Man' Balducchi"
+bots	"skelebot grism kyonshi grunt"
+timelimit    15
+fraglimit    50
+type	"tourney ffa lms elimination"
+}
