@@ -1,0 +1,147 @@
+
+{
+name		Gargoyle
+model		gargoyle
+aifile	bots/gargoyle_c.c
+}
+
+
+{
+name		Grism
+model		sarge/classic
+aifile	bots/grism_c.c
+}
+
+{
+name		Kyonshi
+model		kyonshi
+aifile	bots/kyonshi_c.c
+}
+
+{
+name		Major
+model		major
+aifile	bots/major_c.c
+}
+
+{
+name		Merman
+model		merman
+aifile	bots/merman_c.c
+}
+
+{
+name		Sergei
+model		sergei
+aifile	bots/sergei_c.c
+}
+
+
+{
+name		Penguin
+model		penguin
+aifile	bots/penguin_c.c
+}
+
+
+{
+name		Angelyss
+model		angelyss
+aifile	bots/angelyss_c.c
+}
+
+{
+name		Assassin
+model		assassin
+aifile	bots/sergei_c.c
+}
+
+{
+name		Dark
+model		angelyss/dark
+aifile	bots/dark_c.c
+}
+
+{
+name		Tanisha
+model		angelyss/tanisha
+aifile	bots/tanisha_c.c
+}
+
+{
+name		Rai
+model		angelyss/rai
+aifile	bots/rai_c.c
+}
+
+{
+name		Liz
+model		liz
+aifile	bots/liz_c.c
+}
+
+{
+name		Ayumi
+model		ayumi
+aifile	bots/ayumi_c.c
+}
+{
+name		Jenna
+model		ayumi/jenna
+aifile	bots/ayumi_c.c
+}
+
+
+
+{
+name		Nekoyss
+model		angelyss/neko
+aifile	bots/neko_c.c
+}
+
+{
+name		Arachna
+model		arachna
+aifile	bots/arachna_c.c
+}
+
+{
+name		Beret
+model		beret
+aifile	bots/beret_c.c
+}
+
+{
+name		Tony
+model		tony
+aifile	bots/tony_c.c
+}
+
+{
+name		Skelebot
+model		skelebot
+aifile	bots/skelebot_c.c
+}
+
+// for the sake of the ctf menu
+
+
+
+{
+name		Sarge
+model		sarge
+aifile	bots/sarge_c.c
+}
+
+{
+name		Grunt
+model		smarine
+aifile	bots/grunt_c.c
+}
+
+
+{
+name		S_Marine
+model		smarine/orange
+aifile	bots/grunt_c.c
+}

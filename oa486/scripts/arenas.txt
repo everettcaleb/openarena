@@ -1,0 +1,7 @@
+{
+map			"dm4ish"
+bots		"angelyss beret liz merman"
+longname	"DM4ishish"
+fraglimit	30
+type		"single ffa tourney team sp elimination lms"
+}
