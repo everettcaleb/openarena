@@ -246,9 +246,9 @@ type	        "ctf elimination ctfelimination dd"
 }
 
 {
-map             "ps37ctf"
+map             "ps37ctf2"
 bots            "sergei smarine assassin beret"
-longname        "ps37ctf"
+longname        "ps37ctf2"
 type            "ctf overload"
 }
 
@@ -385,4 +385,22 @@ type            "ctf"
 //fraglimit  20
 //type       "single ffa tourney team sp lms elimination"
 //}
+
+// ADDITIONS
+{
+map             "ps9ctf"
+bots            ""
+longname        "ps9ctf"
+fraglimit       "10"
+type            "ctf  overload"
+}
+
+{
+map		        "hydronex2-b2"
+longname	    "Hydrocapture v2.0"
+bots		    "beret assassin skelebot kyonshi grism angelyss merman"
+capturelimit    8
+timelimit		15
+type		    "ctf oneflag harvester overload ctfelim dd dom"
+}
 
