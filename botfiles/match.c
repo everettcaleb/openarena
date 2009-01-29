@@ -28,7 +28,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 
-// this is rare but people can always fuckup
 // don't use EC"(", EC")", EC"[", EC"]" or EC":" inside player names
 // don't use EC": " inside map locations
 

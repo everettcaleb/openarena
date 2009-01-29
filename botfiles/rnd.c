@@ -50,8 +50,6 @@ DEATH_BFG3 = {
 DEATH_KAMIKAZE0 = {
 	"Ya pansy!!!";
 	"You have to admit that takes guts... oh wait...";
-	"I hope your balls fall off in a freak fishing accident.";
-	0, " sucks donkey balls!";
 }
 
 DEATH_KAMIKAZE1 = {
@@ -105,7 +103,6 @@ DEATH_INSULT2 = {
 }
 
 DEATH_INSULT3 = {
-	"Life is shit, and so are you.";
 	"*sigh* if that only solved anything.";
 	"Trying to impress someone?";
 }
@@ -552,7 +549,6 @@ DEATH_SUICIDE1 = {
 
 DEATH_SUICIDE2 = {
  	"Good bye cruel arena!";
-	"Take that IRS bastards!";
 	"I hate my life.";
 	"There go my insurance rates.";
 }
@@ -721,16 +717,12 @@ ponder = {
 
 response_insult = {
 	"No one cares, shut up!";
-	"jackass";
 	"That isn't what your ~mom said last night.";
 	"If you had half a brain, you would be dangerous.";
 	"idiot";
 	"moron";
 	"Oh for the love of Pete!  SHUT UP!";
 	"Do the world a favor, pull your bottom lip over your head and swallow.";
-	"Shut up, dick weed.";
-	"dick head";
-	"dipshit";
 	"asswhipe";
 	"fool";
 	"jerkwad";
@@ -798,10 +790,6 @@ fighter = {
 	"pickle brain";
 	"dweeb";
 	"dork";
-	"dickhead";
-	"bastard";
-	"asshole";
-	"vomit-sucking ass licker";
 	"blood sucker";
 	
 }
@@ -1140,29 +1128,18 @@ substance = {
 	"dog hair";
 	"cayenne";
 	"dog poo";
-	"Janis Joplin's bra";
-	"jock-cheese";
-	
+
 }
 
 
 curse = {
-	"I hope your genitals fall off in a freak fishing accident.";
 	"May your first born child be born a politician...";
 	"May your first born child be born with the intelligence of Pat Robertson.";
-	"May you dream of leilol's ~mother for the rest of your rotten life!";
-	"hum kah chan!";
 }
 
 vicious_insult = {
-	"asshole";
-	"jackass";
 	"bigot";
-	"worthless sack of shit";
 	"waste of human space";
 	"moron";
 	"idiot";
-	"bastard";
-	"ho bag";
-	"douche bag";
 }

@@ -200,19 +200,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	"OI! OI! OI!";
 }
 
-["fuck"] = 1
-{
-	proposition01;
-	immaturity01;
-}
-
-["shit"] = 1
-{
-	"I hope you washed your hands...";
-	"Eeew... please flush.";
-	immaturity01;
-}
-
 ["ass"] = 1
 {
 	immaturity01;
