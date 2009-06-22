@@ -56,3 +56,76 @@ models/mapobjects/weaponpod/weaponpod{    surfaceparm metalsteps
 	
 	{		map $lightmap 		blendfunc filter		rgbGen identity	}
 }
+
+
+
+models/mapobjects/cosmoflash/hand2{
+
+    {
+        map models/mapobjects/cosmoflash/hand2_n1.tga
+		rgbGen identity
+	}
+	
+	{		map $lightmap 		blendfunc filter		rgbGen identity	}
+}
+
+models/mapobjects/cosmoflash/cholder1a{
+
+    {
+        map models/mapobjects/cosmoflash/cholder1a.tga
+		rgbGen identity
+	}
+	
+	{		map $lightmap 		blendfunc filter		rgbGen identity	}
+}
+
+models/mapobjects/cosmoflash/menhir1
+{
+    q3map_nonplanar
+    q3map_shadeangle 72
+	{
+		map textures/cosmo_liquids/plasma_red.jpg
+//		blendFunc GL_ONE GL_ZERO
+		rgbGen wave sin 0.5 0.5 0 .1
+//        rgbGen identity
+	}
+    {
+        map models/mapobjects/cosmoflash/menhir1.tga
+		blendFunc GL_ONE GL_SRC_ALPHA
+//        depthWrite
+		rgbGen identity
+	}
+	{		map $lightmap 		blendfunc filter		rgbGen identity	}
+
+}
+
+models/mapobjects/cosmoflash/menhir2
+{
+    q3map_nonplanar
+    q3map_shadeangle 66
+	{
+		map textures/cosmo_liquids/plasma_red.jpg
+//		blendFunc GL_ONE GL_ZERO
+		rgbGen wave sin 0.5 0.5 0.5 .2
+//        rgbGen identity
+	}
+    {
+        map models/mapobjects/cosmoflash/menhir2.tga
+		blendFunc GL_ONE GL_SRC_ALPHA
+		rgbGen identity
+	}
+	{		map $lightmap 		blendfunc filter		rgbGen identity	}
+}
+
+models/mapobjects/cosmoflash/fountain1{
+    q3map_nonplanar
+    q3map_shadeangle 66
+    {
+//        map models/mapobjects/cosmo_block/ancient_bricks4.jpg
+        map models/mapobjects/cosmoflash/fountain1.jpg
+        blendFunc GL_ONE GL_ZERO
+		rgbGen identity
+	}
+	
+	{		map $lightmap 		blendfunc filter		rgbGen identity	}
+}
