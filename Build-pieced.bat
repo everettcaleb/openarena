@@ -80,6 +80,7 @@ zip pak0.pk3 -d models/players/tony/*.*
 zip pak0.pk3 -d models/players/penguin/*.*
 zip pak0.pk3 -d models/players/gargoyle/*.*
 zip pak0.pk3 -d models/players/merman/*.*
+zip pak0.pk3 -d models/players/neko/*.*
 zip pak0.pk3 -d models/players/smarine/*.*
 zip pak0.pk3 -d models/players/assassin/*.*
 zip pak0.pk3 -d models/players/slshish/*.*
@@ -107,6 +108,7 @@ zip pak2-players-mature.pk3 -d models/players/smarine/*.*
 
 zip pak2-players.pk3 -d models/players/hnt/*.*
 zip pak2-players.pk3 -d models/players/angelyss/*.*
+zip pak2-players.pk3 -d models/players/neko/*.*
 zip pak2-players.pk3 -d models/players/arachna/*.*
 zip pak2-players.pk3 -d models/players/sorceress/*.*
 zip pak2-players.pk3 -d models/players/ayumi/*.*
