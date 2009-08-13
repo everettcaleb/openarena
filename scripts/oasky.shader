@@ -63,7 +63,7 @@ textures/skies/moonsky
 		map textures/skies/stars.tga
 		rgbGen const ( 0.407843 0.392157 0.356863 )
 		tcMod scale 5 5
-		detail
+		detail //Delete this line.
 	}
 	{
 		map textures/skies/topclouds.tga

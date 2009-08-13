@@ -111,6 +111,7 @@ zip pak2-players.pk3 -d models/players/angelyss/*.*
 zip pak2-players.pk3 -d models/players/neko/*.*
 zip pak2-players.pk3 -d models/players/arachna/*.*
 zip pak2-players.pk3 -d models/players/sorceress/*.*
+zip pak0.pk3 -d models/players/sorceress/*.*
 zip pak2-players.pk3 -d models/players/ayumi/*.*
 
 zip -9r pak2-players.pk3 sound/player/*.* -x *svn*

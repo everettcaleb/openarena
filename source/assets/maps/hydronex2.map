@@ -14449,3 +14449,10 @@
 "_lightmapscale" "0.125"
 "spawnflags" "4"
 }
+// entity 371
+{
+"classname" "info_player_intermission"
+"origin" "736 -96 256"
+"angle" "-113"
+"target" "target_position1"
+}

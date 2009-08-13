@@ -1,0 +1,92 @@
+// FFA Maps
+{
+map		        "am_galmevish2"
+longname	    "Galmevish Yards"
+type		    "ffa lms tourney harvester dd team elimination"
+}
+{
+map		        "am_lavaarena"
+longname	    "Lava Arena"
+type		    "ffa lms tourney dom"
+}
+{
+map				"am_spacecont"
+longname		"Space Contact"
+type			"ffa lms"
+}
+{
+map	            "am_underworks"
+longname	    "Under Working"
+type	        "ffa lms tourney"
+}
+{
+map	            "blitzkrieg3"
+longname	    "Blitzkrieg Sector"
+type	        "ffa lms tourney"
+}
+{
+map             "dm4ishv2"
+longname        "Lava Zone"
+type            "ffa lms tourney"
+}
+{
+map		        "oa_bod"
+longname	    "Better Off Dead"
+type		    "ffa lms tourney"
+}
+{
+map		        "oa_dm1v2"
+longname	    "The Place of Two+ Deaths"
+type		    "ffa lms tourney dom"
+}
+{
+map		        "oa_dm5v2"
+longname	    "The Cistern"
+type		    "ffa lms tourney dom"
+}
+//----------------------------------------------------------
+{
+map             "am_harv-sod"
+longname        "Skull'O'Dome"
+type            "harvester"
+}
+{
+map		        "am_icyhell"
+longname	    "Frost Without Sleep"
+type		    "ctf elimination ctfelimination overload oneflag harvester dd"
+}
+{
+map		        "am_lavactf"
+longname	    "Lava Arena (CTF version)"
+type		    "ctf elimination ctfelimination overload oneflag harvester dd"
+}
+{
+map		        "am_lavactfxl"
+longname	    "Lava Arena (CTF XL version)"
+type		    "ctf elimination ctfelimination overload oneflag harvester dd"
+}
+{
+map             "am_mckinleyish2"
+longname        "McKinley's Retribution"
+type            "ctf elimination ctfelimination overload oneflag harvester dd"
+}
+{
+map		        "am_thornish"
+longname	    "Thorns Revenge"
+type		    "ctf elimination ctfelimination overload oneflag harvester dd"
+}
+{
+map		        "hydronex2"
+longname	    "Hydrocapture v2.0"
+type		    "ctf elimination ctfelimination overload dd dom"
+}
+{
+map		        "oa_reptctf11"
+longname	    "Colliding in the Factory"
+type		    "ctf elimination ctfelimination overload oneflag harvester dd"
+}
+{
+map		        "oa_reptctf3"
+longname	    "The Palace Of Pain And Sacrifices"
+type		    "ctf elimination ctfelimination overload oneflag harvester dd"
+}

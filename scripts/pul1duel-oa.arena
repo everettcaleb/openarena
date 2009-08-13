@@ -1,0 +1,8 @@
+{
+map "pul1duel-oa"
+bots "Ayumi Jenna Tony Penguin"
+longname "Five Steps Ahead"
+fraglimit "20"
+timelimit "10"
+type "ffa tourney team elimination lms"
+}
