@@ -1,0 +1,3 @@
+photo sources used in the "column2c_test" texture:
+IMG_1878.JPG
+IMG_1674.JPG

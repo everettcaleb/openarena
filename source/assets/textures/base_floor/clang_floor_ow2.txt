@@ -1,0 +1,3 @@
+photo source used in the "clang_floor_ow2" texture:
+IMG_1664.JPG
+based on the clang_floor.jpg texture

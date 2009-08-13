@@ -1,0 +1,1 @@
+this is just a renamed "gold_brick.jpg" for quake 3 consistency.

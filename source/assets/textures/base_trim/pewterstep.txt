@@ -1,0 +1,3 @@
+source texture used for "pewterstep":
+
+pewter.jpg (from openarena)

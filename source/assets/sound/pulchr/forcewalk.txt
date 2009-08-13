@@ -1,0 +1,4 @@
+the forcewalk.wav sound is a mix of "sound/world/electro.wav" and some generated noise.
+the result of that was shortened to 300ms with a quick fade at the end.
+
+no other sources for this.

@@ -1,0 +1,2 @@
+photo source used in the "scrolllight2", "scrolllight2_r", "scrolllight2_b" textures:
+IMG_1629.JPG
