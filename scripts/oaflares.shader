@@ -17,16 +17,9 @@ dflareShader
 flareShader
 {
 	{
-		clampmap textures/flares/newflare.tga
+		clampmap gfx/2d/flared.tga
 		blendfunc add
 		rgbGen Vertex
-		tcMod rotate 3
-	}
-	{
-		clampmap textures/flares/newflare.tga
-		blendfunc add
-		rgbGen Vertex
-		tcMod rotate -2
 	}
 }
 
@@ -164,7 +157,8 @@ flareShader-subtle
 	{
 		clampmap textures/flares/twilightflare.tga
 		blendfunc add
-		rgbGen oneminusvertex
+		rgbGen oneMinusVertex
 		tcMod rotate 12
 	}
 }
+
