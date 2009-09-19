@@ -1,0 +1,9 @@
+body,models/players/neko/neko_red.tga
+body2,models/players/neko/neko_red.tga
+
+claws,models/players/neko/claw.tga
+body.001,models/players/neko/botm_rd.tga
+body.005,models/players/neko/botm_rd.tga
+dbody.001,models/players/neko/botm_rd.tga
+hair,models/players/neko/hair_rd.tga
+catstuff,null
