@@ -584,7 +584,7 @@ gfx/2d/crosshair
 	{
 		map gfx/2d/crosshair.tga          
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA                
-        rgbGen identity
+        	rgbGen vertex
 	}
 }
 
@@ -594,7 +594,7 @@ gfx/2d/crosshairb
 	{
 		map gfx/2d/crosshairb.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 
@@ -604,7 +604,7 @@ gfx/2d/crosshairc
 	{
 		map gfx/2d/crosshairc.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 
@@ -614,7 +614,7 @@ gfx/2d/crosshaird
 	{
 		map gfx/2d/crosshaird.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 
@@ -624,7 +624,7 @@ gfx/2d/crosshaire
 	{
 		map gfx/2d/crosshaire.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 
@@ -634,7 +634,7 @@ gfx/2d/crosshairf
 	{
 		map gfx/2d/crosshairf.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 
@@ -644,7 +644,7 @@ gfx/2d/crosshairg
 	{
 		map gfx/2d/crosshairg.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 
@@ -654,7 +654,7 @@ gfx/2d/crosshairh
 	{
 		map gfx/2d/crosshairh.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 
@@ -664,7 +664,7 @@ gfx/2d/crosshairi
 	{
 		map gfx/2d/crosshairi.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 
 }
@@ -674,7 +674,7 @@ gfx/2d/crosshairj
 	{
 		map gfx/2d/crosshairj.tga       
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 gfx/2d/crosshairk
@@ -683,7 +683,7 @@ gfx/2d/crosshairk
 	{
 		map gfx/2d/crosshairk.tga       
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
+		rgbGen vertex
 	}
 }
 

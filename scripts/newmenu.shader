@@ -2,18 +2,18 @@ logoTitle
 {
 	cull disable
 	{
-		map textures/oafx/burnme.tga
+		map textures/oafx/burnme.jpg
 		blendfunc add
 		tcMod scroll 0 0.1
 	}
 	{
-		map textures/oafx/burnme.tga
+		map textures/oafx/burnme.jpg
 		blendfunc add
 		rgbGen wave noise 0 0.1 0 7 
 		tcMod scroll 0 -0.03
 	}
 	{
-		map textures/oafx/burnme.tga
+		map textures/oafx/burnme.jpg
 		blendfunc add
 		rgbGen wave sin 0 2 0 0.14 
 		tcMod scroll 0 -0.08
@@ -24,7 +24,7 @@ logoEmblem
 {
 	cull disable
 	{
-		map textures/oafx/orangechrm_2.tga
+		map textures/oafx/orangechrm_2.jpg
 		tcMod rotate 7
 		tcGen environment 
 	}
@@ -36,20 +36,20 @@ logoHalo
 	{
 		clampmap textures/oafx/flare.tga
 		blendfunc add
-		rgbGen const ( 0.960784 0.360784 0.160784 )
+		rgbGen const ( 0.1019 0.3176 0.4941 )
 		tcMod rotate -7
 	}
 	{
 		clampmap textures/oafx/flare.tga
 		blendfunc add
-		rgbGen const ( 0.960784 0.360784 0.160784 )
+		rgbGen const ( 0.1019 0.3176 0.4941 )
 		tcMod rotate 3
 		tcMod stretch sin 1 -0.5 0 0.3 
 	}
 	{
 		clampmap textures/oafx/flare.tga
 		blendfunc add
-		rgbGen const ( 0.960784 0.360784 0.160784 )
+		rgbGen const ( 0.1019 0.3176 0.4941 )
 		tcMod rotate 9
 		tcMod stretch sin 1 0.4 0 0.6 
 	}

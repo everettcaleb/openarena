@@ -1,0 +1,35 @@
+#!/bin/bash
+
+convert -size 64x64 xc: -fx "Xi=i-w/3; Yj=j-h/3; 1.5*(0.6-hypot(Xi,Yj)/50.0)+0.7" gradient.png
+
+cd numbers_sources_wide
+
+for file in *.png;
+do
+	n=`basename $file .png` # Filename
+
+	# making the temporary image
+	convert $file ../temp.tga
+
+	# adding 3D like light, 1x1 means the width of the edge (1px)
+	convert ../temp.tga \
+	-fx A -blur 1x1 -shade 135x50 \
+	../temp.tga
+
+	# adding the texture, comment out this section, if you don't want any textures to be added
+	convert ../temp.tga ../numbers_texture.png \
+	-compose multiply -composite \
+	../temp.tga
+
+	# adding light gradient
+	convert ../temp.tga ../gradient.png \
+	-compose multiply -composite \
+	../temp.tga
+
+	# masking the result with the original
+	convert ../temp.tga $file \
+	-compose dst-in -composite \
+	../bin/numbers/$n.tga
+done
+
+rm ../gradient.png ../temp.tga

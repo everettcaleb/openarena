@@ -1,0 +1,18 @@
+Version 0.2 (2009. 11. 01.)
+ - megahealth is brighter
+ - balloon is more curvy
+ - quad looks more powerful
+ - excellent and assist icons with square stickmen
+ - all the ammos and weapon icons are drawn
+ - missionpack runes are drawn, need testing
+ - level_complete images are removed (already in OAX)
+ - font improvements
+
+Version 0.1 (2009. 09. 06.)
+ - skill[1-5].tga
+ - level_complete[1-5].tga
+ - fonts
+ - medals
+ - balloon4.tga
+ - foe2.tga
+ - icons
