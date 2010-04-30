@@ -7,13 +7,7 @@ fraglimit       15
 type            "single ffa lms tourney"
 }
 
-{
-map             "ce1m7"
-longname        "Trial of Cheethon"
-bots            "sarge grism gargoyle"
-fraglimit	    20
-type            "single ffa lms"
-}
+// ce1m7 was here
 {
 map			    "aggressor"
 bots		    "jenna kyonshi"
@@ -21,21 +15,9 @@ longname	    "Aggressor"
 fraglimit	    20
 type			"single ffa lms tourney"
 }
-{
-map		        "oa_dm1v2"
-bots		    "kyonshi major merman"
-longname	    "Place of Two+ Deaths"
-fraglimit	    15
-type		    "single ffa lms tourney dom"
-}
-//TIER2
-{
-map		        "oa_dm2"
-bots		    "sergei kyonshi major merman"
-longname	    "Claustrophobopolis"
-fraglimit	    20
-type			"single ffa lms tourney"
-}
+
+// oa_dm1v2 was here
+// oa_dm2 was here
 {
 map			    "kaos2"
 bots		    "rai kyonshi grism dark"
@@ -72,42 +54,12 @@ bots	        "skelebot grism kyonshi grunt"
 fraglimit       20
 type		    "single ffa lms"
 }
-{
-map		        "oa_dm3"
-bots		    "sergei kyonshi major merman penguin"
-longname	    "The Abandoned Base"
-fraglimit	    20
-type			"single ffa lms team elimination"
-}
-{
-map		        "oa_dm4"
-bots		    "sergei angelyss gargoyle major"
-longname	    "The Bad Place"
-fraglimit	    25
-type			"single ffa lms"
-}
-//TIER4
-{
-map		        "oa_dm5v2"
-bots		    "merman major sarge grunt"
-longname	    "The Cistern"
-fraglimit	    20
-type		    "single ffa lms tourney"
-}
-{
-map		        "oa_dm7"
-bots		    "angelyss ayumi kyonshi sergei"
-longname	    "Upper Cisterns"
-fraglimit	    15
-type			"single ffa lms"
-}
-{
-map		        "oa_dm6"
-bots		    "merman"
-longname	    "The Dark Zone"
-fraglimit	    10
-type            "single ffa lms tourney"
-}
+// oa dm3 was here
+// oa dm4 was here
+// oa dm5v2 was here
+// oa dm6 was here
+// oa dm7 was here
+
 {
 map	            "sleekgrinder"
 longname	    "Repulsion"
@@ -195,13 +147,8 @@ fraglimit		30
 bots			"angelyss rai neko tanisha dark"
 type			"single ffa lms team elimination"
 }
-{
-map             "dm4ish"
-longname        "Lava Zone"
-fraglimit	    20
-bots            "arachna"
-type            "single ffa lms tourney"
-}
+// dm4ish was here
+
 //CTF
 {
 map		        "am_icyhell"
@@ -314,8 +261,4 @@ longname        "der koberwascher"
 type            "ctf ctfelimination overload dd"
 }
 //DM 
-{
-map             "dm6ish"
-longname        "The Dark Zone Redux"
-type			"ffa lms tourney"
-}
+// dm6ish was here

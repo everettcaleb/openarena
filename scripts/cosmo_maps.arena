@@ -1,0 +1,31 @@
+{
+map	            "ctf_inyard"
+longname	    "Inner Yard"
+bots	        "tony penguin sarge grism grunt"
+capturelimit    8
+type	        "ctf, dom, oneflag, harvester, obelisk"
+}
+
+{
+map	            "oa_koth2"
+longname	    "Floating Tower"
+bots	        "grunt major s_marine beret"
+fraglimit       20
+type	        "ffa, single, tdm, dom, elimination, lms"
+}
+
+{
+map	            "ctf_compromise"
+longname	    "Foul Compromise"
+bots	        "grunt major s_marine beret"
+capturelimit     8
+type	        "ctf, dom, dd, oneflag"
+}
+
+{
+map	            "ctf_gate1"
+longname	    ""
+bots	        "tony penguin sarge grism grunt"
+capturelimit    8
+type	        "ctf, dom, dd, oneflag, harvester, obelisk"
+}

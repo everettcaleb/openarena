@@ -1,0 +1,106 @@
+// OA Tribute Maps!
+
+{
+map             "ce1m7"
+longname        "Trial of Cheethon"
+bots            "sarge grism gargoyle"
+fraglimit	    20
+type            "single ffa lms"
+}
+{
+map		        "oa_dm1"
+bots		    "kyonshi major merman"
+longname	    "Place of Two+ Deaths"
+fraglimit	    15
+type		    "single ffa lms tourney"
+}
+{
+map		        "oa_dm1v2"
+bots		    "kyonshi major merman"
+longname	    "Place of Two+ Deaths"
+fraglimit	    15
+type		    "single ffa lms tourney dom"
+}
+//TIER2
+{
+map		        "oa_dm2"
+bots		    "sergei kyonshi major merman"
+longname	    "Claustrophobopolis"
+fraglimit	    20
+type			"single ffa lms tourney"
+}
+
+{
+map		        "oa_dm3"
+bots		    "sergei kyonshi major merman penguin"
+longname	    "The Abandoned Base"
+fraglimit	    20
+type			"single ffa lms team elimination"
+}
+
+{
+map		        "oa_dm4"
+bots		    "sergei angelyss gargoyle major"
+longname	    "The Bad Place"
+fraglimit	    25
+type			"single ffa lms"
+}
+{
+map		        "oa_dm5"
+bots		    "merman major sarge grunt"
+longname	    "The Cistern"
+fraglimit	    20
+type		    "single ffa lms tourney"
+}
+{
+map		        "oa_dm5v2"
+bots		    "merman major sarge grunt"
+longname	    "The Cistern"
+fraglimit	    20
+type		    "single ffa lms tourney"
+}
+
+{
+map		        "oa_dm6"
+bots		    "merman"
+longname	    "The Dark Zone"
+fraglimit	    10
+type            "single ffa lms tourney"
+}
+
+
+{
+map		        "oa_dm7"
+bots		    "angelyss ayumi kyonshi sergei"
+longname	    "Upper Cisterns"
+fraglimit	    15
+type			"single ffa lms"
+}
+
+{
+map             "dm4ish"
+longname        "Lava Zone"
+fraglimit	    20
+bots            "arachna"
+type            "single ffa lms tourney"
+}
+
+{
+map             "dm4ishv2"
+longname        "Lava Zone"
+fraglimit	    20
+bots            "arachna"
+type            "single ffa lms tourney"
+}
+{
+map             "dm6ish"
+longname        "The Dark Zone Redux"
+type			"ffa lms tourney"
+}
+
+
+{
+map             "q3dm6ish"
+longname        "The Dark Zone Redux"
+type			"ffa lms tourney"
+}

@@ -1,0 +1,9 @@
+{
+map	            "am_underworks2"
+longname	    "Under Working 2.0"
+bots	        "assassin skelebot"
+fraglimit	    20
+timelimit		10
+type	        "tourney ffa lms elimination dom"
+}
+
