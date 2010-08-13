@@ -8,6 +8,25 @@ models/players/hnt/clothes
 	}
 }
 
+models/players/angelyss/retroclothes
+{
+	cull disable
+	{
+		map models/players/angelyss/retroclothes.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/angelyss/hair_retro
+{
+	cull disable
+	{
+		map models/players/angelyss/retro.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
 models/players/hnt/neko1
 {
 	cull disable
@@ -102,6 +121,16 @@ models/players/hnt/drkclothes
 	}
 }
 
+models/players/hnt/drkclothes_red
+{
+	cull disable
+	{
+		map models/players/hnt/drkclothes_red.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
 models/players/hnt/gldclothes
 {
 	cull disable
@@ -151,11 +180,51 @@ models/players/hnt/hair
 	}
 }
 
+models/players/hnt/hair_red
+{
+	cull disable
+	{
+		map models/players/hnt/skin_red.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+models/players/hnt/hair_blue
+{
+	cull disable
+	{
+		map models/players/hnt/skin_blue.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
 models/players/hnt/drkhair
 {
 	cull disable
 	{
 		map models/players/hnt/drkskin.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+models/players/hnt/drkhair_blue
+{
+	cull disable
+	{
+		map models/players/hnt/drkskin_blue.tga
+		rgbGen lightingDiffuse
+		alphaFunc GE128
+	}
+}
+
+
+
+models/players/hnt/drkhair_red
+{
+	cull disable
+	{
+		map models/players/hnt/drkskin_red.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
