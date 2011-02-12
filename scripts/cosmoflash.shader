@@ -721,11 +721,19 @@ textures/cosmo_trim/ctf_wall_blue1
 
 textures/cosmo_liquids/plasma_red
 {
+	
+	q3map_globaltexture
+	surfaceparm trans
 	surfaceparm nonsolid
 	surfaceparm noimpact
 	surfaceparm lava
 	surfaceparm nolightmap
 	q3map_surfacelight 1250
+	cull disable
+	
+	tesssize 128
+	cull disable
+	deformVertexes wave 100 sin 3 2 .1 0.1
 	
     {
         map textures/cosmo_liquids/plasma_red.jpg
@@ -904,8 +912,7 @@ textures/cosmo_floor/metalgrid
 	cull none
 	surfaceparm nomarks
 	nopicmip
-	surfaceparm	playerclip
-    surfaceparm nodamage
+	
 	{
 		map textures/cosmo_floor/metalgrid.tga
         blendFunc GL_DST_COLOR GL_ZERO
@@ -1029,18 +1036,24 @@ textures/cosmo_sfx/decal1{	qer_editorimage textures/cosmo_sfx/decal1.tga	nopi
 	}
 }
 
-textures/cosmo_sfx/decal2{  qer_editorimage textures/cosmo_sfx/decal2.jpg  nopicmip
-  surfaceparm nonsolid
-  surfaceparm nomarks
-  surfaceparm noimpact
-  surfaceparm nolightmap
-  polygonOffset
+textures/cosmo_sfx/decal2{	qer_editorimage textures/cosmo_sfx/decal2.tga	nopicmip
+    polygonOffset
 
-  {
-      clampmap textures/cosmo_sfx/decal2.jpg
-      blendFunc filter
-      rgbGen identity
-  }
+    {
+        map textures/cosmo_sfx/decal2.tga
+        blendFunc blend
+		rgbGen identity
+	}
+}
+
+textures/cosmo_sfx/decal3{	qer_editorimage textures/cosmo_sfx/decal3.tga	nopicmip
+    polygonOffset
+
+    {
+        map textures/cosmo_sfx/decal3.tga
+        blendFunc blend
+		rgbGen identity
+	}
 }
 
 textures/cosmo_sfx/decal4{	qer_editorimage textures/cosmo_sfx/decal4.tga	nopicmip

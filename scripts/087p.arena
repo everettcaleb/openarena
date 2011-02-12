@@ -1,0 +1,8 @@
+{
+	map "oa_Thor"
+	bots "major liz merman smarine penguin sergei"
+	longname "Thor's Valhalla"
+	capturelimit "8"
+	type "ctf oneflag harvester overload ctfelimination dd dom elimination"
+	author "*SoS*THOR"
+}

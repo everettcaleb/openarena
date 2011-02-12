@@ -1,84 +1,52 @@
 textures/proto2/bluea_dcl
 {
-	surfaceparm nomarks
 	surfaceparm trans
-	surfaceparm pointlight
-	surfaceparm nonsolid
-
-	nopicmip
+	surfaceparm nomarks
+	surfaceparm nolightmap
 	polygonoffset
+	cull none
 	{
-		clampmap textures/proto2/bluea_dcl.tga
+		map textures/proto2/bluea_dcl.tga
 		alphafunc GE128
-		depthwrite
-	}
-	{
-		map $lightmap
-		rgbgen identity
-		blendfunc filter
-		depthfunc equal
+		blendFunc GL_DST_COLOR GL_ONE
 	}
 }
 textures/proto2/blueat_dcl
 {
-	surfaceparm nomarks
 	surfaceparm trans
-	surfaceparm pointlight
-	surfaceparm nonsolid
-
-	nopicmip
+	surfaceparm nomarks
+	surfaceparm nolightmap
 	polygonoffset
+	cull none
 	{
-		clampmap textures/proto2/blueat_dcl.tga
+		map textures/proto2/blueat_dcl.tga
 		alphafunc GE128
-		depthwrite
-	}
-	{
-		map $lightmap
-		rgbgen identity
-		blendfunc filter
-		depthfunc equal
+		blendFunc GL_DST_COLOR GL_ONE
 	}
 }
 textures/proto2/redat_dcl
 {
-	surfaceparm nomarks
 	surfaceparm trans
-	surfaceparm pointlight
-	surfaceparm nonsolid
-
-	nopicmip
+	surfaceparm nomarks
+	surfaceparm nolightmap
 	polygonoffset
+	cull none
 	{
-		clampmap textures/proto2/redat_dcl.tga
+		map textures/proto2/redat_dcl.tga
 		alphafunc GE128
-		depthwrite
-	}
-	{
-		map $lightmap
-		rgbgen identity
-		blendfunc filter
-		depthfunc equal
+		blendFunc GL_DST_COLOR GL_ONE
 	}
 }
 textures/proto2/reda_dcl
 {
-	surfaceparm nomarks
 	surfaceparm trans
-	surfaceparm pointlight
-	surfaceparm nonsolid
-
-	nopicmip
+	surfaceparm nomarks
+	surfaceparm nolightmap
 	polygonoffset
+	cull none
 	{
-		clampmap textures/proto2/reda_dcl.tga
+		map textures/proto2/reda_dcl.tga
 		alphafunc GE128
-		depthwrite
-	}
-	{
-		map $lightmap
-		rgbgen identity
-		blendfunc filter
-		depthfunc equal
+		blendFunc GL_DST_COLOR GL_ONE
 	}
 }

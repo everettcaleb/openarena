@@ -77,7 +77,7 @@ icons/haste
 {
 	nopicmip
 	{
-		map icons/haste.tga
+		map icons/haste
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 }
@@ -85,7 +85,7 @@ icons/invis
 {
 	nopicmip
 	{
-		map icons/invis.tga
+		map icons/invis
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 }
@@ -93,10 +93,11 @@ icons/regen
 {
 	nopicmip
 	{
-		map icons/regen.tga
+		map icons/regen
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 }
+
 icons/flight
 {
 	nopicmip
@@ -106,6 +107,23 @@ icons/flight
 	}
 }
 
+icons/invulnerability
+{
+	nopicmip
+	{
+		map icons/invulnerability
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
+
+icons/kamikaze
+{
+	nopicmip
+	{
+		map icons/kamikaze
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	}
+}
 
 medal_impressive
 {
@@ -879,15 +897,6 @@ icons/iconw_grapple
 	nopicmip
 	{
 		map icons/iconw_grapple.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-	}
-}
-
-icons/iconw_kamikaze
-{
-	nopicmip
-	{
-		map icons/iconw_kamikaze.tga
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 	}
 }
