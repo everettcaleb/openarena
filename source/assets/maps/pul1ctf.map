@@ -23042,6 +23042,7 @@ pulchr_simple/flat07
 {
 "classname" "team_CTF_blueflag"
 "origin" "-192 2176 224"
+"gametype" "ctf oneflag dd"
 }
 // entity 3
 {
@@ -23310,6 +23311,7 @@ pulchr_simple/flat07
 "classname" "item_health_mega"
 "origin" "0 0 48"
 "spawnflags" "1"
+"gametype" "ctf obelisk dd"
 }
 // entity 38
 {
@@ -24155,7 +24157,7 @@ pulchr_simple/flat07
 {
 "classname" "team_CTF_redflag"
 "origin" "192 -2176 224"
-"angle" "180"
+"gametype" "ctf oneflag dd"
 }
 // entity 162
 {
@@ -24825,4 +24827,28 @@ pulchr_simple/flat07
 "classname" "info_player_deathmatch"
 "origin" "-640 768 280"
 "angle" "-1.40334e-014"
+}
+// entity 275
+{
+"classname" "team_neutralobelisk"
+"origin" "0 0 0"
+"gametype" "harvester"
+}
+// entity 276
+{
+"classname" "team_redobelisk"
+"origin" "192 -2176 192"
+"gametype" "harvester obelisk"
+}
+// entity 277
+{
+"classname" "team_blueobelisk"
+"origin" "-192 2176 192"
+"gametype" "harvester obelisk"
+}
+// entity 278
+{
+"classname" "team_CTF_neutralflag"
+"origin" "0 0 24"
+"gametype" "oneflag"
 }

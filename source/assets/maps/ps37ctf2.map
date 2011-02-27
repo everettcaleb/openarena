@@ -3381,19 +3381,19 @@ evil8_floor/e8cretefloor01b
 {
 "classname" "weapon_plasmagun"
 "origin" "928 -1248 32"
-"angle" "-1.40334e-014"
+
 }
 // entity 60
 {
 "classname" "weapon_nailgun"
 "origin" "1088 384 192"
-"angle" "-1.40334e-014"
+
 }
 // entity 61
 {
 "classname" "ammo_shells"
 "origin" "-1120 -32 224"
-"angle" "-1.40334e-014"
+
 }
 // entity 62
 {
@@ -3411,7 +3411,7 @@ evil8_floor/e8cretefloor01b
 {
 "classname" "info_player_deathmatch"
 "origin" "-880 -1184 -128"
-"angle" "-1.40334e-014"
+
 }
 // entity 65
 {
@@ -3457,15 +3457,13 @@ evil8_floor/e8cretefloor01b
 {
 "classname" "team_CTF_redflag"
 "origin" "1536 -1088 24"
-"angle" "-1.40334e-014"
-"gametype" "ctf"
+"gametype" "ctf oneflag dd"
 }
 // entity 73
 {
 "classname" "team_CTF_blueflag"
 "origin" "-992 864 24"
-"angle" "-1.40334e-014"
-"gametype" "ctf"
+"gametype" "ctf oneflag dd"
 }
 // entity 74
 {
@@ -3594,14 +3592,14 @@ evil8_floor/e8cretefloor01b
 // entity 98
 {
 "classname" "team_redobelisk"
-"origin" "1536 -1088 32"
-"gametype" "obelisk"
+"origin" "1536 -1088 8"
+"gametype" "harvester obelisk"
 }
 // entity 99
 {
 "classname" "team_blueobelisk"
-"origin" "-992 864 32"
-"gametype" "obelisk"
+"origin" "-992 864 8"
+"gametype" "harvester obelisk"
 }
 // entity 100
 {
@@ -4054,6 +4052,7 @@ evil8_floor/e8cretefloor01b
 {
 "classname" "item_health_mega"
 "origin" "272 -112 192"
+"gametype" "ctf obelisk dd"
 }
 // entity 176
 {
@@ -4123,4 +4122,16 @@ evil8_floor/e8cretefloor01b
 "classname" "target_location"
 "origin" "272 -112 208"
 "message" "Bridge"
+}
+// entity 187
+{
+"classname" "team_neutralobelisk"
+"origin" "272 -112 128"
+"gametype" "harvester"
+}
+// entity 188
+{
+"classname" "team_CTF_neutralflag"
+"origin" "272 -112 192"
+"gametype" "oneflag"
 }

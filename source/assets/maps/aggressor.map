@@ -12054,12 +12054,12 @@ brushDef
  "origin" "488 184 376"
 }
 // Entity 164
-// Entities:g[1] -> dom_controlpoint:e[164]
+// Entities:g[1] -> domination_point:e[164]
 {
- "classname" "dom_controlpoint"
+ "classname" "domination_point"
  "wait" "5"
  "frags" "1"
- "message" "^3has captured the Rocket Launcher Atrium"
+ "message" "Rocket Launcher Atrium"
  "origin" "-96 -64 -224"
 }
 // Entity 165
@@ -12081,29 +12081,29 @@ brushDef
  "origin" "64 -128 144"
 }
 // Entity 168
-// Entities:g[1] -> dom_controlpoint:e[168]
+// Entities:g[1] -> domination_point:e[168]
 {
- "classname" "dom_controlpoint"
+ "classname" "domination_point"
  "origin" "-272 656 -24"
- "message" "^3has captured the Mortar"
+ "message" "Mortar"
  "frags" "1"
  "wait" "5"
 }
 // Entity 169
-// Entities:g[1] -> dom_controlpoint:e[169]
+// Entities:g[1] -> domination_point:e[169]
 {
- "classname" "dom_controlpoint"
+ "classname" "domination_point"
  "wait" "5"
  "frags" "1"
- "message" "^3has captured the Electro"
+ "message" "Electro"
  "origin" "584 144 160"
 }
 // Entity 170
-// Entities:g[1] -> dom_controlpoint:e[170]
+// Entities:g[1] -> domination_point:e[170]
 {
- "classname" "dom_controlpoint"
+ "classname" "domination_point"
  "origin" "-624 320 168"
- "message" "^3has captured the Corner"
+ "message" "Corner"
  "frags" "1"
  "wait" "5"
 }

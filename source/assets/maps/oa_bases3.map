@@ -4032,7 +4032,7 @@
 // entity 119
 {
 "classname" "team_neutralobelisk"
-"origin" "1632 -448 -40"
+"origin" "1632 -448 -48"
 "gametype" "harvester"
 }
 // entity 120
@@ -4044,16 +4044,14 @@
 // entity 121
 {
 "classname" "team_redobelisk"
-"origin" "128 -448 440"
+"origin" "128 -448 432"
 "gametype" "ctf, oneflag, obelisk, harvester"
-"angle" "0"
 }
 // entity 122
 {
 "classname" "team_blueobelisk"
-"origin" "3136 -448 440"
+"origin" "3136 -448 432"
 "gametype" "ctf, oneflag, obelisk, harvester"
-"angle" "0"
 }
 // entity 123
 {

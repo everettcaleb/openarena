@@ -5765,13 +5765,13 @@ evil8_floor/e8clangfloor
 {
 "classname" "team_CTF_redflag"
 "origin" "-3264 -128 96"
-"gametype" "ctf"
+"gametype" "ctf oneflag dd"
 }
 // entity 3
 {
 "classname" "team_CTF_blueflag"
 "origin" "576 -128 96"
-"gametype" "ctf"
+"gametype" "ctf oneflag dd"
 }
 // entity 4
 {
@@ -6842,14 +6842,14 @@ evil8_floor/e8clangfloor
 // entity 191
 {
 "classname" "team_blueobelisk"
-"origin" "576 -128 88"
-"gametype" "obelisk"
+"origin" "576 -128 64"
+"gametype" "harvester obelisk"
 }
 // entity 192
 {
 "classname" "team_redobelisk"
-"origin" "-3264 -128 88"
-"gametype" "obelisk"
+"origin" "-3264 -128 64"
+"gametype" "harvester obelisk"
 }
 // entity 193
 {
@@ -6978,4 +6978,16 @@ suction/logo_blue
 "origin" "-1192 -128 192"
 "targetname" "info_null4"
 "angle" "180"
+}
+// entity 207
+{
+"classname" "team_neutralobelisk"
+"origin" "-1344 -128 64"
+"gametype" "harvester"
+}
+// entity 208
+{
+"classname" "team_CTF_neutralflag"
+"origin" "-1344 -128 96"
+"gametype" "oneflag"
 }
