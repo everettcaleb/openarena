@@ -1,0 +1,501 @@
+{
+"classname" "worldspawn"
+"message" "oa_ctf2"
+"_blocksize" "1024"
+"_keeplights" "1"
+}
+{
+"classname" "trigger_hurt"
+"spawnflags" "12"
+"dmg" "10000"
+"model" "*1"
+}
+{
+"classname" "trigger_push"
+"target" "r1"
+"model" "*2"
+}
+{
+"classname" "target_position"
+"origin" "1882 1464 794"
+"targetname" "r1"
+}
+{
+"classname" "target_position"
+"origin" "2367 587 976"
+"targetname" "b1"
+}
+{
+"classname" "trigger_push"
+"target" "b1"
+"model" "*3"
+}
+{
+"classname" "trigger_push"
+"target" "r2"
+"model" "*4"
+}
+{
+"classname" "target_position"
+"origin" "1674 740 1262"
+"targetname" "r2"
+}
+{
+"classname" "trigger_push"
+"target" "b2"
+"model" "*5"
+}
+{
+"classname" "target_position"
+"origin" "2347 1315 1279"
+"targetname" "b2"
+}
+{
+"classname" "target_position"
+"origin" "771 1679 1084"
+"targetname" "r3"
+}
+{
+"classname" "trigger_push"
+"target" "r3"
+"model" "*6"
+}
+{
+"classname" "trigger_push"
+"target" "r4"
+"model" "*7"
+}
+{
+"classname" "target_position"
+"origin" "256 1340 1084"
+"targetname" "r4"
+}
+{
+"classname" "trigger_push"
+"target" "r5"
+"model" "*8"
+}
+{
+"classname" "target_position"
+"origin" "404 912 1112"
+"targetname" "r5"
+}
+{
+"classname" "trigger_push"
+"target" "r6"
+"model" "*9"
+}
+{
+"classname" "target_position"
+"origin" "1922.62 402.625 1190.38"
+"targetname" "r6"
+}
+{
+"classname" "trigger_push"
+"target" "b3"
+"model" "*10"
+}
+{
+"classname" "target_position"
+"origin" "3348 388 1044"
+"targetname" "b3"
+}
+{
+"classname" "trigger_push"
+"target" "b4"
+"model" "*11"
+}
+{
+"classname" "target_position"
+"origin" "3840 744 1044"
+"targetname" "b4"
+}
+{
+"classname" "target_position"
+"origin" "3684 1152 1044"
+"targetname" "b5"
+}
+{
+"classname" "target_position"
+"origin" "2238.89 1627.74 1173.88"
+"targetname" "b6"
+}
+{
+"classname" "trigger_push"
+"target" "b6"
+"model" "*12"
+}
+{
+"classname" "trigger_push"
+"target" "b5"
+"model" "*13"
+}
+{
+"classname" "info_player_intermission"
+"origin" "120 1124 1372.88"
+"angles" "0 0 0"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "1938 984 321"
+}
+{
+"classname" "weapon_rocketlauncher"
+"origin" "3154.12 1731.62 732"
+}
+{
+"classname" "weapon_rocketlauncher"
+"origin" "1022.5 319.625 728"
+}
+{
+"classname" "item_health"
+"origin" "322.995 1772.61 976"
+}
+{
+"classname" "item_health"
+"origin" "322.625 1612.62 976"
+}
+{
+"classname" "item_health"
+"origin" "217.875 333.375 692"
+}
+{
+"classname" "item_health"
+"origin" "217.875 512.125 692"
+}
+{
+"classname" "weapon_railgun"
+"origin" "2998 848 580"
+}
+{
+"classname" "weapon_railgun"
+"origin" "1056.38 1186 584"
+}
+{
+"classname" "weapon_shotgun"
+"origin" "2357.5 285 728"
+"angle" "180"
+}
+{
+"classname" "ammo_shells"
+"origin" "2346.25 374.375 716"
+"angle" "180"
+}
+{
+"classname" "ammo_rockets"
+"origin" "2344.38 457 716"
+"angle" "180"
+}
+{
+"classname" "ammo_rockets"
+"origin" "1783.5 1580 716"
+}
+{
+"classname" "weapon_shotgun"
+"origin" "1775.5 1751 736"
+}
+{
+"classname" "ammo_shells"
+"origin" "1786.12 1668.38 716"
+}
+{
+"classname" "item_health_mega"
+"origin" "2088 1000 260.75"
+"gametype" "ffa, tournament, single, team, ctf"
+}
+{
+"classname" "team_CTF_blueflag"
+"origin" "504 1384 958"
+"gametype" "ctf"
+}
+{
+"classname" "team_CTF_redflag"
+"origin" "3576 670.625 976"
+"gametype" "ctf"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "3608 1612 728"
+"angle" "180"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "3252 1392 748"
+"angle" "180"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "3199 768.75 596"
+"angle" "180"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "2912 336 696"
+"angle" "180"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "3431.12 416 696"
+"angle" "180"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "705.5 1591.5 696"
+"angle" "-1.40334e-14"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "544 508 728"
+"angle" "-1.40334e-14"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "1240 1747.88 696"
+"angle" "-1.40334e-14"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "900 728 748"
+"angle" "-1.40334e-14"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "900 1292 596"
+"angle" "-1.40334e-14"
+}
+{
+"classname" "team_blueobelisk"
+"origin" "505 1383.75 928"
+"gametype" "ctf oneflag harvester obelisk"
+}
+{
+"classname" "team_redobelisk"
+"origin" "3576 672.75 928"
+"gametype" "ctf oneflag harvester obelisk"
+}
+{
+"classname" "item_health"
+"origin" "3383 988.25 728"
+}
+{
+"classname" "item_health"
+"origin" "2934 1380 728"
+}
+{
+"classname" "item_health"
+"origin" "1189 681 728"
+}
+{
+"classname" "item_health"
+"origin" "727.875 1056.88 728"
+}
+{
+"classname" "ammo_slugs"
+"origin" "506 1386 946"
+"gametype" "ffa, tournament, single, team, oneflag"
+}
+{
+"classname" "ammo_slugs"
+"origin" "3575.88 670.625 946"
+"gametype" "ffa, tournament, single, team, oneflag"
+}
+{
+"classname" "item_health"
+"origin" "3914 1539.12 720"
+}
+{
+"classname" "item_health"
+"origin" "3914.38 1699.12 720"
+}
+{
+"classname" "item_health"
+"origin" "3800.5 287.87 976"
+}
+{
+"classname" "item_health"
+"origin" "3800.87 447.865 976"
+}
+{
+"classname" "team_neutralobelisk"
+"origin" "2087.88 1000 232"
+"gametype" "oneflag harvester"
+}
+{
+"classname" "team_CTF_neutralflag"
+"origin" "2088.88 1000.25 240.625"
+"angle" "180"
+"gametype" "oneflag"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "572 1644 964"
+"notteam" "1"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "3645 450 959"
+"angle" "180"
+"notteam" "1"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "3763 1566 703"
+"angle" "180"
+"notteam" "1"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "1695 1700 685"
+"angle" "180"
+}
+{
+"classname" "ammo_bullets"
+"origin" "3841 839 523"
+"angle" "180"
+}
+{
+"classname" "ammo_slugs"
+"origin" "3753 841 523"
+"angle" "180"
+}
+{
+"classname" "ammo_rockets"
+"origin" "3661 843 523"
+"angle" "180"
+}
+{
+"classname" "ammo_bullets"
+"origin" "3571 843 523"
+"angle" "180"
+}
+{
+"classname" "ammo_bullets"
+"origin" "340 1188 523"
+}
+{
+"classname" "ammo_rockets"
+"origin" "520 1184 523"
+}
+{
+"classname" "ammo_bullets"
+"origin" "610 1184 523"
+}
+{
+"classname" "ammo_slugs"
+"origin" "428 1186 523"
+}
+{
+"classname" "item_health_small"
+"origin" "691 1412 517"
+}
+{
+"classname" "item_health_small"
+"origin" "962 1412 517"
+}
+{
+"classname" "item_health_small"
+"origin" "872 1412 517"
+}
+{
+"classname" "item_health_small"
+"origin" "779 1412 517"
+}
+{
+"classname" "item_health_small"
+"origin" "3459 621 517"
+}
+{
+"classname" "item_health_small"
+"origin" "3276 621 517"
+}
+{
+"classname" "item_health_small"
+"origin" "3188 621 517"
+}
+{
+"classname" "item_health_small"
+"origin" "3369 621 517"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "2292 996 324"
+"angle" "180"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "2464 288 680"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "1192 272 704"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "2968 1760 704"
+}
+{
+"classname" "target_location"
+"origin" "508 1417 947"
+"count" "4"
+"message" "blue base"
+"notfree" "1"
+"angle" "180"
+}
+{
+"classname" "target_location"
+"origin" "1674 1783 677"
+"notfree" "1"
+"count" "4"
+"message" "blue shotgun"
+"angle" "180"
+}
+{
+"classname" "target_location"
+"origin" "1079 1387 532"
+"message" "blue railgun"
+"count" "4"
+"notfree" "1"
+"angle" "180"
+}
+{
+"classname" "target_location"
+"origin" "937 517 701"
+"message" "blue rocket"
+"count" "4"
+"notfree" "1"
+"angle" "180"
+}
+{
+"classname" "target_location"
+"origin" "3100 1613 686"
+"message" "red rocket"
+"count" "1"
+"notfree" "1"
+}
+{
+"classname" "target_location"
+"origin" "2413 369 667"
+"message" "red shotgun"
+"count" "1"
+"notfree" "1"
+}
+{
+"classname" "target_location"
+"origin" "3001 796 504"
+"message" "red railgun"
+"count" "1"
+"notfree" "1"
+}
+{
+"classname" "target_location"
+"origin" "3555 696 941"
+"message" "red base"
+"count" "1"
+"notfree" "1"
+}
+{
+"classname" "target_location"
+"origin" "2096 1001 289"
+"notfree" "1"
+"message" "center"
+}

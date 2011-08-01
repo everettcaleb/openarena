@@ -1,0 +1,388 @@
+{
+"classname" "worldspawn"
+"gridsize" "128 128 256"
+"message" "The Strange House"
+"music" "music/fla22k_02.ogg"
+}
+{
+"classname" "info_notnull"
+"targetname" "info1"
+"origin" "-384 -416 704"
+}
+{
+"classname" "info_player_intermission"
+"target" "info1"
+"origin" "-1184 -1264 960"
+}
+{
+"classname" "func_bobbing"
+"speed" "5.5"
+"height" "708"
+"noise" "sound/world/fireloud.wav"
+"model" "*1"
+}
+{
+"classname" "func_bobbing"
+"speed" "5.8"
+"height" "708"
+"noise" "sound/world/fireloud.wav"
+"origin" "288 -800 16"
+"model" "*2"
+}
+{
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"angle" "90"
+"origin" "-1248 -1248 320"
+}
+{
+"classname" "ammo_rockets"
+"origin" "0 1152 656"
+}
+{
+"classname" "ammo_rockets"
+"origin" "0 1280 656"
+}
+{
+"classname" "ammo_lightning"
+"origin" "-32 -1472 256"
+}
+{
+"classname" "weapon_lightning"
+"origin" "1632 -256 288"
+}
+{
+"classname" "weapon_rocketlauncher"
+"origin" "0 -1648 384"
+}
+{
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"angle" "360"
+"origin" "-472 1344 352"
+}
+{
+"classname" "item_health_small"
+"origin" "1664 0 384"
+}
+{
+"classname" "item_health_small"
+"origin" "1600 256 384"
+}
+{
+"classname" "item_health_small"
+"origin" "1568 480 384"
+}
+{
+"classname" "item_health_small"
+"origin" "1536 704 384"
+}
+{
+"classname" "item_health_small"
+"origin" "1440 896 384"
+}
+{
+"classname" "item_armor_shard"
+"origin" "736 256 384"
+}
+{
+"classname" "item_armor_shard"
+"origin" "736 384 384"
+}
+{
+"classname" "item_armor_shard"
+"origin" "736 512 384"
+}
+{
+"classname" "item_armor_shard"
+"origin" "736 640 384"
+}
+{
+"classname" "item_armor_shard"
+"origin" "736 768 384"
+}
+{
+"classname" "ammo_slugs"
+"origin" "32 -1472 256"
+}
+{
+"classname" "item_health_mega"
+"target" "spk1"
+"origin" "-880 -656 256"
+}
+{
+"classname" "func_bobbing"
+"noise" "sound/world/fireloud.wav"
+"height" "708"
+"speed" "4.5"
+"origin" "-288 -800 16"
+"model" "*3"
+}
+{
+"classname" "func_bobbing"
+"speed" "6"
+"height" "708"
+"noise" "sound/world/fireloud.wav"
+"origin" "-1088 1056 16"
+"model" "*4"
+}
+{
+"classname" "func_bobbing"
+"noise" "sound/world/fireloud.wav"
+"height" "708"
+"speed" "5"
+"origin" "-1152 0 16"
+"model" "*5"
+}
+{
+"classname" "weapon_railgun"
+"origin" "0 -224 656"
+}
+{
+"classname" "item_armor_body"
+"origin" "0 512 336"
+}
+{
+"classname" "item_armor_shard"
+"origin" "560 944 656"
+}
+{
+"classname" "item_armor_shard"
+"origin" "480 992 656"
+}
+{
+"classname" "item_armor_shard"
+"origin" "400 1024 656"
+}
+{
+"classname" "item_armor_shard"
+"origin" "608 864 656"
+}
+{
+"classname" "item_armor_shard"
+"origin" "640 784 656"
+}
+{
+"classname" "item_health"
+"origin" "128 128 656"
+}
+{
+"classname" "item_botroam"
+"weight" "180"
+"origin" "-880 -656 272"
+}
+{
+"classname" "ammo_lightning"
+"origin" "320 192 672"
+}
+{
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"origin" "-480 208 672"
+"angle" "360"
+}
+{
+"classname" "item_health"
+"origin" "-416 448 656"
+}
+{
+"classname" "item_botroam"
+"weight" "150"
+"origin" "0 128 656"
+}
+{
+"classname" "weapon_shotgun"
+"targetname" "spawn"
+"origin" "3328 256 512"
+}
+{
+"classname" "target_give"
+"targetname" "giveme"
+"target" "spawn"
+"origin" "3392 320 512"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "-416 -288 352"
+"angle" "45"
+"target" "giveme"
+}
+{
+"classname" "info_player_deathmatch"
+"origin" "800 -1568 336"
+"angle" "90"
+"target" "giveme"
+}
+{
+"classname" "ammo_shells"
+"origin" "384 -192 376"
+}
+{
+"classname" "domination_point"
+"origin" "0.125 -895.5 392"
+"message" "Bridge"
+}
+{
+"classname" "domination_point"
+"origin" "0 768 344"
+"message" "Castle"
+}
+{
+"classname" "domination_point"
+"origin" "0 1516 640"
+"message" "Backyard"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "64 -1664 392"
+"angle" "-3.50835e-015"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "-64 -1472 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "0 -1472 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "64 -1472 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "0 -1664 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "-64 -1664 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "-64 -1600 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "0 -1600 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "64 -1600 392"
+"angle" "-3.50835e-015"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "-64 -1536 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "0 -1536 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_bluespawn"
+"origin" "64 -1536 392"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "64 1168 664"
+"angle" "-90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "-64 1168 664"
+"angle" "-90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "0 1168 664"
+"angle" "-90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "-64 1360 664"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "64 1360 664"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "0 1360 664"
+"angle" "90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "64 1296 664"
+"angle" "-45"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "-64 1296 664"
+"angle" "-90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "0 1296 664"
+"angle" "-90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "64 1232 664"
+"angle" "-45"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "-64 1232 664"
+"angle" "-90"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_redspawn"
+"origin" "0 1232 664"
+"angle" "-45"
+"gametype" "elimination"
+}
+{
+"classname" "team_CTF_blueflag"
+"origin" "0 -1568 384"
+"gametype" "dd"
+}
+{
+"classname" "team_CTF_redflag"
+"origin" "0 1264 672"
+"gametype" "dd"
+}
