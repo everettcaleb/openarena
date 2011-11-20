@@ -78,28 +78,30 @@ bfgExplocsion
 	}
 }
 
+/* BFG explosion: inversesawtooth can be glitchy when seen from faraway (especially with 0 baseline value)
+   take care when using it */
 bfgExplosion
 {
 	{
-		clampmap textures/oa/bfgfiar.tga
+		clampmap textures/oa/bfgfiar
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.6 
+		rgbGen wave inversesawtooth 0 .8 0 1
 		tcMod rotate 77
-		tcMod stretch sin 0.3 0.7 0 0.6 
+		tcMod stretch sawtooth .6 .2 0 1
 	}
 	{
-		clampmap textures/oa/bfgfiar.tga
+		clampmap textures/oa/bfgfiar
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.6 
-		tcMod rotate -17
-		tcMod stretch sin 0 1.3 0 0.8 
+		rgbGen wave sin .2 .8 0 1
+		tcMod rotate -33
+		tcMod stretch sawtooth .8 .2 0 1
 	}
 	{
-		clampmap textures/oa/bfgfiar.tga
+		clampmap textures/oa/bfgfiar
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.6 
+		rgbGen wave inversesawtooth 0 .6 0 1
 		tcMod rotate -77
-		tcMod stretch sawtooth 0 1.3 0 0.8 
+		tcMod stretch inversesawtooth 0 .4 0 1
 	}
 }
 
@@ -259,6 +261,8 @@ olderrocketExplosion
 	}
 }
 
+/* Rocket explosion: inversesawtooth can be glitchy when seen from faraway (especially with 0 baseline value)
+   take care when using it */
 rocketExplosion
 {
 	{
@@ -274,30 +278,30 @@ rocketExplosion
 	{
 		clampmap textures/oa/fiar.tga
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1 
+		rgbGen wave inversesawtooth 0.1 0.8 0 1 
 		tcMod rotate 77
-		tcMod stretch sawtooth 0 1 0 0.4 
+		tcMod stretch inversesawtooth 0.1 1 0 0.4 
 	}
 	{
 		clampmap textures/oa/fiar2.tga
 		blendfunc add
 		rgbGen wave inversesawtooth 0 1 0 1 
 		tcMod rotate 33
-		tcMod stretch sin 0 1 0 0.4 
+		tcMod stretch sin 0.2 1 0 0.4 
 	}
 	{
 		clampmap textures/oa/fiar.tga
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1 
+		rgbGen wave sin 0 1 0 1 
 		tcMod rotate -17
-		tcMod stretch sawtooth 0 1.5 0 1 
+		tcMod stretch sawtooth 0.1 1.5 0 1
 	}
 	{
-		clampmap textures/oa/fiar2.tga
+		clampmap textures/oa/fiar.tga
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1 
+		rgbGen wave inversesawtooth 0.1 1 0 1
 		tcMod rotate -77
-		tcMod stretch sawtooth 0.3 1 0 1 
+		tcMod stretch sawtooth 0.4 0.8 0 1 
 	}
 }
 
@@ -381,35 +385,36 @@ OLDgrenadeExplosion
 	}
 }
 
+/* Rocket explosion: inversesawtooth can be glitchy when seen from faraway (especially with 0 baseline value)
+   take care when using it */
 grenadeExplosion
 {
 	{
-		clampmap textures/oa/grenfiar.tga
+		clampmap textures/oa/grenfiar
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.6 
+		rgbGen wave sin .2 .8 0 1
 		tcMod rotate 77
-		tcMod stretch sin 0 1 0 0.4 
+		tcMod stretch sawtooth .6 .2 0 1
 	}
 	{
-		clampmap textures/oa/grenfiar.tga
+		clampmap textures/oa/fiar
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.6 
-		tcMod rotate 33
-		tcMod stretch sin 0 1 0 0.4 
+		rgbGen wave sin .2 .8 0 1
+		tcMod rotate -33
+		tcMod stretch sawtooth .8 .2 0 1
 	}
 	{
-		clampmap textures/oa/grenfiar.tga
+		clampmap textures/oa/grenfiar
 		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.6 
-		tcMod rotate -17
-		tcMod stretch sawtooth 0 1.8 0 1 
-	}
-	{
-		clampmap textures/oa/grenfiar.tga
-		blendfunc add
-		rgbGen wave inversesawtooth 0 1 0 1.6 
+		rgbGen wave inversesawtooth 0 .6 0 1.6
 		tcMod rotate -77
-		tcMod stretch sawtooth 0.3 1 0 1 
+		tcMod stretch inversesawtooth 0 .2 0 .6
+	}
+	{
+		clampmap textures/oa/grenfiar
+		blendfunc add
+		rgbGen wave inversesawtooth 0 .8 0 1.6
+		tcMod rotate 33
+		tcMod stretch inversesawtooth .2 .4 0 .6
 	}
 }
-

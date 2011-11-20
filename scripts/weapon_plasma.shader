@@ -53,12 +53,25 @@ models/weapons2/plasma/muzzlecenter
 	}
 }
 
-models/weapons2/plasma/blackchrome
+models/weapons2/lightning/skinlightning
 {
 	{
-		map models/weapons2/plasma/blackchrome.tga
+		map models/weapons2/lightning/skinlightning.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map gfx/fx/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map gfx/fx/spec/robawt.tga
+		blendfunc gl_dst_color gl_dst_alpha
 		rgbGen lightingDiffuse
 		tcGen environment 
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -66,52 +79,27 @@ models/weapons2/plasma/skin
 {
 	{
 		map models/weapons2/plasma/skin.tga
-		rgbGen identity
+		rgbGen lightingDiffuse
 	}
 	{
-		map textures/effects/tinfx2d.tga
-		blendfunc add
-		rgbGen identity
-		tcMod scroll 1 0
-		tcMod scale 2 2
+		map gfx/fx/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
 	}
 	{
 		map models/weapons2/plasma/skin.tga
-		rgbGen lightingDiffuse
-		alphaFunc GE128
+		blendfunc add
+		rgbGen wave sin 0 1 0 1 
+		alphaFunc LT128
 	}
-}
-
-models/weapons2/plasma/blackhandle
-{
 	{
-		map models/weapons2/plasma/blackhandle.tga
+		map gfx/fx/spec/spots.tga
+		blendfunc gl_dst_color gl_dst_alpha
 		rgbGen lightingDiffuse
 		tcGen environment 
-	}
-}
-
-models/weapons2/plasma/muzzlside
-{
-	cull disable
-	{
-		map models/weapons2/plasma/muzzlside.tga
-		blendfunc add
-	}
-}
-
-models/weapons2/plasma/muzzlecenter
-{
-	deformVertexes autosprite
-	{
-		clampmap models/weapons2/plasma/f_plasma.tga
-		blendfunc add
-		tcMod rotate 1246
-	}
-	{
-		clampmap models/weapons2/plasma/f_plasma.tga
-		blendfunc add
-		tcMod rotate -1246
+		alphaGen lightingSpecular
+		detail
 	}
 }
 

@@ -1,30 +1,3 @@
-models/weapons2/rocketl/blackchrome
-{
-	{
-		map models/weapons2/rocketl/blackchrome.tga
-		rgbGen lightingDiffuse
-		tcGen environment 
-	}
-}
-
-models/weapons2/rocketl/blackhandle
-{
-	{
-		map models/weapons2/rocketl/blackhandle.tga
-		rgbGen lightingDiffuse
-		tcGen environment 
-	}
-}
-
-models/weapons2/rocketl/muzzlside
-{
-	cull disable
-	{
-		map models/weapons2/rocketl/muzzlside.tga
-		blendfunc add
-	}
-}
-
 rocketFlash
 {
 	deformVertexes autosprite
@@ -32,11 +5,6 @@ rocketFlash
 		clampmap models/weapons2/rocketl/muzzy.tga
 		blendfunc add
 		tcMod rotate 1246
-	}
-	{
-		clampmap models/weapons2/rocketl/muzzy.tga
-		blendfunc add
-		tcMod rotate -1246
 	}
 }
 
@@ -46,8 +14,6 @@ rocketFlare
 	{
 		clampmap textures/flares/wide.tga
 		blendfunc add
-		rgbGen const ( 0.980392 0.882353 0.737255 )
-		tcMod stretch inversesawtooth 0.6 0.4 0 4 
 	}
 }
 
@@ -55,32 +21,40 @@ rocketThrust
 {
 	cull disable
 	{
-		clampmap textures/flares/flarey.tga
-		blendfunc add
-		rgbGen const ( 0.541176 0.341176 0.156863 )
-		tcMod rotate -96
-		tcMod stretch sin 0.3 0.7 0 8 
-	}
-	{
-		clampmap textures/flares/wide.tga
-		blendfunc add
-		rgbGen const ( 0.843137 0.588235 0.4 )
-	}
-	{
 		clampmap textures/flares/newflare.tga
 		blendfunc add
 		rgbGen const ( 0.713726 0.270588 0.121569 )
-		tcMod rotate 46
+		tcMod rotate 467
 		tcMod stretch inversesawtooth 0.6 0.4 0 4 
 	}
 }
 
-models/weapons2/rocketl/flare
+models/weapons2/rocketl/skin
 {
-	deformVertexes autosprite
 	{
-		map models/weapons2/rocketl/flare.tga
-		blendfunc add
+		map models/weapons2/rocketl/skin.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/weapons2/rocketl/skin.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen const ( 0.286275 0.352941 0.462745 )
+		alphaGen lightingSpecular
+		detail
+	}
+	{
+		map gfx/fx/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map gfx/fx/spec/spots.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
 	}
 }
 

@@ -1,5 +1,6 @@
 logoTitle
 {
+	nopicmip
 	cull disable
 	{
 		map textures/oafx/burnme.jpg
@@ -22,6 +23,7 @@ logoTitle
 
 logoEmblem
 {
+	nopicmip
 	cull disable
 	{
 		map textures/oafx/orangechrm_2.jpg
@@ -32,6 +34,7 @@ logoEmblem
 
 logoHalo
 {
+	nopicmip
 	deformVertexes autosprite
 	{
 		clampmap textures/oafx/flare.tga
@@ -57,6 +60,7 @@ logoHalo
 
 menu/art/cut_frame
 {
+	nopicmip
 	{
 		map menu/art/cutred.tga
 		blendfunc filter
@@ -69,6 +73,7 @@ menu/art/cut_frame
 
 menu/art/addbotframe
 {
+	nopicmip
 	{
 		map menu/art/addbotred.tga
 		blendfunc filter
@@ -78,4 +83,3 @@ menu/art/addbotframe
 		blendfunc blend
 	}
 }
-

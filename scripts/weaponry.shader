@@ -68,12 +68,6 @@ rocketThrustf
 	}
 }
 
-rocketThrust
-{
-	{
-	// do nothing.
-	}
-}
 rocketFlare
 {
 	deformVertexes autosprite

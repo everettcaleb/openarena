@@ -2,10 +2,11 @@ powerups/invisibility
 {
 	cull disable
 	{
-		animmap 30 sprites/multwake1.tga sprites/multwake2.tga sprites/multwake3.tga sprites/multwake4.tga sprites/multwake5.tga sprites/multwake6.tga sprites/multwake7.tga sprites/multwake8.tga 
-		blendfunc gl_dst_color gl_src_color
+		map gfx/damage/shadow.tga
+		blendfunc blend
 		tcMod rotate 86
 		tcGen environment 
+		alphaGen wave sin 0.01 0 0 1 
 	}
 }
 
@@ -41,9 +42,10 @@ smallcrossEnv
 	cull disable
 	{
 		map textures/effects/envmaprail.tga
-		blendfunc add
+		blendfunc gl_src_alpha gl_one
 		tcMod scroll 1 0.1
 		tcGen environment 
+		alphaGen lightingSpecular
 	}
 }
 
@@ -52,10 +54,11 @@ largecrossEnv
 	cull disable
 	{
 		map textures/effects/largehelth.tga
-		blendfunc add
+		blendfunc gl_src_alpha gl_one
 		tcMod scroll 1 0.2
 		tcMod scale 0.5 0.5
 		tcGen environment 
+		alphaGen lightingSpecular
 	}
 }
 
@@ -64,9 +67,10 @@ megacrossEnv
 	cull disable
 	{
 		map textures/effects/megahelth.tga
-		blendfunc add
+		blendfunc gl_src_alpha gl_one
 		tcMod scroll 1 0.2
 		tcGen environment 
+		alphaGen lightingSpecular
 	}
 }
 
@@ -79,7 +83,7 @@ powerups/quadi
 	}
 }
 
-powerups/quad
+powerups/quade
 {
 	deformVertexes wave 100 sin 0.5 0 0 0 
 	{
@@ -90,7 +94,47 @@ powerups/quad
 	}
 }
 
+powerups/quad
+{
+	deformVertexes wave 100 sin 0.5 0 0 0 
+	{
+		map textures/oafx/quadmultshell.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scroll 0.5 0.5
+		tcGen environment 
+	}
+	{
+		map gfx/fx/spec/spots.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen const ( 0.266667 0.423529 0.658824 )
+		tcMod scroll 2 1
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
 powerups/quadWeapon
+{
+	deformVertexes wave 100 sin 0.5 0 0 0 
+	{
+		map textures/oafx/quadmultshell.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scroll 0.5 0.5
+		tcGen environment 
+	}
+	{
+		map gfx/fx/spec/spots.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen const ( 0.266667 0.423529 0.658824 )
+		tcMod scroll 2 1
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
+powerups/quadWeapong
 {
 	deformVertexes wave 100 sin 0.5 0 0 0 
 	{
@@ -116,8 +160,17 @@ powerups/battleWeapon
 	deformVertexes wave 100 sin 0.5 0 0 0 
 	{
 		map textures/oafx/suitshell.tga
-		blendfunc add
+		blendfunc gl_dst_color gl_src_color
 		tcMod rotate 75
+	}
+	{
+		map gfx/fx/spec/skin.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen const ( 0.74902 0.403922 0.176471 )
+		tcMod scroll 0.5 0.5
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
 	}
 }
 

@@ -1,30 +1,3 @@
-models/weapons2/railgun/blackchrome
-{
-	{
-		map models/weapons2/railgun/blackchrome.tga
-		rgbGen lightingDiffuse
-		tcGen environment 
-	}
-}
-
-models/weapons2/railgun/blackhandle
-{
-	{
-		map models/weapons2/railgun/blackhandle.tga
-		rgbGen lightingDiffuse
-		tcGen environment 
-	}
-}
-
-models/weapons2/railgun/muzzlside
-{
-	cull disable
-	{
-		map models/weapons2/railgun/muzzlside.tga
-		blendfunc add
-	}
-}
-
 models/weapons2/railgun/muzzlecenter
 {
 	deformVertexes autosprite
@@ -56,6 +29,19 @@ models/weapons2/railgun/skin
 		map models/weapons2/railgun/skin.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map gfx/fx/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map models/weapons2/railgun/skin.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/weapons2/railgun/energy
@@ -72,9 +58,11 @@ models/weapons2/railgun/energy
 		tcMod scroll -1 0
 	}
 	{
-		map gfx/damage/shadow.tga
-		blendfunc filter
+		clampmap gfx/fx/flares/wide.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen const ( 0.52549 0.533333 0.858824 )
 		tcMod scale 1.1 1
+		tcMod stretch sin 1 0.2 0 1 
 	}
 }
 
@@ -86,6 +74,14 @@ models/weapons2/railgun/glass
 		blendfunc add
 		rgbGen lightingDiffuse
 		tcGen environment 
+	}
+	{
+		map $whiteimage 
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -112,8 +108,8 @@ railDisc
 	{
 		clampmap models/weapons2/railgun/f_railgun3.tga
 		blendfunc add
-		rgbGen vertex
-		tcmod rotate 130
+		rgbGen Vertex
+		tcMod rotate 130
 	}
 }
 

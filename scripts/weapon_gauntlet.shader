@@ -1,49 +1,42 @@
-models/weapons2/gauntlet/skin
+models/weapons2/gauntlet/gauntlet1
 {
 	{
-		map textures/base_wall/bluemetal2_shiny.tga
+		map models/weapons2/gauntlet/gauntlet1.tga
 		rgbGen lightingDiffuse
+	}
+	{
+		map gfx/fx/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map models/weapons2/gauntlet/gauntlet1.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
-models/weapons2/gauntlet/saw
+models/weapons2/gauntlet/gauntlet2
 {
 	{
-		map textures/skies/topclouds.tga
+		map models/weapons2/gauntlet/gauntlet2.tga
 		rgbGen lightingDiffuse
-		tcMod rotate 4
-		tcGen environment 
 	}
 	{
-		map textures/effects/tinfx2c.tga
-		blendfunc add
+		map gfx/fx/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map models/weapons2/gauntlet/gauntlet2.tga
+		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
-		tcMod rotate -8
-		tcGen environment 
-	}
-}
-
-//this shader rules. made my lightsaber look 93% of the one in the movie. (episode IV)
-//basically a bunch of sprites that go across the blade of the saber.
-//i put many of them across to avoid spoiling that it's really a bunch of sprites,
-//but it looks like a true smooth glow to the viewer.
-models/weapons2/gauntlet/flare
-{
-	deformVertexes autosprite
-	{
-		map models/weapons2/gauntlet/glow.tga
-		blendfunc add
-		rgbGen wave sin 0.08 0.02 0 15 
-	}
-}
-
-//this is the blade part of the saber. no sprites used here.
-models/weapons2/gauntlet/glow
-{
-	{
-		map models/weapons2/gauntlet/glow.tga
-		blendfunc add
-		rgbGen wave sin 1 0.1 0 15 
+		alphaGen lightingSpecular
+		detail
 	}
 }
 

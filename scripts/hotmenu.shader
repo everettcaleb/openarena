@@ -1,6 +1,7 @@
 //REALLY COOL MENU BACKGROUNDY
-menuback_blueish
+menuback_blueiNO
 {
+	nopicmip
 	{
 		map gfx/newbg/bluefiller.tga
 		rgbGen identity

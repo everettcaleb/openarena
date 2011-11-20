@@ -38,13 +38,21 @@ models/weapons2/bfg/bfgbody
 {
 	cull disable
 	{
-		map models\weapons2\bfg\bfgbody.tga
+		map models/weapons2/bfg/bfgbody.tga
+		rgbGen lightingDiffuse
 	}
 	{
-		map textures\effects\skinspeciso.tga
-		blendfunc add
+		map gfx/fx/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map models/weapons2/bfg/bfgbody.tga
+		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
-		tcGen environment 
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -52,21 +60,21 @@ models/weapons2/bfg/bfgtube
 {
 	cull disable
 	{
-		map models\weapons2\bfg\bfgtube.tga
+		map models/weapons2/bfg/bfgtube.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
 		tcMod scroll -0.04 0
 		alphaGen wave inversesawtooth 0.5 0 0 1 
 	}
 	{
-		map models\weapons2\bfg\bubbles.tga
+		map models/weapons2/bfg/bubbles.tga
 		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
 		tcMod scale 1.8 1
 		tcMod scroll -2 0
 	}
 	{
-		map textures\effects\tinfx3.tga
+		map gfx/fx/spec/robawt.tga
 		blendfunc add
 		rgbGen lightingDiffuse
 		tcGen environment 
@@ -91,10 +99,9 @@ f_bfg2
 	}
 }
 
-
 BFGNexus
 {
-	deformVertexes autoSprite
+	deformVertexes autosprite
 	{
 		clampmap models/weaphits/bfg.tga
 		blendfunc add

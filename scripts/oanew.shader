@@ -91,60 +91,58 @@ LightnnFlash
 	}
 }
 
-default
-{
-	{
-		map textures/stone/pjrock1.tga
-	}
-}
-
+// sawtooth stretch 0 values result in ugly clamping
 textures/effects/jumpcirc
 {
 	q3map_lightimage textures/effects/jumpcirc.tga
 	q3map_surfacelight 466
 	{
 		clampmap textures/effects/jumpcirc.tga
-		tcMod stretch sawtooth 0 1 0 1 
+		tcMod stretch sawtooth 0.5 1 0 1 
 		tcMod rotate 75
 	}
 	{
 		clampmap textures/effects/jumpcirc.tga
 		blendfunc add
-		tcMod stretch sawtooth 0 1 0 1 
+		tcMod stretch sawtooth 0.5 1 0 1 
 		tcMod rotate -120
 	}
 }
 
+// textures/effects/jumpcircblue is the same as textures/ctf/blue_telep
+// sawtooth stretch 0 values result in ugly clamping
 textures/effects/jumpcircblue
 {
 	q3map_lightimage textures/effects/jumpcircblue.tga
 	q3map_surfacelight 466
 	{
 		clampmap textures/effects/jumpcircblue.tga
-		tcMod stretch sawtooth 0 1 0 1 
+		tcMod stretch sawtooth 0.5 1 0 1 
 		tcMod rotate 75
 	}
 	{
 		clampmap textures/effects/jumpcircblue.tga
 		blendfunc add
-		tcMod stretch sawtooth 0 1 0 1 
+		tcMod stretch sawtooth 0.5 1 0 1 
 		tcMod rotate -120
 	}
 }
 
+// textures/effects/jumpcircblue is the same as textures/ctf/blue_telep
+// sawtooth stretch 0 values result in ugly clamping
 textures/effects/jumpcircred
 {
 	q3map_lightimage textures/effects/jumpcircred.tga
 	q3map_surfacelight 466
 	{
 		clampmap textures/effects/jumpcircred.tga
-		tcMod stretch sawtooth 0 1 0 1 
+		tcMod stretch sawtooth 0.5 1 0 1 
 		tcMod rotate 75
 	}
 	{
 		clampmap textures/effects/jumpcircred.tga
 		blendfunc add
-		tcMod stretch sawtooth 0 1 0 1 
+		tcMod stretch sawtooth 0.5 1 0 1 
 		tcMod rotate -120
 	}
 }
@@ -214,15 +212,17 @@ redArmor
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/sfx/specular.tga
-		blendfunc add
+		map gfx/fx/spec/spots.tga
+		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
 		tcGen environment 
+		alphaGen lightingSpecular
 	}
 	{
-		map models/powerups/armor/redarmor.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
+		map gfx/fx/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 4
+		detail
 	}
 }
 
@@ -233,15 +233,17 @@ yellowArmor
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/sfx/specular.tga
-		blendfunc add
+		map gfx/fx/spec/spots.tga
+		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
 		tcGen environment 
+		alphaGen lightingSpecular
 	}
 	{
-		map models/powerups/armor/yellowarmor.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
+		map gfx/fx/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 4
+		detail
 	}
 }
 
@@ -288,6 +290,18 @@ console
 	{
 		map textures/sfx/logo256.tga
 	}
+	{
+		map gfx/fx/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 2 1
+		detail
+	}
+	{
+		map gfx/fx/detail/d_ice.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 2
+		detail
+	}
 }
 
 grassobj
@@ -307,10 +321,19 @@ ameatygib
 		rgbGen lightingDiffuse
 	}
 	{
+		map gfx/fx/detail/d_sand.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen lightingDiffuse
+		tcMod scale 8 8
+		alphaGen lightingSpecular
+		detail
+	}
+	{
 		map models/gibs/gibmeatspec.tga
-		blendfunc gl_src_alpha gl_dst_alpha
+		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
 		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -350,40 +373,27 @@ oalogo
 menubacknologo_blueish
 {
 	{
-		map gfx/newbg/bluefiller.tga
-		rgbGen identity
-		tcMod turb 0 0.6 0 0.125
-		tcMod rotate 6
-		tcMod scroll 1 0
+		map gfx/fx/detail/d_sand.tga
+		rgbGen const ( 0.627451 0.666667 0.796079 )
+		tcMod scroll 0.1 0.1
 	}
 	{
-		map gfx/newbg/bluefiller.tga
-		blendfunc add
-		rgbGen identity
-		tcMod turb 0 0.4 0 0.325
-		tcMod rotate -12
-		tcMod scroll -1 0
+		map gfx/fx/detail/d_sand.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen const ( 0.247059 0.803922 0.721569 )
+		tcMod scroll -0.04 0.1
+		tcMod scale -1.1 0.8
 	}
 	{
-		clampmap gfx/newbg/blackfading.tga
-		blendfunc gl_zero gl_one_minus_src_alpha
-		rgbGen identity
-		tcMod stretch sin 1.5 0.2 0 0.1 
-		tcMod rotate 7
+		map gfx/fx/detail/d_ice.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 2 2
 	}
 	{
-		clampmap gfx/newbg/blackfading.tga
-		blendfunc blend
-		tcMod stretch sin 1.3 0.2 0 0.12 
-		tcMod rotate -17
-		alphaGen wave sin 0.3 0 0 1 
-	}
-	{
-		map textures/sfx/jcb2.tga
-		blendfunc add
-		rgbGen wave triangle 0 0.2 0 0.1 
-		tcMod rotate 360
-		tcMod stretch sin 2.3 0 0 1 
+		map $whiteimage 
+		blendfunc filter
+		rgbGen const ( 0.121569 0.12549 0.152941 )
+		tcMod scale 0.5 1
 	}
 }
 
@@ -391,105 +401,57 @@ menubacknologo_blueish
 menuback_blueish
 {
 	{
-		map gfx/newbg/bluefiller.tga
-		rgbGen identity
-		tcMod turb 0 0.6 0 0.125
-		tcMod rotate 6
-		tcMod scroll 1 0
+		map gfx/fx/detail/d_sand.tga
+		rgbGen const ( 0.627451 0.666667 0.796079 )
+		tcMod scroll 0.1 0.1
 	}
 	{
-		map gfx/newbg/bluefiller.tga
-		blendfunc add
-		rgbGen identity
-		tcMod turb 0 0.4 0 0.325
-		tcMod rotate -12
-		tcMod scroll -1 0
+		map gfx/fx/detail/d_sand.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen const ( 0.247059 0.803922 0.721569 )
+		tcMod scroll -0.04 0.1
+		tcMod scale -1.1 0.8
 	}
 	{
-		clampmap gfx/newbg/blackfading.tga
-		blendfunc gl_zero gl_one_minus_src_alpha
-		rgbGen identity
-		tcMod stretch sin 1.5 0.2 0 0.1 
-		tcMod rotate 7
+		map gfx/fx/detail/d_ice.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 2 2
 	}
 	{
-		clampmap gfx/newbg/blackfading.tga
-		blendfunc blend
-		tcMod stretch sin 1.3 0.2 0 0.12 
-		tcMod rotate -17
-		alphaGen wave sin 0.3 0 0 1 
-	}
-	{
-		map textures/sfx/jcb2.tga
-		blendfunc add
-		rgbGen wave triangle 0 0.2 0 0.1 
-		tcMod rotate 360
-		tcMod stretch sin 2.3 0 0 1 
-	}
-	{
-		videomap video/idlogo.roq
-		blendfunc gl_dst_color gl_one_minus_dst_color
-		rgbGen const ( 0.482353 0.384314 0.615686 )
+		map textures/sfx/logo256.tga
+		blendfunc filter
+		tcMod scale 0.5 1
 	}
 }
 
-OLDmenubacknologo
+//REALLY COOL MENU BACKGROUNDY
+menuback
 {
 	{
-		map textures/oa/water.tga
-		tcMod scroll 0.01 0.01
+		map gfx/fx/detail/d_sand.tga
+		rgbGen const ( 0.501961 0.501961 0.501961 )
+		tcMod scroll 0.1 0.1
 	}
 	{
-		map textures/oa/water.tga
-		blendfunc add
-		tcMod scroll 0.04 0.01
+		map gfx/fx/detail/d_sand.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen const ( 0.141176 0.141176 0.141176 )
+		tcMod scroll -0.04 0.1
+		tcMod scale -1.1 0.8
 	}
 	{
-		map textures/oa/water.tga
-		blendfunc filter
-		tcMod scroll -0.01 -0.02
+		map gfx/fx/detail/d_ice.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 2 2
 	}
 }
 
-OLDmenuback
+//REALLY COOL MENU BACKGROUNDY
+menubacknologo
 {
 	{
-		map textures/oa/bloodbg.tga
-		tcMod scroll 0.01 0.01
-		tcMod rotate 5
-	}
-	{
-		map textures/oa/bloodbg.tga
-		blendfunc add
-		tcMod scroll 0.01 0.01
-		tcMod rotate -6
-	}
-	{
-		map textures/oa/bloodbg.tga
-		blendfunc filter
-		tcMod scroll -0.01 -0.02
-		tcMod rotate 3
-	}
-}
-
-bloodybg
-{
-	{
-		map textures/oa/bloodbg.tga
-		tcMod scroll 0.01 0.01
-		tcMod rotate 5
-	}
-	{
-		map textures/oa/bloodbg.tga
-		blendfunc add
-		tcMod scroll 0.01 0.01
-		tcMod rotate -6
-	}
-	{
-		map textures/oa/bloodbg.tga
-		blendfunc filter
-		tcMod scroll -0.01 -0.02
-		tcMod rotate 3
+		map $whiteimage 
+		rgbGen const ( 0 0 0 )
 	}
 }
 

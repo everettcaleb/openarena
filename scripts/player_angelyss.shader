@@ -1,3 +1,18 @@
+models/players/angelyss/retro
+{
+	{
+		map models/players/angelyss/retro.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/angelyss/retro.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
 models/players/hnt/clothes
 {
 	cull disable
@@ -5,6 +20,14 @@ models/players/hnt/clothes
 		map models/players/hnt/clothes.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map models/players/hnt/clothes.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -16,7 +39,16 @@ models/players/angelyss/retroclothes
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/robawt.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/angelyss/hair_retro
 {
 	cull disable
@@ -24,6 +56,15 @@ models/players/angelyss/hair_retro
 		map models/players/angelyss/retro.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -119,6 +160,14 @@ models/players/hnt/drkclothes
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/robawt.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/drkclothes_red
@@ -129,6 +178,14 @@ models/players/hnt/drkclothes_red
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map models/players/hnt/drkclothes_red.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/gldclothes
@@ -138,6 +195,14 @@ models/players/hnt/gldclothes
 		map models/players/hnt/gldclothes.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map models/players/hnt/gldclothes.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -168,6 +233,14 @@ models/players/hnt/redclothes
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map models/players/hnt/redclothes.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/hair
@@ -177,6 +250,15 @@ models/players/hnt/hair
 		map models/players/hnt/skin.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -188,7 +270,17 @@ models/players/hnt/hair_red
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/hnt/hair_blue
 {
 	cull disable
@@ -197,7 +289,107 @@ models/players/hnt/hair_blue
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
+models/players/hnt/skin
+{
+	{
+		map models/players/hnt/skin.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/skin.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
+models/players/hnt/skin_blue
+{
+	{
+		map models/players/hnt/skin_blue.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/skin_blue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
+models/players/hnt/skin_red
+{
+	{
+		map models/players/hnt/skin_red.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/skin_red.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
+models/players/hnt/drkskin
+{
+	{
+		map models/players/hnt/drkskin.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/drkskin.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
+models/players/hnt/drkskin_blue
+{
+	{
+		map models/players/hnt/drkskin_blue.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/drkskin_blue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
+models/players/hnt/drkskin_red
+{
+	{
+		map models/players/hnt/drkskin_red.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/drkskin_red.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
 models/players/hnt/drkhair
 {
 	cull disable
@@ -205,6 +397,13 @@ models/players/hnt/drkhair
 		map models/players/hnt/drkskin.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map models/players/hnt/hairspecmask.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
 	}
 }
 
@@ -216,9 +415,16 @@ models/players/hnt/drkhair_blue
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
-
-
 
 models/players/hnt/drkhair_red
 {
@@ -227,6 +433,15 @@ models/players/hnt/drkhair_red
 		map models/players/hnt/drkskin_red.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -238,6 +453,15 @@ models/players/hnt/gldhair
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/redhair
@@ -247,6 +471,15 @@ models/players/hnt/redhair
 		map models/players/hnt/azskin.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -269,6 +502,14 @@ models/players/hnt/clothes_blue
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map models/players/hnt/clothes_blue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/clothes_red
@@ -278,6 +519,14 @@ models/players/hnt/clothes_red
 		map models/players/hnt/clothes_red.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map models/players/hnt/clothes_red.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -289,6 +538,14 @@ models/players/hnt/drkclothes_blue
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map models/players/hnt/drkclothes_blue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/gldclothes_red
@@ -298,6 +555,14 @@ models/players/hnt/gldclothes_red
 		map models/players/hnt/gldclothes_red.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map models/players/hnt/gldclothes_red.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -309,6 +574,14 @@ models/players/hnt/redclothes_blue
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map models/players/hnt/redclothes_blue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/redclothes_gray
@@ -318,6 +591,14 @@ models/players/hnt/redclothes_gray
 		map models/players/hnt/redclothes_gray.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map models/players/hnt/redclothes_gray.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -329,6 +610,15 @@ models/players/hnt/hair
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map models/players/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/gldhair_red
@@ -339,6 +629,15 @@ models/players/hnt/gldhair_red
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/redhair_blue
@@ -348,6 +647,15 @@ models/players/hnt/redhair_blue
 		map models/players/hnt/azskin_blue.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map models/players/hairspec.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -388,6 +696,13 @@ models/players/hnt/azsuit_blue
 		blendfunc blend
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/hnt/azskin_blue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/hnt/azsuit_red
@@ -406,6 +721,13 @@ models/players/hnt/azsuit_red
 		map models/players/hnt/azskin_red.tga
 		blendfunc blend
 		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/hnt/azskin_red.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 

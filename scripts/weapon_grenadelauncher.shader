@@ -3,40 +3,30 @@ models/weapons2/grenadel/grenadel
 	{
 		map models/weapons2/grenadel/grenadel.tga
 		rgbGen lightingDiffuse
-
-	}
-	{
-		map models/weapons2/grenadel/chromey.tga
-		rgbGen lightingDiffuse
-		tcGen environment 
-		blendfunc add
 	}
 	{
 		map models/weapons2/grenadel/grenadel.tga
+		blendfunc gl_dst_color gl_dst_alpha
 		rgbGen lightingDiffuse
-		blendfunc blend
+		alphaGen lightingSpecular
 	}
 }
 
-models/weapons2/grenadel/newgren.tga
+models/weapons2/grenadel/newgren
 {
 	{
 		map models/weapons2/grenadel/newgren.tga
 		rgbGen lightingDiffuse
-
-	}
-	{
-		map models/weapons2/grenadel/chromey.tga
-		rgbGen lightingDiffuse
-		tcGen environment 
-		blendfunc add
 	}
 	{
 		map models/weapons2/grenadel/newgren.tga
+		blendfunc gl_dst_color gl_dst_alpha
 		rgbGen lightingDiffuse
-		blendfunc blend
+		alphaGen lightingSpecular
+		detail
 	}
 }
+
 models/weapons2/grenadel/blackhandle
 {
 	{
@@ -44,12 +34,10 @@ models/weapons2/grenadel/blackhandle
 		rgbGen lightingDiffuse
 		tcGen environment 
 	}
-
 }
 
 models/weapons2/grenadel/muzside
 {
-//	deformVertexes autosprite2
 	cull disable
 	{
 		map models/weapons2/grenadel/muzzlside.tga
@@ -81,3 +69,4 @@ models/weapons2/grenadel/flare
 		rgbGen wave noise 0.5 0.5 0 1 
 	}
 }
+

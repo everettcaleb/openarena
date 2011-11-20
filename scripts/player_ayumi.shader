@@ -6,6 +6,15 @@ models/players/ayumi/hair
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/ayumi/redhair
@@ -15,6 +24,15 @@ models/players/ayumi/redhair
 		map models/players/ayumi/redhair.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -26,6 +44,15 @@ models/players/ayumi/bluehair
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/ayumi/shirt
@@ -35,6 +62,13 @@ models/players/ayumi/shirt
 		map models/players/ayumi/shirt.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/ayumi/shirt.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/ayumi/redshirt
@@ -43,7 +77,13 @@ models/players/ayumi/redshirt
 	{
 		map models/players/ayumi/redshirt.tga
 		rgbGen lightingDiffuse
-	//	alphaFunc GE128
+	}
+	{
+		map models/players/ayumi/redshirt.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -54,15 +94,37 @@ models/players/ayumi/blueshirt
 		map models/players/ayumi/blueshirt.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/ayumi/blueshirt.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/ayumi/bodytrans
-{	
+{
 	cull front
 	{
 		map models/players/ayumi/body.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+}
+
+models/players/ayumi/body
+{
+	{
+		map models/players/ayumi/body.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/ayumi/body.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -72,7 +134,13 @@ models/players/ayumi/redskirt
 	{
 		map models/players/ayumi/redskirt.tga
 		rgbGen lightingDiffuse
-	//	alphaFunc GE128
+	}
+	{
+		map models/players/ayumi/redskirt.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -82,6 +150,13 @@ models/players/ayumi/skirt
 	{
 		map models/players/ayumi/skirt.tga
 		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/ayumi/skirt.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -157,8 +232,6 @@ models/players/ayumi/jet2
 	}
 }
 
-
-
 models/players/ayumi/bootjenna
 {
 	cull disable
@@ -216,7 +289,6 @@ models/players/ayumi/hairjenna_blue
 	}
 }
 
-
 models/players/ayumi/shirtjenna
 {
 	cull disable
@@ -246,3 +318,4 @@ models/players/ayumi/shirtjenna_blue
 		alphaFunc GE128
 	}
 }
+

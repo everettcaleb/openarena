@@ -6,6 +6,15 @@ models/players/arachna/hair
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
 
 models/players/arachna/hairred
@@ -16,7 +25,17 @@ models/players/arachna/hairred
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/hairspec.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/arachna/jewelry
 {
 	cull disable
@@ -24,6 +43,15 @@ models/players/arachna/jewelry
 		map models/players/arachna/jewelry.tga
 		rgbGen lightingDiffuse
 		alphaFunc GE128
+	}
+	{
+		map gfx/fx/spec/jewelry.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -35,7 +63,17 @@ models/players/arachna/jewelry3
 		rgbGen lightingDiffuse
 		alphaFunc GE128
 	}
+	{
+		map gfx/fx/spec/jewelry.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/arachna/torso
 {
 	{
@@ -43,10 +81,41 @@ models/players/arachna/torso
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/effects/skinspecmult.tga
-		blendfunc gl_dst_color gl_src_color
-		rgbGen identity
-		tcGen environment 
+		map models/players/arachna/torso.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
+models/players/arachna/torsoblue
+{
+	{
+		map models/players/arachna/torsoblue.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/arachna/torsoblue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
+}
+
+models/players/arachna/torsored
+{
+	{
+		map models/players/arachna/torsored.tga
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/players/arachna/torsored.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -57,24 +126,13 @@ models/players/arachna/spider
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/oafx/flare.tga
-		blendfunc add
+		map models/players/arachna/spider.tga
+		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
-		tcMod rotate 4
-		tcGen environment 
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 2
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 4
+		alphaGen lightingSpecular
+		detail
 	}
 }
-
 
 models/players/arachna/redspider
 {
@@ -83,197 +141,26 @@ models/players/arachna/redspider
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/oafx/flare.tga
-		blendfunc add
+		map models/players/arachna/redspider.tga
+		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
-		tcMod rotate 4
-		tcGen environment 
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 2
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 4
+		alphaGen lightingSpecular
+		detail
 	}
 }
-
 
 models/players/arachna/bluespider
 {
 	{
-		map models/players/arachna/spider.tga
+		map models/players/arachna/bluespider.tga
 		rgbGen lightingDiffuse
 	}
 	{
-		map textures/oafx/flare.tga
-		blendfunc add
+		map models/players/arachna/bluespider.tga
+		blendfunc gl_src_alpha gl_one
 		rgbGen lightingDiffuse
-		tcMod rotate 4
-		tcGen environment 
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 2
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 4
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
-
-
-models/players/arachna/hair_widowe
-{
-	cull disable
-	{
-		map models/players/arachna/hair_widowe.tga
-		rgbGen lightingDiffuse
-		alphaFunc GE128
-	}
-}
-
-models/players/arachna/jewelry_widowe
-{
-	cull disable
-	{
-		map models/players/arachna/jewelry_widowe.tga
-		rgbGen lightingDiffuse
-		alphaFunc GE128
-	}
-        {
-		map textures/oafx/flare.tga
-		blendfunc add
-		rgbGen lightingDiffuse
-		tcMod rotate 4
-		tcGen environment 
-	}
-}
-
-models/players/arachna/torso_widowe
-{
-	{
-		map models/players/arachna/torso_widowe.tga
-		rgbGen lightingDiffuse
-	}
-	
-}
-
-models/players/arachna/spider_widowe
-{
-	{
-		map models/players/arachna/spider_widowe.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/oafx/flare.tga
-		blendfunc add
-		rgbGen lightingDiffuse
-		tcMod rotate 4
-		tcGen environment 
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 2
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 4
-	}
-}
-
-models/players/arachna/hair_widowe_red
-{
-	cull disable
-	{
-		map models/players/arachna/hair_widowe_red.tga
-		rgbGen lightingDiffuse
-		alphaFunc GE128
-	}
-}
-
-models/players/arachna/torso_widowe_red
-{
-	{
-		map models/players/arachna/torso_widowe_red.tga
-		rgbGen lightingDiffuse
-	}
-	
-}
-
-models/players/arachna/spider_widowe_red
-{
-	{
-		map models/players/arachna/spider_widowe_red.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/oafx/flare.tga
-		blendfunc add
-		rgbGen lightingDiffuse
-		tcMod rotate 4
-		tcGen environment 
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 2
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 4
-	}
-}
-
-models/players/arachna/hair_widowe_blue
-{
-	cull disable
-	{
-		map models/players/arachna/hair_widowe_blue.tga
-		rgbGen lightingDiffuse
-		alphaFunc GE128
-	}
-}
-
-models/players/arachna/torso_widowe_blue
-{
-	{
-		map models/players/arachna/torso_widowe_blue.tga
-		rgbGen lightingDiffuse
-	}
-	
-}
-
-models/players/arachna/spider_widowe_blue
-{
-	{
-		map models/players/arachna/spider_widowe_blue.tga
-		rgbGen lightingDiffuse
-	}
-	{
-		map textures/oafx/flare.tga
-		blendfunc add
-		rgbGen lightingDiffuse
-		tcMod rotate 4
-		tcGen environment 
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 4 2
-	}
-	{
-		map textures/detail/d_rock.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scale 8 4
-	}
-}

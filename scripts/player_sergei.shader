@@ -8,7 +8,15 @@ models/players/sergei/face
 		map models/players/sergei/face.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/sergei/face.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/sergei/skin
 {
 	cull disable
@@ -16,28 +24,35 @@ models/players/sergei/skin
 		map models/players/sergei/skin.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/sergei/skin.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/sergei/hairs
 {
 	cull disable
 	{
 		map models/players/sergei/hairs.tga
 		rgbGen lightingDiffuse
-//		blendfunc blend
+		depthWrite
 		alphaFunc GE128
 	}
-//	{
-//		map textures/effects/envmapgold.tga
-//		blendfunc add
-//		rgbGen lightingDiffuse
-//		tcGen environment 
-//	}
-	// {
-		// map models/players/sergei/hairs.tga
-		// blendfunc blend
-		// rgbGen lightingDiffuse
-	// }
+	{
+		map models/players/sergei/hairs.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 //*******************************
 //RED_SKIN:
 //*******************************
@@ -48,7 +63,15 @@ models/players/sergei/facered
 		map models/players/sergei/facered.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/sergei/facered.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/sergei/skinred
 {
 	cull disable
@@ -56,28 +79,35 @@ models/players/sergei/skinred
 		map models/players/sergei/skinred.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/sergei/skinred.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/sergei/hairsred
 {
 	cull disable
 	{
 		map models/players/sergei/hairsred.tga
 		rgbGen lightingDiffuse
-//		blendfunc blend
+		depthWrite
 		alphaFunc GE128
 	}
-//	{
-//		map textures/effects/envmapgold.tga
-//		blendfunc add
-//		rgbGen lightingDiffuse
-//		tcGen environment 
-//	}
-	// {
-		// map models/players/sergei/hairsred.tga
-		// blendfunc blend
-		// rgbGen lightingDiffuse
-	// }
+	{
+		map models/players/sergei/hairsred.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 //*******************************
 //BLUE_SKIN:
 //*******************************
@@ -88,7 +118,15 @@ models/players/sergei/faceblue
 		map models/players/sergei/faceblue.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/sergei/faceblue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/sergei/skinblue
 {
 	cull disable
@@ -96,25 +134,32 @@ models/players/sergei/skinblue
 		map models/players/sergei/skinblue.tga
 		rgbGen lightingDiffuse
 	}
+	{
+		map models/players/sergei/skinblue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
+	}
 }
+
 models/players/sergei/hairsblue
 {
 	cull disable
 	{
 		map models/players/sergei/hairsblue.tga
 		rgbGen lightingDiffuse
-//		blendfunc blend
+		depthWrite
 		alphaFunc GE128
 	}
-//	{
-//		map textures/effects/envmapgold.tga
-//		blendfunc add
-//		rgbGen lightingDiffuse
-//		tcGen environment 
-//	}
-	// {
-		// map models/players/sergei/hairsblue.tga
-		// blendfunc blend
-		// rgbGen lightingDiffuse
-	// }
+	{
+		map models/players/sergei/hairsblue.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen lightingDiffuse
+		tcGen environment 
+		depthFunc equal
+		alphaGen lightingSpecular
+		detail
+	}
 }
+

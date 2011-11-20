@@ -1565,6 +1565,12 @@ textures/base_wall/concrete_ow
 		blendfunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
 		rgbgen identity
 	}
+	{
+		map gfx/fx/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		depthfunc equal
+	}
 }
 
 textures/tim/rconcrete_ow
@@ -1587,6 +1593,12 @@ textures/tim/rconcrete_ow
 		map $lightmap
 		blendfunc GL_DST_COLOR GL_ONE_MINUS_DST_ALPHA
 		rgbgen identity
+	}
+	{
+		map gfx/fx/detail/d_conc.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		depthfunc equal
 	}
 }
 

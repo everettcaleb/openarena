@@ -1,3 +1,22 @@
+machinegunFlash3
+{
+	cull disable
+	{
+		clampmap models/weapons2/machinegun/f_machinegun.tga
+		blendfunc add
+		rgbGen identity
+		tcMod stretch sin 0.6 0.4 0 1 
+		tcMod rotate 256
+	}
+	{
+		clampmap models/weapons2/machinegun/f_machinegun.tga
+		blendfunc add
+		rgbGen identity
+		tcMod stretch sin -0.6 0.4 0 1 
+		tcMod rotate -256
+	}
+}
+
 models/weapons2/machinegun/f_machinegun2
 {
 	cull disable
@@ -35,21 +54,26 @@ models/weapons2/shells/mgunshell
 	{
 		map models/weapons2/shells/mgunshell.tga
 		rgbGen lightingDiffuse
-		
+	}
+	{
+		map gfx/fx/spec/specenv.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
 	}
 }
-
 
 models/weapons2/shells/mgunshell_2
 {
 	deformVertexes autosprite
-    {
-        clampmap models/weapons2/shells/mgunshell_2
-        rgbGen lightingDiffuse
-	blendFunc blend
-	tcMod scale 1.4 1.4
-    }
-
+	{
+		clampmap models/weapons2/shells/mgunshell_2.tga
+		blendfunc blend
+		rgbGen lightingDiffuse
+		tcMod scale 1.4 1.4
+	}
 }
 
 shellCase
@@ -60,15 +84,12 @@ shellCase
 		rgbGen lightingDiffuse
 	}
 	{
-		map models/weapons2/shells/mgunshell.tga
-		blendfunc add
+		map gfx/fx/spec/specenv.tga
+		blendfunc gl_dst_color gl_dst_alpha
 		rgbGen lightingDiffuse
 		tcGen environment 
-	}
-	{
-		map models/weapons2/shells/sgunshell.tga
-		blendfunc blend
-		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
@@ -101,6 +122,27 @@ models/weapons2/machinegun/skin
 	{
 		map models/weapons2/machinegun/mgun.tga
 		rgbGen lightingDiffuse
+	}
+	{
+		map gfx/fx/detail/d_met.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map gfx/fx/spec/gunmetal.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
+	}
+	{
+		map models/weapons2/machinegun/mgun.tga
+		blendfunc gl_dst_color gl_dst_alpha
+		rgbGen lightingDiffuse
+		alphaGen lightingSpecular
+		detail
 	}
 }
 

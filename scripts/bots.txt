@@ -87,15 +87,15 @@ aifile	bots/ayumi_c.c
 }
 {
 name		Jenna
-model		ayumi/jenna
+model		ayumi/blue
 aifile	bots/ayumi_c.c
 }
 
 
 
 {
-name		Nekoyss
-model		angelyss/neko
+name		Neko
+model		neko
 aifile	bots/neko_c.c
 }
 

@@ -11,9 +11,9 @@ textures/gothic_block/blocks11b
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 16 16
 		detail
 	}
 }
@@ -31,9 +31,9 @@ textures/gothic_block/blocks17
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 16 16
 		detail
 	}
 }
@@ -51,9 +51,9 @@ textures/gothic_block/blocks17e
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 16 16
 		detail
 	}
 }
@@ -71,9 +71,9 @@ textures/gothic_block/blocks15
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 16 16
 		detail
 	}
 }
@@ -91,9 +91,9 @@ textures/gothic_block/blocks11d
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 16 16
 		detail
 	}
 }
@@ -111,9 +111,9 @@ textures/gothic_block/blocks18b
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 16 16
 		detail
 	}
 }
@@ -131,9 +131,9 @@ textures/gothic_block/blocks18d
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -151,9 +151,9 @@ textures/gothic_block/blocks15_relief
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -171,9 +171,9 @@ textures/gothic_block/blocks15_blue
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 8 8
 		detail
 	}
 }
@@ -186,9 +186,9 @@ textures/gothic_block/blocks17_ow
 	}
 	{
 		clampmap textures/oa/fiar.tga
+		rgbGen identity
 		tcMod rotate 5564
 		tcMod stretch inversesawtooth 1 1 0 7 
-		rgbgen identity
 	}
 	{
 		map textures/gothic_block/blocks17_ow.tga
@@ -202,9 +202,9 @@ textures/gothic_block/blocks17_ow
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -222,7 +222,27 @@ textures/gothic_floor/q1metal7_99
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_conc.tga
+		map gfx/fx/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/gothic_floor/q1metal7_99_broke
+{
+	{
+		map textures/gothic_floor/q1metal7_99_broke.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -242,9 +262,9 @@ textures/gothic_floor/largerblock3b3
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 12 12
+		tcMod scale 8 8
 		detail
 	}
 }
@@ -262,9 +282,9 @@ textures/gothic_floor/largerblock3b3broke
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 12 12
+		tcMod scale 8 8
 		detail
 	}
 }
@@ -282,9 +302,9 @@ textures/gothic_floor/largerblock3b3dim
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale 12 12
+		tcMod scale 8 8
 		detail
 	}
 }
@@ -302,7 +322,7 @@ textures/gothic_trim/baseboard08_d
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -322,7 +342,7 @@ textures/gothic_trim/baseboard10_f
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -342,7 +362,7 @@ textures/gothic_trim/border7
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -362,7 +382,7 @@ textures/gothic_trim/metalsupport4
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -382,7 +402,7 @@ textures/gothic_trim/metalsupport4g_1
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -402,7 +422,7 @@ textures/gothic_trim/metalsupport4g_2
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -422,7 +442,7 @@ textures/gothic_trim/metalsupport4i
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -442,7 +462,7 @@ textures/gothic_trim/metalsupport4i_bit
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -462,7 +482,7 @@ textures/gothic_floor/pent_metalbridge06
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -482,7 +502,7 @@ textures/gothic_floor/metalbridge06
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -502,7 +522,7 @@ textures/gothic_floor/metalbridge06broke
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -522,7 +542,7 @@ textures/gothic_floor/xstepborder5
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 4 8
 		detail
@@ -542,7 +562,7 @@ textures/gothic_trim/pitted_rust3
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -562,7 +582,7 @@ textures/gothic_trim/pitted_rust3_black
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -582,7 +602,7 @@ textures/gothic_trim/pitted_rust3_dkred
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met.tga
+		map gfx/fx/detail/d_met.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -602,7 +622,7 @@ textures/gothic_trim/metaldemonkillblock
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -622,7 +642,7 @@ textures/gothic_trim/stucco7bord1
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 2 2
 		detail
@@ -642,9 +662,9 @@ textures/gothic_trim/metalbase03a_blocks11b4
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -662,9 +682,113 @@ textures/gothic_trim/xian_tourney_trim
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 2 2
+		detail
+	}
+}
+
+textures/gothic_wall/streetbricks14
+{
+	{
+		map textures/gothic_wall/streetbricks14.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map gfx/fx/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map gfx/fx/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 4
+		detail
+	}
+}
+
+textures/gothic_wall/streetbricks11
+{
+	{
+		map textures/gothic_wall/streetbricks11.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map gfx/fx/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map gfx/fx/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 4
+		detail
+	}
+}
+
+textures/gothic_wall/streetbricks
+{
+	{
+		map textures/gothic_wall/streetbricks.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map gfx/fx/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+	{
+		map gfx/fx/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 4
+		detail
+	}
+}
+
+textures/gothic_wall/streetbricks10
+{
+	{
+		map textures/gothic_wall/streetbricks10.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map gfx/fx/detail/d_stone.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 4 8
+		detail
+	}
+	{
+		map gfx/fx/detail/d_rock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 2 4
 		detail
 	}
 }
@@ -682,7 +806,7 @@ textures/gothic_wall/oct20
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -702,9 +826,9 @@ textures/gothic_door/xian_dm3arch
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -722,9 +846,9 @@ textures/gothic_door/xian_tourneyarch_med1b
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -742,9 +866,9 @@ textures/gothic_door/xian_tourneyarch_tall2b
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -762,9 +886,9 @@ textures/gothic_block/killblock
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -782,9 +906,9 @@ textures/gothic_block/killblock_i2
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -802,9 +926,9 @@ textures/gothic_block/killblock_j2
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_stone.tga
+		map gfx/fx/detail/d_stone.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -822,9 +946,9 @@ textures/gothic_block/xblocks_10
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
-		tcMod scale .1 .1
+		tcMod scale 0.1 0.1
 		detail
 	}
 }
@@ -842,7 +966,7 @@ textures/base_wall/concrete
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_conc.tga
+		map gfx/fx/detail/d_conc.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 	}
@@ -861,7 +985,7 @@ textures/e7/e7brickfloor01
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -881,7 +1005,7 @@ textures/e7/e7bricks01
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -901,7 +1025,7 @@ textures/e7/e7sbrickfloor
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -921,7 +1045,7 @@ textures/e7/e7sbrickfloor_ow
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -941,7 +1065,7 @@ textures/e7/e7walldesign01
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 16
 		detail
@@ -961,7 +1085,7 @@ textures/e7/e7walldesign01b
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 16
 		detail
@@ -981,7 +1105,7 @@ textures/e7/e7trim01
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 4 2
 		detail
@@ -1001,7 +1125,7 @@ textures/e7/e7beam01
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 2 4
 		detail
@@ -1021,7 +1145,7 @@ textures/e7/e7beam02
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 2 4
 		detail
@@ -1041,7 +1165,7 @@ textures/e7/e7bmtrim2
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 4 2
 		detail
@@ -1061,7 +1185,7 @@ textures/e7/e7bmtrim
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 4 2
 		detail
@@ -1081,7 +1205,7 @@ textures/e7/e7brnmetal
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1101,7 +1225,7 @@ textures/e7/e7panelwood
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_wood.tga
+		map gfx/fx/detail/d_wood.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1121,7 +1245,7 @@ textures/e7/e7panelwood2
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_wood.tga
+		map gfx/fx/detail/d_wood.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1141,7 +1265,7 @@ textures/e8/e8_base1
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1161,7 +1285,7 @@ textures/e8/e8_base1broke
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1181,7 +1305,7 @@ textures/evil1_trims/crude_warn
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 4 2
 		detail
@@ -1201,7 +1325,7 @@ textures/evil1_trims/trim_cementwall_wrn
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 4 2
 		detail
@@ -1221,7 +1345,7 @@ textures/evil1_trims/trim_wallpaper
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 4 2
 		detail
@@ -1241,7 +1365,7 @@ textures/evil3_floors/cemdrk
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1261,7 +1385,7 @@ textures/evil4_walls/drk_brnbrick
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1281,7 +1405,7 @@ textures/evil6_floors/e6c_floor
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 4 4
 		detail
@@ -1301,7 +1425,7 @@ textures/evil6_floors/e6c_floordented
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1321,7 +1445,7 @@ textures/evil6_floors/e6l_stepedge
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 2 4
 		detail
@@ -1341,7 +1465,7 @@ textures/evil8_wall/e8crete03c
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_rock.tga
+		map gfx/fx/detail/d_rock.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail
@@ -1361,7 +1485,67 @@ textures/savdm6ish/sfloor1_2
 		tcGen lightmap 
 	}
 	{
-		map textures/detail/d_met2.tga
+		map gfx/fx/detail/d_met2.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/organics/dirt2
+{
+	{
+		map textures/organics/dirt2.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map gfx/fx/detail/d_mdrock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/organics/dirt
+{
+	{
+		map textures/organics/dirt.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map gfx/fx/detail/d_mdrock.tga
+		blendfunc gl_dst_color gl_src_color
+		tcMod scale 8 8
+		detail
+	}
+}
+
+textures/organics/grass3
+{
+	{
+		map textures/organics/grass3.tga
+		rgbGen identity
+	}
+	{
+		map $lightmap 
+		blendfunc filter
+		rgbGen identity
+		tcGen lightmap 
+	}
+	{
+		map gfx/fx/detail/d_sandy.tga
 		blendfunc gl_dst_color gl_src_color
 		tcMod scale 8 8
 		detail

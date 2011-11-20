@@ -5,18 +5,7 @@ leismoke1
 		clampmap sprites/le/smoke1.tga
 		blendfunc blend
 		rgbGen Vertex
-		tcMod rotate 22
-		tcMod stretch sin 0.5 0 0 1 
 		alphaGen Vertex
-	}
-	{
-		clampmap sprites/le/smoke2.tga
-		blendfunc blend
-		rgbGen Vertex
-		tcMod rotate -55
-		tcMod stretch sin 0.7 0 0 1 
-		alphaGen Vertex
-		detail
 	}
 }
 
@@ -26,18 +15,7 @@ leismoke2
 		clampmap sprites/le/smoke2.tga
 		blendfunc blend
 		rgbGen Vertex
-		tcMod rotate 22
-		tcMod stretch sin 0.7 0 0 1 
 		alphaGen Vertex
-	}
-	{
-		clampmap sprites/le/smoke3.tga
-		blendfunc blend
-		rgbGen Vertex
-		tcMod rotate -55
-		tcMod stretch sin 0.4 0 0 1 
-		alphaGen Vertex
-		detail
 	}
 }
 
@@ -47,18 +25,7 @@ leismoke3
 		clampmap sprites/le/smoke3.tga
 		blendfunc blend
 		rgbGen Vertex
-		tcMod rotate 22
-		tcMod stretch sin 0.6 0 0 1 
 		alphaGen Vertex
-	}
-	{
-		clampmap sprites/le/smoke4.tga
-		blendfunc blend
-		rgbGen Vertex
-		tcMod rotate -55
-		tcMod stretch sin 0.3 0 0 1 
-		alphaGen Vertex
-		detail
 	}
 }
 
@@ -68,18 +35,37 @@ leismoke4
 		clampmap sprites/le/smoke4.tga
 		blendfunc blend
 		rgbGen Vertex
-		tcMod rotate 22
-		tcMod stretch sin 0.4 0 0 1 
+		alphaGen Vertex
+	}
+}
+
+plasmaSpark
+{
+	cull disable
+	{
+		clampmap models/weaphits/lfx/plasmazot.tga
+		blendfunc add
+		rgbGen Vertex
+		tcMod rotate -400
+	}
+}
+
+exploShockwave
+{
+	cull disable
+	{
+		clampmap models/weaphits/lfx/swavecirc.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen Vertex
+		tcMod rotate 96
 		alphaGen Vertex
 	}
 	{
-		clampmap sprites/le/smoke1.tga
-		blendfunc blend
+		clampmap models/weaphits/lfx/swavecirc.tga
+		blendfunc gl_src_alpha gl_one
 		rgbGen Vertex
-		tcMod rotate -55
-		tcMod stretch sin 0.7 0 0 1 
+		tcMod rotate -6
 		alphaGen Vertex
-		detail
 	}
 }
 
@@ -88,18 +74,10 @@ leisplash
 {
 	{
 		clampmap sprites/le/splash.tga
-		blendfunc gl_src_alpha gl_one
+		blendfunc add
 		rgbGen Vertex
-		tcMod rotate -95
-		tcMod stretch sin 0.4 0 0 1 
-		alphaGen Vertex
-	}
-	{
-		clampmap sprites/le/splash.tga
-		blendfunc gl_src_alpha gl_one
-		rgbGen Vertex
-		tcMod rotate 79
 		tcMod stretch sin 0.7 0 0 1 
+		alphaFunc GE128
 		alphaGen Vertex
 	}
 }
@@ -109,23 +87,8 @@ leiboom1
 {
 	{
 		clampmap sprites/le/blast.tga
-		blendfunc gl_src_alpha gl_one
-		tcMod stretch sin 0.6 0 0 1 
-		tcMod rotate -88
-		alphaFunc GE128
-	}
-	{
-		clampmap sprites/le/blast.tga
-		blendfunc gl_src_alpha gl_one
-		tcMod stretch sin 0.8 0 0 1 
-		tcMod rotate 122
-		alphaFunc GE128
-	}
-	{
-		clampmap sprites/le/glaw.tga
-		blendfunc gl_src_alpha gl_one
-		rgbGen const ( 0.886275 0.34902 0.321569 )
-		alphaGen Vertex
+		blendfunc add
+		rgbGen identity
 	}
 }
 
@@ -135,19 +98,8 @@ leiblood1
 	{
 		clampmap sprites/le/blood.tga
 		blendfunc blend
-		rgbGen const ( 0.372549 0.372549 0.372549 )
-		tcMod rotate 3
 		tcMod stretch sin 0.7 0 0 1 
 		alphaGen Vertex
-	}
-	{
-		clampmap sprites/le/blood.tga
-		blendfunc blend
-		rgbGen const ( 0.615686 0.141176 0.141176 )
-		tcMod rotate -7
-		tcMod stretch sin 0.4 0 0 1 
-		alphaGen Vertex
-		detail
 	}
 }
 
@@ -192,7 +144,6 @@ leiptrail
 	}
 }
 
-
 // The crap that comes out of walls
 leispark
 {
@@ -200,7 +151,6 @@ leispark
 		clampmap sprites/le/spark2.tga
 		blendfunc gl_src_alpha gl_one
 		rgbGen identity
-		//alphaGen Vertex
 	}
 }
 
@@ -210,15 +160,105 @@ leispark2
 	{
 		clampmap sprites/le/spark2.tga
 		blendfunc gl_src_alpha gl_one
-			rgbGen identity
+		rgbGen identity
 		tcMod stretch sin 0.4 0.3 0 5 
 		alphaGen Vertex
 	}
 	{
 		clampmap sprites/le/spark2.tga
 		blendfunc gl_src_alpha gl_one
-			rgbGen identity
+		rgbGen identity
 		tcMod stretch sin 0.7 0.3 0 3 
 		alphaGen Vertex
 	}
 }
+
+//Fake texture atlas trick ahead!
+leimetalmark1
+{
+	polygonoffset
+	{
+		map gfx/fx/decals/bulletmetal.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen identity
+		tcMod scale 0.5 0.5
+	}
+}
+
+leimetalmark2
+{
+	polygonoffset
+	{
+		map gfx/fx/decals/bulletmetal.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen identity
+		tcMod scale -0.5 0.5
+	}
+}
+
+leimetalmark3
+{
+	polygonoffset
+	{
+		map gfx/fx/decals/bulletmetal.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen identity
+		tcMod scale -0.5 -0.5
+	}
+}
+
+leimetalmark4
+{
+	polygonoffset
+	{
+		map gfx/fx/decals/bulletmetal.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen identity
+		tcMod scale 0.5 -0.5
+	}
+}
+
+leibulletmark1
+{
+	polygonoffset
+	{
+		map gfx/fx/decals/bulletgeneric.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen identity
+		tcMod scale 0.5 0.5
+	}
+}
+
+leibulletmark2
+{
+	polygonoffset
+	{
+		map gfx/fx/decals/bulletgeneric.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen identity
+		tcMod scale -0.5 0.5
+	}
+}
+
+leibulletmark3
+{
+	polygonoffset
+	{
+		map gfx/fx/decals/bulletgeneric.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen identity
+		tcMod scale 0.5 -0.5
+	}
+}
+
+leibulletmark4
+{
+	polygonoffset
+	{
+		map gfx/fx/decals/bulletgeneric.tga
+		blendfunc gl_dst_color gl_src_color
+		rgbGen identity
+		tcMod scale -0.5 -0.5
+	}
+}
+
