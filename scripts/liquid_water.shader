@@ -503,6 +503,11 @@ textures/liquids/hydrowater
 		blendfunc add
 		rgbGen const ( 0.501961 0.501961 0.501961 )
 		tcMod scroll -0.03 -0.06
+      //GLSL map textures/liquids/pool2.tga
+      //GLSL map2 textures/liquids/pool2_normal.tga
+      //GLSL program water
+      //GLSL vertexProgram glsl/water_vp.glsl
+      //GLSL fragmentProgram glsl/water_fp.glsl
 	}
 	{
 		map textures/liquids/pool3d_4b2.tga

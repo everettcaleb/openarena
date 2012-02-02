@@ -6,7 +6,7 @@ powerups/invisibility
 		blendfunc blend
 		tcMod rotate 86
 		tcGen environment 
-		alphaGen wave sin 0.01 0 0 1 
+		alphaGen wave sin 0.03 0 0 0 
 	}
 }
 
@@ -27,21 +27,19 @@ powerups/invisibilityOLD
 	}
 }
 
-mediumcrossEnv
-{
-	cull disable
-	{
-		map textures/effects/tinfx2.tga
-		blendfunc add
-		tcGen environment 
-	}
-}
-
 smallcrossEnv
 {
+	// the crosses bounce with a 0.93 frequency and they're down in the 0.5 phase, but doesn't really matter since they respawn with random a start
 	cull disable
 	{
-		map textures/effects/envmaprail.tga
+		map textures/effects/smallhelth
+		blendfunc gl_src_alpha gl_one
+		tcMod scroll 1 0.1
+		tcGen environment 
+		alphaGen wave sin 0.3 0.2 0.5 0
+	}
+	{
+		map textures/effects/smallhelth_spec
 		blendfunc gl_src_alpha gl_one
 		tcMod scroll 1 0.1
 		tcGen environment 
@@ -49,11 +47,43 @@ smallcrossEnv
 	}
 }
 
-largecrossEnv
+mediumcrossEnv
 {
+	// the crosses bounce with a 0.93 frequency and they're down in the 0.5 phase, but doesn't really matter since they respawn with random a start
 	cull disable
 	{
-		map textures/effects/largehelth.tga
+		map textures/effects/mediumhelth
+		blendfunc gl_src_alpha gl_one
+		tcMod scroll 1 0.2
+		tcMod scale 0.5 0.5
+		tcGen environment 
+		alphaGen wave sin 0.3 0.2 0.5 0
+	}
+	{
+		map textures/effects/mediumhelth_spec
+		blendfunc gl_src_alpha gl_one
+		tcMod scroll 1 0.2
+		tcMod scale 0.5 0.5
+		tcGen environment 
+		alphaGen lightingSpecular
+	}
+}
+
+
+largecrossEnv
+{
+	// the crosses bounce with a 0.93 frequency and they're down in the 0.5 phase, but doesn't really matter since they respawn with random a start
+	cull disable
+	{
+		map textures/effects/largehelth
+		blendfunc gl_src_alpha gl_one
+		tcMod scroll 1 0.2
+		tcMod scale 0.5 0.5
+		tcGen environment 
+		alphaGen wave sin 0.3 0.2 0.5 0
+	}
+	{
+		map textures/effects/largehelth_spec
 		blendfunc gl_src_alpha gl_one
 		tcMod scroll 1 0.2
 		tcMod scale 0.5 0.5
@@ -64,9 +94,17 @@ largecrossEnv
 
 megacrossEnv
 {
+	// the crosses bounce with a 0.93 frequency and they're down in the 0.5 phase, but doesn't really matter since they respawn with random a start
 	cull disable
 	{
-		map textures/effects/megahelth.tga
+		map textures/effects/megahelth
+		blendfunc gl_src_alpha gl_one
+		tcMod scroll 1 0.1
+		tcGen environment 
+		alphaGen wave sin 0.3 0.2 0.5 0
+	}
+	{
+		map textures/effects/megahelth_spec
 		blendfunc gl_src_alpha gl_one
 		tcMod scroll 1 0.2
 		tcGen environment 
@@ -74,6 +112,7 @@ megacrossEnv
 	}
 }
 
+/*
 powerups/quadi
 {
 	{
@@ -93,20 +132,24 @@ powerups/quade
 		tcGen environment 
 	}
 }
+*/
 
 powerups/quad
 {
-	deformVertexes wave 100 sin 0.5 0 0 0 
+	cull disable
+	deformVertexes wave 100 sin 1 0 0 0 
 	{
-		map textures/oafx/quadmultshell.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scroll 0.5 0.5
-		tcGen environment 
+		map textures/oafx/quadmultshell
+		blendfunc gl_src_alpha gl_one
+		tcMod scroll 2 1
+		alphaGen wave sin 0.5 0 0 0
+		tcGen environment
 	}
 	{
 		map gfx/fx/spec/spots.tga
 		blendfunc gl_src_alpha gl_one
-		rgbGen const ( 0.266667 0.423529 0.658824 )
+		//rgbGen const ( 0.266667 0.423529 0.658824 ) // #446ba8
+		rgbGen const ( 0.30196 0.76470 1.0 ) // #4dc3ff
 		tcMod scroll 2 1
 		tcGen environment 
 		alphaGen lightingSpecular
@@ -116,17 +159,19 @@ powerups/quad
 
 powerups/quadWeapon
 {
-	deformVertexes wave 100 sin 0.5 0 0 0 
+	deformVertexes wave 100 sin 1 0 0 0 
 	{
-		map textures/oafx/quadmultshell.tga
-		blendfunc gl_dst_color gl_src_color
-		tcMod scroll 0.5 0.5
+		map textures/oafx/quadmultshell
+		blendfunc gl_src_alpha gl_one
+		tcMod scroll 2 1
+		alphaGen wave sin 0.5 0 0 0
 		tcGen environment 
 	}
 	{
 		map gfx/fx/spec/spots.tga
 		blendfunc gl_src_alpha gl_one
-		rgbGen const ( 0.266667 0.423529 0.658824 )
+		//rgbGen const ( 0.266667 0.423529 0.658824 ) // #446ba8
+		rgbGen const ( 0.30196 0.76470 1.0 ) // #4dc3ff
 		tcMod scroll 2 1
 		tcGen environment 
 		alphaGen lightingSpecular
@@ -134,9 +179,10 @@ powerups/quadWeapon
 	}
 }
 
+/*
 powerups/quadWeapong
 {
-	deformVertexes wave 100 sin 0.5 0 0 0 
+	deformVertexes wave 100 sin 1 0 0 0 
 	{
 		map textures/oafx/quadshell.tga
 		blendfunc add
@@ -144,29 +190,45 @@ powerups/quadWeapong
 		tcGen environment 
 	}
 }
+*/
 
 powerups/battleSuit
 {
-	deformVertexes wave 100 sin 0.5 0 0 0 
+	deformVertexes wave 100 sin 1 0 0 0 
 	{
-		map textures/oafx/suitshell.tga
-		blendfunc add
+		map textures/oafx/suitshell
+		blendfunc gl_src_alpha gl_one
 		tcMod rotate 75
+		tcGen environment
+		alphaGen wave sin 0.5 0 0 0
+	}
+	{
+		map gfx/fx/spec/skin.tga
+		blendfunc gl_src_alpha gl_one
+		//rgbGen const ( 0.74902 0.403922 0.176471 ) // #bf672d
+		rgbGen const ( 1.0 0.65490 0.25882 ) // #ffa742
+		tcMod scroll 0.5 0.5
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
 	}
 }
 
 powerups/battleWeapon
 {
-	deformVertexes wave 100 sin 0.5 0 0 0 
+	deformVertexes wave 100 sin 1 0 0 0 
 	{
-		map textures/oafx/suitshell.tga
-		blendfunc gl_dst_color gl_src_color
+		map textures/oafx/suitshell
+		blendfunc gl_src_alpha gl_one
 		tcMod rotate 75
+		tcGen environment
+		alphaGen wave sin 0.5 0 0 0
 	}
 	{
 		map gfx/fx/spec/skin.tga
 		blendfunc gl_src_alpha gl_one
-		rgbGen const ( 0.74902 0.403922 0.176471 )
+		//rgbGen const ( 0.74902 0.403922 0.176471 ) // #bf672d
+		rgbGen const ( 1.0 0.65490 0.25882 ) // #ffa742
 		tcMod scroll 0.5 0.5
 		tcGen environment 
 		alphaGen lightingSpecular
@@ -176,11 +238,22 @@ powerups/battleWeapon
 
 powerups/regen
 {
-	deformVertexes wave 100 sin 0.5 0 0 0 
+	deformVertexes wave 100 sin 1 0 0 0 
 	{
 		map textures/oafx/regenshell.tga
-		blendfunc add
+		blendfunc gl_src_alpha gl_one
 		tcMod rotate 75
+		tcGen environment
+		alphaGen wave sin 0.5 0 0 0
+	}
+	{
+		map gfx/fx/spec/skin.tga
+		blendfunc gl_src_alpha gl_one
+		rgbGen const ( 1 0.50196 0.50196 ) // #ff8080
+		tcMod scroll 0.5 0.5
+		tcGen environment 
+		alphaGen lightingSpecular
+		detail
 	}
 }
 

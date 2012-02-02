@@ -2,10 +2,10 @@
 // entity 0
 {
 "classname" "worldspawn"
-"music" "music/lah"
+"music" "music/OA07.ogg"
 "ambient" "35"
 "_color" "1 1 1"
-"message" "some bases"
+"message" "Some Bases"
 "_keeplights" "1"
 // brush 0
 {
@@ -3298,7 +3298,7 @@
 "classname" "team_CTF_redflag"
 "angle" "360"
 "origin" "128 -448 464"
-"gametype" "ctf, oneflag, ctfelim"
+"gametype" "ctf cctf oneflag dd"
 }
 // entity 2
 {
@@ -3542,7 +3542,7 @@
 "classname" "team_CTF_blueflag"
 "angle" "180"
 "origin" "3136 -448 464"
-"gametype" "ctf, oneflag, ctfelim"
+"gametype" "ctf cctf oneflag dd"
 }
 // entity 40
 {
@@ -3843,85 +3843,80 @@
 }
 // entity 87
 {
-"classname" "info_player_start"
-"origin" "1632 -448 72"
+"classname" "team_CTF_blueplayer"
+"origin" "3744 -1408 40"
 }
 // entity 88
 {
 "classname" "team_CTF_blueplayer"
-"origin" "3744 -1408 40"
+"origin" "3392 8 96"
 }
 // entity 89
 {
 "classname" "team_CTF_blueplayer"
-"origin" "3392 8 96"
+"origin" "3392 -896 96"
 }
 // entity 90
 {
 "classname" "team_CTF_blueplayer"
-"origin" "3392 -896 96"
+"origin" "3464 -896 40"
 }
 // entity 91
 {
 "classname" "team_CTF_blueplayer"
-"origin" "3464 -896 40"
+"origin" "3616 -32 40"
 }
 // entity 92
 {
 "classname" "team_CTF_blueplayer"
-"origin" "3616 -32 40"
-}
-// entity 93
-{
-"classname" "team_CTF_blueplayer"
 "origin" "3744 497 56"
 }
-// entity 94
+// entity 93
 {
 "classname" "team_CTF_redplayer"
 "origin" "-112 8 40"
 }
-// entity 95
+// entity 94
 {
 "classname" "team_CTF_redplayer"
 "origin" "-472 -1400 40"
 }
-// entity 96
+// entity 95
 {
 "classname" "team_CTF_redplayer"
 "origin" "-472 496 40"
 }
-// entity 97
+// entity 96
 {
 "classname" "team_CTF_redplayer"
 "origin" "-352 -40 40"
 }
-// entity 98
+// entity 97
 {
 "classname" "team_CTF_redplayer"
 "origin" "-352 -872 40"
 }
-// entity 99
+// entity 98
 {
 "classname" "team_CTF_redplayer"
 "origin" "-112 -920 40"
 }
-// entity 100
+// entity 99
 {
 "classname" "item_quad"
 "origin" "1651 -449 -146"
 }
-// entity 101
+// entity 100
 {
 "classname" "item_health_mega"
 "origin" "1312 -448 -176"
 }
-// entity 102
+// entity 101
 {
 "classname" "item_health_mega"
 "origin" "1914 -448 -256"
 }
-// entity 103
+// entity 102
 {
 "classname" "light"
 "origin" "3744 -448 376"
@@ -3931,13 +3926,13 @@
 "color" ".1 .7 .2"
 "_sun" "0"
 }
-// entity 104
+// entity 103
 {
 "classname" "target_position"
 "origin" "3744 -448 544"
 "targetname" "target_position1"
 }
-// entity 105
+// entity 104
 {
 "classname" "light"
 "origin" "-480 -448 376"
@@ -3946,225 +3941,242 @@
 "target" "target_position2"
 "color" ".8 0 .2 "
 }
-// entity 106
+// entity 105
 {
 "classname" "target_position"
 "origin" "-480 -448 544"
 "targetname" "target_position2"
 }
-// entity 107
+// entity 106
 {
 "classname" "info_player_deathmatch"
 "origin" "3616 48 80"
 "notteam" "1"
 "angle" "180"
 }
-// entity 108
+// entity 107
 {
 "classname" "info_player_deathmatch"
 "origin" "1536 -448 -16"
 "notteam" "1"
 }
-// entity 109
+// entity 108
 {
 "classname" "info_player_deathmatch"
 "origin" "1728 -448 -16"
 "notteam" "1"
 }
-// entity 110
+// entity 109
 {
 "classname" "info_player_deathmatch"
 "origin" "-112 152 24"
 "notteam" "1"
 }
-// entity 111
+// entity 110
 {
 "classname" "info_player_deathmatch"
 "origin" "-112 -1040 32"
 "notteam" "1"
 }
-// entity 112
+// entity 111
 {
 "classname" "info_player_deathmatch"
 "origin" "3312 -864 8"
 "notteam" "1"
 "angle" "180"
 }
-// entity 113
+// entity 112
 {
 "classname" "info_player_deathmatch"
 "origin" "3312 -32 0"
 "notteam" "1"
 "angle" "180"
 }
-// entity 114
+// entity 113
 {
 "classname" "info_player_deathmatch"
 "origin" "3560 -448 80"
 "notteam" "1"
 "angle" "180"
 }
-// entity 115
+// entity 114
 {
 "classname" "info_player_deathmatch"
 "origin" "-240 -448 80"
 "notteam" "1"
 }
-// entity 116
+// entity 115
 {
 "classname" "info_player_deathmatch"
 "origin" "-352 48 80"
 "notteam" "1"
 }
-// entity 117
+// entity 116
 {
 "classname" "info_player_deathmatch"
 "origin" "-352 -968 80"
 "notteam" "1"
 }
-// entity 118
+// entity 117
 {
 "classname" "info_player_deathmatch"
 "origin" "3616 -968 80"
 "notteam" "1"
 "angle" "180"
 }
-// entity 119
+// entity 118
 {
 "classname" "team_neutralobelisk"
-"origin" "1632 -448 -48"
+"origin" "1632.000000 -448.000000 -48.000000"
 "gametype" "harvester"
 }
-// entity 120
+// entity 119
 {
 "classname" "team_CTF_neutralflag"
 "origin" "1632 -448 -32"
 "gametype" "oneflag"
 }
-// entity 121
+// entity 120
 {
 "classname" "team_redobelisk"
-"origin" "128 -448 432"
+"origin" "128.000000 -448.000000 432.000000"
+"gametype" "ctf, oneflag, obelisk, harvester"
+}
+// entity 121
+{
+"classname" "team_blueobelisk"
+"origin" "3136.000000 -448.000000 432.000000"
 "gametype" "ctf, oneflag, obelisk, harvester"
 }
 // entity 122
-{
-"classname" "team_blueobelisk"
-"origin" "3136 -448 432"
-"gametype" "ctf, oneflag, obelisk, harvester"
-}
-// entity 123
 {
 "classname" "holdable_kamikaze"
 "origin" "1664 256 -312"
 "spawnflags" "1"
 }
-// entity 124
+// entity 123
 {
 "classname" "holdable_invulnerability"
 "origin" "1664 -1152 -312"
 "spawnflags" "1"
 }
-// entity 125
+// entity 124
 {
 "classname" "item_ammoregen"
 "origin" "-384 320 48"
 "spawnflags" "2"
 }
-// entity 126
+// entity 125
 {
 "classname" "item_doubler"
 "origin" "-368 80 48"
 "spawnflags" "2"
 }
-// entity 127
+// entity 126
 {
 "classname" "item_scout"
 "origin" "-360 -920 48"
 "spawnflags" "2"
 }
-// entity 128
+// entity 127
 {
 "classname" "item_guard"
 "origin" "-352 -1232 48"
 "spawnflags" "2"
 }
-// entity 129
+// entity 128
 {
 "classname" "item_ammoregen"
 "origin" "3600 320 48"
 "spawnflags" "4"
 }
-// entity 130
+// entity 129
 {
 "classname" "item_doubler"
 "origin" "3616 80 48"
 "spawnflags" "4"
 }
-// entity 131
+// entity 130
 {
 "classname" "item_guard"
 "origin" "3632 -1232 48"
 "spawnflags" "4"
 }
-// entity 132
+// entity 131
 {
 "classname" "item_scout"
 "origin" "3624 -920 48"
 "spawnflags" "4"
 }
-// entity 133
+// entity 132
 {
 "classname" "info_player_dd"
 "origin" "904 416 80"
 }
-// entity 134
+// entity 133
 {
 "classname" "info_player_dd"
 "origin" "2344 528 80"
 }
-// entity 135
+// entity 134
 {
 "classname" "info_player_dd"
 "origin" "2312 392 80"
 }
-// entity 136
+// entity 135
 {
 "classname" "info_player_dd"
 "origin" "2288 256 80"
 }
-// entity 137
+// entity 136
 {
 "classname" "info_player_dd"
 "origin" "2256 144 80"
 }
-// entity 138
+// entity 137
 {
 "classname" "info_player_dd"
 "origin" "2240 8 80"
 }
-// entity 139
+// entity 138
 {
 "classname" "info_player_dd"
 "origin" "1008 8 80"
 }
-// entity 140
+// entity 139
 {
 "classname" "info_player_dd"
 "origin" "976 112 80"
 }
-// entity 141
+// entity 140
 {
 "classname" "info_player_dd"
 "origin" "960 216 80"
 }
-// entity 142
+// entity 141
 {
 "classname" "info_player_dd"
 "origin" "936 296 80"
 }
-// entity 143
+// entity 142
 {
 "classname" "misc_portal_surface"
 "origin" "1736 -312 -144"
+}
+// entity 143
+{
+"classname" "info_player_deathmatch"
+"origin" "1632.000000 -448.000000 -16.000000"
+}
+// entity 144
+{
+"classname" "info_player_intermission"
+"origin" "3008.000000 576.000000 424.000000"
+"target" "target_position3"
+}
+// entity 145
+{
+"classname" "target_position"
+"origin" "1632.000000 -452.000000 96.000000"
+"targetname" "target_position3"
 }

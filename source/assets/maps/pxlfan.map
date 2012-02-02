@@ -3,7 +3,7 @@
 {
 "classname" "worldspawn"
 "message" "The Big Fan Of Death!"
-"music" "music/fla22k_04_intro music/fla22k_04_loop"
+"music" "music/OA11.ogg"
 "_color" "1 0.61 0.61"
 "ambient" "46"
 // brush 0

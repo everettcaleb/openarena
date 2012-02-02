@@ -3,8 +3,7 @@
 {
 "classname" "worldspawn"
 "message" "Some better bases"
-"ambient" "10"
-"color" "255 255 0"
+"music" "music/OA07.ogg"
 // brush 0
 {
 ( -864 768 -64 ) ( -864 512 -64 ) ( -928 768 -64 ) base_floor/metalbridge06 0 0 0 0.25 0.25 134217728 0 0

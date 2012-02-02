@@ -3,8 +3,8 @@
 {
 "classname" "worldspawn"
 "gridsize" "128 128 256"
-"message" "The Strange House"
-"music" "music/fla22k_02.ogg"
+"message" "Strange House"
+"music" "music/OA03.ogg"
 // brush 0
 {
 ( -2048 -2048 -96 ) ( 2048 -2048 -96 ) ( 2048 2048 -96 ) common/caulk 0 0 0 0.5 0.5 0 0 0
@@ -27592,8 +27592,8 @@ e7/e7bmtrim2
 {
 "classname" "info_player_deathmatch"
 "target" "giveme"
-"angle" "90"
-"origin" "-1248 -1248 320"
+"angle" "90.000000"
+"origin" "-1248.000000 -1184.000000 320.000000"
 }
 // entity 12
 {
@@ -27624,8 +27624,7 @@ e7/e7bmtrim2
 {
 "classname" "info_player_deathmatch"
 "target" "giveme"
-"angle" "360"
-"origin" "-472 1344 352"
+"origin" "-472.000000 1280.000000 352.000000"
 }
 // entity 18
 {
@@ -32438,8 +32437,7 @@ e7/e7bmtrim2
 {
 "classname" "info_player_deathmatch"
 "target" "giveme"
-"origin" "-480 208 672"
-"angle" "360"
+"origin" "-480.000000 272.000000 672.000000"
 }
 // entity 108
 {
@@ -32468,15 +32466,15 @@ e7/e7bmtrim2
 // entity 112
 {
 "classname" "info_player_deathmatch"
-"origin" "-416 -288 352"
-"angle" "45"
+"origin" "-416.000000 -192.000000 352.000000"
+"angle" "45.000000"
 "target" "giveme"
 }
 // entity 113
 {
 "classname" "info_player_deathmatch"
-"origin" "800 -1568 336"
-"angle" "90"
+"origin" "800.000000 -1504.000000 336.000000"
+"angle" "90.000000"
 "target" "giveme"
 }
 // entity 114
@@ -32486,199 +32484,102 @@ e7/e7bmtrim2
 }
 // entity 115
 {
-"classname" "domination_point"
-"origin" "0.125 -895.5 392"
-"message" "Bridge"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"angle" "90"
+"origin" "-1248 -1248 320"
 }
 // entity 116
 {
-"classname" "domination_point"
-"origin" "0 768 344"
-"message" "Castle"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"angle" "360"
+"origin" "-472 1344 352"
 }
 // entity 117
 {
-"classname" "domination_point"
-"origin" "0 1516 640"
-"message" "Backyard"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"origin" "-480 208 672"
+"angle" "360"
 }
 // entity 118
 {
-"classname" "team_CTF_bluespawn"
-"origin" "64 -1664 392"
-"angle" "-3.50835e-015"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"origin" "-416.000000 -256.000000 352.000000"
+"angle" "45.000000"
+"target" "giveme"
 }
 // entity 119
 {
-"classname" "team_CTF_bluespawn"
-"origin" "-64 -1472 392"
+"classname" "info_player_deathmatch"
+"origin" "800 -1568 336"
 "angle" "90"
-"gametype" "elimination"
+"target" "giveme"
 }
 // entity 120
 {
-"classname" "team_CTF_bluespawn"
-"origin" "0 -1472 392"
-"angle" "90"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"angle" "90.000000"
+"origin" "-1312.000000 -1248.000000 320.000000"
 }
 // entity 121
 {
-"classname" "team_CTF_bluespawn"
-"origin" "64 -1472 392"
-"angle" "90"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"origin" "-536.000000 1344.000000 352.000000"
 }
 // entity 122
 {
-"classname" "team_CTF_bluespawn"
-"origin" "0 -1664 392"
-"angle" "90"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"origin" "-416.000000 144.000000 672.000000"
 }
 // entity 123
 {
-"classname" "team_CTF_bluespawn"
-"origin" "-64 -1664 392"
-"angle" "90"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"origin" "-480.000000 -256.000000 352.000000"
+"angle" "45.000000"
+"target" "giveme"
 }
 // entity 124
 {
-"classname" "team_CTF_bluespawn"
-"origin" "-64 -1600 392"
-"angle" "90"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"origin" "736.000000 -1568.000000 336.000000"
+"angle" "90.000000"
+"target" "giveme"
 }
 // entity 125
 {
-"classname" "team_CTF_bluespawn"
-"origin" "0 -1600 392"
-"angle" "90"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"angle" "90.000000"
+"origin" "-1184.000000 -1248.000000 320.000000"
 }
 // entity 126
 {
-"classname" "team_CTF_bluespawn"
-"origin" "64 -1600 392"
-"angle" "-3.50835e-015"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"origin" "-408.000000 1344.000000 352.000000"
 }
 // entity 127
 {
-"classname" "team_CTF_bluespawn"
-"origin" "-64 -1536 392"
-"angle" "90"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"target" "giveme"
+"origin" "-416.000000 208.000000 672.000000"
 }
 // entity 128
 {
-"classname" "team_CTF_bluespawn"
-"origin" "0 -1536 392"
-"angle" "90"
-"gametype" "elimination"
+"classname" "info_player_deathmatch"
+"origin" "-352.000000 -256.000000 352.000000"
+"angle" "45.000000"
+"target" "giveme"
 }
 // entity 129
 {
-"classname" "team_CTF_bluespawn"
-"origin" "64 -1536 392"
-"angle" "90"
-"gametype" "elimination"
-}
-// entity 130
-{
-"classname" "team_CTF_redspawn"
-"origin" "64 1168 664"
-"angle" "-90"
-"gametype" "elimination"
-}
-// entity 131
-{
-"classname" "team_CTF_redspawn"
-"origin" "-64 1168 664"
-"angle" "-90"
-"gametype" "elimination"
-}
-// entity 132
-{
-"classname" "team_CTF_redspawn"
-"origin" "0 1168 664"
-"angle" "-90"
-"gametype" "elimination"
-}
-// entity 133
-{
-"classname" "team_CTF_redspawn"
-"origin" "-64 1360 664"
-"angle" "90"
-"gametype" "elimination"
-}
-// entity 134
-{
-"classname" "team_CTF_redspawn"
-"origin" "64 1360 664"
-"angle" "90"
-"gametype" "elimination"
-}
-// entity 135
-{
-"classname" "team_CTF_redspawn"
-"origin" "0 1360 664"
-"angle" "90"
-"gametype" "elimination"
-}
-// entity 136
-{
-"classname" "team_CTF_redspawn"
-"origin" "64 1296 664"
-"angle" "-45"
-"gametype" "elimination"
-}
-// entity 137
-{
-"classname" "team_CTF_redspawn"
-"origin" "-64 1296 664"
-"angle" "-90"
-"gametype" "elimination"
-}
-// entity 138
-{
-"classname" "team_CTF_redspawn"
-"origin" "0 1296 664"
-"angle" "-90"
-"gametype" "elimination"
-}
-// entity 139
-{
-"classname" "team_CTF_redspawn"
-"origin" "64 1232 664"
-"angle" "-45"
-"gametype" "elimination"
-}
-// entity 140
-{
-"classname" "team_CTF_redspawn"
-"origin" "-64 1232 664"
-"angle" "-90"
-"gametype" "elimination"
-}
-// entity 141
-{
-"classname" "team_CTF_redspawn"
-"origin" "0 1232 664"
-"angle" "-45"
-"gametype" "elimination"
-}
-// entity 142
-{
-"classname" "team_CTF_blueflag"
-"origin" "0 -1568 384"
-"gametype" "dd"
-}
-// entity 143
-{
-"classname" "team_CTF_redflag"
-"origin" "0 1264 672"
-"gametype" "dd"
+"classname" "info_player_deathmatch"
+"origin" "864.000000 -1504.000000 336.000000"
+"angle" "90.000000"
+"target" "giveme"
 }

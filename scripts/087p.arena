@@ -6,3 +6,15 @@
 	type "ctf oneflag harvester overload ctfelimination dd dom elimination"
 	author "*SoS*THOR"
 }
+
+{
+map		        "oa_bases3p3"
+longname	    "Some Bases (Improved version)"
+type		    "ctf oneflag harvester overload elimination dd dom"
+}
+{
+map             "oa_bases3p3ta"
+longname        "Some Bases (Improved Team Arena version)"
+type            "ctf oneflag harvester overload elimination dd dom"
+}
+

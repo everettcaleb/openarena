@@ -1133,8 +1133,8 @@ substance = {
 
 
 curse = {
-	"May your first born child be born a politician...";
-	"May your first born child be born with the intelligence of Pat Robertson.";
+	"You've got a nice future.";
+	"You won't live for long.";
 }
 
 vicious_insult = {
@@ -1142,4 +1142,203 @@ vicious_insult = {
 	"waste of human space";
 	"moron";
 	"idiot";
+}
+
+
+laem_naem = {
+	"idaot";
+	"imbicle";
+	"dofus";
+	"batsard";
+	"moran";
+	"celulate bely";
+	"nerd";
+	"doak";
+	"pwoof";
+	"casset tape";
+	"pile of malakey";
+	"pizzas hit";
+	"as whole";
+	"bogger face";
+	"waffle man";
+	"jerk";
+	"dack";
+	"hissy";
+	"walabey";
+	"furrie";
+	"ned";
+	"numbrain";
+	"frad";
+	"stupit face";
+	"work hores";
+	"dats";
+	"morn";
+	"diot";
+}
+
+
+laem_cuers = {
+	"forget";
+	"swear";
+	"funk";
+	"cures";
+	"curs";
+	"scew";
+	"screw";
+	"srew";
+	"sawed";
+	"cut";
+	"balst";
+}
+
+laem_sware = {
+	"dam";
+	"darn";
+	"shoot";
+	"derp";
+	"carp";
+}
+
+
+laem_bets = {
+	"bestest";
+	"great";
+	"graet";
+	"god";
+	"bester";
+	"matser";
+	"really bad";
+	"winer";
+	"winnner";
+	"coool";
+	"CooooL";
+	"good";
+	"ELiTE";
+	"lete";
+	"let";
+	"goodest";
+	"beter than rest";
+	"rad";
+	"pretty";
+	"nice";
+	"skiled";
+	"totally killed";
+	"totaly skiled";
+	"tottaly awesem";
+	"awsome";
+	"awesom";
+	"unbetable";
+	"unstopable";
+	"uncontralobel";
+	"a charicter";
+}
+
+
+// for the "i got two words for you" boats.
+
+laem_verb = {
+	"SUCK";
+	"EAT";
+	"DRILL";
+	"PET";
+	"SPEAK";
+	"VOMIT";
+	"DEFILE";
+	"BARF";
+	"SHOOT";
+	"SMOKE";
+	"DRINK";
+	"COOK";
+	"TURN";
+	"CLOSE";
+	"RAKE";
+	"HELP";
+	"KILL";
+	"ZIP";
+	"SPARK";
+	"ERASE";
+	"EXECUTE";
+	"YOU";
+	"FILE";
+	"PRINT";
+	"EXCHANGE";
+	"DESTROY";
+	"BAKE";
+	"LICK";
+	"LOAD";
+	"TOAST";
+	"SHOVE";
+	"CLEAN";
+}
+
+laem_noun = {
+	"IT";
+	"CAKES";
+	"PIE";
+	"TRUCK";
+	"PIZZA";
+	"LEAFS";
+	"WATER";
+	"8-TRACK CARTRIDGES. ", laem_sware," that was 4!!";
+	"KUSO";
+	"PLASTIC";
+	"PAPER";
+	"FUSES";
+	"SILICON";
+	"FLOOR";
+	"CATS";
+	"DESK";
+	"BUS";
+	"TOAST";
+	"ICE";
+	"CLOCK";
+	"COMPUTER";
+	"INK";
+	"XYLOPHONE";
+	"ERASER";
+	"DOG";
+	"BRUSH";
+	"DIRT";
+	"GAMES";
+	"FLOPPIES";
+	"THROATS";
+	"RAT";
+	"PAPERWORK";
+}
+
+// random laughs
+lol = {
+	"heh";
+	"hah";
+	"hahah";
+	"haha";
+	"hahaha";
+	"hohoho";
+	"hoho";
+	"AHAhaha";
+	"AHAHAHAHA";
+	"ahahaha";
+	"AHAHAH";
+	"lol";
+	"LOL";
+	"loool";
+	"lolz";
+	"lulz";
+	"hehe";
+	"ha";
+	"hohohoho";
+	"ho";
+	"jeje";
+	"lawl";
+	"lawlz";
+	"lols";
+	"LULZ";
+	"rofl";
+	"ROFL";
+	"roflmao";
+	"ROFLMAO";
+	"lmao";
+	"LMAO";
+	"LoLLeRsKaTeS";
+	"wtf";
 }

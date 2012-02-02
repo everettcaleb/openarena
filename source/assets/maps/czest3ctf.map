@@ -2,6 +2,8 @@
 // entity 0
 {
 "classname" "worldspawn"
+"message" "Holy Wars!"
+"music" "music/OA09.ogg"
 // brush 0
 {
 ( 24 32 64 ) ( 24 -32 64 ) ( -40 32 64 ) gothic_block/blocks15_relief2 160 128 0 0.25 0.25 134217728 0 0
@@ -30235,7 +30237,7 @@ clown/blue_banner
 {
 "classname" "team_CTF_redflag"
 "origin" "-800 1632 64"
-"gametype" "ctf, oneflag, dd"
+"gametype" "ctf cctf oneflag dd"
 }
 // entity 68
 {
@@ -30589,7 +30591,8 @@ clown/blue_banner
 {
 "classname" "team_CTF_blueflag"
 "origin" "800 -1632 48"
-"gametype" "ctf, oneflag, dd"
+"angle" "180"
+"gametype" "ctf cctf oneflag dd"
 }
 // entity 119
 {
@@ -30936,8 +30939,8 @@ clown/blue_banner
 // entity 173
 {
 "classname" "weapon_lightning"
-"origin" "-400 -560 280"
-"angle" "180"
+"origin" "-400.000000 -560.000000 296.000000"
+"angle" "180.000000"
 }
 // entity 174
 {
@@ -31112,7 +31115,7 @@ clown/blue_banner
 // entity 204
 {
 "classname" "weapon_lightning"
-"origin" "400 560 288"
+"origin" "400.000000 560.000000 304.000000"
 }
 // entity 205
 {
@@ -31954,13 +31957,13 @@ clown/blue_banner
 // entity 359
 {
 "classname" "team_redobelisk"
-"origin" "-800 1632 16"
+"origin" "-800.000000 1632.000000 16.000000"
 "gametype" "ctf, oneflag, obelisk, harvester"
 }
 // entity 360
 {
 "classname" "team_neutralobelisk"
-"origin" "0 0 256"
+"origin" "0.000000 0.000000 256.000000"
 "gametype" "harvester"
 }
 // entity 361
@@ -31972,7 +31975,7 @@ clown/blue_banner
 // entity 362
 {
 "classname" "team_blueobelisk"
-"origin" "800 -1632 16"
+"origin" "800.000000 -1632.000000 16.000000"
 "gametype" "ctf, oneflag, obelisk, harvester"
 }
 // entity 363
@@ -32094,4 +32097,16 @@ clown/blue_banner
 "classname" "info_player_dd"
 "origin" "176 -336 352"
 "angle" "136.601"
+}
+// entity 383
+{
+"classname" "info_player_intermission"
+"origin" "896.000000 320.000000 320.000000"
+"target" "target_position1"
+}
+// entity 384
+{
+"classname" "target_position"
+"origin" "0.000000 -416.000000 232.000000"
+"targetname" "target_position1"
 }
