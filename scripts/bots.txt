@@ -35,6 +35,12 @@ name		Arachna
 model		arachna
 aifile	bots/arachna_c.c
 }
+{
+name		Forlorna
+model		arachna/forlorna
+aifile	bots/arachna_c.c
+}
+
 // Assassin model
 {
 name		Assassin
